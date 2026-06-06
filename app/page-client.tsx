@@ -55,7 +55,7 @@ export default function HomePageClient() {
         <div className="hero-text" style={{ paddingLeft: 0, maxWidth: '660px' }}>
 
           {/* WHO badge */}
-          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '1.25rem' }}>
+          <div className="hero-flex" style={{ marginBottom: '1.25rem' }}>
             <span style={{ background: 'var(--blue-50)', color: 'var(--blue-700)', borderRadius: '50px', padding: '0.3rem 0.9rem', fontSize: '0.78rem', fontWeight: 700, border: '1px solid rgba(26,60,143,0.15)' }}>Pour DRH & managers</span>
             <span style={{ background: 'var(--red-100)', color: 'var(--red-600)', borderRadius: '50px', padding: '0.3rem 0.9rem', fontSize: '0.78rem', fontWeight: 700, border: '1px solid rgba(200,35,26,0.15)' }}>Soignants</span>
             <span style={{ background: 'rgba(201,168,76,0.1)', color: '#8b6914', borderRadius: '50px', padding: '0.3rem 0.9rem', fontSize: '0.78rem', fontWeight: 700, border: '1px solid rgba(201,168,76,0.2)' }}>Éducation & Fonction publique</span>
@@ -70,7 +70,7 @@ export default function HomePageClient() {
           </p>
 
           {/* Formats */}
-          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '2rem' }}>
+          <div className="hero-flex" style={{ marginBottom: '2rem' }}>
             {['🏫 Présentiel', '💻 Distanciel', '🏢 Intra-entreprise'].map(f => (
               <span key={f} style={{ background: 'var(--gray-100)', color: 'var(--gray-700)', borderRadius: '50px', padding: '0.3rem 0.9rem', fontSize: '0.8rem', fontWeight: 600 }}>{f}</span>
             ))}
@@ -85,7 +85,7 @@ export default function HomePageClient() {
           </div>
 
           {/* Stats */}
-          <div style={{ display: 'flex', gap: '1.5rem', flexWrap: 'wrap', borderTop: '1px solid var(--gray-200)', paddingTop: '1.5rem' }}>
+          <div className="hero-stats">
             <div style={{ paddingRight: '1.5rem', borderRight: '1px solid var(--gray-200)' }}>
               <div style={{ fontSize: '1.75rem', fontWeight: 900, color: 'var(--blue-900)' }}>15+</div>
               <div style={{ fontSize: '0.78rem', color: 'var(--gray-500)', textTransform: 'uppercase', fontWeight: 600 }}>ans d'expertise</div>
