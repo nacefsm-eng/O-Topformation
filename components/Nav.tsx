@@ -5,10 +5,8 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
 const formationsLinks = [
-  { label: 'Formation FI TOP®', href: '/formations/fi-top' },
-  { label: 'Formation FB-TOP', href: '/formations/fb-top' },
+  { label: 'Formation FI TOP® (Particuliers)', href: '/formations/fi-top' },
   { label: 'Entreprises', href: '/entreprises' },
-  { label: 'Éducation Nationale', href: '/formations/fb-top' },
 ];
 
 const ressourcesLinks = [

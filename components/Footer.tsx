@@ -27,7 +27,6 @@ export default function Footer() {
             <h4>Formations</h4>
             <ul className="footer-links">
               <li><Link href="/formations/fi-top">Formation FI TOP® (21h)</Link></li>
-              <li><Link href="/formations/fb-top">Formation FB-TOP (7h)</Link></li>
               <li><Link href="/entreprises">Entreprises</Link></li>
               <li><Link href="/sous-traitance">Sous-traitance</Link></li>
             </ul>

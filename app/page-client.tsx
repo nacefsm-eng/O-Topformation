@@ -191,10 +191,9 @@ export default function HomePageClient() {
             <h2>Des programmes adaptés à vos besoins</h2>
             <p>Tous nos formats sont finançables via votre OPCO. Demandez un devis personnalisé.</p>
           </div>
-          <div className="three-col">
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '2rem' }}>
             {[
               { tag: 'tag-blue', tagLabel: 'FORMATION PHARE', title: 'Formation Initiale TOP® — FI TOP®', duration: '21h', format: 'Présentiel ou distanciel', img: '/formation-presentiel.png', desc: '3 modules progressifs pour maîtriser l\'ensemble des outils TOP® : respiration, relaxation, imagerie mentale, motivation. Attestation de compétences délivrée.', meta: ['⏱ 21h', '👥 Max 12 pers.', '📍 Ollioules / Visio'], href: '/formations/fi-top' },
-              { tag: 'tag-red', tagLabel: 'DÉCOUVERTE', title: 'Formation de Base TOP® — FB-TOP', duration: '7h', format: 'Présentiel ou distanciel', img: '/hero-top.png', desc: 'Une journée intense pour découvrir les fondamentaux TOP® et repartir avec 3 techniques immédiatement applicables dans votre quotidien professionnel.', meta: ['⏱ 7h', '👥 Groupe', '📍 Ollioules'], href: '/formations/fb-top' },
               { tag: 'tag-gold', tagLabel: 'SUR-MESURE', title: 'Formations Intra-Entreprise', duration: 'Sur devis', format: 'Dans vos locaux', img: '/entreprises-equipe.png', desc: 'Déploiement sur-mesure dans vos locaux, adapté à la réalité terrain de vos équipes. Programme co-construit avec vous. Financement OPCO facilité.', meta: ['⏱ Sur devis', '👥 Vos équipes', '📍 Vos locaux'], href: '/entreprises' },
             ].map((f, i) => (
               <Link href={f.href} key={i} className="formation-card" style={{ background: 'white' }}>
