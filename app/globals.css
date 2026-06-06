@@ -1,19 +1,21 @@
 :root {
-  /* Brand colors — match the O'TOP logo (royal blue + red + gold) */
-  --blue-900: #0b1e4a;
-  --blue-800: #12306b;
-  --blue-700: #1a3c8f;
-  --blue-600: #1e4db0;
-  --blue-500: #2563c8;
+  /* Brand colors - match the client palette */
+  --blue-900: #003492;
+  --blue-800: #002b7a;
+  --blue-700: #0044bd;
+  --blue-600: #1a5cff;
+  --blue-500: #3b7aff;
   --blue-100: #dbeafe;
   --blue-50:  #eff6ff;
 
-  --red-600:  #c8231a;
-  --red-500:  #e0311f;
+  --red-600:  #ff3b3b;
+  --red-500:  #ff5252;
   --red-100:  #fee2e2;
 
-  --gold:       #c9a84c;
-  --gold-light: #e9c96a;
+  --gold:       #cdaf5d;
+  --gold-light: #d8c07e;
+  
+  --orange:     #E8831A;
 
   --white:    #ffffff;
   --gray-50:  #f8fafc;
@@ -89,14 +91,14 @@ p  { color: var(--gray-600); line-height: 1.8; }
   text-align: center;
 }
 .btn-primary {
-  background: var(--blue-700);
+  background: var(--orange);
   color: white;
-  box-shadow: 0 4px 15px rgba(26,60,143,0.35);
+  box-shadow: 0 4px 15px rgba(232, 131, 26, 0.35);
 }
 .btn-primary:hover {
-  background: var(--blue-900);
+  background: #cf7315;
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(26,60,143,0.45);
+  box-shadow: 0 8px 25px rgba(232, 131, 26, 0.45);
 }
 .btn-red {
   background: var(--red-600);
@@ -147,19 +149,32 @@ p  { color: var(--gray-600); line-height: 1.8; }
   flex-wrap: wrap;
 }
 
-/* ============= NAV ============= */
+/* ============= NAV & TOP BAR ============= */
+.top-bar {
+  background: var(--orange);
+  color: white;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.4rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.top-bar-socials { display: flex; gap: 0.75rem; align-items: center; }
+.top-bar-contact { display: flex; gap: 1.5rem; align-items: center; }
+.top-bar a { color: white; transition: opacity 0.2s; display: flex; align-items: center; gap: 0.4rem; }
+.top-bar a:hover { opacity: 0.8; }
+
 .nav {
   position: sticky;
-  top: 0;
+  top: -1px;
   z-index: 1000;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0.85rem 2rem;
+  padding: 1rem 2rem;
   transition: all 0.3s ease;
-  background: rgba(255,255,255,0.97);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  background: var(--white);
   border-bottom: 1px solid transparent;
 }
 .nav.scrolled {

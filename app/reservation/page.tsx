@@ -63,8 +63,7 @@ export default function ReservationPage() {
   };
 
   const isWeekend = (day: number) => {
-    const dow = new Date(currentYear, currentMonth, day).getDay(); // 0=sun, 6=sat
-    return dow === 0 || dow === 6;
+    return false; // Weekends allowed
   };
 
   const isSlotBooked = (slot: string) =>
@@ -110,7 +109,7 @@ export default function ReservationPage() {
           <h1>Réserver un entretien découverte</h1>
           <p>15 minutes pour nous parler de votre projet. Sans engagement, sans frais.</p>
           <div style={{ display:'flex', gap:'0.75rem', flexWrap:'wrap', marginTop:'1rem' }}>
-            {['🗓 Lundi – Vendredi', '⏰ 9h00 – 17h30', '📍 En visioconférence', '✅ Gratuit & sans engagement'].map(t => (
+            {['🗓 Lundi – Dimanche', '⏰ 9h00 – 17h30', '📍 En visioconférence', '✅ Gratuit & sans engagement'].map(t => (
               <span key={t} style={{ background:'rgba(255,255,255,0.12)', borderRadius:'50px', padding:'0.3rem 0.9rem', fontSize:'0.8rem', fontWeight:600, color:'white', border:'1px solid rgba(255,255,255,0.2)' }}>{t}</span>
             ))}
           </div>
@@ -163,7 +162,7 @@ export default function ReservationPage() {
 
               <h2 style={{ fontSize:'1.4rem', color:'var(--blue-900)', marginBottom:'0.4rem' }}>Choisissez une date</h2>
               <p style={{ color:'var(--gray-500)', marginBottom:'1.75rem', fontSize:'0.9rem' }}>
-                Disponible du <strong>lundi au vendredi</strong>, de <strong>9h00 à 17h30</strong>. Les week-ends et jours passés sont grisés.
+                Disponible du <strong>lundi au dimanche</strong>, de <strong>9h00 à 17h30</strong>. Les jours passés sont grisés.
               </p>
 
               {/* Month nav */}

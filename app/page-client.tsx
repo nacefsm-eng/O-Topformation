@@ -45,14 +45,14 @@ export default function HomePageClient() {
         <div style={{ background: 'linear-gradient(90deg, var(--blue-900), var(--blue-800))', color: 'white', padding: '0.6rem 1rem', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.75rem', flexWrap: 'wrap', position: 'relative', zIndex: 1100, fontSize: '0.875rem', fontWeight: 600 }}>
           <span style={{ background: 'rgba(255,255,255,0.12)', borderRadius: '50px', padding: '0.2rem 0.7rem', fontSize: '0.7rem', fontWeight: 800, letterSpacing: '0.08em' }}>🌟 PROCHAINE SESSION</span>
           <span style={{ textAlign: 'center', maxWidth: '600px' }}>Formation Initiale TOP® à Ollioules (PACA). Places limitées !</span>
-          <a href="/reservation" style={{ background: 'white', color: 'var(--blue-900)', borderRadius: '50px', padding: '0.3rem 1rem', fontSize: '0.78rem', fontWeight: 800, whiteSpace: 'nowrap', textDecoration: 'none' }}>Réserver un appel →</a>
-          <button onClick={dismissAnn} aria-label="Fermer" style={{ position: 'absolute', right: '1rem', top: '50%', transform: 'translateY(-50%)', background: 'none', border: 'none', color: 'rgba(255,255,255,0.7)', cursor: 'pointer', fontSize: '1.1rem', lineHeight: 1 }}>✕</button>
+          <a href="/reservation" style={{ background: 'white', color: 'var(--blue-900)', borderRadius: '50px', padding: '0.3rem 1rem', fontSize: '0.78rem', fontWeight: 800, textDecoration: 'none', textAlign: 'center' }}>Réserver un appel →</a>
+          <button onClick={dismissAnn} aria-label="Fermer" style={{ position: 'absolute', right: '0.5rem', top: '50%', transform: 'translateY(-50%)', background: 'none', border: 'none', color: 'rgba(255,255,255,0.7)', cursor: 'pointer', fontSize: '1.2rem', padding: '0.5rem' }}>✕</button>
         </div>
       )}
 
       {/* ===== HERO ===== */}
-      <section className="hero container" style={{ paddingTop: '5rem', minHeight: 'auto', paddingBottom: '4rem' }}>
-        <div className="hero-text" style={{ paddingLeft: 0, maxWidth: '660px' }}>
+      <section className="hero container" style={{ minHeight: 'auto', paddingBottom: '4rem' }}>
+        <div className="hero-text">
 
           {/* WHO badge */}
           <div className="hero-flex" style={{ marginBottom: '1.25rem' }}>
@@ -77,11 +77,11 @@ export default function HomePageClient() {
           </div>
 
           {/* SINGLE main CTA */}
-          <div style={{ marginBottom: '2.5rem' }}>
-            <Link href="/reservation" className="btn btn-primary" style={{ padding: '1.1rem 2rem', fontSize: '1.1rem', boxShadow: '0 4px 20px rgba(26,60,143,0.35)', display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}>
+          <div className="hero-cta" style={{ marginBottom: '2.5rem' }}>
+            <Link href="/reservation" className="btn btn-primary" style={{ padding: '1.1rem 2rem', fontSize: '1.1rem', boxShadow: '0 4px 20px rgba(26,60,143,0.35)', gap: '0.5rem', textAlign: 'center' }}>
               📅 Réserver un entretien gratuit (15 min)
             </Link>
-            <div style={{ marginTop: '0.75rem', fontSize: '0.82rem', color: 'var(--gray-400)' }}>Sans engagement · Réponse sous 24h · Financement OPCO possible</div>
+            <div style={{ marginTop: '0.75rem', fontSize: '0.82rem', color: 'var(--gray-400)', lineHeight: '1.4' }}>Sans engagement · Réponse sous 24h · Financement OPCO possible</div>
           </div>
 
           {/* Stats */}
