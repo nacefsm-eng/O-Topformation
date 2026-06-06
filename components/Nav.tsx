@@ -46,7 +46,6 @@ export default function Nav() {
   }, [pathname]);
 
   return (
-  return (
     <>
       {/* Top Bar Contact & Socials */}
       <div className="top-bar">
