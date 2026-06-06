@@ -84,12 +84,12 @@ export default function EquipePage() {
               <div className="team-card-body">
                 <h3 className="team-card-name">Régis</h3>
                 <p className="team-card-title">
-                  Expert TOP® — Conférencier — Formateur de praticiens
+                  Expert TOP® - Conférencier - Formateur
                 </p>
                 <div className="team-card-tags">
                   <span className="tag">15 ans d'expertise</span>
                   <span className="tag">Ex-Armée de l'Air</span>
-                  <span className="tag">Formateur de praticiens</span>
+                  <span className="tag">Formateur Expert</span>
                 </div>
                 <p className="team-card-bio">
                   Fort de plus de 15 ans d'expertise dans les Techniques d'Optimisation du Potentiel,

@@ -28,7 +28,7 @@ export default function HomePageClient() {
   const testimonials = [
     { initials: 'SB', name: 'Sandrine B.', role: 'Infirmière cadre', org: 'CHU de Toulon', stars: 5, text: 'Après 12 ans en soins intensifs, j\'étais épuisée. La méthode TOP® m\'a redonné des outils concrets pour récupérer entre les gardes et gérer les situations de crise sans m\'effondrer. Une vraie révélation professionnelle.' },
     { initials: 'PM', name: 'Pierre-Marc D.', role: 'DRH', org: 'Collectivité territoriale — 350 agents', stars: 5, text: 'Nous avons déployé la formation TOP® sur nos équipes de direction suite à une forte hausse des arrêts maladie. Après 6 mois, le taux d\'absentéisme a baissé de façon notable. Mélyssa et Régis ont su adapter le contenu à notre culture interne.' },
-    { initials: 'NF', name: 'Nathalie F.', role: 'Directrice d\'école primaire', org: 'Académie de Nice', stars: 5, text: 'J\'ai suivi la FB-TOP avant la rentrée. Les outils de respiration que j\'ai appris, je les réutilise chaque matin avant d\'entrer dans la classe. Mon équipe pédagogique m\'a demandé à suivre la formation à leur tour !' },
+    { initials: 'NF', name: 'Nathalie F.', role: 'Directrice d\'école primaire', org: 'Académie de Nice', stars: 5, text: 'J\'ai suivi la formation avant la rentrée. Les outils de respiration que j\'ai appris, je les réutilise chaque matin avant d\'entrer dans la classe. Mon équipe pédagogique m\'a demandé à suivre la formation à leur tour !' },
   ];
 
   const sectors = [
@@ -165,7 +165,7 @@ export default function HomePageClient() {
           <div className="steps-grid">
             {[
               { num: '01', icon: '🤝', title: 'Échangez', sub: 'Entretien découverte gratuit', desc: 'Un appel de 15 minutes pour comprendre vos enjeux, votre secteur et vous orienter vers la formation la plus adaptée.', cta: 'Réserver maintenant', href: '/reservation', color: 'var(--gold)' },
-              { num: '02', icon: '📋', title: 'Choisissez', sub: 'Votre programme sur mesure', desc: 'FI TOP® (21h certifiante), FB-TOP (7h découverte) ou formation intra-entreprise adaptée à vos équipes. Financement OPCO possible.', cta: 'Voir les programmes', href: '/formations/fi-top', color: 'rgba(255,255,255,0.9)' },
+              { num: '02', icon: '🎯', title: 'Choisissez', sub: 'Votre programme sur mesure', desc: 'FI TOP® (21h certifiante) ou formation intra-entreprise adaptée à vos équipes. Financement OPCO possible.', cta: 'Voir les programmes', href: '/formations/fi-top', color: 'rgba(255,255,255,0.9)' },
               { num: '03', icon: '🚀', title: 'Transformez', sub: 'Des résultats durables', desc: 'Vos équipes maîtrisent des outils concrets. Vous mesurez la baisse du stress, de l\'absentéisme et la hausse de la performance.', cta: 'Voir les secteurs', href: '#secteurs', color: 'rgba(255,255,255,0.9)' },
             ].map((s, i) => (
               <div key={i} style={{ textAlign: 'center', padding: '2rem', background: 'rgba(255,255,255,0.05)', borderRadius: 'var(--radius)', border: '1px solid rgba(255,255,255,0.1)', display: 'flex', flexDirection: 'column', gap: '1rem' }}>

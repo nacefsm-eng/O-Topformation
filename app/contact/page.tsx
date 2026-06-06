@@ -145,7 +145,7 @@ export default function Contact() {
                         style={{ width: '100%', padding: '0.875rem 1rem', borderRadius: 'var(--radius)', border: '1px solid var(--gray-300)', outline: 'none', background: 'white' }}
                       >
                         <option value="">Sélectionnez un sujet...</option>
-                        <option value="Formation individuelle">M'inscrire à une formation individuelle (FI-TOP / FB-TOP)</option>
+                        <option value="Formation individuelle">M'inscrire à une formation individuelle (FI-TOP)</option>
                         <option value="Formation entreprise">Organiser une formation en entreprise</option>
                         <option value="Sous-traitance">Proposition de sous-traitance / Partenariat</option>
                         <option value="Autre">Une autre question</option>

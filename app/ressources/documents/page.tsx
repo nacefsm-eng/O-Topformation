@@ -12,7 +12,7 @@ export default function DocumentsPage() {
     {
       icon: '📋',
       title: 'Programme des formations',
-      desc: 'Découvrez le contenu détaillé de nos formations FI TOP® (21h) et FB-TOP (7h) : objectifs pédagogiques, modules, méthodes et modalités.',
+      desc: 'Découvrez le contenu détaillé de notre formation FI TOP® (21h) : objectifs pédagogiques, modules, méthodes et modalités.',
       link: '/formations/fi-top',
       cta: 'Voir le programme',
       color: 'var(--blue-900)',

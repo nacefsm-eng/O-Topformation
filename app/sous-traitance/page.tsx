@@ -52,7 +52,7 @@ export default function SousTraitance() {
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '2rem' }}>
             {[
-              ['🏅', 'Expertise reconnue', '15 ans d\'expérience dans l\'application des TOP® et un réseau de praticiens certifiés.'],
+              ['🏅', 'Expertise reconnue', '15 ans d\'expérience dans l\'application des TOP® et un réseau d\'experts certifiés.'],
               ['📑', 'Qualiopi-ready', 'Tous les documents administratifs et pédagogiques (conventions, émargements, évaluations) fournis aux normes Qualiopi.'],
               ['⚙️', 'Gestion autonome', 'Nous gérons l\'animation de A à Z en marque blanche ou sous les couleurs de votre organisme.'],
               ['🎯', 'Adaptabilité', 'Programmes ajustables selon le profil de vos apprenants et les exigences de vos commanditaires.']

@@ -314,7 +314,7 @@ export default function ReservationPage() {
                   <label htmlFor="res-besoin" style={{ display:'block', fontSize:'0.88rem', fontWeight:600, color:'var(--blue-900)', marginBottom:'0.4rem' }}>Objet de l'entretien</label>
                   <select id="res-besoin" value={form.besoin} onChange={e => setForm({...form, besoin:e.target.value})} style={{ width:'100%', padding:'0.85rem', borderRadius:'var(--radius)', border:'1px solid var(--gray-300)', background:'white', fontFamily:'inherit' }}>
                     <option value="">Sélectionnez un sujet...</option>
-                    <option value="Formation individuelle">S'inscrire à une formation (FI-TOP / FB-TOP)</option>
+                    <option value="Formation individuelle">S'inscrire à une formation (FI-TOP)</option>
                     <option value="Formation entreprise">Organiser une formation en entreprise</option>
                     <option value="Sous-traitance">Proposition de partenariat</option>
                     <option value="Renseignement">Simple renseignement</option>

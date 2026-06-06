@@ -69,7 +69,7 @@ const FAQ_ITEMS: FaqItem[] = [
     id: 10,
     question: "Qui sont les formateurs ?",
     answer:
-      "Vos formations sont animées par les deux fondateurs d'Ô'TOP Formation : Melyssa Jennadi, Docteure en Sciences Humaines et formatrice certifiée TOP®, et Régis, expert TOP® avec plus de 15 ans d'expérience, ancien de l'Armée de l'Air et formateur de praticiens. Tous deux sont passionnés par la transmission et s'engagent à offrir une expérience de formation à la fois rigoureuse sur le plan scientifique et accessible dans la pratique. Leur complémentarité (expertise académique et expérience opérationnelle) garantit une formation complète et équilibrée.",
+      "Vos formations sont animées par les deux fondateurs d'O'TOP Formation : Mélyssa Jennadi, Docteure en Sciences Humaines et formatrice certifiée TOP®, et Régis, expert TOP® avec plus de 15 ans d'expérience, ancien de l'Armée de l'Air et formateur expert. Tous deux sont passionnés par la transmission et s'engagent à offrir une expérience de formation à la fois rigoureuse sur le plan scientifique et accessible dans la pratique. Leur complémentarité (expertise académique et expérience opérationnelle) garantit une formation complète et équilibrée.",
   },
   {
     id: 11,
