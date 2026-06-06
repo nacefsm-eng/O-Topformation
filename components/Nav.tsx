@@ -148,7 +148,7 @@ export default function Nav() {
 
           <li role="none">
             <a
-              href="https://bia-platform.vercel.app/"
+              href="https://bia-theta.vercel.app/"
               target="_blank"
               rel="noopener noreferrer"
               className="active"
