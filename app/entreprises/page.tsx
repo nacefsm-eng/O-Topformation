@@ -157,13 +157,13 @@ export default function Entreprises() {
 
       <section className="section cta-section">
         <div className="container">
-          <div className="cta-inner" style={{ background: 'white', color: 'var(--blue-900)', border: '1px solid var(--gray-200)', boxShadow: 'var(--shadow-lg)' }}>
-            <span className="label" style={{ color: 'var(--blue-700)' }}>Passer à l&apos;action</span>
-            <h2 className="cta-title" style={{ color: 'var(--blue-900)' }}>Construisons votre projet intra</h2>
-            <p className="cta-subtitle" style={{ color: 'var(--gray-600)' }}>Contactez-nous pour un échange de 15 minutes afin d&apos;évaluer vos besoins et obtenir un devis personnalisé.</p>
+          <div className="cta-inner">
+            <span className="label" style={{ color: 'rgba(255,255,255,0.7)' }}>Passer à l'action</span>
+            <h2 className="cta-title">Construisons votre projet intra</h2>
+            <p className="cta-subtitle">Contactez-nous pour un échange de 15 minutes afin d'évaluer vos besoins et obtenir un devis personnalisé.</p>
             <div className="cta-actions">
               <Link href="/contact" className="btn btn-primary">Demander un devis →</Link>
-              <a href="/reservation" target="_blank" rel="noopener noreferrer" className="btn btn-outline-blue">📅 Prendre rdv</a>
+              <a href="/reservation" target="_blank" rel="noopener noreferrer" className="btn btn-ghost">📅 Prendre rdv</a>
             </div>
           </div>
         </div>
