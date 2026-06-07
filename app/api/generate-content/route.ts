@@ -52,6 +52,24 @@ Tu DOIS impérativement répondre UNIQUEMENT avec un objet JSON valide, sans auc
           temperature: 0.8,
           maxOutputTokens: 2048,
           responseMimeType: "application/json",
+          responseSchema: {
+            type: "OBJECT",
+            properties: {
+              posts: {
+                type: "ARRAY",
+                items: {
+                  type: "OBJECT",
+                  properties: {
+                    platform: { type: "STRING" },
+                    text: { type: "STRING" },
+                    imagePrompt: { type: "STRING" }
+                  },
+                  required: ["platform", "text", "imagePrompt"]
+                }
+              }
+            },
+            required: ["posts"]
+          }
         }
       })
     });
