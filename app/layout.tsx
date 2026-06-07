@@ -4,6 +4,7 @@ import './globals.css';
 import Nav from '@/components/Nav';
 import ScrollReveal from '@/components/ScrollReveal';
 import FloatingButtons from '@/components/FloatingButtons';
+import FloatingChatbot from '@/components/FloatingChatbot';
 
 const inter = Inter({ subsets: ['latin', 'latin-ext'], variable: '--font-inter' });
 
@@ -35,6 +36,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <ScrollReveal />
         {children}
         <FloatingButtons />
+        <FloatingChatbot />
       </body>
     </html>
   );

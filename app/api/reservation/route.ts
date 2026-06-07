@@ -48,6 +48,29 @@ export async function POST(req: NextRequest) {
     createdAt: new Date().toISOString(),
   });
   writeDB(db);
+
+  // N8N Integration
+  const n8nWebhookUrl = process.env.N8N_WEBHOOK_URL;
+  if (n8nWebhookUrl) {
+    try {
+      const response = await fetch(n8nWebhookUrl, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          source: 'OTOP_RESERVATION',
+          submittedAt: new Date().toISOString(),
+          data: body,
+        }),
+      });
+      if (!response.ok) {
+        console.warn(`Failed to forward lead to n8n webhook: ${response.statusText}`);
+      } else {
+        console.log('Successfully forwarded lead to n8n webhook (OTOP Reservation)');
+      }
+    } catch (error) {
+      console.error('Error forwarding lead to n8n:', error);
+    }
+  }
   return NextResponse.json({ success: true });
 }
 
