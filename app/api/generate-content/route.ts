@@ -1,98 +1,117 @@
 import { NextResponse } from 'next/server';
 
+// Parse the plain-text response from Gemini into structured posts
+function parsePosts(raw: string, platforms: string[]): { platform: string; text: string }[] {
+  const posts: { platform: string; text: string }[] = [];
+
+  for (const platform of platforms) {
+    const capPlatform = platform.charAt(0).toUpperCase() + platform.slice(1);
+
+    // Match a section that starts with the platform name (flexible regex)
+    const sectionRegex = new RegExp(
+      `(?:#{1,4}\\s*)?(?:🔵|📸|📘|💼|📱|🟦)?\\s*${capPlatform}\\s*[:\\-]?\\s*\\n([\\s\\S]*?)(?=(?:#{1,4}\\s*)?(?:🔵|📸|📘|💼|📱|🟦)?\\s*(?:LinkedIn|Facebook|Instagram)\\s*[:\\-]?\\s*\\n|$)`,
+      'i'
+    );
+
+    const match = raw.match(sectionRegex);
+    if (match && match[1]?.trim()) {
+      posts.push({ platform: capPlatform, text: match[1].trim() });
+    }
+  }
+
+  // Fallback: if regex parsing failed, return the whole text as one post
+  if (posts.length === 0) {
+    posts.push({ platform: platforms[0] || 'Post', text: raw.trim() });
+  }
+
+  return posts;
+}
+
 export async function POST(req: Request) {
   try {
     const { topic, platforms } = await req.json();
 
-    if (!topic) {
-      return NextResponse.json({ error: "Le sujet est requis." }, { status: 400 });
+    if (!topic || !platforms?.length) {
+      return NextResponse.json({ error: 'Le sujet et au moins un réseau sont requis.' }, { status: 400 });
     }
 
     const apiKey = process.env.GEMINI_API_KEY;
     if (!apiKey) {
-      return NextResponse.json({ error: "Clé API Gemini manquante. Veuillez la configurer dans Vercel." }, { status: 500 });
+      return NextResponse.json({ error: 'Clé API Gemini manquante.' }, { status: 500 });
     }
 
-    let prompt = `Tu es un expert en marketing digital (Growth Hacker) et copywriter de haut niveau. 
-Ton objectif est d'écrire des posts VIRAUX et extrêmement qualitatifs pour un organisme de formation spécialisé dans la Qualité de Vie au Travail et la gestion du stress (Méthode TOP).
+    const platformNames = (platforms as string[]).map(p => p.charAt(0).toUpperCase() + p.slice(1)).join(', ');
 
-SUJET : "${topic}"
-RÉSEAUX CIBLES : ${platforms.join(', ')}
+    const prompt = `Tu es un Growth Hacker expert en copywriting pour les organismes de formation professionnelle (QVT, bien-être au travail, gestion du stress — Méthode TOP).
 
-RÈGLES DE RÉDACTION STRICTES :
-- Fini le ton ennuyeux "corporate". Utilise des accroches fortes (Hook) qui arrêtent le scroll.
-- Utilise le framework PAS (Problème, Agitation, Solution) ou AIDA.
-- Saute des lignes, aère le texte. Utilise des listes à puces.
-- Utilise 3 à 5 emojis maximum mais bien choisis.
-- Apporte une vraie valeur ajoutée ou un conseil actionnable dans le post.
-- Pas de hashtags inutiles, juste 2 ou 3 très ciblés.
+SUJET DU POST : "${topic}"
+RÉSEAUX CIBLÉS : ${platformNames}
 
-Tu DOIS impérativement répondre UNIQUEMENT avec un objet JSON valide, sans aucun texte autour (pas de markdown \`\`\`json), respectant exactement ce format :
-{
-  "posts": [
-    {
-      "platform": "Nom du réseau (ex: LinkedIn)",
-      "text": "Le texte complet du post avec emojis et sauts de ligne...",
-      "imagePrompt": "A short descriptive prompt in ENGLISH to generate an AI image for this post. E.g., 'professional business woman in modern office feeling relaxed and smiling, photorealistic, 8k'"
-    }
-  ]
-}`;
+RÈGLES DE RÉDACTION :
+- Accroche percutante en 1ère ligne (Hook qui arrête le scroll).
+- Utilise le framework PAS (Problème → Agitation → Solution).
+- Texte aéré avec sauts de ligne, listes à puces si pertinent.
+- 3 à 5 emojis bien placés (pas tous au même endroit).
+- Un conseil actionnable ou une stat concrète si possible.
+- 2 ou 3 hashtags ciblés maximum.
+- Adapte le ton : LinkedIn = professionnel/inspirant, Facebook = conversationnel, Instagram = court/dynamique.
 
-    // Call Gemini API
-    const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        contents: [{
-          parts: [{ text: prompt }]
-        }],
-        safetySettings: [
-          { category: "HARM_CATEGORY_HARASSMENT", threshold: "BLOCK_NONE" },
-          { category: "HARM_CATEGORY_HATE_SPEECH", threshold: "BLOCK_NONE" },
-          { category: "HARM_CATEGORY_SEXUALLY_EXPLICIT", threshold: "BLOCK_NONE" },
-          { category: "HARM_CATEGORY_DANGEROUS_CONTENT", threshold: "BLOCK_NONE" }
-        ],
-        generationConfig: {
-          temperature: 0.8,
-          maxOutputTokens: 2048,
-          responseMimeType: "application/json",
-          responseSchema: {
-            type: "OBJECT",
-            properties: {
-              posts: {
-                type: "ARRAY",
-                items: {
-                  type: "OBJECT",
-                  properties: {
-                    platform: { type: "STRING" },
-                    text: { type: "STRING" },
-                    imagePrompt: { type: "STRING" }
-                  },
-                  required: ["platform", "text", "imagePrompt"]
-                }
-              }
-            },
-            required: ["posts"]
-          }
-        }
-      })
-    });
+FORMAT DE RÉPONSE OBLIGATOIRE :
+Commence chaque section par le nom du réseau sur une nouvelle ligne, suivi d'un saut de ligne.
+Exemple :
+LinkedIn
+[texte du post LinkedIn ici]
+
+Facebook
+[texte du post Facebook ici]
+
+NE mets PAS de markdown (pas de ###, pas de **), juste le nom du réseau et le texte en dessous.`;
+
+    const response = await fetch(
+      `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`,
+      {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          contents: [{ parts: [{ text: prompt }] }],
+          safetySettings: [
+            { category: 'HARM_CATEGORY_HARASSMENT', threshold: 'BLOCK_NONE' },
+            { category: 'HARM_CATEGORY_HATE_SPEECH', threshold: 'BLOCK_NONE' },
+            { category: 'HARM_CATEGORY_SEXUALLY_EXPLICIT', threshold: 'BLOCK_NONE' },
+            { category: 'HARM_CATEGORY_DANGEROUS_CONTENT', threshold: 'BLOCK_NONE' },
+          ],
+          generationConfig: {
+            temperature: 0.85,
+            maxOutputTokens: 2048,
+          },
+        }),
+      }
+    );
 
     const data = await response.json();
 
     if (!response.ok) {
-      console.error("Gemini API Error:", data);
-      return NextResponse.json({ error: "Erreur lors de la génération avec l'IA." }, { status: 500 });
+      console.error('Gemini API Error:', JSON.stringify(data));
+      return NextResponse.json({ error: "Erreur de l'API Gemini. Réessayez." }, { status: 500 });
     }
 
-    const generatedText = data.candidates?.[0]?.content?.parts?.[0]?.text || "Pas de contenu généré.";
+    const finishReason = data.candidates?.[0]?.finishReason;
+    if (finishReason === 'SAFETY') {
+      return NextResponse.json({ error: 'Contenu bloqué par les filtres de sécurité. Reformulez votre sujet.' }, { status: 422 });
+    }
 
-    return NextResponse.json({ result: generatedText });
+    const rawText: string = data.candidates?.[0]?.content?.parts?.[0]?.text || '';
+
+    if (!rawText) {
+      return NextResponse.json({ error: 'Aucun contenu généré. Réessayez.' }, { status: 500 });
+    }
+
+    const posts = parsePosts(rawText, platforms as string[]);
+
+    return NextResponse.json({ posts });
 
   } catch (error) {
-    console.error("Error in generate-content API:", error);
-    return NextResponse.json({ error: "Erreur interne du serveur." }, { status: 500 });
+    console.error('Error in generate-content API:', error);
+    return NextResponse.json({ error: 'Erreur interne du serveur.' }, { status: 500 });
   }
 }

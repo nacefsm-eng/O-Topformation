@@ -28,7 +28,7 @@ interface Reservation {
 }
 
 export default function AdminDashboard() {
-  const [activeTab, setActiveTab] = useState<'reservations' | 'contacts'>('reservations');
+  const [activeTab, setActiveTab] = useState<'reservations' | 'contacts' | 'documents'>('reservations');
   const [contacts, setContacts] = useState<Contact[]>([]);
   const [reservations, setReservations] = useState<Reservation[]>([]);
   const [loading, setLoading] = useState(true);
@@ -115,6 +115,9 @@ export default function AdminDashboard() {
           </button>
           <button onClick={() => setActiveTab('contacts')} style={{ padding: '0.8rem 1.75rem', border: 'none', cursor: 'pointer', fontWeight: 700, fontSize: '0.9rem', background: activeTab === 'contacts' ? '#1a3c8f' : 'white', color: activeTab === 'contacts' ? 'white' : '#64748b', transition: 'all 0.2s' }}>
             ✉️ Messages ({contacts.length})
+          </button>
+          <button onClick={() => setActiveTab('documents')} style={{ padding: '0.8rem 1.75rem', border: 'none', cursor: 'pointer', fontWeight: 700, fontSize: '0.9rem', background: activeTab === 'documents' ? '#1a3c8f' : 'white', color: activeTab === 'documents' ? 'white' : '#64748b', transition: 'all 0.2s' }}>
+            📁 Documents PDF
           </button>
         </div>
 
@@ -203,6 +206,51 @@ export default function AdminDashboard() {
                 </div>
               ))
             )}
+          </div>
+        )}
+
+        {/* DOCUMENTS TAB */}
+        {activeTab === 'documents' && (
+          <div>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '1.5rem', flexWrap: 'wrap', gap: '1rem' }}>
+              <div>
+                <h2 style={{ fontSize: '1.4rem', fontWeight: 800, color: '#1e293b', marginBottom: '0.25rem' }}>📁 Gestion des Documents PDF</h2>
+                <p style={{ color: '#64748b', fontSize: '0.9rem' }}>Gérez les fichiers PDF disponibles en téléchargement sur la page Ressources.</p>
+              </div>
+              <a href="/ressources/documents" target="_blank" style={{ background: '#1a3c8f', color: 'white', padding: '0.6rem 1.25rem', borderRadius: '8px', textDecoration: 'none', fontSize: '0.85rem', fontWeight: 700 }}>👁️ Voir la page publique</a>
+            </div>
+
+            {/* Info banner */}
+            <div style={{ background: '#eff6ff', border: '1px solid #bfdbfe', borderRadius: '12px', padding: '1.25rem 1.5rem', marginBottom: '2rem', display: 'flex', gap: '1rem', alignItems: 'flex-start' }}>
+              <span style={{ fontSize: '1.5rem' }}>ℹ️</span>
+              <div>
+                <strong style={{ color: '#1e40af', display: 'block', marginBottom: '0.25rem' }}>Comment mettre à jour un PDF ?</strong>
+                <p style={{ color: '#3b82f6', fontSize: '0.875rem', margin: 0 }}>Les PDFs sont stockés dans le dossier <code style={{ background: '#dbeafe', padding: '0.1rem 0.4rem', borderRadius: '4px' }}>public/docs/</code> de votre projet. Pour mettre à jour un fichier, remplacez-le dans ce dossier avec le même nom, puis faites un <strong>git push</strong>. Le changement sera en ligne en 1 minute.</p>
+              </div>
+            </div>
+
+            {/* Document list */}
+            {[{ name: 'programme-fi-top.pdf', label: 'Programme FI TOP® (21h)', color: '#1a3c8f' },
+              { name: 'catalogue-otop-2025.pdf', label: 'Catalogue de formations 2025', color: '#c8231a' },
+              { name: 'livret-accueil.pdf', label: "Livret d'accueil stagiaire", color: '#d4af37' },
+              { name: 'reglement-interieur.pdf', label: 'Règlement intérieur', color: '#374151' },
+              { name: 'charte-qualite.pdf', label: 'Charte Qualité & Qualiopi', color: '#059669' },
+              { name: 'convention-formation.pdf', label: 'Modèle de convention de formation', color: '#7c3aed' },
+            ].map((doc, i) => (
+              <div key={i} style={{ background: 'white', borderRadius: '12px', padding: '1.25rem 1.5rem', marginBottom: '0.75rem', boxShadow: '0 1px 3px rgba(0,0,0,0.06)', display: 'flex', alignItems: 'center', gap: '1.25rem', borderLeft: `4px solid ${doc.color}` }}>
+                <span style={{ fontSize: '1.75rem' }}>📄</span>
+                <div style={{ flex: 1 }}>
+                  <div style={{ fontWeight: 700, color: '#1e293b', fontSize: '0.95rem' }}>{doc.label}</div>
+                  <div style={{ fontSize: '0.8rem', color: '#94a3b8', marginTop: '0.2rem', fontFamily: 'monospace' }}>public/docs/{doc.name}</div>
+                </div>
+                <a href={`/docs/${doc.name}`} target="_blank" rel="noopener noreferrer" style={{ background: '#f1f5f9', color: '#1a3c8f', padding: '0.45rem 1rem', borderRadius: '8px', textDecoration: 'none', fontSize: '0.82rem', fontWeight: 700 }}>👁️ Aperçu</a>
+              </div>
+            ))}
+
+            <div style={{ background: '#fefce8', border: '1px solid #fde68a', borderRadius: '12px', padding: '1.25rem 1.5rem', marginTop: '1.5rem', display: 'flex', gap: '1rem' }}>
+              <span style={{ fontSize: '1.25rem' }}>💡</span>
+              <p style={{ color: '#92400e', fontSize: '0.875rem', margin: 0 }}><strong>Prochainement :</strong> Upload direct de PDF depuis cette interface, sans passer par GitHub. En attendant, déposez vos fichiers dans <code>public/docs/</code> de votre projet local et faites un push.</p>
+            </div>
           </div>
         )}
 
