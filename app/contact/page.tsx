@@ -12,9 +12,24 @@ export default function Contact() {
   });
   const [submitted, setSubmitted] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(form)
+      });
+      if (res.ok) {
+        setSubmitted(true);
+      } else {
+        alert("Une erreur est survenue lors de l'envoi. Veuillez réessayer.");
+      }
+    } catch (error) {
+      console.error(error);
+      alert("Une erreur de réseau est survenue.");
+    }
   };
 
   return (
