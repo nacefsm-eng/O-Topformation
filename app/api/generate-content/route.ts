@@ -13,21 +13,30 @@ export async function POST(req: Request) {
       return NextResponse.json({ error: "Clé API Gemini manquante. Veuillez la configurer dans Vercel." }, { status: 500 });
     }
 
-    // Prepare the prompt
-    let prompt = `Tu es un expert en marketing digital et copywriting B2B/B2C, spécialisé dans la formation professionnelle (les Techniques d'Optimisation du Potentiel - TOP).
-Ton objectif est de générer du contenu percutant, professionnel et engageant pour promouvoir notre organisme de formation "O'TOP Formation".
+    let prompt = `Tu es un expert en marketing digital (Growth Hacker) et copywriter de haut niveau. 
+Ton objectif est d'écrire des posts VIRAUX et extrêmement qualitatifs pour un organisme de formation spécialisé dans la Qualité de Vie au Travail et la gestion du stress (Méthode TOP).
 
-SUJET DU CONTENU : "${topic}"
+SUJET : "${topic}"
+RÉSEAUX CIBLES : ${platforms.join(', ')}
 
-S'il te plaît, rédige les publications pour les réseaux suivants : ${platforms.join(', ')}.
+RÈGLES DE RÉDACTION STRICTES :
+- Fini le ton ennuyeux "corporate". Utilise des accroches fortes (Hook) qui arrêtent le scroll.
+- Utilise le framework PAS (Problème, Agitation, Solution) ou AIDA.
+- Saute des lignes, aère le texte. Utilise des listes à puces.
+- Utilise 3 à 5 emojis maximum mais bien choisis.
+- Apporte une vraie valeur ajoutée ou un conseil actionnable dans le post.
+- Pas de hashtags inutiles, juste 2 ou 3 très ciblés.
 
-Règles de rédaction :
-1. LinkedIn : Ton professionnel, axé sur les enjeux RH, QVT, performance, avec une accroche forte et des sauts de ligne. Utilise 3-4 emojis pertinents.
-2. Instagram : Visuel, dynamique, court, orienté bien-être ou motivation. Inclus des hashtags pertinents (#QVT #Management #BienEtreAuTravail).
-3. Facebook : Conversationnel, pose une question à l'audience, invite à cliquer sur le lien du site.
-
-Format de sortie attendu :
-Sépare chaque réseau par un titre clair (ex: "### 🔵 LinkedIn"). Ne fais pas de longue introduction, donne directement les posts.`;
+Tu DOIS impérativement répondre UNIQUEMENT avec un objet JSON valide, sans aucun texte autour (pas de markdown \`\`\`json), respectant exactement ce format :
+{
+  "posts": [
+    {
+      "platform": "Nom du réseau (ex: LinkedIn)",
+      "text": "Le texte complet du post avec emojis et sauts de ligne...",
+      "imagePrompt": "A short descriptive prompt in ENGLISH to generate an AI image for this post. E.g., 'professional business woman in modern office feeling relaxed and smiling, photorealistic, 8k'"
+    }
+  ]
+}`;
 
     // Call Gemini API
     const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`, {
@@ -40,8 +49,9 @@ Sépare chaque réseau par un titre clair (ex: "### 🔵 LinkedIn"). Ne fais pas
           parts: [{ text: prompt }]
         }],
         generationConfig: {
-          temperature: 0.7,
-          maxOutputTokens: 1024,
+          temperature: 0.8,
+          maxOutputTokens: 2048,
+          responseMimeType: "application/json",
         }
       })
     });
