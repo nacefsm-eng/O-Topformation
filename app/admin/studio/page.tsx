@@ -17,7 +17,7 @@ export default function ContentStudio() {
     e.preventDefault();
     setLoading(true);
     setError('');
-    setResult('');
+    setResult([]);
 
     const selectedPlatforms = Object.entries(platforms)
       .filter(([_, isSelected]) => isSelected)
