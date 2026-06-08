@@ -51,7 +51,7 @@ const FAQ_ITEMS: FaqItem[] = [
     id: 7,
     question: "Quelle est la durée de la FI TOP® ?",
     answer:
-      "La Formation Initiale TOP® (FI TOP®) se déroule sur 3 jours consécutifs (ou non consécutifs selon les modalités choisies), pour un volume total de 21 heures de formation. Ces 21 heures comprennent les apports théoriques, les ateliers pratiques, les exercices guidés, les mises en situation et les évaluations. Une organisation sur des journées complètes de 7 heures est possible, tout comme une organisation en demi-journées selon les contraintes des participants. Contactez-nous pour organiser un calendrier adapté à votre emploi du temps.",
+      "La Formation Initiale TOP® (FI TOP®) se déroule sur 3 journées séparées d'au moins 1 semaine, pour un volume total de 21 heures de formation. Ces 21 heures comprennent les apports théoriques, les ateliers pratiques, les exercices guidés, les mises en situation et les évaluations. Une organisation sur des journées complètes de 7 heures est possible, tout comme une organisation en demi-journées selon les contraintes des participants. Contactez-nous pour organiser un calendrier adapté à votre emploi du temps.",
   },
   {
     id: 8,

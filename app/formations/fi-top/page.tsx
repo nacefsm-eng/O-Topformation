@@ -122,7 +122,7 @@ export default function FiTopPage() {
               <h2 className="section-title">Informations générales</h2>
               <table className="info-table">
                 <tbody>
-                  <tr><th>Durée</th><td>21 heures (3 jours)</td></tr>
+                  <tr><th>Durée</th><td>21 heures (3 jours séparés d'au moins 1 semaine)</td></tr>
                   <tr><th>Format</th><td>Présentiel ou Distanciel (visio)</td></tr>
                   <tr><th>Tarif</th><td>Sur devis — Financement OPCO possible</td></tr>
                   <tr><th>Public cible</th><td>Professionnels, managers, collectivités</td></tr>
