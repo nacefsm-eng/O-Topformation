@@ -84,17 +84,16 @@ export default function EquipePage() {
               <div className="team-card-body">
                 <h3 className="team-card-name">Régis</h3>
                 <p className="team-card-title">
-                  Expert TOP® - Conférencier - Formateur
+                  Pédagogue et expérimenté - Conférencier - Formateur
                 </p>
                 <div className="team-card-tags">
-                  <span className="tag">15 ans d'expertise</span>
-                  <span className="tag">Ex-Armée de l'Air</span>
-                  <span className="tag">Formateur Expert</span>
+                  <span className="tag">Formateur depuis plus de 15 ans à l'armée</span>
+                  <span className="tag">Pédagogue et expérimenté</span>
                 </div>
                 <p className="team-card-bio">
                   Fort de plus de 15 ans d'expertise dans les Techniques d'Optimisation du Potentiel,
                   Régis a forgé son expérience au sein de l'Armée de l'Air française, berceau des
-                  méthodes TOP®. Conférencier recherché et formateur de formateurs, il transmet avec
+                  méthodes TOP®. Conférencier recherché, il transmet avec
                   pédagogie et authenticité les outils de la préparation mentale à des publics aussi
                   variés que des sportifs de haut niveau, des managers, des soignants et des équipes
                   militaires. Sa conviction profonde : chaque individu dispose en lui du potentiel
