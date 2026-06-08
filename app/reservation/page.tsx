@@ -2,6 +2,8 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Footer from '@/components/Footer';
+import { useSearchParams } from 'next/navigation';
+import { Suspense } from 'react';
 
 // ─── Horaires : 9h00 → 17h30, par tranches de 30 min ───────────────────────
 const ALL_SLOTS = [
@@ -24,14 +26,20 @@ function toDateStr(y: number, m: number, d: number) {
   return `${String(d).padStart(2,'0')}/${String(m+1).padStart(2,'0')}/${y}`;
 }
 
-export default function ReservationPage() {
+function ReservationContent() {
+  const searchParams = useSearchParams();
   const today = new Date();
   const [currentMonth, setCurrentMonth] = useState(today.getMonth());
   const [currentYear, setCurrentYear]   = useState(today.getFullYear());
   const [selectedDate, setSelectedDate]  = useState<string | null>(null);
   const [selectedSlot, setSelectedSlot]  = useState<string | null>(null);
   const [step, setStep] = useState<'calendar' | 'form' | 'success'>('calendar');
-  const [form, setForm] = useState({ prenom:'', nom:'', email:'', tel:'', besoin:'', message:'' });
+  const [form, setForm] = useState({ 
+    prenom:'', nom:'', email:'', tel:'', besoin:'', message:'',
+    utm_source: searchParams.get('utm_source') || '',
+    utm_medium: searchParams.get('utm_medium') || '',
+    utm_campaign: searchParams.get('utm_campaign') || ''
+  });
   const [loading, setLoading]  = useState(false);
   const [error, setError]      = useState<string | null>(null);
 
@@ -338,5 +346,13 @@ export default function ReservationPage() {
 
       <Footer />
     </main>
+  );
+}
+
+export default function ReservationPage() {
+  return (
+    <Suspense fallback={<div>Chargement...</div>}>
+      <ReservationContent />
+    </Suspense>
   );
 }

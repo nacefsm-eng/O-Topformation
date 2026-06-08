@@ -1,15 +1,32 @@
 'use client';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Footer from '@/components/Footer';
 import Link from 'next/link';
+import { useSearchParams } from 'next/navigation';
+import { Suspense } from 'react';
 
-export default function Contact() {
+function ContactContent() {
+  const searchParams = useSearchParams();
+  
   const [form, setForm] = useState({
     prenom: '',
     email: '',
     besoin: '',
-    message: ''
+    message: '',
+    utm_source: '',
+    utm_medium: '',
+    utm_campaign: ''
   });
+  
+  useEffect(() => {
+    setForm(prev => ({
+      ...prev,
+      utm_source: searchParams.get('utm_source') || '',
+      utm_medium: searchParams.get('utm_medium') || '',
+      utm_campaign: searchParams.get('utm_campaign') || ''
+    }));
+  }, [searchParams]);
+
   const [submitted, setSubmitted] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -213,5 +230,13 @@ export default function Contact() {
         }
       `}</style>
     </main>
+  );
+}
+
+export default function Contact() {
+  return (
+    <Suspense fallback={<div>Chargement...</div>}>
+      <ContactContent />
+    </Suspense>
   );
 }
