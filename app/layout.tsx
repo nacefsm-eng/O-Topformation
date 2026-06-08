@@ -33,13 +33,17 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="fr" className={inter.variable}>
       <head>
-        {/* Google Analytics / Tag Manager Placeholder */}
+        {/* Google Analytics */}
+        <Script 
+          src="https://www.googletagmanager.com/gtag/js?id=G-0LR0JWFSRG" 
+          strategy="afterInteractive" 
+        />
         <Script id="google-analytics" strategy="afterInteractive">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', 'G-XXXXXXXXXX'); // REMPLACER PAR TON ID GOOGLE ANALYTICS
+            gtag('config', 'G-0LR0JWFSRG');
           `}
         </Script>
         
