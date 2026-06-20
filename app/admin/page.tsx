@@ -28,12 +28,35 @@ interface Reservation {
 }
 
 export default function AdminDashboard() {
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [authChecking, setAuthChecking] = useState(true);
+  const [password, setPassword] = useState('');
+  const [authError, setAuthError] = useState('');
+  const [authLoading, setAuthLoading] = useState(false);
+
   const [activeTab, setActiveTab] = useState<'reservations' | 'contacts' | 'documents'>('reservations');
   const [contacts, setContacts] = useState<Contact[]>([]);
   const [reservations, setReservations] = useState<Reservation[]>([]);
   const [loading, setLoading] = useState(true);
 
+  // Vérifier l'authentification au chargement
   useEffect(() => {
+    const checkAuth = async () => {
+      try {
+        const res = await fetch('/api/auth');
+        if (res.ok) {
+          const data = await res.json();
+          setIsAuthenticated(data.authenticated === true);
+        }
+      } catch {}
+      setAuthChecking(false);
+    };
+    checkAuth();
+  }, []);
+
+  // Charger les données quand authentifié
+  useEffect(() => {
+    if (!isAuthenticated) return;
     const fetchData = async () => {
       setLoading(true);
       try {
@@ -49,7 +72,104 @@ export default function AdminDashboard() {
       setLoading(false);
     };
     fetchData();
-  }, []);
+  }, [isAuthenticated]);
+
+  const handleLogin = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setAuthLoading(true);
+    setAuthError('');
+    try {
+      const res = await fetch('/api/auth', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ password }),
+      });
+      const data = await res.json();
+      if (data.success) {
+        setIsAuthenticated(true);
+      } else {
+        setAuthError(data.error || 'Mot de passe incorrect');
+      }
+    } catch {
+      setAuthError('Erreur de connexion. Veuillez réessayer.');
+    }
+    setAuthLoading(false);
+  };
+
+  const handleLogout = async () => {
+    await fetch('/api/auth', { method: 'DELETE' });
+    setIsAuthenticated(false);
+    setPassword('');
+  };
+
+  // Écran de chargement de la vérification d'auth
+  if (authChecking) {
+    return (
+      <div style={{ minHeight: '100vh', background: '#0f172a', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+        <div style={{ textAlign: 'center' }}>
+          <div style={{ width: '48px', height: '48px', border: '3px solid rgba(255,255,255,0.1)', borderTop: '3px solid #d4af37', borderRadius: '50%', animation: 'spin 0.8s linear infinite', margin: '0 auto 1rem' }} />
+          <p style={{ color: 'rgba(255,255,255,0.5)', fontSize: '0.9rem' }}>Vérification de l&apos;accès...</p>
+          <style>{`@keyframes spin { to { transform: rotate(360deg); } }`}</style>
+        </div>
+      </div>
+    );
+  }
+
+  // Écran de connexion
+  if (!isAuthenticated) {
+    return (
+      <div style={{ minHeight: '100vh', background: 'linear-gradient(135deg, #0f172a 0%, #1e3a5f 50%, #1a3c8f 100%)', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '2rem' }}>
+        <div style={{ background: 'rgba(255,255,255,0.05)', backdropFilter: 'blur(24px)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '20px', padding: '3rem', maxWidth: '420px', width: '100%', textAlign: 'center', boxShadow: '0 25px 50px rgba(0,0,0,0.4)' }}>
+          <div style={{ width: '72px', height: '72px', background: 'linear-gradient(135deg, #d4af37, #f4d03f)', borderRadius: '18px', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '2rem', margin: '0 auto 1.5rem', boxShadow: '0 8px 24px rgba(212,175,55,0.3)' }}>🔒</div>
+          <h1 style={{ color: 'white', fontSize: '1.5rem', fontWeight: 800, margin: '0 0 0.5rem' }}>Espace Administration</h1>
+          <p style={{ color: 'rgba(255,255,255,0.5)', fontSize: '0.9rem', marginBottom: '2rem' }}>Ô&apos;TOP Formation — Accès restreint</p>
+
+          <form onSubmit={handleLogin}>
+            <div style={{ position: 'relative', marginBottom: '1.25rem' }}>
+              <input
+                type="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                placeholder="Mot de passe administrateur"
+                required
+                style={{
+                  width: '100%', padding: '0.9rem 1.25rem', background: 'rgba(255,255,255,0.08)',
+                  border: authError ? '1.5px solid #ef4444' : '1.5px solid rgba(255,255,255,0.15)',
+                  borderRadius: '12px', color: 'white', fontSize: '0.95rem', outline: 'none',
+                  transition: 'border-color 0.2s', boxSizing: 'border-box',
+                }}
+                onFocus={(e) => { e.target.style.borderColor = '#d4af37'; }}
+                onBlur={(e) => { e.target.style.borderColor = authError ? '#ef4444' : 'rgba(255,255,255,0.15)'; }}
+              />
+            </div>
+
+            {authError && (
+              <div style={{ background: 'rgba(239,68,68,0.1)', border: '1px solid rgba(239,68,68,0.3)', borderRadius: '10px', padding: '0.75rem', marginBottom: '1rem', color: '#fca5a5', fontSize: '0.85rem', fontWeight: 600 }}>
+                ⚠️ {authError}
+              </div>
+            )}
+
+            <button
+              type="submit"
+              disabled={authLoading}
+              style={{
+                width: '100%', padding: '0.9rem', background: 'linear-gradient(135deg, #d4af37, #f4d03f)',
+                color: '#1e293b', border: 'none', borderRadius: '12px', fontSize: '0.95rem', fontWeight: 800,
+                cursor: authLoading ? 'wait' : 'pointer', transition: 'all 0.2s',
+                opacity: authLoading ? 0.7 : 1, boxShadow: '0 4px 16px rgba(212,175,55,0.3)',
+              }}
+            >
+              {authLoading ? 'Vérification...' : 'Accéder au dashboard →'}
+            </button>
+          </form>
+
+          <p style={{ color: 'rgba(255,255,255,0.3)', fontSize: '0.78rem', marginTop: '2rem' }}>
+            Accès réservé aux administrateurs autorisés.<br />En cas de problème, contactez le support technique.
+          </p>
+        </div>
+      </div>
+    );
+  }
 
   const formatDate = (iso: string) => {
     try { return new Date(iso).toLocaleDateString('fr-FR', { day: '2-digit', month: 'short', year: 'numeric', hour: '2-digit', minute: '2-digit' }); }
@@ -88,6 +208,7 @@ export default function AdminDashboard() {
         <div style={{ display: 'flex', gap: '0.75rem' }}>
           <a href="/admin/studio" style={{ background: 'var(--gold)', color: 'var(--blue-900)', padding: '0.5rem 1rem', borderRadius: '8px', textDecoration: 'none', fontSize: '0.85rem', fontWeight: 700 }}>🤖 Content Studio</a>
           <a href="/contact" style={{ background: 'rgba(255,255,255,0.12)', color: 'white', padding: '0.5rem 1rem', borderRadius: '8px', textDecoration: 'none', fontSize: '0.85rem', fontWeight: 600 }}>Site public</a>
+          <button onClick={handleLogout} style={{ background: 'rgba(239,68,68,0.2)', color: '#fca5a5', padding: '0.5rem 1rem', borderRadius: '8px', border: '1px solid rgba(239,68,68,0.3)', fontSize: '0.85rem', fontWeight: 600, cursor: 'pointer' }}>🚪 Déconnexion</button>
         </div>
       </div>
 
