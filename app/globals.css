@@ -136,6 +136,37 @@ p  { color: var(--gray-600); line-height: 1.8; }
 }
 .btn-outline-white:hover { background: rgba(255,255,255,0.1); border-color: white; }
 
+/* ============= IMAGE & CARD FRAMING ============= */
+.image-wrapper {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border-radius: 16px;
+  background: var(--gray-100);
+  position: relative;
+}
+
+.image-wrapper img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.image-wrapper:hover img {
+  transform: scale(1.03);
+}
+
+.cta-group {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+
 /* ============= ANNOUNCEMENT BAR ============= */
 .ann-bar {
   display: flex;

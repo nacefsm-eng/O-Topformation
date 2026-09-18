@@ -59,18 +59,18 @@ export default function HomePageClient() {
               </div>
             </div>
 
-            {/* Colonne Droite : Image Réelle & Badges Flottants */}
+            {/* Colonne Droite : Image Réelle Cadrée 4:3 & Badges Flottants */}
             <div style={{ position: 'relative' }}>
-              <div style={{ borderRadius: 'var(--radius)', overflow: 'hidden', boxShadow: '0 20px 60px rgba(0, 52, 146, 0.16)', border: '4px solid white', position: 'relative' }}>
+              <div className="image-wrapper" style={{ boxShadow: '0 20px 60px rgba(0, 52, 146, 0.16)', border: '4px solid white' }}>
                 <img 
                   src="/hero-workshop.jpg" 
-                  alt="Mélissa anime un atelier de formation d'équipe dynamique" 
-                  style={{ width: '100%', height: 'auto', display: 'block', objectFit: 'cover' }}
+                  alt="Formatrice française animant un atelier de gestion du stress et performance en entreprise" 
+                  style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center' }}
                 />
               </div>
 
               {/* Badge Flottant 1 : Qualiopi */}
-              <div style={{ position: 'absolute', top: '-15px', right: '-10px', background: 'white', padding: '0.75rem 1.25rem', borderRadius: '12px', boxShadow: '0 10px 30px rgba(0,0,0,0.12)', display: 'flex', alignItems: 'center', gap: '0.6rem', border: '1px solid var(--gray-100)' }}>
+              <div style={{ position: 'absolute', top: '-15px', right: '-10px', background: 'white', padding: '0.75rem 1.25rem', borderRadius: '12px', boxShadow: '0 10px 30px rgba(0,0,0,0.12)', display: 'flex', alignItems: 'center', gap: '0.6rem', border: '1px solid var(--gray-100)', zIndex: 2 }}>
                 <span style={{ fontSize: '1.25rem' }}>🏆</span>
                 <div>
                   <div style={{ fontSize: '0.8rem', fontWeight: 800, color: 'var(--blue-900)' }}>Certifié Qualiopi</div>
@@ -79,7 +79,7 @@ export default function HomePageClient() {
               </div>
 
               {/* Badge Flottant 2 : Diagnostic 15min */}
-              <div style={{ position: 'absolute', bottom: '-20px', left: '-10px', background: 'white', padding: '0.85rem 1.25rem', borderRadius: '12px', boxShadow: '0 10px 30px rgba(0,0,0,0.12)', display: 'flex', alignItems: 'center', gap: '0.75rem', border: '1px solid var(--gray-100)' }}>
+              <div style={{ position: 'absolute', bottom: '-20px', left: '-10px', background: 'white', padding: '0.85rem 1.25rem', borderRadius: '12px', boxShadow: '0 10px 30px rgba(0,0,0,0.12)', display: 'flex', alignItems: 'center', gap: '0.75rem', border: '1px solid var(--gray-100)', zIndex: 2 }}>
                 <div style={{ width: '36px', height: '36px', borderRadius: '50%', background: 'var(--gold-dark)', color: 'white', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 900 }}>
                   ⏱️
                 </div>
@@ -147,7 +147,7 @@ export default function HomePageClient() {
         </div>
       </section>
 
-      {/* ─── 4 CARTES FORMATIONS & DIGITAL AVEC IMAGES ─────────────────── */}
+      {/* ─── 4 CARTES FORMATIONS & DIGITAL AVEC PHOTOS RAPPORTAGE 4:3 ─── */}
       <section id="formations" className="section" style={{ background: 'var(--gray-50)' }}>
         <div className="container">
           <div className="section-header" style={{ textAlign: 'center', maxWidth: '800px', margin: '0 auto 4rem' }}>
@@ -162,13 +162,13 @@ export default function HomePageClient() {
             
             {/* Offre 1 : Méthode TOP & Santé Mentale */}
             <div className="card" style={{ background: 'white', borderRadius: 'var(--radius)', overflow: 'hidden', display: 'flex', flexDirection: 'column', border: '1px solid var(--gray-200)', boxShadow: 'var(--shadow-sm)' }}>
-              <div style={{ height: '200px', overflow: 'hidden', position: 'relative' }}>
+              <div className="image-wrapper" style={{ borderRadius: '0' }}>
                 <img 
-                  src="/formation-presentiel.png" 
-                  alt="Séance de formation méthode TOP en entreprise" 
-                  style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                  src="/card-top.jpg" 
+                  alt="Atelier de gestion du stress et respiration en entreprise" 
+                  style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center' }}
                 />
-                <span style={{ position: 'absolute', top: '12px', right: '12px', background: 'var(--blue-900)', color: 'white', padding: '4px 10px', borderRadius: '8px', fontSize: '0.75rem', fontWeight: 800 }}>
+                <span style={{ position: 'absolute', top: '12px', right: '12px', background: 'var(--blue-900)', color: 'white', padding: '4px 10px', borderRadius: '8px', fontSize: '0.75rem', fontWeight: 800, zIndex: 2 }}>
                   21h / 7h • Intra &amp; Inter
                 </span>
               </div>
@@ -195,13 +195,13 @@ export default function HomePageClient() {
 
             {/* Offre 2 : IA Générative & Business */}
             <div className="card" style={{ background: 'white', borderRadius: 'var(--radius)', overflow: 'hidden', display: 'flex', flexDirection: 'column', border: '1px solid var(--gray-200)', boxShadow: 'var(--shadow-sm)' }}>
-              <div style={{ height: '200px', overflow: 'hidden', position: 'relative' }}>
+              <div className="image-wrapper" style={{ borderRadius: '0' }}>
                 <img 
                   src="/card-ai.jpg" 
-                  alt="Utilisation professionnelle d'outils d'intelligence artificielle" 
-                  style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                  alt="Équipe travaillant sur l'intelligence artificielle et l'automatisation en PME" 
+                  style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center' }}
                 />
-                <span style={{ position: 'absolute', top: '12px', right: '12px', background: 'var(--gold-dark)', color: 'white', padding: '4px 10px', borderRadius: '8px', fontSize: '0.75rem', fontWeight: 800 }}>
+                <span style={{ position: 'absolute', top: '12px', right: '12px', background: 'var(--gold-dark)', color: 'white', padding: '4px 10px', borderRadius: '8px', fontSize: '0.75rem', fontWeight: 800, zIndex: 2 }}>
                   RS7344 &amp; RS6776
                 </span>
               </div>
@@ -228,13 +228,13 @@ export default function HomePageClient() {
 
             {/* Offre 3 : Réseaux Sociaux & Acquisition */}
             <div className="card" style={{ background: 'white', borderRadius: 'var(--radius)', overflow: 'hidden', display: 'flex', flexDirection: 'column', border: '1px solid var(--gray-200)', boxShadow: 'var(--shadow-sm)' }}>
-              <div style={{ height: '200px', overflow: 'hidden', position: 'relative' }}>
+              <div className="image-wrapper" style={{ borderRadius: '0' }}>
                 <img 
                   src="/card-social.jpg" 
-                  alt="Création de contenu pour les réseaux sociaux avec smartphone et Canva" 
-                  style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                  alt="Entrepreneuse créant du contenu vidéo et visuel pour les réseaux sociaux" 
+                  style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center' }}
                 />
-                <span style={{ position: 'absolute', top: '12px', right: '12px', background: 'var(--red-600)', color: 'white', padding: '4px 10px', borderRadius: '8px', fontSize: '0.75rem', fontWeight: 800 }}>
+                <span style={{ position: 'absolute', top: '12px', right: '12px', background: 'var(--red-600)', color: 'white', padding: '4px 10px', borderRadius: '8px', fontSize: '0.75rem', fontWeight: 800, zIndex: 2 }}>
                   RS7351 Certifiant
                 </span>
               </div>
@@ -261,13 +261,13 @@ export default function HomePageClient() {
 
             {/* Offre 4 : Solutions Digitales & Dev Entreprise */}
             <div className="card" style={{ background: 'white', borderRadius: 'var(--radius)', overflow: 'hidden', display: 'flex', flexDirection: 'column', border: '1px solid var(--gray-200)', boxShadow: 'var(--shadow-sm)' }}>
-              <div style={{ height: '200px', overflow: 'hidden', position: 'relative' }}>
+              <div className="image-wrapper" style={{ borderRadius: '0' }}>
                 <img 
-                  src="/entreprises-equipe.png" 
-                  alt="Équipe en réunion autour de solutions digitales d'entreprise" 
-                  style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                  src="/card-digital.jpg" 
+                  alt="Réunion collaborative autour d'une solution digitale pour PME" 
+                  style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center' }}
                 />
-                <span style={{ position: 'absolute', top: '12px', right: '12px', background: '#128C7E', color: 'white', padding: '4px 10px', borderRadius: '8px', fontSize: '0.75rem', fontWeight: 800 }}>
+                <span style={{ position: 'absolute', top: '12px', right: '12px', background: '#128C7E', color: 'white', padding: '4px 10px', borderRadius: '8px', fontSize: '0.75rem', fontWeight: 800, zIndex: 2 }}>
                   Sur-mesure B2B
                 </span>
               </div>
@@ -360,11 +360,11 @@ export default function HomePageClient() {
             
             {/* Mélissa */}
             <div className="card" style={{ padding: '2.5rem', textAlign: 'center', background: 'white', border: '1px solid var(--gray-200)', borderRadius: 'var(--radius)', boxShadow: 'var(--shadow-sm)' }}>
-              <div style={{ width: '120px', height: '120px', borderRadius: '50%', overflow: 'hidden', margin: '0 auto 1.5rem', border: '3px solid var(--blue-900)', boxShadow: '0 4px 12px rgba(0,0,0,0.1)' }}>
+              <div style={{ width: '130px', height: '130px', borderRadius: '50%', overflow: 'hidden', margin: '0 auto 1.5rem', border: '3px solid var(--blue-900)', boxShadow: '0 6px 16px rgba(0, 52, 146, 0.15)' }}>
                 <img 
                   src="/team-melyssa.png" 
                   alt="Mélissa, directrice pédagogique et formatrice TOP" 
-                  style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                  style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center' }}
                 />
               </div>
               <h3 style={{ color: 'var(--blue-900)', fontSize: '1.35rem', marginBottom: '0.25rem' }}>Mélissa</h3>
@@ -381,11 +381,11 @@ export default function HomePageClient() {
 
             {/* Renaud */}
             <div className="card" style={{ padding: '2.5rem', textAlign: 'center', background: 'white', border: '1px solid var(--gray-200)', borderRadius: 'var(--radius)', boxShadow: 'var(--shadow-sm)' }}>
-              <div style={{ width: '120px', height: '120px', borderRadius: '50%', overflow: 'hidden', margin: '0 auto 1.5rem', border: '3px solid var(--gold-dark)', boxShadow: '0 4px 12px rgba(0,0,0,0.1)' }}>
+              <div style={{ width: '130px', height: '130px', borderRadius: '50%', overflow: 'hidden', margin: '0 auto 1.5rem', border: '3px solid var(--gold-dark)', boxShadow: '0 6px 16px rgba(205, 175, 93, 0.2)' }}>
                 <img 
                   src="/team-regis.png" 
                   alt="Renaud, expert transformation digitale et IA" 
-                  style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                  style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center' }}
                 />
               </div>
               <h3 style={{ color: 'var(--blue-900)', fontSize: '1.35rem', marginBottom: '0.25rem' }}>Renaud</h3>
