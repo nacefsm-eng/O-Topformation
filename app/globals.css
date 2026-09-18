@@ -50,9 +50,20 @@ a { color: inherit; text-decoration: none; }
 img { max-width: 100%; display: block; }
 
 /* ============= LAYOUT ============= */
-.container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
-.section    { padding: 6rem 0; }
-.section-sm { padding: 4rem 0; }
+.container { 
+  max-width: 1240px; 
+  margin: 0 auto; 
+  padding: 0 1.5rem; 
+  width: 100%;
+}
+.section    { padding: 4.5rem 0; }
+.section-sm { padding: 2.75rem 0; }
+
+@media (max-width: 768px) {
+  .section    { padding: 3rem 0; }
+  .section-sm { padding: 2rem 0; }
+  .container  { padding: 0 1.25rem; }
+}
 
 /* ============= TYPOGRAPHY ============= */
 .label {
