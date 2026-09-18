@@ -1,0 +1,205 @@
+import type { Metadata } from 'next';
+import Link from 'next/link';
+import Footer from '@/components/Footer';
+
+export const metadata: Metadata = {
+  title: "Formations Certifiantes IA — O'TOP Formations",
+  description: "Formations certifiantes France Compétences en Intelligence Artificielle (RS7344 & RS6776) par O'TOP Formations (Qualiopi). Pour dirigeants, TPE/PME et indépendants.",
+};
+
+export default function FormationIAPage() {
+  return (
+    <main>
+      {/* Hero Section */}
+      <section className="hero-subpage" style={{ background: 'linear-gradient(135deg, var(--blue-900) 0%, #051937 100%)', color: 'white', padding: '8rem 0 5rem' }}>
+        <div className="container">
+          <div style={{ maxWidth: '850px' }}>
+            <span className="badge" style={{ background: 'rgba(205, 175, 93, 0.2)', color: 'var(--gold-light)', border: '1px solid var(--gold)', marginBottom: '1.25rem' }}>
+              🎓 Certifications France Compétences RS7344 & RS6776 • Qualiopi
+            </span>
+            <h1 style={{ color: 'white', marginBottom: '1.5rem', fontSize: 'clamp(2.2rem, 4.5vw, 3.5rem)' }}>
+              Développez votre activité et boostez votre productivité avec l'Intelligence Artificielle
+            </h1>
+            <p style={{ color: 'var(--blue-100)', fontSize: '1.2rem', lineHeight: '1.8', marginBottom: '2.5rem' }}>
+              Des formations 100% actionnables pour dirigeants de TPE/PME, indépendants et créateurs. Gagnez jusqu'à 2h par jour, automatisez vos process et sécurisez vos usages (IA Act 2025).
+            </p>
+            <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
+              <Link href="/contact?subject=IA" className="btn btn-primary" style={{ background: 'var(--red-600)', color: 'white', fontWeight: 800, padding: '1rem 2rem' }}>
+                Demander un diagnostic IA gratuit (15 min) ⚡
+              </Link>
+              <a
+                href="https://wa.me/33767246825?text=Bonjour%2C%20je%20souhaite%20des%20informations%20sur%20la%20formation%20IA%20certifiante."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn btn-ghost"
+                style={{ color: '#25D366', borderColor: '#25D366', background: 'rgba(37, 211, 102, 0.1)' }}
+              >
+                💬 Échanger sur WhatsApp
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Key Numbers / Highlights */}
+      <section className="section-sm" style={{ background: 'var(--gray-50)', borderBottom: '1px solid var(--gray-200)' }}>
+        <div className="container">
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '2rem', textAlign: 'center' }}>
+            <div className="card" style={{ padding: '1.5rem' }}>
+              <div style={{ fontSize: '2.2rem', fontWeight: 900, color: 'var(--blue-900)' }}>5 + 1</div>
+              <p style={{ fontWeight: 600, color: 'var(--gray-700)', margin: '0.25rem 0' }}>Modules Certifiants</p>
+              <span style={{ fontSize: '0.85rem', color: 'var(--gray-500)' }}>Avec accompagnement humain</span>
+            </div>
+            <div className="card" style={{ padding: '1.5rem' }}>
+              <div style={{ fontSize: '2.2rem', fontWeight: 900, color: 'var(--gold-dark)' }}>RS7344 & RS6776</div>
+              <p style={{ fontWeight: 600, color: 'var(--gray-700)', margin: '0.25rem 0' }}>France Compétences</p>
+              <span style={{ fontSize: '0.85rem', color: 'var(--gray-500)' }}>Reconnaissance d'État & Financements</span>
+            </div>
+            <div className="card" style={{ padding: '1.5rem' }}>
+              <div style={{ fontSize: '2.2rem', fontWeight: 900, color: 'var(--red-600)' }}>J+21</div>
+              <p style={{ fontWeight: 600, color: 'var(--gray-700)', margin: '0.25rem 0' }}>Validation Rapide</p>
+              <span style={{ fontSize: '0.85rem', color: 'var(--gray-500)' }}>Dossier & soutenance devant jury</span>
+            </div>
+            <div className="card" style={{ padding: '1.5rem' }}>
+              <div style={{ fontSize: '2.2rem', fontWeight: 900, color: '#25D366' }}>100% Pratique</div>
+              <p style={{ fontWeight: 600, color: 'var(--gray-700)', margin: '0.25rem 0' }}>Aucun prérequis tech</p>
+              <span style={{ fontSize: '0.85rem', color: 'var(--gray-500)' }}>Outils configurés immédiatement</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Les 2 Parcours IA */}
+      <section className="section">
+        <div className="container">
+          <div className="text-center" style={{ maxWidth: '750px', margin: '0 auto 4rem' }}>
+            <span className="label">Deux parcours adaptés à vos objectifs</span>
+            <h2>Choisissez votre programme certifiant</h2>
+            <p>Conçus pour l'action et le résultat immédiat dans votre entreprise ou activité freelance.</p>
+          </div>
+
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))', gap: '2.5rem' }}>
+            {/* Parcours 1: Dirigeants / TPE */}
+            <div className="card" style={{ border: '2px solid var(--blue-900)', position: 'relative', display: 'flex', flexDirection: 'column' }}>
+              <div style={{ position: 'absolute', top: '-14px', right: '20px', background: 'var(--blue-900)', color: 'white', padding: '4px 14px', borderRadius: '12px', fontSize: '0.8rem', fontWeight: 700 }}>
+                RS7344 — Dirigeants & Managers
+              </div>
+              <div style={{ padding: '2rem', flex: 1 }}>
+                <span className="label" style={{ color: 'var(--blue-600)' }}>Parcours Stratégique & Opérationnel</span>
+                <h3 style={{ marginBottom: '1rem', color: 'var(--blue-900)' }}>Développer votre activité avec l'IA</h3>
+                <p style={{ marginBottom: '1.5rem' }}>
+                  Pour les dirigeants de TPE/PME et leurs collaborateurs stratégiques souhaitant structurer et piloter un véritable projet d'intégration IA rentable.
+                </p>
+
+                <h4 style={{ fontSize: '1rem', marginBottom: '0.75rem', color: 'var(--blue-900)' }}>Programme en 5 Modules :</h4>
+                <ul style={{ listStyle: 'none', padding: 0, marginBottom: '2rem', display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
+                  <li style={{ display: 'flex', gap: '0.5rem' }}><span>✓</span> <strong>Module 1 :</strong> Identifier les opportunités d'intégration & méthode STEP</li>
+                  <li style={{ display: 'flex', gap: '0.5rem' }}><span>✓</span> <strong>Module 2 :</strong> Plan d'intégration, budget réaliste & conformité AI Act</li>
+                  <li style={{ display: 'flex', gap: '0.5rem' }}><span>✓</span> <strong>Module 3 :</strong> Implémentation opérationnelle (marketing, admin, prompts)</li>
+                  <li style={{ display: 'flex', gap: '0.5rem' }}><span>✓</span> <strong>Module 4 :</strong> Conduite du changement & charte éthique interne</li>
+                  <li style={{ display: 'flex', gap: '0.5rem' }}><span>✓</span> <strong>Module 5 :</strong> Mesure de performance, KPI & cycle d'optimisation PDCA</li>
+                </ul>
+
+                <div style={{ background: 'var(--blue-50)', padding: '1rem', borderRadius: 'var(--radius-sm)', marginBottom: '1.5rem', fontSize: '0.9rem', color: 'var(--blue-900)' }}>
+                  <strong>🏆 Résultat concret :</strong> Vous repartez avec un plan d'action chiffré, des outils connectés et votre certification RS7344 en poche.
+                </div>
+              </div>
+
+              <div style={{ padding: '1.5rem 2rem', borderTop: '1px solid var(--gray-200)', background: 'var(--gray-50)' }}>
+                <Link href="/contact?subject=IA_Dirigeant_RS7344" className="btn btn-primary" style={{ width: '100%', justifyContent: 'center' }}>
+                  Demander le programme détaillé & devis →
+                </Link>
+              </div>
+            </div>
+
+            {/* Parcours 2: Indépendants / IA Générative */}
+            <div className="card" style={{ border: '2px solid var(--gold)', position: 'relative', display: 'flex', flexDirection: 'column' }}>
+              <div style={{ position: 'absolute', top: '-14px', right: '20px', background: 'var(--gold-dark)', color: 'white', padding: '4px 14px', borderRadius: '12px', fontSize: '0.8rem', fontWeight: 700 }}>
+                RS6776 — Indépendants & Créateurs
+              </div>
+              <div style={{ padding: '2rem', flex: 1 }}>
+                <span className="label" style={{ color: 'var(--gold-dark)' }}>Parcours Pratique & Productivité</span>
+                <h3 style={{ marginBottom: '1rem', color: 'var(--blue-900)' }}>IA Générative pour Indépendants</h3>
+                <p style={{ marginBottom: '1.5rem' }}>
+                  Pour coachs, thérapeutes, consultants et indépendants souhaitant produire leur contenu en autonomie et déléguer les tâches chronophages à des assistants IA.
+                </p>
+
+                <h4 style={{ fontSize: '1rem', marginBottom: '0.75rem', color: 'var(--blue-900)' }}>Programme en 3+1 Modules (16h vidéo + suivi) :</h4>
+                <ul style={{ listStyle: 'none', padding: 0, marginBottom: '2rem', display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
+                  <li style={{ display: 'flex', gap: '0.5rem' }}><span>✓</span> <strong>Module 1 :</strong> Stratégie d'implémentation & choix des outils selon budget</li>
+                  <li style={{ display: 'flex', gap: '0.5rem' }}><span>✓</span> <strong>Module 2 :</strong> Création de contenus rédactionnels, visuels & GPTs sur mesure</li>
+                  <li style={{ display: 'flex', gap: '0.5rem' }}><span>✓</span> <strong>Module 3 :</strong> Sécurité, conformité RGPD & non-exposition des données</li>
+                  <li style={{ display: 'flex', gap: '0.5rem' }}><span>✓</span> <strong>Accompagnement :</strong> Masterclass en petit groupe + suivi individualisé</li>
+                </ul>
+
+                <div style={{ background: '#fdfbf7', padding: '1rem', borderRadius: 'var(--radius-sm)', marginBottom: '1.5rem', fontSize: '0.9rem', color: 'var(--gray-800)', border: '1px solid var(--gold-light)' }}>
+                  <strong>⚡ Gain direct :</strong> Produisez seul vos visuels et textes pros, sans graphiste ni rédacteur externe, en toute sécurité.
+                </div>
+              </div>
+
+              <div style={{ padding: '1.5rem 2rem', borderTop: '1px solid var(--gray-200)', background: 'var(--gray-50)' }}>
+                <Link href="/contact?subject=IA_Generative_RS6776" className="btn" style={{ width: '100%', justifyContent: 'center', background: 'var(--gold-dark)', color: 'white', fontWeight: 700 }}>
+                  Consulter les modalités & s'inscrire →
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Supports & Méthode Pédagogique */}
+      <section className="section" style={{ background: 'var(--gray-50)' }}>
+        <div className="container">
+          <div className="text-center" style={{ maxWidth: '750px', margin: '0 auto 3.5rem' }}>
+            <span className="label">Méthode Pédagogique O'TOP</span>
+            <h2>Un accompagnement humain qui fait la différence</h2>
+            <p>Contrairement aux simples cours en ligne, nous combinons autonomie et suivi direct par nos formateurs pour garantir la réussite de votre certification.</p>
+          </div>
+
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2rem' }}>
+            <div className="card" style={{ padding: '2rem' }}>
+              <div style={{ fontSize: '2rem', marginBottom: '1rem' }}>🎥</div>
+              <h4>Vidéos & Synthèses</h4>
+              <p>Des modules courts, rythmés et directement applicables, accompagnés de fiches mémo à retenir.</p>
+            </div>
+            <div className="card" style={{ padding: '2rem' }}>
+              <div style={{ fontSize: '2rem', marginBottom: '1rem' }}>🤖</div>
+              <h4>Boîte à Outils & Prompts</h4>
+              <p>Accès à une bibliothèque de prompts professionnels testés et prêts à l'emploi pour votre secteur.</p>
+            </div>
+            <div className="card" style={{ padding: '2rem' }}>
+              <div style={{ fontSize: '2rem', marginBottom: '1rem' }}>👥</div>
+              <h4>Masterclass & Suivi</h4>
+              <p>Sessions en petit groupe et tutorat individuel avec Mélissa et Renaud pour débloquer chaque cas pratique.</p>
+            </div>
+            <div className="card" style={{ padding: '2rem' }}>
+              <div style={{ fontSize: '2rem', marginBottom: '1rem' }}>🏆</div>
+              <h4>Jury Professionnel</h4>
+              <p>Mise en situation réelle et soutenance orale pour valider officiellement votre certification France Compétences.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Final */}
+      <section className="section" style={{ background: 'var(--blue-900)', color: 'white', textAlign: 'center' }}>
+        <div className="container" style={{ maxWidth: '750px' }}>
+          <h2 style={{ color: 'white', marginBottom: '1.5rem' }}>Prêt(e) à développer votre activité grâce à l'IA ?</h2>
+          <p style={{ color: 'var(--blue-100)', fontSize: '1.15rem', marginBottom: '2.5rem' }}>
+            Échangez directement avec Mélissa (07 67 24 68 25) ou Renaud (06 74 79 75 09) pour bâtir ensemble votre projet de formation.
+          </p>
+          <div style={{ display: 'flex', justifyContent: 'center', gap: '1rem', flexWrap: 'wrap' }}>
+            <Link href="/contact" className="btn btn-primary" style={{ background: 'var(--red-600)', color: 'white', padding: '1rem 2.5rem', fontWeight: 800 }}>
+              Demander mon diagnostic gratuit (15 min) ⚡
+            </Link>
+            <a href="tel:+33767246825" className="btn btn-ghost" style={{ color: 'white', borderColor: 'rgba(255,255,255,0.4)' }}>
+              📞 Appeler directement
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <Footer />
+    </main>
+  );
+}

@@ -3,168 +3,160 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: "Entreprises — Ô'TOP Formation",
+  title: "Solutions Entreprises & Digitalisation — Ô'TOP Formation",
+  description: "Accompagnement B2B complet : Formations Qualiopi (Santé Mentale/TOP®, IA, Réseaux Sociaux), Création de sites web/apps pour augmenter le CA, et digitalisation des process.",
 };
 
 export default function Entreprises() {
   return (
     <main>
-      <div className="page-hero">
+      <div className="page-hero" style={{ background: 'linear-gradient(135deg, var(--blue-900) 0%, #03142e 100%)', color: 'white', padding: '8rem 0 5rem' }}>
         <div className="container">
-          <div className="breadcrumb">
-            <Link href="/">Accueil</Link>
-            <span className="breadcrumb-sep">›</span>
-            <span>Entreprises</span>
+          <div className="breadcrumb" style={{ color: 'var(--blue-100)', marginBottom: '1.5rem' }}>
+            <Link href="/" style={{ color: 'white' }}>Accueil</Link>
+            <span className="breadcrumb-sep" style={{ margin: '0 0.5rem' }}>›</span>
+            <span>Solutions Entreprises</span>
           </div>
-          <h1>Renforcez la performance de vos équipes avec les TOP®</h1>
-          <p>Des solutions sur-mesure pour allier Qualité de Vie au Travail (QVT), prévention des Risques Psychosociaux (RPS) et performance durable.</p>
+          <span className="badge" style={{ background: 'rgba(205, 175, 93, 0.2)', color: 'var(--gold-light)', border: '1px solid var(--gold)', marginBottom: '1rem' }}>
+            🏢 Accompagnement B2B Global • Organisme Certifié Qualiopi
+          </span>
+          <h1 style={{ color: 'white', fontSize: 'clamp(2.3rem, 4.5vw, 3.6rem)', marginBottom: '1.5rem' }}>
+            Performance Humaine & Digitalisation sur-mesure pour votre Entreprise
+          </h1>
+          <p style={{ color: 'var(--blue-100)', fontSize: '1.2rem', maxWidth: '850px', lineHeight: 1.7, marginBottom: '2.5rem' }}>
+            Nous combinons l'optimisation du potentiel humain (Santé mentale, méthode TOP® anti-stress) et la transformation digitale (Création de sites web/apps, IA opérationnelle, Réseaux sociaux) pour faire exploser votre rentabilité.
+          </p>
+          <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
+            <Link href="/contact?subject=Entreprise_B2B" className="btn btn-primary" style={{ background: 'var(--red-600)', color: 'white', padding: '1rem 2rem', fontWeight: 800 }}>
+              Demander un diagnostic d'entreprise gratuit (15 min) ⚡
+            </Link>
+            <a href="https://wa.me/33767246825" target="_blank" rel="noopener noreferrer" className="btn btn-ghost" style={{ color: '#25D366', borderColor: '#25D366', background: 'rgba(37,211,102,0.1)' }}>
+              💬 Échanger sur WhatsApp
+            </a>
+          </div>
         </div>
       </div>
 
+      {/* 4 Piliers d'Intervention B2B */}
       <section className="section" style={{ background: 'white' }}>
         <div className="container">
-          <div className="section-header" style={{ textAlign: 'center' }}>
-            <span className="label">Vos enjeux RH</span>
-            <h2 style={{ fontSize: '2.5rem', color: 'var(--blue-900)' }}>Les défis auxquels nous répondons</h2>
+          <div className="section-header" style={{ textAlign: 'center', maxWidth: '800px', margin: '0 auto 4rem' }}>
+            <span className="label">Nos 4 Piliers d'Intervention</span>
+            <h2 style={{ fontSize: '2.4rem', color: 'var(--blue-900)' }}>Un partenaire unique pour votre croissance</h2>
+            <p>Du bien-être de vos salariés à l'automatisation technique de vos ventes.</p>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}>
-            {[
-              ['📉', 'Stress professionnel', 'Charge mentale excessive et difficulté à déconnecter.'],
-              ['🚨', 'Prévention des RPS', 'Obligation légale de l\'employeur de protéger la santé mentale de ses collaborateurs.'],
-              ['🔋', 'Burn-out & Épuisement', 'Prévenir plutôt que guérir grâce à des outils d\'auto-régulation énergétique.'],
-              ['🏃', 'Turn-over & Absentéisme', 'Fidéliser les talents en investissant concrètement dans leur bien-être.'],
-              ['🎯', 'Performance collective', 'Maintenir la lucidité et la cohésion d\'équipe en période de forte activité.'],
-              ['🗣️', 'Accompagnement du changement', 'Aider les collaborateurs à s\'adapter sereinement aux transformations.']
-            ].map(([icon, title, desc], i) => (
-              <div key={i} style={{ padding: '2rem', border: '1px solid var(--gray-200)', borderRadius: 'var(--radius)', background: 'var(--gray-50)', display: 'flex', gap: '1.5rem', alignItems: 'flex-start' }}>
-                <span style={{ fontSize: '2.5rem' }}>{icon}</span>
-                <div>
-                  <h3 style={{ fontSize: '1.1rem', marginBottom: '0.5rem', color: 'var(--blue-900)' }}>{title}</h3>
-                  <p style={{ fontSize: '0.95rem', color: 'var(--gray-600)', lineHeight: 1.5 }}>{desc}</p>
-                </div>
-              </div>
-            ))}
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '2.5rem' }}>
+            {/* Pilier 1 : Santé Mentale & QVT */}
+            <div className="card" style={{ padding: '2.5rem', borderTop: '5px solid var(--blue-900)' }}>
+              <div style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>🧘</div>
+              <h3 style={{ color: 'var(--blue-900)', fontSize: '1.35rem', marginBottom: '1rem' }}>1. Santé Mentale & Prévention RPS</h3>
+              <p style={{ color: 'var(--gray-600)', fontSize: '0.95rem', marginBottom: '1.5rem' }}>
+                Formations intra-entreprise aux Techniques d'Optimisation du Potentiel (TOP®). Réduisez l'absentéisme, prévenez le burn-out et améliorez la concentration sous forte pression.
+              </p>
+              <ul style={{ listStyle: 'none', padding: 0, fontSize: '0.9rem', display: 'flex', flexDirection: 'column', gap: '0.5rem', color: 'var(--gray-700)' }}>
+                <li>✓ Formations intra 7h / 21h dans vos locaux</li>
+                <li>✓ Ateliers QVT (gestion du sommeil, micro-sieste, stress express)</li>
+                <li>✓ Conférences & séminaires d'entreprise</li>
+                <li>✓ Prise en charge OPCO possible</li>
+              </ul>
+            </div>
+
+            {/* Pilier 2 : Création Web & Applications pour le CA */}
+            <div className="card" style={{ padding: '2.5rem', borderTop: '5px solid var(--gold-dark)' }}>
+              <div style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>🚀</div>
+              <h3 style={{ color: 'var(--blue-900)', fontSize: '1.35rem', marginBottom: '1rem' }}>2. Création de Sites & Applications</h3>
+              <p style={{ color: 'var(--gray-600)', fontSize: '0.95rem', marginBottom: '1.5rem' }}>
+                Conception de plateformes web modernes, sites vitrines premium et applications métier sur mesure conçues pour convertir vos visiteurs et augmenter immédiatement votre chiffre d'affaires.
+              </p>
+              <ul style={{ listStyle: 'none', padding: 0, fontSize: '0.9rem', display: 'flex', flexDirection: 'column', gap: '0.5rem', color: 'var(--gray-700)' }}>
+                <li>✓ Sites vitrines & tunnels de vente haute conversion</li>
+                <li>✓ Applications web & mobiles métier</li>
+                <li>✓ Design responsive & référencement SEO optimisé</li>
+                <li>✓ Suivi des conversions & tracking publicitaire</li>
+              </ul>
+            </div>
+
+            {/* Pilier 3 : IA & Automatisation des Process */}
+            <div className="card" style={{ padding: '2.5rem', borderTop: '5px solid var(--red-600)' }}>
+              <div style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>🤖</div>
+              <h3 style={{ color: 'var(--blue-900)', fontSize: '1.35rem', marginBottom: '1rem' }}>3. Digitalisation & Automatisation IA</h3>
+              <p style={{ color: 'var(--gray-600)', fontSize: '0.95rem', marginBottom: '1.5rem' }}>
+                Faites gagner 10h par semaine à vos équipes. Nous connectons vos outils, automatisons vos tâches administratives et formons vos équipes à l'utilisation sécurisée de l'IA (RS7344).
+              </p>
+              <ul style={{ listStyle: 'none', padding: 0, fontSize: '0.9rem', display: 'flex', flexDirection: 'column', gap: '0.5rem', color: 'var(--gray-700)' }}>
+                <li>✓ Connexion CRM, facturation & webhooks automatisés</li>
+                <li>✓ Formation certifiante IA pour dirigeants & collaborateurs</li>
+                <li>✓ Respect de la conformité européenne AI Act 2025</li>
+                <li>✓ Assistants IA internes personnalisés</li>
+              </ul>
+            </div>
+
+            {/* Pilier 4 : Réseaux Sociaux & Visibilité B2B */}
+            <div className="card" style={{ padding: '2.5rem', borderTop: '5px solid #25D366' }}>
+              <div style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>📱</div>
+              <h3 style={{ color: 'var(--blue-900)', fontSize: '1.35rem', marginBottom: '1rem' }}>4. Communication & Acquisition Social Media</h3>
+              <p style={{ color: 'var(--gray-600)', fontSize: '0.95rem', marginBottom: '1.5rem' }}>
+                Développez la notoriété de votre marque et générez des prospects qualifiés sur LinkedIn, Meta et Google My Business grâce à notre programme certifiant RS7351.
+              </p>
+              <ul style={{ listStyle: 'none', padding: 0, fontSize: '0.9rem', display: 'flex', flexDirection: 'column', gap: '0.5rem', color: 'var(--gray-700)' }}>
+                <li>✓ Stratégie éditoriale B2B et calendrier de diffusion</li>
+                <li>✓ Formation aux outils graphiques et vidéo (Canva, CapCut)</li>
+                <li>✓ Prospection automatisée LinkedIn (Waalaxy)</li>
+                <li>✓ Certification France Compétences RS7351</li>
+              </ul>
+            </div>
           </div>
         </div>
       </section>
 
+      {/* Méthodologie en 3 étapes */}
       <section className="section" style={{ background: 'var(--gray-50)' }}>
         <div className="container">
-          <div className="section-header" style={{ textAlign: 'center' }}>
-            <span className="label">Nos solutions intra</span>
-            <h2 style={{ fontSize: '2.5rem', color: 'var(--blue-900)' }}>Interventions sur-mesure</h2>
+          <div className="section-header" style={{ textAlign: 'center', maxWidth: '750px', margin: '0 auto 4rem' }}>
+            <span className="label">Notre Approche</span>
+            <h2 style={{ fontSize: '2.4rem', color: 'var(--blue-900)' }}>Comment nous intervenons</h2>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '2rem' }}>
-            <div style={{ background: 'white', padding: '2rem', borderRadius: 'var(--radius)', boxShadow: 'var(--shadow-sm)', borderTop: '4px solid var(--gold)' }}>
-              <h3 style={{ fontSize: '1.25rem', marginBottom: '1rem', color: 'var(--blue-900)' }}>Formation TOP® Intra</h3>
-              <p style={{ color: 'var(--gray-600)', marginBottom: '1.5rem', fontSize: '0.95rem', lineHeight: 1.6 }}>La Formation Initiale (21h) ou Découverte (7h) animée directement dans vos locaux, exclusivement pour vos collaborateurs.</p>
-              <ul className="check-list" style={{ fontSize: '0.9rem', marginBottom: '1.5rem' }}>
-                <li>Cohésion d&apos;équipe</li>
-                <li>Confidentialité</li>
-                <li>Programme adaptable</li>
-              </ul>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2rem' }}>
+            <div className="card" style={{ padding: '2rem', textAlign: 'center' }}>
+              <div style={{ width: '50px', height: '50px', borderRadius: '50%', background: 'var(--blue-900)', color: 'white', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 1.5rem', fontWeight: 900, fontSize: '1.25rem' }}>1</div>
+              <h4 style={{ color: 'var(--blue-900)', marginBottom: '0.75rem' }}>Audit & Diagnostic Gratuit</h4>
+              <p style={{ fontSize: '0.95rem' }}>Échange de 15 min pour cartographier vos blocages (stress, pertes de temps, manque de visibilité).</p>
             </div>
 
-            <div style={{ background: 'white', padding: '2rem', borderRadius: 'var(--radius)', boxShadow: 'var(--shadow-sm)', borderTop: '4px solid var(--blue-700)' }}>
-              <h3 style={{ fontSize: '1.25rem', marginBottom: '1rem', color: 'var(--blue-900)' }}>Ateliers QVT thématiques</h3>
-              <p style={{ color: 'var(--gray-600)', marginBottom: '1.5rem', fontSize: '0.95rem', lineHeight: 1.6 }}>Des formats courts (1h à 3h) axés sur une thématique précise : sommeil, micro-sieste, gestion du stress express, concentration.</p>
-              <ul className="check-list" style={{ fontSize: '0.9rem', marginBottom: '1.5rem' }}>
-                <li>Semaine de la QVT</li>
-                <li>Facile à intégrer</li>
-                <li>Outils pratiques</li>
-              </ul>
+            <div className="card" style={{ padding: '2rem', textAlign: 'center' }}>
+              <div style={{ width: '50px', height: '50px', borderRadius: '50%', background: 'var(--gold-dark)', color: 'white', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 1.5rem', fontWeight: 900, fontSize: '1.25rem' }}>2</div>
+              <h4 style={{ color: 'var(--blue-900)', marginBottom: '0.75rem' }}>Proposition & Financement</h4>
+              <p style={{ fontSize: '0.95rem' }}>Plan d'action chiffré avec montage de dossier de prise en charge financière (OPCO / FAF / Plan de formation).</p>
             </div>
 
-            <div style={{ background: 'white', padding: '2rem', borderRadius: 'var(--radius)', boxShadow: 'var(--shadow-sm)', borderTop: '4px solid var(--red)' }}>
-              <h3 style={{ fontSize: '1.25rem', marginBottom: '1rem', color: 'var(--blue-900)' }}>Conférences</h3>
-              <p style={{ color: 'var(--gray-600)', marginBottom: '1.5rem', fontSize: '0.95rem', lineHeight: 1.6 }}>Intervention inspirante lors de vos séminaires. Présentation de la méthode militaire appliquée à l&apos;entreprise.</p>
-              <ul className="check-list" style={{ fontSize: '0.9rem', marginBottom: '1.5rem' }}>
-                <li>Événementiel / Séminaire</li>
-                <li>Sensibilisation large</li>
-                <li>Format interactif</li>
-              </ul>
-            </div>
-
-            <div style={{ background: 'white', padding: '2rem', borderRadius: 'var(--radius)', boxShadow: 'var(--shadow-sm)', borderTop: '4px solid var(--blue-900)' }}>
-              <h3 style={{ fontSize: '1.25rem', marginBottom: '1rem', color: 'var(--blue-900)' }}>Coaching Managers</h3>
-              <p style={{ color: 'var(--gray-600)', marginBottom: '1.5rem', fontSize: '0.95rem', lineHeight: 1.6 }}>Accompagnement individuel des dirigeants et managers pour optimiser leur leadership et leur gestion de la pression.</p>
-              <ul className="check-list" style={{ fontSize: '0.9rem', marginBottom: '1.5rem' }}>
-                <li>Suivi personnalisé</li>
-                <li>Prise de recul</li>
-                <li>Excellence décisionnelle</li>
-              </ul>
+            <div className="card" style={{ padding: '2rem', textAlign: 'center' }}>
+              <div style={{ width: '50px', height: '50px', borderRadius: '50%', background: 'var(--red-600)', color: 'white', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 1.5rem', fontWeight: 900, fontSize: '1.25rem' }}>3</div>
+              <h4 style={{ color: 'var(--blue-900)', marginBottom: '0.75rem' }}>Déploiement & Mesure du ROI</h4>
+              <p style={{ fontSize: '0.95rem' }}>Formation de vos collaborateurs ou livraison clé-en-main de vos outils avec suivi des résultats.</p>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="section" style={{ background: 'white' }}>
-        <div className="container">
-          <div className="section-header" style={{ textAlign: 'center' }}>
-            <span className="label">Notre méthodologie</span>
-            <h2 style={{ fontSize: '2.5rem', color: 'var(--blue-900)' }}>Comment se déroule un projet intra ?</h2>
-          </div>
-
-          <div className="steps-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '2rem', marginTop: '3rem' }}>
-            <div style={{ textAlign: 'center' }}>
-              <div className="step-num" style={{ width: '60px', height: '60px', borderRadius: '50%', background: 'var(--blue-900)', color: 'white', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.5rem', fontWeight: 800, margin: '0 auto 1.5rem' }}>1</div>
-              <h3 style={{ fontSize: '1.1rem', marginBottom: '0.5rem', color: 'var(--blue-900)' }}>Diagnostic & Besoins</h3>
-              <p style={{ fontSize: '0.9rem', color: 'var(--gray-600)' }}>Entretien préalable pour comprendre votre contexte, vos enjeux et définir les objectifs pédagogiques.</p>
-            </div>
-            <div style={{ textAlign: 'center' }}>
-              <div className="step-num" style={{ width: '60px', height: '60px', borderRadius: '50%', background: 'var(--blue-900)', color: 'white', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.5rem', fontWeight: 800, margin: '0 auto 1.5rem' }}>2</div>
-              <h3 style={{ fontSize: '1.1rem', marginBottom: '0.5rem', color: 'var(--blue-900)' }}>Ingénierie sur-mesure</h3>
-              <p style={{ fontSize: '0.9rem', color: 'var(--gray-600)' }}>Adaptation du programme et des cas pratiques à la réalité métier de vos équipes.</p>
-            </div>
-            <div style={{ textAlign: 'center' }}>
-              <div className="step-num" style={{ width: '60px', height: '60px', borderRadius: '50%', background: 'var(--gold)', color: 'var(--blue-900)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.5rem', fontWeight: 800, margin: '0 auto 1.5rem' }}>3</div>
-              <h3 style={{ fontSize: '1.1rem', marginBottom: '0.5rem', color: 'var(--blue-900)' }}>Animation</h3>
-              <p style={{ fontSize: '0.9rem', color: 'var(--gray-600)' }}>Déploiement de l&apos;action de formation dans vos locaux ou en espace de séminaire (ou distanciel).</p>
-            </div>
-            <div style={{ textAlign: 'center' }}>
-              <div className="step-num" style={{ width: '60px', height: '60px', borderRadius: '50%', background: 'var(--red)', color: 'white', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.5rem', fontWeight: 800, margin: '0 auto 1.5rem' }}>4</div>
-              <h3 style={{ fontSize: '1.1rem', marginBottom: '0.5rem', color: 'var(--blue-900)' }}>Bilan & Suivi</h3>
-              <p style={{ fontSize: '0.9rem', color: 'var(--gray-600)' }}>Évaluation de la satisfaction, bilan pédagogique avec le commanditaire et proposition de suivi.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="section stats-bar" style={{ background: 'var(--blue-900)', color: 'white', padding: '4rem 0' }}>
-        <div className="container">
-          <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-around', gap: '2rem', textAlign: 'center' }}>
-            <div>
-              <div style={{ fontSize: '3rem', fontWeight: 900, color: 'var(--gold)', marginBottom: '0.5rem' }}>70%</div>
-              <div style={{ fontSize: '1rem', fontWeight: 600 }}>Réduction du stress perçu</div>
-            </div>
-            <div>
-              <div style={{ fontSize: '3rem', fontWeight: 900, color: 'var(--gold)', marginBottom: '0.5rem' }}>+35%</div>
-              <div style={{ fontSize: '1rem', fontWeight: 600 }}>Amélioration de la concentration</div>
-            </div>
-            <div>
-              <div style={{ fontSize: '3rem', fontWeight: 900, color: 'var(--gold)', marginBottom: '0.5rem' }}>100%</div>
-              <div style={{ fontSize: '1rem', fontWeight: 600 }}>Taux de satisfaction</div>
-            </div>
-            <div>
-              <div style={{ fontSize: '3rem', fontWeight: 900, color: 'var(--gold)', marginBottom: '0.5rem' }}>ROI</div>
-              <div style={{ fontSize: '1rem', fontWeight: 600 }}>Mesurable sur l&apos;absentéisme</div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="section cta-section">
-        <div className="container">
-          <div className="cta-inner">
-            <span className="label" style={{ color: 'rgba(255,255,255,0.7)' }}>Passer à l'action</span>
-            <h2 className="cta-title">Construisons votre projet intra</h2>
-            <p className="cta-subtitle">Contactez-nous pour un échange de 15 minutes afin d'évaluer vos besoins et obtenir un devis personnalisé.</p>
-            <div className="cta-actions">
-              <Link href="/contact" className="btn btn-primary">Demander un devis →</Link>
-              <a href="/reservation" target="_blank" rel="noopener noreferrer" className="btn btn-ghost">📅 Prendre rdv</a>
-            </div>
+      {/* CTA Section */}
+      <section className="section" style={{ background: 'var(--blue-900)', color: 'white', textAlign: 'center' }}>
+        <div className="container" style={{ maxWidth: '800px' }}>
+          <h2 style={{ color: 'white', marginBottom: '1.5rem', fontSize: '2.5rem' }}>Besoin de faire progresser votre entreprise ?</h2>
+          <p style={{ color: 'var(--blue-100)', fontSize: '1.15rem', marginBottom: '2.5rem' }}>
+            Prenez contact directement avec nos experts pour un diagnostic téléphonique personnalisé de 15 minutes sans aucun engagement.
+          </p>
+          <div style={{ display: 'flex', justifyContent: 'center', gap: '1rem', flexWrap: 'wrap' }}>
+            <Link href="/contact" className="btn btn-primary" style={{ background: 'var(--red-600)', color: 'white', padding: '1rem 2.5rem', fontWeight: 800 }}>
+              Demander mon diagnostic d'entreprise (15 min) ⚡
+            </Link>
+            <a href="tel:+33767246825" className="btn btn-ghost" style={{ color: 'white', borderColor: 'rgba(255,255,255,0.4)' }}>
+              📞 Mélissa : 07 67 24 68 25
+            </a>
+            <a href="tel:+33674797509" className="btn btn-ghost" style={{ color: 'white', borderColor: 'rgba(255,255,255,0.4)' }}>
+              📞 Renaud : 06 74 79 75 09
+            </a>
           </div>
         </div>
       </section>

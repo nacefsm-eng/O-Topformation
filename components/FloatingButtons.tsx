@@ -1,5 +1,6 @@
 'use client';
 import { useState, useEffect, useRef } from 'react';
+import Link from 'next/link';
 
 export default function FloatingButtons() {
   const [mounted, setMounted] = useState(false);
@@ -27,31 +28,44 @@ export default function FloatingButtons() {
       {/* Menu Popup */}
       <div className={`floating-menu ${isOpen ? 'open' : ''}`}>
         <div className="floating-menu-header">
-          <h4>Besoin d'échanger ?</h4>
-          <p>Nous répondons rapidement</p>
+          <h4 style={{ margin: '0 0 0.25rem 0', color: 'var(--blue-900)', fontSize: '1.05rem', fontWeight: 800 }}>
+            Échangez avec l'équipe
+          </h4>
+          <p style={{ margin: 0, fontSize: '0.85rem', color: 'var(--gray-600)' }}>
+            Réponse rapide & diagnostic sans engagement
+          </p>
         </div>
         
         <div className="floating-menu-links">
-          <a href="https://wa.me/33767246825" target="_blank" rel="noopener noreferrer" className="fm-link fm-wa">
+          <a 
+            href="https://wa.me/33767246825?text=Bonjour%2C%20je%20souhaite%20des%20renseignements%20sur%20vos%20formations%20et%20solutions." 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="fm-link fm-wa"
+          >
             <span className="fm-icon">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.052 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/>
               </svg>
             </span>
-            Message WhatsApp
+            <div>
+              <div style={{ fontWeight: 700 }}>WhatsApp Direct</div>
+              <div style={{ fontSize: '0.75rem', color: 'var(--gray-500)' }}>Discussion instantanée</div>
+            </div>
           </a>
           
-          <a href="/reservation" target="_blank" rel="noopener noreferrer" className="fm-link fm-cal">
+          <Link href="/contact" className="fm-link fm-cal">
             <span className="fm-icon">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-                <line x1="16" y1="2" x2="16" y2="6"></line>
-                <line x1="8" y1="2" x2="8" y2="6"></line>
-                <line x1="3" y1="10" x2="21" y2="10"></line>
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
               </svg>
             </span>
-            Réserver un appel
-          </a>
+            <div>
+              <div style={{ fontWeight: 700 }}>Diagnostic Gratuit (15 min)</div>
+              <div style={{ fontSize: '0.75rem', color: 'var(--gray-500)' }}>Faire le point sur vos besoins</div>
+            </div>
+          </Link>
 
           <a href="tel:+33767246825" className="fm-link fm-tel">
             <span className="fm-icon">
@@ -59,7 +73,22 @@ export default function FloatingButtons() {
                 <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
               </svg>
             </span>
-            07 67 24 68 25
+            <div>
+              <div style={{ fontWeight: 700 }}>Mélissa : 07 67 24 68 25</div>
+              <div style={{ fontSize: '0.75rem', color: 'var(--gray-500)' }}>Formatrice & Directrice</div>
+            </div>
+          </a>
+
+          <a href="tel:+33674797509" className="fm-link fm-tel">
+            <span className="fm-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+              </svg>
+            </span>
+            <div>
+              <div style={{ fontWeight: 700 }}>Renaud : 06 74 79 75 09</div>
+              <div style={{ fontSize: '0.75rem', color: 'var(--gray-500)' }}>Expert Digital & Projets</div>
+            </div>
           </a>
         </div>
       </div>
@@ -100,7 +129,7 @@ export default function FloatingButtons() {
           background: var(--blue-900);
           color: white;
           border: none;
-          box-shadow: 0 4px 12px rgba(26, 60, 143, 0.4);
+          box-shadow: 0 4px 16px rgba(0, 52, 146, 0.4);
           cursor: pointer;
           display: flex;
           align-items: center;
@@ -109,13 +138,13 @@ export default function FloatingButtons() {
         }
 
         .floating-trigger:hover {
-          transform: scale(1.05);
+          transform: scale(1.08);
           background: var(--blue-700);
         }
         
         .floating-trigger.active {
-          background: var(--red);
-          box-shadow: 0 4px 12px rgba(200, 35, 26, 0.4);
+          background: var(--red-600);
+          box-shadow: 0 4px 16px rgba(255, 59, 59, 0.4);
         }
 
         .floating-menu {
@@ -123,9 +152,9 @@ export default function FloatingButtons() {
           bottom: 75px;
           right: 0;
           background: white;
-          border-radius: var(--radius-lg);
-          box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
-          width: 280px;
+          border-radius: var(--radius);
+          box-shadow: 0 12px 48px rgba(0, 0, 0, 0.18);
+          width: 310px;
           opacity: 0;
           visibility: hidden;
           transform: translateY(20px) scale(0.95);
@@ -142,21 +171,9 @@ export default function FloatingButtons() {
         }
 
         .floating-menu-header {
-          background: var(--gray-50);
+          background: var(--blue-50);
           padding: 1.25rem;
-          border-bottom: 1px solid var(--gray-100);
-        }
-
-        .floating-menu-header h4 {
-          margin: 0 0 0.25rem 0;
-          color: var(--blue-900);
-          font-size: 1.05rem;
-        }
-
-        .floating-menu-header p {
-          margin: 0;
-          font-size: 0.85rem;
-          color: var(--gray-500);
+          border-bottom: 1px solid var(--blue-100);
         }
 
         .floating-menu-links {
@@ -170,15 +187,15 @@ export default function FloatingButtons() {
           align-items: center;
           padding: 0.75rem 1rem;
           text-decoration: none;
-          color: var(--gray-700);
+          color: var(--gray-800);
           font-weight: 500;
-          font-size: 0.95rem;
-          border-radius: var(--radius);
+          font-size: 0.9rem;
+          border-radius: var(--radius-sm);
           transition: background 0.2s;
         }
 
         .fm-link:hover {
-          background: var(--gray-50);
+          background: var(--gray-100);
           color: var(--blue-900);
         }
 
@@ -186,21 +203,22 @@ export default function FloatingButtons() {
           display: flex;
           align-items: center;
           justify-content: center;
-          width: 32px;
-          height: 32px;
+          width: 36px;
+          height: 36px;
           border-radius: 50%;
-          margin-right: 0.75rem;
+          margin-right: 0.85rem;
+          flex-shrink: 0;
           color: white;
         }
 
         .fm-wa .fm-icon { background: #25D366; }
         .fm-cal .fm-icon { background: var(--blue-900); }
-        .fm-tel .fm-icon { background: var(--gray-300); color: var(--blue-900); }
+        .fm-tel .fm-icon { background: var(--gold-dark); color: white; }
 
         @media (max-width: 768px) {
           .floating-contact {
-            bottom: 1.5rem;
-            right: 1.5rem;
+            bottom: 1.25rem;
+            right: 1.25rem;
           }
         }
       `}</style>
