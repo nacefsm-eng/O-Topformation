@@ -5,88 +5,72 @@ import Footer from '@/components/Footer';
 
 export default function HomePageClient() {
   return (
-    <main>
-      {/* ─── HERO SECTION (2 COLONNES VISUELLES & ÉQUILIBRÉES) ───────────── */}
-      <section className="hero-home" style={{ background: 'radial-gradient(circle at 90% 10%, rgba(0, 52, 146, 0.08) 0%, transparent 50%), linear-gradient(180deg, #ffffff 0%, var(--gray-50) 100%)', padding: '3.5rem 0 3rem' }}>
+    <main style={{ background: '#ffffff', color: '#1e293b' }}>
+      {/* ─── HERO MINIMALISTE & HAUT DE GAMME ──────────────────────────── */}
+      <section className="hero-section" style={{ background: 'linear-gradient(180deg, #f8fafc 0%, #ffffff 100%)', padding: '5rem 0 4rem', borderBottom: '1px solid #e2e8f0' }}>
         <div className="container">
-          <div className="hero-grid">
+          <div style={{ maxWidth: '880px', margin: '0 auto', textAlign: 'center' }}>
             
-            {/* Colonne Gauche : Copywriting & CTAs */}
-            <div className="hero-left">
-              <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.6rem', padding: '0.4rem 1rem', borderRadius: '30px', background: 'rgba(0, 52, 146, 0.08)', color: 'var(--blue-900)', fontSize: '0.82rem', fontWeight: 800, marginBottom: '1.25rem', border: '1px solid rgba(0, 52, 146, 0.15)' }}>
-                <span>🏆 Organisme Certifié Qualiopi</span>
-                <span style={{ opacity: 0.4 }}>•</span>
-                <span style={{ color: 'var(--gold-dark)' }}>France Compétences RS7351 / RS7344 / RS6776</span>
-              </div>
-
-              <h1 style={{ fontSize: 'clamp(2.2rem, 3.8vw, 3.4rem)', fontWeight: 900, color: 'var(--blue-900)', lineHeight: 1.16, marginBottom: '1.25rem', letterSpacing: '-0.02em' }}>
-                Formez vos équipes, réduisez le stress et accélérez votre transformation digitale.
-              </h1>
-
-              <p style={{ fontSize: 'clamp(1rem, 1.3vw, 1.15rem)', color: 'var(--gray-600)', lineHeight: 1.65, marginBottom: '2rem', maxWidth: '620px' }}>
-                Formations certifiantes et accompagnement sur-mesure en <strong>méthode TOP®</strong>, <strong>intelligence artificielle</strong>, <strong>réseaux sociaux</strong> et <strong>digitalisation</strong> pour PME, managers et indépendants.
-              </p>
-
-              <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', marginBottom: '2rem' }}>
-                <Link 
-                  href="/contact" 
-                  className="btn btn-primary" 
-                  style={{ background: 'var(--red-600)', color: 'white', fontWeight: 800, fontSize: '1rem', padding: '0.9rem 1.85rem', boxShadow: '0 8px 24px rgba(255, 59, 59, 0.28)' }}
-                >
-                  Réserver mon diagnostic gratuit ⚡
-                </Link>
-                
-                <a 
-                  href="#formations" 
-                  className="btn" 
-                  style={{ background: 'white', color: 'var(--blue-900)', fontWeight: 700, fontSize: '1rem', padding: '0.9rem 1.6rem', border: '1.5px solid var(--blue-900)' }}
-                >
-                  Voir nos formations ↓
-                </a>
-              </div>
-
-              {/* 3 Mini Preuves */}
-              <div style={{ display: 'flex', gap: '1.25rem', flexWrap: 'wrap', fontSize: '0.85rem', color: 'var(--gray-700)', fontWeight: 600 }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
-                  <span style={{ color: '#25D366', fontSize: '1.1rem' }}>✓</span> Certifié Qualiopi
-                </div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
-                  <span style={{ color: '#25D366', fontSize: '1.1rem' }}>✓</span> Financement OPCO / FAF possible
-                </div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
-                  <span style={{ color: '#25D366', fontSize: '1.1rem' }}>✓</span> Accompagnement humain 100% sur-mesure
-                </div>
-              </div>
+            {/* Badges Officiels Minimalistes */}
+            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.6rem', padding: '0.45rem 1.25rem', borderRadius: '50px', background: 'white', border: '1px solid #cbd5e1', boxShadow: '0 2px 8px rgba(0,0,0,0.04)', marginBottom: '1.75rem' }}>
+              <span style={{ fontSize: '0.8rem', fontWeight: 800, color: 'var(--blue-900)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+                🎓 Formation Certifiante RS6776
+              </span>
+              <span style={{ color: '#cbd5e1' }}>•</span>
+              <span style={{ fontSize: '0.8rem', fontWeight: 700, color: 'var(--gold-dark)' }}>
+                France Compétences
+              </span>
+              <span style={{ color: '#cbd5e1' }}>•</span>
+              <span style={{ fontSize: '0.8rem', fontWeight: 700, color: '#16a34a' }}>
+                Qualiopi
+              </span>
             </div>
 
-            {/* Colonne Droite : Image Réelle & Badges Flottants */}
-            <div className="hero-right" style={{ position: 'relative', width: '100%' }}>
-              <div className="image-wrapper" style={{ width: '100%', height: '100%', minHeight: '340px', maxHeight: '480px', boxShadow: '0 16px 48px rgba(0, 52, 146, 0.16)', border: '4px solid white' }}>
-                <img 
-                  src="/hero-workshop.jpg" 
-                  alt="Formatrice française animant un atelier de gestion du stress et performance en entreprise" 
-                  style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center' }}
-                />
-              </div>
+            <h1 style={{ fontSize: 'clamp(2.3rem, 4.5vw, 3.8rem)', fontWeight: 900, color: 'var(--blue-900)', lineHeight: 1.18, marginBottom: '1.5rem', letterSpacing: '-0.03em' }}>
+              Intégrer l&apos;IA générative dans son activité professionnelle
+            </h1>
 
-              {/* Badge Flottant 1 : Qualiopi */}
-              <div style={{ position: 'absolute', top: '-12px', right: '-8px', background: 'white', padding: '0.65rem 1.15rem', borderRadius: '12px', boxShadow: '0 8px 24px rgba(0,0,0,0.12)', display: 'flex', alignItems: 'center', gap: '0.6rem', border: '1px solid var(--gray-100)', zIndex: 2 }}>
-                <span style={{ fontSize: '1.2rem' }}>🏆</span>
-                <div>
-                  <div style={{ fontSize: '0.8rem', fontWeight: 800, color: 'var(--blue-900)' }}>Certifié Qualiopi</div>
-                  <div style={{ fontSize: '0.7rem', color: 'var(--gray-500)' }}>Processus certifiés</div>
-                </div>
-              </div>
+            <p style={{ fontSize: 'clamp(1.05rem, 1.5vw, 1.25rem)', color: '#475569', lineHeight: 1.7, maxWidth: '760px', margin: '0 auto 2.5rem' }}>
+              Une formation pour aider les indépendants, coachs, thérapeutes et dirigeants à <strong>automatiser leurs tâches</strong>, <strong>produire des contenus pros</strong> et <strong>développer leur activité</strong> grâce à l&apos;IA générative responsable.
+            </p>
 
-              {/* Badge Flottant 2 : Diagnostic 15min */}
-              <div style={{ position: 'absolute', bottom: '-15px', left: '-8px', background: 'white', padding: '0.75rem 1.15rem', borderRadius: '12px', boxShadow: '0 8px 24px rgba(0,0,0,0.12)', display: 'flex', alignItems: 'center', gap: '0.65rem', border: '1px solid var(--gray-100)', zIndex: 2 }}>
-                <div style={{ width: '32px', height: '32px', borderRadius: '50%', background: 'var(--gold-dark)', color: 'white', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 900, fontSize: '0.9rem' }}>
-                  ⏱️
-                </div>
-                <div>
-                  <div style={{ fontSize: '0.82rem', fontWeight: 800, color: 'var(--blue-900)' }}>15 min d&apos;échange</div>
-                  <div style={{ fontSize: '0.7rem', color: 'var(--gray-500)' }}>Pour clarifier votre projet</div>
-                </div>
+            <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap', marginBottom: '2.5rem' }}>
+              <Link 
+                href="/contact" 
+                className="btn btn-primary" 
+                style={{ background: 'var(--red-600)', color: 'white', fontWeight: 800, fontSize: '1rem', padding: '1rem 2.25rem', borderRadius: '50px', boxShadow: '0 10px 25px rgba(255, 59, 59, 0.25)' }}
+              >
+                Réserver mon diagnostic gratuit (15 min) ⚡
+              </Link>
+              
+              <a 
+                href="https://wa.me/33767246825?text=Bonjour%2C%20je%20souhaite%20des%20informations%20sur%20la%20formation%20IA%20RS6776." 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="btn" 
+                style={{ background: 'white', color: '#128C7E', fontWeight: 700, fontSize: '1rem', padding: '1rem 1.85rem', borderRadius: '50px', border: '1.5px solid #25D366' }}
+              >
+                💬 WhatsApp direct
+              </a>
+            </div>
+
+            {/* Chiffres clés / Repères */}
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))', gap: '1.5rem', padding: '1.75rem', background: 'white', borderRadius: '16px', border: '1px solid #e2e8f0', boxShadow: '0 4px 20px rgba(0,0,0,0.03)' }}>
+              <div>
+                <div style={{ fontSize: '1.8rem', fontWeight: 900, color: 'var(--blue-900)' }}>16h</div>
+                <div style={{ fontSize: '0.85rem', color: '#64748b' }}>Vidéo à son rythme</div>
+              </div>
+              <div>
+                <div style={{ fontSize: '1.8rem', fontWeight: 900, color: 'var(--gold-dark)' }}>3 Modules</div>
+                <div style={{ fontSize: '0.85rem', color: '#64748b' }}>Certifiants RS6776</div>
+              </div>
+              <div>
+                <div style={{ fontSize: '1.8rem', fontWeight: 900, color: 'var(--red-600)' }}>100%</div>
+                <div style={{ fontSize: '0.85rem', color: '#64748b' }}>Sans prérequis tech</div>
+              </div>
+              <div>
+                <div style={{ fontSize: '1.8rem', fontWeight: 900, color: '#16a34a' }}>OPCO / FAF</div>
+                <div style={{ fontSize: '0.85rem', color: '#64748b' }}>Financements possibles</div>
               </div>
             </div>
 
@@ -94,201 +78,201 @@ export default function HomePageClient() {
         </div>
       </section>
 
-      {/* ─── BLOC PROBLÈMES MÉTIER (LES ENJEUX B2B) ────────────────────── */}
-      <section className="section-sm" style={{ background: 'white', borderTop: '1px solid var(--gray-200)', borderBottom: '1px solid var(--gray-200)' }}>
+      {/* ─── POURQUOI CETTE FORMATION ──────────────────────────────────── */}
+      <section className="section" style={{ background: '#ffffff', padding: '5rem 0' }}>
         <div className="container">
-          <div className="section-header" style={{ textAlign: 'center', maxWidth: '780px', margin: '0 auto 2.5rem' }}>
-            <span className="label" style={{ color: 'var(--red-600)' }}>Vos enjeux au quotidien</span>
-            <h2 style={{ fontSize: '2.1rem', color: 'var(--blue-900)' }}>
-              Vos équipes sont sous pression ? Vos outils vous font perdre du temps ?
-            </h2>
-            <p>Dirigeants de PME, managers et indépendants font face à 4 freins majeurs :</p>
-          </div>
-
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '1.5rem', marginBottom: '2rem' }}>
-            <div className="card" style={{ padding: '1.5rem', borderLeft: '4px solid var(--red-600)', background: 'var(--gray-50)' }}>
-              <div style={{ fontSize: '1.75rem', marginBottom: '0.4rem' }}>🧠</div>
-              <h4 style={{ color: 'var(--blue-900)', fontSize: '1.05rem', marginBottom: '0.3rem' }}>Charge mentale &amp; Stress</h4>
-              <p style={{ fontSize: '0.85rem', color: 'var(--gray-600)' }}>
-                Risques psychosociaux (RPS), épuisement et perte de lucidité sous tension.
-              </p>
-            </div>
-
-            <div className="card" style={{ padding: '1.5rem', borderLeft: '4px solid var(--gold-dark)', background: 'var(--gray-50)' }}>
-              <div style={{ fontSize: '1.75rem', marginBottom: '0.4rem' }}>🤖</div>
-              <h4 style={{ color: 'var(--blue-900)', fontSize: '1.05rem', marginBottom: '0.3rem' }}>Retard sur l&apos;IA</h4>
-              <p style={{ fontSize: '0.85rem', color: 'var(--gray-600)' }}>
-                Manque de méthode, perte de compétitivité et nouvelles exigences AI Act.
-              </p>
-            </div>
-
-            <div className="card" style={{ padding: '1.5rem', borderLeft: '4px solid var(--blue-700)', background: 'var(--gray-50)' }}>
-              <div style={{ fontSize: '1.75rem', marginBottom: '0.4rem' }}>📱</div>
-              <h4 style={{ color: 'var(--blue-900)', fontSize: '1.05rem', marginBottom: '0.3rem' }}>Acquisition au hasard</h4>
-              <p style={{ fontSize: '0.85rem', color: 'var(--gray-600)' }}>
-                Publier sans stratégie sur les réseaux sans générer de vrais clients qualifiés.
-              </p>
-            </div>
-
-            <div className="card" style={{ padding: '1.5rem', borderLeft: '4px solid var(--blue-900)', background: 'var(--gray-50)' }}>
-              <div style={{ fontSize: '1.75rem', marginBottom: '0.4rem' }}>⚙️</div>
-              <h4 style={{ color: 'var(--blue-900)', fontSize: '1.05rem', marginBottom: '0.3rem' }}>Process manuels</h4>
-              <p style={{ fontSize: '0.85rem', color: 'var(--gray-600)' }}>
-                Pertes d&apos;heures sur l&apos;administratif et absence d&apos;une présence web qui vend.
-              </p>
-            </div>
-          </div>
-
-          <div style={{ textAlign: 'center' }}>
-            <Link href="/contact" style={{ color: 'var(--blue-900)', fontWeight: 800, fontSize: '0.95rem', textDecoration: 'underline' }}>
-              Identifier la priorité de mon entreprise →
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* ─── 4 CARTES FORMATIONS & DIGITAL AVEC PHOTOS RAPPORTAGE ──────── */}
-      <section id="formations" className="section" style={{ background: 'var(--gray-50)' }}>
-        <div className="container">
-          <div className="section-header" style={{ textAlign: 'center', maxWidth: '800px', margin: '0 auto 3.5rem' }}>
-            <span className="label">Nos Domaines d&apos;Expertise</span>
-            <h2 style={{ fontSize: '2.4rem', color: 'var(--blue-900)' }}>
-              Des solutions concrètes pour transformer votre activité
-            </h2>
-            <p>Formations certifiantes reconnues par l&apos;État et prestations digitales sur-mesure.</p>
-          </div>
-
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '4rem', alignItems: 'center' }}>
             
-            {/* Offre 1 : Méthode TOP & Santé Mentale */}
-            <div className="card" style={{ background: 'white', borderRadius: 'var(--radius)', overflow: 'hidden', display: 'flex', flexDirection: 'column', border: '1px solid var(--gray-200)', boxShadow: 'var(--shadow-sm)' }}>
-              <div style={{ width: '100%', height: '190px', overflow: 'hidden', position: 'relative' }}>
-                <img 
-                  src="/card-top.jpg" 
-                  alt="Atelier de gestion du stress et respiration en entreprise" 
-                  style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center' }}
-                />
-                <span style={{ position: 'absolute', top: '10px', right: '10px', background: 'var(--blue-900)', color: 'white', padding: '4px 9px', borderRadius: '8px', fontSize: '0.72rem', fontWeight: 800, zIndex: 2 }}>
-                  21h / 7h • Intra &amp; Inter
-                </span>
-              </div>
-              <div style={{ padding: '1.75rem', flex: 1, display: 'flex', flexDirection: 'column' }}>
-                <span style={{ fontSize: '0.75rem', fontWeight: 700, color: 'var(--blue-600)', marginBottom: '0.35rem', textTransform: 'uppercase' }}>
-                  Pour managers, soignants &amp; équipes sous tension
-                </span>
-                <h3 style={{ color: 'var(--blue-900)', fontSize: '1.25rem', marginBottom: '0.65rem' }}>
-                  Santé Mentale &amp; Méthode TOP®
-                </h3>
-                <p style={{ color: 'var(--gray-600)', fontSize: '0.88rem', marginBottom: '1.1rem', flex: 1 }}>
-                  Techniques d&apos;Optimisation du Potentiel issues des forces armées pour réguler le stress et prévenir les RPS.
-                </p>
-                <ul style={{ listStyle: 'none', padding: 0, fontSize: '0.82rem', display: 'flex', flexDirection: 'column', gap: '0.35rem', marginBottom: '1.5rem', color: 'var(--gray-700)' }}>
-                  <li>✓ Régulation cognitive et gestion des émotions</li>
-                  <li>✓ Optimisation du sommeil et récupération rapide</li>
-                  <li>✓ Animé par Mélissa, formatrice certifiée</li>
-                </ul>
-                <Link href="/formations/fi-top" className="btn btn-primary" style={{ width: '100%', justifyContent: 'center', background: 'var(--blue-900)', fontSize: '0.88rem', padding: '0.75rem 1rem' }}>
-                  Découvrir la méthode TOP® →
-                </Link>
+            <div>
+              <span className="label" style={{ color: 'var(--blue-600)', fontSize: '0.8rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '0.75rem', display: 'block' }}>
+                Le constat terrain
+              </span>
+              <h2 style={{ fontSize: 'clamp(1.8rem, 3.2vw, 2.5rem)', color: 'var(--blue-900)', lineHeight: 1.25, marginBottom: '1.5rem' }}>
+                Libérez-vous des tâches chronophages qui freinent votre croissance.
+              </h2>
+              <p style={{ color: '#475569', fontSize: '1.05rem', lineHeight: 1.8, marginBottom: '1.25rem' }}>
+                Il y a toujours ces tâches qui grignotent votre semaine sans faire avancer votre activité : un message à reformuler, une relance à envoyer, un contenu à produire dans l&apos;urgence. Mis bout à bout, <strong>c&apos;est du temps que vous ne récupérez jamais</strong>.
+              </p>
+              <p style={{ color: '#475569', fontSize: '1.05rem', lineHeight: 1.8, marginBottom: '1.5rem' }}>
+                Certains indépendants et dirigeants ont commencé à s&apos;en libérer grâce à l&apos;IA générative, pour se recentrer sur ce qui crée vraiment de la valeur.
+              </p>
+              
+              <div style={{ padding: '1rem 1.25rem', background: '#f8fafc', borderLeft: '4px solid var(--gold-dark)', borderRadius: '0 8px 8px 0', fontSize: '0.88rem', color: '#64748b', fontStyle: 'italic' }}>
+                Source : OCDE (2025), L&apos;adoption de l&apos;IA par les petites et moyennes entreprises.
               </div>
             </div>
 
-            {/* Offre 2 : IA Générative & Business */}
-            <div className="card" style={{ background: 'white', borderRadius: 'var(--radius)', overflow: 'hidden', display: 'flex', flexDirection: 'column', border: '1px solid var(--gray-200)', boxShadow: 'var(--shadow-sm)' }}>
-              <div style={{ width: '100%', height: '190px', overflow: 'hidden', position: 'relative' }}>
-                <img 
-                  src="/card-ai.jpg" 
-                  alt="Équipe travaillant sur l'intelligence artificielle et l'automatisation en PME" 
-                  style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center' }}
-                />
-                <span style={{ position: 'absolute', top: '10px', right: '10px', background: 'var(--gold-dark)', color: 'white', padding: '4px 9px', borderRadius: '8px', fontSize: '0.72rem', fontWeight: 800, zIndex: 2 }}>
-                  RS7344 &amp; RS6776
+            <div className="image-wrapper" style={{ borderRadius: '18px', overflow: 'hidden', boxShadow: '0 16px 40px rgba(0,0,0,0.08)', border: '1px solid #e2e8f0' }}>
+              <img 
+                src="/card-ai.jpg" 
+                alt="Équipe collaborative travaillant sur l'intelligence artificielle en entreprise" 
+                style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+              />
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* ─── À QUI S'ADRESSE CETTE FORMATION ──────────────────────────── */}
+      <section className="section" style={{ background: '#f8fafc', padding: '5rem 0', borderTop: '1px solid #e2e8f0', borderBottom: '1px solid #e2e8f0' }}>
+        <div className="container">
+          <div style={{ textAlign: 'center', maxWidth: '750px', margin: '0 auto 3.5rem' }}>
+            <span className="label" style={{ color: 'var(--blue-600)' }}>Public concerné</span>
+            <h2 style={{ fontSize: '2.3rem', color: 'var(--blue-900)' }}>Une formation accessible sans prérequis technique</h2>
+            <p style={{ color: '#64748b', fontSize: '1.05rem' }}>
+              Le parcours part des usages de base pour aller pas à pas jusqu&apos;à la mise en œuvre stratégique.
+            </p>
+          </div>
+
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '1.75rem' }}>
+            
+            <div className="card" style={{ background: 'white', padding: '2rem', borderRadius: '16px', border: '1px solid #e2e8f0' }}>
+              <div style={{ fontSize: '2.2rem', marginBottom: '1rem' }}>💼</div>
+              <h3 style={{ fontSize: '1.2rem', color: 'var(--blue-900)', marginBottom: '0.5rem' }}>Indépendants &amp; Freelances</h3>
+              <p style={{ fontSize: '0.92rem', color: '#64748b', lineHeight: 1.6 }}>
+                Pour gérer sa communication, automatiser ses propositions commerciales et gagner un temps précieux chaque semaine.
+              </p>
+            </div>
+
+            <div className="card" style={{ background: 'white', padding: '2rem', borderRadius: '16px', border: '1px solid #e2e8f0' }}>
+              <div style={{ fontSize: '2.2rem', marginBottom: '1rem' }}>🌿</div>
+              <h3 style={{ fontSize: '1.2rem', color: 'var(--blue-900)', marginBottom: '0.5rem' }}>Coachs &amp; Thérapeutes</h3>
+              <p style={{ fontSize: '0.92rem', color: '#64748b', lineHeight: 1.6 }}>
+                Pour créer ses supports d&apos;ateliers, rédiger ses articles et structurer son accompagnement en toute sérénité.
+              </p>
+            </div>
+
+            <div className="card" style={{ background: 'white', padding: '2rem', borderRadius: '16px', border: '1px solid #e2e8f0' }}>
+              <div style={{ fontSize: '2.2rem', marginBottom: '1rem' }}>🏢</div>
+              <h3 style={{ fontSize: '1.2rem', color: 'var(--blue-900)', marginBottom: '0.5rem' }}>Dirigeants de TPE / PME</h3>
+              <p style={{ fontSize: '0.92rem', color: '#64748b', lineHeight: 1.6 }}>
+                Pour booster la productivité de ses collaborateurs et se mettre en conformité avec le cadre légal européen (AI Act).
+              </p>
+            </div>
+
+            <div className="card" style={{ background: 'white', padding: '2rem', borderRadius: '16px', border: '1px solid #e2e8f0' }}>
+              <div style={{ fontSize: '2.2rem', marginBottom: '1rem' }}>🚀</div>
+              <h3 style={{ fontSize: '1.2rem', color: 'var(--blue-900)', marginBottom: '0.5rem' }}>En Reconversion</h3>
+              <p style={{ fontSize: '0.92rem', color: '#64748b', lineHeight: 1.6 }}>
+                Pour acquérir une compétence clé reconnue par l&apos;État et valorisable immédiatement sur le marché du travail.
+              </p>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* ─── CE QU'ON EN RETIRE (BÉNÉFICES CONCRETS) ──────────────────── */}
+      <section className="section" style={{ background: '#ffffff', padding: '5rem 0' }}>
+        <div className="container">
+          <div style={{ textAlign: 'center', maxWidth: '750px', margin: '0 auto 3.5rem' }}>
+            <span className="label" style={{ color: 'var(--gold-dark)' }}>Compétences Clés</span>
+            <h2 style={{ fontSize: '2.3rem', color: 'var(--blue-900)' }}>Ce que vous maîtriserez à l&apos;issue du parcours</h2>
+            <p style={{ color: '#64748b', fontSize: '1.05rem' }}>Une boîte à outils professionnelle réutilisable bien après la formation.</p>
+          </div>
+
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '2rem' }}>
+            
+            <div style={{ padding: '1.75rem', background: '#f8fafc', borderRadius: '14px', borderLeft: '4px solid var(--blue-900)' }}>
+              <h4 style={{ color: 'var(--blue-900)', fontSize: '1.1rem', marginBottom: '0.4rem' }}>🎯 Identifier les opportunités</h4>
+              <p style={{ fontSize: '0.92rem', color: '#475569' }}>Repérer les tâches concrètes et répétitives où l&apos;IA générative apporte le plus de valeur ajoutée.</p>
+            </div>
+
+            <div style={{ padding: '1.75rem', background: '#f8fafc', borderRadius: '14px', borderLeft: '4px solid var(--gold-dark)' }}>
+              <h4 style={{ color: 'var(--blue-900)', fontSize: '1.1rem', marginBottom: '0.4rem' }}>🛠️ Choisir les bons outils</h4>
+              <p style={{ fontSize: '0.92rem', color: '#475569' }}>Sélectionner les solutions adaptées à votre besoin réel, votre budget et votre niveau sans vous disperser.</p>
+            </div>
+
+            <div style={{ padding: '1.75rem', background: '#f8fafc', borderRadius: '14px', borderLeft: '4px solid var(--red-600)' }}>
+              <h4 style={{ color: 'var(--blue-900)', fontSize: '1.1rem', marginBottom: '0.4rem' }}>✍️ Produire des contenus pros</h4>
+              <p style={{ fontSize: '0.92rem', color: '#475569' }}>Textes, visuels, supports de communication et landing pages sans compétence graphique particulière.</p>
+            </div>
+
+            <div style={{ padding: '1.75rem', background: '#f8fafc', borderRadius: '14px', borderLeft: '4px solid #16a34a' }}>
+              <h4 style={{ color: 'var(--blue-900)', fontSize: '1.1rem', marginBottom: '0.4rem' }}>🤖 Créer son assistant IA sur-mesure</h4>
+              <p style={{ fontSize: '0.92rem', color: '#475569' }}>Configurer un assistant GPT personnalisé pour automatiser vos tâches récurrentes en toute autonomie.</p>
+            </div>
+
+            <div style={{ padding: '1.75rem', background: '#f8fafc', borderRadius: '14px', borderLeft: '4px solid var(--blue-700)' }}>
+              <h4 style={{ color: 'var(--blue-900)', fontSize: '1.1rem', marginBottom: '0.4rem' }}>🔒 Rester en conformité légale</h4>
+              <p style={{ fontSize: '0.92rem', color: '#475569' }}>Maîtriser la confidentialité des données, le règlement AI Act et ne jamais exposer vos données sensibles.</p>
+            </div>
+
+            <div style={{ padding: '1.75rem', background: '#f8fafc', borderRadius: '14px', borderLeft: '4px solid var(--gold-dark)' }}>
+              <h4 style={{ color: 'var(--blue-900)', fontSize: '1.1rem', marginBottom: '0.4rem' }}>⚡ Progresser à son rythme</h4>
+              <p style={{ fontSize: '0.92rem', color: '#475569' }}>Un format e-learning asynchrone flexible de 16h avec validation progressive des acquis et QCMs.</p>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* ─── PROGRAMME DÉTAILLÉ EN 3 MODULES ──────────────────────────── */}
+      <section id="programme" className="section" style={{ background: '#f8fafc', padding: '5rem 0', borderTop: '1px solid #e2e8f0', borderBottom: '1px solid #e2e8f0' }}>
+        <div className="container">
+          <div style={{ textAlign: 'center', maxWidth: '750px', margin: '0 auto 3.5rem' }}>
+            <span className="label" style={{ color: 'var(--red-600)' }}>Programme Certifiant</span>
+            <h2 style={{ fontSize: '2.3rem', color: 'var(--blue-900)' }}>Trois modules pour maîtriser les usages essentiels</h2>
+            <p style={{ color: '#64748b', fontSize: '1.05rem' }}>Certification visée : RS6776 — France Compétences.</p>
+          </div>
+
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem', maxWidth: '960px', margin: '0 auto' }}>
+            
+            {/* Module 1 */}
+            <div className="card" style={{ background: 'white', padding: '2.5rem', borderRadius: '18px', border: '1px solid #e2e8f0', boxShadow: '0 4px 15px rgba(0,0,0,0.03)' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem', marginBottom: '1rem' }}>
+                <span style={{ fontSize: '0.85rem', fontWeight: 800, color: 'var(--blue-900)', background: 'var(--blue-50)', padding: '0.35rem 1rem', borderRadius: '30px' }}>
+                  MODULE 01
                 </span>
+                <span style={{ fontSize: '0.85rem', color: '#64748b', fontWeight: 600 }}>Stratégie &amp; Organisation</span>
               </div>
-              <div style={{ padding: '1.75rem', flex: 1, display: 'flex', flexDirection: 'column' }}>
-                <span style={{ fontSize: '0.75rem', fontWeight: 700, color: 'var(--gold-dark)', marginBottom: '0.35rem', textTransform: 'uppercase' }}>
-                  Pour dirigeants PME &amp; indépendants
-                </span>
-                <h3 style={{ color: 'var(--blue-900)', fontSize: '1.25rem', marginBottom: '0.65rem' }}>
-                  Intelligence Artificielle Certifiante
-                </h3>
-                <p style={{ color: 'var(--gray-600)', fontSize: '0.88rem', marginBottom: '1.1rem', flex: 1 }}>
-                  Gagnez jusqu&apos;à 2h par jour en automatisant vos process et créant vos assistants IA sur-mesure.
-                </p>
-                <ul style={{ listStyle: 'none', padding: 0, fontSize: '0.82rem', display: 'flex', flexDirection: 'column', gap: '0.35rem', marginBottom: '1.5rem', color: 'var(--gray-700)' }}>
-                  <li>✓ Méthode 100% pratique sans aucun jargon</li>
-                  <li>✓ Conformité européenne AI Act 2025 intégrée</li>
-                  <li>✓ Validation en J+21 devant jury professionnel</li>
-                </ul>
-                <Link href="/formations/ia" className="btn" style={{ width: '100%', justifyContent: 'center', background: 'var(--gold-dark)', color: 'white', fontWeight: 700, fontSize: '0.88rem', padding: '0.75rem 1rem' }}>
-                  Voir les parcours IA certifiants →
-                </Link>
+              <h3 style={{ color: 'var(--blue-900)', fontSize: '1.4rem', marginBottom: '0.75rem' }}>
+                Stratégie d&apos;implémentation de l&apos;IA
+              </h3>
+              <p style={{ color: '#475569', fontSize: '0.95rem', lineHeight: 1.7, marginBottom: '1.25rem' }}>
+                <strong>Objectif :</strong> Poser les bases d&apos;une intégration réfléchie de l&apos;IA dans son activité. Découverte des principales interfaces d&apos;IA générative, repérage des tâches quotidiennes optimisables, choix des outils selon son budget et élaboration d&apos;un plan d&apos;action personnel.
+              </p>
+              <div style={{ background: '#f1f5f9', padding: '0.85rem 1.25rem', borderRadius: '10px', fontSize: '0.88rem', color: '#334155' }}>
+                <strong>📌 Cas pratique :</strong> Méthodes pour optimiser sa visibilité et transférer les techniques de Community Management à sa propre activité.
               </div>
             </div>
 
-            {/* Offre 3 : Réseaux Sociaux & Acquisition */}
-            <div className="card" style={{ background: 'white', borderRadius: 'var(--radius)', overflow: 'hidden', display: 'flex', flexDirection: 'column', border: '1px solid var(--gray-200)', boxShadow: 'var(--shadow-sm)' }}>
-              <div style={{ width: '100%', height: '190px', overflow: 'hidden', position: 'relative' }}>
-                <img 
-                  src="/card-social.jpg" 
-                  alt="Entrepreneuse créant du contenu vidéo et visuel pour les réseaux sociaux" 
-                  style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center' }}
-                />
-                <span style={{ position: 'absolute', top: '10px', right: '10px', background: 'var(--red-600)', color: 'white', padding: '4px 9px', borderRadius: '8px', fontSize: '0.72rem', fontWeight: 800, zIndex: 2 }}>
-                  RS7351 Certifiant
+            {/* Module 2 */}
+            <div className="card" style={{ background: 'white', padding: '2.5rem', borderRadius: '18px', border: '1px solid #e2e8f0', boxShadow: '0 4px 15px rgba(0,0,0,0.03)' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem', marginBottom: '1rem' }}>
+                <span style={{ fontSize: '0.85rem', fontWeight: 800, color: 'var(--gold-dark)', background: '#fdfbf7', border: '1px solid var(--gold-light)', padding: '0.35rem 1rem', borderRadius: '30px' }}>
+                  MODULE 02
                 </span>
+                <span style={{ fontSize: '0.85rem', color: '#64748b', fontWeight: 600 }}>Production &amp; Assistants</span>
               </div>
-              <div style={{ padding: '1.75rem', flex: 1, display: 'flex', flexDirection: 'column' }}>
-                <span style={{ fontSize: '0.75rem', fontWeight: 700, color: 'var(--red-600)', marginBottom: '0.35rem', textTransform: 'uppercase' }}>
-                  Pour freelances, créateurs &amp; TPE
-                </span>
-                <h3 style={{ color: 'var(--blue-900)', fontSize: '1.25rem', marginBottom: '0.65rem' }}>
-                  Réseaux Sociaux &amp; Acquisition
-                </h3>
-                <p style={{ color: 'var(--gray-600)', fontSize: '0.88rem', marginBottom: '1.1rem', flex: 1 }}>
-                  Structurez votre présence en ligne et maîtrisez Canva, CapCut et Waalaxy pour générer des clients.
-                </p>
-                <ul style={{ listStyle: 'none', padding: 0, fontSize: '0.82rem', display: 'flex', flexDirection: 'column', gap: '0.35rem', marginBottom: '1.5rem', color: 'var(--gray-700)' }}>
-                  <li>✓ 5+1 modules avec accompagnement humain direct</li>
-                  <li>✓ Stratégie et calendrier de diffusion prêts</li>
-                  <li>✓ Parchemin officiel France Compétences</li>
-                </ul>
-                <Link href="/formations/reseaux-sociaux" className="btn" style={{ width: '100%', justifyContent: 'center', background: 'var(--red-600)', color: 'white', fontWeight: 700, fontSize: '0.88rem', padding: '0.75rem 1rem' }}>
-                  Programme Réseaux Sociaux →
-                </Link>
+              <h3 style={{ color: 'var(--blue-900)', fontSize: '1.4rem', marginBottom: '0.75rem' }}>
+                Création de contenus rédactionnels et visuels
+              </h3>
+              <p style={{ color: '#475569', fontSize: '0.95rem', lineHeight: 1.7, marginBottom: '1.25rem' }}>
+                <strong>Objectif :</strong> Produire des contenus professionnels de qualité en autonomie. Structure d&apos;un prompt efficace (contexte, rôle, contraintes, itération), génération d&apos;images IA et configuration de son propre assistant GPT personnalisé.
+              </p>
+              <div style={{ background: '#fdfbf7', padding: '0.85rem 1.25rem', borderRadius: '10px', fontSize: '0.88rem', color: '#334155', border: '1px solid var(--gold-light)' }}>
+                <strong>📌 Cas pratique :</strong> Générer la landing page d&apos;une entreprise, créer ses visuels de réseaux sociaux et corriger un prompt à risque.
               </div>
             </div>
 
-            {/* Offre 4 : Solutions Digitales & Dev Entreprise */}
-            <div className="card" style={{ background: 'white', borderRadius: 'var(--radius)', overflow: 'hidden', display: 'flex', flexDirection: 'column', border: '1px solid var(--gray-200)', boxShadow: 'var(--shadow-sm)' }}>
-              <div style={{ width: '100%', height: '190px', overflow: 'hidden', position: 'relative' }}>
-                <img 
-                  src="/card-digital.jpg" 
-                  alt="Réunion collaborative autour d'une solution digitale pour PME" 
-                  style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center' }}
-                />
-                <span style={{ position: 'absolute', top: '10px', right: '10px', background: '#128C7E', color: 'white', padding: '4px 9px', borderRadius: '8px', fontSize: '0.72rem', fontWeight: 800, zIndex: 2 }}>
-                  Sur-mesure B2B
+            {/* Module 3 */}
+            <div className="card" style={{ background: 'white', padding: '2.5rem', borderRadius: '18px', border: '1px solid #e2e8f0', boxShadow: '0 4px 15px rgba(0,0,0,0.03)' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem', marginBottom: '1rem' }}>
+                <span style={{ fontSize: '0.85rem', fontWeight: 800, color: 'var(--red-600)', background: 'var(--red-100)', padding: '0.35rem 1rem', borderRadius: '30px' }}>
+                  MODULE 03
                 </span>
+                <span style={{ fontSize: '0.85rem', color: '#64748b', fontWeight: 600 }}>Sécurité &amp; AI Act</span>
               </div>
-              <div style={{ padding: '1.75rem', flex: 1, display: 'flex', flexDirection: 'column' }}>
-                <span style={{ fontSize: '0.75rem', fontWeight: 700, color: '#128C7E', marginBottom: '0.35rem', textTransform: 'uppercase' }}>
-                  Pour PME &amp; entreprises en croissance
-                </span>
-                <h3 style={{ color: 'var(--blue-900)', fontSize: '1.25rem', marginBottom: '0.65rem' }}>
-                  Création Web, Apps &amp; Digitalisation
-                </h3>
-                <p style={{ color: 'var(--gray-600)', fontSize: '0.88rem', marginBottom: '1.1rem', flex: 1 }}>
-                  Augmentez votre chiffre d&apos;affaires grâce à des plateformes web modernes et la digitalisation de vos flux.
-                </p>
-                <ul style={{ listStyle: 'none', padding: 0, fontSize: '0.82rem', display: 'flex', flexDirection: 'column', gap: '0.35rem', marginBottom: '1.5rem', color: 'var(--gray-700)' }}>
-                  <li>✓ Tunnels de vente et sites haute performance</li>
-                  <li>✓ Digitalisation CRM, facturation &amp; webhooks</li>
-                  <li>✓ Audit et sécurisation des données</li>
-                </ul>
-                <Link href="/entreprises" className="btn" style={{ width: '100%', justifyContent: 'center', background: '#128C7E', color: 'white', fontWeight: 700, fontSize: '0.88rem', padding: '0.75rem 1rem' }}>
-                  Découvrir nos solutions entreprises →
-                </Link>
+              <h3 style={{ color: 'var(--blue-900)', fontSize: '1.4rem', marginBottom: '0.75rem' }}>
+                Conformité, éthique et réglementaire
+              </h3>
+              <p style={{ color: '#475569', fontSize: '0.95rem', lineHeight: 1.7, marginBottom: '1.25rem' }}>
+                <strong>Objectif :</strong> Utiliser l&apos;IA générative en toute sécurité et en conformité avec le cadre légal. Confidentialité des données clients (ne jamais divulguer d&apos;informations sensibles), focus sur le règlement européen AI Act et validation critique des contenus.
+              </p>
+              <div style={{ background: '#fee2e2', padding: '0.85rem 1.25rem', borderRadius: '10px', fontSize: '0.88rem', color: '#991b1b' }}>
+                <strong>📌 Point d&apos;actualité :</strong> Le règlement européen (AI Act) impose des obligations de littératie IA applicables depuis 2025 pour tout professionnel.
               </div>
             </div>
 
@@ -296,168 +280,80 @@ export default function HomePageClient() {
         </div>
       </section>
 
-      {/* ─── PREUVES SOCIALES & TÉMOIGNAGES CLIENTS ────────────────────── */}
-      <section className="section" style={{ background: 'white' }}>
+      {/* ─── LE REGARD HUMAIN VS MONOCULTURE COGNITIVE ──────────────────── */}
+      <section className="section" style={{ background: '#ffffff', padding: '5rem 0' }}>
         <div className="container">
-          <div className="section-header" style={{ textAlign: 'center', maxWidth: '750px', margin: '0 auto 3.5rem' }}>
-            <span className="label" style={{ color: 'var(--blue-600)' }}>Ils nous font confiance</span>
-            <h2 style={{ fontSize: '2.4rem', color: 'var(--blue-900)' }}>Des résultats mesurables sur le terrain</h2>
-            <p>100% de satisfaction sur les sessions dispensées en 2025–2026.</p>
-          </div>
-
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2rem' }}>
-            <div className="card" style={{ padding: '2rem', background: 'var(--gray-50)', border: '1px solid var(--gray-200)' }}>
-              <div style={{ color: 'var(--gold-dark)', fontSize: '1.2rem', marginBottom: '1rem' }}>★★★★★</div>
-              <p style={{ fontStyle: 'italic', color: 'var(--gray-700)', fontSize: '0.92rem', marginBottom: '1.5rem', lineHeight: 1.6 }}>
-                &ldquo;La formation TOP® a permis à nos cadres de santé de retrouver des nuits calmes et une vraie clarté d&apos;esprit pendant les gardes sous tension.&rdquo;
-              </p>
-              <div>
-                <strong style={{ color: 'var(--blue-900)', display: 'block' }}>Claire D.</strong>
-                <span style={{ fontSize: '0.8rem', color: 'var(--gray-500)' }}>Directrice des Soins — Établissement Hospitalier (PACA)</span>
-                <div style={{ marginTop: '0.5rem', fontSize: '0.8rem', color: '#128C7E', fontWeight: 700 }}>✓ Résultat : Équipes plus sereines &amp; baisse des arrêts</div>
-              </div>
-            </div>
-
-            <div className="card" style={{ padding: '2rem', background: 'var(--gray-50)', border: '1px solid var(--gray-200)' }}>
-              <div style={{ color: 'var(--gold-dark)', fontSize: '1.2rem', marginBottom: '1rem' }}>★★★★★</div>
-              <p style={{ fontStyle: 'italic', color: 'var(--gray-700)', fontSize: '0.92rem', marginBottom: '1.5rem', lineHeight: 1.6 }}>
-                &ldquo;Nous avons automatisé nos réponses prospects et le tri administratif grâce au parcours IA. Je gagne personnellement plus de 8 heures par semaine.&rdquo;
-              </p>
-              <div>
-                <strong style={{ color: 'var(--blue-900)', display: 'block' }}>Marc V.</strong>
-                <span style={{ fontSize: '0.8rem', color: 'var(--gray-500)' }}>Dirigeant PME Conseil (12 salariés)</span>
-                <div style={{ marginTop: '0.5rem', fontSize: '0.8rem', color: '#128C7E', fontWeight: 700 }}>✓ Résultat : 8h gagnées par semaine par collaborateur</div>
-              </div>
-            </div>
-
-            <div className="card" style={{ padding: '2rem', background: 'var(--gray-50)', border: '1px solid var(--gray-200)' }}>
-              <div style={{ color: 'var(--gold-dark)', fontSize: '1.2rem', marginBottom: '1rem' }}>★★★★★</div>
-              <p style={{ fontStyle: 'italic', color: 'var(--gray-700)', fontSize: '0.92rem', marginBottom: '1.5rem', lineHeight: 1.6 }}>
-                &ldquo;Partie de zéro sur Canva et CapCut, j&apos;ai validé ma certification RS7351 et signé mes 3 premiers gros contrats grâce à ma nouvelle stratégie LinkedIn.&rdquo;
-              </p>
-              <div>
-                <strong style={{ color: 'var(--blue-900)', display: 'block' }}>Sarah B.</strong>
-                <span style={{ fontSize: '0.8rem', color: 'var(--gray-500)' }}>Consultante Indépendante</span>
-                <div style={{ marginTop: '0.5rem', fontSize: '0.8rem', color: '#128C7E', fontWeight: 700 }}>✓ Résultat : 3 nouveaux clients signés en 1 mois</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ─── L'ÉQUIPE AVEC VRAIS PORTRAITS ─────────────────────────────── */}
-      <section className="section" style={{ background: 'var(--gray-50)' }}>
-        <div className="container">
-          <div className="section-header" style={{ textAlign: 'center', maxWidth: '750px', margin: '0 auto 3.5rem' }}>
-            <span className="label">Un Duo Complémentaire</span>
-            <h2 style={{ fontSize: '2.4rem', color: 'var(--blue-900)' }}>
-              Vos interlocuteurs directs
+          <div style={{ maxWidth: '850px', margin: '0 auto', background: 'linear-gradient(135deg, var(--blue-900) 0%, #03142e 100%)', color: 'white', padding: '3.5rem', borderRadius: '24px', boxShadow: '0 20px 50px rgba(0, 52, 146, 0.2)' }}>
+            <span style={{ fontSize: '0.8rem', fontWeight: 800, color: 'var(--gold-light)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '0.75rem', display: 'block' }}>
+              Notre différenciateur pédagogique
+            </span>
+            <h2 style={{ color: 'white', fontSize: '2rem', marginBottom: '1.25rem' }}>
+              Le regard humain pour éviter la monoculture cognitive
             </h2>
-            <p>Deux spécialistes du terrain qui vous accompagnent de la première discussion jusqu&apos;à l&apos;obtention de votre certification.</p>
+            <p style={{ color: 'var(--blue-100)', fontSize: '1.05rem', lineHeight: 1.8, marginBottom: '1.5rem' }}>
+              Lorsque la majorité des utilisateurs s&apos;appuient sur les mêmes modèles d&apos;IA, leurs productions tendent à converger vers des formulations standardisées. 
+            </p>
+            <p style={{ color: 'var(--blue-100)', fontSize: '1.05rem', lineHeight: 1.8, marginBottom: '2rem' }}>
+              Chez <strong>O&apos;TOP Formation</strong>, nous combinons l&apos;e-learning avec un accompagnement humain régulier (Masterclass optionnelle avec Mélissa &amp; Renaud) pour préserver la singularité et l&apos;esprit critique de votre pratique.
+            </p>
+            <div style={{ fontSize: '0.82rem', color: 'rgba(255,255,255,0.6)', borderTop: '1px solid rgba(255,255,255,0.15)', paddingTop: '1rem' }}>
+              Référence : Bommasani, Creel, Kumar, Jurafsky &amp; Liang (2022), NeurIPS — Algorithmic Monoculture and Outcome Homogenization.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ─── L'ÉQUIPE & CONTACT DIRECT ─────────────────────────────────── */}
+      <section className="section" style={{ background: '#f8fafc', padding: '5rem 0', borderTop: '1px solid #e2e8f0' }}>
+        <div className="container">
+          <div style={{ textAlign: 'center', maxWidth: '750px', margin: '0 auto 3.5rem' }}>
+            <span className="label" style={{ color: 'var(--blue-600)' }}>Contact Direct</span>
+            <h2 style={{ fontSize: '2.3rem', color: 'var(--blue-900)' }}>Échangez avec vos formateurs</h2>
+            <p style={{ color: '#64748b', fontSize: '1.05rem' }}>
+              Une question sur le programme ou les financements ? Nous vous répondons directement par téléphone ou WhatsApp.
+            </p>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2.5rem', maxWidth: '850px', margin: '0 auto' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2.5rem', maxWidth: '800px', margin: '0 auto 3.5rem' }}>
             
             {/* Mélissa */}
-            <div className="card" style={{ padding: '2.25rem', textAlign: 'center', background: 'white', border: '1px solid var(--gray-200)', borderRadius: 'var(--radius)', boxShadow: 'var(--shadow-sm)' }}>
-              <div style={{ width: '120px', height: '120px', borderRadius: '50%', overflow: 'hidden', margin: '0 auto 1.25rem', border: '3px solid var(--blue-900)', boxShadow: '0 6px 16px rgba(0, 52, 146, 0.15)' }}>
-                <img 
-                  src="/team-melyssa.png" 
-                  alt="Mélissa, directrice pédagogique et formatrice TOP" 
-                  style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center' }}
-                />
+            <div className="card" style={{ padding: '2rem', textAlign: 'center', background: 'white', borderRadius: '18px', border: '1px solid #e2e8f0', boxShadow: '0 4px 15px rgba(0,0,0,0.03)' }}>
+              <div style={{ width: '100px', height: '100px', borderRadius: '50%', overflow: 'hidden', margin: '0 auto 1.25rem', border: '3px solid var(--blue-900)' }}>
+                <img src="/team-melyssa.png" alt="Mélissa, directrice O'TOP Formation" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
               </div>
-              <h3 style={{ color: 'var(--blue-900)', fontSize: '1.3rem', marginBottom: '0.25rem' }}>Mélissa</h3>
-              <p style={{ color: 'var(--gold-dark)', fontWeight: 700, fontSize: '0.88rem', marginBottom: '0.75rem' }}>
-                Directrice Pédagogique &amp; Formatrice TOP®
-              </p>
-              <p style={{ fontSize: '0.88rem', color: 'var(--gray-600)', marginBottom: '1.25rem', lineHeight: 1.6 }}>
-                &ldquo;J&apos;aide les professionnels à retrouver sérénité et performance mentale grâce à des techniques concrètes éprouvées sur le terrain.&rdquo;
-              </p>
+              <h3 style={{ color: 'var(--blue-900)', fontSize: '1.25rem', marginBottom: '0.2rem' }}>Mélissa</h3>
+              <p style={{ color: 'var(--gold-dark)', fontWeight: 700, fontSize: '0.85rem', marginBottom: '1rem' }}>Directrice &amp; Formatrice</p>
               <a href="tel:+33767246825" className="btn btn-primary" style={{ width: '100%', justifyContent: 'center', background: 'var(--blue-900)', fontSize: '0.88rem' }}>
-                📞 Parler à Mélissa : 07 67 24 68 25
+                📞 07 67 24 68 25
               </a>
             </div>
 
             {/* Renaud */}
-            <div className="card" style={{ padding: '2.25rem', textAlign: 'center', background: 'white', border: '1px solid var(--gray-200)', borderRadius: 'var(--radius)', boxShadow: 'var(--shadow-sm)' }}>
-              <div style={{ width: '120px', height: '120px', borderRadius: '50%', overflow: 'hidden', margin: '0 auto 1.25rem', border: '3px solid var(--gold-dark)', boxShadow: '0 6px 16px rgba(205, 175, 93, 0.2)' }}>
-                <img 
-                  src="/team-regis.png" 
-                  alt="Renaud, expert transformation digitale et IA" 
-                  style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center' }}
-                />
+            <div className="card" style={{ padding: '2rem', textAlign: 'center', background: 'white', borderRadius: '18px', border: '1px solid #e2e8f0', boxShadow: '0 4px 15px rgba(0,0,0,0.03)' }}>
+              <div style={{ width: '100px', height: '100px', borderRadius: '50%', overflow: 'hidden', margin: '0 auto 1.25rem', border: '3px solid var(--gold-dark)' }}>
+                <img src="/team-regis.png" alt="Renaud, expert digital et IA" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
               </div>
-              <h3 style={{ color: 'var(--blue-900)', fontSize: '1.3rem', marginBottom: '0.25rem' }}>Renaud</h3>
-              <p style={{ color: 'var(--blue-600)', fontWeight: 700, fontSize: '0.88rem', marginBottom: '0.75rem' }}>
-                Expert Transformation Digitale &amp; IA
-              </p>
-              <p style={{ fontSize: '0.88rem', color: 'var(--gray-600)', marginBottom: '1.25rem', lineHeight: 1.6 }}>
-                &ldquo;Mon objectif : connecter vos outils, automatiser vos tâches et vous faire gagner un temps précieux chaque semaine.&rdquo;
-              </p>
+              <h3 style={{ color: 'var(--blue-900)', fontSize: '1.25rem', marginBottom: '0.2rem' }}>Renaud</h3>
+              <p style={{ color: 'var(--blue-600)', fontWeight: 700, fontSize: '0.85rem', marginBottom: '1rem' }}>Expert Digital &amp; IA</p>
               <a href="tel:+33674797509" className="btn btn-primary" style={{ width: '100%', justifyContent: 'center', background: 'var(--gold-dark)', color: 'white', fontSize: '0.88rem' }}>
-                📞 Parler à Renaud : 06 74 79 75 09
+                📞 06 74 79 75 09
               </a>
             </div>
 
           </div>
-        </div>
-      </section>
 
-      {/* ─── BANNIÈRE CTA FINAL ────────────────────────────────────────── */}
-      <section className="section" style={{ background: 'var(--blue-900)', color: 'white', textAlign: 'center', padding: '5rem 0' }}>
-        <div className="container" style={{ maxWidth: '850px' }}>
-          <span className="badge" style={{ background: 'rgba(205, 175, 93, 0.2)', color: 'var(--gold-light)', border: '1px solid var(--gold)', marginBottom: '1.25rem' }}>
-            Échange direct &amp; sans engagement
-          </span>
-          <h2 style={{ color: 'white', fontSize: 'clamp(2rem, 4vw, 3rem)', marginBottom: '1.25rem' }}>
-            Faisons le point sur votre projet en 15 minutes
-          </h2>
-          <p style={{ color: 'var(--blue-100)', fontSize: '1.1rem', lineHeight: 1.65, marginBottom: '2.25rem' }}>
-            Que vous souhaitiez former vos collaborateurs au stress, intégrer l&apos;IA dans vos équipes ou développer un outil digital, nous vous orientons vers la solution la plus rentable.
-          </p>
-          <div style={{ display: 'flex', justifyContent: 'center', gap: '1rem', flexWrap: 'wrap' }}>
+          {/* Bannière CTA Finale */}
+          <div style={{ textAlign: 'center' }}>
             <Link 
               href="/contact" 
               className="btn btn-primary" 
-              style={{ background: 'var(--red-600)', color: 'white', padding: '1rem 2.25rem', fontWeight: 800, fontSize: '1rem' }}
+              style={{ background: 'var(--red-600)', color: 'white', padding: '1.1rem 2.5rem', fontWeight: 800, fontSize: '1.05rem', borderRadius: '50px', boxShadow: '0 10px 30px rgba(255, 59, 59, 0.28)' }}
             >
-              Réserver mon diagnostic gratuit ⚡
+              Réserver mon diagnostic gratuit (15 min) ⚡
             </Link>
-            <a 
-              href="https://wa.me/33767246825" 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className="btn btn-ghost" 
-              style={{ color: '#25D366', borderColor: '#25D366', background: 'rgba(37,211,102,0.1)' }}
-            >
-              💬 WhatsApp Direct
-            </a>
           </div>
         </div>
       </section>
-
-      {/* Scoped CSS for balanced hero grid */}
-      <style jsx>{`
-        .hero-grid {
-          display: grid;
-          grid-template-columns: 1.15fr 0.95fr;
-          gap: 3.5rem;
-          align-items: center;
-          width: 100%;
-        }
-
-        @media (max-width: 992px) {
-          .hero-grid {
-            grid-template-columns: 1fr;
-            gap: 2.5rem;
-          }
-          .hero-right {
-            max-width: 540px;
-            margin: 0 auto;
-          }
-        }
-      `}</style>
 
       <Footer />
     </main>
