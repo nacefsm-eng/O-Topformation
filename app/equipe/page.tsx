@@ -71,44 +71,36 @@ export default function EquipePage() {
               </div>
             </div>
 
-            {/* ── Card Régis ── */}
+            {/* ── Card Renaud ── */}
             <div className="team-card">
               <div className="team-card-image-wrapper">
                 <img
-                  src="/team-regis.png"
-                  alt="Régis Domergue — Expert TOP®"
+                  src="/team-renaud.jpg"
+                  alt="Renaud — Expert Transformation Digitale & IA"
                   className="team-card-image"
                 />
               </div>
 
               <div className="team-card-body">
-                <h3 className="team-card-name">Régis</h3>
+                <h3 className="team-card-name">Renaud</h3>
                 <p className="team-card-title">
-                  Pédagogue et expérimenté - Conférencier - Formateur
+                  Expert Transformation Digitale, IA &amp; Systèmes d&apos;Entreprise
                 </p>
                 <div className="team-card-tags">
-                  <span className="tag">Formateur depuis plus de 15 ans à l'armée</span>
-                  <span className="tag">Pédagogue et expérimenté</span>
+                  <span className="tag">Spécialiste IA &amp; Automatisation</span>
+                  <span className="tag">Accompagnement Dirigeants &amp; PME</span>
+                  <span className="tag">Conformité AI Act 2025</span>
                 </div>
                 <p className="team-card-bio">
-                  Fort de plus de 15 ans d'expertise dans les Techniques d'Optimisation du Potentiel,
-                  Régis a forgé son expérience au sein de l'Armée de l'Air française, berceau des
-                  méthodes TOP®. Conférencier recherché, il transmet avec
-                  pédagogie et authenticité les outils de la préparation mentale à des publics aussi
-                  variés que des sportifs de haut niveau, des managers, des soignants et des équipes
-                  militaires. Sa conviction profonde : chaque individu dispose en lui du potentiel
-                  nécessaire pour exceller — les TOP® sont la clé pour le libérer.
+                  Spécialiste de la transformation digitale et des technologies d&apos;intelligence artificielle générative,
+                  Renaud accompagne les dirigeants, indépendants et équipes d&apos;entreprise pour simplifier leurs processus,
+                  automatiser leurs flux de travail et exploiter l&apos;IA de façon responsable et sécurisée.
                 </p>
                 <a
-                  href="https://www.linkedin.com/in/regis-top"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="tel:+33674797509"
                   className="btn btn-outline btn-sm"
                 >
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                  </svg>
-                  Profil LinkedIn
+                  📞 06 74 79 75 09
                 </a>
               </div>
             </div>

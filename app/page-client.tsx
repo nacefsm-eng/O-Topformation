@@ -331,7 +331,7 @@ export default function HomePageClient() {
             {/* Renaud */}
             <div className="card" style={{ padding: '2rem', textAlign: 'center', background: 'white', borderRadius: '18px', border: '1px solid #e2e8f0', boxShadow: '0 4px 15px rgba(0,0,0,0.03)' }}>
               <div style={{ width: '100px', height: '100px', borderRadius: '50%', overflow: 'hidden', margin: '0 auto 1.25rem', border: '3px solid var(--gold-dark)' }}>
-                <img src="/team-regis.png" alt="Renaud, expert digital et IA" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                <img src="/team-renaud.jpg" alt="Renaud, expert digital et IA" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
               </div>
               <h3 style={{ color: 'var(--blue-900)', fontSize: '1.25rem', marginBottom: '0.2rem' }}>Renaud</h3>
               <p style={{ color: 'var(--blue-600)', fontWeight: 700, fontSize: '0.85rem', marginBottom: '1rem' }}>Expert Digital &amp; IA</p>
