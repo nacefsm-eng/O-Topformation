@@ -1,278 +1,110 @@
 'use client';
 
+import React, { useState } from 'react';
 import Link from 'next/link';
 import Footer from '@/components/Footer';
+import TeamMemberCard from '@/components/ui/team-member-card';
+import ClientFeedback from '@/components/ui/testimonial';
+import GetInTouch from '@/components/ui/get-in-touch';
+import { 
+  ShieldCheck, 
+  Sparkles, 
+  CheckCircle2, 
+  Clock, 
+  ArrowRight, 
+  Brain, 
+  Lock, 
+  Cpu, 
+  Award, 
+  HelpCircle,
+  Calculator,
+  MessageCircle,
+  FileText
+} from 'lucide-react';
 
 export default function HomePageClient() {
+  // Interactive Simulator State
+  const [hoursPerWeek, setHoursPerWeek] = useState(12);
+  const [hourlyRate, setHourlyRate] = useState(65);
+  const annualSavingsHours = hoursPerWeek * 46;
+  const annualSavingsEuros = Math.round(annualSavingsHours * hourlyRate * 0.65);
+
   return (
-    <main style={{ background: '#ffffff', color: '#1e293b' }}>
-      {/* ─── HERO MINIMALISTE & HAUT DE GAMME ──────────────────────────── */}
-      <section className="hero-section" style={{ background: 'linear-gradient(180deg, #f8fafc 0%, #ffffff 100%)', padding: '5rem 0 4rem', borderBottom: '1px solid #e2e8f0' }}>
-        <div className="container">
-          <div style={{ maxWidth: '880px', margin: '0 auto', textAlign: 'center' }}>
+    <main className="min-h-screen bg-slate-950 text-slate-100 selection:bg-blue-600 selection:text-white font-sans">
+      
+      {/* ─── 1. HERO TECH ULTRA-MODERNE ("EFFET WOW / 3D") ──────────────── */}
+      <section className="relative pt-24 pb-20 md:pt-32 md:pb-28 overflow-hidden bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-blue-900/30 via-slate-950 to-slate-950 border-b border-slate-800/80">
+        
+        {/* Glow ambient meshes */}
+        <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-blue-500/15 blur-[160px] pointer-events-none rounded-full" />
+        <div className="absolute top-1/3 -left-32 w-80 h-80 bg-indigo-500/10 blur-[130px] pointer-events-none rounded-full" />
+        <div className="absolute top-1/2 -right-32 w-80 h-80 bg-cyan-500/10 blur-[130px] pointer-events-none rounded-full" />
+        
+        {/* Background Grid Pattern */}
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff08_1px,transparent_1px),linear-gradient(to_bottom,#ffffff08_1px,transparent_1px)] bg-[size:40px_40px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] pointer-events-none" />
+
+        <div className="container mx-auto px-4 max-w-6xl relative z-10">
+          <div className="text-center max-w-4xl mx-auto">
             
-            {/* Badges Officiels Minimalistes */}
-            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.6rem', padding: '0.45rem 1.25rem', borderRadius: '50px', background: 'white', border: '1px solid #cbd5e1', boxShadow: '0 2px 8px rgba(0,0,0,0.04)', marginBottom: '1.75rem' }}>
-              <span style={{ fontSize: '0.8rem', fontWeight: 800, color: 'var(--blue-900)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
-                🎓 Formation Certifiante RS6776
-              </span>
-              <span style={{ color: '#cbd5e1' }}>•</span>
-              <span style={{ fontSize: '0.8rem', fontWeight: 700, color: 'var(--gold-dark)' }}>
-                France Compétences
-              </span>
-              <span style={{ color: '#cbd5e1' }}>•</span>
-              <span style={{ fontSize: '0.8rem', fontWeight: 700, color: '#16a34a' }}>
-                Qualiopi
-              </span>
+            {/* Top Badge */}
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-500/10 border border-blue-400/30 text-blue-300 text-xs sm:text-sm font-semibold mb-8 backdrop-blur-md shadow-lg shadow-blue-900/20">
+              <span className="flex h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
+              <span>Formation Certifiante RS6776</span>
+              <span className="text-slate-600">•</span>
+              <span className="text-amber-400 font-bold">France Compétences</span>
+              <span className="text-slate-600">•</span>
+              <span className="text-emerald-400 font-bold">Qualiopi</span>
             </div>
 
-            <h1 style={{ fontSize: 'clamp(2.3rem, 4.5vw, 3.8rem)', fontWeight: 900, color: 'var(--blue-900)', lineHeight: 1.18, marginBottom: '1.5rem', letterSpacing: '-0.03em' }}>
-              Intégrer l&apos;IA générative dans son activité professionnelle
+            {/* Title with Gradient */}
+            <h1 className="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight leading-[1.08] mb-6 text-white">
+              Dominez l&apos;IA & la Cybersécurité.<br />
+              <span className="bg-gradient-to-r from-blue-400 via-indigo-300 to-cyan-400 bg-clip-text text-transparent">
+                Une méthode de terrain. Zéro blabla.
+              </span>
             </h1>
 
-            <p style={{ fontSize: 'clamp(1.05rem, 1.5vw, 1.25rem)', color: '#475569', lineHeight: 1.7, maxWidth: '760px', margin: '0 auto 2.5rem' }}>
-              Une formation pour aider les indépendants, coachs, thérapeutes et dirigeants à <strong>automatiser leurs tâches</strong>, <strong>produire des contenus pros</strong> et <strong>développer leur activité</strong> grâce à l&apos;IA générative responsable.
+            {/* Subtitle */}
+            <p className="text-base sm:text-xl text-slate-300 max-w-3xl mx-auto mb-10 leading-relaxed font-normal">
+              Gagnez jusqu&apos;à <strong>15 heures par semaine</strong> grâce à l&apos;IA générative et <strong>protégez votre entreprise</strong> contre les risques numériques. Des formations certifiantes finançables à 100% (OPCO, FAF, CPF).
             </p>
 
-            <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap', marginBottom: '2.5rem' }}>
-              <Link 
-                href="/contact" 
-                className="btn btn-primary" 
-                style={{ background: 'var(--red-600)', color: 'white', fontWeight: 800, fontSize: '1rem', padding: '1rem 2.25rem', borderRadius: '50px', boxShadow: '0 10px 25px rgba(255, 59, 59, 0.25)' }}
+            {/* Action Buttons */}
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
+              <a
+                href="https://wa.me/33767246825?text=Bonjour%2C%20je%20souhaite%20r%C3%A9server%20un%20diagnostic%20offert%20de%2015%20minutes%20pour%20une%20formation."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full sm:w-auto px-8 py-4 rounded-2xl bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-bold text-base shadow-xl shadow-blue-600/30 flex items-center justify-center gap-2 transition-all hover:scale-[1.02] active:scale-[0.98]"
               >
-                Réserver mon diagnostic gratuit (15 min) ⚡
-              </Link>
-              
-              <a 
-                href="https://wa.me/33767246825?text=Bonjour%2C%20je%20souhaite%20des%20informations%20sur%20la%20formation%20IA%20RS6776." 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="btn" 
-                style={{ background: 'white', color: '#128C7E', fontWeight: 700, fontSize: '1rem', padding: '1rem 1.85rem', borderRadius: '50px', border: '1.5px solid #25D366' }}
+                <span>Diagnostic offert (15 min) ⚡</span>
+              </a>
+
+              <a
+                href="#methodologie"
+                className="w-full sm:w-auto px-8 py-4 rounded-2xl bg-slate-900/90 border border-slate-700 hover:border-slate-500 text-slate-200 font-bold text-base flex items-center justify-center gap-2 transition-all hover:bg-slate-800"
               >
-                💬 WhatsApp direct
+                <span>Découvrir notre méthode & parcours →</span>
               </a>
             </div>
 
-            {/* Chiffres clés / Repères */}
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))', gap: '1.5rem', padding: '1.75rem', background: 'white', borderRadius: '16px', border: '1px solid #e2e8f0', boxShadow: '0 4px 20px rgba(0,0,0,0.03)' }}>
-              <div>
-                <div style={{ fontSize: '1.8rem', fontWeight: 900, color: 'var(--blue-900)' }}>16h</div>
-                <div style={{ fontSize: '0.85rem', color: '#64748b' }}>Vidéo à son rythme</div>
+            {/* 4 Stats Cards */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-left">
+              <div className="p-5 rounded-2xl bg-slate-900/80 border border-slate-800/80 backdrop-blur-sm">
+                <div className="text-3xl font-black text-white mb-1">16h + 7h</div>
+                <div className="text-xs font-semibold text-slate-400">E-learning + Coaching 1-to-1</div>
               </div>
-              <div>
-                <div style={{ fontSize: '1.8rem', fontWeight: 900, color: 'var(--gold-dark)' }}>3 Modules</div>
-                <div style={{ fontSize: '0.85rem', color: '#64748b' }}>Certifiants RS6776</div>
+              <div className="p-5 rounded-2xl bg-slate-900/80 border border-slate-800/80 backdrop-blur-sm">
+                <div className="text-3xl font-black text-blue-400 mb-1">RS6776</div>
+                <div className="text-xs font-semibold text-slate-400">Certification officielle État</div>
               </div>
-              <div>
-                <div style={{ fontSize: '1.8rem', fontWeight: 900, color: 'var(--red-600)' }}>100%</div>
-                <div style={{ fontSize: '0.85rem', color: '#64748b' }}>Sans prérequis tech</div>
+              <div className="p-5 rounded-2xl bg-slate-900/80 border border-slate-800/80 backdrop-blur-sm">
+                <div className="text-3xl font-black text-emerald-400 mb-1">100%</div>
+                <div className="text-xs font-semibold text-slate-400">Prise en charge OPCO / FAF</div>
               </div>
-              <div>
-                <div style={{ fontSize: '1.8rem', fontWeight: 900, color: '#16a34a' }}>OPCO / FAF</div>
-                <div style={{ fontSize: '0.85rem', color: '#64748b' }}>Financements possibles</div>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </section>
-
-      {/* ─── POURQUOI CETTE FORMATION ──────────────────────────────────── */}
-      <section className="section" style={{ background: '#ffffff', padding: '5rem 0' }}>
-        <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '4rem', alignItems: 'center' }}>
-            
-            <div>
-              <span className="label" style={{ color: 'var(--blue-600)', fontSize: '0.8rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '0.75rem', display: 'block' }}>
-                Le constat terrain
-              </span>
-              <h2 style={{ fontSize: 'clamp(1.8rem, 3.2vw, 2.5rem)', color: 'var(--blue-900)', lineHeight: 1.25, marginBottom: '1.5rem' }}>
-                Libérez-vous des tâches chronophages qui freinent votre croissance.
-              </h2>
-              <p style={{ color: '#475569', fontSize: '1.05rem', lineHeight: 1.8, marginBottom: '1.25rem' }}>
-                Il y a toujours ces tâches qui grignotent votre semaine sans faire avancer votre activité : un message à reformuler, une relance à envoyer, un contenu à produire dans l&apos;urgence. Mis bout à bout, <strong>c&apos;est du temps que vous ne récupérez jamais</strong>.
-              </p>
-              <p style={{ color: '#475569', fontSize: '1.05rem', lineHeight: 1.8, marginBottom: '1.5rem' }}>
-                Certains indépendants et dirigeants ont commencé à s&apos;en libérer grâce à l&apos;IA générative, pour se recentrer sur ce qui crée vraiment de la valeur.
-              </p>
-              
-              <div style={{ padding: '1rem 1.25rem', background: '#f8fafc', borderLeft: '4px solid var(--gold-dark)', borderRadius: '0 8px 8px 0', fontSize: '0.88rem', color: '#64748b', fontStyle: 'italic' }}>
-                Source : OCDE (2025), L&apos;adoption de l&apos;IA par les petites et moyennes entreprises.
-              </div>
-            </div>
-
-            <div className="image-wrapper" style={{ borderRadius: '18px', overflow: 'hidden', boxShadow: '0 16px 40px rgba(0,0,0,0.08)', border: '1px solid #e2e8f0' }}>
-              <img 
-                src="/card-ai.jpg" 
-                alt="Équipe collaborative travaillant sur l'intelligence artificielle en entreprise" 
-                style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-              />
-            </div>
-
-          </div>
-        </div>
-      </section>
-
-      {/* ─── À QUI S'ADRESSE CETTE FORMATION ──────────────────────────── */}
-      <section className="section" style={{ background: '#f8fafc', padding: '5rem 0', borderTop: '1px solid #e2e8f0', borderBottom: '1px solid #e2e8f0' }}>
-        <div className="container">
-          <div style={{ textAlign: 'center', maxWidth: '750px', margin: '0 auto 3.5rem' }}>
-            <span className="label" style={{ color: 'var(--blue-600)' }}>Public concerné</span>
-            <h2 style={{ fontSize: '2.3rem', color: 'var(--blue-900)' }}>Une formation accessible sans prérequis technique</h2>
-            <p style={{ color: '#64748b', fontSize: '1.05rem' }}>
-              Le parcours part des usages de base pour aller pas à pas jusqu&apos;à la mise en œuvre stratégique.
-            </p>
-          </div>
-
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '1.75rem' }}>
-            
-            <div className="card" style={{ background: 'white', padding: '2rem', borderRadius: '16px', border: '1px solid #e2e8f0' }}>
-              <div style={{ fontSize: '2.2rem', marginBottom: '1rem' }}>💼</div>
-              <h3 style={{ fontSize: '1.2rem', color: 'var(--blue-900)', marginBottom: '0.5rem' }}>Indépendants &amp; Freelances</h3>
-              <p style={{ fontSize: '0.92rem', color: '#64748b', lineHeight: 1.6 }}>
-                Pour gérer sa communication, automatiser ses propositions commerciales et gagner un temps précieux chaque semaine.
-              </p>
-            </div>
-
-            <div className="card" style={{ background: 'white', padding: '2rem', borderRadius: '16px', border: '1px solid #e2e8f0' }}>
-              <div style={{ fontSize: '2.2rem', marginBottom: '1rem' }}>🌿</div>
-              <h3 style={{ fontSize: '1.2rem', color: 'var(--blue-900)', marginBottom: '0.5rem' }}>Coachs &amp; Thérapeutes</h3>
-              <p style={{ fontSize: '0.92rem', color: '#64748b', lineHeight: 1.6 }}>
-                Pour créer ses supports d&apos;ateliers, rédiger ses articles et structurer son accompagnement en toute sérénité.
-              </p>
-            </div>
-
-            <div className="card" style={{ background: 'white', padding: '2rem', borderRadius: '16px', border: '1px solid #e2e8f0' }}>
-              <div style={{ fontSize: '2.2rem', marginBottom: '1rem' }}>🏢</div>
-              <h3 style={{ fontSize: '1.2rem', color: 'var(--blue-900)', marginBottom: '0.5rem' }}>Dirigeants de TPE / PME</h3>
-              <p style={{ fontSize: '0.92rem', color: '#64748b', lineHeight: 1.6 }}>
-                Pour booster la productivité de ses collaborateurs et se mettre en conformité avec le cadre légal européen (AI Act).
-              </p>
-            </div>
-
-            <div className="card" style={{ background: 'white', padding: '2rem', borderRadius: '16px', border: '1px solid #e2e8f0' }}>
-              <div style={{ fontSize: '2.2rem', marginBottom: '1rem' }}>🚀</div>
-              <h3 style={{ fontSize: '1.2rem', color: 'var(--blue-900)', marginBottom: '0.5rem' }}>En Reconversion</h3>
-              <p style={{ fontSize: '0.92rem', color: '#64748b', lineHeight: 1.6 }}>
-                Pour acquérir une compétence clé reconnue par l&apos;État et valorisable immédiatement sur le marché du travail.
-              </p>
-            </div>
-
-          </div>
-        </div>
-      </section>
-
-      {/* ─── CE QU'ON EN RETIRE (BÉNÉFICES CONCRETS) ──────────────────── */}
-      <section className="section" style={{ background: '#ffffff', padding: '5rem 0' }}>
-        <div className="container">
-          <div style={{ textAlign: 'center', maxWidth: '750px', margin: '0 auto 3.5rem' }}>
-            <span className="label" style={{ color: 'var(--gold-dark)' }}>Compétences Clés</span>
-            <h2 style={{ fontSize: '2.3rem', color: 'var(--blue-900)' }}>Ce que vous maîtriserez à l&apos;issue du parcours</h2>
-            <p style={{ color: '#64748b', fontSize: '1.05rem' }}>Une boîte à outils professionnelle réutilisable bien après la formation.</p>
-          </div>
-
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '2rem' }}>
-            
-            <div style={{ padding: '1.75rem', background: '#f8fafc', borderRadius: '14px', borderLeft: '4px solid var(--blue-900)' }}>
-              <h4 style={{ color: 'var(--blue-900)', fontSize: '1.1rem', marginBottom: '0.4rem' }}>🎯 Identifier les opportunités</h4>
-              <p style={{ fontSize: '0.92rem', color: '#475569' }}>Repérer les tâches concrètes et répétitives où l&apos;IA générative apporte le plus de valeur ajoutée.</p>
-            </div>
-
-            <div style={{ padding: '1.75rem', background: '#f8fafc', borderRadius: '14px', borderLeft: '4px solid var(--gold-dark)' }}>
-              <h4 style={{ color: 'var(--blue-900)', fontSize: '1.1rem', marginBottom: '0.4rem' }}>🛠️ Choisir les bons outils</h4>
-              <p style={{ fontSize: '0.92rem', color: '#475569' }}>Sélectionner les solutions adaptées à votre besoin réel, votre budget et votre niveau sans vous disperser.</p>
-            </div>
-
-            <div style={{ padding: '1.75rem', background: '#f8fafc', borderRadius: '14px', borderLeft: '4px solid var(--red-600)' }}>
-              <h4 style={{ color: 'var(--blue-900)', fontSize: '1.1rem', marginBottom: '0.4rem' }}>✍️ Produire des contenus pros</h4>
-              <p style={{ fontSize: '0.92rem', color: '#475569' }}>Textes, visuels, supports de communication et landing pages sans compétence graphique particulière.</p>
-            </div>
-
-            <div style={{ padding: '1.75rem', background: '#f8fafc', borderRadius: '14px', borderLeft: '4px solid #16a34a' }}>
-              <h4 style={{ color: 'var(--blue-900)', fontSize: '1.1rem', marginBottom: '0.4rem' }}>🤖 Créer son assistant IA sur-mesure</h4>
-              <p style={{ fontSize: '0.92rem', color: '#475569' }}>Configurer un assistant GPT personnalisé pour automatiser vos tâches récurrentes en toute autonomie.</p>
-            </div>
-
-            <div style={{ padding: '1.75rem', background: '#f8fafc', borderRadius: '14px', borderLeft: '4px solid var(--blue-700)' }}>
-              <h4 style={{ color: 'var(--blue-900)', fontSize: '1.1rem', marginBottom: '0.4rem' }}>🔒 Rester en conformité légale</h4>
-              <p style={{ fontSize: '0.92rem', color: '#475569' }}>Maîtriser la confidentialité des données, le règlement AI Act et ne jamais exposer vos données sensibles.</p>
-            </div>
-
-            <div style={{ padding: '1.75rem', background: '#f8fafc', borderRadius: '14px', borderLeft: '4px solid var(--gold-dark)' }}>
-              <h4 style={{ color: 'var(--blue-900)', fontSize: '1.1rem', marginBottom: '0.4rem' }}>⚡ Progresser à son rythme</h4>
-              <p style={{ fontSize: '0.92rem', color: '#475569' }}>Un format e-learning asynchrone flexible de 16h avec validation progressive des acquis et QCMs.</p>
-            </div>
-
-          </div>
-        </div>
-      </section>
-
-      {/* ─── PROGRAMME DÉTAILLÉ EN 3 MODULES ──────────────────────────── */}
-      <section id="programme" className="section" style={{ background: '#f8fafc', padding: '5rem 0', borderTop: '1px solid #e2e8f0', borderBottom: '1px solid #e2e8f0' }}>
-        <div className="container">
-          <div style={{ textAlign: 'center', maxWidth: '750px', margin: '0 auto 3.5rem' }}>
-            <span className="label" style={{ color: 'var(--red-600)' }}>Programme Certifiant</span>
-            <h2 style={{ fontSize: '2.3rem', color: 'var(--blue-900)' }}>Trois modules pour maîtriser les usages essentiels</h2>
-            <p style={{ color: '#64748b', fontSize: '1.05rem' }}>Certification visée : RS6776 — France Compétences.</p>
-          </div>
-
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem', maxWidth: '960px', margin: '0 auto' }}>
-            
-            {/* Module 1 */}
-            <div className="card" style={{ background: 'white', padding: '2.5rem', borderRadius: '18px', border: '1px solid #e2e8f0', boxShadow: '0 4px 15px rgba(0,0,0,0.03)' }}>
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem', marginBottom: '1rem' }}>
-                <span style={{ fontSize: '0.85rem', fontWeight: 800, color: 'var(--blue-900)', background: 'var(--blue-50)', padding: '0.35rem 1rem', borderRadius: '30px' }}>
-                  MODULE 01
-                </span>
-                <span style={{ fontSize: '0.85rem', color: '#64748b', fontWeight: 600 }}>Stratégie &amp; Organisation</span>
-              </div>
-              <h3 style={{ color: 'var(--blue-900)', fontSize: '1.4rem', marginBottom: '0.75rem' }}>
-                Stratégie d&apos;implémentation de l&apos;IA
-              </h3>
-              <p style={{ color: '#475569', fontSize: '0.95rem', lineHeight: 1.7, marginBottom: '1.25rem' }}>
-                <strong>Objectif :</strong> Poser les bases d&apos;une intégration réfléchie de l&apos;IA dans son activité. Découverte des principales interfaces d&apos;IA générative, repérage des tâches quotidiennes optimisables, choix des outils selon son budget et élaboration d&apos;un plan d&apos;action personnel.
-              </p>
-              <div style={{ background: '#f1f5f9', padding: '0.85rem 1.25rem', borderRadius: '10px', fontSize: '0.88rem', color: '#334155' }}>
-                <strong>📌 Cas pratique :</strong> Méthodes pour optimiser sa visibilité et transférer les techniques de Community Management à sa propre activité.
-              </div>
-            </div>
-
-            {/* Module 2 */}
-            <div className="card" style={{ background: 'white', padding: '2.5rem', borderRadius: '18px', border: '1px solid #e2e8f0', boxShadow: '0 4px 15px rgba(0,0,0,0.03)' }}>
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem', marginBottom: '1rem' }}>
-                <span style={{ fontSize: '0.85rem', fontWeight: 800, color: 'var(--gold-dark)', background: '#fdfbf7', border: '1px solid var(--gold-light)', padding: '0.35rem 1rem', borderRadius: '30px' }}>
-                  MODULE 02
-                </span>
-                <span style={{ fontSize: '0.85rem', color: '#64748b', fontWeight: 600 }}>Production &amp; Assistants</span>
-              </div>
-              <h3 style={{ color: 'var(--blue-900)', fontSize: '1.4rem', marginBottom: '0.75rem' }}>
-                Création de contenus rédactionnels et visuels
-              </h3>
-              <p style={{ color: '#475569', fontSize: '0.95rem', lineHeight: 1.7, marginBottom: '1.25rem' }}>
-                <strong>Objectif :</strong> Produire des contenus professionnels de qualité en autonomie. Structure d&apos;un prompt efficace (contexte, rôle, contraintes, itération), génération d&apos;images IA et configuration de son propre assistant GPT personnalisé.
-              </p>
-              <div style={{ background: '#fdfbf7', padding: '0.85rem 1.25rem', borderRadius: '10px', fontSize: '0.88rem', color: '#334155', border: '1px solid var(--gold-light)' }}>
-                <strong>📌 Cas pratique :</strong> Générer la landing page d&apos;une entreprise, créer ses visuels de réseaux sociaux et corriger un prompt à risque.
-              </div>
-            </div>
-
-            {/* Module 3 */}
-            <div className="card" style={{ background: 'white', padding: '2.5rem', borderRadius: '18px', border: '1px solid #e2e8f0', boxShadow: '0 4px 15px rgba(0,0,0,0.03)' }}>
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem', marginBottom: '1rem' }}>
-                <span style={{ fontSize: '0.85rem', fontWeight: 800, color: 'var(--red-600)', background: 'var(--red-100)', padding: '0.35rem 1rem', borderRadius: '30px' }}>
-                  MODULE 03
-                </span>
-                <span style={{ fontSize: '0.85rem', color: '#64748b', fontWeight: 600 }}>Sécurité &amp; AI Act</span>
-              </div>
-              <h3 style={{ color: 'var(--blue-900)', fontSize: '1.4rem', marginBottom: '0.75rem' }}>
-                Conformité, éthique et réglementaire
-              </h3>
-              <p style={{ color: '#475569', fontSize: '0.95rem', lineHeight: 1.7, marginBottom: '1.25rem' }}>
-                <strong>Objectif :</strong> Utiliser l&apos;IA générative en toute sécurité et en conformité avec le cadre légal. Confidentialité des données clients (ne jamais divulguer d&apos;informations sensibles), focus sur le règlement européen AI Act et validation critique des contenus.
-              </p>
-              <div style={{ background: '#fee2e2', padding: '0.85rem 1.25rem', borderRadius: '10px', fontSize: '0.88rem', color: '#991b1b' }}>
-                <strong>📌 Point d&apos;actualité :</strong> Le règlement européen (AI Act) impose des obligations de littératie IA applicables depuis 2025 pour tout professionnel.
+              <div className="p-5 rounded-2xl bg-slate-900/80 border border-slate-800/80 backdrop-blur-sm">
+                <div className="text-3xl font-black text-amber-400 mb-1">98.6%</div>
+                <div className="text-xs font-semibold text-slate-400">Satisfaction apprenants</div>
               </div>
             </div>
 
@@ -280,82 +112,401 @@ export default function HomePageClient() {
         </div>
       </section>
 
-      {/* ─── LE REGARD HUMAIN VS MONOCULTURE COGNITIVE ──────────────────── */}
-      <section className="section" style={{ background: '#ffffff', padding: '5rem 0' }}>
-        <div className="container">
-          <div style={{ maxWidth: '850px', margin: '0 auto', background: 'linear-gradient(135deg, var(--blue-900) 0%, #03142e 100%)', color: 'white', padding: '3.5rem', borderRadius: '24px', boxShadow: '0 20px 50px rgba(0, 52, 146, 0.2)' }}>
-            <span style={{ fontSize: '0.8rem', fontWeight: 800, color: 'var(--gold-light)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '0.75rem', display: 'block' }}>
-              Notre différenciateur pédagogique
-            </span>
-            <h2 style={{ color: 'white', fontSize: '2rem', marginBottom: '1.25rem' }}>
-              Le regard humain pour éviter la monoculture cognitive
+
+      {/* ─── 2. ON N'EST PAS COMME LES AUTRES : NOTRE MÉTHODOLOGIE ───────── */}
+      <section id="methodologie" className="py-24 px-4 bg-slate-900/60 border-b border-slate-800 relative">
+        <div className="container mx-auto max-w-6xl">
+          
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-indigo-500/10 border border-indigo-400/20 text-indigo-400 text-xs font-bold uppercase tracking-wider mb-4">
+              Ce qui nous différencie
+            </div>
+            <h2 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight mb-4">
+              Pourquoi nous ne sommes pas comme les autres
             </h2>
-            <p style={{ color: 'var(--blue-100)', fontSize: '1.05rem', lineHeight: 1.8, marginBottom: '1.5rem' }}>
-              Lorsque la majorité des utilisateurs s&apos;appuient sur les mêmes modèles d&apos;IA, leurs productions tendent à converger vers des formulations standardisées. 
-            </p>
-            <p style={{ color: 'var(--blue-100)', fontSize: '1.05rem', lineHeight: 1.8, marginBottom: '2rem' }}>
-              Chez <strong>O&apos;TOP Formation</strong>, nous combinons l&apos;e-learning avec un accompagnement humain régulier (Masterclass optionnelle avec Mélissa &amp; Renaud) pour préserver la singularité et l&apos;esprit critique de votre pratique.
-            </p>
-            <div style={{ fontSize: '0.82rem', color: 'rgba(255,255,255,0.6)', borderTop: '1px solid rgba(255,255,255,0.15)', paddingTop: '1rem' }}>
-              Référence : Bommasani, Creel, Kumar, Jurafsky &amp; Liang (2022), NeurIPS — Algorithmic Monoculture and Outcome Homogenization.
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ─── L'ÉQUIPE & CONTACT DIRECT ─────────────────────────────────── */}
-      <section className="section" style={{ background: '#f8fafc', padding: '5rem 0', borderTop: '1px solid #e2e8f0' }}>
-        <div className="container">
-          <div style={{ textAlign: 'center', maxWidth: '750px', margin: '0 auto 3.5rem' }}>
-            <span className="label" style={{ color: 'var(--blue-600)' }}>Contact Direct</span>
-            <h2 style={{ fontSize: '2.3rem', color: 'var(--blue-900)' }}>Échangez avec vos formateurs</h2>
-            <p style={{ color: '#64748b', fontSize: '1.05rem' }}>
-              Une question sur le programme ou les financements ? Nous vous répondons directement par téléphone ou WhatsApp.
+            <p className="text-slate-400 text-base sm:text-lg">
+              90% des formations en ligne se contentent de vidéos pré-enregistrées et de théorie générique. Voici comment nous garantissons votre réussite :
             </p>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2.5rem', maxWidth: '800px', margin: '0 auto 3.5rem' }}>
+          {/* 4 Steps Roadmap */}
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-6 relative">
             
-            {/* Mélissa */}
-            <div className="card" style={{ padding: '2rem', textAlign: 'center', background: 'white', borderRadius: '18px', border: '1px solid #e2e8f0', boxShadow: '0 4px 15px rgba(0,0,0,0.03)' }}>
-              <div style={{ width: '100px', height: '100px', borderRadius: '50%', overflow: 'hidden', margin: '0 auto 1.25rem', border: '3px solid var(--blue-900)' }}>
-                <img src="/team-melyssa.png" alt="Mélissa, directrice O'TOP Formation" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+            <div className="relative p-6 rounded-2xl bg-slate-950/80 border border-slate-800 flex flex-col justify-between hover:border-blue-500/50 transition-colors group">
+              <div className="w-10 h-10 rounded-xl bg-blue-600/20 text-blue-400 border border-blue-500/30 font-black text-lg flex items-center justify-center mb-6">
+                01
               </div>
-              <h3 style={{ color: 'var(--blue-900)', fontSize: '1.25rem', marginBottom: '0.2rem' }}>Mélissa</h3>
-              <p style={{ color: 'var(--gold-dark)', fontWeight: 700, fontSize: '0.85rem', marginBottom: '1rem' }}>Directrice &amp; Formatrice</p>
-              <a href="tel:+33767246825" className="btn btn-primary" style={{ width: '100%', justifyContent: 'center', background: 'var(--blue-900)', fontSize: '0.88rem' }}>
-                📞 07 67 24 68 25
-              </a>
+              <div>
+                <h3 className="text-lg font-bold text-white mb-2 group-hover:text-blue-400 transition-colors">
+                  Diagnostic Personnalisé
+                </h3>
+                <p className="text-sm text-slate-400 leading-relaxed">
+                  Avant de démarrer, nous auditons vos processus actuels, votre secteur et vos besoins réels pour concevoir votre feuille de route.
+                </p>
+              </div>
+              <div className="mt-6 pt-4 border-t border-slate-800/80 text-xs text-slate-500 font-semibold">
+                Étape 1 • 30 min d&apos;audit
+              </div>
             </div>
 
-            {/* Renaud */}
-            <div className="card" style={{ padding: '2rem', textAlign: 'center', background: 'white', borderRadius: '18px', border: '1px solid #e2e8f0', boxShadow: '0 4px 15px rgba(0,0,0,0.03)' }}>
-              <div style={{ width: '100px', height: '100px', borderRadius: '50%', overflow: 'hidden', margin: '0 auto 1.25rem', border: '3px solid var(--gold-dark)' }}>
-                <img src="/team-renaud.jpg" alt="Renaud, expert digital et IA" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+            <div className="relative p-6 rounded-2xl bg-slate-950/80 border border-slate-800 flex flex-col justify-between hover:border-indigo-500/50 transition-colors group">
+              <div className="w-10 h-10 rounded-xl bg-indigo-600/20 text-indigo-400 border border-indigo-500/30 font-black text-lg flex items-center justify-center mb-6">
+                02
               </div>
-              <h3 style={{ color: 'var(--blue-900)', fontSize: '1.25rem', marginBottom: '0.2rem' }}>Renaud</h3>
-              <p style={{ color: 'var(--blue-600)', fontWeight: 700, fontSize: '0.85rem', marginBottom: '1rem' }}>Expert Digital &amp; IA</p>
-              <a href="tel:+33674797509" className="btn btn-primary" style={{ width: '100%', justifyContent: 'center', background: 'var(--gold-dark)', color: 'white', fontSize: '0.88rem' }}>
-                📞 06 74 79 75 09
-              </a>
+              <div>
+                <h3 className="text-lg font-bold text-white mb-2 group-hover:text-indigo-400 transition-colors">
+                  Immersion & Cas Réels
+                </h3>
+                <p className="text-sm text-slate-400 leading-relaxed">
+                  16h d&apos;e-learning interactif axé à 100% sur la pratique : prompts métier, automatisations concrètes, sécurisation des outils.
+                </p>
+              </div>
+              <div className="mt-6 pt-4 border-t border-slate-800/80 text-xs text-slate-500 font-semibold">
+                Étape 2 • 3 modules certifiés
+              </div>
+            </div>
+
+            <div className="relative p-6 rounded-2xl bg-slate-950/80 border border-slate-800 flex flex-col justify-between hover:border-cyan-500/50 transition-colors group">
+              <div className="w-10 h-10 rounded-xl bg-cyan-600/20 text-cyan-400 border border-cyan-500/30 font-black text-lg flex items-center justify-center mb-6">
+                03
+              </div>
+              <div>
+                <h3 className="text-lg font-bold text-white mb-2 group-hover:text-cyan-400 transition-colors">
+                  7h de Coaching 1-to-1
+                </h3>
+                <p className="text-sm text-slate-400 leading-relaxed">
+                  Le regard humain irremplaçable : 7 heures d&apos;accompagnement individuel avec votre formateur pour implémenter directement dans votre business.
+                </p>
+              </div>
+              <div className="mt-6 pt-4 border-t border-slate-800/80 text-xs text-slate-500 font-semibold">
+                Étape 3 • Accompagnement offert
+              </div>
+            </div>
+
+            <div className="relative p-6 rounded-2xl bg-slate-950/80 border border-slate-800 flex flex-col justify-between hover:border-emerald-500/50 transition-colors group">
+              <div className="w-10 h-10 rounded-xl bg-emerald-600/20 text-emerald-400 border border-emerald-500/30 font-black text-lg flex items-center justify-center mb-6">
+                04
+              </div>
+              <div>
+                <h3 className="text-lg font-bold text-white mb-2 group-hover:text-emerald-400 transition-colors">
+                  Certification & Déploiement
+                </h3>
+                <p className="text-sm text-slate-400 leading-relaxed">
+                  Passage de la certification RS6776 France Compétences et mise en production immédiate de vos automatisations sécurisées.
+                </p>
+              </div>
+              <div className="mt-6 pt-4 border-t border-slate-800/80 text-xs text-slate-500 font-semibold">
+                Étape 4 • Titre officiel reconnu
+              </div>
             </div>
 
           </div>
 
-          {/* Bannière CTA Finale */}
-          <div style={{ textAlign: 'center' }}>
-            <Link 
-              href="/contact" 
-              className="btn btn-primary" 
-              style={{ background: 'var(--red-600)', color: 'white', padding: '1.1rem 2.5rem', fontWeight: 800, fontSize: '1.05rem', borderRadius: '50px', boxShadow: '0 10px 30px rgba(255, 59, 59, 0.28)' }}
-            >
-              Réserver mon diagnostic gratuit (15 min) ⚡
-            </Link>
-          </div>
         </div>
       </section>
 
+
+      {/* ─── 3. LES 3 GRANDS DOMAINES D'EXCELLENCE ──────────────────────── */}
+      <section className="py-24 px-4 bg-slate-950 relative">
+        <div className="container mx-auto max-w-6xl">
+          
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-blue-500/10 border border-blue-400/20 text-blue-400 text-xs font-bold uppercase tracking-wider mb-4">
+              Notre Catalogue
+            </div>
+            <h2 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight mb-4">
+              Les 3 Piliers pour bâtir votre avenir
+            </h2>
+            <p className="text-slate-400 text-base sm:text-lg">
+              Une complémentarité unique : la puissance technologique de l&apos;IA, la rigueur de la Cybersécurité, et la lucidité de la Méthode TOP®.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            
+            {/* Pilier 1 : IA Générative */}
+            <div className="p-8 rounded-3xl bg-slate-900/90 border border-blue-500/40 relative flex flex-col justify-between shadow-2xl hover:border-blue-400 transition-all group">
+              <div className="absolute top-6 right-6 px-3 py-1 rounded-full bg-blue-600 text-white text-xs font-bold uppercase tracking-wider">
+                Cœur de vente
+              </div>
+              <div>
+                <div className="w-14 h-14 rounded-2xl bg-blue-600/20 text-blue-400 border border-blue-500/30 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                  <Cpu size={28} />
+                </div>
+                <h3 className="text-2xl font-bold text-white mb-2">
+                  Intelligence Artificielle Générative
+                </h3>
+                <div className="text-xs font-bold text-amber-400 uppercase tracking-wider mb-4">
+                  Certification RS6776 • France Compétences
+                </div>
+                <p className="text-slate-300 text-sm leading-relaxed mb-6">
+                  Apprenez à maîtriser ChatGPT, Claude, Midjourney et l&apos;automatisation pour booster votre chiffre d&apos;affaires et déléguer vos corvées quotidiennes.
+                </p>
+                <ul className="space-y-2.5 text-sm text-slate-300 mb-8">
+                  <li className="flex items-center gap-2">
+                    <CheckCircle2 size={16} className="text-blue-400 shrink-0" />
+                    <span>Prompting professionnel de haute précision</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckCircle2 size={16} className="text-blue-400 shrink-0" />
+                    <span>Création de contenus & prospection automatisée</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckCircle2 size={16} className="text-blue-400 shrink-0" />
+                    <span>7h d&apos;accompagnement individuel inclus</span>
+                  </li>
+                </ul>
+              </div>
+              <a
+                href="https://wa.me/33767246825?text=Bonjour%2C%20je%20souhaite%20m%27inscrire%20%C3%A0%20la%20formation%20IA%20RS6776."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full py-3.5 px-5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-center text-sm transition-all"
+              >
+                Rejoindre la formation IA →
+              </a>
+            </div>
+
+            {/* Pilier 2 : Cybersécurité */}
+            <div className="p-8 rounded-3xl bg-slate-900/80 border border-slate-800 relative flex flex-col justify-between shadow-xl hover:border-emerald-500/50 transition-all group">
+              <div>
+                <div className="w-14 h-14 rounded-2xl bg-emerald-600/20 text-emerald-400 border border-emerald-500/30 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                  <Lock size={28} />
+                </div>
+                <h3 className="text-2xl font-bold text-white mb-2">
+                  Cybersécurité & Données
+                </h3>
+                <div className="text-xs font-bold text-emerald-400 uppercase tracking-wider mb-4">
+                  Protection des TPE/PME & Hygiène Numérique
+                </div>
+                <p className="text-slate-300 text-sm leading-relaxed mb-6">
+                  Blindez vos systèmes face aux attaques, sécurisez l&apos;intégration de vos outils IA et protégez les données sensibles de vos clients.
+                </p>
+                <ul className="space-y-2.5 text-sm text-slate-300 mb-8">
+                  <li className="flex items-center gap-2">
+                    <CheckCircle2 size={16} className="text-emerald-400 shrink-0" />
+                    <span>Audit des failles et hygiène des mots de passe</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckCircle2 size={16} className="text-emerald-400 shrink-0" />
+                    <span>Protection anti-phishing et anti-ransomware</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckCircle2 size={16} className="text-emerald-400 shrink-0" />
+                    <span>Conformité RGPD & sécurisation des flux IA</span>
+                  </li>
+                </ul>
+              </div>
+              <a
+                href="https://wa.me/33767246825?text=Bonjour%2C%20je%20souhaite%20des%20informations%20sur%20la%20formation%20Cybers%C3%A9curit%C3%A9."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full py-3.5 px-5 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-bold text-center text-sm border border-slate-700 transition-all"
+              >
+                Découvrir le programme Cyber →
+              </a>
+            </div>
+
+            {/* Pilier 3 : Méthode TOP® */}
+            <div className="p-8 rounded-3xl bg-slate-900/80 border border-slate-800 relative flex flex-col justify-between shadow-xl hover:border-amber-500/50 transition-all group">
+              <div>
+                <div className="w-14 h-14 rounded-2xl bg-amber-600/20 text-amber-400 border border-amber-500/30 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                  <Brain size={28} />
+                </div>
+                <h3 className="text-2xl font-bold text-white mb-2">
+                  Méthode TOP® & Mental
+                </h3>
+                <div className="text-xs font-bold text-amber-400 uppercase tracking-wider mb-4">
+                  Optimisation du Potentiel & Anti-Burnout
+                </div>
+                <p className="text-slate-300 text-sm leading-relaxed mb-6">
+                  La boîte à outils psychophysiologique éprouvée pour réguler le stress, récupérer rapidement et décider avec lucidité sous haute pression.
+                </p>
+                <ul className="space-y-2.5 text-sm text-slate-300 mb-8">
+                  <li className="flex items-center gap-2">
+                    <CheckCircle2 size={16} className="text-amber-400 shrink-0" />
+                    <span>Régulation de la charge mentale des dirigeants</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckCircle2 size={16} className="text-amber-400 shrink-0" />
+                    <span>Techniques de respiration et focus flash</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckCircle2 size={16} className="text-amber-400 shrink-0" />
+                    <span>Santé mentale et endurance cognitive</span>
+                  </li>
+                </ul>
+              </div>
+              <a
+                href="https://wa.me/33767246825?text=Bonjour%2C%20je%20souhaite%20des%20informations%20sur%20la%20m%C3%A9thode%20TOP."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full py-3.5 px-5 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-bold text-center text-sm border border-slate-700 transition-all"
+              >
+                Explorer la Méthode TOP® →
+              </a>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+
+      {/* ─── 4. SIMULATEUR INTERACTIF DE ROI & FINANCEMENT ───────────────── */}
+      <section className="py-20 px-4 bg-slate-900/80 border-y border-slate-800 relative">
+        <div className="container mx-auto max-w-5xl">
+          
+          <div className="p-8 sm:p-12 rounded-3xl bg-slate-950 border border-slate-800 shadow-2xl">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+              
+              <div className="lg:col-span-6 space-y-4">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-400/20 text-emerald-400 text-xs font-bold uppercase tracking-wider">
+                  <Calculator size={14} />
+                  Simulateur d&apos;Impact Réel
+                </div>
+                <h2 className="text-2xl sm:text-4xl font-extrabold text-white">
+                  Calculez votre rentabilité immédiate
+                </h2>
+                <p className="text-slate-400 text-sm sm:text-base leading-relaxed">
+                  L&apos;IA et l&apos;automatisation ne sont pas un gadget : elles récupèrent du temps précieux que vous pouvez consacrer à vos clients et à votre chiffre d&apos;affaires.
+                </p>
+
+                <div className="space-y-6 pt-4">
+                  <div>
+                    <div className="flex justify-between text-sm font-semibold text-slate-300 mb-2">
+                      <span>Heures consacrées aux corvées / semaine :</span>
+                      <span className="text-blue-400 font-bold text-base">{hoursPerWeek} heures</span>
+                    </div>
+                    <input
+                      type="range"
+                      min={4}
+                      max={25}
+                      step={1}
+                      value={hoursPerWeek}
+                      onChange={(e) => setHoursPerWeek(Number(e.target.value))}
+                      className="w-full accent-blue-600 h-2 bg-slate-800 rounded-lg cursor-pointer"
+                    />
+                  </div>
+
+                  <div>
+                    <div className="flex justify-between text-sm font-semibold text-slate-300 mb-2">
+                      <span>Votre valeur horaire estimée :</span>
+                      <span className="text-blue-400 font-bold text-base">{hourlyRate} € / h</span>
+                    </div>
+                    <input
+                      type="range"
+                      min={30}
+                      max={200}
+                      step={5}
+                      value={hourlyRate}
+                      onChange={(e) => setHourlyRate(Number(e.target.value))}
+                      className="w-full accent-blue-600 h-2 bg-slate-800 rounded-lg cursor-pointer"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div className="lg:col-span-6 p-6 sm:p-8 rounded-2xl bg-gradient-to-br from-blue-950/60 to-slate-900 border border-blue-500/30 text-center space-y-6">
+                <div>
+                  <div className="text-xs uppercase font-bold text-slate-400 tracking-wider mb-1">
+                    Temps récupéré chaque année
+                  </div>
+                  <div className="text-4xl sm:text-5xl font-black text-white">
+                    ~{Math.round(annualSavingsHours * 0.65)} h
+                  </div>
+                  <div className="text-xs text-blue-400 mt-1">Soit plus d&apos;un mois complet de travail économisé</div>
+                </div>
+
+                <div className="pt-4 border-t border-slate-800">
+                  <div className="text-xs uppercase font-bold text-slate-400 tracking-wider mb-1">
+                    Valeur économique libérée
+                  </div>
+                  <div className="text-4xl sm:text-5xl font-black text-emerald-400">
+                    +{annualSavingsEuros.toLocaleString()} € / an
+                  </div>
+                </div>
+
+                <a
+                  href={`https://wa.me/33767246825?text=Bonjour%2C%20d%27apr%C3%A8s%20votre%20simulateur%20je%20peux%20%C3%A9conomiser%20${Math.round(annualSavingsHours * 0.65)}h%20par%20an.%20Je%20souhaite%20v%C3%A9rifier%20mes%20financements%20OPCO%2FCPF.`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block w-full py-4 px-6 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-sm transition-all shadow-lg cursor-pointer"
+                >
+                  Vérifier ma prise en charge à 100% 💬
+                </a>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+
+      {/* ─── 5. MUR D'AVIS CLIENTS & PREUVE SOCIALE (BENTO GRID) ─────────── */}
+      <ClientFeedback />
+
+
+      {/* ─── 6. L'ÉQUIPE : LE TRIO D'EXPERTS (EDITORIAL MOTION CARDS) ───── */}
+      <section className="py-24 px-4 bg-slate-950 border-t border-slate-850 relative">
+        <div className="container mx-auto max-w-5xl">
+          
+          <div className="text-center max-w-2xl mx-auto mb-16">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-blue-500/10 border border-blue-400/20 text-blue-400 text-xs font-bold uppercase tracking-wider mb-4">
+              Des Praticiens de Terrain
+            </div>
+            <h2 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight mb-4">
+              Le Trio d&apos;Experts
+            </h2>
+            <p className="text-slate-400 text-base sm:text-lg">
+              Une exigence constante, un accompagnement humain sans filtre et une expertise reconnue pour vous guider pas à pas.
+            </p>
+          </div>
+
+          <div className="space-y-12">
+            {/* 1. Mélissa */}
+            <TeamMemberCard
+              position="left"
+              firstName="Mélissa"
+              lastName="JENNADI"
+              imageUrl="/team-melyssa.png"
+              description="Rigueur scientifique, sens aigu de la transmission et dévouement absolu pour faire grandir vos équipes et pérenniser votre activité."
+              onCtaClick={() => window.open('https://wa.me/33767246825?text=Bonjour%20M%C3%A9lissa%2C%20je%20souhaite%20%C3%A9changer%20avec%20vous.', '_blank')}
+            />
+
+            {/* 2. Renaud */}
+            <TeamMemberCard
+              position="right"
+              firstName="Renaud"
+              lastName=""
+              imageUrl="/team-renaud.jpg"
+              description="Passionné par l&apos;impact technologique et l&apos;efficacité opérationnelle, pour transformer des outils complexes en leviers de croissance concrets."
+              onCtaClick={() => window.open('https://wa.me/33674797509?text=Bonjour%20Renaud%2C%20je%20souhaite%20%C3%A9changer%20avec%20vous.', '_blank')}
+            />
+
+            {/* 3. Régis */}
+            <TeamMemberCard
+              position="left"
+              firstName="Régis"
+              lastName=""
+              imageUrl="/team-regis.png"
+              description="Excellence opérationnelle forgée sur le terrain, sang-froid et vision stratégique pour sécuriser chaque étape de votre transition."
+              onCtaClick={() => window.open('https://wa.me/33767246825?text=Bonjour%20R%C3%A9gis%2C%20je%20souhaite%20%C3%A9changer%20avec%20vous.', '_blank')}
+            />
+          </div>
+
+        </div>
+      </section>
+
+
+      {/* ─── 7. GET IN TOUCH (CARTE SOMBRE MODERNE + WHATSAPP DIRECT) ───── */}
+      <GetInTouch />
+
+
+      {/* ─── 8. FOOTER COMPLET ─────────────────────────────────────────── */}
       <Footer />
+
     </main>
   );
 }

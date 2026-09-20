@@ -1,169 +1,63 @@
-import Link from 'next/link';
-import Footer from '@/components/Footer';
+'use client';
 
-export const metadata = {
-  title: 'Notre Équipe | Ô\'TOP Formation',
-  description: 'Découvrez l\'équipe d\'experts certifiés TOP® d\'Ô\'TOP Formation : Melyssa Jennadi et Régis, des professionnels engagés pour votre développement.',
-};
+import React from 'react';
+import Footer from '@/components/Footer';
+import TeamMemberCard from '@/components/ui/team-member-card';
 
 export default function EquipePage() {
   return (
-    <>
+    <main className="min-h-screen bg-slate-950 text-slate-100 font-sans">
       {/* ── Hero ── */}
-      <section className="page-hero">
-        <div className="container">
-          <h1>Notre Équipe</h1>
-          <p className="hero-subtitle">
-            Des experts certifiés TOP® passionnés par le développement humain et la performance durable,
-            à votre service pour transformer votre rapport au stress et à la performance.
+      <section className="pt-24 pb-16 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-blue-900/30 via-slate-950 to-slate-950 border-b border-slate-800 text-center px-4">
+        <div className="container mx-auto max-w-4xl">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-blue-500/10 border border-blue-400/20 text-blue-400 text-xs font-bold uppercase tracking-wider mb-4">
+            L&apos;Équipe
+          </div>
+          <h1 className="text-4xl sm:text-6xl font-extrabold text-white tracking-tight mb-4">
+            Le Trio d&apos;Experts
+          </h1>
+          <p className="text-slate-400 text-base sm:text-lg max-w-2xl mx-auto">
+            Une synergie humaine et technique dédiée à l&apos;élévation de vos compétences et à la protection durable de votre activité.
           </p>
         </div>
       </section>
 
       {/* ── Team Cards ── */}
-      <section className="section">
-        <div className="container">
-          <h2 className="section-title">Les fondateurs</h2>
-          <p className="section-subtitle">
-            Une équipe soudée par des valeurs communes et une expertise reconnue dans les Techniques
-            d'Optimisation du Potentiel.
-          </p>
+      <section className="py-20 px-4">
+        <div className="container mx-auto max-w-5xl space-y-12">
+          {/* 1. Mélissa */}
+          <TeamMemberCard
+            position="left"
+            firstName="Mélissa"
+            lastName="JENNADI"
+            imageUrl="/team-melyssa.png"
+            description="Rigueur scientifique, sens aigu de la transmission et dévouement absolu pour faire grandir vos équipes et pérenniser votre activité."
+            onCtaClick={() => window.open('https://wa.me/33767246825?text=Bonjour%20M%C3%A9lissa%2C%20je%20souhaite%20%C3%A9changer%20avec%20vous.', '_blank')}
+          />
 
-          <div className="team-grid">
-            {/* ── Card Melyssa ── */}
-            <div className="team-card">
-              <div className="team-card-image-wrapper">
-                <img
-                  src="/team-melyssa.png"
-                  alt="Melyssa Jennadi — Présidente Ô'TOP Formation"
-                  className="team-card-image"
-                />
-              </div>
-              <div className="team-card-body">
-                <h3 className="team-card-name">Melyssa Jennadi</h3>
-                <p className="team-card-title">
-                  Présidente — Docteure en Sciences Humaines — Formatrice TOP®
-                </p>
-                <div className="team-card-tags">
-                  <span className="tag">Docteure en Sciences Humaines</span>
-                  <span className="tag">Formatrice TOP®</span>
-                  <span className="tag">Référente Qualité</span>
-                  <span className="tag">Référente Handicap</span>
-                </div>
-                <p className="team-card-bio">
-                  Docteure en Sciences Humaines, Melyssa Jennadi a consacré sa carrière au développement
-                  des compétences humaines et à la prévention des risques psychosociaux. Formatrice
-                  certifiée TOP®, elle préside Ô'TOP Formation avec une vision claire : rendre
-                  accessibles à tous les outils de la préparation mentale et de la gestion du stress.
-                  Référente qualité et référente handicap de l'organisme.
-                </p>
-                <a
-                  href="https://www.linkedin.com/in/melyssa-jennadi"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn btn-outline btn-sm"
-                >
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                  </svg>
-                  Profil LinkedIn
-                </a>
-              </div>
-            </div>
+          {/* 2. Renaud */}
+          <TeamMemberCard
+            position="right"
+            firstName="Renaud"
+            lastName=""
+            imageUrl="/team-renaud.jpg"
+            description="Passionné par l&apos;impact technologique et l&apos;efficacité opérationnelle, pour transformer des outils complexes en leviers de croissance concrets."
+            onCtaClick={() => window.open('https://wa.me/33674797509?text=Bonjour%20Renaud%2C%20je%20souhaite%20%C3%A9changer%20avec%20vous.', '_blank')}
+          />
 
-            {/* ── Card Renaud ── */}
-            <div className="team-card">
-              <div className="team-card-image-wrapper">
-                <img
-                  src="/team-renaud.jpg"
-                  alt="Renaud — Expert Transformation Digitale & IA"
-                  className="team-card-image"
-                />
-              </div>
-
-              <div className="team-card-body">
-                <h3 className="team-card-name">Renaud</h3>
-                <p className="team-card-title">
-                  Expert Transformation Digitale, IA &amp; Systèmes d&apos;Entreprise
-                </p>
-                <div className="team-card-tags">
-                  <span className="tag">Spécialiste IA &amp; Automatisation</span>
-                  <span className="tag">Accompagnement Dirigeants &amp; PME</span>
-                  <span className="tag">Conformité AI Act 2025</span>
-                </div>
-                <p className="team-card-bio">
-                  Spécialiste de la transformation digitale et des technologies d&apos;intelligence artificielle générative,
-                  Renaud accompagne les dirigeants, indépendants et équipes d&apos;entreprise pour simplifier leurs processus,
-                  automatiser leurs flux de travail et exploiter l&apos;IA de façon responsable et sécurisée.
-                </p>
-                <a
-                  href="tel:+33674797509"
-                  className="btn btn-outline btn-sm"
-                >
-                  📞 06 74 79 75 09
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ── Values ── */}
-      <section className="section section-alt">
-        <div className="container">
-          <h2 className="section-title">Nos valeurs</h2>
-          <p className="section-subtitle">
-            Les principes qui guident chacune de nos formations et chacune de nos interactions.
-          </p>
-          <div className="values-grid">
-            <div className="value-card">
-              <div className="value-icon" aria-hidden="true">💡</div>
-              <h3>Innovation</h3>
-              <p>
-                Nous puisons dans des méthodes éprouvées par l'armée et le sport de haut niveau pour
-                les adapter aux réalités du monde professionnel et civil d'aujourd'hui.
-              </p>
-            </div>
-            <div className="value-card">
-              <div className="value-icon" aria-hidden="true">⚖️</div>
-              <h3>Équilibre</h3>
-              <p>
-                Performance et bien-être ne s'opposent pas — ils se nourrissent mutuellement. Nos
-                formations visent un équilibre durable entre exigence et bienveillance.
-              </p>
-            </div>
-            <div className="value-card">
-              <div className="value-icon" aria-hidden="true">🏆</div>
-              <h3>Performance durable</h3>
-              <p>
-                Contrairement aux solutions rapides, les TOP® ancrent des habitudes mentales
-                profondes qui produisent des résultats mesurables et pérennes sur le long terme.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ── CTA ── */}
-      <section className="section cta-section">
-        <div className="container cta-inner">
-          <h2>Vous souhaitez nous contacter ?</h2>
-          <p>
-            Notre équipe est disponible pour répondre à toutes vos questions sur nos formations
-            et adapter nos programmes à vos besoins spécifiques.
-          </p>
-          <div className="cta-buttons">
-            <Link href="/contact" className="btn btn-primary btn-lg">
-              Nous contacter
-            </Link>
-            <Link href="/formations" className="btn btn-outline-light btn-lg">
-              Voir nos formations
-            </Link>
-          </div>
+          {/* 3. Régis */}
+          <TeamMemberCard
+            position="left"
+            firstName="Régis"
+            lastName=""
+            imageUrl="/team-regis.png"
+            description="Excellence opérationnelle forgée sur le terrain, sang-froid et vision stratégique pour sécuriser chaque étape de votre transition."
+            onCtaClick={() => window.open('https://wa.me/33767246825?text=Bonjour%20R%C3%A9gis%2C%20je%20souhaite%20%C3%A9changer%20avec%20vous.', '_blank')}
+          />
         </div>
       </section>
 
       <Footer />
-    </>
+    </main>
   );
 }
