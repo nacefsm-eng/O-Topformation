@@ -6,19 +6,24 @@ import { usePathname } from 'next/navigation';
 
 const formationsLinks = [
   { 
-    label: '🧘 Santé Mentale & Méthode TOP®', 
-    desc: 'Gestion du stress, sommeil, prévention RPS (21h / 7h)',
-    href: '/formations/fi-top' 
+    label: '🤖 IA & Automatisation Business (RS7344)', 
+    desc: 'Intégration de l\'IA dans l\'entreprise, workflows & conformité IA Act',
+    href: '/formations/ia' 
   },
   { 
-    label: '🤖 Intelligence Artificielle (RS7344 / RS6776)', 
-    desc: 'Intégration IA pour dirigeants & IA Générative pour indépendants',
+    label: '⚡ IA Générative pour Indépendants (RS6776)', 
+    desc: '16h vidéos, prompts avancés, GPT sur-mesure & gain de 15h/semaine',
     href: '/formations/ia' 
   },
   { 
     label: '📱 Communication & Réseaux Sociaux (RS7351)', 
-    desc: 'Meta, Canva, CapCut, stratégie de diffusion & acquisition',
+    desc: '11h+ vidéos, LinkedIn, Waalaxy, Instagram, CapCut & Meta Ads',
     href: '/formations/reseaux-sociaux' 
+  },
+  { 
+    label: '🧘 Méthode TOP® & Santé Mentale', 
+    desc: 'Régulation du stress, prévention du burnout & endurance cognitive',
+    href: '/formations/fi-top' 
   },
 ];
 
@@ -47,14 +52,13 @@ export default function Nav() {
     };
   }, [mobileOpen]);
 
-  // Close mobile menu on route change
   useEffect(() => {
     setMobileOpen(false);
   }, [pathname]);
 
   return (
     <>
-      {/* Top Bar Contact & Socials */}
+      {/* Top Bar Contact & Socials (Luxury Dark) */}
       <div className="top-bar">
         <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', width: '100%' }}>
           <div className="top-bar-socials">
@@ -70,114 +74,119 @@ export default function Nav() {
           </div>
           <div className="top-bar-contact">
             <a href="tel:+33767246825">📞 Mélissa : 07 67 24 68 25</a>
-            <span style={{ opacity: 0.4 }}>|</span>
+            <span style={{ opacity: 0.3 }}>|</span>
             <a href="tel:+33674797509">📞 Renaud : 06 74 79 75 09</a>
-            <span style={{ opacity: 0.4 }}>|</span>
+            <span style={{ opacity: 0.3 }}>|</span>
             <a href="mailto:formation.rmcf@gmail.com">✉️ formation.rmcf@gmail.com</a>
           </div>
         </div>
       </div>
 
-      <nav className={`nav${scrolled ? ' scrolled' : ''}`} style={{ padding: '0.75rem 0' }}>
+      {/* Main Glass Nav */}
+      <nav className={`nav${scrolled ? ' scrolled' : ''}`}>
         <div className="container" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+          
           {/* Logo */}
-          <Link href="/" className="nav-logo" aria-label="Accueil O'TOP Formation">
-            <img src="/logo.png" alt="O'TOP Formation" height={48} style={{ height: '48px', width: 'auto' }} />
+          <Link href="/" className="nav-logo" aria-label="Accueil O'TOP Formation" style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+            <img src="/logo.png" alt="O'TOP Formation" height={44} style={{ height: '44px', width: 'auto' }} />
           </Link>
 
-        {/* Desktop links */}
-        <ul className="nav-links" role="menubar">
-          <li role="none">
-            <Link href="/" className={pathname === '/' ? 'active' : ''} role="menuitem">
-              Accueil
-            </Link>
-          </li>
+          {/* Desktop links */}
+          <ul className="nav-links" role="menubar">
+            <li role="none">
+              <Link href="/" className={pathname === '/' ? 'active' : ''} role="menuitem">
+                Accueil
+              </Link>
+            </li>
 
-          {/* Formations dropdown */}
-          <li className="nav-dropdown" role="none">
-            <button
-              className="nav-dropdown-trigger"
-              role="menuitem"
-              aria-haspopup="true"
-              aria-expanded="false"
-              type="button"
+            {/* Formations dropdown */}
+            <li className="nav-dropdown" role="none">
+              <button
+                className="nav-dropdown-trigger"
+                role="menuitem"
+                aria-haspopup="true"
+                aria-expanded="false"
+                type="button"
+              >
+                Formations Certifiantes <span aria-hidden="true" style={{ fontSize: '0.7rem' }}>▾</span>
+              </button>
+              <ul className="nav-dropdown-menu" role="menu" style={{ width: '380px' }}>
+                {formationsLinks.map((item) => (
+                  <li key={item.label} role="none">
+                    <Link
+                      href={item.href}
+                      className={pathname === item.href ? 'active' : ''}
+                      role="menuitem"
+                    >
+                      <div style={{ fontWeight: 700, color: '#ffffff' }}>{item.label}</div>
+                      <div style={{ fontSize: '0.75rem', color: '#94a3b8', marginTop: '3px', lineHeight: 1.4 }}>{item.desc}</div>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </li>
+
+            <li role="none">
+              <Link
+                href="/entreprises"
+                className={pathname === '/entreprises' ? 'active' : ''}
+                role="menuitem"
+              >
+                Entreprises & B2B
+              </Link>
+            </li>
+
+            <li role="none">
+              <Link
+                href="/methode"
+                className={pathname === '/methode' ? 'active' : ''}
+                role="menuitem"
+              >
+                Méthode TOP®
+              </Link>
+            </li>
+
+            <li role="none">
+              <Link
+                href="/qualite"
+                className={pathname === '/qualite' ? 'active' : ''}
+                role="menuitem"
+              >
+                Qualiopi
+              </Link>
+            </li>
+
+            <li role="none">
+              <Link
+                href="/equipe"
+                className={pathname === '/equipe' ? 'active' : ''}
+                role="menuitem"
+              >
+                Équipe
+              </Link>
+            </li>
+          </ul>
+
+          {/* Desktop actions */}
+          <div className="nav-actions">
+            <a
+              href="https://wa.me/33767246825?text=Bonjour%2C%20je%20souhaite%20des%20informations%20sur%20les%20formations%20O%27TOP."
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-3.5 py-2 rounded-full text-xs font-bold flex items-center gap-1.5 transition-all"
+              style={{ background: 'rgba(16, 185, 129, 0.15)', border: '1px solid rgba(16, 185, 129, 0.4)', color: '#34d399' }}
             >
-              Nos Formations Certifiantes <span aria-hidden="true">▾</span>
-            </button>
-            <ul className="nav-dropdown-menu" role="menu" style={{ width: '380px' }}>
-              {formationsLinks.map((item) => (
-                <li key={item.href + item.label} role="none" style={{ padding: '0.5rem 0' }}>
-                  <Link
-                    href={item.href}
-                    className={pathname === item.href ? 'active' : ''}
-                    role="menuitem"
-                    style={{ display: 'block', padding: '0.5rem 1rem' }}
-                  >
-                    <div style={{ fontWeight: 700, color: 'var(--blue-900)' }}>{item.label}</div>
-                    <div style={{ fontSize: '0.75rem', color: 'var(--gray-600)', marginTop: '2px' }}>{item.desc}</div>
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </li>
+              <span>💬 WhatsApp</span>
+            </a>
 
-          <li role="none">
-            <Link
-              href="/entreprises"
-              className={pathname === '/entreprises' ? 'active' : ''}
-              role="menuitem"
+            <Link 
+              href="/contact" 
+              className="px-4 py-2 rounded-full text-xs font-bold text-white transition-all shadow-lg hover:shadow-blue-500/25"
+              style={{ background: 'linear-gradient(135deg, #2563eb, #4f46e5)' }}
             >
-              🏢 Solutions Entreprises & Digital
+              Diagnostic 15 min ⚡
             </Link>
-          </li>
-
-          <li role="none">
-            <Link
-              href="/methode"
-              className={pathname === '/methode' ? 'active' : ''}
-              role="menuitem"
-            >
-              La Méthode TOP®
-            </Link>
-          </li>
-
-          <li role="none">
-            <Link
-              href="/qualite"
-              className={pathname === '/qualite' ? 'active' : ''}
-              role="menuitem"
-            >
-              Qualité Qualiopi
-            </Link>
-          </li>
-
-          <li role="none">
-            <Link
-              href="/equipe"
-              className={pathname === '/equipe' ? 'active' : ''}
-              role="menuitem"
-            >
-              Équipe
-            </Link>
-          </li>
-        </ul>
-
-        {/* Desktop actions */}
-        <div className="nav-actions">
-          <a
-            href="https://wa.me/33767246825?text=Bonjour%2C%20je%20souhaite%20un%20diagnostic%20pour%20une%20formation%20ou%20un%20projet."
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn btn-ghost"
-            style={{ color: '#25D366', fontWeight: 700 }}
-          >
-            <span>💬 WhatsApp</span>
-          </a>
-
-          <Link href="/contact" className="btn btn-primary" style={{ background: 'var(--blue-900)', color: 'white' }}>
-            Diagnostic Gratuit ⚡
-          </Link>
-        </div>
+          </div>
 
           {/* Mobile hamburger button */}
           <button
@@ -197,87 +206,39 @@ export default function Nav() {
       <div
         className={`nav-mobile-menu${mobileOpen ? ' open' : ''}`}
         aria-hidden={!mobileOpen}
+        style={{ background: '#030712', color: 'white' }}
       >
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '2rem' }}>
           <img src="/logo.png" alt="O'TOP Formation" height={44} />
           <button
             onClick={() => setMobileOpen(false)}
             aria-label="Fermer le menu"
-            style={{ background: 'none', border: 'none', fontSize: '1.75rem', cursor: 'pointer', color: 'var(--blue-900)' }}
+            style={{ background: 'none', border: 'none', fontSize: '1.75rem', cursor: 'pointer', color: '#cbd5e1' }}
           >
             ✕
           </button>
         </div>
 
-        <ul className="nav-mobile-links">
-          <li>
-            <Link href="/" onClick={() => setMobileOpen(false)}>
-              Accueil
-            </Link>
-          </li>
-
-          <li style={{ marginTop: '1rem', marginBottom: '0.5rem', fontSize: '0.8rem', fontWeight: 800, color: 'var(--gold-dark)', textTransform: 'uppercase' }}>
-            Nos Formations
-          </li>
-
-          {formationsLinks.map((item) => (
-            <li key={item.href} style={{ paddingLeft: '0.75rem', marginBottom: '0.5rem' }}>
-              <Link href={item.href} onClick={() => setMobileOpen(false)}>
-                {item.label}
+        <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
+          <li><Link href="/" onClick={() => setMobileOpen(false)} style={{ color: 'white', fontSize: '1.1rem', fontWeight: 700 }}>Accueil</Link></li>
+          <li style={{ padding: '0.75rem 0', borderTop: '1px solid #1e293b', borderBottom: '1px solid #1e293b' }}>
+            <div style={{ fontSize: '0.8rem', color: '#38bdf8', fontWeight: 800, textTransform: 'uppercase', marginBottom: '0.5rem' }}>Formations Certifiantes :</div>
+            {formationsLinks.map(f => (
+              <Link key={f.label} href={f.href} onClick={() => setMobileOpen(false)} style={{ display: 'block', padding: '0.4rem 0', color: '#cbd5e1', fontSize: '0.95rem' }}>
+                {f.label}
               </Link>
-            </li>
-          ))}
-
+            ))}
+          </li>
+          <li><Link href="/entreprises" onClick={() => setMobileOpen(false)} style={{ color: 'white', fontSize: '1.1rem' }}>Entreprises & B2B</Link></li>
+          <li><Link href="/methode" onClick={() => setMobileOpen(false)} style={{ color: 'white', fontSize: '1.1rem' }}>La Méthode TOP®</Link></li>
+          <li><Link href="/qualite" onClick={() => setMobileOpen(false)} style={{ color: 'white', fontSize: '1.1rem' }}>Qualité Qualiopi</Link></li>
+          <li><Link href="/equipe" onClick={() => setMobileOpen(false)} style={{ color: 'white', fontSize: '1.1rem' }}>Équipe</Link></li>
           <li style={{ marginTop: '1rem' }}>
-            <Link href="/entreprises" onClick={() => setMobileOpen(false)}>
-              🏢 Solutions Entreprises & Digital
-            </Link>
-          </li>
-
-          <li>
-            <Link href="/methode" onClick={() => setMobileOpen(false)}>
-              La Méthode TOP®
-            </Link>
-          </li>
-
-          <li>
-            <Link href="/qualite" onClick={() => setMobileOpen(false)}>
-              Qualité & Certifications
-            </Link>
-          </li>
-
-          <li>
-            <Link href="/equipe" onClick={() => setMobileOpen(false)}>
-              Notre Équipe
-            </Link>
-          </li>
-
-          <li>
-            <Link href="/contact" onClick={() => setMobileOpen(false)}>
-              Contact & Diagnostic
+            <Link href="/contact" onClick={() => setMobileOpen(false)} className="w-full block py-3.5 text-center rounded-xl bg-blue-600 text-white font-bold">
+              Demander un diagnostic (15 min) ⚡
             </Link>
           </li>
         </ul>
-
-        <div style={{ marginTop: '2rem', display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
-          <a
-            href="https://wa.me/33767246825"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn"
-            style={{ width: '100%', justifyContent: 'center', background: '#25D366', color: 'white' }}
-          >
-            💬 Discuter sur WhatsApp
-          </a>
-          <Link
-            href="/contact"
-            className="btn btn-primary"
-            style={{ width: '100%', justifyContent: 'center' }}
-            onClick={() => setMobileOpen(false)}
-          >
-            Demander un Diagnostic (15 min) ⚡
-          </Link>
-        </div>
       </div>
     </>
   );
