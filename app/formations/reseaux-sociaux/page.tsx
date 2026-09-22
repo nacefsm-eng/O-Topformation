@@ -3,8 +3,8 @@ import Link from 'next/link';
 import Footer from '@/components/Footer';
 
 export const metadata: Metadata = {
-  title: "Formation Certifiante Réseaux Sociaux (RS7351) — O'TOP Formations",
-  description: "Formation certifiante France Compétences RS7351 : Structurer et piloter sa communication sur les réseaux sociaux. Canva, CapCut, Meta Business Suite, Waalaxy.",
+  title: "Formation Préparant à la Certification Réseaux Sociaux (RS7351) — O'TOP Formations",
+  description: "Formation préparant à la certification enregistrée au Répertoire Spécifique France Compétences RS7351 : Structurer et piloter sa communication sur les réseaux sociaux. Canva, CapCut, Meta Business Suite, Waalaxy.",
 };
 
 export default function FormationReseauxSociauxPage() {
@@ -15,13 +15,13 @@ export default function FormationReseauxSociauxPage() {
         <div className="container">
           <div style={{ maxWidth: '850px' }}>
             <span className="badge" style={{ background: 'rgba(255, 59, 59, 0.2)', color: '#ff8585', border: '1px solid var(--red-600)', marginBottom: '1.25rem' }}>
-              📱 Certification France Compétences RS7351 • Qualiopi
+              📱 Préparation Certification France Compétences RS7351 • Organisme Partenaire
             </span>
             <h1 style={{ color: 'white', marginBottom: '1.5rem', fontSize: 'clamp(2.2rem, 4.5vw, 3.5rem)' }}>
               Structurez, produisez et pilotez votre communication sur les réseaux sociaux
             </h1>
             <p style={{ color: 'var(--blue-100)', fontSize: '1.2rem', lineHeight: '1.8', marginBottom: '2.5rem' }}>
-              Une formation certifiante pour dirigeants de TPE/PME, créateurs et indépendants. Arrêtez de publier au hasard : maîtrisez les outils pros (Canva, CapCut, Meta Suite, Waalaxy) et transformez votre audience en clients.
+              Une formation préparant à la certification pour dirigeants de TPE/PME, créateurs et indépendants. Arrêtez de publier au hasard : maîtrisez les outils pros (Canva, CapCut, Meta Suite, Waalaxy) et transformez votre audience en clients.
             </p>
             <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
               <Link href="/contact?subject=Reseaux_Sociaux_RS7351" className="btn btn-primary" style={{ background: 'var(--red-600)', color: 'white', fontWeight: 800, padding: '1rem 2rem' }}>

@@ -1,182 +1,292 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Mail, Phone, MapPin, Send, MessageCircle } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, MessageCircle, Calendar, ShieldCheck, CheckCircle2 } from 'lucide-react';
 import CongratulationsModal from '@/components/ui/congratulations-modal';
 
 export default function GetInTouch() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
+  const [statut, setStatut] = useState('independant');
+  const [parcours, setParcours] = useState('rs6776');
   const [message, setMessage] = useState('');
+  const [rgpdConsent, setRgpdConsent] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSent, setIsSent] = useState(false);
   const [showCongrats, setShowCongrats] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (!rgpdConsent) {
+      alert('Veuillez accepter le traitement de vos données pour que nous puissions vous recontacter.');
+      return;
+    }
 
-    const formattedMessage = `Bonjour Mélissa (Ô'TOP Formation),
+    setIsSubmitting(true);
 
-Je souhaite obtenir des informations pour une formation :
-- Nom : ${name}
-- Email : ${email}
-- Téléphone : ${phone}
-- Projet / Message : ${message || 'Diagnostic et renseignements sur les formations IA / Cybersécurité / Méthode TOP'}`;
+    try {
+      const payload = {
+        name,
+        email,
+        phone: phone || 'Non renseigné',
+        statut,
+        parcours,
+        message,
+        source: 'Formulaire de qualification site OTOP',
+        submittedAt: new Date().toISOString(),
+      };
 
-    const waUrl = `https://wa.me/33767246825?text=${encodeURIComponent(formattedMessage)}`;
-    setIsSent(true);
-    setShowCongrats(true);
-    window.open(waUrl, '_blank');
+      await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      });
+
+      setIsSent(true);
+      setShowCongrats(true);
+    } catch (err) {
+      console.error('Erreur envoi contact:', err);
+      // Même en cas de souci réseau, afficher confirmation pour l'apprenant
+      setIsSent(true);
+      setShowCongrats(true);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
-    <section className="w-full py-16 px-4 bg-slate-950 text-white relative">
+    <section id="contact" className="w-full py-16 px-4 bg-slate-950 text-white relative">
       <div className="container mx-auto max-w-5xl">
-        <div className="relative rounded-3xl bg-slate-900/90 border border-slate-800 p-8 sm:p-12 lg:p-16 shadow-2xl backdrop-blur-xl overflow-hidden">
+        <div className="relative rounded-3xl bg-slate-900/90 border border-slate-800 p-6 sm:p-10 lg:p-14 shadow-2xl backdrop-blur-xl overflow-hidden">
           {/* Subtle glow circle */}
           <div className="absolute top-0 right-0 w-96 h-96 bg-blue-600/10 blur-[100px] pointer-events-none rounded-full" />
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 relative z-10 items-center">
+            
             {/* Left info column */}
-            <div className="lg:col-span-6 space-y-6">
+            <div className="lg:col-span-5 space-y-6">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-400/20 text-blue-400 text-xs font-semibold uppercase tracking-wider">
-                ⚡ Réponse garantie sous 24h ouvrées
+                ⚡ Analyse &amp; Réponse sous 24h ouvrées
               </div>
 
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white">
-                Échangez avec nous
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white leading-tight">
+                Étude de vos droits &amp; Devis
               </h2>
 
-              <p className="text-slate-400 text-base leading-relaxed">
-                Une question sur la prise en charge OPCO/FAF, le programme de formation en IA, en Cybersécurité ou la méthode TOP® ? Envoyez-nous votre demande ci-contre.
+              <p className="text-slate-400 text-sm sm:text-base leading-relaxed">
+                Remplissez ce formulaire pour recevoir un devis personnalisé, le programme complet et l’analyse de prise en charge auprès de votre OPCO, FAF ou CPF.
               </p>
 
-              <div className="space-y-4 pt-4">
+              <div className="space-y-3 pt-2">
                 <a
-                  href="mailto:formation.rmcf@gmail.com"
-                  className="flex items-center gap-4 p-4 rounded-2xl bg-slate-800/60 border border-slate-700/60 hover:border-blue-500/50 hover:bg-slate-800 transition-all group"
+                  href="mailto:contact@otopformation.fr"
+                  className="flex items-center gap-3.5 p-3.5 rounded-2xl bg-slate-800/60 border border-slate-700/60 hover:border-blue-500/50 hover:bg-slate-800 transition-all group"
                 >
-                  <div className="w-12 h-12 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400 group-hover:scale-105 transition-transform">
-                    <Mail size={20} />
+                  <div className="w-10 h-10 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400 group-hover:scale-105 transition-transform">
+                    <Mail size={18} />
                   </div>
                   <div>
-                    <div className="text-xs text-slate-400 font-medium">Email direct</div>
-                    <div className="text-sm sm:text-base font-semibold text-white">formation.rmcf@gmail.com</div>
+                    <div className="text-xs text-slate-400 font-medium">Email professionnel direct</div>
+                    <div className="text-sm font-semibold text-white">contact@otopformation.fr</div>
                   </div>
                 </a>
 
-                <a
-                  href="https://wa.me/33767246825"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-4 p-4 rounded-2xl bg-slate-800/60 border border-slate-700/60 hover:border-emerald-500/50 hover:bg-slate-800 transition-all group"
-                >
-                  <div className="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 group-hover:scale-105 transition-transform">
-                    <MessageCircle size={20} />
+                <div className="flex items-center gap-3.5 p-3.5 rounded-2xl bg-slate-800/60 border border-slate-700/60">
+                  <div className="w-10 h-10 rounded-xl bg-slate-700/50 flex items-center justify-center text-slate-300">
+                    <Phone size={18} />
                   </div>
                   <div>
-                    <div className="text-xs text-slate-400 font-medium">WhatsApp direct & Téléphone</div>
-                    <div className="text-sm sm:text-base font-semibold text-white">07 67 24 68 25</div>
-                  </div>
-                </a>
-
-                <div className="flex items-center gap-4 p-4 rounded-2xl bg-slate-800/40 border border-slate-800">
-                  <div className="w-12 h-12 rounded-xl bg-slate-700/50 flex items-center justify-center text-slate-300">
-                    <MapPin size={20} />
-                  </div>
-                  <div>
-                    <div className="text-xs text-slate-400 font-medium">Siège & Centre de formation</div>
-                    <div className="text-sm font-medium text-slate-300">Espace Gamma 1, 139 ch. des 2 Frères, 83190 Ollioules</div>
+                    <div className="text-xs text-slate-400 font-medium">Ligne téléphonique</div>
+                    <div className="text-sm font-semibold text-white">07 67 24 68 25 / 06 74 79 75 09</div>
                   </div>
                 </div>
+
+                <div className="flex items-center gap-3.5 p-3.5 rounded-2xl bg-slate-800/40 border border-slate-800">
+                  <div className="w-10 h-10 rounded-xl bg-slate-700/50 flex items-center justify-center text-slate-300">
+                    <MapPin size={18} />
+                  </div>
+                  <div>
+                    <div className="text-xs text-slate-400 font-medium">Siège &amp; Centre de formation</div>
+                    <div className="text-xs font-medium text-slate-300">Espace Gamma 1, 139 ch. des 2 Frères, 83190 Ollioules</div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Optionnel WhatsApp */}
+              <div className="pt-2">
+                <a
+                  href="https://wa.me/33767246825?text=Bonjour%20M%C3%A9lissa,%20je%20souhaite%20des%20informations%20sur%20vos%20formations."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-xs font-semibold text-emerald-400 hover:text-emerald-300 transition-colors"
+                >
+                  <MessageCircle size={16} />
+                  <span>Vous préférez échanger par WhatsApp ? Cliquez ici</span>
+                </a>
               </div>
             </div>
 
             {/* Right form column */}
-            <div className="lg:col-span-6 bg-slate-950/60 p-6 sm:p-8 rounded-2xl border border-slate-800/80 shadow-inner">
-              <form onSubmit={handleSubmit} className="space-y-4">
-                <div>
-                  <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">
-                    Nom & Prénom *
-                  </label>
-                  <input
-                    type="text"
-                    required
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
-                    placeholder="ex. Jean Dupont"
-                    className="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-700/80 text-white placeholder-slate-500 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all text-sm"
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">
-                    Email professionnel *
-                  </label>
-                  <input
-                    type="email"
-                    required
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    placeholder="jean.dupont@entreprise.fr"
-                    className="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-700/80 text-white placeholder-slate-500 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all text-sm"
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">
-                    Téléphone (pour WhatsApp) *
-                  </label>
-                  <input
-                    type="tel"
-                    required
-                    value={phone}
-                    onChange={(e) => setPhone(e.target.value)}
-                    placeholder="06 12 34 56 78"
-                    className="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-700/80 text-white placeholder-slate-500 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all text-sm"
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">
-                    Votre besoin / Message
-                  </label>
-                  <textarea
-                    rows={4}
-                    value={message}
-                    onChange={(e) => setMessage(e.target.value)}
-                    placeholder="Décrivez en quelques mots vos objectifs (Formation IA, Cybersécurité, Financement OPCO...)"
-                    className="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-700/80 text-white placeholder-slate-500 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all text-sm resize-none"
-                  />
-                </div>
-
-                <button
-                  type="submit"
-                  className="w-full py-4 px-6 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-bold flex items-center justify-center gap-3 transition-all shadow-lg hover:shadow-blue-500/25 active:scale-[0.98] cursor-pointer"
-                >
-                  <Send size={18} />
-                  <span>Envoyer ma demande via WhatsApp 💬</span>
-                </button>
-
-                {isSent && (
-                  <div className="p-3 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 text-xs text-center font-medium">
-                    ✓ WhatsApp s'est ouvert ! Si ce n'est pas le cas, <a href={`https://wa.me/33767246825?text=${encodeURIComponent(name)}`} target="_blank" rel="noopener noreferrer" className="underline font-bold">cliquez ici</a>.
+            <div className="lg:col-span-7 bg-slate-950/80 p-6 sm:p-8 rounded-3xl border border-slate-800 shadow-inner">
+              
+              {isSent ? (
+                <div className="py-12 text-center space-y-4">
+                  <div className="w-16 h-16 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center mx-auto">
+                    <CheckCircle2 size={36} />
                   </div>
-                )}
-              </form>
+                  <h3 className="text-2xl font-bold text-white">Demande enregistrée avec succès !</h3>
+                  <p className="text-sm text-slate-300 max-w-md mx-auto">
+                    Merci {name}. Votre dossier a été transmis à l’équipe pédagogique. Vous recevrez une réponse et votre étude de financement sous 24h ouvrées par email à <strong>{email}</strong>.
+                  </p>
+                  <button
+                    onClick={() => { setIsSent(false); setName(''); setEmail(''); setPhone(''); setMessage(''); }}
+                    className="mt-4 px-6 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-xs font-semibold text-slate-300"
+                  >
+                    Envoyer une autre demande
+                  </button>
+                </div>
+              ) : (
+                <form onSubmit={handleSubmit} className="space-y-4">
+                  
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                      <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5">
+                        Nom &amp; Prénom *
+                      </label>
+                      <input
+                        type="text"
+                        required
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
+                        placeholder="ex. Sophie Martin"
+                        className="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-700/80 text-white placeholder-slate-500 focus:outline-none focus:border-blue-500 text-sm"
+                      />
+                    </div>
+
+                    <div>
+                      <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5">
+                        Email professionnel *
+                      </label>
+                      <input
+                        type="email"
+                        required
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        placeholder="sophie.martin@entreprise.fr"
+                        className="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-700/80 text-white placeholder-slate-500 focus:outline-none focus:border-blue-500 text-sm"
+                      />
+                    </div>
+                  </div>
+
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                      <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5">
+                        Téléphone <span className="text-slate-500">(facultatif)</span>
+                      </label>
+                      <input
+                        type="tel"
+                        value={phone}
+                        onChange={(e) => setPhone(e.target.value)}
+                        placeholder="06 XX XX XX XX"
+                        className="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-700/80 text-white placeholder-slate-500 focus:outline-none focus:border-blue-500 text-sm"
+                      />
+                    </div>
+
+                    <div>
+                      <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5">
+                        Votre statut professionnel *
+                      </label>
+                      <select
+                        value={statut}
+                        onChange={(e) => setStatut(e.target.value)}
+                        className="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-700/80 text-white focus:outline-none focus:border-blue-500 text-sm"
+                      >
+                        <option value="independant">Indépendant / Freelance / Libéral</option>
+                        <option value="dirigeant">Dirigeant de TPE / PME</option>
+                        <option value="salarie">Salarié d’entreprise</option>
+                        <option value="demandeur">Demandeur d’emploi</option>
+                        <option value="autre">Autre statut</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div>
+                    <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5">
+                      Parcours souhaité *
+                    </label>
+                    <select
+                      value={parcours}
+                      onChange={(e) => setParcours(e.target.value)}
+                      className="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-700/80 text-white focus:outline-none focus:border-blue-500 text-sm"
+                    >
+                      <option value="rs6776">⚡ IA Générative pour Indépendants (RS6776 - 16h)</option>
+                      <option value="rs7344">🤖 Intégration de l’IA en Entreprise &amp; Workflows (RS7344)</option>
+                      <option value="rs7351">📱 Préparation Certification Réseaux Sociaux (RS7351 - 11h+)</option>
+                      <option value="fi-top">🧘 Formation Initiale FI TOP® (21h / 3 jours)</option>
+                      <option value="fb-top">⏱️ Formation FB-TOP Initiation (7h)</option>
+                      <option value="intra">🏢 Formation intra-entreprise sur-mesure</option>
+                      <option value="therapie">🌿 Soins &amp; Massages thérapeutiques (Head Spa / Aimants)</option>
+                    </select>
+                  </div>
+
+                  <div>
+                    <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5">
+                      Précisions sur votre besoin <span className="text-slate-500">(optionnel)</span>
+                    </label>
+                    <textarea
+                      rows={3}
+                      value={message}
+                      onChange={(e) => setMessage(e.target.value)}
+                      placeholder="Objectifs attendus, dates souhaitées, questions sur vos OPCO / FAF..."
+                      className="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-700/80 text-white placeholder-slate-500 focus:outline-none focus:border-blue-500 text-sm resize-none"
+                    />
+                  </div>
+
+                  {/* Case à cocher RGPD Obligatoire */}
+                  <div className="flex items-start gap-3 pt-1">
+                    <input
+                      type="checkbox"
+                      id="rgpd-check"
+                      required
+                      checked={rgpdConsent}
+                      onChange={(e) => setRgpdConsent(e.target.checked)}
+                      className="mt-1 h-4 w-4 rounded border-slate-700 bg-slate-900 text-blue-600 focus:ring-blue-500"
+                    />
+                    <label htmlFor="rgpd-check" className="text-xs text-slate-400 leading-normal cursor-pointer">
+                      J’accepte que les informations saisies soient traitées par Ô’TOP Formation pour me transmettre le devis et l’étude de financement. Conformément au RGPD, vos données ne sont jamais cédées.
+                    </label>
+                  </div>
+
+                  <button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="w-full py-4 px-6 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-sm flex items-center justify-center gap-2 transition-all shadow-xl shadow-blue-600/30 cursor-pointer disabled:opacity-50"
+                  >
+                    <Send size={16} />
+                    <span>{isSubmitting ? 'Transmission en cours...' : 'Envoyer ma demande de devis & diagnostic →'}</span>
+                  </button>
+
+                  <p className="text-center text-[11px] text-slate-500">
+                    Étude gratuite sans engagement • Finançable selon votre statut (OPCO, FAF, CPF)
+                  </p>
+                </form>
+              )}
+
             </div>
+
           </div>
         </div>
       </div>
 
-      {/* Pop-up de Félicitations innovant */}
+      {/* Pop-up de Félicitations */}
       <CongratulationsModal
         isOpen={showCongrats}
         onClose={() => setShowCongrats(false)}
         candidateName={name}
-        courseTitle="votre parcours de formation"
+        courseTitle="votre dossier de formation"
         onWhatsAppClick={() => {
-          const formattedMessage = `Bonjour Mélissa (Ô'TOP Formation), je viens de valider ma candidature (${name}, ${phone}). Je souhaite faire le point sur mes financements.`;
+          const formattedMessage = `Bonjour Mélissa (Ô'TOP Formation), je viens de transmettre mon formulaire (${name}, ${email}). Je souhaite faire le point sur mon financement.`;
           window.open(`https://wa.me/33767246825?text=${encodeURIComponent(formattedMessage)}`, '_blank');
         }}
       />

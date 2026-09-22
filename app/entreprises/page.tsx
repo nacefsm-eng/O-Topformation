@@ -18,7 +18,7 @@ export default function Entreprises() {
             <span>Solutions Entreprises</span>
           </div>
           <span className="badge" style={{ background: 'rgba(205, 175, 93, 0.2)', color: 'var(--gold-light)', border: '1px solid var(--gold)', marginBottom: '1rem' }}>
-            🏢 Accompagnement B2B Global • Organisme Certifié Qualiopi
+            🏢 Accompagnement B2B Global • Organisme Déclaré (NDA en cours) · Porté par Eloqone
           </span>
           <h1 style={{ color: 'white', fontSize: 'clamp(2.3rem, 4.5vw, 3.6rem)', marginBottom: '1.5rem' }}>
             Performance Humaine & Digitalisation sur-mesure pour votre Entreprise
@@ -87,7 +87,7 @@ export default function Entreprises() {
               <ul style={{ listStyle: 'none', padding: 0, fontSize: '0.9rem', display: 'flex', flexDirection: 'column', gap: '0.5rem', color: 'var(--gray-700)' }}>
                 <li>✓ Connexion CRM, facturation & webhooks automatisés</li>
                 <li>✓ Formation certifiante IA pour dirigeants & collaborateurs</li>
-                <li>✓ Respect de la conformité européenne AI Act 2025</li>
+                <li>✓ Conformité AI Act européen (calendrier d&apos;application 2025-2026)</li>
                 <li>✓ Assistants IA internes personnalisés</li>
               </ul>
             </div>
@@ -97,13 +97,13 @@ export default function Entreprises() {
               <div style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>📱</div>
               <h3 style={{ color: 'var(--blue-900)', fontSize: '1.35rem', marginBottom: '1rem' }}>4. Communication & Acquisition Social Media</h3>
               <p style={{ color: 'var(--gray-600)', fontSize: '0.95rem', marginBottom: '1.5rem' }}>
-                Développez la notoriété de votre marque et générez des prospects qualifiés sur LinkedIn, Meta et Google My Business grâce à notre programme certifiant RS7351.
+                Développez la notoriété de votre marque et générez des prospects qualifiés sur LinkedIn, Meta et Google My Business grâce à notre programme préparant à la certification RS7351.
               </p>
               <ul style={{ listStyle: 'none', padding: 0, fontSize: '0.9rem', display: 'flex', flexDirection: 'column', gap: '0.5rem', color: 'var(--gray-700)' }}>
                 <li>✓ Stratégie éditoriale B2B et calendrier de diffusion</li>
                 <li>✓ Formation aux outils graphiques et vidéo (Canva, CapCut)</li>
                 <li>✓ Prospection automatisée LinkedIn (Waalaxy)</li>
-                <li>✓ Certification France Compétences RS7351</li>
+                <li>✓ Préparation à la certification France Compétences RS7351</li>
               </ul>
             </div>
           </div>

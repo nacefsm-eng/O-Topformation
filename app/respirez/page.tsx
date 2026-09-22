@@ -60,8 +60,8 @@ export default function MasterSalesPage() {
       title: 'IA Générative pour Indépendants & Créateurs',
       duration: '16 heures de vidéos + Accompagnement individuel',
       modality: '100% en ligne • Accès illimité 24/7 • Coaching 1-to-1 inclus',
-      funding: '100% Prise en charge CPF / OPCO (0 € de reste à charge)',
-      price: 'Financement intégral possible',
+      funding: 'Finançable selon votre statut (CPF, OPCO, FAF) via notre organisme partenaire',
+      price: 'Financement selon éligibilité',
       desc: 'Maîtrisez ChatGPT, Claude, Midjourney et l’IA générative pour rédiger vos contenus, automatiser vos tâches récurrentes et récupérer 10h à 15h par semaine.',
       points: [
         'Prompting avancé & ingénierie de requêtes sur-mesure',
@@ -81,9 +81,9 @@ export default function MasterSalesPage() {
       title: 'Intégration de l’IA en Entreprise & Workflows Métiers',
       duration: 'Parcours sur-mesure de 14h à 35h',
       modality: 'Distanciel, blended ou présentiel intra-entreprise',
-      funding: '100% Éligible OPCO (Atlas, Akto, etc.) & FAF',
-      price: 'Sur devis financé OPCO',
-      desc: 'Accompagnement de direction et d’équipes pour déployer l’IA dans vos processus : automatisation via n8n/Make, gouvernance des données et conformité au règlement européen AI Act 2025.',
+      funding: 'Finançable selon votre statut (OPCO, FAF) via notre organisme partenaire',
+      price: 'Sur devis financé',
+      desc: 'Accompagnement de direction et d’équipes pour déployer l’IA dans vos processus : automatisation via n8n/Make, gouvernance des données et conformité au règlement européen AI Act (calendrier 2025-2026).',
       points: [
         'Audit des flux de travail & identification des leviers de rentabilité',
         'Mise en place de workflows automatisés sans code complexe',
@@ -97,13 +97,13 @@ export default function MasterSalesPage() {
     {
       id: 'rs7351',
       track: 'reseaux',
-      badge: 'Certification France Compétences RS7351',
+      badge: 'Préparation Certification RS7351',
       badgeColor: 'bg-pink-500/10 text-pink-400 border-pink-500/30',
       title: 'Structurer et Piloter sa Communication sur les Réseaux Sociaux',
       duration: '11 heures+ de vidéos interactives',
       modality: '100% à distance • Modules actionnables à votre rythme',
-      funding: 'Éligible CPF & OPCO pour dirigeants et indépendants',
-      price: 'Prise en charge OPCO / CPF',
+      funding: 'Finançable selon votre statut (OPCO, FAF, CPF) via notre organisme partenaire',
+      price: 'Financement selon éligibilité',
       desc: 'Professionnalisez votre présence digitale de A à Z. Ne publiez plus au hasard : exploitez LinkedIn, Waalaxy, Instagram, Canva et CapCut pour générer des prospects qualifiés.',
       points: [
         'Stratégie de contenu & ligne éditoriale percutante',
@@ -193,7 +193,7 @@ export default function MasterSalesPage() {
         'Analyse du cuir chevelu et techniques de pressions crâniennes ciblées',
         'Utilisation des jets d’eau chauds, huiles végétales et vapeurs aromatiques',
         'Protocole de lâcher-prise pour clients sous haute charge mentale',
-        'Montage du dossier FAFCEA assuré pour 0 € de reste à charge'
+        'Montage du dossier FAFCEA assuré avec notre organisme partenaire'
       ],
       ctaText: 'Détails de la formation Head Spa',
       ctaHref: '#diagnostic',
@@ -261,8 +261,8 @@ export default function MasterSalesPage() {
 
   const faqs = [
     {
-      q: "Comment fonctionne la prise en charge financière (0 € de reste à charge) ?",
-      a: "En tant qu'organisme de formation certifié Qualiopi, nos formations sont éligibles aux financements publics et mutualisés : OPCO (Atlas, Akto, etc.) pour les entreprises et salariés, FIF PL et Agefice pour les professions libérales et indépendants, FAFCEA pour les artisans/coiffeurs, et CPF pour les titres certifiés RS. Notre équipe s'occupe de monter votre dossier administratif de A à Z."
+      q: "Comment fonctionne la prise en charge financière ?",
+      a: "Nos formations sont finançables selon votre statut (OPCO, FAF, FAFCEA, CPF) par le biais de notre organisme partenaire certifié Qualiopi Eloqone. SAS Ô'TOP Formation est un organisme déclaré (NDA en cours d'attribution DREETS PACA). Notre équipe pédagogique s'occupe de monter votre dossier administratif de A à Z avec notre partenaire."
     },
     {
       q: "Faut-il des prérequis pour suivre les formations IA ou Réseaux Sociaux ?",
@@ -303,7 +303,7 @@ export default function MasterSalesPage() {
           {/* Tagline Officielle */}
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-blue-500/30 bg-blue-950/60 text-blue-300 text-xs sm:text-sm font-bold uppercase tracking-wider mb-6 shadow-lg shadow-blue-950/50">
             <Sparkles className="w-4 h-4 text-amber-400" />
-            <span>Ô&apos;TOP Formation • Organisme Certifié Qualiopi • PACA & France Entière</span>
+            <span>Ô&apos;TOP Formation • Organisme Déclaré (NDA en cours) · Porté par Eloqone • PACA & France</span>
           </div>
 
           <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-[1.15] max-w-4xl mx-auto">
@@ -311,27 +311,27 @@ export default function MasterSalesPage() {
           </h1>
 
           <p className="mt-6 text-base sm:text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed">
-            Formations certifiantes reconnues par l&apos;État (France Compétences), méthode TOP® issue du terrain militaire et thérapies corporelles d&apos;excellence.
-            <strong className="block text-white mt-1">Zéro reste à charge avec vos financements OPCO, FAFCEA et CPF.</strong>
+            Formations enregistrées au Répertoire Spécifique de France Compétences, méthode TOP® issue du terrain militaire et thérapies corporelles d&apos;excellence.
+            <strong className="block text-white mt-1">Finançable selon votre statut (OPCO, FAF, CPF) via notre organisme partenaire.</strong>
           </p>
 
           {/* Quick Metrics Banner */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-10 max-w-4xl mx-auto text-left">
             <div className="p-4 rounded-2xl bg-slate-900/90 border border-slate-800 shadow-md">
               <div className="text-2xl sm:text-3xl font-black text-blue-400">3 Titres RS</div>
-              <div className="text-xs font-semibold text-slate-400 mt-0.5">France Compétences d&apos;État</div>
+              <div className="text-xs font-semibold text-slate-400 mt-0.5">France Compétences</div>
             </div>
             <div className="p-4 rounded-2xl bg-slate-900/90 border border-slate-800 shadow-md">
-              <div className="text-2xl sm:text-3xl font-black text-emerald-400">0 € Reste</div>
-              <div className="text-xs font-semibold text-slate-400 mt-0.5">Financement OPCO / CPF / FAF</div>
+              <div className="text-2xl sm:text-3xl font-black text-emerald-400">Finançable</div>
+              <div className="text-xs font-semibold text-slate-400 mt-0.5">Selon statut (OPCO, FAF, CPF)</div>
             </div>
             <div className="p-4 rounded-2xl bg-slate-900/90 border border-slate-800 shadow-md">
-              <div className="text-2xl sm:text-3xl font-black text-amber-400">100%</div>
-              <div className="text-xs font-semibold text-slate-400 mt-0.5">Taux de satisfaction certifié</div>
+              <div className="text-2xl sm:text-3xl font-black text-amber-400">5h Coaching</div>
+              <div className="text-xs font-semibold text-slate-400 mt-0.5">Accompagnement individuel</div>
             </div>
             <div className="p-4 rounded-2xl bg-slate-900/90 border border-slate-800 shadow-md">
               <div className="text-2xl sm:text-3xl font-black text-cyan-400">1-to-1</div>
-              <div className="text-xs font-semibold text-slate-400 mt-0.5">Accompagnement individuel</div>
+              <div className="text-xs font-semibold text-slate-400 mt-0.5">Suivi personnalisé</div>
             </div>
           </div>
 
@@ -405,7 +405,7 @@ export default function MasterSalesPage() {
                       {formation.badge}
                     </span>
                     <span className="text-xs font-semibold text-emerald-400 bg-emerald-500/10 px-2.5 py-1 rounded-lg border border-emerald-500/20 whitespace-nowrap">
-                      0 € Reste à charge
+                      Finançable OPCO/FAF/CPF
                     </span>
                   </div>
 
@@ -643,13 +643,13 @@ export default function MasterSalesPage() {
           </h2>
           
           <p className="text-base sm:text-lg text-slate-300 max-w-xl mx-auto">
-            15 minutes avec Mélissa ou Renaud pour vérifier vos droits à formation (OPCO, CPF, FAFCEA) et concevoir votre parcours sur-mesure.
+            15 minutes avec Mélissa ou Renaud pour vérifier vos droits à formation (OPCO, CPF, FAF, FAFCEA) et concevoir votre parcours sur-mesure.
           </p>
 
           <form onSubmit={handleDiagnosticSubmit} className="mt-8 p-8 rounded-3xl bg-slate-900 border border-slate-800 text-left space-y-5 shadow-2xl">
             <div>
               <label className="block text-xs font-semibold text-slate-300 uppercase mb-2">
-                Votre Nom & Prénom
+                Votre Nom & Prénom *
               </label>
               <input
                 type="text"
@@ -663,7 +663,7 @@ export default function MasterSalesPage() {
 
             <div>
               <label className="block text-xs font-semibold text-slate-300 uppercase mb-2">
-                Votre Numéro de Téléphone (WhatsApp privilégié)
+                Votre Numéro de Téléphone *
               </label>
               <input
                 type="tel"
@@ -677,23 +677,35 @@ export default function MasterSalesPage() {
 
             <div>
               <label className="block text-xs font-semibold text-slate-300 uppercase mb-2">
-                Domaine Prioritaire Souhaité
+                Domaine Prioritaire Souhaité *
               </label>
               <select
                 value={diagnosticNeed}
                 onChange={(e) => setDiagnosticNeed(e.target.value)}
                 className="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-700 text-white text-sm focus:border-blue-400 focus:outline-none"
               >
-                <option value="ia-indep">🤖 IA Générative pour Indépendants (RS6776 - 16h)</option>
+                <option value="ia-indep">⚡ IA Générative (RS6776 - 16h)</option>
                 <option value="ia-business">🚀 Intégration IA en Entreprise & Cybersécurité (RS7344)</option>
-                <option value="reseaux-sociaux">📱 Communication Réseaux Sociaux (RS7351 - 11h+)</option>
+                <option value="reseaux-sociaux">📱 Communication Réseaux Sociaux (RS7351)</option>
                 <option value="fi-top">🧘 Formation Initiale FI TOP® (21h / 3 jours)</option>
                 <option value="fb-top">⏱️ Formation FB-TOP Découverte (7h)</option>
-                <option value="massage-aimants">🌿 Massages aux Aimants Thérapeutiques (280€/j)</option>
-                <option value="head-spa">💆 Head Spa Holistique (2 jours - Prise en charge FAFCEA)</option>
-                <option value="massage-huiles">🌸 Massage Holistique aux Huiles (14h - Tournée)</option>
+                <option value="massage-aimants">🌿 Massages aux Aimants Thérapeutiques</option>
+                <option value="head-spa">💆 Head Spa Holistique (Prise en charge FAFCEA)</option>
+                <option value="massage-huiles">🌸 Massage Holistique aux Huiles (Tournée)</option>
                 <option value="autre">✨ Autre projet sur-mesure</option>
               </select>
+            </div>
+
+            <div className="flex items-start gap-2 pt-2">
+              <input
+                type="checkbox"
+                id="rgpdConsentRespirez"
+                required
+                className="mt-1 w-4 h-4 accent-blue-600 rounded"
+              />
+              <label htmlFor="rgpdConsentRespirez" className="text-xs text-slate-400">
+                J&apos;accepte que mes données soient utilisées par Ô&apos;TOP Formation pour me recontacter dans le cadre de ma demande de formation.
+              </label>
             </div>
 
             <button
@@ -701,7 +713,7 @@ export default function MasterSalesPage() {
               className="w-full py-4 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-black text-base shadow-xl shadow-blue-600/30 transition-all flex items-center justify-center gap-2 cursor-pointer"
             >
               <MessageCircle size={20} />
-              <span>Valider & Échanger en direct sur WhatsApp 💬</span>
+              <span>Demander mon diagnostic de 15 min 💬</span>
             </button>
 
             <p className="text-center text-xs text-slate-400 mt-2">
@@ -722,7 +734,7 @@ export default function MasterSalesPage() {
               <Link href="/" className="hover:text-white">Accueil</Link>
               <Link href="/formations/ia" className="hover:text-white">Formations IA</Link>
               <Link href="/formations/fi-top" className="hover:text-white">Méthode TOP®</Link>
-              <Link href="/qualite" className="hover:text-white">Qualiopi</Link>
+              <Link href="/financement" className="hover:text-white">Financement</Link>
             </div>
           </div>
         </div>

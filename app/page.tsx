@@ -4,8 +4,8 @@ import Footer from '@/components/Footer';
 import HomePageClient from './page-client';
 
 export const metadata: Metadata = {
-  title: 'Formation TOP® – Gestion du stress & performance | Ô\'TOP Formation',
-  description: 'Formation aux Techniques d\'Optimisation du Potentiel (TOP®) à Ollioules (PACA). Gérer le stress, prévenir le burn-out et améliorer la performance dans les milieux exigeants.',
+  title: "Faites de l'IA & du digital vos meilleurs leviers de croissance | Ô'TOP Formation",
+  description: "Maîtrisez l'IA et devenez indispensable. 3 parcours certifiants pour dirigeants de TPE/PME et indépendants avec 5h de coaching individuel inclus. Finançable selon votre statut (OPCO, FAF, CPF) via notre organisme partenaire.",
 };
 
 export default function Home() {

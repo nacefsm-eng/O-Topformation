@@ -353,7 +353,7 @@ export default function MetroHero({
           {title}
         </span>
         <span style={{ fontSize: 'clamp(12px, 1.6vw, 18px)', color: '#38bdf8', fontWeight: 700, marginTop: '16px', letterSpacing: '0.08em', textTransform: 'uppercase' }}>
-          Ô&apos;TOP FORMATION • ORGANISME CERTIFIÉ QUALIOPI
+          Ô&apos;TOP FORMATION • ORGANISME DÉCLARÉ (NDA EN COURS) · PORTÉ PAR ELOQONE
         </span>
       </div>
 

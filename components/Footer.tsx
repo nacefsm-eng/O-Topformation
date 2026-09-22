@@ -8,13 +8,13 @@ export default function Footer() {
           {/* Column 1: Brand */}
           <div className="footer-brand">
             <img src="/logo.png" alt="O'TOP Formation" style={{ height: '52px', width: 'auto', marginBottom: '1rem', objectFit: 'contain' }} />
-            <p>Ô'TOP Formation — Organisme certifié Qualiopi. Formations professionnelles & certifiantes France Compétences : Santé Mentale & TOP®, Intelligence Artificielle et Réseaux Sociaux, & Solutions de Digitalisation d'Entreprise.</p>
+            <p>Ô'TOP Formation — Organisme de formation déclaré (NDA en cours) · démarche Qualiopi en cours, actuellement porté par l'organisme Eloqone. Formations enregistrées au Répertoire Spécifique de France Compétences : Santé Mentale & TOP®, Intelligence Artificielle et Réseaux Sociaux.</p>
             <p className="footer-brand-tagline">"Former pour transformer : optimiser le potentiel humain & décupler la performance digitale."</p>
             
             <ul className="footer-contact" style={{ marginTop: '1.5rem', listStyle: 'none', padding: 0 }}>
               <li style={{ marginBottom: '0.4rem' }}><span>📞</span> <strong>Ligne directe :</strong> <a href="tel:+33749239423">07 49 23 94 23</a> / <a href="tel:+33767246825">07 67 24 68 25</a></li>
               <li style={{ marginBottom: '0.4rem' }}><span>📞</span> <strong>Renaud :</strong> <a href="tel:+33674797509">06 74 79 75 09</a></li>
-              <li style={{ marginBottom: '0.4rem' }}><span>📧</span> <a href="mailto:formation.rmcf@gmail.com">formation.rmcf@gmail.com</a></li>
+              <li style={{ marginBottom: '0.4rem' }}><span>📧</span> <a href="mailto:contact@otopformation.fr">contact@otopformation.fr</a></li>
               <li><span>📍</span> Espace Gamma 1, 139 Chemin des 2 Frères, 83190 Ollioules</li>
             </ul>
 
@@ -54,8 +54,8 @@ export default function Footer() {
           <div className="footer-col">
             <h4>Qualité & Légal</h4>
             <ul className="footer-links">
-              <li><Link href="/qualite">Certification Qualiopi</Link></li>
-              <li><Link href="/qualite">Accessibilité & Handicap</Link></li>
+              <li><Link href="/financement">Financement (OPCO, FAF, CPF)</Link></li>
+              <li><Link href="/financement">Démarche Qualité & Handicap</Link></li>
               <li><Link href="/mentions-legales">Mentions légales</Link></li>
               <li><Link href="/cgv">CGV</Link></li>
               <li><Link href="/politique-confidentialite">Politique de confidentialité</Link></li>
@@ -67,7 +67,7 @@ export default function Footer() {
         <div className="footer-bottom">
           <p>© {new Date().getFullYear()} Ô'TOP Formation — SAS Ô'TOP Formation • SIRET : 990 443 186 00012 • NAF : 8559A • RCS Toulon. Tous droits réservés.</p>
           <span className="footer-nda" style={{ color: 'var(--gold-light)' }}>
-            🏆 Organisme certifié Qualiopi • Déclaration PACA • Certifications France Compétences (RS7351, RS7344, RS6776)
+            🏆 Organisme de formation déclaré (NDA en cours) · démarche Qualiopi en cours (portage Eloqone) · Certifications Répertoire Spécifique France Compétences
           </span>
         </div>
       </div>

@@ -30,9 +30,10 @@ export default function MentionsLegales() {
               <table className="info-table">
                 <tbody>
                   <tr><th>Raison sociale</th><td>SAS Ô&apos;TOP Formation</td></tr>
-                  <tr><th>Présidente</th><td>Melyssa Jennadi</td></tr>
+                  <tr><th>Statut</th><td>Organisme de formation déclaré (NDA en cours d&apos;attribution DREETS PACA) · Actions de formation portées par l&apos;organisme partenaire certifié Qualiopi Eloqone</td></tr>
+                  <tr><th>Présidente</th><td>Mélissa Jennadi</td></tr>
                   <tr><th>Siège social</th><td>Ollioules (Var) — PACA</td></tr>
-                  <tr><th>Email</th><td>formation.rmcf@gmail.com</td></tr>
+                  <tr><th>Email</th><td>contact@otopformation.fr</td></tr>
                   <tr><th>Téléphone</th><td>07 67 24 68 25</td></tr>
                 </tbody>
               </table>
@@ -51,7 +52,7 @@ export default function MentionsLegales() {
 
             <div>
               <h2 style={{ fontSize: '1.5rem', marginBottom: '1.5rem' }}>4. Données personnelles</h2>
-              <p>Conformément au RGPD, vous disposez d&apos;un droit d&apos;accès, de rectification et d&apos;effacement de vos données. Pour exercer ces droits : <a href="mailto:formation.rmcf@gmail.com" style={{ color: 'var(--blue-700)' }}>formation.rmcf@gmail.com</a></p>
+              <p>Conformément au RGPD, vous disposez d&apos;un droit d&apos;accès, de rectification et d&apos;effacement de vos données. Pour exercer ces droits : <a href="mailto:contact@otopformation.fr" style={{ color: 'var(--blue-700)' }}>contact@otopformation.fr</a></p>
               <p style={{ marginTop: '1rem' }}><Link href="/politique-confidentialite" style={{ color: 'var(--blue-700)' }}>Voir notre Politique de Confidentialité</Link></p>
             </div>
 

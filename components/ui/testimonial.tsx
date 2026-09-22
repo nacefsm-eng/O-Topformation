@@ -31,7 +31,7 @@ export default function ClientFeedback() {
       <div className="container mx-auto max-w-7xl relative z-10">
         <article className="max-w-3xl mx-auto text-center space-y-4 mb-14">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-400/20 text-blue-300 text-xs uppercase tracking-widest font-semibold">
-            ⭐ 98.6% de stagiaires satisfaits • Avis vérifiés
+            ⭐ Retours d&apos;expérience de nos apprenants
           </div>
           <TimelineContent
             as="h2"

@@ -16,8 +16,8 @@ const formationsLinks = [
     href: '/formations/ia' 
   },
   { 
-    label: '📱 Communication & Réseaux Sociaux (RS7351)', 
-    desc: '11h+ vidéos, LinkedIn, Waalaxy, Instagram, CapCut & Meta Ads',
+    label: '📱 Préparation Certification Réseaux Sociaux (RS7351)', 
+    desc: 'Formation préparant à la certification RS7351 • 11h+ vidéos, LinkedIn, Waalaxy, Instagram & Meta Ads',
     href: '/formations/reseaux-sociaux' 
   },
   { 
@@ -82,7 +82,7 @@ export default function Nav() {
             <span style={{ opacity: 0.3 }}>|</span>
             <a href="tel:+33674797509">📞 Renaud : 06 74 79 75 09</a>
             <span style={{ opacity: 0.3 }}>|</span>
-            <a href="mailto:formation.rmcf@gmail.com">✉️ formation.rmcf@gmail.com</a>
+            <a href="mailto:contact@otopformation.fr">✉️ contact@otopformation.fr</a>
           </div>
         </div>
       </div>
@@ -153,11 +153,11 @@ export default function Nav() {
 
             <li role="none">
               <Link
-                href="/qualite"
-                className={pathname === '/qualite' ? 'active' : ''}
+                href="/financement"
+                className={pathname === '/financement' ? 'active' : ''}
                 role="menuitem"
               >
-                Qualiopi
+                Financement
               </Link>
             </li>
 
@@ -236,7 +236,7 @@ export default function Nav() {
           </li>
           <li><Link href="/entreprises" onClick={() => setMobileOpen(false)} style={{ color: 'white', fontSize: '1.1rem' }}>Entreprises & B2B</Link></li>
           <li><Link href="/methode" onClick={() => setMobileOpen(false)} style={{ color: 'white', fontSize: '1.1rem' }}>La Méthode TOP®</Link></li>
-          <li><Link href="/qualite" onClick={() => setMobileOpen(false)} style={{ color: 'white', fontSize: '1.1rem' }}>Qualité Qualiopi</Link></li>
+          <li><Link href="/financement" onClick={() => setMobileOpen(false)} style={{ color: 'white', fontSize: '1.1rem' }}>Financement</Link></li>
           <li><Link href="/equipe" onClick={() => setMobileOpen(false)} style={{ color: 'white', fontSize: '1.1rem' }}>Équipe</Link></li>
           <li style={{ marginTop: '1rem' }}>
             <Link href="/contact" onClick={() => setMobileOpen(false)} className="w-full block py-3.5 text-center rounded-xl bg-blue-600 text-white font-bold">

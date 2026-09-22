@@ -27,7 +27,10 @@ export default function CGV() {
 
             <div>
               <h2 style={{ fontSize: '1.4rem', marginBottom: '1rem' }}>1. Identification de l&apos;organisme</h2>
-              <p>SAS Ô&apos;TOP Formation — Présidente : Melyssa Jennadi.</p>
+              <p>SAS Ô&apos;TOP Formation — Présidente : Mélissa Jennadi.</p>
+              <p style={{ marginTop: '0.5rem', fontSize: '0.9rem', color: 'var(--gray-600)' }}>
+                Organisme de formation déclaré (Numéro de Déclaration d&apos;Activité - NDA en cours d&apos;attribution auprès de la DREETS PACA). Les actions de formation certifiantes et prises en charge sont actuellement dispensées sous convention de portage avec l&apos;organisme certifié Qualiopi Eloqone.
+              </p>
             </div>
 
             <div>
@@ -74,7 +77,7 @@ export default function CGV() {
 
             <div>
               <h2 style={{ fontSize: '1.4rem', marginBottom: '1rem' }}>8. Réclamations</h2>
-              <p>Toute réclamation doit être adressée à : <a href="mailto:formation.rmcf@gmail.com" style={{ color: 'var(--blue-700)' }}>formation.rmcf@gmail.com</a> — Téléphone : 07 67 24 68 25. Nous nous engageons à y répondre sous 5 jours ouvrés.</p>
+              <p>Toute réclamation doit être adressée à : <a href="mailto:contact@otopformation.fr" style={{ color: 'var(--blue-700)' }}>contact@otopformation.fr</a> — Téléphone : 07 67 24 68 25. Nous nous engageons à y répondre sous 5 jours ouvrés.</p>
             </div>
 
             <div>
