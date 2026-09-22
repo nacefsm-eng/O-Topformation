@@ -662,31 +662,31 @@ export default function HomePageClient() {
         </div>
       </section>
 
-      {/* ─── BANNER SPÉCIAL SANTÉ MENTALE & 9 PILIERS TOP ─── */}
-      <section className="py-14 px-4 bg-gradient-to-r from-amber-950/40 via-slate-900 to-slate-950 border-b border-amber-500/20">
+      {/* ─── BANNER SPÉCIAL LE GRAND RÉCAP O'TOP ─── */}
+      <section className="py-14 px-4 bg-gradient-to-r from-blue-950/60 via-slate-900 to-slate-950 border-b border-blue-500/20">
         <div className="container mx-auto max-w-6xl">
-          <div className="p-8 sm:p-10 rounded-3xl bg-slate-900/90 border border-amber-500/30 shadow-2xl relative overflow-hidden flex flex-col lg:flex-row items-center justify-between gap-8">
+          <div className="p-8 sm:p-10 rounded-3xl bg-slate-900/90 border border-blue-500/30 shadow-2xl relative overflow-hidden flex flex-col lg:flex-row items-center justify-between gap-8">
             <div className="max-w-2xl">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-bold uppercase tracking-wider mb-3">
-                <span>🔥</span> Immersion Santé Mentale & Décompression
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/30 text-blue-400 text-xs font-bold uppercase tracking-wider mb-3">
+                <span>✨</span> Catalogue & Récapitulatif Exhaustif
               </div>
               <h3 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
-                Respirez à nouveau : Les 9 Piliers TOP®
+                Toutes les Formations Ô&apos;TOP : Durées, Prise en Charge & Équipe
               </h3>
               <p className="mt-3 text-slate-300 text-sm sm:text-base leading-relaxed">
-                Une méthode directe et viscérale pour les professionnels sous tension qui portent les autres (soignants, pompiers, forces de l&apos;ordre, enseignants, cadres). Remettez les compteurs à zéro.
+                IA Générative (16h), Intégration Entreprise (14-35h), Réseaux Sociaux (11h+), Méthode TOP® (21h & 7h) et Thérapies corporelles : découvrez l&apos;ensemble de nos cursus 100% finançables.
               </p>
             </div>
             <div className="flex flex-col sm:flex-row gap-3 w-full lg:w-auto">
               <Link
                 href="/respirez"
-                className="px-6 py-3.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-sm text-center transition-all shadow-lg shadow-amber-500/20 whitespace-nowrap"
+                className="px-6 py-3.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-sm text-center transition-all shadow-lg shadow-blue-600/30 whitespace-nowrap"
               >
-                Découvrir l&apos;espace Respirez →
+                Consulter le Grand Récapitulatif →
               </Link>
               <Link
                 href="/methode"
-                className="px-6 py-3.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-medium text-sm text-center border border-slate-700 transition-all whitespace-nowrap"
+                className="px-6 py-3.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-amber-300 font-medium text-sm text-center border border-slate-700 transition-all whitespace-nowrap"
               >
                 Les 9 Piliers TOP
               </Link>

@@ -26,8 +26,8 @@ const formationsLinks = [
     href: '/formations/fi-top' 
   },
   { 
-    label: '🔥 Immersion Vente : Respirez à nouveau', 
-    desc: 'Tunnel d\'impact pour forces de l\'ordre, soignants, éducateurs & cadres',
+    label: '✨ Le Grand Récap : Toutes Nos Formations', 
+    desc: 'IA, Réseaux Sociaux, Méthode TOP®, Massages & Financement 100% OPCO',
     href: '/respirez' 
   },
 ];

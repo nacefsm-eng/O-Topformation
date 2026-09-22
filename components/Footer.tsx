@@ -30,7 +30,7 @@ export default function Footer() {
             <h4>Formations Certifiantes</h4>
             <ul className="footer-links">
               <li><Link href="/formations/fi-top">🧘 Formation FI TOP® (21h - Santé & Stress)</Link></li>
-              <li><Link href="/respirez" style={{ color: 'var(--gold-light)', fontWeight: 600 }}>🔥 Immersion Vente : Respirez à nouveau</Link></li>
+              <li><Link href="/respirez" style={{ color: 'var(--gold-light)', fontWeight: 600 }}>✨ Le Grand Récap : Toutes Nos Formations</Link></li>
               <li><Link href="/formations/ia">🤖 IA pour Dirigeants (RS7344)</Link></li>
               <li><Link href="/formations/ia">⚡ IA Générative pour Indépendants (RS6776)</Link></li>
               <li><Link href="/formations/reseaux-sociaux">📱 Réseaux Sociaux & Acquisition (RS7351)</Link></li>

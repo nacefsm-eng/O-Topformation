@@ -6,576 +6,532 @@ import CongratulationsModal from '@/components/ui/congratulations-modal';
 import NinePillarsSection from '@/components/sections/NinePillarsSection';
 import TeamMemberCard from '@/components/ui/team-member-card';
 import { 
-  Flame, 
-  ShieldAlert, 
+  Bot, 
+  Sparkles, 
+  Share2, 
+  Brain, 
+  Heart, 
+  ShieldCheck, 
+  Clock, 
   CheckCircle2, 
   ArrowRight, 
-  Clock, 
-  Sparkles, 
+  MessageCircle, 
+  Phone, 
+  Award, 
   Users, 
-  Heart, 
-  Brain, 
+  Zap, 
+  Star, 
   ChevronDown, 
   ChevronUp, 
-  MessageCircle, 
-  Star, 
-  Zap, 
-  Compass, 
-  ShieldCheck,
-  Activity,
-  AlertOctagon,
-  Quote,
-  Target
+  Sparkle,
+  Compass,
+  Laptop,
+  Flame,
+  FileCheck,
+  Building2,
+  Calendar,
+  MapPin,
+  Coins
 } from 'lucide-react';
 
-export default function RespirezLandingPage() {
+export default function MasterSalesPage() {
+  const [selectedTrack, setSelectedTrack] = useState<'all' | 'ia' | 'reseaux' | 'top' | 'therapie' | 'cyber'>('all');
   const [showModal, setShowModal] = useState(false);
   const [activeFaq, setActiveFaq] = useState<number | null>(0);
-  const [contactName, setContactName] = useState('');
-  const [contactPhone, setContactPhone] = useState('');
-  const [contactProfile, setContactProfile] = useState('urgence');
+  const [diagnosticName, setDiagnosticName] = useState('');
+  const [diagnosticPhone, setDiagnosticPhone] = useState('');
+  const [diagnosticNeed, setDiagnosticNeed] = useState('ia-business');
 
-  const faqs = [
+  const tracks = [
+    { id: 'all', label: '🌟 Tout le Catalogue', count: '8 Formations' },
+    { id: 'ia', label: '🤖 IA & Automatisation', count: '2 Titres RS' },
+    { id: 'reseaux', label: '📱 Réseaux Sociaux', count: '1 Titre RS' },
+    { id: 'top', label: '🧘 Méthode TOP®', count: '2 Formations' },
+    { id: 'therapie', label: '🌿 Soins & Massages', count: '3 Cursus' },
+    { id: 'cyber', label: '🛡️ Cybersécurité', count: 'Expertise' },
+  ];
+
+  const formationsList = [
     {
-      q: "Ça va vraiment changer pour moi ?",
-      a: "Honnêtement ? Oui. Mais pas comme par magie. Vous allez dormir différemment. Votre vigilance va se réguler. Votre famille va vous retrouver. C'est du travail. Mais ça marche. Parce que ce n'est pas de la théorie, c'est du concret qui vient du terrain."
+      id: 'rs6776',
+      track: 'ia',
+      badge: 'Certification France Compétences RS6776',
+      badgeColor: 'bg-blue-500/10 text-blue-400 border-blue-500/30',
+      title: 'IA Générative pour Indépendants & Créateurs',
+      duration: '16 heures de vidéos + Accompagnement individuel',
+      modality: '100% en ligne • Accès illimité 24/7 • Coaching 1-to-1 inclus',
+      funding: '100% Prise en charge CPF / OPCO (0 € de reste à charge)',
+      price: 'Financement intégral possible',
+      desc: 'Maîtrisez ChatGPT, Claude, Midjourney et l’IA générative pour rédiger vos contenus, automatiser vos tâches récurrentes et récupérer 10h à 15h par semaine.',
+      points: [
+        'Prompting avancé & ingénierie de requêtes sur-mesure',
+        'Création de GPTs personnalisés pour votre propre activité',
+        'Génération visuelle & déclinaison graphique immédiate',
+        'Cas pratiques orientés rentabilité et gain de temps réel'
+      ],
+      ctaText: 'Explorer le programme RS6776',
+      ctaHref: '/formations/ia',
+      whatsappMsg: 'Bonjour Mélissa, je souhaite candidater pour la formation IA Générative RS6776 (16h).'
     },
     {
-      q: "Pourquoi celle-ci serait différente des autres formations ?",
-      a: "Parce qu'on ne vous vend pas du bien-être. Régis a passé 10 ans en Armée de l'air. Il a géré l'extrême. Il sait ce que c'est, ne pas pouvoir craquer. Melissa a sauvé des dizaines de personnes du bord du gouffre. Elle sait ce qui marche et ce qui est du bla bla. TOP vient du terrain. Pas des livres. Pas des salles de conférence. Du vrai."
+      id: 'rs7344',
+      track: 'ia',
+      badge: 'Certification France Compétences RS7344',
+      badgeColor: 'bg-cyan-500/10 text-cyan-400 border-cyan-500/30',
+      title: 'Intégration de l’IA en Entreprise & Workflows Métiers',
+      duration: 'Parcours sur-mesure de 14h à 35h',
+      modality: 'Distanciel, blended ou présentiel intra-entreprise',
+      funding: '100% Éligible OPCO (Atlas, Akto, etc.) & FAF',
+      price: 'Sur devis financé OPCO',
+      desc: 'Accompagnement de direction et d’équipes pour déployer l’IA dans vos processus : automatisation via n8n/Make, gouvernance des données et conformité au règlement européen AI Act 2025.',
+      points: [
+        'Audit des flux de travail & identification des leviers de rentabilité',
+        'Mise en place de workflows automatisés sans code complexe',
+        'Sécurisation des données sensibles d’entreprise & conformité RGPD',
+        'Montée en compétence des collaborateurs et accompagnement au changement'
+      ],
+      ctaText: 'Découvrir la formation RS7344',
+      ctaHref: '/formations/ia',
+      whatsappMsg: 'Bonjour Renaud, je souhaite des informations sur l’intégration IA entreprise RS7344.'
     },
     {
-      q: "C'est pour qui vraiment ?",
-      a: "Pour vous si vous vivez ça : Pompiers, policiers, infirmiers, ATSEM, AESH, éducateurs, enseignants, soignants, salariés qui n'en peuvent plus. Managers, RH, dirigeants qui voient leurs équipes s'effondrer. Institutions qui veulent prévenir avant que ça casse."
+      id: 'rs7351',
+      track: 'reseaux',
+      badge: 'Certification France Compétences RS7351',
+      badgeColor: 'bg-pink-500/10 text-pink-400 border-pink-500/30',
+      title: 'Structurer et Piloter sa Communication sur les Réseaux Sociaux',
+      duration: '11 heures+ de vidéos interactives',
+      modality: '100% à distance • Modules actionnables à votre rythme',
+      funding: 'Éligible CPF & OPCO pour dirigeants et indépendants',
+      price: 'Prise en charge OPCO / CPF',
+      desc: 'Professionnalisez votre présence digitale de A à Z. Ne publiez plus au hasard : exploitez LinkedIn, Waalaxy, Instagram, Canva et CapCut pour générer des prospects qualifiés.',
+      points: [
+        'Stratégie de contenu & ligne éditoriale percutante',
+        'Prospection automatisée B2B sur LinkedIn avec Waalaxy',
+        'Production vidéo courte (Reels, TikTok) avec CapCut et Canva',
+        'Pilotage publicitaire Meta Ads et analyse du retour sur investissement'
+      ],
+      ctaText: 'Voir la formation Réseaux Sociaux RS7351',
+      ctaHref: '/formations/reseaux-sociaux',
+      whatsappMsg: 'Bonjour Mélissa, je veux me former à la communication réseaux sociaux RS7351 (11h).'
     },
     {
-      q: "Ça coûte combien ?",
-      a: "On construit des solutions sur mesure. Donc le prix dépend de votre situation. Prise en charge OPCO, FIF PL, AFDAS ou budget entreprise possible. Appel découverte gratuit de 15 minutes. On voit ensemble sans tabou. Pas de surprise."
+      id: 'fi-top',
+      track: 'top',
+      badge: 'Cursus Immersion • Méthode PERRAULT-PIERRE',
+      badgeColor: 'bg-amber-500/10 text-amber-400 border-amber-500/30',
+      title: 'Formation Initiale FI TOP® (Techniques d’Optimisation du Potentiel)',
+      duration: '21 heures sur 3 jours (1 week-end immersif Ven-Sam-Dim 9h-18h)',
+      modality: 'Présentiel à Ollioules (83) • Espace repas équipé & terrasse ombragée',
+      funding: 'Prise en charge OPCO, FIF PL, AFDAS & budget formation',
+      price: 'Éligible financements pro',
+      desc: 'La méthode de référence issue des forces armées et du sport de haut niveau pour réguler le stress, optimiser le sommeil, récupérer vite et décider avec lucidité sous pression.',
+      points: [
+        'Module 1 : Fondamentaux, régulation & respirations (RMD, RPa, RMI, R3P)',
+        'Module 2 : Relaxation, imagerie mentale (PMR, SAR, RM) & sommeil',
+        'Module 3 : Intégration opérationnelle & plan d’action personnalisé',
+        'Supports envoyés à J-5 • QCM final (>70%) & Attestation de compétences'
+      ],
+      ctaText: 'Consulter le syllabus complet FI TOP®',
+      ctaHref: '/formations/fi-top',
+      whatsappMsg: 'Bonjour Mélissa, je souhaite réserver ma place pour la session FI TOP (21h).'
     },
     {
-      q: "Ça prend combien de temps ? Je peux m'absenter ?",
-      a: "On s'adapte à votre emploi du temps. Ateliers ponctuels, sessions courtes, formats immersifs d'un week-end (21h) ou modules d'une journée (7h). En présentiel, à distance, ou mixte. On construit ça ensemble. Parce qu'on sait que votre temps c'est de l'or."
+      id: 'fb-top',
+      track: 'top',
+      badge: 'Journée Découverte • Aucun prérequis',
+      badgeColor: 'bg-amber-500/10 text-amber-400 border-amber-500/30',
+      title: 'Formation FB-TOP (Initiation Fondamentale)',
+      duration: '7 heures (1 journée intensive : 7 modules de 1h)',
+      modality: 'Présentiel à Ollioules (Var) • Petit groupe (max 12 participants)',
+      funding: 'Prise en charge OPCO / FIF PL / Financement individuel',
+      price: 'Accessible à tous',
+      desc: 'Une journée condensée et accessible pour s’initier concrètement aux TOP®. Repartez avec des exercices immédiatement applicables dans votre vie personnelle et professionnelle.',
+      points: [
+        'Comprendre les mécanismes du stress et identifier ses signaux d’alerte',
+        'Exercices pratiques de respiration régulatrice et de recentrage',
+        'Initiation au dialogue interne positif et à la sieste flash de récupération',
+        'Plan d’action individuel direct pour éviter la surcharge mentale'
+      ],
+      ctaText: 'Découvrir la journée FB-TOP',
+      ctaHref: '/formations/fb-top',
+      whatsappMsg: 'Bonjour Mélissa, je souhaite m’inscrire à la journée découverte FB-TOP (7h).'
+    },
+    {
+      id: 'massage-aimants',
+      track: 'therapie',
+      badge: 'Thérapie Manuelle Somatique • Animé par Mélissa',
+      badgeColor: 'bg-emerald-500/10 text-emerald-400 border-emerald-500/30',
+      title: 'Formation Massage aux Aimants Thérapeutiques',
+      duration: '1 journée intensive (7h)',
+      modality: 'Présentiel en cabinet à Ollioules (83)',
+      funding: 'Financement individuel & professionnel',
+      price: '280 € / jour',
+      desc: 'Transmission d’un protocole précis et apaisant utilisant la puissance des aimants pour débloquer les tensions profondes, relancer l’énergie corporelle et réguler le système nerveux.',
+      points: [
+        'Principes fondamentaux du biomagnétisme appliqué au corps humain',
+        'Repérage des points de charge et de tension somatique',
+        'Pratique guidée complète en binôme avec validation des gestes',
+        'Remise du protocole complet et du kit d’apprentissage'
+      ],
+      ctaText: 'Réserver ma journée massage aimants',
+      ctaHref: '#diagnostic',
+      whatsappMsg: 'Bonjour Mélissa, je souhaite m’inscrire à la formation massage aux aimants (280€).'
+    },
+    {
+      id: 'head-spa',
+      track: 'therapie',
+      badge: 'Prise en charge FAFCEA • 100% Pratique',
+      badgeColor: 'bg-purple-500/10 text-purple-400 border-purple-500/30',
+      title: 'Head Spa Holistique Thérapeutique',
+      duration: '2 jours intensifs de pratique',
+      modality: 'Présentiel en institut équipé à Ollioules & PACA',
+      funding: '100% Éligible prise en charge FAFCEA (artisans & coiffeurs)',
+      price: 'Prise en charge FAFCEA possible',
+      desc: 'Protocole complet de relaxation crânienne japonaise, stimulation de la micro-circulation du cuir chevelu et libération des blocages émotionnels accumulés dans le haut du corps.',
+      points: [
+        'Analyse du cuir chevelu et techniques de pressions crâniennes ciblées',
+        'Utilisation des jets d’eau chauds, huiles végétales et vapeurs aromatiques',
+        'Protocole de lâcher-prise pour clients sous haute charge mentale',
+        'Montage du dossier FAFCEA assuré pour 0 € de reste à charge'
+      ],
+      ctaText: 'Détails de la formation Head Spa',
+      ctaHref: '#diagnostic',
+      whatsappMsg: 'Bonjour Mélissa, je souhaite monter mon dossier FAFCEA pour la formation Head Spa.'
+    },
+    {
+      id: 'massage-huiles',
+      track: 'therapie',
+      badge: 'Tournée France & Suisse • Certifiant',
+      badgeColor: 'bg-teal-500/10 text-teal-400 border-teal-500/30',
+      title: 'Massage Holistique aux Huiles Essentielles',
+      duration: '2 jours (14h) • Disponible dans 10+ villes',
+      modality: 'Toulon, Nice, Monaco, Lyon, Toulouse, Montpellier, Paris, Lille, Orléans, Belgique, Suisse',
+      funding: 'Financement personnel ou fonds de formation',
+      price: '280 € HT / jour (soit 560 € HT la formation complète)',
+      desc: 'Apprenez à combiner l’action ciblée des huiles essentielles pures et des manœuvres de massage enveloppantes pour apaiser la fatigue nerveuse et restaurer l’harmonie physique.',
+      points: [
+        'Sélection et dosage sécurisé des synergies aromatiques thérapeutiques',
+        'Enchaînement fluide des manœuvres de relaxation neuro-musculaire',
+        'Gestion de la relation client, de l’ancrage et du cadre énergétique',
+        'Attestation de suivi délivrée à la fin des 2 jours'
+      ],
+      ctaText: 'Consulter les dates & villes de la tournée',
+      ctaHref: '#diagnostic',
+      whatsappMsg: 'Bonjour Mélissa, je souhaite connaître les prochaines dates pour le massage aux huiles.'
     }
   ];
+
+  const filteredFormations = selectedTrack === 'all' 
+    ? formationsList 
+    : formationsList.filter(f => f.track === selectedTrack);
 
   const testimonials = [
     {
       name: "Aurélie",
-      tag: "Praticienne & Apprenante",
-      role: "Formation massage aux aimants & régulation",
-      text: "J'ai suivi la formation avec toi et ça a été une très belle expérience. Ton accompagnement m'a profondément touchée : toujours présente, douce, à l'écoute et pleine d'une énergie lumineuse. Grâce à toi, j'ai découvert une pratique apaisante, efficace et tellement enrichissante. Tu transmets ton savoir avec passion, simplicité et beaucoup de cœur. Je repars confiante, inspirée et vraiment reconnaissante. Merci pour ta présence et ton professionnalisme."
+      tag: "Praticienne Bien-Être",
+      course: "Massage aux aimants & Régulation",
+      text: "J'ai suivi la formation massage aux aimants avec toi et ça a été une très belle expérience. Ton accompagnement m'a profondément touchée : toujours présente, douce, à l'écoute et pleine d'une énergie lumineuse. Tu transmets ton savoir avec passion, simplicité et beaucoup de cœur. Je repars confiante, inspirée et vraiment reconnaissante."
     },
     {
       name: "Lucie",
-      tag: "Professionnelle sous tension",
-      role: "Session TOP & Libération Mentale",
-      text: "Une formation vécue comme fantastique et inoubliable. On arrive souvent avec la tête saturée et la sensation de n'avoir plus d'air, et on en ressort véritablement épanouie et grandie, avec des armes concrètes pour ne plus subir au quotidien."
+      tag: "Professionnelle Indépendante",
+      course: "Session TOP® & Libération Mentale",
+      text: "Une formation vécue comme fantastique et inoubliable. On arrive avec la tête saturée et la sensation de n'avoir plus d'air, et on en ressort véritablement épanouie et grandie, avec des armes concrètes pour ne plus jamais subir la pression."
     },
     {
       name: "Nadine",
       tag: "Participante Conférence",
-      role: "Conférence TOP par Régis Domergue (Salon Bien-Être)",
-      text: "Une intervention riche, pertinente, extrêmement impactante. On sent immédiatement le vécu militaire et l'authenticité de l'expérience opérationnelle. Zéro bla-bla, que des clés immédiatement applicables pour garder la tête froide."
+      course: "Conférence TOP® par Régis Domergue",
+      text: "Une intervention riche, pertinente, extrêmement impactante au salon du bien-être. On ressent tout de suite l'exigence opérationnelle forgée dans l'Armée de l'Air. Zéro théorie inutile, que des outils applicables dès le lendemain."
     },
     {
       name: "Yohan",
-      tag: "Participant Conférence",
-      role: "Conférence TOP à La Seyne-sur-Mer",
-      text: "Conférence très intéressante et une très belle présentation. Des explications claires et directes sur les mécanismes du système nerveux et comment le recalibrer sans attendre l'effondrement."
+      tag: "Dirigeant de TPE",
+      course: "Conférence TOP® à La Seyne-sur-Mer",
+      text: "Conférence très intéressante et une très belle présentation. Des explications claires et directes sur les mécanismes du système nerveux et sur la façon dont un chef d'entreprise peut préserver ses équipes."
     },
     {
       name: "Melo",
       tag: "Accompagnement Suivi",
-      role: "Régulation émotionnelle & Charge mentale",
-      text: "Une rencontre humaine décisive avec Melyssa. Quand on porte trop de responsabilités au quotidien, retrouver quelqu'un qui comprend sans juger et qui vous donne des leviers précis pour refaire surface n'a pas de prix."
+      course: "Régulation Émotionnelle & Charge Mentale",
+      text: "Une rencontre humaine décisive avec Melyssa. Quand on porte trop de responsabilités, retrouver une écoute bienveillante combinée à des outils concrets de récupération n'a pas de prix."
+    }
+  ];
+
+  const faqs = [
+    {
+      q: "Comment fonctionne la prise en charge financière (0 € de reste à charge) ?",
+      a: "En tant qu'organisme de formation certifié Qualiopi, nos formations sont éligibles aux financements publics et mutualisés : OPCO (Atlas, Akto, etc.) pour les entreprises et salariés, FIF PL et Agefice pour les professions libérales et indépendants, FAFCEA pour les artisans/coiffeurs, et CPF pour les titres certifiés RS. Notre équipe s'occupe de monter votre dossier administratif de A à Z."
+    },
+    {
+      q: "Faut-il des prérequis pour suivre les formations IA ou Réseaux Sociaux ?",
+      a: "Aucun prérequis technique n'est requis. Nos formations sont spécialement pensées pour les indépendants, créateurs et dirigeants de TPE/PME. Tout est enseigné pas à pas, de manière concrète et opérationnelle, sans jargon d'ingénieur."
+    },
+    {
+      q: "En quoi la Méthode TOP® est-elle différente du coaching classique ?",
+      a: "La Méthode TOP® (Édith Perrault-Pierre) est née au sein du Service de santé des armées pour préparer les pilotes de chasse et les forces spéciales à agir dans l'imprévu. Ce n'est pas du bien-être passif : c'est un entraînement neuro-cognitif actif pour réguler le stress, optimiser le sommeil et garder son calme en toute circonstance."
+    },
+    {
+      q: "Les formations sont-elles disponibles en présentiel ou à distance ?",
+      a: "Nous proposons les deux formats selon vos besoins : les cursus IA et Réseaux Sociaux sont accessibles 100% en ligne avec du coaching personnalisé individuel. Les formations TOP® et Massages thérapeutiques se déroulent principalement en présentiel dans notre centre d'Ollioules (83) ou en intra-entreprise partout en France."
+    },
+    {
+      q: "Quel est le délai pour démarrer une formation ?",
+      a: "Dès validation de votre prise en charge par votre financeur (délai moyen de 7 à 15 jours selon l'OPCO ou le CPF), vous pouvez démarrer immédiatement votre parcours avec votre accès dédié et planifier vos sessions d'accompagnement."
     }
   ];
 
   const handleDiagnosticSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const msg = `Bonjour Mélissa, je demande mon diagnostic TOP gratuit (15 min).%0ANom : ${encodeURIComponent(contactName || 'Non précisé')}%0ATéléphone : ${encodeURIComponent(contactPhone || 'Non précisé')}%0AProfil : ${encodeURIComponent(contactProfile)}`;
+    const msg = `Bonjour Mélissa, je demande mon diagnostic personnalisé O'TOP (15 min).%0ANom : ${encodeURIComponent(diagnosticName || 'Non précisé')}%0ATéléphone : ${encodeURIComponent(diagnosticPhone || 'Non précisé')}%0ABesoin prioritaire : ${encodeURIComponent(diagnosticNeed)}`;
     window.open(`https://wa.me/33767246825?text=${msg}`, '_blank');
     setShowModal(true);
   };
 
   return (
-    <main className="bg-slate-950 text-slate-100 min-h-screen selection:bg-amber-500 selection:text-black font-sans">
+    <div className="bg-slate-950 text-slate-100 min-h-screen font-sans selection:bg-blue-600 selection:text-white">
       
-      {/* ── SECTION 1 — HERO IMMERSIF : RESPIREZ À NOUVEAU ── */}
-      <section className="relative pt-12 pb-20 sm:pt-20 sm:pb-28 px-4 overflow-hidden border-b border-slate-800/80">
-        {/* Ambient Gradients */}
-        <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-[900px] h-[500px] bg-gradient-to-b from-amber-500/15 via-rose-500/10 to-transparent blur-3xl pointer-events-none rounded-full" />
-        <div className="absolute top-1/3 -right-20 w-[400px] h-[400px] bg-blue-500/10 blur-[120px] pointer-events-none rounded-full" />
+      {/* ── 1. MASTER HERO : CLARTÉ, AUDACE & COULEURS O'TOP ── */}
+      <section className="relative pt-12 pb-20 sm:pt-16 sm:pb-28 px-4 overflow-hidden border-b border-slate-800">
+        
+        {/* Glow signature O'TOP : Bleu Royal, Cyan & Or */}
+        <div className="absolute -top-20 left-1/2 -translate-x-1/2 w-[850px] h-[450px] bg-gradient-to-r from-blue-600/20 via-cyan-500/15 to-amber-400/15 blur-[120px] pointer-events-none rounded-full" />
 
-        <div className="max-w-6xl mx-auto relative z-10">
+        <div className="max-w-6xl mx-auto relative z-10 text-center">
           
-          {/* Tagline Badge */}
-          <div className="flex justify-center mb-8">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-amber-500/30 bg-amber-500/10 text-amber-300 text-xs sm:text-sm font-semibold tracking-wide shadow-lg shadow-amber-500/5">
-              <Zap size={15} className="text-amber-400" />
-              <span>Méthode TOP® PERRAULT-PIERRE • Forces de l&apos;Ordre, Soignants, Éducation & Entreprises</span>
-            </div>
+          {/* Tagline Officielle */}
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-blue-500/30 bg-blue-950/60 text-blue-300 text-xs sm:text-sm font-bold uppercase tracking-wider mb-6 shadow-lg shadow-blue-950/50">
+            <Sparkles className="w-4 h-4 text-amber-400" />
+            <span>Ô&apos;TOP Formation • Organisme Certifié Qualiopi • PACA & France Entière</span>
           </div>
 
-          {/* Hero Grid with Visual Card */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-            
-            {/* Left Column: Strong Headline & Core Copy */}
-            <div className="lg:col-span-7 text-center lg:text-left space-y-6">
-              <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black text-white tracking-tight leading-[1.08]">
-                Respirez <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-orange-300 to-amber-500">à nouveau.</span>
-              </h1>
+          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-[1.15] max-w-4xl mx-auto">
+            L&apos;Alliance de l&apos;<span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-300 to-blue-500">Intelligence Artificielle</span> et du <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-300 via-amber-200 to-amber-400">Potentiel Humain</span>
+          </h1>
 
-              <p className="text-xl sm:text-2xl font-bold text-slate-200 leading-snug">
-                Ô&apos;Top redonne souffle et clarté à ceux qui portent les autres.
-              </p>
-
-              <p className="text-base sm:text-lg text-slate-300 leading-relaxed max-w-xl">
-                Vous donnez tout. Mais à force de tenir pour les autres, vous oubliez comment tenir pour vous.
-                <span className="block mt-2 font-bold text-amber-300">
-                  Ô&apos;Top remet les compteurs à zéro.
-                </span>
-              </p>
-
-              <div className="pt-4 flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start">
-                <a
-                  href="#diagnostic"
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 text-base font-extrabold shadow-xl shadow-amber-500/25 transition-all transform hover:-translate-y-0.5"
-                >
-                  <span>Je m&apos;offre un diagnostic (15 min)</span>
-                  <ArrowRight size={18} />
-                </a>
-
-                <a
-                  href="https://wa.me/33767246825?text=Bonjour%20M%C3%A9lissa,%20je%20d%C3%A9couvre%20la%20page%20Respirez%20et%20souhaite%20%C3%A9changer"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-4 rounded-xl bg-slate-900 hover:bg-slate-800 text-white border border-slate-700 hover:border-slate-600 text-sm font-bold transition-all"
-                >
-                  <MessageCircle size={18} className="text-emerald-400" />
-                  <span>WhatsApp direct</span>
-                </a>
-              </div>
-
-              {/* Target Audience Mini-Badges */}
-              <div className="pt-6 flex flex-wrap items-center gap-2 justify-center lg:justify-start text-xs text-slate-400">
-                <span className="text-slate-500 font-semibold mr-1">Conçu pour :</span>
-                <span className="px-2.5 py-1 rounded-lg bg-slate-900 border border-slate-800 text-slate-300">🚨 Pompiers & Policiers</span>
-                <span className="px-2.5 py-1 rounded-lg bg-slate-900 border border-slate-800 text-slate-300">🩺 Infirmiers & Soignants</span>
-                <span className="px-2.5 py-1 rounded-lg bg-slate-900 border border-slate-800 text-slate-300">📚 Enseignants & AESH</span>
-                <span className="px-2.5 py-1 rounded-lg bg-slate-900 border border-slate-800 text-slate-300">💼 Cadres, RH & Dirigeants</span>
-              </div>
-            </div>
-
-            {/* Right Column: Hero Visual Card with High-Ticket Credibility */}
-            <div className="lg:col-span-5">
-              <div className="relative rounded-3xl bg-gradient-to-b from-slate-900 via-slate-900/90 to-slate-950 border border-slate-800 p-6 sm:p-8 shadow-2xl space-y-6">
-                
-                {/* Header card */}
-                <div className="flex items-center justify-between border-b border-slate-800 pb-4">
-                  <div className="flex items-center gap-2.5">
-                    <div className="w-3 h-3 rounded-full bg-emerald-400 animate-ping" />
-                    <span className="text-xs font-bold uppercase tracking-wider text-emerald-400">Praticiens Terrain Qualiopi</span>
-                  </div>
-                  <span className="text-xs text-slate-400">Ollioules (83)</span>
-                </div>
-
-                {/* Key quote */}
-                <blockquote className="space-y-3">
-                  <p className="text-sm sm:text-base text-slate-200 italic leading-relaxed">
-                    &laquo;&nbsp;On ne vous vend pas du bien-être gadget. On arme mentalement les femmes et les hommes qui tiennent les structures debout quand tout brûle.&nbsp;&raquo;
-                  </p>
-                  <footer className="text-xs font-semibold text-amber-400">
-                    — Melyssa Jennadi & Régis Domergue
-                  </footer>
-                </blockquote>
-
-                {/* 3 Hard Metrics */}
-                <div className="grid grid-cols-3 gap-3 pt-2">
-                  <div className="p-3 rounded-xl bg-slate-950 border border-slate-800 text-center">
-                    <div className="text-xl sm:text-2xl font-black text-amber-400">100%</div>
-                    <div className="text-[10px] uppercase font-bold text-slate-400 mt-1">Satisfaction</div>
-                  </div>
-                  <div className="p-3 rounded-xl bg-slate-950 border border-slate-800 text-center">
-                    <div className="text-xl sm:text-2xl font-black text-emerald-400">100%</div>
-                    <div className="text-[10px] uppercase font-bold text-slate-400 mt-1">Réussite</div>
-                  </div>
-                  <div className="p-3 rounded-xl bg-slate-950 border border-slate-800 text-center">
-                    <div className="text-xl sm:text-2xl font-black text-blue-400">100%</div>
-                    <div className="text-[10px] uppercase font-bold text-slate-400 mt-1">Assiduité</div>
-                  </div>
-                </div>
-
-                {/* Direct Line Badge */}
-                <div className="p-3.5 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-between text-xs">
-                  <span className="text-slate-300 font-medium">Prise en charge OPCO / FIF PL</span>
-                  <span className="text-amber-400 font-bold">100% Finançable</span>
-                </div>
-
-              </div>
-            </div>
-
-          </div>
-
-        </div>
-      </section>
-
-      {/* ── SECTION 2 — IDENTIFICATION : AVANT / PENDANT / APRÈS ── */}
-      <section id="identification" className="py-20 bg-slate-900/40 border-b border-slate-800 px-4">
-        <div className="max-w-6xl mx-auto">
-          
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-800 border border-slate-700 text-slate-300 text-xs font-bold uppercase tracking-wider mb-3">
-              Le miroir de votre quotidien
-            </div>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight">
-              Dans cette histoire, vous êtes peut-être…
-            </h2>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            
-            {/* 1. En Avant */}
-            <div className="p-8 rounded-3xl bg-slate-950 border border-amber-500/30 flex flex-col justify-between shadow-lg relative overflow-hidden group hover:border-amber-500/60 transition-all">
-              <div className="absolute top-0 right-0 w-24 h-24 bg-amber-500/5 rounded-bl-full pointer-events-none" />
-              <div>
-                <div className="flex items-center justify-between mb-6">
-                  <span className="text-xs font-mono font-bold tracking-widest text-amber-400">ÉTAPE 01</span>
-                  <AlertOctagon size={20} className="text-amber-400" />
-                </div>
-                <h3 className="text-2xl font-bold text-white mb-3">En Avant</h3>
-                <p className="text-sm sm:text-base text-slate-300 leading-relaxed">
-                  &laquo;&nbsp;Tout semble sous contrôle. Vous gérez. Vous tenez la cadence. Mais cette tension dans la nuque, ce sommeil plus léger, cette fatigue qui s&apos;installe… vous le sentez : quelque chose commence à peser. Vous vous dites &ldquo;c&apos;est normal&rdquo;. &ldquo;Je tiendrai.&rdquo; C&apos;est ce que tout le monde se dit avant que ça craque.&nbsp;&raquo;
-                </p>
-              </div>
-              <div className="mt-8 pt-4 border-t border-slate-800/80 text-xs font-semibold text-amber-400/90">
-                Phase d&apos;accumulation silencieuse
-              </div>
-            </div>
-
-            {/* 2. Pendant */}
-            <div className="p-8 rounded-3xl bg-slate-950 border border-rose-500/50 flex flex-col justify-between shadow-xl shadow-rose-950/20 relative overflow-hidden group hover:border-rose-500 transition-all">
-              <div className="absolute top-0 right-0 w-24 h-24 bg-rose-500/10 rounded-bl-full pointer-events-none" />
-              <div>
-                <div className="flex items-center justify-between mb-6">
-                  <span className="text-xs font-mono font-bold tracking-widest text-rose-400">ÉTAPE 02</span>
-                  <Flame size={20} className="text-rose-400 animate-pulse" />
-                </div>
-                <h3 className="text-2xl font-bold text-white mb-3">Pendant</h3>
-                <p className="text-sm sm:text-base text-slate-300 leading-relaxed">
-                  &laquo;&nbsp;Ou vous êtes en plein dedans. Le terrain n&apos;attend pas. Chaque minute compte. Chaque décision pèse. Le corps exécute. Le mental encaisse. L&apos;instinct prend le relais. Vous tenez. Vous agissez. Vous tenez encore. Mais à force d&apos;être en mode survie, quelque chose brûle à l&apos;intérieur.&nbsp;&raquo;
-                </p>
-              </div>
-              <div className="mt-8 pt-4 border-t border-slate-800/80 text-xs font-semibold text-rose-400">
-                Mode survie & surchauffe du système
-              </div>
-            </div>
-
-            {/* 3. Après */}
-            <div className="p-8 rounded-3xl bg-slate-950 border border-indigo-500/30 flex flex-col justify-between shadow-lg relative overflow-hidden group hover:border-indigo-500/60 transition-all">
-              <div className="absolute top-0 right-0 w-24 h-24 bg-indigo-500/5 rounded-bl-full pointer-events-none" />
-              <div>
-                <div className="flex items-center justify-between mb-6">
-                  <span className="text-xs font-mono font-bold tracking-widest text-indigo-400">ÉTAPE 03</span>
-                  <Activity size={20} className="text-indigo-400" />
-                </div>
-                <h3 className="text-2xl font-bold text-white mb-3">Après</h3>
-                <p className="text-sm sm:text-base text-slate-300 leading-relaxed">
-                  &laquo;&nbsp;Ou peut-être après. Le calme revient dehors, mais pas en vous. Les images restent. Le cerveau rejoue. Les sons, les visages, les odeurs. Vous dites &ldquo;ça va&rdquo; alors que ça ne va pas. Vous rentrez chez vous sans vraiment revenir. Et demain, il faudra recommencer.&nbsp;&raquo;
-                </p>
-              </div>
-              <div className="mt-8 pt-4 border-t border-slate-800/80 text-xs font-semibold text-indigo-400/90">
-                Rumination, flashs & déconnexion
-              </div>
-            </div>
-
-          </div>
-
-          {/* Punchline de clôture */}
-          <div className="mt-12 p-6 sm:p-8 rounded-3xl bg-gradient-to-r from-amber-500/15 via-rose-500/15 to-amber-500/15 border border-amber-500/40 text-center shadow-xl">
-            <p className="text-lg sm:text-2xl font-extrabold text-white leading-snug">
-              &laquo;&nbsp;Peu importe où vous en êtes. Le résultat est le même : vous portez trop, depuis trop longtemps.&nbsp;&raquo;
-            </p>
-          </div>
-
-        </div>
-      </section>
-
-      {/* ── SECTION 3 — CE QUI SE PASSE VRAIMENT ── */}
-      <section className="py-20 px-4 bg-slate-950 border-b border-slate-800">
-        <div className="max-w-5xl mx-auto space-y-10">
-          
-          <div>
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-500/10 border border-rose-500/20 text-rose-400 text-xs font-bold uppercase tracking-wider mb-3">
-              Diagnostic sans complaisance
-            </div>
-            <h2 className="text-3xl sm:text-5xl font-black text-white tracking-tight leading-tight">
-              VOILÀ CE QUI SE PASSE VRAIMENT :
-            </h2>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            
-            <div className="p-8 rounded-3xl bg-slate-900/90 border border-slate-800 space-y-4">
-              <div className="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-500/20 text-amber-400 flex items-center justify-center font-bold">
-                <Brain size={22} />
-              </div>
-              <h3 className="text-xl font-bold text-white">Surchauffe Neuro-Physiologique</h3>
-              <p className="text-sm sm:text-base text-slate-300 leading-relaxed">
-                Votre corps sature. Votre système nerveux ne se met plus jamais en pause. Hypervigilance le jour, insomnie la nuit. Et quand enfin vous dormez, votre cerveau rejoue la mission, la salle de classe, le couloir, le bureau.
-              </p>
-            </div>
-
-            <div className="p-8 rounded-3xl bg-slate-900/90 border border-slate-800 space-y-4">
-              <div className="w-10 h-10 rounded-xl bg-rose-500/10 border border-rose-500/20 text-rose-400 flex items-center justify-center font-bold">
-                <Heart size={22} />
-              </div>
-              <h3 className="text-xl font-bold text-white">L&apos;Usure Silencieuse des Invisibles</h3>
-              <p className="text-sm sm:text-base text-slate-300 leading-relaxed">
-                Ce n&apos;est pas réservé aux métiers d&apos;urgence. Les enseignants, éducateurs, accompagnants, encadrants vivent le même épuisement mais autrement. Eux ne voient pas le sang, mais ils encaissent les cris, la charge mentale, les injustices, les tensions humaines, jour après jour. Ils absorbent tout, sans relâche, jusqu&apos;à s&apos;oublier eux-mêmes.
-              </p>
-            </div>
-
-          </div>
-
-          <div className="p-6 rounded-2xl bg-slate-900/50 border border-slate-800/80 text-center">
-            <p className="text-base sm:text-lg text-slate-300 italic">
-              Petit à petit, tout devient plus flou, plus lourd. Vous perdez l&apos;élan, la clarté, l&apos;envie. Mais vous continuez, parce que c&apos;est ce que vous avez toujours fait : <strong>tenir</strong>.
-            </p>
-          </div>
-
-          {/* Sous-bloc Institutions / DRH */}
-          <div className="p-8 sm:p-10 rounded-3xl bg-gradient-to-br from-slate-900 via-slate-900 to-slate-950 border border-amber-500/30 space-y-5">
-            <div className="flex items-center gap-3">
-              <ShieldCheck size={28} className="text-amber-400 shrink-0" />
-              <h3 className="text-xl sm:text-2xl font-bold text-white">
-                Côté institutions, entreprises et directions
-              </h3>
-            </div>
-            
-            <p className="text-sm sm:text-base text-slate-300 leading-relaxed">
-              Dirigeants, responsables RH, cadres, élus, chefs de service, vous le voyez tous les jours : la tension monte, la fatigue s&apos;installe, les arrêts s&apos;enchaînent. Vous tenez les structures debout, mais vos équipes s&apos;épuisent en silence.
-            </p>
-
-            <p className="text-sm sm:text-base text-slate-300 leading-relaxed">
-              Derrière chaque indicateur : <strong>absentéisme, désengagement, perte de sens</strong>, il y a des gens. Vos gens. Des femmes et des hommes qui veulent bien faire, mais qui s&apos;effondrent à force de tout porter.
-            </p>
-
-            <div className="p-5 rounded-2xl bg-slate-950 border border-slate-800 text-amber-300 text-sm leading-relaxed font-semibold">
-              Mettre en place des outils de régulation mentale, ce n&apos;est pas du bien-être gadget. C&apos;est une stratégie de performance humaine. Des équipes qui dorment mieux, qui régulent mieux leurs émotions, qui tiennent mieux la pression, sont des équipes plus fiables, plus claires, plus soudées. Prévenir l&apos;usure, c&apos;est préserver la lucidité collective, la qualité des décisions, la cohésion, et la continuité de votre organisation.
-            </div>
-          </div>
-
-        </div>
-      </section>
-
-      {/* ── SECTION 4 — POURQUOI Ô'TOP EXISTE ── */}
-      <section className="py-20 px-4 bg-gradient-to-b from-slate-950 via-slate-900/80 to-slate-950 border-b border-slate-800">
-        <div className="max-w-4xl mx-auto text-center space-y-8">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-bold uppercase tracking-wider">
-            Notre Raison d&apos;Être
-          </div>
-          
-          <h2 className="text-3xl sm:text-5xl font-black text-white tracking-tight">
-            C&apos;EST POUR ÇA QUE Ô&apos;TOP EXISTE
-          </h2>
-
-          <p className="text-xl sm:text-2xl font-bold text-slate-200 leading-relaxed">
-            Pour rouvrir le corps. Pour rendre le calme opérationnel. Pour rendre à chacun ce qu&apos;il a donné sans compter. Pour vous rendre à vous-même.
+          <p className="mt-6 text-base sm:text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed">
+            Formations certifiantes reconnues par l&apos;État (France Compétences), méthode TOP® issue du terrain militaire et thérapies corporelles d&apos;excellence.
+            <strong className="block text-white mt-1">Zéro reste à charge avec vos financements OPCO, FAFCEA et CPF.</strong>
           </p>
 
-          <div className="p-6 sm:p-8 rounded-3xl bg-slate-950 border border-slate-800 text-amber-300 text-lg sm:text-xl font-medium max-w-2xl mx-auto">
-            Pour les gens qui ont vu des choses. Qui portent des images. Qui ne dorment pas normal. Qui se demandent chaque jour :<br />
-            <span className="text-2xl sm:text-3xl font-black text-white mt-2 block">&laquo;&nbsp;Combien de temps encore ?&nbsp;&raquo;</span>
+          {/* Quick Metrics Banner */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-10 max-w-4xl mx-auto text-left">
+            <div className="p-4 rounded-2xl bg-slate-900/90 border border-slate-800 shadow-md">
+              <div className="text-2xl sm:text-3xl font-black text-blue-400">3 Titres RS</div>
+              <div className="text-xs font-semibold text-slate-400 mt-0.5">France Compétences d&apos;État</div>
+            </div>
+            <div className="p-4 rounded-2xl bg-slate-900/90 border border-slate-800 shadow-md">
+              <div className="text-2xl sm:text-3xl font-black text-emerald-400">0 € Reste</div>
+              <div className="text-xs font-semibold text-slate-400 mt-0.5">Financement OPCO / CPF / FAF</div>
+            </div>
+            <div className="p-4 rounded-2xl bg-slate-900/90 border border-slate-800 shadow-md">
+              <div className="text-2xl sm:text-3xl font-black text-amber-400">100%</div>
+              <div className="text-xs font-semibold text-slate-400 mt-0.5">Taux de satisfaction certifié</div>
+            </div>
+            <div className="p-4 rounded-2xl bg-slate-900/90 border border-slate-800 shadow-md">
+              <div className="text-2xl sm:text-3xl font-black text-cyan-400">1-to-1</div>
+              <div className="text-xs font-semibold text-slate-400 mt-0.5">Accompagnement individuel</div>
+            </div>
           </div>
+
+          {/* CTA Buttons */}
+          <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+            <a
+              href="#catalogue"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-extrabold text-sm sm:text-base shadow-xl shadow-blue-600/30 transition-all transform hover:-translate-y-0.5"
+            >
+              <span>Découvrir toutes nos formations →</span>
+            </a>
+            <a
+              href="#diagnostic"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-slate-900 hover:bg-slate-800 text-amber-300 border border-amber-500/40 text-sm sm:text-base font-bold transition-all shadow-lg"
+            >
+              <Zap size={16} className="text-amber-400" />
+              <span>Demander un diagnostic (15 min gratuit)</span>
+            </a>
+          </div>
+
         </div>
       </section>
 
-      {/* ── SECTION 5 — RÉSULTATS OBSERVÉS (2 COLONNES) ── */}
-      <section className="py-20 px-4 bg-slate-950 border-b border-slate-800">
+      {/* ── 2. CATALOGUE INTERACTIF COMPLET AVEC TOUTES LES FORMATIONS & DURÉES ── */}
+      <section id="catalogue" className="py-20 px-4 bg-slate-900/40 border-b border-slate-800">
         <div className="max-w-6xl mx-auto">
           
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-bold uppercase tracking-wider mb-3">
-              Impact Réel Mesuré
+          <div className="text-center max-w-3xl mx-auto mb-12">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-800 border border-slate-700 text-slate-300 text-xs font-bold uppercase tracking-wider mb-3">
+              Le Catalogue Officiel Ô&apos;TOP
             </div>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white">
-              CE QU&apos;ON OBSERVE APRÈS NOS INTERVENTIONS
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight">
+              Toutes Nos Formations & Durées
             </h2>
-          </div>
+            <p className="mt-3 text-slate-400 text-sm sm:text-base">
+              Filtrez par domaine d&apos;expertise et découvrez nos cursus détaillés avec leurs durées officielles et prises en charge.
+            </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-            
-            {/* Sur les personnes */}
-            <div className="p-8 rounded-3xl bg-slate-900 border border-slate-800 space-y-6">
-              <div className="flex items-center gap-3 text-amber-400 font-bold text-xl">
-                <Heart className="w-6 h-6" />
-                <h3>Sur les personnes</h3>
-              </div>
-              <ul className="space-y-3.5 text-sm sm:text-base text-slate-300">
-                <li className="flex items-start gap-3">
-                  <CheckCircle2 size={18} className="text-amber-400 shrink-0 mt-1" />
-                  <span><strong>Réduction du stress perçu</strong> dès les 2 premières semaines.</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <CheckCircle2 size={18} className="text-amber-400 shrink-0 mt-1" />
-                  <span><strong>Sommeil réparateur</strong> et vigilance physiologique régulée.</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <CheckCircle2 size={18} className="text-amber-400 shrink-0 mt-1" />
-                  <span><strong>Calme mental retrouvé</strong> même en contexte sous forte pression.</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <CheckCircle2 size={18} className="text-amber-400 shrink-0 mt-1" />
-                  <span><strong>Retour d&apos;énergie</strong>, concentration restaurée et élan personnel.</span>
-                </li>
-              </ul>
-            </div>
-
-            {/* Sur les équipes & organisations */}
-            <div className="p-8 rounded-3xl bg-slate-900 border border-slate-800 space-y-6">
-              <div className="flex items-center gap-3 text-emerald-400 font-bold text-xl">
-                <Users className="w-6 h-6" />
-                <h3>Sur les équipes & organisations</h3>
-              </div>
-              <ul className="space-y-3.5 text-sm sm:text-base text-slate-300">
-                <li className="flex items-start gap-3">
-                  <CheckCircle2 size={18} className="text-emerald-400 shrink-0 mt-1" />
-                  <span><strong>Moins d&apos;arrêts maladie</strong> et d&apos;erreurs liées à la fatigue.</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <CheckCircle2 size={18} className="text-emerald-400 shrink-0 mt-1" />
-                  <span><strong>Meilleure communication interne</strong>, cohésion d&apos;équipe renforcée.</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <CheckCircle2 size={18} className="text-emerald-400 shrink-0 mt-1" />
-                  <span><strong>Plus de clarté</strong> dans la prise de décision managériale.</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <CheckCircle2 size={18} className="text-emerald-400 shrink-0 mt-1" />
-                  <span><strong>Hausse de la satisfaction</strong> et de la performance durable.</span>
-                </li>
-              </ul>
-            </div>
-
-          </div>
-
-          {/* 100% Chiffres Clés */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 text-center">
-            <div className="p-6 rounded-2xl bg-slate-900/80 border border-slate-800">
-              <div className="text-4xl sm:text-5xl font-black text-amber-400">100%</div>
-              <div className="mt-1 text-xs font-bold uppercase tracking-wider text-slate-300">Taux de satisfaction</div>
-            </div>
-            <div className="p-6 rounded-2xl bg-slate-900/80 border border-slate-800">
-              <div className="text-4xl sm:text-5xl font-black text-emerald-400">100%</div>
-              <div className="mt-1 text-xs font-bold uppercase tracking-wider text-slate-300">Taux de réussite</div>
-            </div>
-            <div className="p-6 rounded-2xl bg-slate-900/80 border border-slate-800">
-              <div className="text-4xl sm:text-5xl font-black text-blue-400">100%</div>
-              <div className="mt-1 text-xs font-bold uppercase tracking-wider text-slate-300">Taux d&apos;assiduité</div>
+            {/* Filter Pills */}
+            <div className="flex flex-wrap justify-center gap-2 mt-8">
+              {tracks.map(t => (
+                <button
+                  key={t.id}
+                  onClick={() => setSelectedTrack(t.id as any)}
+                  className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all flex items-center gap-2 ${
+                    selectedTrack === t.id
+                      ? 'bg-blue-600 text-white shadow-lg shadow-blue-600/30 border border-blue-400'
+                      : 'bg-slate-950/80 text-slate-300 border border-slate-800 hover:border-slate-700 hover:text-white'
+                  }`}
+                >
+                  <span>{t.label}</span>
+                  <span className="text-[10px] px-1.5 py-0.5 rounded-full bg-slate-900/90 text-slate-400 border border-slate-800">
+                    {t.count}
+                  </span>
+                </button>
+              ))}
             </div>
           </div>
 
-        </div>
-      </section>
-
-      {/* ── SECTION 6 — POSITIONNEMENT : ON ENTRAÎNE LE MENTAL ── */}
-      <section className="py-20 px-4 bg-slate-900/40 border-b border-slate-800">
-        <div className="max-w-5xl mx-auto space-y-10">
-          
-          <div className="text-center max-w-3xl mx-auto">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-500/10 border border-rose-500/20 text-rose-400 text-xs font-bold uppercase tracking-wider mb-3">
-              Rupture Pédagogique
-            </div>
-            <h2 className="text-3xl sm:text-5xl font-black text-white">
-              Ô&apos;TOP N&apos;EST PAS UNE FORMATION DE PLUS.
-            </h2>
-            <p className="mt-3 text-lg sm:text-xl font-bold text-amber-400">
-              C&apos;est une méthode pour ceux qui tiennent quand tout le monde lâche.
-            </p>
-          </div>
-
-          <div className="space-y-4 text-base sm:text-lg text-slate-300 leading-relaxed max-w-3xl mx-auto text-center sm:text-left">
-            <p>
-              Parce que ni le yoga du mercredi soir, ni les affiches &ldquo;prendre soin de soi&rdquo; dans les salles de repos, ni les discours creux sur la qualité de vie au travail ne suffisent à tenir quand tout brûle.
-            </p>
-            <p>
-              Nous n&apos;avons pas lancé un organisme de formation traditionnel. <strong>Nous avons décidé d&apos;armer mentalement ceux qui tiennent les structures debout.</strong>
-            </p>
-            <p className="text-slate-200">
-              Ô&apos;Top, c&apos;est l&apos;endroit où la <strong>performance rencontre la lucidité</strong>.
-            </p>
-          </div>
-
-          {/* Master Punchline */}
-          <div className="p-8 sm:p-14 rounded-3xl bg-gradient-to-br from-amber-500/20 via-slate-900 to-rose-500/20 border-2 border-amber-500 text-center shadow-2xl">
-            <p className="text-2xl sm:text-4xl lg:text-5xl font-black text-white uppercase tracking-tight leading-tight">
-              &laquo;&nbsp;On n&apos;enseigne pas la gestion du stress.<br className="hidden sm:inline" />
-              <span className="text-amber-400">On entraîne le mental.</span>&nbsp;&raquo;
-            </p>
-            <div className="mt-8">
-              <a
-                href="#diagnostic"
-                className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-black text-base shadow-xl shadow-amber-500/30 transition-all"
+          {/* Formations Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {filteredFormations.map(formation => (
+              <div
+                key={formation.id}
+                className="rounded-3xl bg-slate-950 border border-slate-800 hover:border-slate-700 transition-all p-6 sm:p-8 flex flex-col justify-between shadow-xl relative group"
               >
-                <span>Je m&apos;offre un diagnostic</span>
-                <ArrowRight size={18} />
-              </a>
-            </div>
+                <div>
+                  {/* Top Badge */}
+                  <div className="flex items-start justify-between gap-3 mb-4">
+                    <span className={`text-xs font-bold px-3 py-1 rounded-full border ${formation.badgeColor}`}>
+                      {formation.badge}
+                    </span>
+                    <span className="text-xs font-semibold text-emerald-400 bg-emerald-500/10 px-2.5 py-1 rounded-lg border border-emerald-500/20 whitespace-nowrap">
+                      0 € Reste à charge
+                    </span>
+                  </div>
+
+                  {/* Title & Desc */}
+                  <h3 className="text-xl sm:text-2xl font-bold text-white mb-2 group-hover:text-blue-400 transition-colors">
+                    {formation.title}
+                  </h3>
+                  <p className="text-slate-300 text-sm leading-relaxed mb-4">
+                    {formation.desc}
+                  </p>
+
+                  {/* Modalities & Duration Badges */}
+                  <div className="space-y-2 py-3 border-y border-slate-800/80 my-4 text-xs">
+                    <div className="flex items-center gap-2 text-amber-300 font-semibold">
+                      <Clock size={15} className="shrink-0 text-amber-400" />
+                      <span><strong>Durée :</strong> {formation.duration}</span>
+                    </div>
+                    <div className="flex items-center gap-2 text-slate-300">
+                      <MapPin size={15} className="shrink-0 text-blue-400" />
+                      <span><strong>Format :</strong> {formation.modality}</span>
+                    </div>
+                    <div className="flex items-center gap-2 text-emerald-300 font-medium">
+                      <Coins size={15} className="shrink-0 text-emerald-400" />
+                      <span><strong>Financement :</strong> {formation.funding}</span>
+                    </div>
+                  </div>
+
+                  {/* Key Program Points */}
+                  <ul className="space-y-2 text-xs text-slate-400 mb-6">
+                    {formation.points.map((pt, i) => (
+                      <li key={i} className="flex items-start gap-2">
+                        <CheckCircle2 size={14} className="text-blue-400 shrink-0 mt-0.5" />
+                        <span>{pt}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                {/* Card CTA Actions */}
+                <div className="pt-4 border-t border-slate-800/80 flex flex-col sm:flex-row items-center gap-3">
+                  <Link
+                    href={formation.ctaHref}
+                    className="w-full sm:w-auto flex-1 text-center py-3 px-4 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs transition-all shadow-md"
+                  >
+                    {formation.ctaText} →
+                  </Link>
+                  <a
+                    href={`https://wa.me/33767246825?text=${encodeURIComponent(formation.whatsappMsg)}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full sm:w-auto py-3 px-4 rounded-xl bg-slate-900 hover:bg-slate-800 text-emerald-400 border border-slate-800 font-bold text-xs flex items-center justify-center gap-1.5 transition-all"
+                  >
+                    <MessageCircle size={14} />
+                    <span>WhatsApp direct</span>
+                  </a>
+                </div>
+
+              </div>
+            ))}
           </div>
 
         </div>
       </section>
 
-      {/* ── SECTION 7 — QUI SOMMES-NOUS : MÉLISSA, RENAUD & RÉGIS (AVEC LEURS VRAIES PHOTOS) ── */}
+      {/* ── 3. LES 9 PILIERS POUR MIEUX COMPRENDRE L'HUMAIN (MÉTHODE TOP) ── */}
+      <NinePillarsSection 
+        title="Les 9 Piliers Pour Mieux Comprendre l'Humain"
+        subtitle="Le socle comportemental et cognitif enseigné dans nos parcours TOP® pour désamorcer l'épuisement, régler les conflits et reprendre le contrôle."
+      />
+
+      {/* ── 4. L'ÉQUIPE DES 4 EXPERTS DE TERRAIN (VRAIES PHOTOS SANS TITRES DE POSTE) ── */}
       <section className="py-24 px-4 bg-slate-950 border-b border-slate-800">
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-5xl mx-auto">
           
-          <div className="text-center max-w-3xl mx-auto mb-16">
+          <div className="text-center max-w-2xl mx-auto mb-16">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-bold uppercase tracking-wider mb-3">
-              L&apos;Équipe des Praticiens
+              Des Praticiens de Terrain
             </div>
             <h2 className="text-3xl sm:text-5xl font-black text-white">
-              QUI SOMMES-NOUS ?
+              L&apos;Équipe des Experts
             </h2>
-            <p className="mt-3 text-base sm:text-lg text-slate-400 italic">
-              &laquo;&nbsp;Pas des coachs bien-être. Pas des « facilitateurs de sérénité ». Pas des marchands de respiration consciente.&nbsp;&raquo;
+            <p className="mt-3 text-slate-400 text-base sm:text-lg">
+              Une exigence constante, un accompagnement humain sans filtre et une vision résolument tournée vers votre rentabilité durable.
             </p>
           </div>
 
-          <div className="space-y-16">
+          <div className="space-y-12">
             
-            {/* 1. Melyssa Jennadi (Photo exacte: /team-melyssa.png) */}
+            {/* 1. Mélissa JENNADI */}
             <TeamMemberCard
               position="left"
-              jobPosition="FONDATRICE & RESPONSABLE PÉDAGOGIQUE • OLLIOULES (83)"
-              firstName="Melyssa"
+              firstName="Mélissa"
               lastName="JENNADI"
               imageUrl="/team-melyssa.png"
-              description="Issue du terrain éducatif, engagée là où les nerfs lâchent en silence. Formatrice, praticienne, au contact direct de celles et ceux qui encaissent sans jamais s'autoriser à flancher : enseignants, encadrants, personnels d'accompagnement, équipes épuisées mais debout. Elle a eu à accompagner des dizaines de cas critiques."
-              onCtaClick={() => window.open('https://wa.me/33767246825?text=Bonjour%20M%C3%A9lissa,%20je%20souhaite%20%C3%A9changer%20avec%20vous%20concernant%20un%20diagnostic%20TOP', '_blank')}
+              description="Rigueur scientifique, sens aigu de la transmission et dévouement absolu pour faire grandir vos compétences, maîtriser les outils digitaux et pérenniser votre activité."
+              onCtaClick={() => window.open('https://wa.me/33767246825?text=Bonjour%20M%C3%A9lissa%2C%20je%20souhaite%20%C3%A9changer%20avec%20vous.', '_blank')}
             />
 
-            {/* 2. Renaud (Photo exacte: /team-renaud.jpg) */}
+            {/* 2. Renaud */}
             <TeamMemberCard
               position="right"
-              jobPosition="CO-DIRIGEANT & EXPÉRIENCE DIGITALE • STRATÉGIE OPÉRATIONNELLE"
               firstName="Renaud"
               lastName=""
               imageUrl="/team-renaud.jpg"
-              description="Spécialiste de l'accompagnement stratégique et de l'organisation opérationnelle. Renaud structure les solutions sur-mesure pour les indépendants et les structures, en veillant à ce que chaque minute de formation génère une rentabilité humaine et une sérénité concrète immédiate."
-              onCtaClick={() => window.open('https://wa.me/33674797509?text=Bonjour%20Renaud,%20je%20souhaite%20%C3%A9changer%20avec%20vous%20sur%20les%20formations%20O%27TOP', '_blank')}
+              description="Passionné par l'impact technologique et l'efficacité opérationnelle, pour transformer des outils complexes en leviers de croissance immédiate."
+              onCtaClick={() => window.open('https://wa.me/33674797509?text=Bonjour%20Renaud%2C%20je%20souhaite%20%C3%A9changer%20avec%20vous.', '_blank')}
             />
 
-            {/* 3. Régis Domergue (Photo exacte: /team-regis.png) */}
+            {/* 3. Régis DOMERGUE */}
             <TeamMemberCard
               position="left"
-              jobPosition="CO-FONDATEUR & EXPERT TOP • MONITEUR EX-ARMÉE DE L'AIR"
               firstName="Régis"
               lastName="DOMERGUE"
               imageUrl="/team-regis.png"
-              description="Formé à l'exigence militaire. Moniteur TOP. Habitué aux environnements où on n'a pas le luxe de craquer. Là où chaque seconde compte et où maîtriser son système nerveux n'est pas un confort mais une condition de survie et d'efficacité. Plus de 10 ans dans l'Armée de l'Air et missions extérieures."
-              onCtaClick={() => window.open('https://wa.me/33767246825?text=Bonjour%20R%C3%A9gis,%20je%20souhaite%20des%20renseignements%20sur%20les%20interventions%20TOP', '_blank')}
+              description="Excellence opérationnelle forgée sur le terrain, sang-froid et vision stratégique issus de 10 ans dans l'Armée de l'Air pour sécuriser chaque étape de votre progression."
+              onCtaClick={() => window.open('https://wa.me/33767246825?text=Bonjour%20R%C3%A9gis%2C%20je%20souhaite%20%C3%A9changer%20avec%20vous.', '_blank')}
+            />
+
+            {/* 4. Med Aly GARMA */}
+            <TeamMemberCard
+              position="right"
+              firstName="Med Aly"
+              lastName="GARMA"
+              imageUrl="/team-med-aly.jpg"
+              description="Expertise pointue en cybersécurité, résilience des infrastructures critiques et sécurisation avancée des environnements d'intelligence artificielle."
+              onCtaClick={() => window.open('https://wa.me/33767246825?text=Bonjour%20Med%20Aly%2C%20je%20souhaite%20%C3%A9changer%20avec%20vous%20sur%20la%20cybers%C3%A9curit%C3%A9.', '_blank')}
             />
 
           </div>
@@ -583,119 +539,46 @@ export default function RespirezLandingPage() {
         </div>
       </section>
 
-      {/* ── LES 9 PILIERS POUR MIEUX COMPRENDRE L'HUMAIN ── */}
-      <NinePillarsSection 
-        title="Les 9 Piliers Pour Mieux Comprendre l'Humain"
-        subtitle="Intégrés au cursus TOP®, ces 9 piliers structurent l'apprentissage pour désamorcer l'épuisement et reprendre la main sur ses choix d'action."
-      />
-
-      {/* ── SECTION 8 — CHAMPS D'EXPERTISE ── */}
+      {/* ── 5. AVIS CLIENTS & TÉMOIGNAGES AUTHENTIQUES ── */}
       <section className="py-20 px-4 bg-slate-900/40 border-b border-slate-800">
         <div className="max-w-6xl mx-auto">
           
           <div className="text-center max-w-3xl mx-auto mb-16">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-400 text-xs font-bold uppercase tracking-wider mb-3">
-              Compétences Clés
+              Retours Vérifiés
             </div>
             <h2 className="text-3xl sm:text-5xl font-black text-white">
-              NOS CHAMPS D&apos;EXPERTISES
+              Ce Que Disent Nos Apprenants
             </h2>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[
-              {
-                title: "Stress & Santé Mentale",
-                sub: "Transformer le stress chronique",
-                desc: "Réguler l'emballement neuro-végétatif, réduire le cortisol et désamorcer le burn-out avant la rupture.",
-                icon: ShieldAlert,
-                color: "text-rose-400"
-              },
-              {
-                title: "Fatigue & Sommeil",
-                sub: "Retrouver des nuits vraies",
-                desc: "Techniques de sieste flash (SAR), synchronisation des cycles et récupération pour horaires décalés.",
-                icon: Clock,
-                color: "text-indigo-400"
-              },
-              {
-                title: "Régulation des Émotions",
-                sub: "Maîtriser sans éteindre",
-                desc: "Accueillir la colère, la peur ou le découragement sans les laisser parasiter les décisions vitales.",
-                icon: Heart,
-                color: "text-pink-400"
-              },
-              {
-                title: "Performances",
-                sub: "Rester opérationnel sans se détruire",
-                desc: "Maintenir une haute intensité professionnelle sans compromettre sa santé mentale ni sa vie privée.",
-                icon: Zap,
-                color: "text-amber-400"
-              },
-              {
-                title: "Préparation Mentale",
-                sub: "Se préparer aux moments difficiles",
-                desc: "Imagerie mentale (PMR) et répétition cognitive pour aborder les crises et interventions critiques.",
-                icon: Brain,
-                color: "text-cyan-400"
-              },
-              {
-                title: "QVST & Équipes",
-                sub: "Qualité de Vie et Santé au Travail",
-                desc: "Améliorer le climat d'équipe, désamorcer les conflits et préserver la continuité du service.",
-                icon: Users,
-                color: "text-emerald-400"
-              }
-            ].map((exp, i) => {
-              const Icon = exp.icon;
-              return (
-                <div key={i} className="p-6 rounded-2xl bg-slate-950 border border-slate-800 space-y-3 hover:border-slate-700 transition-all">
-                  <Icon className={`w-8 h-8 ${exp.color}`} />
-                  <h3 className="text-xl font-bold text-white">{exp.title}</h3>
-                  <div className="text-xs font-semibold text-amber-400 uppercase tracking-wide">{exp.sub}</div>
-                  <p className="text-sm text-slate-400 leading-relaxed">{exp.desc}</p>
-                </div>
-              );
-            })}
-          </div>
-
-        </div>
-      </section>
-
-      {/* ── SECTION 9 — AVIS CLIENTS / PAROLES DU RÉEL ── */}
-      <section className="py-20 px-4 bg-slate-950 border-b border-slate-800">
-        <div className="max-w-6xl mx-auto">
-          
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-400 text-xs font-bold uppercase tracking-wider mb-3">
-              Retours Authentiques
-            </div>
-            <h2 className="text-3xl sm:text-5xl font-black text-white">
-              ILS ONT RETROUVÉ LE SOUFFLE
-            </h2>
+            <p className="mt-3 text-slate-400 text-sm sm:text-base">
+              Des professionnels, indépendants et dirigeants qui ont transformé leur quotidien grâce à Ô&apos;TOP Formation.
+            </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {testimonials.map((t, idx) => (
-              <div key={idx} className="p-6 rounded-3xl bg-slate-900/80 border border-slate-800 space-y-4 flex flex-col justify-between hover:border-amber-500/30 transition-all">
+              <div 
+                key={idx} 
+                className="p-6 sm:p-8 rounded-3xl bg-slate-950 border border-slate-800 flex flex-col justify-between shadow-xl hover:border-blue-500/30 transition-all"
+              >
                 <div>
-                  <div className="flex items-center justify-between mb-3">
+                  <div className="flex items-center justify-between mb-4">
                     <div className="flex items-center gap-1 text-amber-400">
                       {[...Array(5)].map((_, i) => (
-                        <Star key={i} size={14} fill="currentColor" />
+                        <Star key={i} size={15} fill="currentColor" />
                       ))}
                     </div>
-                    <span className="text-[11px] font-semibold text-slate-400 px-2 py-0.5 rounded-full bg-slate-800">
+                    <span className="text-[11px] font-semibold text-blue-400 bg-blue-500/10 px-2 py-0.5 rounded-full border border-blue-500/20">
                       {t.tag}
                     </span>
                   </div>
-                  <p className="text-sm text-slate-300 leading-relaxed italic">
+                  <p className="text-sm text-slate-300 leading-relaxed italic mb-4">
                     &laquo;&nbsp;{t.text}&nbsp;&raquo;
                   </p>
                 </div>
                 <div className="pt-4 border-t border-slate-800/80">
                   <div className="font-bold text-white text-sm">{t.name}</div>
-                  <div className="text-xs text-amber-400/90">{t.role}</div>
+                  <div className="text-xs text-amber-400/90 font-medium">{t.course}</div>
                 </div>
               </div>
             ))}
@@ -704,84 +587,16 @@ export default function RespirezLandingPage() {
         </div>
       </section>
 
-      {/* ── SECTION 10 — ON S'ADAPTE À VOUS (FLEXIBILITÉ) ── */}
-      <section className="py-20 px-4 bg-slate-900/40 border-b border-slate-800">
-        <div className="max-w-6xl mx-auto">
-          
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-bold uppercase tracking-wider mb-3">
-              Accompagnement Sur-Mesure
-            </div>
-            <h2 className="text-3xl sm:text-5xl font-black text-white">
-              On s&apos;adapte à vous.
-            </h2>
-            <p className="mt-3 text-base sm:text-lg text-slate-300">
-              Pas de format rigide. Pas de &ldquo;formule standard&rdquo;. Votre situation est unique. Votre solution aussi.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            
-            <div className="p-8 rounded-3xl bg-slate-950 border border-slate-800 space-y-4">
-              <div className="w-12 h-12 rounded-2xl bg-blue-500/10 border border-blue-500/20 text-blue-400 flex items-center justify-center font-bold">
-                <Users size={24} />
-              </div>
-              <h3 className="text-xl font-bold text-white">Pour les institutions & entreprises</h3>
-              <p className="text-xs text-slate-400">Mairies, hôpitaux, entreprises, collectivités...</p>
-              <ul className="space-y-2 text-sm text-slate-300 pt-2">
-                <li>• Formation d&apos;équipe complète</li>
-                <li>• Ateliers pour agents en première ligne</li>
-                <li>• Accompagnement des encadrants & RH</li>
-              </ul>
-            </div>
-
-            <div className="p-8 rounded-3xl bg-slate-950 border border-slate-800 space-y-4">
-              <div className="w-12 h-12 rounded-2xl bg-amber-500/10 border border-amber-500/20 text-amber-400 flex items-center justify-center font-bold">
-                <Heart size={24} />
-              </div>
-              <h3 className="text-xl font-bold text-white">Pour les particuliers</h3>
-              <p className="text-xs text-slate-400">Vous qui vivez ça seul et portez tout...</p>
-              <ul className="space-y-2 text-sm text-slate-300 pt-2">
-                <li>• Sessions individuelles confidentielles</li>
-                <li>• Accompagnements sur-mesure</li>
-                <li>• Suivi adapté à votre rythme réel</li>
-              </ul>
-            </div>
-
-            <div className="p-8 rounded-3xl bg-slate-950 border border-slate-800 space-y-4">
-              <div className="w-12 h-12 rounded-2xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 flex items-center justify-center font-bold">
-                <Compass size={24} />
-              </div>
-              <h3 className="text-xl font-bold text-white">Format libre & Hybride</h3>
-              <p className="text-xs text-slate-400">Selon vos contraintes de service</p>
-              <ul className="space-y-2 text-sm text-slate-300 pt-2">
-                <li>• En groupe ou seul(e)</li>
-                <li>• Présentiel, à distance, ou mixte</li>
-                <li>• Durée modulée selon votre réalité</li>
-              </ul>
-            </div>
-
-          </div>
-
-          <div className="mt-10 p-6 rounded-2xl bg-slate-950 border border-amber-500/30 text-center">
-            <p className="text-base sm:text-lg font-bold text-amber-300">
-              Résultat : Vous repartez avec des outils concrets. Utilisables tout de suite. Efficaces sur le long terme.
-            </p>
-          </div>
-
-        </div>
-      </section>
-
-      {/* ── SECTION 11 — FAQ ACCORDÉON ── */}
+      {/* ── 6. FAQ SANS DÉTOUR ── */}
       <section className="py-20 px-4 bg-slate-950 border-b border-slate-800">
-        <div className="max-w-4xl mx-auto space-y-12">
+        <div className="max-w-4xl mx-auto space-y-10">
           
           <div className="text-center">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-800 border border-slate-700 text-slate-300 text-xs font-bold uppercase tracking-wider mb-3">
               Questions Fréquentes
             </div>
             <h2 className="text-3xl sm:text-5xl font-black text-white">
-              Des réponses directes, sans langue de bois.
+              Toutes les réponses, sans jargon.
             </h2>
           </div>
 
@@ -798,7 +613,7 @@ export default function RespirezLandingPage() {
                     className="w-full px-6 py-5 flex items-center justify-between text-left gap-4 hover:bg-slate-850"
                   >
                     <span className="font-bold text-white text-base sm:text-lg">{faq.q}</span>
-                    {isOpen ? <ChevronUp className="text-amber-400 shrink-0" /> : <ChevronDown className="text-slate-400 shrink-0" />}
+                    {isOpen ? <ChevronUp className="text-blue-400 shrink-0" /> : <ChevronDown className="text-slate-400 shrink-0" />}
                   </button>
                   {isOpen && (
                     <div className="px-6 pb-6 text-sm sm:text-base text-slate-300 leading-relaxed border-t border-slate-800 pt-4 bg-slate-950/40">
@@ -813,21 +628,22 @@ export default function RespirezLandingPage() {
         </div>
       </section>
 
-      {/* ── SECTION 12 — CTA FINAL & FORMULAIRE DIAGNOSTIC (15 MIN) ── */}
+      {/* ── 7. DIAGNOSTIC EXPRESS & DEVIS EN 15 MIN (CONVERSION FINALE) ── */}
       <section id="diagnostic" className="py-24 px-4 bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 relative overflow-hidden">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] bg-amber-500/10 blur-3xl pointer-events-none rounded-full" />
+        
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] bg-blue-600/10 blur-[130px] pointer-events-none rounded-full" />
 
         <div className="max-w-3xl mx-auto relative z-10 text-center space-y-6">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-bold uppercase tracking-wider">
-            Échange Confidentiel Sans Engagement
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/30 text-blue-400 text-xs font-bold uppercase tracking-wider">
+            Échange Gratuit Sans Engagement
           </div>
           
           <h2 className="text-3xl sm:text-5xl font-black text-white tracking-tight">
-            Je m&apos;offre un diagnostic (15 min)
+            Demander un Diagnostic Express (15 min)
           </h2>
           
           <p className="text-base sm:text-lg text-slate-300 max-w-xl mx-auto">
-            15 minutes d&apos;évaluation avec Mélissa ou un expert TOP pour faire le point sur votre charge mentale ou celle de votre équipe.
+            15 minutes avec Mélissa ou Renaud pour vérifier vos droits à formation (OPCO, CPF, FAFCEA) et concevoir votre parcours sur-mesure.
           </p>
 
           <form onSubmit={handleDiagnosticSubmit} className="mt-8 p-8 rounded-3xl bg-slate-900 border border-slate-800 text-left space-y-5 shadow-2xl">
@@ -838,10 +654,10 @@ export default function RespirezLandingPage() {
               <input
                 type="text"
                 required
-                value={contactName}
-                onChange={(e) => setContactName(e.target.value)}
-                placeholder="Ex: Sophie L. / Marc (DRH) / Capitaine Thomas"
-                className="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-700 text-white placeholder-slate-500 text-sm focus:border-amber-400 focus:outline-none"
+                value={diagnosticName}
+                onChange={(e) => setDiagnosticName(e.target.value)}
+                placeholder="Ex: Sophie Martin / Marc Durand"
+                className="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-700 text-white placeholder-slate-500 text-sm focus:border-blue-400 focus:outline-none"
               />
             </div>
 
@@ -852,73 +668,73 @@ export default function RespirezLandingPage() {
               <input
                 type="tel"
                 required
-                value={contactPhone}
-                onChange={(e) => setContactPhone(e.target.value)}
+                value={diagnosticPhone}
+                onChange={(e) => setDiagnosticPhone(e.target.value)}
                 placeholder="06 XX XX XX XX"
-                className="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-700 text-white placeholder-slate-500 text-sm focus:border-amber-400 focus:outline-none"
+                className="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-700 text-white placeholder-slate-500 text-sm focus:border-blue-400 focus:outline-none"
               />
             </div>
 
             <div>
               <label className="block text-xs font-semibold text-slate-300 uppercase mb-2">
-                Votre Situation / Profil
+                Domaine Prioritaire Souhaité
               </label>
               <select
-                value={contactProfile}
-                onChange={(e) => setContactProfile(e.target.value)}
-                className="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-700 text-white text-sm focus:border-amber-400 focus:outline-none"
+                value={diagnosticNeed}
+                onChange={(e) => setDiagnosticNeed(e.target.value)}
+                className="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-700 text-white text-sm focus:border-blue-400 focus:outline-none"
               >
-                <option value="urgence">Métiers de terrain / urgence (pompier, police, soignant, infirmier)</option>
-                <option value="education">Éducation / Enseignement / AESH / ATSEM</option>
-                <option value="direction">Direction, Élu, DRH, Manager d&apos;équipe</option>
-                <option value="particulier">Particulier sous pression (charge mentale intense)</option>
-                <option value="autre">Autre situation spécifique</option>
+                <option value="ia-indep">🤖 IA Générative pour Indépendants (RS6776 - 16h)</option>
+                <option value="ia-business">🚀 Intégration IA en Entreprise & Cybersécurité (RS7344)</option>
+                <option value="reseaux-sociaux">📱 Communication Réseaux Sociaux (RS7351 - 11h+)</option>
+                <option value="fi-top">🧘 Formation Initiale FI TOP® (21h / 3 jours)</option>
+                <option value="fb-top">⏱️ Formation FB-TOP Découverte (7h)</option>
+                <option value="massage-aimants">🌿 Massages aux Aimants Thérapeutiques (280€/j)</option>
+                <option value="head-spa">💆 Head Spa Holistique (2 jours - Prise en charge FAFCEA)</option>
+                <option value="massage-huiles">🌸 Massage Holistique aux Huiles (14h - Tournée)</option>
+                <option value="autre">✨ Autre projet sur-mesure</option>
               </select>
             </div>
 
             <button
               type="submit"
-              className="w-full py-4 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-black text-base shadow-xl shadow-amber-500/20 transition-all flex items-center justify-center gap-2"
+              className="w-full py-4 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-black text-base shadow-xl shadow-blue-600/30 transition-all flex items-center justify-center gap-2 cursor-pointer"
             >
               <MessageCircle size={20} />
-              <span>Valider & Démarrer sur WhatsApp (15 min)</span>
+              <span>Valider & Échanger en direct sur WhatsApp 💬</span>
             </button>
 
             <p className="text-center text-xs text-slate-400 mt-2">
-              🔒 Confidentialité totale. Aucun spam. Réponse sous 24h ouvrées.
+              🔒 Confidentialité garantie • Analyse de vos financements sous 24h ouvrées.
             </p>
           </form>
         </div>
       </section>
 
-      {/* ── FOOTER LÉGAL & DISCLAIMER ── */}
+      {/* ── FOOTER LÉGAL & RAPPEL COORDONNÉES ── */}
       <footer className="py-12 px-4 bg-black border-t border-slate-900 text-slate-500 text-xs leading-relaxed">
         <div className="max-w-6xl mx-auto space-y-6">
-          
-          <div className="p-4 rounded-xl bg-slate-950 border border-slate-900 text-slate-500 text-[11px] leading-relaxed">
-            Ce site ne fait pas partie du site web Facebook ou de Facebook, Inc. ni de Google Inc. En outre, ce site n&apos;est pas endossé par Facebook en aucune façon ni par Google Inc. Facebook est une marque déposée de Facebook, Inc.
-          </div>
-
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-4 border-t border-slate-900 text-slate-400">
             <div>
-              <strong>Ô&apos;TOP FORMATIONS</strong> — Espace Gamma 1, 139 Chemin des 2 Frères, 83190 Ollioules • Tél : 07 49 23 94 23 • SIRET : 990 443 186 00012 • RCS Toulon
+              <strong>Ô&apos;TOP FORMATIONS</strong> — Espace Gamma 1, 139 Chemin des 2 Frères, 83190 Ollioules • Tél : 07 49 23 94 23 / 07 67 24 68 25 • SIRET : 990 443 186 00012 • RCS Toulon
             </div>
             <div className="flex gap-4">
-              <Link href="/" className="hover:text-white">Accueil IA & B2B</Link>
-              <Link href="/formations/fi-top" className="hover:text-white">FI TOP® 21h</Link>
+              <Link href="/" className="hover:text-white">Accueil</Link>
+              <Link href="/formations/ia" className="hover:text-white">Formations IA</Link>
+              <Link href="/formations/fi-top" className="hover:text-white">Méthode TOP®</Link>
               <Link href="/qualite" className="hover:text-white">Qualiopi</Link>
             </div>
           </div>
-
         </div>
       </footer>
 
-      {/* Modale de Félicitations */}
+      {/* Modale de Félicitations Interactive */}
       <CongratulationsModal 
         isOpen={showModal} 
         onClose={() => setShowModal(false)} 
-        courseTitle="Diagnostic Personnalisé TOP® (15 min)"
+        courseTitle="Diagnostic Personnalisé Ô'TOP Formation (15 min)"
       />
-    </main>
+
+    </div>
   );
 }
