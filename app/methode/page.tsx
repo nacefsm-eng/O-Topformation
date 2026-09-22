@@ -1,6 +1,7 @@
 import Footer from '@/components/Footer';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import NinePillarsSection from '@/components/sections/NinePillarsSection';
 
 export const metadata: Metadata = {
   title: "La Méthode TOP®",
@@ -99,6 +100,12 @@ export default function MethodeTop() {
           </div>
         </div>
       </section>
+
+      {/* 9 Piliers Pour Mieux Comprendre l'Humain */}
+      <NinePillarsSection 
+        title="9 Piliers pour Mieux Comprendre l'Humain"
+        subtitle="Intégrés à la méthode TOP®, ces 9 piliers structurent l'accompagnement individuel et collectif pour désamorcer l'épuisement et restaurer le plein potentiel."
+      />
 
       <section className="section" style={{ background: 'white' }}>
         <div className="container">

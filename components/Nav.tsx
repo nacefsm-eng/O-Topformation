@@ -25,6 +25,11 @@ const formationsLinks = [
     desc: 'Régulation du stress, prévention du burnout & endurance cognitive',
     href: '/formations/fi-top' 
   },
+  { 
+    label: '🔥 Immersion Vente : Respirez à nouveau', 
+    desc: 'Tunnel d\'impact pour forces de l\'ordre, soignants, éducateurs & cadres',
+    href: '/respirez' 
+  },
 ];
 
 export default function Nav() {

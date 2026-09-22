@@ -12,10 +12,10 @@ export default function Footer() {
             <p className="footer-brand-tagline">"Former pour transformer : optimiser le potentiel humain & décupler la performance digitale."</p>
             
             <ul className="footer-contact" style={{ marginTop: '1.5rem', listStyle: 'none', padding: 0 }}>
-              <li style={{ marginBottom: '0.4rem' }}><span>📞</span> <strong>Mélissa :</strong> <a href="tel:+33767246825">07 67 24 68 25</a></li>
+              <li style={{ marginBottom: '0.4rem' }}><span>📞</span> <strong>Ligne directe :</strong> <a href="tel:+33749239423">07 49 23 94 23</a> / <a href="tel:+33767246825">07 67 24 68 25</a></li>
               <li style={{ marginBottom: '0.4rem' }}><span>📞</span> <strong>Renaud :</strong> <a href="tel:+33674797509">06 74 79 75 09</a></li>
               <li style={{ marginBottom: '0.4rem' }}><span>📧</span> <a href="mailto:formation.rmcf@gmail.com">formation.rmcf@gmail.com</a></li>
-              <li><span>📍</span> Ollioules (Var) — PACA & Partout en France</li>
+              <li><span>📍</span> Espace Gamma 1, 139 Chemin des 2 Frères, 83190 Ollioules</li>
             </ul>
 
             <div style={{ display: 'flex', gap: '0.75rem', marginTop: '1.25rem' }}>
@@ -30,10 +30,11 @@ export default function Footer() {
             <h4>Formations Certifiantes</h4>
             <ul className="footer-links">
               <li><Link href="/formations/fi-top">🧘 Formation FI TOP® (21h - Santé & Stress)</Link></li>
+              <li><Link href="/respirez" style={{ color: 'var(--gold-light)', fontWeight: 600 }}>🔥 Immersion Vente : Respirez à nouveau</Link></li>
               <li><Link href="/formations/ia">🤖 IA pour Dirigeants (RS7344)</Link></li>
               <li><Link href="/formations/ia">⚡ IA Générative pour Indépendants (RS6776)</Link></li>
               <li><Link href="/formations/reseaux-sociaux">📱 Réseaux Sociaux & Acquisition (RS7351)</Link></li>
-              <li><Link href="/methode">La Méthode TOP®</Link></li>
+              <li><Link href="/methode">La Méthode TOP® & 9 Piliers</Link></li>
             </ul>
           </div>
 
@@ -64,9 +65,9 @@ export default function Footer() {
         </div>
 
         <div className="footer-bottom">
-          <p>© {new Date().getFullYear()} Ô'TOP Formation — SAS Ô'TOP Formation. Tous droits réservés.</p>
+          <p>© {new Date().getFullYear()} Ô'TOP Formation — SAS Ô'TOP Formation • SIRET : 990 443 186 00012 • NAF : 8559A • RCS Toulon. Tous droits réservés.</p>
           <span className="footer-nda" style={{ color: 'var(--gold-light)' }}>
-            🏆 Organisme de formation certifié Qualiopi • Certifications enregistrées à France Compétences (RS7351, RS7344, RS6776)
+            🏆 Organisme certifié Qualiopi • Déclaration PACA • Certifications France Compétences (RS7351, RS7344, RS6776)
           </span>
         </div>
       </div>

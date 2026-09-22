@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import Footer from '@/components/Footer';
 import CongratulationsModal from '@/components/ui/congratulations-modal';
+import NinePillarsSection from '@/components/sections/NinePillarsSection';
 import { 
   Brain, 
   Clock, 
@@ -208,6 +209,11 @@ export default function FiTopPage() {
         </div>
       </section>
 
+      {/* ── LES 9 PILIERS DE LA FORMATION TOP ── */}
+      <NinePillarsSection 
+        title="Les 9 Piliers Développés en Formation TOP®"
+        subtitle="Chaque participant expérimente ces 9 piliers pour passer de la réaction automatique à la maîtrise de ses états internes."
+      />
 
       {/* ── MODALITÉS PÉDAGOGIQUES, HORAIRES & REPAS ── */}
       <section className="py-20 px-4 bg-slate-900/60 border-b border-slate-800">

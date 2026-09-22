@@ -2,11 +2,14 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import Footer from '@/components/Footer';
+import CongratulationsModal from '@/components/ui/congratulations-modal';
+import NinePillarsSection from '@/components/sections/NinePillarsSection';
 
 export default function FbTop() {
   const [openModule, setOpenModule] = useState<number | null>(0);
   const [form, setForm] = useState({ prenom: '', nom: '', email: '', telephone: '', societe: '', message: '' });
   const [submitted, setSubmitted] = useState(false);
+  const [showModal, setShowModal] = useState(false);
 
   const modules = [
     {
@@ -41,7 +44,10 @@ export default function FbTop() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    const msg = `Bonjour Mélissa, je m'inscris pour la Formation FB-TOP (7h).%0ANom : ${encodeURIComponent(form.prenom + ' ' + form.nom)}%0ATéléphone : ${encodeURIComponent(form.telephone)}%0AEmail : ${encodeURIComponent(form.email)}%0ASociété : ${encodeURIComponent(form.societe || 'Non précisée')}%0AMessage : ${encodeURIComponent(form.message || 'Demande d\'inscription')}`;
+    window.open(`https://wa.me/33767246825?text=${msg}`, '_blank');
     setSubmitted(true);
+    setShowModal(true);
   };
 
   return (
@@ -203,6 +209,12 @@ export default function FbTop() {
         </div>
       </section>
 
+      {/* ── 9 PILIERS POUR MIEUX COMPRENDRE L'HUMAIN ── */}
+      <NinePillarsSection 
+        title="Les 9 Piliers Pour Mieux Comprendre l'Humain"
+        subtitle="Un socle pédagogique structurant abordé dès la journée FB-TOP pour une prise de conscience durable."
+      />
+
       {/* CTA */}
       <section className="section cta-section">
         <div className="container">
@@ -219,6 +231,12 @@ export default function FbTop() {
       </section>
 
       <Footer />
+
+      <CongratulationsModal 
+        isOpen={showModal} 
+        onClose={() => setShowModal(false)} 
+        trainingTitle="Formation FB-TOP (Journée Découverte 7h)"
+      />
     </main>
   );
 }

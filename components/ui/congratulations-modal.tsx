@@ -9,6 +9,7 @@ interface CongratulationsModalProps {
   onClose: () => void;
   candidateName?: string;
   courseTitle?: string;
+  trainingTitle?: string;
   onWhatsAppClick?: () => void;
 }
 
@@ -16,10 +17,13 @@ export default function CongratulationsModal({
   isOpen,
   onClose,
   candidateName = 'Cher(e) stagiaire',
-  courseTitle = 'Formation Certifiante',
+  courseTitle,
+  trainingTitle,
   onWhatsAppClick,
 }: CongratulationsModalProps) {
   if (!isOpen) return null;
+
+  const displayTitle = courseTitle || trainingTitle || 'Formation Certifiante';
 
   return (
     <AnimatePresence>
@@ -75,7 +79,7 @@ export default function CongratulationsModal({
 
           <p className="text-slate-300 text-sm leading-relaxed mb-6 max-w-md mx-auto">
             {candidateName ? `Merci ${candidateName} ! ` : ''}
-            Votre demande pour <strong>{courseTitle}</strong> est enregistrée. Mélissa et Renaud préparent l&apos;étude de vos financements (OPCO, FIF-PL, CPF) sous 24h ouvrées.
+            Votre demande pour <strong>{displayTitle}</strong> est enregistrée. Mélissa et Renaud préparent l&apos;étude de vos financements (OPCO, FIF-PL, CPF) sous 24h ouvrées.
           </p>
 
           {/* Action Cards */}
