@@ -1,19 +1,21 @@
 'use client';
+
 import { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
+import { MessageCircle, X, Sparkles, Send, CheckCircle2 } from 'lucide-react';
 
 const OTOP_QUESTIONS = [
-  { q: "C'est quoi la méthode TOP® ?", a: "Les Techniques d'Optimisation du Potentiel (TOP®) sont un ensemble d'outils simples et pragmatiques (respiration, imagerie mentale, relaxation) créés par l'armée française. Elles permettent de gérer le stress, la fatigue et d'optimiser ses performances au quotidien." },
-  { q: "Vous intervenez en entreprise ?", a: "Oui, tout à fait ! Nous proposons des formations intra-entreprise sur-mesure pour les équipes, les managers ou les dirigeants afin d'améliorer la qualité de vie au travail et prévenir les risques psychosociaux." },
-  { q: "Quels sont vos tarifs ?", a: "Nos tarifs varient selon le format. La formation initiale (FI TOP) de 21h est à 1280€ HT. La formation de base (FB TOP) de 7h est à 450€ HT. Pour les entreprises, nous faisons des devis sur mesure. La formation peut être financée par votre OPCO." },
-  { q: "La formation est-elle certifiante ?", a: "Oui, nos formations permettent d'obtenir une attestation officielle de formation TOP®. Nous sommes en cours de certification Qualiopi, ce qui facilitera les prises en charge OPCO et autres financements publics." },
-  { q: "Je veux un entretien découverte", a: "Super ! L'entretien découverte est 100% gratuit et dure environ 15-20 minutes. Cliquez sur le bouton ci-dessous pour choisir un créneau dans notre agenda." }
+  { q: "Quelles sont les formations certifiées ?", a: "Nous proposons 3 formations certifiantes officielles France Compétences : 1. IA Générative pour indépendants (RS6776), 2. Développer son activité avec l'IA (RS7344), 3. Réseaux Sociaux & Social Selling (RS7351), ainsi que la méthode TOP® pour la gestion du stress." },
+  { q: "Comment financer à 100% sans avance de frais ?", a: "Nos formations sont certifiées Qualiopi et enregistrées au Répertoire Spécifique France Compétences. Elles sont donc éligibles aux financements OPCO (Atlas, Akto, etc.), FAF (FIF-PL, Agefice) et CPF. Mélissa monte votre dossier de A à Z." },
+  { q: "Y a-t-il un accompagnement humain ?", a: "Oui, absolument ! Toutes nos formations incluent un accompagnement individuel 1-to-1 (jusqu'à 7h offertes) avec nos formateurs pour appliquer directement les outils sur votre propre entreprise." },
+  { q: "Je n'ai pas de compétences techniques, est-ce un problème ?", a: "Non, aucun prérequis technique n'est nécessaire. Les parcours sont construits pour les dirigeants, indépendants et salariés, avec des templates prêts à l'emploi et des cas concrets." },
+  { q: "Je veux réserver un diagnostic offert (15 min)", a: "Avec grand plaisir ! Cliquez ci-dessous pour joindre directement Mélissa sur WhatsApp ou réserver votre appel de cadrage." }
 ];
 
 export default function FloatingChatbot() {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<{role: 'ai' | 'user', text: string}[]>([
-    { role: 'ai', text: "Bonjour ! 👋 Je suis l'assistant virtuel d'O'TOP Formation. Comment puis-je vous aider aujourd'hui ?" }
+    { role: 'ai', text: "Bonjour ! 👋 Comment pouvons-nous vous accompagner sur vos projets de formation IA, Réseaux Sociaux ou Méthode TOP® ?" }
   ]);
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
@@ -29,137 +31,164 @@ export default function FloatingChatbot() {
     // Simulate thinking delay
     setTimeout(() => {
       setMessages(prev => [...prev, { role: 'ai', text: a }]);
-    }, 600);
+    }, 450);
   };
 
-  const isAppointmentQuestion = messages.some(m => m.role === 'user' && m.text.includes('entretien découverte'));
+  const isAppointmentQuestion = messages.some(m => m.role === 'user' && m.text.includes('diagnostic offert'));
 
   return (
     <>
-      {/* Botton Toggle */}
+      {/* Sleek Floating Toggle Button (No cartoon robot) */}
       <button 
         onClick={() => setIsOpen(!isOpen)}
         style={{
           position: 'fixed',
           bottom: '24px',
-          left: '24px', // Placé à gauche pour ne pas gêner WhatsApp/Téléphone à droite
-          width: '60px',
-          height: '60px',
-          borderRadius: '30px',
-          background: 'linear-gradient(135deg, #0f1f5c, #1a3c8f)',
+          left: '24px',
+          width: '56px',
+          height: '56px',
+          borderRadius: '28px',
+          background: 'linear-gradient(135deg, #2563eb, #4f46e5)',
           color: 'white',
-          border: 'none',
-          boxShadow: '0 4px 20px rgba(15, 31, 92, 0.4)',
+          border: '1px solid rgba(255, 255, 255, 0.2)',
+          boxShadow: '0 8px 30px rgba(37, 99, 235, 0.4)',
           cursor: 'pointer',
           zIndex: 9999,
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          fontSize: '28px',
-          transition: 'transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275)'
+          transition: 'transform 0.25s ease, box-shadow 0.25s ease'
         }}
-        className={isOpen ? "chatbot-btn-open" : "chatbot-btn-closed"}
+        className="hover:scale-105 active:scale-95"
+        aria-label="Discuter avec notre équipe"
       >
-        {isOpen ? '✕' : '🤖'}
+        {isOpen ? <X size={22} /> : <MessageCircle size={24} />}
       </button>
 
-      {/* Chat Window */}
+      {/* Chat Window (Sleek Dark Theme) */}
       {isOpen && (
         <div style={{
           position: 'fixed',
-          bottom: '100px',
+          bottom: '90px',
           left: '24px',
-          width: '350px',
+          width: '380px',
           maxWidth: 'calc(100vw - 48px)',
-          height: '500px',
-          maxHeight: 'calc(100vh - 120px)',
-          background: 'white',
-          borderRadius: '20px',
-          boxShadow: '0 10px 40px rgba(0,0,0,0.15)',
+          height: '520px',
+          maxHeight: 'calc(100vh - 110px)',
+          background: '#0a0f1d',
+          borderRadius: '24px',
+          boxShadow: '0 20px 60px rgba(0,0,0,0.6)',
           zIndex: 9998,
           display: 'flex',
           flexDirection: 'column',
           overflow: 'hidden',
-          border: '1px solid #e2e8f0',
-          animation: 'chatFadeIn 0.3s ease'
+          border: '1px solid rgba(255, 255, 255, 0.12)',
         }}>
           {/* Header */}
           <div style={{
-            background: 'linear-gradient(135deg, #0f1f5c, #1a3c8f)',
+            background: 'linear-gradient(135deg, #0f172a, #1e293b)',
             padding: '16px 20px',
             color: 'white',
             display: 'flex',
             alignItems: 'center',
-            gap: '12px'
+            justifyContent: 'space-between',
+            borderBottom: '1px solid rgba(255,255,255,0.08)'
           }}>
-            <div style={{ fontSize: '24px' }}>🤖</div>
-            <div>
-              <h3 style={{ margin: 0, fontSize: '16px', fontWeight: 600 }}>Assistant O'TOP</h3>
-              <p style={{ margin: 0, fontSize: '12px', opacity: 0.8 }}>Réponses instantanées</p>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+              <div style={{ 
+                width: '36px', 
+                height: '36px', 
+                borderRadius: '12px', 
+                background: 'linear-gradient(135deg, #2563eb, #4f46e5)', 
+                display: 'flex', 
+                alignItems: 'center', 
+                justifyContent: 'center',
+                color: 'white'
+              }}>
+                <Sparkles size={18} />
+              </div>
+              <div>
+                <h3 style={{ margin: 0, fontSize: '15px', fontWeight: 700 }}>Conseiller Ô&apos;TOP</h3>
+                <p style={{ margin: 0, fontSize: '11px', color: '#94a3b8' }}>Réponses instantanées & Orientation</p>
+              </div>
             </div>
+            <button 
+              onClick={() => setIsOpen(false)}
+              style={{ background: 'none', border: 'none', color: '#94a3b8', cursor: 'pointer' }}
+            >
+              <X size={18} />
+            </button>
           </div>
 
-          {/* Messages */}
+          {/* Messages Feed */}
           <div style={{
             flex: 1,
-            padding: '20px',
+            padding: '18px',
             overflowY: 'auto',
-            background: '#f8fafc',
+            background: '#050811',
             display: 'flex',
             flexDirection: 'column',
-            gap: '16px'
+            gap: '14px'
           }}>
             {messages.map((msg, i) => (
               <div key={i} style={{
                 alignSelf: msg.role === 'user' ? 'flex-end' : 'flex-start',
                 maxWidth: '85%',
-                background: msg.role === 'user' ? '#1a3c8f' : 'white',
-                color: msg.role === 'user' ? 'white' : '#1e293b',
+                background: msg.role === 'user' ? '#2563eb' : '#111827',
+                color: msg.role === 'user' ? 'white' : '#e2e8f0',
                 padding: '12px 16px',
-                borderRadius: '16px',
-                borderBottomRightRadius: msg.role === 'user' ? '4px' : '16px',
-                borderBottomLeftRadius: msg.role === 'ai' ? '4px' : '16px',
-                boxShadow: '0 2px 5px rgba(0,0,0,0.05)',
-                fontSize: '14px',
+                borderRadius: '18px',
+                borderBottomRightRadius: msg.role === 'user' ? '4px' : '18px',
+                borderBottomLeftRadius: msg.role === 'ai' ? '4px' : '18px',
+                boxShadow: '0 4px 15px rgba(0,0,0,0.2)',
+                fontSize: '13px',
                 lineHeight: 1.5,
-                border: msg.role === 'ai' ? '1px solid #e2e8f0' : 'none'
+                border: msg.role === 'ai' ? '1px solid rgba(255,255,255,0.08)' : 'none'
               }}>
                 {msg.text}
               </div>
             ))}
             
             {isAppointmentQuestion && (
-              <div style={{ alignSelf: 'flex-start', maxWidth: '85%' }}>
-                <Link href="/reservation" onClick={() => setIsOpen(false)} style={{
-                  display: 'inline-block',
-                  background: '#d4af37',
-                  color: '#0f1f5c',
-                  padding: '10px 16px',
-                  borderRadius: '20px',
-                  textDecoration: 'none',
-                  fontWeight: 600,
-                  fontSize: '14px',
-                  boxShadow: '0 2px 8px rgba(212, 175, 55, 0.4)'
-                }}>
-                  📅 Prendre RDV maintenant
-                </Link>
+              <div style={{ alignSelf: 'flex-start', maxWidth: '90%' }}>
+                <a 
+                  href="https://wa.me/33767246825?text=Bonjour%20M%C3%A9lissa%2C%20je%20souhaite%20r%C3%A9server%20un%20diagnostic%20offert%20de%2015%20minutes."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => setIsOpen(false)} 
+                  style={{
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '8px',
+                    background: '#16a34a',
+                    color: 'white',
+                    padding: '10px 18px',
+                    borderRadius: '14px',
+                    textDecoration: 'none',
+                    fontWeight: 700,
+                    fontSize: '13px',
+                    boxShadow: '0 4px 15px rgba(22, 163, 74, 0.4)'
+                  }}
+                >
+                  <span>💬 Contacter Mélissa sur WhatsApp</span>
+                </a>
               </div>
             )}
             <div ref={messagesEndRef} />
           </div>
 
-          {/* Suggestion Chips */}
+          {/* Quick Questions */}
           <div style={{
-            padding: '16px',
-            background: 'white',
-            borderTop: '1px solid #e2e8f0',
+            padding: '14px',
+            background: '#0b1120',
+            borderTop: '1px solid rgba(255,255,255,0.08)',
             display: 'flex',
             flexDirection: 'column',
-            gap: '8px',
-            maxHeight: '150px',
+            gap: '6px',
+            maxHeight: '160px',
             overflowY: 'auto'
           }}>
-            <p style={{ margin: '0 0 4px 0', fontSize: '11px', color: '#64748b', fontWeight: 600, textTransform: 'uppercase' }}>
+            <p style={{ margin: '0 0 4px 0', fontSize: '10px', color: '#94a3b8', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em' }}>
               Questions fréquentes :
             </p>
             {OTOP_QUESTIONS.map((item, i) => (
@@ -168,17 +197,23 @@ export default function FloatingChatbot() {
                 onClick={() => handleQuestionClick(item.q, item.a)}
                 style={{
                   textAlign: 'left',
-                  background: '#f1f5f9',
-                  border: '1px solid #e2e8f0',
-                  padding: '8px 12px',
-                  borderRadius: '12px',
-                  fontSize: '13px',
-                  color: '#334155',
+                  background: '#131d33',
+                  border: '1px solid rgba(255,255,255,0.07)',
+                  padding: '7px 12px',
+                  borderRadius: '10px',
+                  fontSize: '12px',
+                  color: '#cbd5e1',
                   cursor: 'pointer',
-                  transition: 'background 0.2s'
+                  transition: 'all 0.15s ease'
                 }}
-                onMouseEnter={e => e.currentTarget.style.background = '#e2e8f0'}
-                onMouseLeave={e => e.currentTarget.style.background = '#f1f5f9'}
+                onMouseEnter={e => {
+                  e.currentTarget.style.background = '#1d2a4a';
+                  e.currentTarget.style.color = '#ffffff';
+                }}
+                onMouseLeave={e => {
+                  e.currentTarget.style.background = '#131d33';
+                  e.currentTarget.style.color = '#cbd5e1';
+                }}
               >
                 {item.q}
               </button>
@@ -186,15 +221,6 @@ export default function FloatingChatbot() {
           </div>
         </div>
       )}
-
-      <style dangerouslySetInnerHTML={{__html: `
-        @keyframes chatFadeIn {
-          from { opacity: 0; transform: translateY(20px) scale(0.95); }
-          to { opacity: 1; transform: translateY(0) scale(1); }
-        }
-        .chatbot-btn-closed:hover { transform: scale(1.1); }
-        .chatbot-btn-open { transform: rotate(90deg); background: #334155 !important; }
-      `}} />
     </>
   );
 }
