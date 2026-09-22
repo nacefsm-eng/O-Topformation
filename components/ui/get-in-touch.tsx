@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { Mail, Phone, MapPin, Send, MessageCircle } from 'lucide-react';
+import CongratulationsModal from '@/components/ui/congratulations-modal';
 
 export default function GetInTouch() {
   const [name, setName] = useState('');
@@ -9,6 +10,7 @@ export default function GetInTouch() {
   const [phone, setPhone] = useState('');
   const [message, setMessage] = useState('');
   const [isSent, setIsSent] = useState(false);
+  const [showCongrats, setShowCongrats] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -19,10 +21,11 @@ Je souhaite obtenir des informations pour une formation :
 - Nom : ${name}
 - Email : ${email}
 - Téléphone : ${phone}
-- Projet / Message : ${message || 'Diagnostic et renseignements sur les formations IA / Cybersécurité'}`;
+- Projet / Message : ${message || 'Diagnostic et renseignements sur les formations IA / Cybersécurité / Méthode TOP'}`;
 
     const waUrl = `https://wa.me/33767246825?text=${encodeURIComponent(formattedMessage)}`;
     setIsSent(true);
+    setShowCongrats(true);
     window.open(waUrl, '_blank');
   };
 
@@ -165,6 +168,18 @@ Je souhaite obtenir des informations pour une formation :
           </div>
         </div>
       </div>
+
+      {/* Pop-up de Félicitations innovant */}
+      <CongratulationsModal
+        isOpen={showCongrats}
+        onClose={() => setShowCongrats(false)}
+        candidateName={name}
+        courseTitle="votre parcours de formation"
+        onWhatsAppClick={() => {
+          const formattedMessage = `Bonjour Mélissa (Ô'TOP Formation), je viens de valider ma candidature (${name}, ${phone}). Je souhaite faire le point sur mes financements.`;
+          window.open(`https://wa.me/33767246825?text=${encodeURIComponent(formattedMessage)}`, '_blank');
+        }}
+      />
     </section>
   );
 }

@@ -767,7 +767,7 @@ export default function HomePageClient() {
               Des Praticiens de Terrain
             </div>
             <h2 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight mb-4">
-              Le Trio d&apos;Experts
+              L&apos;Équipe des Experts
             </h2>
             <p className="text-slate-400 text-base sm:text-lg">
               Une exigence constante, un accompagnement humain sans filtre et une vision résolument tournée vers votre rentabilité durable.
@@ -803,6 +803,16 @@ export default function HomePageClient() {
               imageUrl="/team-regis.png"
               description="Excellence opérationnelle forgée sur le terrain, sang-froid et vision stratégique pour sécuriser chaque étape de votre transition."
               onCtaClick={() => window.open('https://wa.me/33767246825?text=Bonjour%20R%C3%A9gis%2C%20je%20souhaite%20%C3%A9changer%20avec%20vous.', '_blank')}
+            />
+
+            {/* 4. Med Aly Garma */}
+            <TeamMemberCard
+              position="right"
+              firstName="Med Aly"
+              lastName="GARMA"
+              imageUrl="/team-med-aly.jpg"
+              description="Expertise pointue en cybersécurité, résilience des infrastructures critiques et sécurisation avancée des environnements d&apos;intelligence artificielle."
+              onCtaClick={() => window.open('https://wa.me/33767246825?text=Bonjour%20Med%20Aly%2C%20je%20souhaite%20%C3%A9changer%20avec%20vous%20sur%20la%20cybers%C3%A9curit%C3%A9.', '_blank')}
             />
           </div>
 

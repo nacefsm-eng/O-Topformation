@@ -1,718 +1,360 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
 import Footer from '@/components/Footer';
-
-const modules = [
-  {
-    title: 'Module 1 — Acquérir les connaissances de base TOP®',
-    items: [
-      'La méthode TOP® : origines, historique, champ d\'applications',
-      'La respiration : objectifs et techniques TOP®',
-      'Pratique des respirations',
-      'La Relaxation Musculaire Directe (RMD)',
-      'La météo TOP®',
-      'La respiration régulatrice',
-    ],
-  },
-  {
-    title: 'Module 2 — Gérer son Stress et comprendre sa Fatigue / Sommeil',
-    items: [
-      'Le stress et ses mécanismes',
-      'La Relaxation Paradoxale (RPa)',
-      'La boîte à tracas',
-      'La Relaxation Musculaire Indirecte (RMI)',
-      'Le sommeil et la fatigue',
-      'La balade sensorielle réelle et imaginaire',
-    ],
-  },
-  {
-    title: 'Module 3 — TOP® et Motivation',
-    items: [
-      'La motivation et ses leviers',
-      'Renforcement Positif (R+)',
-      'La Dynamisation Psycho-Physiologique Personnalisée (DPP)',
-      'La Relaxation Psycho-Physiologique Personnalisée (R3P)',
-      'La Préparation Mentale de la Réussite (PMR)',
-      'Le Signal d\'Ajustement Réflexe (SAR)',
-      'La Répétition Mentale (RM)',
-    ],
-  },
-];
-
-const modalitesCards = [
-  { icon: '📚', title: 'Apports théoriques', desc: 'Supports PDF envoyés J-5' },
-  { icon: '🤝', title: 'Exercices pratiques', desc: 'En binôme ou en groupe' },
-  { icon: '🎭', title: 'Mises en situation supervisées', desc: '' },
-  { icon: '🎓', title: 'Démonstrations par le formateur', desc: '' },
-];
-
-const evaluationSteps = [
-  {
-    label: 'Avant',
-    desc: 'Questionnaire d\'analyse des besoins + questionnaire de positionnement',
-  },
-  {
-    label: 'Pendant',
-    desc: 'QCM à mi-parcours',
-  },
-  {
-    label: 'Après',
-    desc: 'QCM final (70 % minimum) + certificat de compétences + questionnaires de satisfaction',
-  },
-];
+import CongratulationsModal from '@/components/ui/congratulations-modal';
+import { 
+  Brain, 
+  Clock, 
+  Calendar, 
+  MapPin, 
+  ShieldCheck, 
+  CheckCircle2, 
+  FileText, 
+  MessageCircle, 
+  Award, 
+  Users, 
+  Sparkles,
+  ChevronDown,
+  ChevronUp,
+  Utensils,
+  BookOpen
+} from 'lucide-react';
 
 export default function FiTopPage() {
-  const [openModule, setOpenModule] = useState<number | null>(null);
+  const [openModule, setOpenModule] = useState<number | null>(0);
+  const [showModal, setShowModal] = useState(false);
 
-  useEffect(() => {
-    document.title = 'Formation Initiale TOP® (FI TOP®)';
-  }, []);
-
-  const toggleModule = (index: number) => {
-    setOpenModule(openModule === index ? null : index);
-  };
+  const modules = [
+    {
+      title: 'Module 1 — Connaissances de base, Régulation & Respiration',
+      subtitle: 'Poser le socle fondamental des Techniques d’Optimisation du Potentiel',
+      items: [
+        'La méthode TOP® : origines et historique, champ d’applications, objectifs',
+        'La respiration : objectifs physiologiques et techniques TOP®',
+        'Pratique guidée des différentes respirations',
+        'La Relaxation Musculaire Directe (RMD)',
+        'Les mécanismes du stress et la charge mentale',
+        'La météo TOP® : auto-diagnostic de son état interne',
+        'La respiration régulatrice pour calmer l\'activation émotionnelle immédiate',
+      ],
+    },
+    {
+      title: 'Module 2 — Récupération, Fatigue, Sommeil & Décharge Émotionnelle',
+      subtitle: 'Optimiser la récupération physique et psychique en situation exigeante',
+      items: [
+        'La Relaxation Paradoxale (RPa)',
+        'La boîte à tracas : technique d’extériorisation des ruminations',
+        'La Relaxation Musculaire Indirecte (RMI)',
+        'Comprendre les cycles du sommeil et gérer la dette de fatigue',
+        'Pratique avancée des respirations de récupération',
+        'La balade sensorielle réelle : ancrage dans l’instant présent',
+        'La balade sensorielle imaginaire : régénération par l’évocation mentale',
+      ],
+    },
+    {
+      title: 'Module 3 — Motivation, Dynamisation & Préparation Mentale à la Réussite',
+      subtitle: 'Mobiliser son potentiel maximal au moment clé',
+      items: [
+        'Le Renforcement Positif (R+) et l’auto-efficacité',
+        'La Dynamisation Psycho-Physiologique Personnalisée (DPP)',
+        'La Relaxation Psycho-Physiologique Personnalisée (R3P)',
+        'Les leviers profonds de la motivation individuelle et collective',
+        'La Préparation Mentale de la Réussite (PMR) : protocole d\'imagerie prospective',
+        'Le Signal d’Ajustement Réflexe (SAR) : switch attentionnel rapide',
+        'La Répétition Mentale (RM) des gestes techniques et prises de parole',
+      ],
+    },
+  ];
 
   return (
-    <>
-      {/* ── PAGE HERO ── */}
-      <section className="page-hero">
-        <div className="container">
-          {/* Breadcrumb */}
-          <nav className="breadcrumb" aria-label="Fil d'Ariane">
-            <Link href="/">Accueil</Link>
-            <span className="breadcrumb-sep"> / </span>
-            <Link href="/formations">Formations</Link>
-            <span className="breadcrumb-sep"> / </span>
-            <span>FI TOP®</span>
-          </nav>
+    <main className="min-h-screen bg-slate-950 text-slate-100 font-sans">
+      
+      {/* ── HERO FORMATION FI TOP ── */}
+      <section className="pt-24 pb-20 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-amber-950/30 via-slate-950 to-slate-950 border-b border-slate-800 px-4">
+        <div className="container mx-auto max-w-5xl">
+          
+          <div className="text-center max-w-4xl mx-auto">
+            {/* Top Tag */}
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/10 border border-amber-400/30 text-amber-300 text-xs sm:text-sm font-bold uppercase tracking-wider mb-6">
+              <Brain size={16} />
+              Cursus Développement Personnel &amp; Prérequis pour Intégrer le Praticien TOP
+            </div>
 
-          {/* Badge */}
-          <span className="badge badge-phare">FORMATION PHARE</span>
+            <h1 className="text-3xl sm:text-5xl md:text-6xl font-black text-white tracking-tight leading-tight mb-6">
+              FI TOP — FORMATION INITIALE<br />
+              <span className="bg-gradient-to-r from-amber-300 via-orange-400 to-amber-200 bg-clip-text text-transparent">
+                TECHNIQUES D&apos;OPTIMISATION DU POTENTIEL
+              </span>
+            </h1>
 
-          {/* Title */}
-          <h1 className="page-hero-title">Formation Initiale TOP® (FI TOP®)</h1>
+            <p className="text-base sm:text-xl text-slate-300 max-w-3xl mx-auto mb-10 leading-relaxed font-normal">
+              <strong>MUNISSEZ-VOUS DE L&apos;ESSENTIEL DE LA BOÎTE À OUTILS TOP POUR S&apos;AUTO-GÉRER AU QUOTIDIEN.</strong><br />
+              Issue des protocoles de préparation mentale des armées (Méthode PERRAULT-PIERRE), les TOP® facilitent l&apos;expression de ses potentialités et l&apos;adaptation aux situations nouvelles, complexes ou stressantes.
+            </p>
 
-          {/* Subtitle */}
-          <p className="page-hero-subtitle">
-            La formation complète pour intégrer les Techniques d&apos;Optimisation du Potentiel
-            dans votre vie professionnelle et personnelle.
-          </p>
+            {/* Quick Badges */}
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-3xl mx-auto mb-10 text-left">
+              <div className="p-4 rounded-2xl bg-slate-900/80 border border-slate-800">
+                <div className="text-xs text-slate-400 font-medium">Durée</div>
+                <div className="text-lg font-bold text-white">21h (3 jours)</div>
+                <div className="text-xs text-amber-400">1 week-end complet</div>
+              </div>
+              <div className="p-4 rounded-2xl bg-slate-900/80 border border-slate-800">
+                <div className="text-xs text-slate-400 font-medium">Format</div>
+                <div className="text-lg font-bold text-white">Présentiel ou Visio</div>
+                <div className="text-xs text-blue-400">Ollioules ou Distanciel</div>
+              </div>
+              <div className="p-4 rounded-2xl bg-slate-900/80 border border-slate-800">
+                <div className="text-xs text-slate-400 font-medium">Prérequis</div>
+                <div className="text-lg font-bold text-emerald-400">Aucun</div>
+                <div className="text-xs text-slate-400">Ouvert à tous</div>
+              </div>
+              <div className="p-4 rounded-2xl bg-slate-900/80 border border-slate-800">
+                <div className="text-xs text-slate-400 font-medium">Financements</div>
+                <div className="text-lg font-bold text-white">OPCO / FIF-PL</div>
+                <div className="text-xs text-emerald-400">Prise en charge 100%</div>
+              </div>
+            </div>
 
-          {/* Info pills */}
-          <div className="hero-pills">
-            <span className="hero-pill">⏱ 21 heures</span>
-            <span className="hero-pill">👥 Présentiel ou Distanciel</span>
-            <span className="hero-pill">💶 Financement OPCO possible</span>
-            <span className="hero-pill">📋 Aucun prérequis</span>
+            {/* CTAs */}
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <a
+                href="https://wa.me/33767246825?text=Bonjour%20M%C3%A9lissa%2C%20je%20souhaite%20m%27inscrire%20%C3%A0%20la%20formation%20FI%20TOP%C2%AE%20(21h)."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full sm:w-auto px-8 py-4 rounded-2xl bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-400 hover:to-orange-500 text-white font-black text-sm sm:text-base shadow-xl shadow-amber-600/30 flex items-center justify-center gap-2 transition-all hover:scale-105"
+              >
+                <MessageCircle size={18} />
+                <span>S&apos;inscrire à la prochaine session avec Mélissa</span>
+              </a>
+
+              <button
+                onClick={() => setShowModal(true)}
+                className="w-full sm:w-auto px-8 py-4 rounded-2xl bg-slate-900 hover:bg-slate-800 border border-slate-700 text-slate-200 font-bold text-sm sm:text-base flex items-center justify-center gap-2 transition-all cursor-pointer"
+              >
+                <span>Poser une option / Candidater ⚡</span>
+              </button>
+            </div>
+
           </div>
+
         </div>
       </section>
 
-      {/* ── MAIN CONTENT ── */}
-      <div className="container section-gap">
-        <div className="content-grid">
 
-          {/* ── LEFT COLUMN ── */}
-          <main className="content-main">
+      {/* ── 3 MODULES DU PROGRAMME (ACCORDION) ── */}
+      <section className="py-20 px-4 border-b border-slate-850">
+        <div className="container mx-auto max-w-4xl">
+          
+          <div className="text-center max-w-2xl mx-auto mb-14">
+            <span className="text-xs font-bold text-amber-400 uppercase tracking-widest">
+              Structure du Cursus
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-white mt-1">
+              Programme Pédagogique Détaillé
+            </h2>
+            <p className="text-slate-400 text-sm sm:text-base mt-2">
+              Un apprentissage progressif alliant théorie scientifique, mises en situation et boîtes à outils concrètes.
+            </p>
+          </div>
 
-            {/* Info Table */}
-            <section className="content-section">
-              <h2 className="section-title">Informations générales</h2>
-              <table className="info-table">
-                <tbody>
-                  <tr><th>Durée</th><td>21 heures (3 jours séparés d'au moins 1 semaine)</td></tr>
-                  <tr><th>Format</th><td>Présentiel ou Distanciel (visio)</td></tr>
-                  <tr><th>Tarif</th><td>Sur devis — Financement OPCO possible</td></tr>
-                  <tr><th>Public cible</th><td>Professionnels, managers, collectivités</td></tr>
-                  <tr><th>Prérequis</th><td>Aucun</td></tr>
-                  <tr><th>Effectif</th><td>Groupe (max 12 participants)</td></tr>
-                  <tr><th>Horaires</th><td>9h00 – 18h00 (pauses incluses)</td></tr>
-                  <tr><th>Inscription</th><td>Jusqu&apos;à 48h avant la formation</td></tr>
-                </tbody>
-              </table>
-            </section>
-
-            {/* Programme détaillé — Accordion */}
-            <section className="content-section">
-              <h2 className="section-title">Programme détaillé</h2>
-              <div className="accordion">
-                {modules.map((mod, i) => (
-                  <div key={i} className={`accordion-item${openModule === i ? ' accordion-item--open' : ''}`}>
-                    <button
-                      className="accordion-trigger"
-                      onClick={() => toggleModule(i)}
-                      aria-expanded={openModule === i}
-                    >
-                      <span>{mod.title}</span>
-                      <span className="accordion-icon">{openModule === i ? '−' : '+'}</span>
-                    </button>
-                    {openModule === i && (
-                      <div className="accordion-body">
-                        <ul className="module-list">
-                          {mod.items.map((item, j) => (
-                            <li key={j}>{item}</li>
-                          ))}
-                        </ul>
+          <div className="space-y-4">
+            {modules.map((mod, index) => {
+              const isOpen = openModule === index;
+              return (
+                <div 
+                  key={index}
+                  className="rounded-2xl bg-slate-900/90 border border-slate-800 overflow-hidden transition-all"
+                >
+                  <button
+                    onClick={() => setOpenModule(isOpen ? null : index)}
+                    className="w-full p-6 text-left flex items-center justify-between gap-4 cursor-pointer hover:bg-slate-850 transition-colors"
+                  >
+                    <div>
+                      <div className="text-xs font-bold text-amber-400 uppercase tracking-wider mb-1">
+                        Étape {index + 1} • 7 Heures
                       </div>
-                    )}
-                  </div>
-                ))}
+                      <h3 className="text-lg sm:text-xl font-bold text-white">
+                        {mod.title}
+                      </h3>
+                      <p className="text-xs sm:text-sm text-slate-400 mt-1">
+                        {mod.subtitle}
+                      </p>
+                    </div>
+                    <div className="w-9 h-9 rounded-full bg-slate-800 flex items-center justify-center text-slate-300 shrink-0">
+                      {isOpen ? <ChevronUp size={20} /> : <ChevronDown size={20} />}
+                    </div>
+                  </button>
+
+                  {isOpen && (
+                    <div className="px-6 pb-6 pt-2 border-t border-slate-800/80 bg-slate-950/40">
+                      <ul className="space-y-2.5 text-sm text-slate-300">
+                        {mod.items.map((item, i) => (
+                          <li key={i} className="flex items-start gap-3">
+                            <CheckCircle2 size={16} className="text-amber-400 shrink-0 mt-0.5" />
+                            <span>{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+                </div>
+              );
+            })}
+          </div>
+
+        </div>
+      </section>
+
+
+      {/* ── MODALITÉS PÉDAGOGIQUES, HORAIRES & REPAS ── */}
+      <section className="py-20 px-4 bg-slate-900/60 border-b border-slate-800">
+        <div className="container mx-auto max-w-5xl">
+          
+          <div className="text-center max-w-2xl mx-auto mb-16">
+            <span className="text-xs font-bold text-blue-400 uppercase tracking-widest">
+              Organisation & Logistique
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-white mt-1">
+              Modalités et Déroulement
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            
+            {/* Card 1 */}
+            <div className="p-6 rounded-2xl bg-slate-950 border border-slate-800 space-y-3">
+              <div className="w-12 h-12 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400">
+                <Clock size={24} />
               </div>
-            </section>
-
-            {/* Objectifs pédagogiques */}
-            <section className="content-section">
-              <h2 className="section-title">Objectifs pédagogiques</h2>
-              <ul className="check-list">
-                <li>Intégrer la méthode FI TOP® pour faciliter l&apos;expression de ses potentialités</li>
-                <li>Adapter les techniques à sa personnalité et à ses besoins au quotidien</li>
-                <li>Détecter les signes précurseurs de la fatigue et avoir les outils pour la prévenir</li>
-                <li>Comprendre les mécanismes du sommeil et l&apos;origine de la fatigue</li>
-                <li>Construire son plan d&apos;action et de progrès individualisé sur le long terme</li>
-              </ul>
-            </section>
-
-            {/* Modalités pédagogiques */}
-            <section className="content-section">
-              <h2 className="section-title">Modalités pédagogiques</h2>
-              <div className="modalites-grid">
-                {modalitesCards.map((card, i) => (
-                  <div key={i} className="modalite-card">
-                    <span className="modalite-icon">{card.icon}</span>
-                    <strong className="modalite-title">{card.title}</strong>
-                    {card.desc && <p className="modalite-desc">{card.desc}</p>}
-                  </div>
-                ))}
+              <h3 className="text-lg font-bold text-white">Horaires & Rythme</h3>
+              <p className="text-sm text-slate-300 leading-relaxed">
+                De <strong>9h00 à 18h00</strong> : cours théoriques et pratiques de 9h à 12h et de 14h à 17h, suivis d&apos;exercices d&apos;application guidée de 17h à 18h.
+              </p>
+              <div className="pt-2 text-xs text-amber-400 font-semibold">
+                1 week-end de 3 jours : Vendredi, Samedi & Dimanche
               </div>
-            </section>
+            </div>
 
-            {/* Modalités d'évaluation */}
-            <section className="content-section">
-              <h2 className="section-title">Modalités d&apos;évaluation</h2>
-              <div className="eval-steps">
-                {evaluationSteps.map((step, i) => (
-                  <div key={i} className="eval-step">
-                    <div className="eval-step-label">{step.label}</div>
-                    <div className="eval-step-desc">{step.desc}</div>
-                  </div>
-                ))}
+            {/* Card 2 */}
+            <div className="p-6 rounded-2xl bg-slate-950 border border-slate-800 space-y-3">
+              <div className="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400">
+                <Utensils size={24} />
               </div>
-            </section>
+              <h3 className="text-lg font-bold text-white">Restauration sur Place</h3>
+              <p className="text-sm text-slate-300 leading-relaxed">
+                Pause déjeuner de 12h00 à 14h00. Possibilité d&apos;apporter son repas : <strong>micro-onde, réfrigérateur et salle à manger</strong> disponibles en intérieur comme en extérieur.
+              </p>
+              <div className="pt-2 text-xs text-emerald-400 font-semibold">
+                Cadre agréable et convivial à Ollioules
+              </div>
+            </div>
 
-          </main>
+            {/* Card 3 */}
+            <div className="p-6 rounded-2xl bg-slate-950 border border-slate-800 space-y-3">
+              <div className="w-12 h-12 rounded-xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400">
+                <BookOpen size={24} />
+              </div>
+              <h3 className="text-lg font-bold text-white">Supports envoyés à J-5</h3>
+              <p className="text-sm text-slate-300 leading-relaxed">
+                Supports de cours complets (cours PDF et slides de présentation) transmis 5 jours avant le début pour préparer sereinement votre entrée en formation.
+              </p>
+              <div className="pt-2 text-xs text-indigo-400 font-semibold">
+                Inscriptions jusqu&apos;à 48h avant
+              </div>
+            </div>
 
-          {/* ── RIGHT COLUMN — STICKY CARD ── */}
-          <aside className="content-aside">
-            <div className="booking-card">
-              <h3 className="booking-card-title">Réservez votre place</h3>
+          </div>
 
-              {/* Financement */}
-              <div style={{ background: '#f0f7ff', borderRadius: '10px', padding: '1rem', border: '1px solid #bfdbfe' }}>
-                <div style={{ fontWeight: 700, fontSize: '0.85rem', color: '#1a3c8f', marginBottom: '0.4rem' }}>💶 Financement disponible</div>
-                <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.3rem' }}>
-                  <li style={{ fontSize: '0.82rem', color: '#475569' }}>✅ OPCO (plan de formation entreprise)</li>
-                  <li style={{ fontSize: '0.82rem', color: '#475569' }}>✅ Financement personnel</li>
-                  <li style={{ fontSize: '0.82rem', color: '#475569' }}>✅ France Travail (selon profil)</li>
-                  <li style={{ fontSize: '0.82rem', color: '#475569' }}>🔄 CPF — en cours (Qualiopi)</li>
+        </div>
+      </section>
+
+
+      {/* ── MODALITÉS D'ÉVALUATIONS & CERTIFICATION ── */}
+      <section className="py-20 px-4 border-b border-slate-850">
+        <div className="container mx-auto max-w-5xl">
+          
+          <div className="p-8 sm:p-12 rounded-3xl bg-slate-900 border border-slate-800 shadow-xl">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+              
+              <div className="lg:col-span-6 space-y-4">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 text-xs font-bold uppercase tracking-wider">
+                  <Award size={14} />
+                  Validation des Compétences
+                </div>
+                <h2 className="text-2xl sm:text-3xl font-bold text-white">
+                  Modalités d&apos;Évaluation &amp; Suivi
+                </h2>
+                <ul className="space-y-3 text-sm text-slate-300">
+                  <li className="flex items-start gap-3">
+                    <span className="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">1</span>
+                    <span><strong>En début :</strong> Questionnaire d&apos;analyse des besoins pour apprécier le niveau initial et définir le profil de progression.</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">2</span>
+                    <span><strong>En cours :</strong> QCM formatif à mi-parcours pour vérifier l&apos;assimilation des techniques respiratoires et de relaxation.</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">3</span>
+                    <span><strong>En fin :</strong> QCM sommatif (seuil de réussite supérieur à 70%) donnant droit à la <strong>délivrance de l&apos;Attestation / Certificat de compétences</strong>.</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">4</span>
+                    <span><strong>Satisfaction à chaud :</strong> Recueil continu de la qualité perçue à la fin de chaque module et du stage.</span>
+                  </li>
                 </ul>
               </div>
 
-              {/* CTA buttons */}
-              <div className="booking-ctas">
-                <Link href="/contact" className="btn btn-primary btn-block">
-                  Demander un devis
-                </Link>
-                <Link href="/reservation" className="btn btn-ghost btn-block">
-                  📅 Entretien gratuit (15 min)
-                </Link>
+              <div className="lg:col-span-6 p-6 rounded-2xl bg-slate-950 border border-slate-800 space-y-4 text-center">
+                <div className="text-xs uppercase font-bold text-amber-400 tracking-wider">
+                  Financements Possibles
+                </div>
+                <h3 className="text-xl font-bold text-white">
+                  Prise en charge intégrale OPCO &amp; FAF
+                </h3>
+                <p className="text-xs text-slate-400 leading-relaxed">
+                  OPCO, AFDAS, FIF PL, EMPLOYEUR, AGEFICE, AGEFIPH, ADIE, et possibilité de paiement en plusieurs fois sans frais.
+                </p>
+
+                <div className="p-4 rounded-xl bg-slate-900 border border-slate-800 text-left text-xs space-y-2">
+                  <div className="flex justify-between text-slate-300">
+                    <span>Organisme :</span>
+                    <strong className="text-white">Ô&apos;TOP Formation (Qualiopi)</strong>
+                  </div>
+                  <div className="flex justify-between text-slate-300">
+                    <span>Contact Direct :</span>
+                    <strong className="text-emerald-400">07 67 24 68 25 (Mélissa)</strong>
+                  </div>
+                </div>
+
+                <button
+                  onClick={() => setShowModal(true)}
+                  className="w-full py-3.5 px-5 rounded-xl bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-400 hover:to-orange-500 text-white font-bold text-sm transition-all shadow-lg cursor-pointer"
+                >
+                  Candidater à la prochaine session ⚡
+                </button>
               </div>
 
-              {/* Info items */}
-              <ul className="booking-info-list">
-                <li><span>📞</span> 07 67 24 68 25</li>
-                <li><span>📧</span> formation.rmcf@gmail.com</li>
-                <li><span>📍</span> Ollioules (Var) ou distanciel</li>
-                <li><span>✅</span> Aucun prérequis</li>
-              </ul>
-
-              <hr className="booking-divider" />
-
-              {/* Calendly CTA */}
-              <a
-                href="/reservation"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn btn-outline btn-block"
-              >
-                📅 Réserver un entretien gratuit
-              </a>
             </div>
-          </aside>
-
-        </div>
-      </div>
-
-      {/* ── BOTTOM CTA SECTION ── */}
-      <section className="cta-section">
-        <div className="container cta-inner">
-          <h2 className="cta-title">Prêt à développer votre potentiel ?</h2>
-          <p className="cta-subtitle">
-            Rejoignez les professionnels qui ont déjà transformé leur quotidien grâce à la méthode TOP®.
-          </p>
-          <div className="cta-actions">
-            <Link href="/contact" className="btn btn-primary btn-lg">
-              Nous contacter
-            </Link>
-            <a
-              href="/reservation"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn btn-ghost btn-lg"
-            >
-              Entretien gratuit
-            </a>
           </div>
+
         </div>
       </section>
 
+      {/* Pop-up de Félicitations innovant */}
+      <CongratulationsModal
+        isOpen={showModal}
+        onClose={() => setShowModal(false)}
+        candidateName=""
+        courseTitle="Formation Initiale TOP® (FI TOP — 21h)"
+        onWhatsAppClick={() => {
+          window.open('https://wa.me/33767246825?text=Bonjour%20M%C3%A9lissa%2C%20je%20viens%20de%20d%C3%A9poser%20ma%20candidature%20pour%20la%20formation%20FI%20TOP%C2%AE%20(21h).', '_blank');
+        }}
+      />
+
       <Footer />
-
-      {/* ── INLINE STYLES ── */}
-      <style jsx>{`
-        /* ─── Hero ─────────────────────────────────────────── */
-        .page-hero {
-          background: #0f1e3c;
-          color: #fff;
-          padding: 4rem 0 3rem;
-        }
-        .breadcrumb {
-          font-size: 0.85rem;
-          color: #a0aec0;
-          margin-bottom: 1rem;
-        }
-        .breadcrumb a {
-          color: #a0aec0;
-          text-decoration: none;
-        }
-        .breadcrumb a:hover {
-          color: #fff;
-        }
-        .breadcrumb-sep {
-          margin: 0 0.4rem;
-        }
-        .badge {
-          display: inline-block;
-          padding: 0.25rem 0.75rem;
-          border-radius: 999px;
-          font-size: 0.75rem;
-          font-weight: 700;
-          letter-spacing: 0.05em;
-          text-transform: uppercase;
-          margin-bottom: 1rem;
-        }
-        .badge-phare {
-          background: #e8a000;
-          color: #fff;
-        }
-        .page-hero-title {
-          font-size: clamp(1.75rem, 4vw, 2.75rem);
-          font-weight: 800;
-          line-height: 1.2;
-          margin: 0 0 1rem;
-        }
-        .page-hero-subtitle {
-          font-size: 1.1rem;
-          color: #cbd5e0;
-          max-width: 640px;
-          margin-bottom: 2rem;
-          line-height: 1.6;
-        }
-        .hero-pills {
-          display: flex;
-          flex-wrap: wrap;
-          gap: 0.6rem;
-        }
-        .hero-pill {
-          background: rgba(255, 255, 255, 0.1);
-          border: 1px solid rgba(255, 255, 255, 0.2);
-          color: #fff;
-          padding: 0.35rem 0.9rem;
-          border-radius: 999px;
-          font-size: 0.875rem;
-        }
-
-        /* ─── Layout ────────────────────────────────────────── */
-        .container {
-          max-width: 1200px;
-          margin: 0 auto;
-          padding: 0 1.5rem;
-        }
-        .section-gap {
-          padding: 4rem 1.5rem;
-        }
-        .content-grid {
-          display: grid;
-          grid-template-columns: 1fr 360px;
-          gap: 3rem;
-          align-items: start;
-        }
-        @media (max-width: 900px) {
-          .content-grid {
-            grid-template-columns: 1fr;
-          }
-          .content-aside {
-            order: -1;
-          }
-        }
-        .content-main {
-          display: flex;
-          flex-direction: column;
-          gap: 3rem;
-        }
-        .content-aside {
-          position: sticky;
-          top: 7rem;
-        }
-
-        /* ─── Sections ──────────────────────────────────────── */
-        .content-section {
-          /* intentionally empty — gap handled by column flex-gap */
-        }
-        .section-title {
-          font-size: 1.4rem;
-          font-weight: 700;
-          color: #0f1e3c;
-          margin: 0 0 1.25rem;
-          padding-bottom: 0.5rem;
-          border-bottom: 2px solid #e2e8f0;
-        }
-
-        /* ─── Info Table ────────────────────────────────────── */
-        .info-table {
-          width: 100%;
-          border-collapse: collapse;
-          font-size: 0.95rem;
-        }
-        .info-table th,
-        .info-table td {
-          padding: 0.75rem 1rem;
-          text-align: left;
-          border-bottom: 1px solid #e2e8f0;
-        }
-        .info-table th {
-          background: #f7f9fc;
-          font-weight: 600;
-          color: #0f1e3c;
-          width: 38%;
-          white-space: nowrap;
-        }
-        .info-table td {
-          color: #4a5568;
-        }
-
-        /* ─── Accordion ─────────────────────────────────────── */
-        .accordion {
-          display: flex;
-          flex-direction: column;
-          gap: 0.5rem;
-        }
-        .accordion-item {
-          border: 1px solid #e2e8f0;
-          border-radius: 8px;
-          overflow: hidden;
-        }
-        .accordion-item--open {
-          border-color: #0f1e3c;
-        }
-        .accordion-trigger {
-          width: 100%;
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          padding: 1rem 1.25rem;
-          background: #f7f9fc;
-          border: none;
-          cursor: pointer;
-          font-size: 0.975rem;
-          font-weight: 600;
-          color: #0f1e3c;
-          text-align: left;
-          gap: 1rem;
-          transition: background 0.2s;
-        }
-        .accordion-item--open .accordion-trigger {
-          background: #0f1e3c;
-          color: #fff;
-        }
-        .accordion-trigger:hover {
-          background: #e8edf5;
-        }
-        .accordion-item--open .accordion-trigger:hover {
-          background: #162848;
-        }
-        .accordion-icon {
-          font-size: 1.25rem;
-          font-weight: 400;
-          flex-shrink: 0;
-        }
-        .accordion-body {
-          padding: 1.25rem;
-          background: #fff;
-        }
-        .module-list {
-          list-style: none;
-          padding: 0;
-          margin: 0;
-          display: flex;
-          flex-direction: column;
-          gap: 0.6rem;
-        }
-        .module-list li {
-          padding-left: 1.5rem;
-          position: relative;
-          color: #4a5568;
-          line-height: 1.5;
-        }
-        .module-list li::before {
-          content: '▸';
-          position: absolute;
-          left: 0;
-          color: #0f1e3c;
-        }
-
-        /* ─── Check list ────────────────────────────────────── */
-        .check-list {
-          list-style: none;
-          padding: 0;
-          margin: 0;
-          display: flex;
-          flex-direction: column;
-          gap: 0.75rem;
-        }
-        .check-list li {
-          padding-left: 2rem;
-          position: relative;
-          color: #4a5568;
-          line-height: 1.55;
-        }
-        .check-list li::before {
-          content: '✔';
-          position: absolute;
-          left: 0;
-          color: #2f855a;
-          font-size: 1rem;
-        }
-
-        /* ─── Modalités grid ────────────────────────────────── */
-        .modalites-grid {
-          display: grid;
-          grid-template-columns: 1fr 1fr;
-          gap: 1rem;
-        }
-        @media (max-width: 500px) {
-          .modalites-grid {
-            grid-template-columns: 1fr;
-          }
-        }
-        .modalite-card {
-          background: #f7f9fc;
-          border: 1px solid #e2e8f0;
-          border-radius: 10px;
-          padding: 1.25rem;
-          display: flex;
-          flex-direction: column;
-          gap: 0.4rem;
-        }
-        .modalite-icon {
-          font-size: 1.6rem;
-        }
-        .modalite-title {
-          font-size: 0.95rem;
-          color: #0f1e3c;
-        }
-        .modalite-desc {
-          font-size: 0.85rem;
-          color: #718096;
-          margin: 0;
-        }
-
-        /* ─── Evaluation steps ──────────────────────────────── */
-        .eval-steps {
-          display: flex;
-          flex-direction: column;
-          gap: 0;
-        }
-        .eval-step {
-          display: flex;
-          gap: 1.25rem;
-          padding: 1rem 0;
-          border-bottom: 1px solid #e2e8f0;
-        }
-        .eval-step:last-child {
-          border-bottom: none;
-        }
-        .eval-step-label {
-          min-width: 80px;
-          font-weight: 700;
-          color: #0f1e3c;
-          padding-top: 0.1rem;
-        }
-        .eval-step-desc {
-          color: #4a5568;
-          line-height: 1.5;
-        }
-
-        /* ─── Booking card ──────────────────────────────────── */
-        .booking-card {
-          background: #fff;
-          border-radius: 16px;
-          box-shadow: 0 4px 24px rgba(0, 0, 0, 0.10);
-          padding: 2rem;
-          display: flex;
-          flex-direction: column;
-          gap: 1.25rem;
-        }
-        .booking-card-title {
-          font-size: 1.25rem;
-          font-weight: 700;
-          color: #0f1e3c;
-          margin: 0;
-        }
-        .booking-price {
-          display: flex;
-          align-items: baseline;
-          gap: 0.75rem;
-        }
-        .booking-price-amount {
-          font-size: 2rem;
-          font-weight: 800;
-          color: #0f1e3c;
-        }
-        .booking-price-mention {
-          font-size: 0.9rem;
-          color: #718096;
-        }
-        .booking-ctas {
-          display: flex;
-          flex-direction: column;
-          gap: 0.6rem;
-        }
-        .booking-info-list {
-          list-style: none;
-          padding: 0;
-          margin: 0;
-          display: flex;
-          flex-direction: column;
-          gap: 0.65rem;
-        }
-        .booking-info-list li {
-          display: flex;
-          align-items: center;
-          gap: 0.6rem;
-          font-size: 0.9rem;
-          color: #4a5568;
-        }
-        .booking-divider {
-          border: none;
-          border-top: 1px solid #e2e8f0;
-          margin: 0;
-        }
-
-        /* ─── Buttons ───────────────────────────────────────── */
-        .btn {
-          display: inline-flex;
-          align-items: center;
-          justify-content: center;
-          padding: 0.7rem 1.5rem;
-          border-radius: 8px;
-          font-size: 0.95rem;
-          font-weight: 600;
-          text-decoration: none;
-          cursor: pointer;
-          border: 2px solid transparent;
-          transition: background 0.2s, color 0.2s, border-color 0.2s;
-          line-height: 1.2;
-        }
-        .btn-block {
-          width: 100%;
-        }
-        .btn-primary {
-          background: #0f1e3c;
-          color: #fff;
-          border-color: #0f1e3c;
-        }
-        .btn-primary:hover {
-          background: #162848;
-          border-color: #162848;
-        }
-        .btn-ghost {
-          background: transparent;
-          color: #0f1e3c;
-          border-color: #0f1e3c;
-        }
-        .btn-ghost:hover {
-          background: #f0f4f8;
-        }
-        .btn-outline {
-          background: transparent;
-          color: #2b6cb0;
-          border-color: #2b6cb0;
-        }
-        .btn-outline:hover {
-          background: #ebf4ff;
-        }
-        .btn-lg {
-          padding: 0.9rem 2rem;
-          font-size: 1rem;
-        }
-
-        /* ─── CTA section ───────────────────────────────────── */
-        .cta-section {
-          background: #0f1e3c;
-          color: #fff;
-          padding: 5rem 1.5rem;
-          text-align: center;
-        }
-        .cta-inner {
-          max-width: 680px;
-          margin: 0 auto;
-        }
-        .cta-title {
-          font-size: clamp(1.5rem, 3vw, 2.25rem);
-          font-weight: 800;
-          margin: 0 0 1rem;
-        }
-        .cta-subtitle {
-          font-size: 1.05rem;
-          color: #a0aec0;
-          margin: 0 0 2rem;
-          line-height: 1.6;
-        }
-        .cta-actions {
-          display: flex;
-          flex-wrap: wrap;
-          gap: 1rem;
-          justify-content: center;
-        }
-        .cta-actions .btn-primary {
-          background: #fff;
-          color: #0f1e3c;
-          border-color: #fff;
-        }
-        .cta-actions .btn-primary:hover {
-          background: #e2e8f0;
-        }
-        .cta-actions .btn-ghost {
-          color: #fff;
-          border-color: rgba(255,255,255,0.5);
-        }
-        .cta-actions .btn-ghost:hover {
-          background: rgba(255,255,255,0.1);
-          border-color: #fff;
-        }
-      `}</style>
-    </>
+    </main>
   );
 }
