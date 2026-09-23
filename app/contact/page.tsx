@@ -29,6 +29,8 @@ function ContactContent() {
     }
   }, [searchParams]);
 
+  const [lastSubmittedData, setLastSubmittedData] = useState<typeof form | null>(null);
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!form.rgpdConsent) {
@@ -57,6 +59,7 @@ function ContactContent() {
       });
 
       if (response.ok) {
+        setLastSubmittedData({ ...form });
         setSubmitted(true);
       } else {
         const data = await response.json();
@@ -177,13 +180,15 @@ function ContactContent() {
 
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', alignItems: 'center' }}>
                     <a
-                      href="https://wa.me/33767246825?text=Bonjour%20M%C3%A9lissa%2C%20je%20viens%20d%27envoyer%20une%20demande%20sur%20le%20site%20et%20je%20souhaite%20%C3%A9changer%20directement."
+                      href={`https://wa.me/33767246825?text=${encodeURIComponent(
+                        `Bonjour Mélissa, je viens de soumettre ma demande de diagnostic sur le site Ô'TOP Formation :\n\n👤 Nom : ${lastSubmittedData?.nom || form.nom}\n📧 Email : ${lastSubmittedData?.email || form.email}\n📞 Téléphone : ${lastSubmittedData?.telephone || form.telephone}\n🎓 Parcours souhaité : ${lastSubmittedData?.besoin || form.besoin}${lastSubmittedData?.statut ? `\n💼 Statut : ${lastSubmittedData.statut}` : ''}${lastSubmittedData?.message ? `\n📝 Précision : ${lastSubmittedData.message}` : ''}`
+                      )}`}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="btn"
-                      style={{ background: '#25D366', color: 'white', padding: '0.85rem 1.75rem', borderRadius: '50px', fontWeight: 700, fontSize: '0.9rem', display: 'inline-flex', alignItems: 'center', gap: '0.5rem', textDecoration: 'none' }}
+                      style={{ background: '#25D366', color: 'white', padding: '0.85rem 1.75rem', borderRadius: '50px', fontWeight: 800, fontSize: '0.92rem', display: 'inline-flex', alignItems: 'center', gap: '0.5rem', textDecoration: 'none', boxShadow: '0 10px 25px rgba(37, 211, 102, 0.3)' }}
                     >
-                      <span>💬 Échanger immédiatement avec Mélissa sur WhatsApp</span>
+                      <span>📲 Notifier Mélissa instantanément sur WhatsApp</span>
                     </a>
 
                     <button

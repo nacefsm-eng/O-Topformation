@@ -29,6 +29,13 @@ function parsePosts(raw: string, platforms: string[]): { platform: string; text:
 
 export async function POST(req: Request) {
   try {
+    // Vérification de sécurité Admin
+    const cookieHeader = req.headers.get('cookie') || '';
+    const hasAdminToken = cookieHeader.includes('otop_admin_token=');
+    if (!hasAdminToken) {
+      return NextResponse.json({ error: 'Accès non autorisé au générateur.' }, { status: 401 });
+    }
+
     const { topic, platforms } = await req.json();
 
     if (!topic || !platforms?.length) {

@@ -91,6 +91,12 @@ export default function Nav() {
               </Link>
             </li>
 
+            <li role="none">
+              <Link href="/a-propos" className={pathname === '/a-propos' ? 'active' : ''} role="menuitem">
+                À Propos
+              </Link>
+            </li>
+
             {/* Formations dropdown */}
             <li className="nav-dropdown" role="none">
               <button
@@ -169,29 +175,9 @@ export default function Nav() {
             </li>
           </ul>
 
-          {/* Desktop actions with Theme Toggle */}
+          {/* Desktop actions with Theme Toggle only */}
           <div className="nav-actions" style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
-            
-            {/* Multi-Color Theme Switcher */}
             <ThemeToggle />
-
-            <a
-              href="https://wa.me/33767246825?text=Bonjour%2C%20je%20souhaite%20des%20informations%20sur%20les%20formations%20O%27TOP."
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-3 py-1.5 rounded-full text-xs font-bold flex items-center gap-1.5 transition-all"
-              style={{ background: 'rgba(16, 185, 129, 0.15)', border: '1px solid rgba(16, 185, 129, 0.4)', color: '#34d399' }}
-            >
-              <span>💬 WhatsApp</span>
-            </a>
-
-            <Link 
-              href="/contact" 
-              className="px-3.5 py-1.5 rounded-full text-xs font-bold text-white transition-all shadow-lg hover:shadow-blue-500/25"
-              style={{ background: 'linear-gradient(135deg, #2563eb, #4f46e5)' }}
-            >
-              Diagnostic 15 min ⚡
-            </Link>
           </div>
 
           {/* Mobile hamburger button */}
@@ -232,6 +218,7 @@ export default function Nav() {
 
         <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
           <li><Link href="/" onClick={() => setMobileOpen(false)} style={{ color: 'white', fontSize: '1.1rem', fontWeight: 700 }}>Accueil</Link></li>
+          <li><Link href="/a-propos" onClick={() => setMobileOpen(false)} style={{ color: 'white', fontSize: '1.1rem', fontWeight: 700 }}>À Propos d&apos;Ô&apos;TOP</Link></li>
           <li style={{ padding: '0.75rem 0', borderTop: '1px solid #1e293b', borderBottom: '1px solid #1e293b' }}>
             <div style={{ fontSize: '0.8rem', color: '#38bdf8', fontWeight: 800, textTransform: 'uppercase', marginBottom: '0.5rem' }}>Formations Certifiantes :</div>
             {formationsLinks.map(f => (

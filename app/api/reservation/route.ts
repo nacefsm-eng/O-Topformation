@@ -17,8 +17,21 @@ async function writeDb(data: Record<string, unknown>) {
   await fs.writeFile(DB_PATH, JSON.stringify(data, null, 2), 'utf-8');
 }
 
-// GET — retourner toutes les réservations
-export async function GET() {
+// GET — retourner toutes les réservations (protégé admin)
+export async function GET(req: NextRequest) {
+  const token = req.cookies.get('otop_admin_token')?.value;
+  if (!token) {
+    return NextResponse.json({ error: 'Accès non autorisé' }, { status: 401 });
+  }
+  try {
+    const decoded = Buffer.from(token, 'base64').toString('utf-8');
+    if (!decoded.startsWith('otop-admin-')) {
+      return NextResponse.json({ error: 'Token invalide' }, { status: 401 });
+    }
+  } catch {
+    return NextResponse.json({ error: 'Token invalide' }, { status: 401 });
+  }
+
   const db = await readDb();
   return NextResponse.json({ reservations: db.reservations || [] });
 }
