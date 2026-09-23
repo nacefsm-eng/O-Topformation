@@ -636,14 +636,18 @@ export default function MasterSalesPage() {
                 <button
                   key={t.id}
                   onClick={() => setSelectedTrack(t.id as any)}
-                  className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all flex items-center gap-2 ${
+                  className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all flex items-center gap-2 cursor-pointer ${
                     selectedTrack === t.id
                       ? 'bg-blue-600 text-white shadow-lg shadow-blue-600/30 border border-blue-400'
                       : 'bg-slate-900 text-slate-300 border border-slate-800 hover:border-slate-700 hover:text-white'
                   }`}
                 >
                   <span>{t.label}</span>
-                  <span className="text-[10px] px-1.5 py-0.5 rounded-full bg-slate-950 text-slate-400 border border-slate-800">
+                  <span className={`text-[10px] px-1.5 py-0.5 rounded-full font-extrabold ${
+                    selectedTrack === t.id
+                      ? 'bg-blue-950 text-blue-200 border border-blue-400/40'
+                      : 'bg-slate-800 text-slate-300 border border-slate-700'
+                  }`}>
                     {t.count}
                   </span>
                 </button>
@@ -672,7 +676,7 @@ export default function MasterSalesPage() {
                     <span className={`text-[11px] font-bold px-3 py-1 rounded-full border backdrop-blur-md shadow-md ${formation.badgeColor}`}>
                       {formation.badge}
                     </span>
-                    <span className="text-xs font-black text-emerald-300 bg-slate-950/90 backdrop-blur-md px-3 py-1 rounded-lg border border-emerald-500/40 whitespace-nowrap shadow-md">
+                    <span className="text-xs font-black text-emerald-400 bg-slate-950/90 backdrop-blur-md px-3 py-1 rounded-lg border border-emerald-500/40 whitespace-nowrap shadow-md">
                       {formation.price}
                     </span>
                   </div>
@@ -700,25 +704,25 @@ export default function MasterSalesPage() {
                     </p>
 
                     <div className="space-y-2 py-3 border-y border-slate-800/80 my-4 text-xs">
-                      <div className="flex items-center gap-2 text-amber-300 font-semibold">
+                      <div className="flex items-center gap-2 text-amber-400 font-semibold">
                         <Clock size={15} className="shrink-0 text-amber-400" />
-                        <span><strong>Durée :</strong> {formation.duration}</span>
+                        <span className="text-slate-200"><strong>Durée :</strong> {formation.duration}</span>
                       </div>
-                      <div className="flex items-center gap-2 text-slate-300">
+                      <div className="flex items-center gap-2 text-slate-200">
                         <MapPin size={15} className="shrink-0 text-blue-400" />
                         <span><strong>Format :</strong> {formation.modality}</span>
                       </div>
-                      <div className="flex items-center gap-2 text-emerald-300 font-medium">
+                      <div className="flex items-center gap-2 text-emerald-400 font-medium">
                         <Coins size={15} className="shrink-0 text-emerald-400" />
-                        <span><strong>Financement :</strong> {formation.funding}</span>
+                        <span className="text-slate-200"><strong>Financement :</strong> {formation.funding}</span>
                       </div>
                     </div>
 
-                    <ul className="space-y-2 text-xs text-slate-400 mb-6">
+                    <ul className="space-y-2.5 text-xs text-slate-200 mb-6 font-medium">
                       {formation.points.map((pt, i) => (
                         <li key={i} className="flex items-start gap-2">
-                          <CheckCircle2 size={14} className="text-blue-400 shrink-0 mt-0.5" />
-                          <span>{pt}</span>
+                          <CheckCircle2 size={15} className="text-blue-400 shrink-0 mt-0.5" />
+                          <span className="text-slate-200 leading-snug">{pt}</span>
                         </li>
                       ))}
                     </ul>
@@ -845,10 +849,10 @@ export default function MasterSalesPage() {
                     <button
                       type="button"
                       onClick={() => setInlinePaymentOption('1x')}
-                      className={`p-3 rounded-xl border text-center transition-all ${
+                      className={`p-3 rounded-xl border text-center transition-all cursor-pointer ${
                         inlinePaymentOption === '1x'
                           ? 'bg-blue-600/20 border-blue-500 text-white shadow-md'
-                          : 'bg-slate-900 border-slate-800 text-slate-400 hover:text-slate-200'
+                          : 'bg-slate-900 border-slate-800 text-slate-300 hover:text-white'
                       }`}
                     >
                       <span className="block text-xs font-bold">Paiement 1x</span>
@@ -858,10 +862,10 @@ export default function MasterSalesPage() {
                     <button
                       type="button"
                       onClick={() => setInlinePaymentOption('3x')}
-                      className={`p-3 rounded-xl border text-center transition-all ${
+                      className={`p-3 rounded-xl border text-center transition-all cursor-pointer ${
                         inlinePaymentOption === '3x'
                           ? 'bg-indigo-600/20 border-indigo-500 text-white shadow-md'
-                          : 'bg-slate-900 border-slate-800 text-slate-400 hover:text-slate-200'
+                          : 'bg-slate-900 border-slate-800 text-slate-300 hover:text-white'
                       }`}
                     >
                       <span className="block text-xs font-bold">3x Sans Frais</span>
@@ -871,30 +875,30 @@ export default function MasterSalesPage() {
                     <button
                       type="button"
                       onClick={() => setInlinePaymentOption('opco')}
-                      className={`p-3 rounded-xl border text-center transition-all ${
+                      className={`p-3 rounded-xl border text-center transition-all cursor-pointer ${
                         inlinePaymentOption === 'opco'
                           ? 'bg-amber-600/20 border-amber-500 text-white shadow-md'
-                          : 'bg-slate-900 border-slate-800 text-slate-400 hover:text-slate-200'
+                          : 'bg-slate-900 border-slate-800 text-slate-300 hover:text-white'
                       }`}
                     >
                       <span className="block text-xs font-bold">Dossier OPCO/FAF</span>
-                      <span className="block text-xs font-bold text-amber-400 mt-0.5">0 € de votre poche</span>
+                      <span className="block text-xs font-bold text-amber-400 mt-0.5">0 € reste à charge</span>
                     </button>
                   </div>
                 </div>
 
                 {inlinePaymentOption === 'opco' ? (
-                  <div className="p-5 rounded-2xl bg-amber-500/10 border border-amber-500/30 text-amber-200 text-xs leading-relaxed space-y-3">
-                    <div className="flex items-center gap-2 text-amber-300 font-bold text-sm">
+                  <div className="p-5 rounded-2xl bg-amber-500/10 border border-amber-500/30 text-amber-300 text-xs leading-relaxed space-y-3">
+                    <div className="flex items-center gap-2 text-amber-400 font-bold text-sm">
                       <ShieldCheck size={18} />
                       <span>Montage de dossier OPCO / FAF pris en charge</span>
                     </div>
-                    <p>
+                    <p className="text-slate-200">
                       Mélissa monte votre dossier de demande de subvention auprès de votre financeur pour vous éviter toute avance de trésorerie.
                     </p>
                     <a
                       href="tel:+33767246825"
-                      className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-amber-500 text-slate-950 font-bold text-xs"
+                      className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs shadow-md"
                     >
                       <span>Appeler Mélissa : 07 67 24 68 25</span>
                     </a>
