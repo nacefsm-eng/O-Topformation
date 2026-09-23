@@ -197,6 +197,15 @@ p  { color: var(--gray-600); line-height: 1.8; }
 }
 
 /* ============= NAV & TOP BAR ============= */
+.header-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  width: 100%;
+}
+
 .top-bar {
   background: #030712;
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
@@ -207,6 +216,12 @@ p  { color: var(--gray-600); line-height: 1.8; }
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
+}
+@media (max-width: 1024px) {
+  .top-bar {
+    display: none !important;
+  }
 }
 .top-bar-socials { display: flex; gap: 0.85rem; align-items: center; }
 .top-bar-contact { display: flex; gap: 1.75rem; align-items: center; }
@@ -214,26 +229,23 @@ p  { color: var(--gray-600); line-height: 1.8; }
 .top-bar a:hover { color: #38bdf8; }
 
 .nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 1000;
+  position: relative;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0.9rem 2rem;
   transition: all 0.3s ease;
-  background: rgba(3, 7, 18, 0.85);
+  background: rgba(3, 7, 18, 0.95);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
-.nav + *, main > section:first-child { scroll-margin-top: 70px; }
+.header-wrapper + *, main > section:first-child { scroll-margin-top: 100px; }
 .nav.scrolled {
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
   border-bottom: 1px solid rgba(59, 130, 246, 0.2);
-  background: rgba(3, 7, 18, 0.95);
+  background: rgba(3, 7, 18, 0.98);
 }
 .nav-logo { height: 48px; width: auto; object-fit: contain; }
 .nav-links {
@@ -1049,11 +1061,11 @@ html[data-theme="sombre"] .border-slate-700 {
   border-color: rgba(56, 189, 248, 0.18) !important;
 }
 html[data-theme="sombre"] .nav {
-  background: rgba(2, 26, 68, 0.90) !important;
+  background: #021a44 !important;
   border-bottom: 1px solid rgba(56, 189, 248, 0.2) !important;
 }
 html[data-theme="sombre"] .nav.scrolled {
-  background: rgba(2, 26, 68, 0.98) !important;
+  background: #02163b !important;
   box-shadow: 0 10px 40px rgba(0, 20, 60, 0.6) !important;
 }
 html[data-theme="sombre"] .top-bar {
