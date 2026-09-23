@@ -1315,6 +1315,36 @@ html[data-theme="clair"] .backdrop-blur-sm {
   background-color: #ffffff !important;
 }
 
+/* Page Hero & Subpage Hero in Light Mode */
+html[data-theme="clair"] .page-hero,
+html[data-theme="clair"] .hero-subpage {
+  background: linear-gradient(135deg, #e0f2fe 0%, #f8fafc 100%) !important;
+  color: #0f172a !important;
+}
+html[data-theme="clair"] .page-hero::before,
+html[data-theme="clair"] .hero-subpage::before {
+  opacity: 0.1 !important;
+}
+html[data-theme="clair"] .page-hero h1,
+html[data-theme="clair"] .hero-subpage h1 {
+  color: #0f172a !important;
+}
+html[data-theme="clair"] .page-hero p,
+html[data-theme="clair"] .hero-subpage p {
+  color: #334155 !important;
+}
+html[data-theme="clair"] .breadcrumb,
+html[data-theme="clair"] .breadcrumb a,
+html[data-theme="clair"] .breadcrumb span {
+  color: #64748b !important;
+}
+html[data-theme="clair"] .breadcrumb a:hover {
+  color: #0284c7 !important;
+}
+html[data-theme="clair"] .top-bar-contact a {
+  color: #334155 !important;
+}
+
 /* Footer in Light Mode */
 html[data-theme="clair"] footer {
   background-color: #0f172a !important;

@@ -350,13 +350,6 @@ export default function MasterSalesPage() {
             
             {/* Left Content Column */}
             <div className="lg:col-span-7 text-center lg:text-left">
-              
-              {/* Badge officiel de confiance */}
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-blue-500/30 bg-blue-950/60 text-blue-300 text-xs sm:text-sm font-bold uppercase tracking-wider mb-6 shadow-lg">
-                <Sparkles className="w-4 h-4 text-amber-400" />
-                <span>Catalogue Officiel 2026 • Inscriptions Immédiates</span>
-              </div>
-
               <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-[1.12]">
                 Respirez à nouveau. Développez votre activité <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-300 to-amber-300">sans vous épuiser</span>.
               </h1>
@@ -908,42 +901,6 @@ export default function MasterSalesPage() {
                   </div>
                 ) : (
                   <>
-                    {/* Visual Card Preview */}
-                    <div className="relative h-44 rounded-2xl p-5 bg-gradient-to-tr from-slate-950 via-blue-950 to-indigo-900 border border-blue-500/30 shadow-xl flex flex-col justify-between overflow-hidden">
-                      <div className="flex justify-between items-center relative z-10">
-                        <div className="flex items-center gap-2">
-                          <div className="w-10 h-7 rounded bg-amber-400/80 border border-amber-300/60 flex items-center justify-center">
-                            <div className="w-6 h-4 border border-amber-800/40 rounded-sm" />
-                          </div>
-                          <span className="text-[10px] uppercase font-bold tracking-widest text-slate-400">Sécurisé SSL</span>
-                        </div>
-                        <span className="font-mono font-black text-sm tracking-wider text-blue-200">
-                          {detectCardBrand(inlineCardNumber)}
-                        </span>
-                      </div>
-
-                      <div className="relative z-10">
-                        <div className="font-mono text-lg sm:text-xl font-bold tracking-widest text-white drop-shadow">
-                          {inlineCardNumber || '•••• •••• •••• ••••'}
-                        </div>
-                      </div>
-
-                      <div className="flex justify-between items-end relative z-10 text-xs">
-                        <div>
-                          <span className="text-[9px] uppercase tracking-wider text-slate-400 block">Titulaire</span>
-                          <span className="font-semibold text-slate-200 tracking-wide uppercase">
-                            {inlineCardHolder || 'VOTRE NOM & PRÉNOM'}
-                          </span>
-                        </div>
-                        <div className="text-right">
-                          <span className="text-[9px] uppercase tracking-wider text-slate-400 block">Expire</span>
-                          <span className="font-mono font-semibold text-slate-200">
-                            {inlineCardExpiry || 'MM/AA'}
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-
                     {/* Inputs Form */}
                     <div className="space-y-4">
                       <div>

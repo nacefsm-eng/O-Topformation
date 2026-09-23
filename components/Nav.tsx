@@ -174,6 +174,16 @@ export default function Nav() {
 
             <li role="none">
               <Link
+                href="/brochure"
+                className={pathname === '/brochure' ? 'active' : ''}
+                role="menuitem"
+              >
+                Brochure 📄
+              </Link>
+            </li>
+
+            <li role="none">
+              <Link
                 href="/respirez"
                 className={pathname === '/respirez' ? 'active' : ''}
                 role="menuitem"
@@ -257,6 +267,7 @@ export default function Nav() {
           <li><Link href="/entreprises" onClick={() => setMobileOpen(false)} style={{ color: 'white', fontSize: '1.1rem' }}>Entreprises & B2B</Link></li>
           <li><Link href="/methode" onClick={() => setMobileOpen(false)} style={{ color: 'white', fontSize: '1.1rem' }}>La Méthode TOP®</Link></li>
           <li><Link href="/financement" onClick={() => setMobileOpen(false)} style={{ color: 'white', fontSize: '1.1rem' }}>Financement</Link></li>
+          <li><Link href="/brochure" onClick={() => setMobileOpen(false)} style={{ color: 'white', fontSize: '1.1rem' }}>Brochure & Plaquette 📄</Link></li>
           <li><Link href="/respirez" onClick={() => setMobileOpen(false)} style={{ color: 'white', fontSize: '1.1rem' }}>Nos Offres & Tarifs</Link></li>
           <li style={{ marginTop: '1rem' }}>
             <Link href="/contact" onClick={() => setMobileOpen(false)} className="w-full block py-3.5 text-center rounded-xl bg-blue-600 text-white font-bold">

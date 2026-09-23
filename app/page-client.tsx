@@ -183,10 +183,17 @@ export default function HomePageClient() {
 
               <a
                 href="#parcours"
-                className="w-full sm:w-auto px-8 py-4 rounded-2xl bg-slate-900/90 border border-slate-700 hover:border-slate-500 text-slate-200 font-bold text-base flex items-center justify-center gap-2 transition-all hover:bg-slate-800"
+                className="w-full sm:w-auto px-7 py-4 rounded-2xl bg-slate-900/90 border border-slate-700 hover:border-slate-500 text-slate-200 font-bold text-base flex items-center justify-center gap-2 transition-all hover:bg-slate-800"
               >
-                <span>Découvrir les 3 parcours →</span>
+                <span>Découvrir les parcours →</span>
               </a>
+
+              <Link
+                href="/brochure"
+                className="w-full sm:w-auto px-6 py-4 rounded-2xl bg-blue-950/60 border border-blue-500/30 hover:border-blue-400 text-cyan-300 hover:text-white font-bold text-base flex items-center justify-center gap-2 transition-all hover:bg-blue-900/50"
+              >
+                <span>📄 Plaquette &amp; Brochure</span>
+              </Link>
             </motion.div>
 
           </motion.div>
@@ -340,29 +347,29 @@ export default function HomePageClient() {
 
 
       {/* ─── 3. LES 3 PÔLES & PARCOURS EN CARTES DISTINCTES ───────────── */}
-      <section id="parcours" className="py-24 px-4 bg-slate-950 border-b border-slate-850 relative">
-        <div className="container mx-auto max-w-6xl">
+      <section id="parcours" className="py-24 px-4 sm:px-6 lg:px-8 bg-slate-950 border-b border-slate-850 relative">
+        <div className="container mx-auto max-w-7xl">
           
-          <div className="text-center max-w-3xl mx-auto mb-12">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-blue-500/10 border border-blue-400/20 text-blue-400 text-xs font-bold uppercase tracking-wider mb-4">
+          <div className="text-center max-w-4xl mx-auto mb-14">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-500/10 border border-blue-400/20 text-blue-400 text-xs font-bold uppercase tracking-wider mb-4">
               Catalogue Principal &amp; Inscriptions
             </div>
             <h2 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight mb-4">
               Nos Pôles de Formation Professionnelle
             </h2>
-            <p className="text-slate-400 text-base sm:text-lg">
+            <p className="text-slate-400 text-base sm:text-lg leading-relaxed max-w-3xl mx-auto">
               Une formule condensée et actionnable : vidéos disponibles 24/7 combinées à un coaching individuel humain sur vos propres fichiers, ou financement intégral selon vos droits.
             </p>
 
-            {/* Pôle Switcher / Filter Tabs for clear visual separation */}
-            <div className="flex flex-wrap items-center justify-center gap-2 mt-8">
+            {/* Pôle Switcher / Filter Tabs élargis & responsives */}
+            <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 mt-10">
               <button
                 type="button"
                 onClick={() => setSelectedPole('all')}
-                className={`px-4 py-2 rounded-full text-xs font-bold transition-all ${
+                className={`px-6 py-3 rounded-2xl text-xs sm:text-sm font-extrabold transition-all cursor-pointer shadow-sm ${
                   selectedPole === 'all'
-                    ? 'bg-blue-600 text-white shadow-lg shadow-blue-600/30'
-                    : 'bg-slate-900 text-slate-400 hover:text-white border border-slate-800'
+                    ? 'bg-blue-600 text-white shadow-lg shadow-blue-600/30 scale-105 border border-blue-400'
+                    : 'bg-slate-900 text-slate-300 hover:text-white border border-slate-800 hover:border-slate-700'
                 }`}
               >
                 ✨ Tous les Pôles (4)
@@ -370,10 +377,10 @@ export default function HomePageClient() {
               <button
                 type="button"
                 onClick={() => setSelectedPole('ia')}
-                className={`px-4 py-2 rounded-full text-xs font-bold transition-all flex items-center gap-1.5 ${
+                className={`px-6 py-3 rounded-2xl text-xs sm:text-sm font-extrabold transition-all flex items-center gap-2 cursor-pointer shadow-sm ${
                   selectedPole === 'ia'
-                    ? 'bg-cyan-600 text-white shadow-lg shadow-cyan-600/30'
-                    : 'bg-slate-900 text-slate-400 hover:text-white border border-slate-800'
+                    ? 'bg-cyan-600 text-white shadow-lg shadow-cyan-600/30 scale-105 border border-cyan-400'
+                    : 'bg-slate-900 text-slate-300 hover:text-white border border-slate-800 hover:border-slate-700'
                 }`}
               >
                 <span>🤖 Pôle 1 : IA &amp; Automatisation</span>
@@ -381,10 +388,10 @@ export default function HomePageClient() {
               <button
                 type="button"
                 onClick={() => setSelectedPole('reseaux')}
-                className={`px-4 py-2 rounded-full text-xs font-bold transition-all flex items-center gap-1.5 ${
+                className={`px-6 py-3 rounded-2xl text-xs sm:text-sm font-extrabold transition-all flex items-center gap-2 cursor-pointer shadow-sm ${
                   selectedPole === 'reseaux'
-                    ? 'bg-pink-600 text-white shadow-lg shadow-pink-600/30'
-                    : 'bg-slate-900 text-slate-400 hover:text-white border border-slate-800'
+                    ? 'bg-pink-600 text-white shadow-lg shadow-pink-600/30 scale-105 border border-pink-400'
+                    : 'bg-slate-900 text-slate-300 hover:text-white border border-slate-800 hover:border-slate-700'
                 }`}
               >
                 <span>📱 Pôle 2 : Réseaux Sociaux</span>
@@ -392,10 +399,10 @@ export default function HomePageClient() {
               <button
                 type="button"
                 onClick={() => setSelectedPole('top')}
-                className={`px-4 py-2 rounded-full text-xs font-bold transition-all flex items-center gap-1.5 ${
+                className={`px-6 py-3 rounded-2xl text-xs sm:text-sm font-extrabold transition-all flex items-center gap-2 cursor-pointer shadow-sm ${
                   selectedPole === 'top'
-                    ? 'bg-amber-600 text-white shadow-lg shadow-amber-600/30'
-                    : 'bg-slate-900 text-slate-400 hover:text-white border border-slate-800'
+                    ? 'bg-amber-600 text-white shadow-lg shadow-amber-600/30 scale-105 border border-amber-400'
+                    : 'bg-slate-900 text-slate-300 hover:text-white border border-slate-800 hover:border-slate-700'
                 }`}
               >
                 <span>🧘 Pôle 3 : Méthode TOP®</span>
@@ -403,7 +410,7 @@ export default function HomePageClient() {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10">
             
             {/* Carte Parcours 1 : IA Générative RS6776 */}
             {(selectedPole === 'all' || selectedPole === 'ia') && (

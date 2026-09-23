@@ -3,8 +3,6 @@ import { Inter } from 'next/font/google';
 import './globals.css';
 import Nav from '@/components/Nav';
 import ScrollReveal from '@/components/ScrollReveal';
-import FloatingButtons from '@/components/FloatingButtons';
-import FloatingChatbot from '@/components/FloatingChatbot';
 import { ThemeProvider } from '@/components/ThemeProvider';
 import Script from 'next/script';
 
@@ -83,8 +81,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <div style={{ height: '60px' }} />
           <ScrollReveal />
           {children}
-          <FloatingButtons />
-          <FloatingChatbot />
         </ThemeProvider>
       </body>
     </html>
