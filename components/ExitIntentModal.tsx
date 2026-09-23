@@ -8,33 +8,9 @@ export default function ExitIntentModal() {
   const [email, setEmail] = useState('');
   const [downloaded, setDownloaded] = useState(false);
 
+  // Automatic popup trigger is disabled per user request
   useEffect(() => {
-    // Check if dismissed in this session
-    const isDismissed = sessionStorage.getItem('otop_exit_intent_dismissed');
-    if (isDismissed) return;
-
-    // Desktop mouseleave listener
-    const handleMouseLeave = (e: MouseEvent) => {
-      if (e.clientY <= 10 && !sessionStorage.getItem('otop_exit_intent_dismissed')) {
-        setIsOpen(true);
-        sessionStorage.setItem('otop_exit_intent_dismissed', 'true');
-      }
-    };
-
-    document.addEventListener('mouseleave', handleMouseLeave);
-
-    // Timeout fallback after 60 seconds of browsing
-    const timer = setTimeout(() => {
-      if (!sessionStorage.getItem('otop_exit_intent_dismissed')) {
-        setIsOpen(true);
-        sessionStorage.setItem('otop_exit_intent_dismissed', 'true');
-      }
-    }, 60000);
-
-    return () => {
-      document.removeEventListener('mouseleave', handleMouseLeave);
-      clearTimeout(timer);
-    };
+    // Disabled
   }, []);
 
   const handleClose = () => {

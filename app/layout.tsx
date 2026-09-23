@@ -5,7 +5,6 @@ import Nav from '@/components/Nav';
 import ScrollReveal from '@/components/ScrollReveal';
 import { ThemeProvider } from '@/components/ThemeProvider';
 import WhatsAppButton from '@/components/WhatsAppButton';
-import ExitIntentModal from '@/components/ExitIntentModal';
 import Script from 'next/script';
 
 const inter = Inter({ subsets: ['latin', 'latin-ext'], variable: '--font-inter' });
@@ -136,7 +135,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <ScrollReveal />
           {children}
           <WhatsAppButton />
-          <ExitIntentModal />
         </ThemeProvider>
       </body>
     </html>
