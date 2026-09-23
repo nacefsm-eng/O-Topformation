@@ -15,30 +15,31 @@ export default function FormationIAPage() {
         <div className="container">
           <div style={{ maxWidth: '850px' }}>
             <span className="badge" style={{ background: 'rgba(205, 175, 93, 0.2)', color: 'var(--gold-light)', border: '1px solid var(--gold)', marginBottom: '1.25rem' }}>
-              🎓 Certifications France Compétences RS7344 &amp; RS6776 • Portage Qualiopi Eloqone
+              🎓 Certifications France Compétences RS7344 &amp; RS6776 • Formation portée par Eloqone
             </span>
             <h1 style={{ color: 'white', marginBottom: '1.5rem', fontSize: 'clamp(2.2rem, 4.5vw, 3.5rem)' }}>
-              Développez votre activité et boostez votre productivité avec l&apos;Intelligence Artificielle
+              Utilisez l’IA pour gagner du temps sur les tâches qui ralentissent votre activité.
             </h1>
             <p style={{ color: 'var(--blue-100)', fontSize: '1.15rem', lineHeight: '1.8', marginBottom: '1.5rem' }}>
-              Des formations actionnables pour dirigeants de TPE/PME, indépendants et créateurs. Gagnez entre 5 et 10h par semaine (selon votre activité et vos processus), automatisez vos flux de travail et sécurisez vos usages dans le respect du cadre réglementaire européen sur l&apos;IA (AI Act).
+              Formations pratiques pour indépendants, dirigeants et équipes : automatisez vos tâches récurrentes, créez vos assistants IA et adoptez des usages plus sécurisés.
             </p>
+            <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap', marginBottom: '1.5rem', fontSize: '0.9rem', color: '#cbd5e1' }}>
+              <span>✓ Parcours adapté à votre profil</span>
+              <span>•</span>
+              <span>✓ Coaching sur cas réels selon la formule</span>
+              <span>•</span>
+              <span>✓ Financement étudié avec Eloqone</span>
+            </div>
             <div style={{ padding: '0.85rem 1.25rem', borderRadius: '12px', background: 'rgba(255, 255, 255, 0.08)', border: '1px solid rgba(255, 255, 255, 0.15)', fontSize: '0.82rem', color: '#93c5fd', marginBottom: '2rem', lineHeight: 1.5 }}>
-              ℹ️ Ô&apos;TOP Formation intervient avec l&apos;organisme partenaire Eloqone, certifié Qualiopi, qui porte les actions de formation et les démarches de financement. NDA Ô&apos;TOP Formation en cours d&apos;attribution. Financement possible selon votre statut et sous réserve d&apos;acceptation par votre financeur.
+              ℹ️ Ô’TOP Formation intervient avec son partenaire Eloqone, organisme certifié Qualiopi, qui porte les actions de formation et accompagne les démarches de financement. Les possibilités de prise en charge sont étudiées selon votre statut et restent soumises à l’accord de l’organisme financeur.
             </div>
             <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
-              <Link href="/contact?subject=IA" className="btn btn-primary" style={{ background: 'var(--red-600)', color: 'white', fontWeight: 800, padding: '1rem 2rem' }}>
-                Demander un diagnostic IA gratuit (15 min) ⚡
+              <Link href="/contact?subject=IA_Diagnostic" className="btn btn-primary" style={{ background: 'var(--red-600)', color: 'white', fontWeight: 800, padding: '1rem 2rem' }}>
+                Réserver mon diagnostic gratuit de 15 min ⚡
               </Link>
-              <a
-                href="https://wa.me/33767246825?text=Bonjour%2C%20je%20souhaite%20des%20informations%20sur%20la%20formation%20IA%20certifiante."
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn btn-ghost"
-                style={{ color: '#25D366', borderColor: '#25D366', background: 'rgba(37, 211, 102, 0.1)' }}
-              >
-                💬 Échanger sur WhatsApp
-              </a>
+              <Link href="/financement" className="btn btn-ghost" style={{ color: 'white', borderColor: 'rgba(255, 255, 255, 0.4)' }}>
+                Étudier mes possibilités de financement →
+              </Link>
             </div>
           </div>
         </div>
@@ -78,26 +79,28 @@ export default function FormationIAPage() {
           <div className="text-center" style={{ maxWidth: '750px', margin: '0 auto 4rem' }}>
             <span className="label">Deux parcours adaptés à vos objectifs</span>
             <h2>Choisissez votre programme certifiant</h2>
-            <p>Conçus pour l'action et le résultat immédiat dans votre entreprise ou activité freelance.</p>
+            <p>Conçus pour l&apos;action et le résultat immédiat dans votre entreprise ou activité freelance.</p>
           </div>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))', gap: '2.5rem' }}>
             {/* Parcours 1: Dirigeants / TPE */}
-            <div className="card" style={{ border: '2px solid var(--blue-900)', position: 'relative', display: 'flex', flexDirection: 'column' }}>
-              <div style={{ position: 'absolute', top: '-14px', right: '20px', background: 'var(--blue-900)', color: 'white', padding: '4px 14px', borderRadius: '12px', fontSize: '0.8rem', fontWeight: 700 }}>
-                RS7344 — Dirigeants & Managers
-              </div>
-              <div style={{ padding: '2rem', flex: 1 }}>
-                <span className="label" style={{ color: 'var(--blue-600)' }}>Parcours Stratégique & Opérationnel</span>
-                <h3 style={{ marginBottom: '1rem', color: 'var(--blue-900)' }}>Développer votre activité avec l'IA</h3>
+            <div className="card" style={{ border: '2px solid var(--blue-900)', display: 'flex', flexDirection: 'column' }}>
+              <div style={{ padding: '2rem', flex: 1, display: 'flex', flexDirection: 'column' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.25rem', gap: '0.75rem', flexWrap: 'wrap' }}>
+                  <span className="label" style={{ color: 'var(--blue-600)', margin: 0 }}>Parcours Stratégique &amp; Opérationnel</span>
+                  <span style={{ background: 'var(--blue-900)', color: 'white', padding: '4px 12px', borderRadius: '9999px', fontSize: '0.8rem', fontWeight: 700 }}>
+                    RS7344 — Dirigeants &amp; Managers
+                  </span>
+                </div>
+                <h3 style={{ marginBottom: '1rem', color: 'var(--blue-900)' }}>Déployer l’IA dans votre entreprise, sans désorganiser vos équipes</h3>
                 <p style={{ marginBottom: '1.5rem' }}>
-                  Pour les dirigeants de TPE/PME et leurs collaborateurs stratégiques souhaitant structurer et piloter un véritable projet d'intégration IA rentable.
+                  Pour les dirigeants de TPE/PME et leurs collaborateurs stratégiques souhaitant structurer et piloter un véritable projet d&apos;intégration IA rentable.
                 </p>
 
                 <h4 style={{ fontSize: '1rem', marginBottom: '0.75rem', color: 'var(--blue-900)' }}>Programme en 5 Modules :</h4>
                 <ul style={{ listStyle: 'none', padding: 0, marginBottom: '2rem', display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
-                  <li style={{ display: 'flex', gap: '0.5rem' }}><span>✓</span> <strong>Module 1 :</strong> Identifier les opportunités d'intégration & méthode STEP</li>
-                  <li style={{ display: 'flex', gap: '0.5rem' }}><span>✓</span> <strong>Module 2 :</strong> Plan d'intégration, budget réaliste & conformité AI Act</li>
+                  <li style={{ display: 'flex', gap: '0.5rem' }}><span>✓</span> <strong>Module 1 :</strong> Identifier les opportunités d&apos;intégration &amp; méthode STEP</li>
+                  <li style={{ display: 'flex', gap: '0.5rem' }}><span>✓</span> <strong>Module 2 :</strong> Plan d&apos;intégration, budget réaliste &amp; conformité AI Act</li>
                   <li style={{ display: 'flex', gap: '0.5rem' }}><span>✓</span> <strong>Module 3 :</strong> Implémentation opérationnelle (marketing, admin, prompts)</li>
                   <li style={{ display: 'flex', gap: '0.5rem' }}><span>✓</span> <strong>Module 4 :</strong> Conduite du changement &amp; charte éthique interne</li>
                   <li style={{ display: 'flex', gap: '0.5rem' }}><span>✓</span> <strong>Module 5 :</strong> Mesure de performance, KPI &amp; cycle d&apos;optimisation PDCA</li>
@@ -111,19 +114,21 @@ export default function FormationIAPage() {
 
               <div style={{ padding: '1.5rem 2rem', borderTop: '1px solid var(--gray-200)', background: 'var(--gray-50)' }}>
                 <Link href="/contact?subject=IA_Dirigeant_RS7344" className="btn btn-primary" style={{ width: '100%', justifyContent: 'center' }}>
-                  Demander le programme détaillé &amp; devis →
+                  Étudier mes possibilités de financement →
                 </Link>
               </div>
             </div>
 
             {/* Parcours 2: Indépendants / IA Générative */}
-            <div className="card" style={{ border: '2px solid var(--gold)', position: 'relative', display: 'flex', flexDirection: 'column' }}>
-              <div style={{ position: 'absolute', top: '-14px', right: '20px', background: 'var(--gold-dark)', color: 'white', padding: '4px 14px', borderRadius: '12px', fontSize: '0.8rem', fontWeight: 700 }}>
-                RS6776 — Indépendants &amp; Créateurs
-              </div>
-              <div style={{ padding: '2rem', flex: 1 }}>
-                <span className="label" style={{ color: 'var(--gold-dark)' }}>Parcours Pratique &amp; Productivité</span>
-                <h3 style={{ marginBottom: '1rem', color: 'var(--blue-900)' }}>IA Générative pour Indépendants</h3>
+            <div className="card" style={{ border: '2px solid var(--gold)', display: 'flex', flexDirection: 'column' }}>
+              <div style={{ padding: '2rem', flex: 1, display: 'flex', flexDirection: 'column' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.25rem', gap: '0.75rem', flexWrap: 'wrap' }}>
+                  <span className="label" style={{ color: 'var(--gold-dark)', margin: 0 }}>Parcours Pratique &amp; Productivité</span>
+                  <span style={{ background: 'var(--gold-dark)', color: 'white', padding: '4px 12px', borderRadius: '9999px', fontSize: '0.8rem', fontWeight: 700 }}>
+                    RS6776 — Indépendants &amp; Créateurs
+                  </span>
+                </div>
+                <h3 style={{ marginBottom: '1rem', color: 'var(--blue-900)' }}>Créez vos assistants IA et récupérez du temps chaque semaine</h3>
                 <p style={{ marginBottom: '1.5rem' }}>
                   Pour coachs, thérapeutes, consultants et indépendants souhaitant produire leur contenu en autonomie et déléguer les tâches chronophages à des assistants IA.
                 </p>
@@ -143,7 +148,7 @@ export default function FormationIAPage() {
 
               <div style={{ padding: '1.5rem 2rem', borderTop: '1px solid var(--gray-200)', background: 'var(--gray-50)' }}>
                 <Link href="/contact?subject=IA_Generative_RS6776" className="btn" style={{ width: '100%', justifyContent: 'center', background: 'var(--gold-dark)', color: 'white', fontWeight: 700 }}>
-                  Consulter les modalités & s'inscrire →
+                  Étudier mes possibilités de financement →
                 </Link>
               </div>
             </div>
@@ -155,7 +160,7 @@ export default function FormationIAPage() {
       <section className="section" style={{ background: 'var(--gray-50)' }}>
         <div className="container">
           <div className="text-center" style={{ maxWidth: '750px', margin: '0 auto 3.5rem' }}>
-            <span className="label">Méthode Pédagogique O'TOP</span>
+            <span className="label">Méthode Pédagogique O&apos;TOP</span>
             <h2>Un accompagnement humain qui fait la différence</h2>
             <p>Contrairement aux simples cours en ligne, nous combinons autonomie et suivi direct par nos formateurs pour garantir la réussite de votre certification.</p>
           </div>
@@ -163,18 +168,18 @@ export default function FormationIAPage() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2rem' }}>
             <div className="card" style={{ padding: '2rem' }}>
               <div style={{ fontSize: '2rem', marginBottom: '1rem' }}>🎥</div>
-              <h4>Vidéos & Synthèses</h4>
+              <h4>Vidéos &amp; Synthèses</h4>
               <p>Des modules courts, rythmés et directement applicables, accompagnés de fiches mémo à retenir.</p>
             </div>
             <div className="card" style={{ padding: '2rem' }}>
               <div style={{ fontSize: '2rem', marginBottom: '1rem' }}>🤖</div>
-              <h4>Boîte à Outils & Prompts</h4>
-              <p>Accès à une bibliothèque de prompts professionnels testés et prêts à l'emploi pour votre secteur.</p>
+              <h4>Boîte à Outils &amp; Prompts</h4>
+              <p>Accès à une bibliothèque de prompts professionnels testés et prêts à l&apos;emploi pour votre secteur.</p>
             </div>
             <div className="card" style={{ padding: '2rem' }}>
               <div style={{ fontSize: '2rem', marginBottom: '1rem' }}>👥</div>
-              <h4>Masterclass & Suivi</h4>
-              <p>Sessions en petit groupe et tutorat individuel avec Mélissa et Renaud pour débloquer chaque cas pratique.</p>
+              <h4>Masterclass &amp; Suivi</h4>
+              <p>Sessions en petit groupe et tutorat individuel avec nos formateurs pour débloquer chaque cas pratique.</p>
             </div>
             <div className="card" style={{ padding: '2rem' }}>
               <div style={{ fontSize: '2rem', marginBottom: '1rem' }}>🏆</div>
@@ -188,16 +193,16 @@ export default function FormationIAPage() {
       {/* CTA Final */}
       <section className="section" style={{ background: 'var(--blue-900)', color: 'white', textAlign: 'center' }}>
         <div className="container" style={{ maxWidth: '750px' }}>
-          <h2 style={{ color: 'white', marginBottom: '1.5rem' }}>Prêt(e) à développer votre activité grâce à l'IA ?</h2>
+          <h2 style={{ color: 'white', marginBottom: '1.5rem' }}>Prêt(e) à faire de l&apos;IA un véritable levier pour votre activité ?</h2>
           <p style={{ color: 'var(--blue-100)', fontSize: '1.15rem', marginBottom: '2.5rem' }}>
-            Échangez directement avec Mélissa (07 67 24 68 25) ou Renaud (06 74 79 75 09) pour bâtir ensemble votre projet de formation.
+            Échangez directement avec un formateur pour auditer vos besoins et identifier les financements mobilisables.
           </p>
           <div style={{ display: 'flex', justifyContent: 'center', gap: '1rem', flexWrap: 'wrap' }}>
-            <Link href="/contact" className="btn btn-primary" style={{ background: 'var(--red-600)', color: 'white', padding: '1rem 2.5rem', fontWeight: 800 }}>
-              Demander mon diagnostic gratuit (15 min) ⚡
+            <Link href="/contact?subject=IA_Diagnostic" className="btn btn-primary" style={{ background: 'var(--red-600)', color: 'white', padding: '1rem 2.5rem', fontWeight: 800 }}>
+              Réserver mon diagnostic gratuit de 15 min ⚡
             </Link>
-            <a href="tel:+33767246825" className="btn btn-ghost" style={{ color: 'white', borderColor: 'rgba(255,255,255,0.4)' }}>
-              📞 Appeler directement
+            <a href="https://wa.me/33767246825?text=Bonjour%2C%20je%20souhaite%20%C3%AAtre%20rappel%C3%A9%20par%20un%20formateur%20IA." target="_blank" rel="noopener noreferrer" className="btn btn-ghost" style={{ color: 'white', borderColor: 'rgba(255,255,255,0.4)' }}>
+              📞 Être rappelé(e) par un formateur
             </a>
           </div>
         </div>

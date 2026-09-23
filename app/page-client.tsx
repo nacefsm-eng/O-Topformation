@@ -3,7 +3,6 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import Footer from '@/components/Footer';
-import TeamMemberCard from '@/components/ui/team-member-card';
 import ClientFeedback from '@/components/ui/testimonial';
 import GetInTouch from '@/components/ui/get-in-touch';
 import { motion, useScroll, useTransform } from 'framer-motion';
@@ -16,9 +15,7 @@ import {
   Brain, 
   Lock, 
   Cpu, 
-  Award, 
-  Calculator,
-  Code,
+  Award,
   MessageCircle,
   FileText,
   Video,
@@ -55,12 +52,6 @@ export default function HomePageClient() {
     setCheckoutPlan({ title, price, description });
     setCheckoutOpen(true);
   };
-
-  // Simulator State
-  const [hoursPerWeek, setHoursPerWeek] = useState(12);
-  const [hourlyRate, setHourlyRate] = useState(65);
-  const annualSavingsHours = hoursPerWeek * 46;
-  const annualSavingsEuros = Math.round(annualSavingsHours * hourlyRate * 0.65);
 
   // Hero Scroll Animation Ref
   const heroRef = React.useRef<HTMLDivElement>(null);
@@ -134,7 +125,7 @@ export default function HomePageClient() {
               transition={{ duration: 0.7, delay: 0.1 }}
               className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tight leading-[1.1] mb-6 text-white"
             >
-              Formez-vous à l&apos;IA pour automatiser votre activité, gagner du temps et sécuriser vos usages
+              Formez-vous à l&apos;IA pour gagner du temps, mieux travailler et développer votre activité.
             </motion.h1>
 
             {/* Subtitle */}
@@ -144,10 +135,10 @@ export default function HomePageClient() {
               transition={{ duration: 0.7, delay: 0.2 }}
               className="text-base sm:text-xl text-slate-300 max-w-3xl mx-auto mb-8 leading-relaxed font-normal"
             >
-              Formations certifiantes pour indépendants, dirigeants et équipes de TPE/PME, avec accompagnement individuel (<strong>5 h de coaching inclus</strong>) sur vos cas réels.
+              Des parcours pratiques pour indépendants, dirigeants et équipes, avec accompagnement humain sur vos outils et vos cas réels.
             </motion.p>
 
-            {/* 3 Preuves Courtes Immédiates Recommandées par l'Audit */}
+            {/* 3 Preuves Courtes Immédiates */}
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -156,15 +147,15 @@ export default function HomePageClient() {
             >
               <div className="flex items-center gap-2.5 p-3 rounded-xl bg-slate-900/80 border border-slate-800">
                 <CheckCircle2 size={18} className="text-blue-400 shrink-0" />
-                <span className="text-xs sm:text-sm text-slate-200 font-medium">Préparation certifications <strong>RS enregistrées</strong></span>
+                <span className="text-xs sm:text-sm text-slate-200 font-medium">Certifications préparées (<strong>RS enregistrées</strong>)</span>
               </div>
               <div className="flex items-center gap-2.5 p-3 rounded-xl bg-slate-900/80 border border-slate-800">
                 <CheckCircle2 size={18} className="text-emerald-400 shrink-0" />
-                <span className="text-xs sm:text-sm text-slate-200 font-medium"><strong>5 h de coaching individuel</strong> sur vos outils</span>
+                <span className="text-xs sm:text-sm text-slate-200 font-medium"><strong>Coaching individuel</strong> selon le parcours</span>
               </div>
               <div className="flex items-center gap-2.5 p-3 rounded-xl bg-slate-900/80 border border-slate-800">
                 <CheckCircle2 size={18} className="text-amber-400 shrink-0" />
-                <span className="text-xs sm:text-sm text-slate-200 font-medium">Financement étudié via le <strong>partenaire Eloqone</strong></span>
+                <span className="text-xs sm:text-sm text-slate-200 font-medium">Financement étudié avec <strong>notre partenaire Eloqone</strong></span>
               </div>
             </motion.div>
 
@@ -186,7 +177,7 @@ export default function HomePageClient() {
                 href="#parcours"
                 className="w-full sm:w-auto px-7 py-4 rounded-2xl bg-slate-900/90 border border-slate-700 hover:border-slate-500 text-slate-200 font-bold text-base flex items-center justify-center gap-2 transition-all hover:bg-slate-800"
               >
-                <span>Découvrir les parcours →</span>
+                <span>Découvrir les formations →</span>
               </a>
 
               <Link
@@ -476,7 +467,7 @@ export default function HomePageClient() {
                     className="w-full py-3 px-4 rounded-xl bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-500 hover:to-cyan-500 text-white font-bold text-xs shadow-lg shadow-cyan-600/25 transition-all flex items-center justify-center gap-2 cursor-pointer"
                   >
                     <CreditCard size={15} />
-                    <span>Régler par Carte (1 490 € ou 3x 496 €) 💳</span>
+                    <span>S&apos;inscrire / Régler en ligne 💳</span>
                   </button>
                   <a
                     href="#contact"
@@ -557,7 +548,7 @@ export default function HomePageClient() {
                     className="w-full py-3 px-4 rounded-xl bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white font-bold text-xs shadow-lg shadow-indigo-600/25 transition-all flex items-center justify-center gap-2 cursor-pointer"
                   >
                     <CreditCard size={15} />
-                    <span>Réserver une session intra (Acompte de 450 €) 💳</span>
+                    <span>Réserver une session intra (Acompte) 💳</span>
                   </button>
                   <a
                     href="#contact"
@@ -638,7 +629,7 @@ export default function HomePageClient() {
                     className="w-full py-3 px-4 rounded-xl bg-gradient-to-r from-pink-600 to-rose-600 hover:from-pink-500 hover:to-rose-500 text-white font-bold text-xs shadow-lg shadow-pink-600/25 transition-all flex items-center justify-center gap-2 cursor-pointer"
                   >
                     <CreditCard size={15} />
-                    <span>Régler par Carte (1 290 € ou 3x 430 €) 💳</span>
+                    <span>S&apos;inscrire / Régler en ligne 💳</span>
                   </button>
                   <a
                     href="#contact"
@@ -719,7 +710,7 @@ export default function HomePageClient() {
                     className="w-full py-3 px-4 rounded-xl bg-gradient-to-r from-amber-600 to-emerald-600 hover:from-amber-500 hover:to-emerald-500 text-white font-bold text-xs shadow-lg shadow-amber-600/25 transition-all flex items-center justify-center gap-2 cursor-pointer"
                   >
                     <CreditCard size={15} />
-                    <span>Régler par Carte (890 € ou 3x 296 €) 💳</span>
+                    <span>S&apos;inscrire / Régler en ligne 💳</span>
                   </button>
                   <a
                     href="#contact"
@@ -869,7 +860,7 @@ export default function HomePageClient() {
               Comment se déroule votre financement ?
             </h2>
             <div className="mt-4 p-4 rounded-xl bg-blue-950/40 border border-blue-500/30 max-w-2xl mx-auto text-xs sm:text-sm text-blue-200 leading-relaxed text-center">
-              Ô&apos;TOP Formation intervient avec l&apos;organisme partenaire Eloqone, certifié Qualiopi, qui porte les actions de formation et les démarches de financement. NDA Ô&apos;TOP Formation en cours d&apos;attribution. Financement possible selon votre statut et sous réserve d&apos;acceptation par votre financeur (OPCO, FAF, CPF).
+              Ô&apos;TOP Formation intervient avec son partenaire Eloqone, organisme certifié Qualiopi, qui porte les actions de formation et accompagne les démarches de financement. Les possibilités de prise en charge sont étudiées selon votre statut et restent soumises à l&apos;accord de l&apos;organisme financeur.
             </div>
           </div>
 
@@ -921,7 +912,7 @@ export default function HomePageClient() {
 
 
       {/* ─── 7. PREUVE SOCIALE & ÉTUDES DE CAS ─────────────────────── */}
-      <ClientFeedback />
+      <ClientFeedback limit={3} />
 
       {/* ─── 8. CTA CONVERSION IMMÉDIATE (DIRIGEANTS PRESSÉS) ───────────── */}
       <section className="py-12 px-4 bg-gradient-to-r from-blue-950 via-slate-900 to-indigo-950 border-t border-b border-blue-500/20 relative">
@@ -953,197 +944,6 @@ export default function HomePageClient() {
               <span>WhatsApp Direct 💬</span>
             </a>
           </div>
-        </div>
-      </section>
-
-      <section className="py-24 px-4 bg-slate-950 border-t border-slate-850 relative">
-        <div className="container mx-auto max-w-5xl">
-          
-          <div className="text-center max-w-2xl mx-auto mb-16">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-blue-500/10 border border-blue-400/20 text-blue-400 text-xs font-bold uppercase tracking-wider mb-4">
-              Des Praticiens de Terrain
-            </div>
-            <h2 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight mb-4">
-              L&apos;Équipe des Experts
-            </h2>
-            <p className="text-slate-400 text-base sm:text-lg">
-              Une exigence constante, un accompagnement humain sans filtre et une vision résolument tournée vers votre rentabilité durable.
-            </p>
-          </div>
-
-          <div className="space-y-12">
-            {/* 1. Mélissa JENNADI */}
-            <TeamMemberCard
-              position="left"
-              firstName="Mélissa"
-              lastName="JENNADI"
-              imageUrl="/team-melyssa.png"
-              description="Rigueur scientifique, sens aigu de la transmission et dévouement absolu pour faire grandir vos équipes et pérenniser votre activité."
-              onCtaClick={() => window.open('https://wa.me/33767246825?text=Bonjour%20M%C3%A9lissa%2C%20je%20souhaite%20%C3%A9changer%20avec%20vous.', '_blank')}
-            />
-
-            {/* 2. Renaud */}
-            <TeamMemberCard
-              position="right"
-              firstName="Renaud"
-              lastName=""
-              imageUrl="/team-renaud.jpg"
-              description="Passionné par l'impact technologique et l'efficacité opérationnelle, pour transformer des outils complexes en leviers de croissance concrets."
-              onCtaClick={() => window.open('https://wa.me/33674797509?text=Bonjour%20Renaud%2C%20je%20souhaite%20%C3%A9changer%20avec%20vous.', '_blank')}
-            />
-
-            {/* 3. Régis */}
-            <TeamMemberCard
-              position="left"
-              firstName="Régis"
-              lastName=""
-              imageUrl="/team-regis.png"
-              description="Excellence opérationnelle forgée sur le terrain, sang-froid et vision stratégique pour sécuriser chaque étape de votre transition."
-              onCtaClick={() => window.open('https://wa.me/33767246825?text=Bonjour%20R%C3%A9gis%2C%20je%20souhaite%20%C3%A9changer%20avec%20vous.', '_blank')}
-            />
-
-            {/* 4. Med Aly Garma */}
-            <TeamMemberCard
-              position="right"
-              firstName="Med Aly"
-              lastName="GARMA"
-              imageUrl="/team-med-aly.jpg"
-              description="Expertise pointue en cybersécurité, résilience des infrastructures critiques et sécurisation avancée des environnements d'intelligence artificielle."
-              onCtaClick={() => window.open('https://wa.me/33767246825?text=Bonjour%20Med%20Aly%2C%20je%20souhaite%20%C3%A9changer%20avec%20vous%20sur%20la%20cybers%C3%A9curit%C3%A9.', '_blank')}
-            />
-          </div>
-
-          {/* ── Séparation distincte : Équipe Technique & Digitale (Concepteurs du Site) ── */}
-          <div className="mt-20 pt-16 border-t border-slate-800/80">
-            <div className="text-center mb-12">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-cyan-500/10 border border-cyan-400/20 text-cyan-400 text-xs font-bold uppercase tracking-wider mb-3">
-                <Code size={14} />
-                Pôle Ingénierie &amp; Croissance Digitale
-              </div>
-              <h3 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
-                L&apos;Équipe Technique &amp; Web
-              </h3>
-              <p className="text-slate-400 text-sm max-w-xl mx-auto mt-2">
-                Les concepteurs de la plateforme web Ô&apos;TOP Formation et de notre écosystème numérique.
-              </p>
-            </div>
-
-            <div className="space-y-12">
-              {/* 5. Nacef - Lead Tech Web (Arrière-plan blanc) */}
-              <TeamMemberCard
-                position="left"
-                themeVariant="white"
-                roleTitle="Lead Développeur & Architecte Web"
-                firstName="Nacef"
-                lastName=""
-                imageUrl="/team-nacef.jpg"
-                description="Architecte technique & concepteur de la plateforme web Ô'TOP Formation. Expert en ingénierie logicielle full-stack, optimisation des performances, automatisation et expérience utilisateur moderne."
-                onCtaClick={() => window.open('https://wa.me/33767246825?text=Bonjour%20Nacef%2C%20je%20souhaite%20%C3%A9changer%20avec%20vous%20sur%20le%20site%20web.', '_blank')}
-              />
-
-              {/* 6. Hamouda - Community Manager (Arrière-plan noir) */}
-              <TeamMemberCard
-                position="right"
-                themeVariant="black"
-                roleTitle="Community Manager & Social Media"
-                firstName="Hamouda"
-                lastName=""
-                imageUrl="/team-hamouda.jpg"
-                description="Stratège de la communication et des réseaux sociaux. En charge de l'engagement des apprenants, de l'animation de nos communautés d'alumni et du rayonnement digital de la marque Ô'TOP."
-                onCtaClick={() => window.open('https://wa.me/33767246825?text=Bonjour%20Hamouda%2C%20je%20souhaite%20%C3%A9changer%20avec%20vous%20sur%20la%20communication.', '_blank')}
-              />
-            </div>
-          </div>
-
-        </div>
-      </section>
-
-
-      {/* ─── 8. SIMULATEUR DE RENTABILITÉ IMMÉDIATE ──────────────────────── */}
-      <section className="py-20 px-4 bg-slate-900/60 border-t border-b border-slate-800 relative">
-        <div className="container mx-auto max-w-5xl">
-          
-          <div className="p-8 sm:p-12 rounded-3xl bg-slate-950 border border-slate-800 shadow-2xl">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-              
-              <div className="lg:col-span-6 space-y-4">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-400/20 text-emerald-400 text-xs font-bold uppercase tracking-wider">
-                  <Calculator size={14} />
-                  Simulateur de Gain Économique
-                </div>
-                <h3 className="text-2xl sm:text-3xl font-extrabold text-white">
-                  Calculez votre rentabilité immédiate
-                </h3>
-                <p className="text-slate-400 text-sm leading-relaxed">
-                  L&apos;automatisation n&apos;est pas une dépense : elle libère du temps direct pour vos clients et votre production.
-                </p>
-
-                <div className="space-y-6 pt-4">
-                  <div>
-                    <div className="flex justify-between text-sm font-semibold text-slate-300 mb-2">
-                      <span>Heures de tâches répétitives hebdomadaires :</span>
-                      <span className="text-blue-400 font-bold text-base">{hoursPerWeek} h / semaine</span>
-                    </div>
-                    <input
-                      type="range"
-                      min={4}
-                      max={25}
-                      step={1}
-                      value={hoursPerWeek}
-                      onChange={(e) => setHoursPerWeek(Number(e.target.value))}
-                      className="w-full accent-blue-600 h-2 bg-slate-800 rounded-lg cursor-pointer"
-                    />
-                  </div>
-
-                  <div>
-                    <div className="flex justify-between text-sm font-semibold text-slate-300 mb-2">
-                      <span>Votre valeur horaire estimée :</span>
-                      <span className="text-blue-400 font-bold text-base">{hourlyRate} € / heure</span>
-                    </div>
-                    <input
-                      type="range"
-                      min={30}
-                      max={200}
-                      step={5}
-                      value={hourlyRate}
-                      onChange={(e) => setHourlyRate(Number(e.target.value))}
-                      className="w-full accent-blue-600 h-2 bg-slate-800 rounded-lg cursor-pointer"
-                    />
-                  </div>
-                </div>
-              </div>
-
-              <div className="lg:col-span-6 p-6 sm:p-8 rounded-2xl bg-gradient-to-br from-blue-950/70 via-slate-900 to-slate-950 border border-blue-500/30 text-center space-y-6">
-                <div>
-                  <div className="text-xs uppercase font-bold text-slate-400 tracking-wider mb-1">
-                    Temps récupéré chaque année
-                  </div>
-                  <div className="text-4xl sm:text-5xl font-black text-white">
-                    ~{Math.round(annualSavingsHours * 0.65)} h
-                  </div>
-                  <div className="text-xs text-blue-400 mt-1">Soit plus d&apos;un mois complet de travail économisé</div>
-                </div>
-
-                <div className="pt-4 border-t border-slate-800">
-                  <div className="text-xs uppercase font-bold text-slate-400 tracking-wider mb-1">
-                    Valeur économique libérée
-                  </div>
-                  <div className="text-4xl sm:text-5xl font-black text-emerald-400">
-                    +{annualSavingsEuros.toLocaleString()} € / an
-                  </div>
-                </div>
-
-                <a
-                  href="#contact"
-                  className="block w-full py-4 px-6 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-bold text-sm transition-all shadow-lg cursor-pointer"
-                >
-                  Étudier mon financement pour ce parcours 💬
-                </a>
-              </div>
-
-            </div>
-          </div>
-
         </div>
       </section>
 

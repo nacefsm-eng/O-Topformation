@@ -84,15 +84,11 @@ export default function FiTopPage() {
             </div>
 
             <h1 className="text-3xl sm:text-5xl md:text-6xl font-black text-white tracking-tight leading-tight mb-6">
-              FI TOP — FORMATION INITIALE<br />
-              <span className="bg-gradient-to-r from-amber-300 via-orange-400 to-amber-200 bg-clip-text text-transparent">
-                TECHNIQUES D&apos;OPTIMISATION DU POTENTIEL
-              </span>
+              Régulez votre stress, préservez votre énergie et renforcez votre lucidité sous pression.
             </h1>
 
             <p className="text-base sm:text-xl text-slate-300 max-w-3xl mx-auto mb-10 leading-relaxed font-normal">
-              <strong>MUNISSEZ-VOUS DE L&apos;ESSENTIEL DE LA BOÎTE À OUTILS TOP POUR S&apos;AUTO-GÉRER AU QUOTIDIEN.</strong><br />
-              Issue des protocoles de préparation mentale des armées (Méthode PERRAULT-PIERRE), les TOP® facilitent l&apos;expression de ses potentialités et l&apos;adaptation aux situations nouvelles, complexes ou stressantes.
+              Formation Initiale aux Techniques d’Optimisation du Potentiel (FI TOP® — 21h). Une boîte à outils concrète et éprouvée pour mieux récupérer, réguler vos émotions et maintenir votre efficacité au quotidien dans vos contextes professionnels et personnels les plus exigeants.
             </p>
 
             {/* Quick Badges */}
@@ -115,28 +111,28 @@ export default function FiTopPage() {
               <div className="p-4 rounded-2xl bg-slate-900/80 border border-slate-800">
                 <div className="text-xs text-slate-400 font-medium">Financements</div>
                 <div className="text-lg font-bold text-white">OPCO / FIF-PL</div>
-                <div className="text-xs text-emerald-400">Prise en charge 100%</div>
+                <div className="text-xs text-emerald-400">Prise en charge selon éligibilité</div>
               </div>
             </div>
 
             {/* CTAs */}
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <a
-                href="https://wa.me/33767246825?text=Bonjour%20M%C3%A9lissa%2C%20je%20souhaite%20m%27inscrire%20%C3%A0%20la%20formation%20FI%20TOP%C2%AE%20(21h)."
-                target="_blank"
-                rel="noopener noreferrer"
+              <Link
+                href="/contact"
                 className="w-full sm:w-auto px-8 py-4 rounded-2xl bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-400 hover:to-orange-500 text-white font-black text-sm sm:text-base shadow-xl shadow-amber-600/30 flex items-center justify-center gap-2 transition-all hover:scale-105"
               >
-                <MessageCircle size={18} />
-                <span>S&apos;inscrire à la prochaine session avec Mélissa</span>
-              </a>
+                <span>Réserver mon diagnostic gratuit de 15 min ⚡</span>
+              </Link>
 
-              <button
-                onClick={() => setShowModal(true)}
-                className="w-full sm:w-auto px-8 py-4 rounded-2xl bg-slate-900 hover:bg-slate-800 border border-slate-700 text-slate-200 font-bold text-sm sm:text-base flex items-center justify-center gap-2 transition-all cursor-pointer"
+              <a
+                href="https://wa.me/33767246825?text=Bonjour%20M%C3%A9lissa%2C%20je%20souhaite%20%C3%A9changer%20sur%20la%20formation%20FI%20TOP%C2%AE%20(21h)."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full sm:w-auto px-8 py-4 rounded-2xl bg-slate-900 hover:bg-slate-800 border border-slate-700 text-slate-200 font-bold text-sm sm:text-base flex items-center justify-center gap-2 transition-all"
               >
-                <span>Poser une option / Candidater ⚡</span>
-              </button>
+                <MessageCircle size={18} className="text-emerald-400" />
+                <span>Être rappelé(e) par Mélissa (Formatrice TOP®)</span>
+              </a>
             </div>
 
           </div>
@@ -315,19 +311,19 @@ export default function FiTopPage() {
 
               <div className="lg:col-span-6 p-6 rounded-2xl bg-slate-950 border border-slate-800 space-y-4 text-center">
                 <div className="text-xs uppercase font-bold text-amber-400 tracking-wider">
-                  Financements Possibles
+                  Financements &amp; Prise en Charge
                 </div>
                 <h3 className="text-xl font-bold text-white">
-                  Prise en charge intégrale OPCO &amp; FAF
+                  Financement étudié selon votre statut
                 </h3>
                 <p className="text-xs text-slate-400 leading-relaxed">
-                  OPCO, AFDAS, FIF PL, EMPLOYEUR, AGEFICE, AGEFIPH, ADIE, et possibilité de paiement en plusieurs fois sans frais.
+                  Dossier instruit selon votre statut (OPCO, AFDAS, FIF PL, AGEFICE, AGEFIPH, employeur). Accompagnement complet au montage de votre dossier administratif.
                 </p>
 
                 <div className="p-4 rounded-xl bg-slate-900 border border-slate-800 text-left text-xs space-y-2">
                   <div className="flex justify-between text-slate-300">
-                    <span>Organisme :</span>
-                    <strong className="text-white">Ô&apos;TOP Formation (Qualiopi)</strong>
+                    <span>Partenaire Qualiopi :</span>
+                    <strong className="text-white">Portage certifié via Eloqone</strong>
                   </div>
                   <div className="flex justify-between text-slate-300">
                     <span>Contact Direct :</span>
@@ -335,11 +331,15 @@ export default function FiTopPage() {
                   </div>
                 </div>
 
+                <p className="text-[11px] text-slate-500 italic text-left">
+                  Ô’TOP Formation intervient avec son partenaire Eloqone, organisme certifié Qualiopi, qui porte les actions de formation et accompagne les démarches de financement. Les possibilités de prise en charge sont étudiées selon votre statut et restent soumises à l’accord de l’organisme financeur.
+                </p>
+
                 <button
                   onClick={() => setShowModal(true)}
                   className="w-full py-3.5 px-5 rounded-xl bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-400 hover:to-orange-500 text-white font-bold text-sm transition-all shadow-lg cursor-pointer"
                 >
-                  Candidater à la prochaine session ⚡
+                  Étudier mes possibilités de financement ⚡
                 </button>
               </div>
 

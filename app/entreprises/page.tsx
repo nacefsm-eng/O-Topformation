@@ -18,20 +18,20 @@ export default function Entreprises() {
             <span>Solutions Entreprises</span>
           </div>
           <span className="badge" style={{ background: 'rgba(205, 175, 93, 0.2)', color: 'var(--gold-light)', border: '1px solid var(--gold)', marginBottom: '1rem' }}>
-            🏢 Accompagnement B2B Global • Organisme Déclaré (NDA en cours) · Porté par Eloqone
+            🏢 Accompagnement B2B &amp; Formation Professionnelle · Actions portées avec notre partenaire Qualiopi Eloqone
           </span>
           <h1 style={{ color: 'white', fontSize: 'clamp(2.3rem, 4.5vw, 3.6rem)', marginBottom: '1.5rem' }}>
-            Performance Humaine & Digitalisation sur-mesure pour votre Entreprise
+            Accompagnement, formation et solutions digitales pour vos équipes
           </h1>
           <p style={{ color: 'var(--blue-100)', fontSize: '1.2rem', maxWidth: '850px', lineHeight: 1.7, marginBottom: '2.5rem' }}>
-            Nous combinons l'optimisation du potentiel humain (Santé mentale, méthode TOP® anti-stress) et la transformation digitale (Création de sites web/apps, IA opérationnelle, Réseaux sociaux) pour faire exploser votre rentabilité.
+            Développez les compétences de vos collaborateurs, automatisez vos processus métiers et préservez l’équilibre de vos équipes avec des solutions concrètes adaptées aux réalités de votre entreprise.
           </p>
           <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
             <Link href="/contact?subject=Entreprise_B2B" className="btn btn-primary" style={{ background: 'var(--red-600)', color: 'white', padding: '1rem 2rem', fontWeight: 800 }}>
-              Demander un diagnostic d'entreprise gratuit (15 min) ⚡
+              Réserver mon diagnostic gratuit de 15 min ⚡
             </Link>
-            <a href="https://wa.me/33767246825" target="_blank" rel="noopener noreferrer" className="btn btn-ghost" style={{ color: '#25D366', borderColor: '#25D366', background: 'rgba(37,211,102,0.1)' }}>
-              💬 Échanger sur WhatsApp
+            <a href="https://wa.me/33767246825?text=Bonjour%2C%20je%20souhaite%20un%20%C3%A9change%20concernant%20les%20solutions%20entreprises." target="_blank" rel="noopener noreferrer" className="btn btn-ghost" style={{ color: '#25D366', borderColor: '#25D366', background: 'rgba(37,211,102,0.1)' }}>
+              💬 Être rappelé(e) sur WhatsApp
             </a>
           </div>
         </div>
@@ -80,13 +80,13 @@ export default function Entreprises() {
             {/* Pilier 3 : IA & Automatisation des Process */}
             <div className="card" style={{ padding: '2.5rem', borderTop: '5px solid var(--red-600)' }}>
               <div style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>🤖</div>
-              <h3 style={{ color: 'var(--blue-900)', fontSize: '1.35rem', marginBottom: '1rem' }}>3. Digitalisation & Automatisation IA</h3>
+              <h3 style={{ color: 'var(--blue-900)', fontSize: '1.35rem', marginBottom: '1rem' }}>3. Digitalisation &amp; Automatisation IA</h3>
               <p style={{ color: 'var(--gray-600)', fontSize: '0.95rem', marginBottom: '1.5rem' }}>
-                Faites gagner 10h par semaine à vos équipes. Nous connectons vos outils, automatisons vos tâches administratives et formons vos équipes à l'utilisation sécurisée de l'IA (RS7344).
+                Gagnez du temps chaque semaine et sécurisez vos usages numériques. Nous connectons vos outils, automatisons vos tâches administratives et formons vos équipes à l'utilisation sécurisée de l'IA (RS7344).
               </p>
               <ul style={{ listStyle: 'none', padding: 0, fontSize: '0.9rem', display: 'flex', flexDirection: 'column', gap: '0.5rem', color: 'var(--gray-700)' }}>
-                <li>✓ Connexion CRM, facturation & webhooks automatisés</li>
-                <li>✓ Formation certifiante IA pour dirigeants & collaborateurs</li>
+                <li>✓ Connexion CRM, facturation &amp; webhooks automatisés</li>
+                <li>✓ Formation certifiante IA pour dirigeants &amp; collaborateurs</li>
                 <li>✓ Conformité AI Act européen (calendrier d&apos;application 2025-2026)</li>
                 <li>✓ Assistants IA internes personnalisés</li>
               </ul>
@@ -142,14 +142,14 @@ export default function Entreprises() {
 
       {/* CTA Section */}
       <section className="section" style={{ background: 'var(--blue-900)', color: 'white', textAlign: 'center' }}>
-        <div className="container" style={{ maxWidth: '800px' }}>
+        <div className="container" style={{ maxWidth: '850px' }}>
           <h2 style={{ color: 'white', marginBottom: '1.5rem', fontSize: '2.5rem' }}>Besoin de faire progresser votre entreprise ?</h2>
           <p style={{ color: 'var(--blue-100)', fontSize: '1.15rem', marginBottom: '2.5rem' }}>
-            Prenez contact directement avec nos experts pour un diagnostic téléphonique personnalisé de 15 minutes sans aucun engagement.
+            Prenez contact directement avec nos formateurs pour un diagnostic personnalisé de 15 minutes sans engagement.
           </p>
-          <div style={{ display: 'flex', justifyContent: 'center', gap: '1rem', flexWrap: 'wrap' }}>
+          <div style={{ display: 'flex', justifyContent: 'center', gap: '1rem', flexWrap: 'wrap', marginBottom: '2.5rem' }}>
             <Link href="/contact" className="btn btn-primary" style={{ background: 'var(--red-600)', color: 'white', padding: '1rem 2.5rem', fontWeight: 800 }}>
-              Demander mon diagnostic d'entreprise (15 min) ⚡
+              Réserver mon diagnostic gratuit de 15 min ⚡
             </Link>
             <a href="tel:+33767246825" className="btn btn-ghost" style={{ color: 'white', borderColor: 'rgba(255,255,255,0.4)' }}>
               📞 Mélissa : 07 67 24 68 25
@@ -157,6 +157,12 @@ export default function Entreprises() {
             <a href="tel:+33674797509" className="btn btn-ghost" style={{ color: 'white', borderColor: 'rgba(255,255,255,0.4)' }}>
               📞 Renaud : 06 74 79 75 09
             </a>
+          </div>
+
+          <div style={{ background: 'rgba(255, 255, 255, 0.08)', borderRadius: '12px', padding: '1rem 1.5rem', textAlign: 'center' }}>
+            <p style={{ margin: 0, fontSize: '0.85rem', color: 'rgba(255, 255, 255, 0.75)', lineHeight: 1.5 }}>
+              Ô’TOP Formation intervient avec son partenaire Eloqone, organisme certifié Qualiopi, qui porte les actions de formation et accompagne les démarches de financement. Les possibilités de prise en charge sont étudiées selon votre statut et restent soumises à l’accord de l’organisme financeur.
+            </p>
           </div>
         </div>
       </section>

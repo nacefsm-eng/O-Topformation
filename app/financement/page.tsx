@@ -85,8 +85,8 @@ export default function FinancementPage() {
           <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight mb-4">
             Financement &amp; Démarche Qualité
           </h1>
-          <p className="text-slate-300 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
-            Organisme de formation déclaré (NDA en cours) · démarche Qualiopi en cours, actuellement porté par l&apos;organisme certifié Eloqone.
+          <p className="text-slate-300 text-base sm:text-lg max-w-3xl mx-auto leading-relaxed">
+            Ô’TOP Formation intervient avec son partenaire Eloqone, organisme certifié Qualiopi, qui porte les actions de formation et accompagne les démarches de financement. Les possibilités de prise en charge sont étudiées selon votre statut et restent soumises à l’accord de l’organisme financeur.
           </p>
         </div>
       </section>
@@ -133,7 +133,7 @@ export default function FinancementPage() {
 
           <div className="mt-10 p-6 rounded-2xl bg-blue-950/40 border border-blue-500/30 text-center max-w-3xl mx-auto">
             <p className="text-sm sm:text-base text-blue-200 font-medium">
-              💡 <strong>Finançable selon votre statut (OPCO, FAF, CPF)</strong> via notre organisme partenaire. Vous ne financez pas d&apos;avance superflue : nous montons le dossier directement avec vous.
+              💡 <strong>Financement étudié selon votre statut (OPCO, FAF, CPF)</strong> sous réserve d'accord de votre financeur. Dossier monté et vérifié en amont avec notre partenaire certifié Eloqone.
             </p>
           </div>
 
@@ -187,7 +187,7 @@ export default function FinancementPage() {
               </div>
               <h3 className="text-lg font-bold text-white">Artisans &amp; Esthétique (FAFCEA)</h3>
               <p className="text-sm text-slate-300 leading-relaxed">
-                Prise en charge intégrale possible pour les formations pratiques et corporelles (Head Spa, protocoles bien-être) pour les professionnels immatriculés au CMA.
+                Prise en charge étudiée selon les critères FAFCEA pour les artisans et professionnels immatriculés au CMA pour les formations pratiques et corporelles.
               </p>
               <div className="text-xs text-purple-400 font-semibold pt-2">
                 Montage du dossier FAFCEA assuré
@@ -226,7 +226,7 @@ export default function FinancementPage() {
                   Notre Démarche Qualité &amp; Mentions Légales
                 </h3>
                 <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
-                  Ô&apos;TOP Formation intervient avec l&apos;organisme partenaire Eloqone, certifié Qualiopi, qui porte les actions de formation et les démarches de financement. NDA Ô&apos;TOP Formation en cours d&apos;attribution. Cette démarche assure la rigueur méthodologique, l&apos;adaptation des contenus aux besoins des bénéficiaires et l&apos;amélioration continue de nos prestations.
+                  Ô’TOP Formation intervient avec son partenaire Eloqone, organisme certifié Qualiopi, qui porte les actions de formation et accompagne les démarches de financement. Les possibilités de prise en charge sont étudiées selon votre statut et restent soumises à l’accord de l’organisme financeur.
                 </p>
               </div>
             </div>
@@ -297,10 +297,10 @@ export default function FinancementPage() {
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
             <Link
-              href="/#contact"
+              href="/contact"
               className="px-8 py-4 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-sm shadow-xl shadow-blue-600/30 transition-all"
             >
-              Réserver mon diagnostic de 15 min →
+              Réserver mon diagnostic gratuit de 15 min ⚡
             </Link>
             <a
               href="mailto:contact@otopformation.fr"

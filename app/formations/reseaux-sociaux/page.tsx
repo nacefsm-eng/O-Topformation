@@ -15,30 +15,31 @@ export default function FormationReseauxSociauxPage() {
         <div className="container">
           <div style={{ maxWidth: '850px' }}>
             <span className="badge" style={{ background: 'rgba(255, 59, 59, 0.2)', color: '#ff8585', border: '1px solid var(--red-600)', marginBottom: '1.25rem' }}>
-              📱 Préparation Certification France Compétences RS7351 • Portage Qualiopi Eloqone
+              📱 Préparation Certification France Compétences RS7351 • Formation portée par Eloqone
             </span>
             <h1 style={{ color: 'white', marginBottom: '1.5rem', fontSize: 'clamp(2.2rem, 4.5vw, 3.5rem)' }}>
-              Structurez, produisez et pilotez votre communication sur les réseaux sociaux
+              Structurez votre visibilité, attirez des clients et gagnez du temps sur vos réseaux.
             </h1>
             <p style={{ color: 'var(--blue-100)', fontSize: '1.2rem', lineHeight: '1.8', marginBottom: '1.5rem' }}>
-              Une formation préparant à la certification pour dirigeants de TPE/PME, créateurs et indépendants. Arrêtez de publier au hasard : maîtrisez les outils pros (Canva, CapCut, Meta Suite, Waalaxy) et transformez votre audience en clients.
+              Une formation pratique pour bâtir une stratégie régulière, produire vos contenus efficacement (visuels, vidéos, textes) et transformer votre audience en opportunités concrètes.
             </p>
+            <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap', marginBottom: '1.5rem', fontSize: '0.9rem', color: '#cbd5e1' }}>
+              <span>✓ Parcours adapté à votre activité</span>
+              <span>•</span>
+              <span>✓ Cas pratiques sur vos propres comptes</span>
+              <span>•</span>
+              <span>✓ Financement étudié avec Eloqone</span>
+            </div>
             <div style={{ padding: '0.85rem 1.25rem', borderRadius: '12px', background: 'rgba(255, 255, 255, 0.08)', border: '1px solid rgba(255, 255, 255, 0.15)', fontSize: '0.82rem', color: '#93c5fd', marginBottom: '2rem', lineHeight: 1.5 }}>
-              ℹ️ Ô&apos;TOP Formation intervient avec l&apos;organisme partenaire Eloqone, certifié Qualiopi, qui porte les actions de formation et les démarches de financement. NDA Ô&apos;TOP Formation en cours d&apos;attribution. Financement possible selon votre statut et sous réserve d&apos;acceptation par votre financeur.
+              ℹ️ Ô’TOP Formation intervient avec son partenaire Eloqone, organisme certifié Qualiopi, qui porte les actions de formation et accompagne les démarches de financement. Les possibilités de prise en charge sont étudiées selon votre statut et restent soumises à l’accord de l’organisme financeur.
             </div>
             <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
-              <Link href="/contact?subject=Reseaux_Sociaux_RS7351" className="btn btn-primary" style={{ background: 'var(--red-600)', color: 'white', fontWeight: 800, padding: '1rem 2rem' }}>
-                Demander un diagnostic Réseaux Sociaux (15 min) ⚡
+              <Link href="/contact?subject=Reseaux_Sociaux_Diagnostic" className="btn btn-primary" style={{ background: 'var(--red-600)', color: 'white', fontWeight: 800, padding: '1rem 2rem' }}>
+                Réserver mon diagnostic gratuit de 15 min ⚡
               </Link>
-              <a
-                href="https://wa.me/33767246825?text=Bonjour%2C%20je%20souhaite%20des%20informations%20sur%20la%20formation%20R%C3%A9seaux%20Sociaux%20RS7351."
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn btn-ghost"
-                style={{ color: '#25D366', borderColor: '#25D366', background: 'rgba(37, 211, 102, 0.1)' }}
-              >
-                💬 Échanger sur WhatsApp
-              </a>
+              <Link href="/financement" className="btn btn-ghost" style={{ color: 'white', borderColor: 'rgba(255, 255, 255, 0.4)' }}>
+                Étudier mes possibilités de financement →
+              </Link>
             </div>
           </div>
         </div>
@@ -154,6 +155,12 @@ export default function FormationReseauxSociauxPage() {
               </div>
             </div>
           </div>
+
+          <div style={{ marginTop: '3rem', padding: '1.25rem 1.75rem', borderRadius: '16px', background: 'var(--blue-50)', border: '1px solid var(--blue-200)', textAlign: 'center', maxWidth: '850px', margin: '3rem auto 0' }}>
+            <p style={{ color: 'var(--blue-900)', fontSize: '1rem', fontWeight: 600, margin: 0, lineHeight: 1.6 }}>
+              ✨ À l’issue de la formation, vous repartez avec une ligne éditoriale opérationnelle, vos modèles de contenus prêts à l’emploi et une méthode claire pour publier avec régularité sans y passer vos semaines.
+            </p>
+          </div>
         </div>
       </section>
 
@@ -161,7 +168,7 @@ export default function FormationReseauxSociauxPage() {
       <section className="section" style={{ background: 'var(--gray-50)' }}>
         <div className="container">
           <div style={{ maxWidth: '850px', margin: '0 auto', background: 'white', padding: '3.5rem', borderRadius: 'var(--radius)', boxShadow: 'var(--shadow-md)', border: '1px solid var(--gray-200)' }}>
-            <span className="label" style={{ color: 'var(--blue-600)' }}>Proposition de Partenariat & Formations d'Équipe</span>
+            <span className="label" style={{ color: 'var(--blue-600)' }}>Proposition de Partenariat &amp; Formations d&apos;Équipe</span>
             <h2 style={{ marginBottom: '1rem', color: 'var(--blue-900)' }}>Construisons ensemble votre offre de communication digitale</h2>
             <ul style={{ listStyle: 'none', padding: 0, margin: '2rem 0', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
               <li style={{ display: 'flex', gap: '0.75rem' }}>
@@ -189,16 +196,16 @@ export default function FormationReseauxSociauxPage() {
       {/* CTA Final */}
       <section className="section" style={{ background: 'var(--blue-900)', color: 'white', textAlign: 'center' }}>
         <div className="container" style={{ maxWidth: '750px' }}>
-          <h2 style={{ color: 'white', marginBottom: '1.5rem' }}>Prêt(e) à faire décoller votre visibilité ?</h2>
+          <h2 style={{ color: 'white', marginBottom: '1.5rem' }}>Prêt(e) à faire de vos réseaux un véritable levier d&apos;acquisition ?</h2>
           <p style={{ color: 'var(--blue-100)', fontSize: '1.15rem', marginBottom: '2.5rem' }}>
-            Obtenez votre diagnostic gratuit de 15 minutes pour évaluer vos besoins et les possibilités de prise en charge financière.
+            Échangez directement avec un formateur pour auditer vos besoins et identifier les financements mobilisables.
           </p>
           <div style={{ display: 'flex', justifyContent: 'center', gap: '1rem', flexWrap: 'wrap' }}>
-            <Link href="/contact" className="btn btn-primary" style={{ background: 'var(--red-600)', color: 'white', padding: '1rem 2.5rem', fontWeight: 800 }}>
-              Demander un diagnostic gratuit (15 min) ⚡
+            <Link href="/contact?subject=Reseaux_Diagnostic" className="btn btn-primary" style={{ background: 'var(--red-600)', color: 'white', padding: '1rem 2.5rem', fontWeight: 800 }}>
+              Réserver mon diagnostic gratuit de 15 min ⚡
             </Link>
-            <a href="https://wa.me/33767246825" target="_blank" rel="noopener noreferrer" className="btn btn-ghost" style={{ color: '#25D366', borderColor: '#25D366' }}>
-              💬 WhatsApp direct
+            <a href="https://wa.me/33767246825?text=Bonjour%2C%20je%20souhaite%20%C3%AAtre%20rappel%C3%A9%20par%20un%20formateur%20sur%20la%20formation%20R%C3%A9seaux%20Sociaux." target="_blank" rel="noopener noreferrer" className="btn btn-ghost" style={{ color: 'white', borderColor: 'rgba(255,255,255,0.4)' }}>
+              📞 Être rappelé(e) par un formateur
             </a>
           </div>
         </div>

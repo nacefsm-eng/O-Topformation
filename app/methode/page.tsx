@@ -140,10 +140,14 @@ export default function MethodeTop() {
           <div className="cta-inner">
             <span className="label label-gold">Passez à l&apos;action</span>
             <h2 className="cta-title">Envie de maîtriser ces outils ?</h2>
-            <p className="cta-subtitle">Découvrez notre Formation Initiale TOP® pour intégrer ces techniques à votre quotidien professionnel et personnel.</p>
-            <div className="cta-actions">
-              <Link href="/formations/fi-top" className="btn btn-gold">Découvrir la formation →</Link>
-              <Link href="/contact" className="btn btn-outline-white">Nous contacter</Link>
+            <div className="cta-actions" style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap', marginBottom: '2rem' }}>
+              <Link href="/contact" className="btn btn-gold">Réserver mon diagnostic gratuit de 15 min ⚡</Link>
+              <Link href="/formations/fi-top" className="btn btn-outline-white">Découvrir la formation FI TOP® (21h)</Link>
+            </div>
+            <div style={{ background: 'rgba(255, 255, 255, 0.08)', borderRadius: '12px', padding: '1rem 1.5rem', textAlign: 'center', maxWidth: '800px', margin: '0 auto' }}>
+              <p style={{ margin: 0, fontSize: '0.85rem', color: 'rgba(255, 255, 255, 0.75)', lineHeight: 1.5 }}>
+                Ô’TOP Formation intervient avec son partenaire Eloqone, organisme certifié Qualiopi, qui porte les actions de formation et accompagne les démarches de financement. Les possibilités de prise en charge sont étudiées selon votre statut et restent soumises à l’accord de l’organisme financeur.
+              </p>
             </div>
           </div>
         </div>

@@ -24,9 +24,9 @@ export default function AProposPage() {
             <span className="breadcrumb-sep">›</span>
             <span>À Propos</span>
           </div>
-          <h1>L&apos;Alliance du Potentiel Humain et de la Puissance Digitale</h1>
+          <h1>L’IA et l’humain au service d’une performance durable.</h1>
           <p>
-            Fondé à Ollioules dans le Var, Ô&apos;TOP Formation est né d&apos;une conviction : la technologie ne doit pas vous épuiser, elle doit vous libérer du temps pour ce qui compte vraiment.
+            Ô’TOP Formation est né d’une conviction simple : le digital doit vous faire gagner du temps, de la clarté et de l’énergie — pas ajouter de la charge mentale.
           </p>
         </div>
       </section>
@@ -37,20 +37,23 @@ export default function AProposPage() {
           
           <div className="lg:col-span-7 space-y-6 text-slate-300 text-sm sm:text-base leading-relaxed">
             <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-blue-600/10 border border-blue-500/30 text-blue-400 text-xs font-bold uppercase tracking-wider">
-              Notre Genèse
+              Pourquoi nous existons
             </div>
             <h2 className="text-3xl sm:text-4xl font-black text-white tracking-tight">
-              Pourquoi avoir créé Ô&apos;TOP Formation ?
+              Réconcilier efficacité digitale et sérénité opérationnelle
             </h2>
             <p>
-              Dans un monde professionnel en accélération constante, les dirigeants, indépendants et salariés font face à un double défi : <strong>assimiler la révolution de l&apos;Intelligence Artificielle</strong> tout en préservant leur <strong>santé mentale et leur équilibre de vie</strong>.
+              Dans un quotidien pro saturé, intégrer les bons outils est devenu indispensable, mais cela ne doit pas se faire au détriment de l’équilibre des équipes.
             </p>
             <p>
-              Trop de formations au digital se résument à des vidéos théoriques impersonnelles où l&apos;apprenant reste livré à lui-même. À l&apos;inverse, les formations au bien-être négligent souvent la réalité économique et la productivité exigée par les entreprises.
+              Trop de formations au digital se limitent à des modules génériques sans application directe. À l’inverse, les démarches de bien-être ignorent souvent les impératifs de rentabilité et les contraintes quotidiennes des entreprises.
             </p>
             <p>
-              <strong>Ô&apos;TOP Formation fait le pont entre ces deux mondes.</strong> Nous associons l&apos;exigence des <em>Techniques d&apos;Optimisation du Potentiel (TOP®)</em> — issues des forces d&apos;élite et du sport de haut niveau — à la puissance de frappe des outils d&apos;IA générative les plus avancés (ChatGPT, Claude, n8n, Make).
+              <strong>Notre rôle :</strong> vous donner les clés pour automatiser ce qui doit l’être, structurer vos processus et préserver votre concentration et votre énergie au fil des semaines.
             </p>
+            <div className="p-4 rounded-xl bg-blue-950/40 border border-blue-500/30 text-xs text-blue-200">
+              ℹ️ Ô’TOP Formation intervient avec son partenaire Eloqone, organisme certifié Qualiopi, qui porte les actions de formation et accompagne les démarches de financement. Les possibilités de prise en charge sont étudiées selon votre statut et restent soumises à l’accord de l’organisme financeur.
+            </div>
           </div>
 
           <div className="lg:col-span-5 relative">
@@ -63,7 +66,7 @@ export default function AProposPage() {
               <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent" />
               <div className="absolute bottom-4 left-4 right-4 p-4 rounded-2xl bg-slate-950/85 backdrop-blur-md border border-slate-700 text-xs text-slate-300">
                 <span className="font-bold text-white block mb-0.5">Centre Pédagogique d&apos;Ollioules (Var)</span>
-                Espace Gamma 1, 139 Chemin des 2 Frères • Sessions en présentiel &amp; visio-coaching partout en France.
+                Espace Gamma 1, 139 Chemin des 2 Frères • Formations en présentiel &amp; accompagnement à distance partout en France.
               </div>
             </div>
           </div>
@@ -76,7 +79,7 @@ export default function AProposPage() {
         <div className="max-w-6xl mx-auto">
           
           <div className="text-center max-w-3xl mx-auto mb-14">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-bold uppercase tracking-wider mb-3">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-bold uppercase tracking-wider mb-3">
               Notre ADN
             </div>
             <h2 className="text-3xl sm:text-5xl font-black text-white">
@@ -90,9 +93,9 @@ export default function AProposPage() {
               <div className="w-12 h-12 rounded-2xl bg-blue-500/10 border border-blue-500/20 text-blue-400 flex items-center justify-center">
                 <Zap size={24} />
               </div>
-              <h3 className="text-xl font-bold text-white">1. Pragmatisme Zéro-Blabla</h3>
+              <h3 className="text-xl font-bold text-white">1. Clarté &amp; Pragmatisme</h3>
               <p className="text-slate-300 text-sm leading-relaxed">
-                Pas de théorie abstraite : chaque formation intègre <strong>5h de coaching individuel 1-to-1</strong> directement sur vos propres documents d&apos;entreprise pour construire vos assistants IA et vos automatisations sur-mesure.
+                Pas de jargon inutile. Des cas concrets, des outils configurés directement pour votre métier et du temps libéré dès les premières semaines.
               </p>
             </div>
 
@@ -100,9 +103,9 @@ export default function AProposPage() {
               <div className="w-12 h-12 rounded-2xl bg-amber-500/10 border border-amber-500/20 text-amber-400 flex items-center justify-center">
                 <HeartHandshake size={24} />
               </div>
-              <h3 className="text-xl font-bold text-white">2. Écologie Humaine &amp; Somatique</h3>
+              <h3 className="text-xl font-bold text-white">2. Équilibre &amp; Efficacité</h3>
               <p className="text-slate-300 text-sm leading-relaxed">
-                Gagner 15h par semaine avec l&apos;IA ne sert à rien si vous êtes en état de surchauffe. La méthode TOP® vous dote d&apos;outils respiratoires et cognitifs pour rester serein, lucide et concentré au quotidien.
+                Des méthodes reconnues (dont la méthode TOP®) pour mieux gérer la pression, maintenir un bon niveau d’énergie et travailler sereinement.
               </p>
             </div>
 
@@ -110,9 +113,9 @@ export default function AProposPage() {
               <div className="w-12 h-12 rounded-2xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 flex items-center justify-center">
                 <ShieldCheck size={24} />
               </div>
-              <h3 className="text-xl font-bold text-white">3. Financement &amp; Accessibilité 100%</h3>
+              <h3 className="text-xl font-bold text-white">3. Accompagnement Rigoureux</h3>
               <p className="text-slate-300 text-sm leading-relaxed">
-                En partenariat avec l&apos;organisme certifié Qualiopi <strong>Eloqone</strong>, nous gérons l&apos;intégralité de votre dossier OPCO ou FAF pour viser une prise en charge à 100% sans avance de trésorerie de votre poche.
+                Un suivi individuel avec nos formateurs et un accompagnement complet dans vos démarches de prise en charge, en partenariat avec l’organisme certifié Qualiopi Eloqone.
               </p>
             </div>
 

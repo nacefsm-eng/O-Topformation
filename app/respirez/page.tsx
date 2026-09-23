@@ -55,15 +55,15 @@ export default function MasterSalesPage() {
     description: 'Réservation immédiate de votre place + audit préalable de financement'
   });
 
-  // Inline Payment Section State
+  // Inline Registration & Payment Section State
   const [inlineSelectedPackage, setInlineSelectedPackage] = useState('ia-indep');
-  const [inlinePaymentOption, setInlinePaymentOption] = useState<'1x' | '3x' | 'opco'>('1x');
-  const [inlineCardNumber, setInlineCardNumber] = useState('');
-  const [inlineCardExpiry, setInlineCardExpiry] = useState('');
-  const [inlineCardCvc, setInlineCardCvc] = useState('');
-  const [inlineCardHolder, setInlineCardHolder] = useState('');
+  const [inlineModality, setInlineModality] = useState<'stripe' | 'opco' | 'virement'>('stripe');
+  const [inlineInstallments, setInlineInstallments] = useState<'1x' | '3x'>('1x');
+  const [inlineFullName, setInlineFullName] = useState('');
   const [inlineEmail, setInlineEmail] = useState('');
   const [inlinePhone, setInlinePhone] = useState('');
+  const [inlineStatus, setInlineStatus] = useState('independant');
+  const [inlineCompany, setInlineCompany] = useState('');
   const [inlineProcessing, setInlineProcessing] = useState(false);
   const [inlineSuccess, setInlineSuccess] = useState(false);
   const [inlineTxId, setInlineTxId] = useState('');
@@ -122,8 +122,8 @@ export default function MasterSalesPage() {
       duration: '16 heures de vidéos + 5h de coaching 1-to-1',
       modality: '100% en ligne • Accès 24/7 • Suivi individuel sur vos fichiers',
       funding: 'Finançable OPCO, FAF, CPF via partenaire Eloqone',
-      price: '1 490 € ou 100% financé',
-      desc: 'Maîtrisez ChatGPT, Claude, le prompting métier et l’automatisation pour rédiger vos contenus, traiter vos devis et récupérer 10h à 15h par semaine.',
+      price: '1 490 € (Prise en charge selon statut)',
+      desc: 'Maîtrisez ChatGPT, Claude, le prompting métier et l’automatisation pour rédiger vos contenus, traiter vos devis et récupérer un temps précieux chaque semaine.',
       points: [
         'Prompting avancé & ingénierie de requêtes sur-mesure',
         'Création de GPTs personnalisés sur vos propres documents',
@@ -145,7 +145,7 @@ export default function MasterSalesPage() {
       title: 'Intégration de l’IA en Entreprise & Workflows',
       duration: '14h à 35h sur-mesure (Distanciel ou Intra)',
       modality: 'Parcours collectif ou direction, blended learning',
-      funding: '100% éligible plan de développement compétences OPCO',
+      funding: 'Éligible plan de développement des compétences OPCO',
       price: 'Sur devis financé (ou acompte 150 €)',
       desc: 'Accompagnement d’équipes pour déployer l’IA : audit des flux avec la méthode STEP, automatisation n8n/Make sans code et conformité au règlement européen AI Act.',
       points: [
@@ -170,7 +170,7 @@ export default function MasterSalesPage() {
       duration: '11h+ de vidéos interactives + mise en situation',
       modality: '100% en ligne • Accès 24/7 • Cas pratiques réels',
       funding: 'Finançable OPCO, FAF, CPF via partenaire Eloqone',
-      price: '1 290 € ou 100% financé',
+      price: '1 290 € (Prise en charge selon statut)',
       desc: 'Professionnalisez votre présence digitale : apprenez à concevoir une charte graphique avec Canva, monter des vidéos CapCut percutantes et automatiser votre prospection sur LinkedIn et Meta.',
       points: [
         'Ligne éditoriale, branding et calendrier de contenu régulier',
@@ -194,7 +194,7 @@ export default function MasterSalesPage() {
       duration: '21 heures réparties (3 journées ou modules)',
       modality: 'Présentiel à Ollioules (Var) ou visio-conférence interactive',
       funding: 'Prise en charge OPCO / Plan de formation entreprise / FIFPL',
-      price: '890 € ou prise en charge OPCO',
+      price: '890 € (Éligible prise en charge OPCO/FAF)',
       desc: 'La méthode de référence issue de l’Armée de l’Air et du sport de haut niveau : boîtes à outils de respiration, relaxation somatique et imagerie mentale pour prévenir le burn-out et booster l’endurance cognitive.',
       points: [
         'Respiration relaxante, régulatrice et dynamisante',
@@ -235,10 +235,10 @@ export default function MasterSalesPage() {
       image: '/formation-presentiel.png',
       instructor: 'Mélissa JENNADI',
       instructorPhoto: '/team-melyssa.png',
-      instructorRole: 'Praticienne Thérapeutique',
-      badge: 'Thérapie Somatique • 100% Pratique',
+      instructorRole: 'Formatrice & Praticienne Bien-Être',
+      badge: 'Protocole Bien-Être • 100% Pratique',
       badgeColor: 'bg-rose-500/10 text-rose-400 border-rose-500/30',
-      title: 'Massage Thérapeutique aux Aimants',
+      title: 'Protocole de Bien-Être & Relaxation aux Aimants',
       duration: '1 journée complète (7h)',
       modality: 'Présentiel en institut à Ollioules (83)',
       funding: 'Financement individuel ou fonds artisans',
@@ -250,7 +250,7 @@ export default function MasterSalesPage() {
         'Pratique guidée en binôme avec validation des gestes',
         'Remise du protocole complet et du kit de démarrage'
       ],
-      whatsappMsg: 'Bonjour Mélissa, je souhaite m’inscrire à la journée massage aux aimants (280€).'
+      whatsappMsg: 'Bonjour Mélissa, je souhaite m’inscrire à la journée relaxation aux aimants (280€).'
     }
   ];
 
@@ -291,11 +291,11 @@ export default function MasterSalesPage() {
   const faqs = [
     {
       q: "Comment fonctionne la prise en charge financière (OPCO, FAF, CPF) ?",
-      a: "Ô'TOP Formation est un organisme déclaré (NDA en cours DREETS PACA) qui opère ses certifications officielles en partenariat avec l'organisme certifié Qualiopi Eloqone. Selon votre statut (salarié, indépendant, profession libérale, dirigeant), nous montons votre dossier pour viser une prise en charge à 100% de la formation."
+      a: "Ô’TOP Formation intervient avec son partenaire Eloqone, organisme certifié Qualiopi, qui porte les actions de formation et accompagne les démarches de financement. Les possibilités de prise en charge sont étudiées selon votre statut (salarié, indépendant, profession libérale, dirigeant) et restent soumises à l’accord de l’organisme financeur."
     },
     {
       q: "Puis-je régler directement par carte bancaire en 1 fois ou 3 fois ?",
-      a: "Oui ! Si vous préférez démarrer sans attendre l'accord OPCO ou si vous financez personnellement, vous pouvez régler en toute sécurité par Carte Bancaire en 1 fois ou 3 fois sans frais grâce à notre module sécurisé PCI-DSS."
+      a: "Oui. Vous pouvez régler par virement bancaire, ou via un lien direct sécurisé Stripe en 1 fois ou 3 fois sans frais, ou engager une demande de prise en charge OPCO/FAF avec notre accompagnement."
     },
     {
       q: "En quoi consistent les 5h de coaching individuel sur-mesure ?",
@@ -312,34 +312,14 @@ export default function MasterSalesPage() {
     setShowModal(true);
   };
 
-  const handleInlineCardSubmit = (e: React.FormEvent) => {
+  const handleInlineRegisterSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setInlineProcessing(true);
     setTimeout(() => {
       setInlineProcessing(false);
       setInlineTxId('OTOP-' + Math.random().toString(36).substring(2, 9).toUpperCase());
       setInlineSuccess(true);
-    }, 1600);
-  };
-
-  const formatCardNumber = (val: string) => {
-    const raw = val.replace(/\D/g, '').slice(0, 16);
-    return raw.replace(/(\d{4})(?=\d)/g, '$1 ');
-  };
-
-  const formatExpiry = (val: string) => {
-    let raw = val.replace(/\D/g, '').slice(0, 4);
-    if (raw.length >= 3) {
-      raw = raw.slice(0, 2) + '/' + raw.slice(2);
-    }
-    return raw;
-  };
-
-  const detectCardBrand = (val: string) => {
-    const clean = val.replace(/\s/g, '');
-    if (clean.startsWith('4')) return 'VISA';
-    if (/^(5[1-5]|2[2-7])/.test(clean)) return 'MASTERCARD';
-    return 'CB';
+    }, 1200);
   };
 
   const openModalWithPlan = (pkgKey: string) => {
@@ -780,20 +760,20 @@ export default function MasterSalesPage() {
       </section>
 
 
-      {/* ── 4. MODULE DE PAIEMENT SÉCURISÉ PAR CARTE BANCAIRE (LE CHECKOUT) ── */}
+      {/* ── 4. MODULE D'INSCRIPTION & RÈGLEMENT SÉCURISÉ ── */}
       <section id="paiement-carte" className="py-24 px-4 bg-slate-900/60 border-b border-slate-800 relative">
         <div className="max-w-4xl mx-auto">
           
           <div className="text-center max-w-2xl mx-auto mb-12">
             <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-blue-500/10 border border-blue-500/30 text-blue-400 text-xs font-bold uppercase tracking-wider mb-3">
-              <Lock size={13} />
-              <span>Règlement Direct &amp; Sécurisé SSL</span>
+              <ShieldCheck size={13} />
+              <span>Inscription &amp; Modalités Officielles</span>
             </div>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-              Paiement par Carte Bancaire
+              Inscription &amp; Modalités de Règlement
             </h2>
             <p className="mt-2 text-slate-400 text-sm">
-              Sélectionnez votre formule et validez votre inscription instantanément en 1 fois ou 3 fois sans frais.
+              Règlement sécurisé Stripe (1x ou 3x sans frais), dossier de prise en charge OPCO/FAF ou facture entreprise.
             </p>
           </div>
 
@@ -805,36 +785,48 @@ export default function MasterSalesPage() {
                   <CheckCircle2 size={36} />
                 </div>
                 <h3 className="text-2xl font-black text-white">
-                  Paiement Confirmé avec Succès !
+                  Demande Enregistrée avec Succès !
                 </h3>
-                <p className="text-slate-300 text-sm max-w-md mx-auto">
-                  Votre transaction réf. <span className="font-mono text-blue-300 font-bold">{inlineTxId}</span> a été acceptée. Un reçu fiscal et vos accès vous ont été expédiés par e-mail.
+                <div className="inline-block px-4 py-1.5 rounded-full bg-slate-800 border border-slate-700 font-mono text-sm text-blue-300 font-bold">
+                  Référence dossier : {inlineTxId}
+                </div>
+                <p className="text-slate-300 text-sm max-w-lg mx-auto leading-relaxed">
+                  {inlineModality === 'stripe' && (
+                    <>Votre dossier d&apos;inscription pour <strong>{currentPkg.title}</strong> a été validé. Un lien de paiement officiel sécurisé Stripe vous a été expédié par e-mail / SMS pour régler en {inlineInstallments === '3x' ? '3 fois sans frais' : '1 fois'}.</>
+                  )}
+                  {inlineModality === 'opco' && (
+                    <>Votre demande de dossier OPCO / FAF pour <strong>{currentPkg.title}</strong> a bien été enregistrée. Mélissa et notre partenaire certifié Qualiopi Eloqone préparent votre convention et devis sous 24h ouvrées.</>
+                  )}
+                  {inlineModality === 'virement' && (
+                    <>Votre demande de devis proforma pour <strong>{currentPkg.title}</strong> a été enregistrée. Notre service administratif vous transmet la convention et le RIB sous 24h ouvrées.</>
+                  )}
                 </p>
                 <div className="pt-4 flex flex-col sm:flex-row gap-3 justify-center">
                   <a
-                    href={`https://wa.me/33767246825?text=Bonjour%20M%C3%A9lissa,%20je%20viens%20d'effectuer%20mon%20paiement%20(${inlineTxId})%20sur%20le%20site.`}
+                    href={`https://wa.me/33767246825?text=Bonjour%20M%C3%A9lissa,%20je%20viens%20d'enregistrer%20mon%20inscription%20(${inlineTxId})%20sur%20le%20site.`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="px-6 py-3 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs"
+                    className="px-6 py-3 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs flex items-center justify-center gap-2"
                   >
-                    Confirmer à Mélissa sur WhatsApp 💬
+                    <MessageCircle size={15} />
+                    <span>Confirmer à Mélissa sur WhatsApp</span>
                   </a>
                   <button
                     type="button"
                     onClick={() => setInlineSuccess(false)}
-                    className="px-6 py-3 rounded-full bg-slate-800 text-slate-300 text-xs font-semibold"
+                    className="px-6 py-3 rounded-full bg-slate-800 text-slate-300 text-xs font-semibold cursor-pointer hover:bg-slate-700"
                   >
-                    Nouvelle transaction
+                    Nouvelle inscription
                   </button>
                 </div>
               </div>
             ) : (
-              <form onSubmit={handleInlineCardSubmit} className="space-y-6">
+              <form onSubmit={handleInlineRegisterSubmit} className="space-y-6">
                 
                 {/* 1. Sélection de la formation */}
                 <div>
                   <label className="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-2">
-                    1. Choisissez la formation ou l&apos;acompte à régler :
+                    1. Choisissez votre formation :
                   </label>
                   <select
                     value={inlineSelectedPackage}
@@ -845,192 +837,218 @@ export default function MasterSalesPage() {
                     <option value="ia-indep">Formation IA Générative RS6776 (1 490 € TTC)</option>
                     <option value="reseaux">Formation Réseaux Sociaux RS7351 (1 290 € TTC)</option>
                     <option value="fi-top">Formation Initiale FITOP® 21h (890 € TTC)</option>
-                    <option value="massage-aimants">Journée Massage aux Aimants (280 € TTC)</option>
+                    <option value="massage-aimants">Protocole Bien-Être aux Aimants (280 € TTC)</option>
                   </select>
                 </div>
 
                 {/* 2. Modalités de règlement */}
                 <div>
                   <label className="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-2">
-                    2. Modalité de paiement :
+                    2. Modalité souhaitée :
                   </label>
-                  <div className="grid grid-cols-3 gap-3">
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                     <button
                       type="button"
-                      onClick={() => setInlinePaymentOption('1x')}
-                      className={`p-3 rounded-xl border text-center transition-all cursor-pointer ${
-                        inlinePaymentOption === '1x'
+                      onClick={() => setInlineModality('stripe')}
+                      className={`p-3.5 rounded-xl border text-center transition-all cursor-pointer ${
+                        inlineModality === 'stripe'
                           ? 'bg-blue-600/20 border-blue-500 text-white shadow-md'
                           : 'bg-slate-900 border-slate-800 text-slate-300 hover:text-white'
                       }`}
                     >
-                      <span className="block text-xs font-bold">Paiement 1x</span>
-                      <span className="block text-sm font-extrabold text-blue-400 mt-0.5">{currentPkg.price} €</span>
+                      <span className="block text-xs font-bold">💳 Carte / Stripe</span>
+                      <span className="block text-xs text-blue-400 mt-1 font-semibold">1x ou 3x sans frais</span>
                     </button>
 
                     <button
                       type="button"
-                      onClick={() => setInlinePaymentOption('3x')}
-                      className={`p-3 rounded-xl border text-center transition-all cursor-pointer ${
-                        inlinePaymentOption === '3x'
-                          ? 'bg-indigo-600/20 border-indigo-500 text-white shadow-md'
-                          : 'bg-slate-900 border-slate-800 text-slate-300 hover:text-white'
-                      }`}
-                    >
-                      <span className="block text-xs font-bold">3x Sans Frais</span>
-                      <span className="block text-sm font-extrabold text-indigo-400 mt-0.5">3 × {calculatedMonthly} €</span>
-                    </button>
-
-                    <button
-                      type="button"
-                      onClick={() => setInlinePaymentOption('opco')}
-                      className={`p-3 rounded-xl border text-center transition-all cursor-pointer ${
-                        inlinePaymentOption === 'opco'
+                      onClick={() => setInlineModality('opco')}
+                      className={`p-3.5 rounded-xl border text-center transition-all cursor-pointer ${
+                        inlineModality === 'opco'
                           ? 'bg-amber-600/20 border-amber-500 text-white shadow-md'
                           : 'bg-slate-900 border-slate-800 text-slate-300 hover:text-white'
                       }`}
                     >
-                      <span className="block text-xs font-bold">Dossier OPCO/FAF</span>
-                      <span className="block text-xs font-bold text-amber-400 mt-0.5">0 € reste à charge</span>
+                      <span className="block text-xs font-bold">🏛️ Dossier OPCO / FAF</span>
+                      <span className="block text-xs text-amber-400 mt-1 font-semibold">Prise en charge étudiée</span>
+                    </button>
+
+                    <button
+                      type="button"
+                      onClick={() => setInlineModality('virement')}
+                      className={`p-3.5 rounded-xl border text-center transition-all cursor-pointer ${
+                        inlineModality === 'virement'
+                          ? 'bg-emerald-600/20 border-emerald-500 text-white shadow-md'
+                          : 'bg-slate-900 border-slate-800 text-slate-300 hover:text-white'
+                      }`}
+                    >
+                      <span className="block text-xs font-bold">📄 Devis Entreprise</span>
+                      <span className="block text-xs text-emerald-400 mt-1 font-semibold">Virement / Facture</span>
                     </button>
                   </div>
                 </div>
 
-                {inlinePaymentOption === 'opco' ? (
-                  <div className="p-5 rounded-2xl bg-amber-500/10 border border-amber-500/30 text-amber-300 text-xs leading-relaxed space-y-3">
-                    <div className="flex items-center gap-2 text-amber-400 font-bold text-sm">
-                      <ShieldCheck size={18} />
-                      <span>Montage de dossier OPCO / FAF pris en charge</span>
+                {/* Sub-choice for Stripe 1x vs 3x */}
+                {inlineModality === 'stripe' && (
+                  <div className="p-4 rounded-2xl bg-blue-950/30 border border-blue-500/30 space-y-3">
+                    <span className="text-xs font-bold text-blue-300 uppercase tracking-wider block">Échéancier Stripe :</span>
+                    <div className="grid grid-cols-2 gap-3">
+                      <button
+                        type="button"
+                        onClick={() => setInlineInstallments('1x')}
+                        className={`p-2.5 rounded-xl border text-center text-xs font-bold cursor-pointer ${
+                          inlineInstallments === '1x'
+                            ? 'bg-blue-600 text-white border-blue-400'
+                            : 'bg-slate-900 text-slate-300 border-slate-700'
+                        }`}
+                      >
+                        Paiement comptant : {currentPkg.price} €
+                      </button>
+                      <button
+                        type="button"
+                        onClick={() => setInlineInstallments('3x')}
+                        className={`p-2.5 rounded-xl border text-center text-xs font-bold cursor-pointer ${
+                          inlineInstallments === '3x'
+                            ? 'bg-blue-600 text-white border-blue-400'
+                            : 'bg-slate-900 text-slate-300 border-slate-700'
+                        }`}
+                      >
+                        3 fois sans frais : 3 × {calculatedMonthly} €
+                      </button>
                     </div>
-                    <p className="text-slate-200">
-                      Mélissa monte votre dossier de demande de subvention auprès de votre financeur pour vous éviter toute avance de trésorerie.
+                    <p className="text-[11px] text-slate-400">
+                      🔒 Le lien officiel et sécurisé de paiement Stripe vous sera expédié par e-mail et SMS après validation de vos coordonnées.
                     </p>
-                    <a
-                      href="tel:+33767246825"
-                      className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs shadow-md"
-                    >
-                      <span>Appeler Mélissa : 07 67 24 68 25</span>
-                    </a>
                   </div>
-                ) : (
-                  <>
-                    {/* Inputs Form */}
-                    <div className="space-y-4">
-                      <div>
-                        <label className="block text-xs font-semibold text-slate-300 mb-1">
-                          Numéro de carte bancaire *
-                        </label>
-                        <input
-                          type="text"
-                          required
-                          value={inlineCardNumber}
-                          onChange={(e) => setInlineCardNumber(formatCardNumber(e.target.value))}
-                          placeholder="4970 0000 0000 0000"
-                          className="w-full px-4 py-2.5 rounded-xl bg-slate-900 border border-slate-700 text-white font-mono text-sm focus:border-blue-500 outline-none"
-                        />
-                      </div>
-
-                      <div className="grid grid-cols-2 gap-3">
-                        <div>
-                          <label className="block text-xs font-semibold text-slate-300 mb-1">
-                            Date d&apos;expiration (MM/AA) *
-                          </label>
-                          <input
-                            type="text"
-                            required
-                            value={inlineCardExpiry}
-                            onChange={(e) => setInlineCardExpiry(formatExpiry(e.target.value))}
-                            placeholder="MM/AA"
-                            className="w-full px-4 py-2.5 rounded-xl bg-slate-900 border border-slate-700 text-white font-mono text-sm focus:border-blue-500 outline-none"
-                          />
-                        </div>
-                        <div>
-                          <label className="block text-xs font-semibold text-slate-300 mb-1">
-                            Cryptogramme CVC *
-                          </label>
-                          <input
-                            type="password"
-                            required
-                            value={inlineCardCvc}
-                            onChange={(e) => setInlineCardCvc(e.target.value.replace(/\D/g, '').slice(0, 3))}
-                            placeholder="123"
-                            maxLength={3}
-                            className="w-full px-4 py-2.5 rounded-xl bg-slate-900 border border-slate-700 text-white font-mono text-sm focus:border-blue-500 outline-none"
-                          />
-                        </div>
-                      </div>
-
-                      <div>
-                        <label className="block text-xs font-semibold text-slate-300 mb-1">
-                          Nom complet inscrit sur la carte *
-                        </label>
-                        <input
-                          type="text"
-                          required
-                          value={inlineCardHolder}
-                          onChange={(e) => setInlineCardHolder(e.target.value.toUpperCase())}
-                          placeholder="MARC DURAND"
-                          className="w-full px-4 py-2.5 rounded-xl bg-slate-900 border border-slate-700 text-white text-sm focus:border-blue-500 outline-none"
-                        />
-                      </div>
-
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                        <div>
-                          <label className="block text-xs font-semibold text-slate-300 mb-1">
-                            Email pour reçu &amp; convention *
-                          </label>
-                          <input
-                            type="email"
-                            required
-                            value={inlineEmail}
-                            onChange={(e) => setInlineEmail(e.target.value)}
-                            placeholder="votre.email@entreprise.fr"
-                            className="w-full px-4 py-2.5 rounded-xl bg-slate-900 border border-slate-700 text-white text-sm focus:border-blue-500 outline-none"
-                          />
-                        </div>
-                        <div>
-                          <label className="block text-xs font-semibold text-slate-300 mb-1">
-                            Téléphone pour code 3D-Secure *
-                          </label>
-                          <input
-                            type="tel"
-                            required
-                            value={inlinePhone}
-                            onChange={(e) => setInlinePhone(e.target.value)}
-                            placeholder="06 XX XX XX XX"
-                            className="w-full px-4 py-2.5 rounded-xl bg-slate-900 border border-slate-700 text-white text-sm focus:border-blue-500 outline-none"
-                          />
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Submit Button */}
-                    <button
-                      type="submit"
-                      disabled={inlineProcessing}
-                      className="w-full py-4 rounded-2xl bg-gradient-to-r from-blue-600 via-indigo-600 to-cyan-600 hover:from-blue-500 hover:to-cyan-500 text-white font-black text-base shadow-xl shadow-blue-600/30 transition-all flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50"
-                    >
-                      {inlineProcessing ? (
-                        <>
-                          <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-                          <span>Validation bancaire 3D-Secure...</span>
-                        </>
-                      ) : (
-                        <>
-                          <Lock size={18} />
-                          <span>
-                            Valider le règlement de {inlinePaymentOption === '3x' ? `${calculatedMonthly} € (1/3)` : `${currentPkg.price} €`}
-                          </span>
-                        </>
-                      )}
-                    </button>
-                  </>
                 )}
 
-                <div className="pt-2 border-t border-slate-800 text-center text-xs text-slate-400 flex flex-wrap items-center justify-center gap-4">
-                  <span className="flex items-center gap-1">🔒 Chiffrement SSL 256-bit</span>
-                  <span className="flex items-center gap-1">🛡️ Conforme PCI-DSS</span>
-                  <span className="flex items-center gap-1">✅ Garantie de conformité</span>
+                {/* Information for OPCO */}
+                {inlineModality === 'opco' && (
+                  <div className="p-4 rounded-2xl bg-amber-500/10 border border-amber-500/30 text-amber-200 text-xs leading-relaxed space-y-2">
+                    <p className="font-semibold text-amber-300">
+                      Montage et accompagnement du dossier de financement :
+                    </p>
+                    <p className="text-slate-300 text-[11px]">
+                      Ô’TOP Formation intervient avec son partenaire Eloqone, organisme certifié Qualiopi, qui porte les actions de formation et accompagne les démarches de financement. Les possibilités de prise en charge sont étudiées selon votre statut et restent soumises à l’accord de l’organisme financeur.
+                    </p>
+                  </div>
+                )}
+
+                {/* Information for Virement / Devis */}
+                {inlineModality === 'virement' && (
+                  <div className="p-4 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-200 text-xs leading-relaxed">
+                    <p className="font-semibold text-emerald-300">Facture proforma avec convention de formation :</p>
+                    <p className="text-slate-300 text-[11px]">
+                      Votre convention et le RIB de l&apos;organisme vous seront adressés sous 24h ouvrées. Règlement par virement bancaire SEPA.
+                    </p>
+                  </div>
+                )}
+
+                {/* Coordonnées du participant */}
+                <div className="space-y-4 pt-2">
+                  <span className="text-xs font-bold text-slate-300 uppercase tracking-wider block">
+                    3. Vos coordonnées professionnelles :
+                  </span>
+                  <div>
+                    <label className="block text-xs font-semibold text-slate-300 mb-1">
+                      Nom et Prénom *
+                    </label>
+                    <input
+                      type="text"
+                      required
+                      value={inlineFullName}
+                      onChange={(e) => setInlineFullName(e.target.value)}
+                      placeholder="Jean Dupont"
+                      className="w-full px-4 py-2.5 rounded-xl bg-slate-900 border border-slate-700 text-white text-sm focus:border-blue-500 outline-none"
+                    />
+                  </div>
+
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    <div>
+                      <label className="block text-xs font-semibold text-slate-300 mb-1">
+                        Adresse e-mail *
+                      </label>
+                      <input
+                        type="email"
+                        required
+                        value={inlineEmail}
+                        onChange={(e) => setInlineEmail(e.target.value)}
+                        placeholder="jean.dupont@entreprise.fr"
+                        className="w-full px-4 py-2.5 rounded-xl bg-slate-900 border border-slate-700 text-white text-sm focus:border-blue-500 outline-none"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-xs font-semibold text-slate-300 mb-1">
+                        Numéro de téléphone *
+                      </label>
+                      <input
+                        type="tel"
+                        required
+                        value={inlinePhone}
+                        onChange={(e) => setInlinePhone(e.target.value)}
+                        placeholder="06 12 34 56 78"
+                        className="w-full px-4 py-2.5 rounded-xl bg-slate-900 border border-slate-700 text-white text-sm focus:border-blue-500 outline-none"
+                      />
+                    </div>
+                  </div>
+
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    <div>
+                      <label className="block text-xs font-semibold text-slate-300 mb-1">
+                        Statut professionnel *
+                      </label>
+                      <select
+                        value={inlineStatus}
+                        onChange={(e) => setInlineStatus(e.target.value)}
+                        className="w-full px-4 py-2.5 rounded-xl bg-slate-900 border border-slate-700 text-white text-sm focus:border-blue-500 outline-none"
+                      >
+                        <option value="independant">Indépendant / Libéral (FIF-PL / Agefice)</option>
+                        <option value="dirigeant">Chef d&apos;entreprise / Dirigeant</option>
+                        <option value="salarie">Salarié d&apos;entreprise (OPCO)</option>
+                        <option value="demandeur">Demandeur d&apos;emploi</option>
+                        <option value="autre">Financement individuel personnel</option>
+                      </select>
+                    </div>
+                    <div>
+                      <label className="block text-xs font-semibold text-slate-300 mb-1">
+                        Entreprise / Raison sociale (optionnel)
+                      </label>
+                      <input
+                        type="text"
+                        value={inlineCompany}
+                        onChange={(e) => setInlineCompany(e.target.value)}
+                        placeholder="Nom de l'entreprise"
+                        className="w-full px-4 py-2.5 rounded-xl bg-slate-900 border border-slate-700 text-white text-sm focus:border-blue-500 outline-none"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                {/* Submit Button */}
+                <button
+                  type="submit"
+                  disabled={inlineProcessing}
+                  className="w-full py-4 rounded-2xl bg-gradient-to-r from-blue-600 via-indigo-600 to-cyan-600 hover:from-blue-500 hover:to-cyan-500 text-white font-black text-base shadow-xl shadow-blue-600/30 transition-all flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50"
+                >
+                  {inlineProcessing ? (
+                    <>
+                      <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                      <span>Enregistrement de votre demande...</span>
+                    </>
+                  ) : (
+                    <>
+                      <ShieldCheck size={18} />
+                      <span>
+                        {inlineModality === 'stripe' && `Valider et générer mon lien Stripe (${inlineInstallments === '3x' ? `3 × ${calculatedMonthly} €` : `${currentPkg.price} €`}) ⚡`}
+                        {inlineModality === 'opco' && 'Transmettre ma demande de dossier OPCO / FAF ⚡'}
+                        {inlineModality === 'virement' && 'Demander mon devis et convention par virement ⚡'}
+                      </span>
+                    </>
+                  )}
+                </button>
+
+                <div className="pt-2 border-t border-slate-800 text-center text-[11px] text-slate-500 leading-relaxed">
+                  Ô’TOP Formation intervient avec son partenaire Eloqone, organisme certifié Qualiopi, qui porte les actions de formation et accompagne les démarches de financement. Les possibilités de prise en charge sont étudiées selon votre statut et restent soumises à l’accord de l’organisme financeur.
                 </div>
 
               </form>
@@ -1139,16 +1157,21 @@ export default function MasterSalesPage() {
 
       {/* ── 7. FOOTER LÉGAL & CONTACT ── */}
       <footer className="py-12 px-4 bg-black border-t border-slate-900 text-slate-400 text-xs leading-relaxed">
-        <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div>
-            <strong>Ô&apos;TOP FORMATIONS</strong> — Espace Gamma 1, 139 Chemin des 2 Frères, 83190 Ollioules (Var) • Mélissa : 07 67 24 68 25 • Renaud : 06 74 79 75 09 • SIRET : 990 443 186 00012
+        <div className="max-w-6xl mx-auto space-y-4">
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div>
+              <strong>Ô&apos;TOP FORMATIONS</strong> — Espace Gamma 1, 139 Chemin des 2 Frères, 83190 Ollioules (Var) • Mélissa : 07 67 24 68 25 • Renaud : 06 74 79 75 09 • SIRET : 990 443 186 00012
+            </div>
+            <div className="flex gap-4">
+              <Link href="/" className="hover:text-white">Accueil</Link>
+              <Link href="/formations/ia" className="hover:text-white">Formations IA</Link>
+              <Link href="/formations/fi-top" className="hover:text-white">Méthode TOP®</Link>
+              <Link href="/contact" className="hover:text-white">Contact</Link>
+            </div>
           </div>
-          <div className="flex gap-4">
-            <Link href="/" className="hover:text-white">Accueil</Link>
-            <Link href="/formations/ia" className="hover:text-white">Formations IA</Link>
-            <Link href="/formations/fi-top" className="hover:text-white">Méthode TOP®</Link>
-            <Link href="/contact" className="hover:text-white">Contact</Link>
-          </div>
+          <p className="text-[11px] text-slate-500 border-t border-slate-900 pt-3 text-center sm:text-left">
+            Ô’TOP Formation intervient avec son partenaire Eloqone, organisme certifié Qualiopi, qui porte les actions de formation et accompagne les démarches de financement. Les possibilités de prise en charge sont étudiées selon votre statut et restent soumises à l’accord de l’organisme financeur.
+          </p>
         </div>
       </footer>
 

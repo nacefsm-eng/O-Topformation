@@ -100,7 +100,7 @@ export default function Footer() {
         <div className="footer-bottom">
           <p>© {new Date().getFullYear()} Ô&apos;TOP Formation — SAS Ô&apos;TOP Formation • SIRET : 990 443 186 00012 • NAF : 8559A • RCS Toulon. Tous droits réservés.</p>
           <span className="footer-nda" style={{ color: 'var(--gold-light)' }}>
-            Ô&apos;TOP Formation intervient avec l&apos;organisme partenaire Eloqone, certifié Qualiopi, qui porte les actions de formation et les démarches de financement. NDA Ô&apos;TOP Formation en cours d&apos;attribution.
+            Ô’TOP Formation intervient avec son partenaire Eloqone, organisme certifié Qualiopi, qui porte les actions de formation et accompagne les démarches de financement. Les possibilités de prise en charge sont étudiées selon votre statut et restent soumises à l’accord de l’organisme financeur.
           </span>
         </div>
       </div>
