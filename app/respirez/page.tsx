@@ -112,6 +112,10 @@ export default function MasterSalesPage() {
       id: 'rs6776',
       track: 'ia',
       pkgKey: 'ia-indep',
+      image: '/card-ai.jpg',
+      instructor: 'Renaud',
+      instructorPhoto: '/team-renaud.jpg',
+      instructorRole: 'Directeur Pédagogique IA',
       badge: 'Certification France Compétences RS6776',
       badgeColor: 'bg-cyan-500/10 text-cyan-400 border-cyan-500/30',
       title: 'IA Générative pour Indépendants & Dirigeants',
@@ -132,6 +136,10 @@ export default function MasterSalesPage() {
       id: 'rs7344',
       track: 'ia',
       pkgKey: 'acompte',
+      image: '/formation-ai-dev.jpg',
+      instructor: 'Renaud',
+      instructorPhoto: '/team-renaud.jpg',
+      instructorRole: 'Directeur Pédagogique IA',
       badge: 'Certification France Compétences RS7344',
       badgeColor: 'bg-indigo-500/10 text-indigo-400 border-indigo-500/30',
       title: 'Intégration de l’IA en Entreprise & Workflows',
@@ -152,6 +160,10 @@ export default function MasterSalesPage() {
       id: 'rs7351',
       track: 'reseaux',
       pkgKey: 'reseaux',
+      image: '/formation-social-growth.jpg',
+      instructor: 'Renaud & Mélissa',
+      instructorPhoto: '/team-melyssa.png',
+      instructorRole: 'Création Contenu & Acquisition',
       badge: 'Préparation Certification RS7351',
       badgeColor: 'bg-pink-500/10 text-pink-400 border-pink-500/30',
       title: 'Développer son Activité avec les Réseaux Sociaux',
@@ -172,6 +184,10 @@ export default function MasterSalesPage() {
       id: 'fi-top',
       track: 'top',
       pkgKey: 'fi-top',
+      image: '/card-top.jpg',
+      instructor: 'Mélissa JENNADI',
+      instructorPhoto: '/team-melyssa.png',
+      instructorRole: 'Présidente & Formatrice TOP®',
       badge: 'Méthode Officielle PERRAULT-PIERRE • Reconnue',
       badgeColor: 'bg-amber-500/10 text-amber-400 border-amber-500/30',
       title: 'Formation Initiale aux TOP® (FITOP 21h)',
@@ -192,6 +208,10 @@ export default function MasterSalesPage() {
       id: 'fb-top',
       track: 'top',
       pkgKey: 'acompte',
+      image: '/hero-workshop.jpg',
+      instructor: 'Mélissa JENNADI',
+      instructorPhoto: '/team-melyssa.png',
+      instructorRole: 'Formatrice TOP® Certifiée',
       badge: 'Module Découverte Express • 1 Journée',
       badgeColor: 'bg-emerald-500/10 text-emerald-400 border-emerald-500/30',
       title: 'Formation Flash TOP (FB-TOP 7h)',
@@ -212,6 +232,10 @@ export default function MasterSalesPage() {
       id: 'massage-aimants',
       track: 'therapie',
       pkgKey: 'massage-aimants',
+      image: '/formation-presentiel.png',
+      instructor: 'Mélissa JENNADI',
+      instructorPhoto: '/team-melyssa.png',
+      instructorRole: 'Praticienne Thérapeutique',
       badge: 'Thérapie Somatique • 100% Pratique',
       badgeColor: 'bg-rose-500/10 text-rose-400 border-rose-500/30',
       title: 'Massage Thérapeutique aux Aimants',
@@ -318,62 +342,198 @@ export default function MasterSalesPage() {
   return (
     <div className="min-h-screen bg-slate-950 text-slate-100 selection:bg-blue-600 selection:text-white font-sans">
       
-      {/* ── 1. HERO DIRECT, ÉPURÉ & AUTHENTIQUE ── */}
+      {/* ── 1. HERO DYNAMIQUE, ACTIF & VISUEL AVEC PHOTOS RÉELLES ── */}
       <section className="relative pt-16 pb-20 md:pt-24 md:pb-28 px-4 overflow-hidden border-b border-slate-800 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-blue-900/30 via-slate-950 to-slate-950">
-        
-        <div className="max-w-6xl mx-auto relative z-10 text-center">
+        <div className="max-w-7xl mx-auto relative z-10">
           
-          {/* Badge officiel de confiance */}
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-blue-500/30 bg-blue-950/60 text-blue-300 text-xs sm:text-sm font-bold uppercase tracking-wider mb-6 shadow-lg">
-            <Sparkles className="w-4 h-4 text-amber-400" />
-            <span>Ô&apos;TOP Formation • IA • Réseaux Sociaux • Méthode TOP®</span>
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            
+            {/* Left Content Column */}
+            <div className="lg:col-span-7 text-center lg:text-left">
+              
+              {/* Badge officiel de confiance */}
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-blue-500/30 bg-blue-950/60 text-blue-300 text-xs sm:text-sm font-bold uppercase tracking-wider mb-6 shadow-lg">
+                <Sparkles className="w-4 h-4 text-amber-400" />
+                <span>Catalogue Officiel 2026 • Inscriptions Immédiates</span>
+              </div>
+
+              <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-[1.12]">
+                Respirez à nouveau. Développez votre activité <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-300 to-amber-300">sans vous épuiser</span>.
+              </h1>
+
+              <p className="mt-6 text-base sm:text-lg text-slate-300 leading-relaxed max-w-2xl mx-auto lg:mx-0">
+                Formations certifiantes en <strong>IA Générative</strong>, <strong>Réseaux Sociaux</strong> et <strong>Méthode TOP®</strong> avec <strong>5h de coaching individuel 1-to-1 inclus</strong> sur vos propres documents.
+              </p>
+
+              {/* 4 Trust Metric Cards */}
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-8 text-left">
+                <div className="p-3.5 rounded-2xl bg-slate-900/90 border border-slate-800 shadow-md">
+                  <div className="text-xl sm:text-2xl font-black text-cyan-400">3 Titres RS</div>
+                  <div className="text-[11px] font-semibold text-slate-400 mt-0.5">France Compétences</div>
+                </div>
+                <div className="p-3.5 rounded-2xl bg-slate-900/90 border border-slate-800 shadow-md">
+                  <div className="text-xl sm:text-2xl font-black text-emerald-400">Finançable</div>
+                  <div className="text-[11px] font-semibold text-slate-400 mt-0.5">OPCO / FAF / FIFPL</div>
+                </div>
+                <div className="p-3.5 rounded-2xl bg-slate-900/90 border border-slate-800 shadow-md">
+                  <div className="text-xl sm:text-2xl font-black text-amber-400">5h Coaching</div>
+                  <div className="text-[11px] font-semibold text-slate-400 mt-0.5">Individuel 1-to-1 inclus</div>
+                </div>
+                <div className="p-3.5 rounded-2xl bg-slate-900/90 border border-slate-800 shadow-md">
+                  <div className="text-xl sm:text-2xl font-black text-blue-400">CB 1x / 3x</div>
+                  <div className="text-[11px] font-semibold text-slate-400 mt-0.5">Sans frais sécurisé</div>
+                </div>
+              </div>
+
+              {/* Quick CTAs */}
+              <div className="mt-8 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3.5">
+                <a
+                  href="#paiement-carte"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-2xl bg-gradient-to-r from-blue-600 via-indigo-600 to-cyan-600 hover:from-blue-500 hover:to-cyan-500 text-white font-extrabold text-sm shadow-xl shadow-blue-600/30 transition-all cursor-pointer"
+                >
+                  <CreditCard size={17} />
+                  <span>S&apos;inscrire &amp; Régler par Carte 💳</span>
+                </a>
+                <a
+                  href="#catalogue"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-2xl bg-slate-900 hover:bg-slate-800 text-slate-200 border border-slate-700 text-sm font-bold transition-all cursor-pointer"
+                >
+                  <span>Explorer les 6 formations ↓</span>
+                </a>
+              </div>
+
+            </div>
+
+            {/* Right Interactive Visual Showcase */}
+            <div className="lg:col-span-5 relative">
+              <div className="relative rounded-3xl overflow-hidden border-2 border-blue-500/30 shadow-2xl bg-slate-900 group">
+                <div className="h-72 sm:h-96 w-full relative overflow-hidden">
+                  <img 
+                    src="/hero-ai-workspace.jpg" 
+                    alt="Atelier et coaching individuel IA et Digital O'TOP Formation" 
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent" />
+                  
+                  {/* Top Floating Badge */}
+                  <div className="absolute top-4 left-4 inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-950/80 backdrop-blur-md border border-emerald-500/40 text-emerald-400 text-xs font-bold shadow-lg">
+                    <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                    <span>Sessions Ouvertes • Places Limitées</span>
+                  </div>
+
+                  {/* Overlaid Bottom Card */}
+                  <div className="absolute bottom-4 left-4 right-4 p-4 rounded-2xl bg-slate-950/85 backdrop-blur-md border border-slate-700/80 space-y-2">
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-2">
+                        <div className="flex -space-x-2">
+                          <img src="/team-renaud.jpg" alt="Renaud" className="w-8 h-8 rounded-full border-2 border-blue-400 object-cover" />
+                          <img src="/team-melyssa.png" alt="Mélissa" className="w-8 h-8 rounded-full border-2 border-amber-400 object-cover" />
+                        </div>
+                        <span className="text-xs font-bold text-white">Mentorat 1-to-1</span>
+                      </div>
+                      <span className="text-xs font-extrabold text-amber-400">★ 4.9/5 (120+ avis)</span>
+                    </div>
+                    <p className="text-[11px] text-slate-300 leading-snug">
+                      « 5 heures en direct sur vos vrais fichiers pour automatiser vos tâches et démultiplier vos résultats sans coder. »
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
           </div>
 
-          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-[1.15] max-w-4xl mx-auto">
-            Respirez à nouveau. Développez votre activité <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-300 to-amber-300">sans vous épuiser</span>.
-          </h1>
+        </div>
+      </section>
 
-          <p className="mt-6 text-base sm:text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed">
-            Que ce soit pour automatiser vos tâches grâce à l&apos;IA, booster votre visibilité sur les réseaux sociaux ou réguler votre stress avec la Méthode TOP®, bénéficiez d&apos;un accompagnement humain concret et finançable selon vos droits.
-          </p>
+      {/* ── 1.1 BANDEAU D'IMPACT EN CHIFFRES CLÉS ── */}
+      <section className="py-8 px-4 bg-slate-900/60 border-b border-slate-800">
+        <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+          <div className="p-3">
+            <div className="text-2xl sm:text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">+15h / sem.</div>
+            <div className="text-xs text-slate-400 mt-1 font-medium">Temps moyen libéré par apprenant</div>
+          </div>
+          <div className="p-3">
+            <div className="text-2xl sm:text-3xl font-black text-emerald-400">100% Finançable</div>
+            <div className="text-xs text-slate-400 mt-1 font-medium">Dossiers OPCO / FAF instruits</div>
+          </div>
+          <div className="p-3">
+            <div className="text-2xl sm:text-3xl font-black text-amber-400">1-to-1 Réel</div>
+            <div className="text-xs text-slate-400 mt-1 font-medium">5h de visio personnalisée incluse</div>
+          </div>
+          <div className="p-3">
+            <div className="text-2xl sm:text-3xl font-black text-indigo-400">3 Titres RS</div>
+            <div className="text-xs text-slate-400 mt-1 font-medium">Répertoire Spécifique officiel</div>
+          </div>
+        </div>
+      </section>
 
-          {/* 3 Metric Pills */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-3.5 mt-10 max-w-4xl mx-auto text-left">
-            <div className="p-4 rounded-2xl bg-slate-900/90 border border-slate-800 shadow-md">
-              <div className="text-2xl sm:text-3xl font-black text-cyan-400">3 Titres RS</div>
-              <div className="text-xs font-semibold text-slate-400 mt-0.5">France Compétences</div>
+      {/* ── 1.2 DANS LES COULISSES DE VOS FORMATIONS (BENTO PHOTOS RÉELLES) ── */}
+      <section className="py-16 px-4 bg-slate-950 border-b border-slate-800">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center max-w-2xl mx-auto mb-10">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-400/20 text-blue-400 text-xs font-bold uppercase tracking-wider mb-2">
+              📸 Immersion Concrète
             </div>
-            <div className="p-4 rounded-2xl bg-slate-900/90 border border-slate-800 shadow-md">
-              <div className="text-2xl sm:text-3xl font-black text-emerald-400">Finançable</div>
-              <div className="text-xs font-semibold text-slate-400 mt-0.5">OPCO / FAF / FIFPL / CPF</div>
-            </div>
-            <div className="p-4 rounded-2xl bg-slate-900/90 border border-slate-800 shadow-md">
-              <div className="text-2xl sm:text-3xl font-black text-amber-400">5h Coaching</div>
-              <div className="text-xs font-semibold text-slate-400 mt-0.5">Individuel 1-to-1 inclus</div>
-            </div>
-            <div className="p-4 rounded-2xl bg-slate-900/90 border border-slate-800 shadow-md">
-              <div className="text-2xl sm:text-3xl font-black text-blue-400">CB 1x / 3x</div>
-              <div className="text-xs font-semibold text-slate-400 mt-0.5">Paiement en ligne sécurisé</div>
-            </div>
+            <h2 className="text-2xl sm:text-4xl font-extrabold text-white">
+              Dans les Coulisses de vos Formations
+            </h2>
+            <p className="mt-2 text-slate-400 text-xs sm:text-sm">
+              Des méthodes éprouvées, un encadrement bienveillant et des outils professionnels immédiatement exploitables.
+            </p>
           </div>
 
-          {/* Quick CTAs */}
-          <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a
-              href="#paiement-carte"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-2xl bg-gradient-to-r from-blue-600 via-indigo-600 to-cyan-600 hover:from-blue-500 hover:to-cyan-500 text-white font-extrabold text-sm sm:text-base shadow-xl shadow-blue-600/30 transition-all"
-            >
-              <CreditCard size={18} />
-              <span>S&apos;inscrire ou Régler par Carte Bancaire 💳</span>
-            </a>
-            <a
-              href="#catalogue"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-2xl bg-slate-900 hover:bg-slate-800 text-slate-200 border border-slate-800 text-sm sm:text-base font-bold transition-all"
-            >
-              <span>Consulter les parcours &amp; tarifs ↓</span>
-            </a>
-          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            
+            <div className="rounded-2xl overflow-hidden border border-slate-800 bg-slate-900 group shadow-lg">
+              <div className="h-44 overflow-hidden relative">
+                <img src="/formation-ai-dev.jpg" alt="Atelier IA et automatisation" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent" />
+                <span className="absolute bottom-2 left-2 text-[10px] font-bold px-2 py-0.5 rounded bg-blue-600/90 text-white">IA &amp; Automatisation</span>
+              </div>
+              <div className="p-3.5">
+                <h4 className="font-bold text-white text-xs mb-1">GPTs &amp; Workflows Métiers</h4>
+                <p className="text-[11px] text-slate-400 leading-snug">Création d&apos;assistants sur-mesure connectés à vos logiciels sans coder.</p>
+              </div>
+            </div>
 
+            <div className="rounded-2xl overflow-hidden border border-slate-800 bg-slate-900 group shadow-lg">
+              <div className="h-44 overflow-hidden relative">
+                <img src="/hero-workshop.jpg" alt="Atelier Méthode TOP gestion du stress" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent" />
+                <span className="absolute bottom-2 left-2 text-[10px] font-bold px-2 py-0.5 rounded bg-amber-600/90 text-white">Méthode TOP®</span>
+              </div>
+              <div className="p-3.5">
+                <h4 className="font-bold text-white text-xs mb-1">Régulation du Stress</h4>
+                <p className="text-[11px] text-slate-400 leading-snug">Techniques de respiration et de récupération flash issues des forces d&apos;élite.</p>
+              </div>
+            </div>
+
+            <div className="rounded-2xl overflow-hidden border border-slate-800 bg-slate-900 group shadow-lg">
+              <div className="h-44 overflow-hidden relative">
+                <img src="/formation-social-growth.jpg" alt="Production de contenu et réseaux sociaux" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent" />
+                <span className="absolute bottom-2 left-2 text-[10px] font-bold px-2 py-0.5 rounded bg-pink-600/90 text-white">Réseaux Sociaux</span>
+              </div>
+              <div className="p-3.5">
+                <h4 className="font-bold text-white text-xs mb-1">Canva, CapCut &amp; Prospection</h4>
+                <p className="text-[11px] text-slate-400 leading-snug">Visuels pro, montages vidéo percutants et acquisition LinkedIn Waalaxy.</p>
+              </div>
+            </div>
+
+            <div className="rounded-2xl overflow-hidden border border-slate-800 bg-slate-900 group shadow-lg">
+              <div className="h-44 overflow-hidden relative">
+                <img src="/formation-presentiel.png" alt="Centre et institut de formation Ollioules" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent" />
+                <span className="absolute bottom-2 left-2 text-[10px] font-bold px-2 py-0.5 rounded bg-rose-600/90 text-white">Institut Ollioules</span>
+              </div>
+              <div className="p-3.5">
+                <h4 className="font-bold text-white text-xs mb-1">Sessions Présentielles</h4>
+                <p className="text-[11px] text-slate-400 leading-snug">Pratique concrète dans notre centre à Ollioules (Var) ou en intra-entreprise.</p>
+              </div>
+            </div>
+
+          </div>
         </div>
       </section>
 
@@ -499,87 +659,112 @@ export default function MasterSalesPage() {
           </div>
 
           {/* Formations Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {filteredFormations.map(formation => (
               <div
                 key={formation.id}
-                className="rounded-3xl bg-slate-900 border border-slate-800 hover:border-blue-500/40 transition-all p-6 sm:p-8 flex flex-col justify-between shadow-xl relative group"
+                className="rounded-3xl bg-slate-900 border border-slate-800 hover:border-blue-500/50 transition-all overflow-hidden flex flex-col justify-between shadow-2xl relative group"
               >
-                <div>
-                  <div className="flex items-start justify-between gap-3 mb-4">
-                    <span className={`text-xs font-bold px-3 py-1 rounded-full border ${formation.badgeColor}`}>
+                {/* Real High-Res Cover Image with Overlaid Badges */}
+                <div className="relative h-52 sm:h-60 w-full overflow-hidden">
+                  <img 
+                    src={formation.image} 
+                    alt={formation.title} 
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent" />
+                  
+                  {/* Top Floating Badges */}
+                  <div className="absolute top-3.5 left-3.5 right-3.5 flex items-start justify-between gap-2 z-10">
+                    <span className={`text-[11px] font-bold px-3 py-1 rounded-full border backdrop-blur-md shadow-md ${formation.badgeColor}`}>
                       {formation.badge}
                     </span>
-                    <span className="text-xs font-semibold text-emerald-400 bg-emerald-500/10 px-2.5 py-1 rounded-lg border border-emerald-500/20 whitespace-nowrap">
+                    <span className="text-xs font-black text-emerald-300 bg-slate-950/90 backdrop-blur-md px-3 py-1 rounded-lg border border-emerald-500/40 whitespace-nowrap shadow-md">
                       {formation.price}
                     </span>
                   </div>
 
-                  <h3 className="text-xl sm:text-2xl font-bold text-white mb-2 group-hover:text-blue-400 transition-colors">
-                    {formation.title}
-                  </h3>
-                  <p className="text-slate-300 text-sm leading-relaxed mb-4">
-                    {formation.desc}
-                  </p>
-
-                  <div className="space-y-2 py-3 border-y border-slate-800/80 my-4 text-xs">
-                    <div className="flex items-center gap-2 text-amber-300 font-semibold">
-                      <Clock size={15} className="shrink-0 text-amber-400" />
-                      <span><strong>Durée :</strong> {formation.duration}</span>
-                    </div>
-                    <div className="flex items-center gap-2 text-slate-300">
-                      <MapPin size={15} className="shrink-0 text-blue-400" />
-                      <span><strong>Format :</strong> {formation.modality}</span>
-                    </div>
-                    <div className="flex items-center gap-2 text-emerald-300 font-medium">
-                      <Coins size={15} className="shrink-0 text-emerald-400" />
-                      <span><strong>Financement :</strong> {formation.funding}</span>
-                    </div>
+                  {/* Instructor Chip in Image */}
+                  <div className="absolute bottom-3 left-3 flex items-center gap-2 p-1.5 pr-3.5 rounded-full bg-slate-950/85 backdrop-blur-md border border-slate-700/80 z-10">
+                    <img 
+                      src={formation.instructorPhoto} 
+                      alt={formation.instructor} 
+                      className="w-7 h-7 rounded-full object-cover border border-blue-400"
+                    />
+                    <span className="text-xs font-bold text-white">
+                      {formation.instructor} <span className="text-slate-400 font-normal">• {formation.instructorRole}</span>
+                    </span>
                   </div>
-
-                  <ul className="space-y-2 text-xs text-slate-400 mb-6">
-                    {formation.points.map((pt, i) => (
-                      <li key={i} className="flex items-start gap-2">
-                        <CheckCircle2 size={14} className="text-blue-400 shrink-0 mt-0.5" />
-                        <span>{pt}</span>
-                      </li>
-                    ))}
-                  </ul>
                 </div>
 
-                <div className="pt-4 border-t border-slate-800/80 space-y-2.5">
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                    <button
-                      type="button"
-                      onClick={() => {
-                        setInlineSelectedPackage(formation.pkgKey);
-                        const el = document.getElementById('paiement-carte');
-                        if (el) el.scrollIntoView({ behavior: 'smooth' });
-                      }}
-                      className="py-2.5 px-3 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-bold text-xs flex items-center justify-center gap-1.5 transition-all shadow-md"
-                    >
-                      <CreditCard size={14} />
-                      <span>Payer par Carte 💳</span>
-                    </button>
+                <div className="p-6 sm:p-8 flex-1 flex flex-col justify-between">
+                  <div>
+                    <h3 className="text-xl sm:text-2xl font-bold text-white mb-2 group-hover:text-blue-400 transition-colors">
+                      {formation.title}
+                    </h3>
+                    <p className="text-slate-300 text-xs sm:text-sm leading-relaxed mb-4">
+                      {formation.desc}
+                    </p>
 
-                    <a
-                      href={`https://wa.me/33767246825?text=${encodeURIComponent(formation.whatsappMsg)}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="py-2.5 px-3 rounded-xl bg-emerald-600/20 hover:bg-emerald-600/30 text-emerald-300 border border-emerald-500/30 font-bold text-xs flex items-center justify-center gap-1.5 transition-all"
-                    >
-                      <MessageCircle size={14} />
-                      <span>Échanger WhatsApp</span>
-                    </a>
+                    <div className="space-y-2 py-3 border-y border-slate-800/80 my-4 text-xs">
+                      <div className="flex items-center gap-2 text-amber-300 font-semibold">
+                        <Clock size={15} className="shrink-0 text-amber-400" />
+                        <span><strong>Durée :</strong> {formation.duration}</span>
+                      </div>
+                      <div className="flex items-center gap-2 text-slate-300">
+                        <MapPin size={15} className="shrink-0 text-blue-400" />
+                        <span><strong>Format :</strong> {formation.modality}</span>
+                      </div>
+                      <div className="flex items-center gap-2 text-emerald-300 font-medium">
+                        <Coins size={15} className="shrink-0 text-emerald-400" />
+                        <span><strong>Financement :</strong> {formation.funding}</span>
+                      </div>
+                    </div>
+
+                    <ul className="space-y-2 text-xs text-slate-400 mb-6">
+                      {formation.points.map((pt, i) => (
+                        <li key={i} className="flex items-start gap-2">
+                          <CheckCircle2 size={14} className="text-blue-400 shrink-0 mt-0.5" />
+                          <span>{pt}</span>
+                        </li>
+                      ))}
+                    </ul>
                   </div>
 
-                  <button
-                    type="button"
-                    onClick={() => openModalWithPlan(formation.pkgKey)}
-                    className="w-full py-2 text-center text-xs text-slate-400 hover:text-white font-medium"
-                  >
-                    Détails des options de règlement (1x, 3x, OPCO) →
-                  </button>
+                  <div className="pt-4 border-t border-slate-800/80 space-y-2.5">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                      <button
+                        type="button"
+                        onClick={() => {
+                          setInlineSelectedPackage(formation.pkgKey);
+                          const el = document.getElementById('paiement-carte');
+                          if (el) el.scrollIntoView({ behavior: 'smooth' });
+                        }}
+                        className="py-3 px-3 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-bold text-xs flex items-center justify-center gap-1.5 transition-all shadow-md cursor-pointer"
+                      >
+                        <CreditCard size={15} />
+                        <span>Payer par Carte 💳</span>
+                      </button>
+
+                      <a
+                        href={`https://wa.me/33767246825?text=${encodeURIComponent(formation.whatsappMsg)}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="py-3 px-3 rounded-xl bg-emerald-600/20 hover:bg-emerald-600/30 text-emerald-300 border border-emerald-500/30 font-bold text-xs flex items-center justify-center gap-1.5 transition-all"
+                      >
+                        <MessageCircle size={15} />
+                        <span>Échanger WhatsApp</span>
+                      </a>
+                    </div>
+
+                    <button
+                      type="button"
+                      onClick={() => openModalWithPlan(formation.pkgKey)}
+                      className="w-full py-2 text-center text-xs text-slate-400 hover:text-white font-medium cursor-pointer"
+                    >
+                      Détails des options de règlement (1x, 3x, OPCO) →
+                    </button>
+                  </div>
                 </div>
               </div>
             ))}
