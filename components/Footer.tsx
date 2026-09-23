@@ -8,14 +8,14 @@ export default function Footer() {
           {/* Column 1: Brand */}
           <div className="footer-brand">
             <img src="/logo.png" alt="O'TOP Formation" style={{ height: '52px', width: 'auto', marginBottom: '1rem', objectFit: 'contain' }} />
-            <p>Ô'TOP Formation — Organisme de formation déclaré (NDA en cours) · démarche Qualiopi en cours, actuellement porté par l'organisme Eloqone. Formations enregistrées au Répertoire Spécifique de France Compétences : Santé Mentale & TOP®, Intelligence Artificielle et Réseaux Sociaux.</p>
-            <p className="footer-brand-tagline">"Former pour transformer : optimiser le potentiel humain & décupler la performance digitale."</p>
+            <p>Ô&apos;TOP Formation — Organisme de formation déclaré (NDA en cours d&apos;attribution DREETS PACA) · Actions de formation certifiantes et finançables portées par l&apos;organisme partenaire certifié Qualiopi Eloqone. Formations préparant aux certifications du Répertoire Spécifique de France Compétences.</p>
+            <p className="footer-brand-tagline">&quot;Former pour transformer : optimiser le potentiel humain & décupler la performance digitale.&quot;</p>
             
             <ul className="footer-contact" style={{ marginTop: '1.5rem', listStyle: 'none', padding: 0 }}>
-              <li style={{ marginBottom: '0.4rem' }}><span>📞</span> <strong>Ligne directe :</strong> <a href="tel:+33749239423">07 49 23 94 23</a> / <a href="tel:+33767246825">07 67 24 68 25</a></li>
-              <li style={{ marginBottom: '0.4rem' }}><span>📞</span> <strong>Renaud :</strong> <a href="tel:+33674797509">06 74 79 75 09</a></li>
+              <li style={{ marginBottom: '0.4rem' }}><span>📞</span> <strong>Mélissa (Inscriptions & Diagnostic) :</strong> <a href="tel:+33767246825">07 67 24 68 25</a></li>
+              <li style={{ marginBottom: '0.4rem' }}><span>📞</span> <strong>Renaud (Expert Digital & IA) :</strong> <a href="tel:+33674797509">06 74 79 75 09</a></li>
               <li style={{ marginBottom: '0.4rem' }}><span>📧</span> <a href="mailto:contact@otopformation.fr">contact@otopformation.fr</a></li>
-              <li><span>📍</span> Espace Gamma 1, 139 Chemin des 2 Frères, 83190 Ollioules</li>
+              <li><span>📍</span> Espace Gamma 1, 139 Chemin des 2 Frères, 83190 Ollioules (Var)</li>
             </ul>
 
             <div style={{ display: 'flex', gap: '0.75rem', marginTop: '1.25rem' }}>

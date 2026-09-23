@@ -27,7 +27,7 @@ const formationsLinks = [
   },
   { 
     label: '✨ Le Grand Récap : Toutes Nos Formations', 
-    desc: 'IA, Réseaux Sociaux, Méthode TOP®, Massages & Financement 100% OPCO',
+    desc: 'IA, Réseaux Sociaux, Méthode TOP® & Financement selon statut',
     href: '/respirez' 
   },
 ];

@@ -728,7 +728,7 @@ export default function MasterSalesPage() {
         <div className="max-w-6xl mx-auto space-y-6">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-4 border-t border-slate-900 text-slate-400">
             <div>
-              <strong>Ô&apos;TOP FORMATIONS</strong> — Espace Gamma 1, 139 Chemin des 2 Frères, 83190 Ollioules • Tél : 07 49 23 94 23 / 07 67 24 68 25 • SIRET : 990 443 186 00012 • RCS Toulon
+              <strong>Ô&apos;TOP FORMATIONS</strong> — Espace Gamma 1, 139 Chemin des 2 Frères, 83190 Ollioules (Var) • Tél : 07 67 24 68 25 (Mélissa) / 06 74 79 75 09 (Renaud) • contact@otopformation.fr • SIRET : 990 443 186 00012 • RCS Toulon
             </div>
             <div className="flex gap-4">
               <Link href="/" className="hover:text-white">Accueil</Link>

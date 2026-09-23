@@ -9,6 +9,8 @@ export default function GetInTouch() {
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
   const [statut, setStatut] = useState('independant');
+  const [companySize, setCompanySize] = useState('1');
+  const [priorityGoal, setPriorityGoal] = useState('gain-temps');
   const [parcours, setParcours] = useState('rs6776');
   const [message, setMessage] = useState('');
   const [rgpdConsent, setRgpdConsent] = useState(false);
@@ -31,9 +33,11 @@ export default function GetInTouch() {
         email,
         phone: phone || 'Non renseigné',
         statut,
+        companySize,
+        priorityGoal,
         parcours,
         message,
-        source: 'Formulaire de qualification site OTOP',
+        source: 'Formulaire de qualification diagnostic OTOP',
         submittedAt: new Date().toISOString(),
       };
 
@@ -47,7 +51,6 @@ export default function GetInTouch() {
       setShowCongrats(true);
     } catch (err) {
       console.error('Erreur envoi contact:', err);
-      // Même en cas de souci réseau, afficher confirmation pour l'apprenant
       setIsSent(true);
       setShowCongrats(true);
     } finally {
@@ -67,15 +70,15 @@ export default function GetInTouch() {
             {/* Left info column */}
             <div className="lg:col-span-5 space-y-6">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-400/20 text-blue-400 text-xs font-semibold uppercase tracking-wider">
-                ⚡ Analyse &amp; Réponse sous 24h ouvrées
+                ⚡ Diagnostic Individuel Offert (15 min)
               </div>
 
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white leading-tight">
-                Étude de vos droits &amp; Devis
+                Réservez votre diagnostic de 15 min
               </h2>
 
-              <p className="text-slate-400 text-sm sm:text-base leading-relaxed">
-                Remplissez ce formulaire pour recevoir un devis personnalisé, le programme complet et l’analyse de prise en charge auprès de votre OPCO, FAF ou CPF.
+              <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
+                Un échange direct avec Mélissa ou Renaud pour analyser vos processus, identifier vos tâches automatisables et vérifier votre budget de formation (OPCO, FAF, CPF) via notre partenaire certifié Qualiopi Eloqone.
               </p>
 
               <div className="space-y-3 pt-2">
@@ -97,8 +100,10 @@ export default function GetInTouch() {
                     <Phone size={18} />
                   </div>
                   <div>
-                    <div className="text-xs text-slate-400 font-medium">Ligne téléphonique</div>
-                    <div className="text-sm font-semibold text-white">07 67 24 68 25 / 06 74 79 75 09</div>
+                    <div className="text-xs text-slate-400 font-medium">Lignes directes formateurs</div>
+                    <div className="text-sm font-semibold text-white">
+                      Mélissa : 07 67 24 68 25 • Renaud : 06 74 79 75 09
+                    </div>
                   </div>
                 </div>
 
@@ -107,8 +112,8 @@ export default function GetInTouch() {
                     <MapPin size={18} />
                   </div>
                   <div>
-                    <div className="text-xs text-slate-400 font-medium">Siège &amp; Centre de formation</div>
-                    <div className="text-xs font-medium text-slate-300">Espace Gamma 1, 139 ch. des 2 Frères, 83190 Ollioules</div>
+                    <div className="text-xs text-slate-400 font-medium">Centre pédagogique &amp; Siège</div>
+                    <div className="text-xs font-medium text-slate-300">Espace Gamma 1, 139 ch. des 2 Frères, 83190 Ollioules (Var)</div>
                   </div>
                 </div>
               </div>
@@ -182,7 +187,7 @@ export default function GetInTouch() {
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
                       <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5">
-                        Téléphone <span className="text-slate-500">(facultatif)</span>
+                        Téléphone <span className="text-slate-500">(recommandé pour le diagnostic)</span>
                       </label>
                       <input
                         type="tel"
@@ -211,6 +216,42 @@ export default function GetInTouch() {
                     </div>
                   </div>
 
+                  {/* Nouveaux champs qualification B2B demandés par l'audit */}
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                      <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5">
+                        Taille de votre structure *
+                      </label>
+                      <select
+                        value={companySize}
+                        onChange={(e) => setCompanySize(e.target.value)}
+                        className="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-700/80 text-white focus:outline-none focus:border-blue-500 text-sm"
+                      >
+                        <option value="1">Indépendant(e) seul(e)</option>
+                        <option value="1-5">1 à 5 salariés</option>
+                        <option value="6-19">6 à 19 salariés</option>
+                        <option value="20+">20 salariés et plus</option>
+                      </select>
+                    </div>
+
+                    <div>
+                      <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5">
+                        Objectif prioritaire *
+                      </label>
+                      <select
+                        value={priorityGoal}
+                        onChange={(e) => setPriorityGoal(e.target.value)}
+                        className="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-700/80 text-white focus:outline-none focus:border-blue-500 text-sm"
+                      >
+                        <option value="gain-temps">Gagner du temps sur les tâches récurrentes</option>
+                        <option value="contenu-visuel">Produire du contenu &amp; visuels pros</option>
+                        <option value="automatisation">Automatiser devis, factures &amp; relances</option>
+                        <option value="equipe">Former et faire monter mon équipe en compétences</option>
+                        <option value="conformite">Sécuriser nos données &amp; conformité AI Act</option>
+                      </select>
+                    </div>
+                  </div>
+
                   <div>
                     <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5">
                       Parcours souhaité *
@@ -226,20 +267,20 @@ export default function GetInTouch() {
                       <option value="fi-top">🧘 Formation Initiale FI TOP® (21h / 3 jours)</option>
                       <option value="fb-top">⏱️ Formation FB-TOP Initiation (7h)</option>
                       <option value="intra">🏢 Formation intra-entreprise sur-mesure</option>
-                      <option value="therapie">🌿 Soins &amp; Massages thérapeutiques (Head Spa / Aimants)</option>
+                      <option value="autre">✨ Autre besoin d’accompagnement</option>
                     </select>
                   </div>
 
                   <div>
                     <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5">
-                      Précisions sur votre besoin <span className="text-slate-500">(optionnel)</span>
+                      Précisions sur votre activité ou contexte <span className="text-slate-500">(optionnel)</span>
                     </label>
                     <textarea
-                      rows={3}
+                      rows={2}
                       value={message}
                       onChange={(e) => setMessage(e.target.value)}
-                      placeholder="Objectifs attendus, dates souhaitées, questions sur vos OPCO / FAF..."
-                      className="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-700/80 text-white placeholder-slate-500 focus:outline-none focus:border-blue-500 text-sm resize-none"
+                      placeholder="Votre secteur, vos outils actuels, vos disponibilités pour le créneau de 15 min..."
+                      className="w-full px-4 py-2.5 rounded-xl bg-slate-900 border border-slate-700/80 text-white placeholder-slate-500 focus:outline-none focus:border-blue-500 text-sm resize-none"
                     />
                   </div>
 
@@ -254,7 +295,7 @@ export default function GetInTouch() {
                       className="mt-1 h-4 w-4 rounded border-slate-700 bg-slate-900 text-blue-600 focus:ring-blue-500"
                     />
                     <label htmlFor="rgpd-check" className="text-xs text-slate-400 leading-normal cursor-pointer">
-                      J’accepte que les informations saisies soient traitées par Ô’TOP Formation pour me transmettre le devis et l’étude de financement. Conformément au RGPD, vos données ne sont jamais cédées.
+                      J’accepte que les informations saisies soient traitées par SAS Ô’TOP Formation pour me transmettre le diagnostic et l’étude de financement. Conformément au RGPD, vos données restent strictement confidentielles.
                     </label>
                   </div>
 
@@ -264,11 +305,11 @@ export default function GetInTouch() {
                     className="w-full py-4 px-6 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-sm flex items-center justify-center gap-2 transition-all shadow-xl shadow-blue-600/30 cursor-pointer disabled:opacity-50"
                   >
                     <Send size={16} />
-                    <span>{isSubmitting ? 'Transmission en cours...' : 'Envoyer ma demande de devis & diagnostic →'}</span>
+                    <span>{isSubmitting ? 'Transmission en cours...' : 'Réserver mon diagnostic gratuit de 15 min →'}</span>
                   </button>
 
                   <p className="text-center text-[11px] text-slate-500">
-                    Étude gratuite sans engagement • Finançable selon votre statut (OPCO, FAF, CPF)
+                    Étude gratuite sans engagement • Financement étudié selon votre statut (OPCO, FAF, CPF) via notre partenaire Eloqone
                   </p>
                 </form>
               )}
@@ -284,9 +325,9 @@ export default function GetInTouch() {
         isOpen={showCongrats}
         onClose={() => setShowCongrats(false)}
         candidateName={name}
-        courseTitle="votre dossier de formation"
+        courseTitle="votre diagnostic de formation"
         onWhatsAppClick={() => {
-          const formattedMessage = `Bonjour Mélissa (Ô'TOP Formation), je viens de transmettre mon formulaire (${name}, ${email}). Je souhaite faire le point sur mon financement.`;
+          const formattedMessage = `Bonjour Mélissa (Ô'TOP Formation), je viens de transmettre ma demande de diagnostic (${name}, ${email}). Je souhaite faire le point sur mon projet.`;
           window.open(`https://wa.me/33767246825?text=${encodeURIComponent(formattedMessage)}`, '_blank');
         }}
       />

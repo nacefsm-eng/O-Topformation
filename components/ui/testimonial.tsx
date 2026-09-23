@@ -66,7 +66,7 @@ export default function ClientFeedback() {
               <div className="relative z-10">
                 <div className="flex text-amber-400 text-sm mb-3">★★★★★</div>
                 <p className="text-slate-200 text-base leading-relaxed mb-6">
-                  « La formation IA a été un véritable accélérateur pour notre cabinet. Rien à voir avec les tutoriels théoriques de YouTube : ici on a automatisé nos relances, nos propositions commerciales et sécurisé nos accès dès la première semaine. »
+                  « La formation IA a été un véritable accélérateur : nous avons automatisé nos relances clients et la rédaction de nos propositions. Nous avons récupéré plus de 6 heures par semaine dès le premier mois, sans écrire une seule ligne de code. »
                 </p>
                 <div className="flex items-center gap-3 pt-4 border-t border-slate-800">
                   <div className="w-12 h-12 rounded-full bg-gradient-to-br from-blue-500 to-indigo-700 flex items-center justify-center font-bold text-white text-lg">
@@ -88,7 +88,7 @@ export default function ClientFeedback() {
             >
               <div className="flex text-amber-300 text-sm mb-3">★★★★★</div>
               <p className="text-white text-base font-medium leading-relaxed mb-6">
-                « Les 7 heures d'accompagnement 1-to-1 incluses font toute la différence. On travaille directement sur nos propres cas d'usage métiers. Le financement FIF-PL a été pris en charge à 100%. »
+                « Les 5 heures de coaching 1-to-1 incluses font toute la différence. On a configuré nos propres automatisations directement sur nos outils en direct. Prise en charge FIF-PL instruite rapidement via leur partenaire porteur. »
               </p>
               <div className="flex items-center gap-3 pt-4 border-t border-blue-500/60">
                 <div className="w-12 h-12 rounded-full bg-white text-blue-900 flex items-center justify-center font-black text-lg">

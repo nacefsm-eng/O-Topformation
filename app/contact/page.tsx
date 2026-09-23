@@ -279,7 +279,6 @@ function ContactContent() {
                           <option value="Formation Réseaux Sociaux (RS7351)">📱 Prépa Réseaux Sociaux (RS7351)</option>
                           <option value="Formation FI TOP (21h)">🧘 Formation Initiale FI TOP® (21h)</option>
                           <option value="Formation FB-TOP (7h)">⏱️ Initiation FB-TOP (7h)</option>
-                          <option value="Massages & Thérapies">💆 Massages & Thérapies manuelles</option>
                           <option value="Autre projet">✨ Autre projet sur-mesure</option>
                         </select>
                       </div>
