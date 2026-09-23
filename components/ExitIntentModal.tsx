@@ -101,7 +101,7 @@ export default function ExitIntentModal() {
         </h3>
 
         <p className="text-slate-300 text-xs sm:text-sm leading-relaxed mb-5">
-          Consultez à tête reposée nos 6 programmes certifiants, les plannings et les modalités pour faire financer <strong>100% de votre formation</strong> par votre OPCO ou FAF sans débourser un centime.
+          Consultez à tête reposée nos programmes de formation, les plannings et les modalités d&apos;étude de financement auprès de votre OPCO ou FAF via notre partenaire certifié Qualiopi Eloqone.
         </p>
 
         {/* Features list */}

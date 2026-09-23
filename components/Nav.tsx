@@ -9,12 +9,12 @@ import ThemeToggle from '@/components/ThemeToggle';
 const formationsLinks = [
   { 
     label: '🤖 IA & Automatisation Business (RS7344)', 
-    desc: 'Intégration de l\'IA dans l\'entreprise, workflows & conformité IA Act',
+    desc: 'Intégration de l\'IA dans l\'entreprise, workflows & conformité AI Act',
     href: '/formations/ia' 
   },
   { 
     label: '⚡ IA Générative pour Indépendants (RS6776)', 
-    desc: '16h vidéos, prompts avancés, GPT sur-mesure & gain de 15h/semaine',
+    desc: '16h vidéos + 5h coaching, prompts métiers & gain de 5 à 10h/semaine',
     href: '/formations/ia' 
   },
   { 

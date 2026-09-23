@@ -226,7 +226,7 @@ export default function FinancementPage() {
                   Notre Démarche Qualité &amp; Mentions Légales
                 </h3>
                 <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
-                  Ô&apos;TOP Formation est un organisme de formation déclaré (NDA en cours), démarche Qualiopi en cours, actuellement porté par l&apos;organisme certifié Eloqone. Cette démarche garantit la rigueur méthodologique, l&apos;adaptation des contenus aux besoins des bénéficiaires et l&apos;amélioration continue de nos prestations.
+                  Ô&apos;TOP Formation intervient avec l&apos;organisme partenaire Eloqone, certifié Qualiopi, qui porte les actions de formation et les démarches de financement. NDA Ô&apos;TOP Formation en cours d&apos;attribution. Cette démarche assure la rigueur méthodologique, l&apos;adaptation des contenus aux besoins des bénéficiaires et l&apos;amélioration continue de nos prestations.
                 </p>
               </div>
             </div>

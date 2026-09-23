@@ -50,7 +50,7 @@ export default function PdfModal({
         </div>
 
         <p className="text-slate-300 text-sm leading-relaxed mb-6">
-          Consultez la plaquette officielle d&apos;Ô&apos;TOP Formation avec le détail des modules, les modalités d&apos;évaluation et les options de financement à 100% (OPCO, FAF, CPF).
+          Consultez la plaquette officielle d&apos;Ô&apos;TOP Formation avec le détail des modules, les modalités d&apos;évaluation et les options de financement étudiées selon votre situation via notre partenaire Eloqone (OPCO, FAF, CPF).
         </p>
 
         {/* Action Buttons */}

@@ -30,11 +30,16 @@ export default function MentionsLegales() {
               <table className="info-table">
                 <tbody>
                   <tr><th>Raison sociale</th><td>SAS Ô&apos;TOP Formation</td></tr>
-                  <tr><th>Statut</th><td>Organisme de formation déclaré (NDA en cours d&apos;attribution DREETS PACA) · Actions de formation portées par l&apos;organisme partenaire certifié Qualiopi Eloqone</td></tr>
-                  <tr><th>Présidente</th><td>Mélissa Jennadi</td></tr>
-                  <tr><th>Siège social</th><td>Ollioules (Var) — PACA</td></tr>
-                  <tr><th>Email</th><td>contact@otopformation.fr</td></tr>
-                  <tr><th>Téléphone</th><td>07 67 24 68 25</td></tr>
+                  <tr><th>Forme juridique</th><td>Société par Actions Simplifiée (SAS)</td></tr>
+                  <tr><th>Capital social</th><td>1 000 €</td></tr>
+                  <tr><th>SIRET</th><td>990 443 186 00012</td></tr>
+                  <tr><th>Numéro RCS</th><td>RCS Toulon 990 443 186</td></tr>
+                  <tr><th>Code NAF / APE</th><td>8559A (Formation continue d&apos;adultes)</td></tr>
+                  <tr><th>Directrice de la publication</th><td>Mélissa JENNADI (Présidente)</td></tr>
+                  <tr><th>Partenariat Qualiopi &amp; NDA</th><td>Ô&apos;TOP Formation intervient avec l&apos;organisme partenaire Eloqone, certifié Qualiopi, qui porte les actions de formation et les démarches de financement. NDA Ô&apos;TOP Formation en cours d&apos;attribution.</td></tr>
+                  <tr><th>Siège social &amp; Centre</th><td>Espace Gamma 1, 139 Chemin des 2 Frères, 83190 Ollioules (Var), France</td></tr>
+                  <tr><th>Email officiel</th><td><a href="mailto:contact@otopformation.fr" style={{ color: 'var(--blue-700)' }}>contact@otopformation.fr</a></td></tr>
+                  <tr><th>Téléphone</th><td><a href="tel:+33767246825" style={{ color: 'var(--blue-700)' }}>07 67 24 68 25</a></td></tr>
                 </tbody>
               </table>
             </div>

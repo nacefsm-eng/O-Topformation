@@ -8,7 +8,7 @@ export default function Footer() {
           {/* Column 1: Brand */}
           <div className="footer-brand">
             <img src="/logo.png" alt="O'TOP Formation" style={{ height: '52px', width: 'auto', marginBottom: '1rem', objectFit: 'contain' }} />
-            <p>Ô&apos;TOP Formation — Organisme de formation déclaré (NDA en cours d&apos;attribution DREETS PACA) · Actions de formation certifiantes et finançables portées par l&apos;organisme partenaire certifié Qualiopi Eloqone. Formations préparant aux certifications du Répertoire Spécifique de France Compétences.</p>
+            <p>Ô&apos;TOP Formation intervient avec l&apos;organisme partenaire Eloqone, certifié Qualiopi, qui porte les actions de formation et les démarches de financement. NDA Ô&apos;TOP Formation en cours d&apos;attribution. Formations préparant aux certifications enregistrées au Répertoire Spécifique de France Compétences.</p>
             <p className="footer-brand-tagline">&quot;Former pour transformer : optimiser le potentiel humain & décupler la performance digitale.&quot;</p>
             
             <ul className="footer-contact" style={{ marginTop: '1.5rem', listStyle: 'none', padding: 0 }}>
@@ -46,7 +46,7 @@ export default function Footer() {
               <li><Link href="/entreprises">Création de Sites Web & Apps</Link></li>
               <li><Link href="/entreprises">Digitalisation & Automatisation de Process</Link></li>
               <li><Link href="/entreprises">Formations Intra-Entreprise</Link></li>
-              <li><Link href="/entreprises">Sensibilisation Cybersécurité</Link></li>
+              <li><Link href="/entreprises">Sécurisation des Données &amp; Conformité IA</Link></li>
               <li><Link href="/contact">Demande de Diagnostic Gratuit</Link></li>
             </ul>
           </div>
@@ -76,10 +76,10 @@ export default function Footer() {
             </div>
             <div>
               <div style={{ fontWeight: 800, color: 'white', fontSize: '0.9rem' }}>
-                Financement Garanti • Portage Qualiopi par <a href="https://eloqone.fr" target="_blank" rel="noopener noreferrer" style={{ color: '#38bdf8', textDecoration: 'underline' }}>Eloqone</a>
+                Portage Qualiopi par <a href="https://eloqone.fr" target="_blank" rel="noopener noreferrer" style={{ color: '#38bdf8', textDecoration: 'underline' }}>Eloqone</a> • Démarche Financement Accompagnée
               </div>
               <div style={{ fontSize: '0.78rem', color: '#94a3b8', lineHeight: 1.4, marginTop: '2px' }}>
-                Actions de formation certifiées et éligibles aux prises en charge à 100% OPCO (Atlas, Akto, EP), FAF (FIF-PL, AGEFICE, FAFCEA) sans avance de frais.
+                Financement possible selon votre statut et sous réserve d’acceptation par votre financeur. Dossier accompagné avec notre partenaire certifié Qualiopi Eloqone.
               </div>
             </div>
           </div>
@@ -100,7 +100,7 @@ export default function Footer() {
         <div className="footer-bottom">
           <p>© {new Date().getFullYear()} Ô&apos;TOP Formation — SAS Ô&apos;TOP Formation • SIRET : 990 443 186 00012 • NAF : 8559A • RCS Toulon. Tous droits réservés.</p>
           <span className="footer-nda" style={{ color: 'var(--gold-light)' }}>
-            🏆 Organisme de formation déclaré (NDA en cours) · démarche Qualiopi portée par Eloqone · Certifications Répertoire Spécifique France Compétences
+            Ô&apos;TOP Formation intervient avec l&apos;organisme partenaire Eloqone, certifié Qualiopi, qui porte les actions de formation et les démarches de financement. NDA Ô&apos;TOP Formation en cours d&apos;attribution.
           </span>
         </div>
       </div>

@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     default: "Ô'TOP Formation | IA Générative, Réseaux Sociaux & Méthode TOP®",
   },
   description:
-    "Organisme de formation professionnelle à Ollioules (Var) spécialisé en IA Générative (RS6776), Réseaux Sociaux (RS7351) et Méthode TOP®. Formations certifiantes finançables à 100% (OPCO, FAF, CPF) avec 5h de coaching individuel 1-to-1 inclus.",
+    "Organisme de formation professionnelle à Ollioules (Var) spécialisé en IA Générative (RS6776), Réseaux Sociaux (RS7351) et Méthode TOP®. Formations certifiantes avec financement possible (OPCO, FAF, CPF) et 5h de coaching inclus.",
   keywords: [
     'formation TOP', 'Techniques Optimisation Potentiel', 'formation IA', 'ChatGPT',
     'Claude', 'n8n', 'automatisation', 'réseaux sociaux', 'RS6776', 'RS7351', 'RS7344',
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Ô'TOP Formation — Formations Certifiantes IA, Digital & Méthode TOP®",
-    description: "Développez votre entreprise avec l'IA et préservez votre énergie grâce aux TOP®. Prise en charge OPCO/FAF 100% avec 5h de coaching individuel inclus.",
+    description: "Développez votre entreprise avec l'IA et préservez votre énergie grâce aux TOP®. Financement OPCO/FAF étudié selon votre profil avec 5h de coaching inclus.",
     url: 'https://o-topformation.vercel.app',
     siteName: "Ô'TOP Formation",
     locale: 'fr_FR',

@@ -435,7 +435,7 @@ export default function HomePageClient() {
                   </p>
 
                   <p className="text-sm text-slate-300 leading-relaxed mb-6">
-                    Le parcours référence pour maîtriser le prompting métier, créer vos assistants personnalisés et récupérer 10h à 15h par semaine sans compétences techniques.
+                    Le parcours référence pour maîtriser le prompting métier, créer vos assistants personnalisés et récupérer entre 5 et 10h par semaine (selon votre activité et vos processus).
                   </p>
 
                   <div className="space-y-2.5 py-4 border-y border-slate-800 text-xs text-slate-300 mb-6">
@@ -445,11 +445,11 @@ export default function HomePageClient() {
                     </div>
                     <div className="flex items-center gap-2">
                       <Award size={15} className="text-amber-400 shrink-0" />
-                      <span><strong>Certification :</strong> Titre France Compétences RS6776</span>
+                      <span><strong>Certification :</strong> Enregistrée au Répertoire Spécifique : RS6776</span>
                     </div>
                     <div className="flex items-center gap-2">
                       <ShieldCheck size={15} className="text-emerald-400 shrink-0" />
-                      <span><strong>Tarif / Financement :</strong> 1 490 € ou 100% pris en charge</span>
+                      <span><strong>Financement :</strong> 1 490 € ou pris en charge selon éligibilité (OPCO, FAF, CPF)</span>
                     </div>
                   </div>
 
@@ -526,7 +526,7 @@ export default function HomePageClient() {
                     </div>
                     <div className="flex items-center gap-2">
                       <Award size={15} className="text-amber-400 shrink-0" />
-                      <span><strong>Certification :</strong> Titre France Compétences RS7344</span>
+                      <span><strong>Certification :</strong> Enregistrée au Répertoire Spécifique : RS7344</span>
                     </div>
                     <div className="flex items-center gap-2">
                       <ShieldCheck size={15} className="text-emerald-400 shrink-0" />
@@ -557,7 +557,7 @@ export default function HomePageClient() {
                     className="w-full py-3 px-4 rounded-xl bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white font-bold text-xs shadow-lg shadow-indigo-600/25 transition-all flex items-center justify-center gap-2 cursor-pointer"
                   >
                     <CreditCard size={15} />
-                    <span>Réserver une session intra (Acompte 450 €) 💳</span>
+                    <span>Réserver une session intra (Acompte de 450 €) 💳</span>
                   </button>
                   <a
                     href="#contact"
@@ -611,7 +611,7 @@ export default function HomePageClient() {
                     </div>
                     <div className="flex items-center gap-2">
                       <ShieldCheck size={15} className="text-emerald-400 shrink-0" />
-                      <span><strong>Tarif / Financement :</strong> 1 290 € ou 100% pris en charge</span>
+                      <span><strong>Financement :</strong> 1 290 € ou pris en charge selon éligibilité (OPCO, FAF, CPF)</span>
                     </div>
                   </div>
 
@@ -787,14 +787,14 @@ export default function HomePageClient() {
                   </td>
                   <td className="p-4 sm:p-5 text-xs sm:text-sm">
                     <span className="px-2.5 py-1 rounded-md bg-blue-500/10 border border-blue-500/30 text-blue-300 font-bold whitespace-nowrap">
-                      Titre RS6776
+                      Certif. RS6776
                     </span>
                   </td>
                   <td className="p-4 sm:p-5 text-xs text-emerald-400 font-medium">
                     OPCO, FAF, CPF<br />via partenaire
                   </td>
                   <td className="p-4 sm:p-5 text-xs sm:text-sm">
-                    Automatisation de vos contenus, prompts sur-mesure et gain de 6h à 10h / semaine
+                    Automatisation de vos contenus, prompts sur-mesure et gain de 5 à 10h / semaine (selon votre activité)
                   </td>
                 </tr>
 
@@ -811,7 +811,7 @@ export default function HomePageClient() {
                   </td>
                   <td className="p-4 sm:p-5 text-xs sm:text-sm">
                     <span className="px-2.5 py-1 rounded-md bg-indigo-500/10 border border-indigo-500/30 text-indigo-300 font-bold whitespace-nowrap">
-                      Titre RS7344
+                      Certif. RS7344
                     </span>
                   </td>
                   <td className="p-4 sm:p-5 text-xs text-emerald-400 font-medium">
@@ -868,8 +868,8 @@ export default function HomePageClient() {
             <h2 className="text-2xl sm:text-4xl font-extrabold text-white">
               Comment se déroule votre financement ?
             </h2>
-            <div className="mt-4 p-4 rounded-xl bg-blue-950/40 border border-blue-500/30 max-w-2xl mx-auto text-xs sm:text-sm text-blue-200 leading-relaxed">
-              SAS Ô&apos;TOP Formation est un organisme déclaré (NDA en cours d&apos;attribution DREETS PACA). Les actions certifiantes et le financement OPCO, FAF ou CPF sont instruits et portés par notre <strong>organisme partenaire certifié Qualiopi Eloqone</strong>.
+            <div className="mt-4 p-4 rounded-xl bg-blue-950/40 border border-blue-500/30 max-w-2xl mx-auto text-xs sm:text-sm text-blue-200 leading-relaxed text-center">
+              Ô&apos;TOP Formation intervient avec l&apos;organisme partenaire Eloqone, certifié Qualiopi, qui porte les actions de formation et les démarches de financement. NDA Ô&apos;TOP Formation en cours d&apos;attribution. Financement possible selon votre statut et sous réserve d&apos;acceptation par votre financeur (OPCO, FAF, CPF).
             </div>
           </div>
 
@@ -920,8 +920,41 @@ export default function HomePageClient() {
       </section>
 
 
-      {/* ─── 7. PREUVE SOCIALE & ÉQUIPE DES 4 EXPERTS ─────────────────────── */}
+      {/* ─── 7. PREUVE SOCIALE & ÉTUDES DE CAS ─────────────────────── */}
       <ClientFeedback />
+
+      {/* ─── 8. CTA CONVERSION IMMÉDIATE (DIRIGEANTS PRESSÉS) ───────────── */}
+      <section className="py-12 px-4 bg-gradient-to-r from-blue-950 via-slate-900 to-indigo-950 border-t border-b border-blue-500/20 relative">
+        <div className="container mx-auto max-w-5xl flex flex-col md:flex-row items-center justify-between gap-6">
+          <div className="space-y-1 text-center md:text-left">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-400/20 text-cyan-300 text-xs font-bold uppercase tracking-wider mb-1">
+              ⚡ Action Immédiate
+            </div>
+            <h3 className="text-xl sm:text-2xl font-black text-white">
+              Prêt(e) à évaluer vos droits OPCO / FAF et vos gains de productivité ?
+            </h3>
+            <p className="text-xs sm:text-sm text-slate-300 max-w-xl">
+              15 minutes au téléphone avec Mélissa pour vérifier vos prises en charge et cibler vos automatisations prioritaires.
+            </p>
+          </div>
+          <div className="flex flex-col sm:flex-row items-center gap-3 shrink-0 w-full md:w-auto">
+            <a
+              href="#contact"
+              className="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-bold text-sm text-center transition-all shadow-xl shadow-blue-600/30 whitespace-nowrap"
+            >
+              Réserver mon diagnostic (15 min) ⚡
+            </a>
+            <a
+              href="https://wa.me/33767246825?text=Bonjour%20M%C3%A9lissa%2C%20je%20souhaite%20un%20diagnostic%20rapide%20sur%20mes%20droits%20de%20formation."
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full sm:w-auto px-5 py-3.5 rounded-xl bg-emerald-600/20 hover:bg-emerald-600/30 border border-emerald-500/40 text-emerald-300 font-bold text-sm text-center flex items-center justify-center gap-2 transition-all whitespace-nowrap"
+            >
+              <span>WhatsApp Direct 💬</span>
+            </a>
+          </div>
+        </div>
+      </section>
 
       <section className="py-24 px-4 bg-slate-950 border-t border-slate-850 relative">
         <div className="container mx-auto max-w-5xl">

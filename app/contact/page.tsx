@@ -154,8 +154,8 @@ function ContactContent() {
                 <div style={{ padding: '1.25rem', background: '#eef2f6', borderRadius: 'var(--radius)', fontSize: '0.85rem', color: 'var(--gray-700)', lineHeight: 1.6 }}>
                   <strong>Centre pédagogique :</strong><br />
                   Espace Gamma 1, 139 Chemin des 2 Frères, 83190 Ollioules (Var)<br />
-                  <span style={{ fontSize: '0.8rem', color: 'var(--gray-500)', marginTop: '0.5rem', display: 'block' }}>
-                    Organisme déclaré (NDA en cours d&apos;attribution DREETS PACA) · Actions de formation certifiantes et financées actuellement portées par l&apos;organisme partenaire certifié Qualiopi Eloqone.
+                  <span style={{ fontSize: '0.8rem', color: 'var(--gray-600)', marginTop: '0.5rem', display: 'block', lineHeight: 1.5 }}>
+                    Ô&apos;TOP Formation intervient avec l&apos;organisme partenaire Eloqone, certifié Qualiopi, qui porte les actions de formation et les démarches de financement. NDA Ô&apos;TOP Formation en cours d&apos;attribution.
                   </span>
                 </div>
               </div>

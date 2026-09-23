@@ -236,10 +236,13 @@ export default function CheckoutModal({ isOpen, onClose, defaultPlan }: Checkout
               <div className="p-5 rounded-2xl bg-amber-500/10 border border-amber-500/30 text-amber-200 text-xs leading-relaxed space-y-3">
                 <div className="flex items-center gap-2 text-amber-300 font-bold text-sm">
                   <ShieldCheck size={18} />
-                  <span>Dossier Financement 100% pris en charge</span>
+                  <span>Dossier Financement (OPCO / FAF / CPF)</span>
                 </div>
                 <p>
-                  Votre formation peut être intégralement financée par votre OPCO (Atlas, Akto, Opco EP...) ou votre fonds d&apos;assurance formation (FIFPL, AGEFICE, FAFCEA) via notre organisme partenaire certifié Qualiopi (Eloqone).
+                  Financement possible selon votre statut et sous réserve d’acceptation par votre financeur. Dossier accompagné avec notre partenaire certifié Qualiopi Eloqone.
+                </p>
+                <p className="text-[11px] text-amber-300/80">
+                  Note : L&apos;inscription directe par carte bancaire et la démarche de financement par un tiers sont deux parcours distincts.
                 </p>
                 <div className="pt-2">
                   <a 
@@ -409,19 +412,20 @@ export default function CheckoutModal({ isOpen, onClose, defaultPlan }: Checkout
             )}
 
             {/* Badges and Guarantees */}
-            <div className="pt-2 border-t border-slate-800/80 flex flex-wrap items-center justify-center gap-4 text-[11px] text-slate-400">
-              <span className="flex items-center gap-1.5">
-                <ShieldCheck size={14} className="text-emerald-400" />
-                Chiffrement SSL 256-bit
-              </span>
-              <span className="flex items-center gap-1.5">
-                <Lock size={14} className="text-blue-400" />
-                Conforme PCI-DSS Niveau 1
-              </span>
-              <span className="flex items-center gap-1.5">
-                <CheckCircle2 size={14} className="text-cyan-400" />
-                Remboursement garanti si non satisfait
-              </span>
+            <div className="pt-3 border-t border-slate-800/80 flex flex-col items-center gap-2 text-[11px] text-slate-400 text-center">
+              <div className="flex flex-wrap items-center justify-center gap-4">
+                <span className="flex items-center gap-1.5 text-slate-200 font-semibold">
+                  <Lock size={14} className="text-blue-400" />
+                  Paiement sécurisé par carte via Stripe (3D-Secure 2)
+                </span>
+                <span className="flex items-center gap-1.5">
+                  <ShieldCheck size={14} className="text-emerald-400" />
+                  Conforme PCI-DSS Niveau 1
+                </span>
+              </div>
+              <p className="text-[10.5px] text-slate-400 max-w-md mx-auto">
+                Paiement sécurisé par carte — conditions d’annulation et de rétractation disponibles dans nos <a href="/cgv" target="_blank" className="underline text-blue-400 hover:text-blue-300">CGV</a>. L&apos;inscription directe et la demande de prise en charge financière sont deux parcours distincts.
+              </p>
             </div>
 
           </form>

@@ -13,11 +13,11 @@ interface PredefinedQA {
 const PREDEFINED_QUESTIONS: PredefinedQA[] = [
   {
     id: 'financement',
-    question: '💰 Financer ma formation à 100% (OPCO/FAF)',
+    question: '💰 Financement possible (OPCO / FAF / CPF)',
     answer:
-      "Toutes nos formations sont éligibles à une prise en charge à 100% par les OPCO (salariés) et les FAF (indépendants, libéraux, artisans). Grâce à notre portage certifié Qualiopi avec Eloqone, je monte personnellement votre dossier de subrogation pour éviter toute avance de trésorerie.",
+      "Financement possible selon votre statut et sous réserve d'acceptation par votre financeur. Dossier accompagné avec notre partenaire certifié Qualiopi Eloqone. Je monte personnellement le dossier pour étudier vos droits disponibles.",
     whatsappMessage:
-      "Bonjour Mélissa, je souhaite savoir si ma situation me permet de bénéficier d'une prise en charge à 100% par mon OPCO ou FAF pour une formation Ô'TOP.",
+      "Bonjour Mélissa, je souhaite savoir si ma situation me permet de bénéficier d'une prise en charge OPCO ou FAF pour une formation Ô'TOP.",
   },
   {
     id: 'coaching',

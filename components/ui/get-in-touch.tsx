@@ -78,7 +78,7 @@ export default function GetInTouch() {
               </h2>
 
               <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
-                Un échange direct avec Mélissa ou Renaud pour analyser vos processus, identifier vos tâches automatisables et vérifier votre budget de formation (OPCO, FAF, CPF) via notre partenaire certifié Qualiopi Eloqone.
+                Un échange direct avec Mélissa ou Renaud pour analyser vos processus et vos besoins. Ô&apos;TOP Formation intervient avec l&apos;organisme partenaire Eloqone, certifié Qualiopi, qui porte les actions de formation et les démarches de financement. NDA Ô&apos;TOP Formation en cours d&apos;attribution.
               </p>
 
               <div className="space-y-3 pt-2">
@@ -308,8 +308,8 @@ export default function GetInTouch() {
                     <span>{isSubmitting ? 'Transmission en cours...' : 'Réserver mon diagnostic gratuit de 15 min →'}</span>
                   </button>
 
-                  <p className="text-center text-[11px] text-slate-500">
-                    Étude gratuite sans engagement • Financement étudié selon votre statut (OPCO, FAF, CPF) via notre partenaire Eloqone
+                  <p className="text-center text-[11px] text-slate-400">
+                    Financement possible selon votre statut et sous réserve d’acceptation par votre financeur. Dossier accompagné avec notre partenaire certifié Qualiopi Eloqone.
                   </p>
                 </form>
               )}

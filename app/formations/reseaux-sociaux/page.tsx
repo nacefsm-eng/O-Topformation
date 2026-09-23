@@ -15,14 +15,17 @@ export default function FormationReseauxSociauxPage() {
         <div className="container">
           <div style={{ maxWidth: '850px' }}>
             <span className="badge" style={{ background: 'rgba(255, 59, 59, 0.2)', color: '#ff8585', border: '1px solid var(--red-600)', marginBottom: '1.25rem' }}>
-              📱 Préparation Certification France Compétences RS7351 • Organisme Partenaire
+              📱 Préparation Certification France Compétences RS7351 • Portage Qualiopi Eloqone
             </span>
             <h1 style={{ color: 'white', marginBottom: '1.5rem', fontSize: 'clamp(2.2rem, 4.5vw, 3.5rem)' }}>
               Structurez, produisez et pilotez votre communication sur les réseaux sociaux
             </h1>
-            <p style={{ color: 'var(--blue-100)', fontSize: '1.2rem', lineHeight: '1.8', marginBottom: '2.5rem' }}>
+            <p style={{ color: 'var(--blue-100)', fontSize: '1.2rem', lineHeight: '1.8', marginBottom: '1.5rem' }}>
               Une formation préparant à la certification pour dirigeants de TPE/PME, créateurs et indépendants. Arrêtez de publier au hasard : maîtrisez les outils pros (Canva, CapCut, Meta Suite, Waalaxy) et transformez votre audience en clients.
             </p>
+            <div style={{ padding: '0.85rem 1.25rem', borderRadius: '12px', background: 'rgba(255, 255, 255, 0.08)', border: '1px solid rgba(255, 255, 255, 0.15)', fontSize: '0.82rem', color: '#93c5fd', marginBottom: '2rem', lineHeight: 1.5 }}>
+              ℹ️ Ô&apos;TOP Formation intervient avec l&apos;organisme partenaire Eloqone, certifié Qualiopi, qui porte les actions de formation et les démarches de financement. NDA Ô&apos;TOP Formation en cours d&apos;attribution. Financement possible selon votre statut et sous réserve d&apos;acceptation par votre financeur.
+            </div>
             <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
               <Link href="/contact?subject=Reseaux_Sociaux_RS7351" className="btn btn-primary" style={{ background: 'var(--red-600)', color: 'white', fontWeight: 800, padding: '1rem 2rem' }}>
                 Demander un diagnostic Réseaux Sociaux (15 min) ⚡
@@ -46,14 +49,14 @@ export default function FormationReseauxSociauxPage() {
         <div className="container">
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '2rem', textAlign: 'center' }}>
             <div className="card" style={{ padding: '1.5rem' }}>
-              <div style={{ fontSize: '2.2rem', fontWeight: 900, color: 'var(--blue-900)' }}>5 + 1</div>
-              <p style={{ fontWeight: 600, color: 'var(--gray-700)', margin: '0.25rem 0' }}>Modules Certifiants</p>
-              <span style={{ fontSize: '0.85rem', color: 'var(--gray-500)' }}>Avec accompagnement humain</span>
+              <div style={{ fontSize: '2.2rem', fontWeight: 900, color: 'var(--blue-900)' }}>5 Modules</div>
+              <p style={{ fontWeight: 600, color: 'var(--gray-700)', margin: '0.25rem 0' }}>11h+ Vidéos &amp; Pratique</p>
+              <span style={{ fontSize: '0.85rem', color: 'var(--gray-500)' }}>Ateliers concrets sur vos comptes</span>
             </div>
             <div className="card" style={{ padding: '1.5rem' }}>
               <div style={{ fontSize: '2.2rem', fontWeight: 900, color: 'var(--gold-dark)' }}>RS7351</div>
               <p style={{ fontWeight: 600, color: 'var(--gray-700)', margin: '0.25rem 0' }}>France Compétences</p>
-              <span style={{ fontSize: '0.85rem', color: 'var(--gray-500)' }}>Éligible financements OPCO</span>
+              <span style={{ fontSize: '0.85rem', color: 'var(--gray-500)' }}>Financement OPCO / FAF possible</span>
             </div>
             <div className="card" style={{ padding: '1.5rem' }}>
               <div style={{ fontSize: '2.2rem', fontWeight: 900, color: 'var(--red-600)' }}>1h</div>
