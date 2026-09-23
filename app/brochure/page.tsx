@@ -234,7 +234,7 @@ export default function BrochurePage() {
                   <div className="space-y-2 mb-6">
                     <div className="text-xs font-bold text-slate-400 uppercase tracking-wider">Compétences acquises :</div>
                     {f.points.map((pt, j) => (
-                      <div key={j} className="flex items-start gap-2 text-xs sm:text-sm text-slate-300">
+                      <div key={j} className="flex items-start gap-2 text-xs sm:text-sm text-slate-200 font-medium">
                         <CheckCircle2 size={16} className="text-emerald-400 shrink-0 mt-0.5" />
                         <span>{pt}</span>
                       </div>

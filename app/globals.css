@@ -1352,27 +1352,51 @@ html[data-theme="clair"] footer a:hover {
   color: #38bdf8 !important;
 }
 
-/* ============= LIGHT MODE CONTRAST ENHANCEMENTS FOR NOS OFFRES ============= */
+/* ============= LIGHT MODE CONTRAST ENHANCEMENTS FOR NOS OFFRES & CATALOGUE ============= */
+html[data-theme="clair"] #catalogue,
+html[data-theme="clair"] .catalogue-section,
+html[data-theme="clair"] [id*="catalogue"] {
+  background-color: #f8fafc !important;
+}
+
 html[data-theme="clair"] #catalogue .bg-slate-900,
 html[data-theme="clair"] #paiement-carte .bg-slate-950,
-html[data-theme="clair"] [class*="bg-slate-900"] {
+html[data-theme="clair"] [class*="bg-slate-900"],
+html[data-theme="clair"] [class*="bg-slate-950"]:not([class*="bg-slate-950/"]):not([class*="bg-slate-950\\/"]) {
   background-color: #ffffff !important;
   border-color: #e2e8f0 !important;
 }
 
+/* Bullet points and list items across all formation cards */
 html[data-theme="clair"] #catalogue ul li,
 html[data-theme="clair"] #catalogue ul li span,
-html[data-theme="clair"] ul[class*="text-slate-"] li span {
-  color: #1e293b !important;
+html[data-theme="clair"] #catalogue ul li strong,
+html[data-theme="clair"] ul[class*="text-slate-"] li,
+html[data-theme="clair"] ul[class*="text-slate-"] li span,
+html[data-theme="clair"] div[class*="text-slate-300"] span,
+html[data-theme="clair"] .formation-card p,
+html[data-theme="clair"] .formation-card span,
+html[data-theme="clair"] .formation-card li {
+  color: #0f172a !important;
   font-weight: 500 !important;
 }
 
 html[data-theme="clair"] #catalogue .text-slate-200,
 html[data-theme="clair"] #catalogue .text-slate-300,
-html[data-theme="clair"] #catalogue .text-slate-400 {
-  color: #334155 !important;
+html[data-theme="clair"] #catalogue .text-slate-400,
+html[data-theme="clair"] #catalogue p {
+  color: #1e293b !important;
 }
 
+/* Titles inside cards */
+html[data-theme="clair"] #catalogue h3,
+html[data-theme="clair"] #catalogue h4,
+html[data-theme="clair"] [class*="bg-slate-900"] h3,
+html[data-theme="clair"] [class*="bg-slate-900"] h4 {
+  color: #0f172a !important;
+}
+
+/* Badges and meta labels */
 html[data-theme="clair"] #catalogue .text-amber-300,
 html[data-theme="clair"] #catalogue .text-amber-400,
 html[data-theme="clair"] #catalogue [class*="text-amber-"] {
@@ -1390,23 +1414,46 @@ html[data-theme="clair"] #catalogue [class*="text-blue-"] {
   color: #1d4ed8 !important;
 }
 
-html[data-theme="clair"] div[class*="bg-clip-text"] {
-  background-image: linear-gradient(to right, #0284c7, #2563eb) !important;
+/* Checkmarks in lists */
+html[data-theme="clair"] svg[class*="text-blue-400"] {
+  color: #2563eb !important;
+}
+html[data-theme="clair"] svg[class*="text-emerald-400"] {
+  color: #059669 !important;
+}
+
+/* Gradient Titles */
+html[data-theme="clair"] div[class*="bg-clip-text"],
+html[data-theme="clair"] span[class*="bg-clip-text"] {
+  background-image: linear-gradient(to right, #0369a1, #1d4ed8) !important;
   -webkit-background-clip: text !important;
   color: transparent !important;
 }
 
-/* Floating price badge & overlay chips stay high contrast dark */
+/* FAQ Accordions in Light Mode */
+html[data-theme="clair"] button span[class*="text-white"],
+html[data-theme="clair"] [class*="bg-slate-900"] button span {
+  color: #0f172a !important;
+}
+html[data-theme="clair"] div[class*="bg-slate-950/40"] {
+  background-color: #f1f5f9 !important;
+  color: #1e293b !important;
+}
+
+/* Floating price badge & overlay chips stay high contrast dark on images */
 html[data-theme="clair"] [class*="bg-slate-950/90"],
-html[data-theme="clair"] [class*="bg-slate-950/85"] {
-  background-color: #0f172a !important;
+html[data-theme="clair"] [class*="bg-slate-950/85"],
+html[data-theme="clair"] [class*="bg-slate-950/80"] {
+  background-color: rgba(15, 23, 42, 0.92) !important;
   color: #ffffff !important;
 }
 html[data-theme="clair"] [class*="bg-slate-950/90"] span,
-html[data-theme="clair"] [class*="bg-slate-950/85"] span {
+html[data-theme="clair"] [class*="bg-slate-950/85"] span,
+html[data-theme="clair"] [class*="bg-slate-950/80"] span {
   color: #ffffff !important;
 }
-html[data-theme="clair"] [class*="bg-slate-950/90"] span[class*="text-emerald-"] {
+html[data-theme="clair"] [class*="bg-slate-950/90"] span[class*="text-emerald-"],
+html[data-theme="clair"] [class*="bg-slate-950/85"] span[class*="text-emerald-"] {
   color: #34d399 !important;
 }
 

@@ -53,10 +53,12 @@ export default function Footer() {
 
           {/* Column 4: Légal & Qualité */}
           <div className="footer-col">
-            <h4>Qualité & Légal</h4>
+            <h4>L&apos;Organisme &amp; Qualité</h4>
             <ul className="footer-links">
+              <li><Link href="/a-propos">À Propos d&apos;Ô&apos;TOP</Link></li>
+              <li><Link href="/ressources/blog">Blog &amp; Guides Stratégiques</Link></li>
               <li><Link href="/financement">Financement (OPCO, FAF, CPF)</Link></li>
-              <li><Link href="/financement">Démarche Qualité & Handicap</Link></li>
+              <li><Link href="/financement">Démarche Qualité &amp; Handicap</Link></li>
               <li><Link href="/mentions-legales">Mentions légales</Link></li>
               <li><Link href="/cgv">CGV</Link></li>
               <li><Link href="/politique-confidentialite">Politique de confidentialité</Link></li>
@@ -65,10 +67,40 @@ export default function Footer() {
           </div>
         </div>
 
+        {/* Accreditation & Eloqone Qualiopi Partner Strip */}
+        <div style={{ margin: '2.5rem 0 1.5rem', padding: '1.25rem 1.5rem', borderRadius: '16px', background: 'rgba(255, 255, 255, 0.04)', border: '1px solid rgba(255, 255, 255, 0.1)', display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between', gap: '1.25rem' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', flex: '1 1 320px' }}>
+            <div style={{ padding: '0.5rem 0.75rem', background: 'white', borderRadius: '8px', color: '#0f172a', fontWeight: 900, fontSize: '0.85rem', letterSpacing: '-0.02em', border: '1.5px solid #2563eb', flexShrink: 0 }}>
+              <span style={{ color: '#0284c7' }}>Qualiopi</span>
+              <span style={{ fontSize: '0.62rem', display: 'block', color: '#475569', fontWeight: 600 }}>RÉPUBLIQUE FRANÇAISE</span>
+            </div>
+            <div>
+              <div style={{ fontWeight: 800, color: 'white', fontSize: '0.9rem' }}>
+                Financement Garanti • Portage Qualiopi par <a href="https://eloqone.fr" target="_blank" rel="noopener noreferrer" style={{ color: '#38bdf8', textDecoration: 'underline' }}>Eloqone</a>
+              </div>
+              <div style={{ fontSize: '0.78rem', color: '#94a3b8', lineHeight: 1.4, marginTop: '2px' }}>
+                Actions de formation certifiées et éligibles aux prises en charge à 100% OPCO (Atlas, Akto, EP), FAF (FIF-PL, AGEFICE, FAFCEA) sans avance de frais.
+              </div>
+            </div>
+          </div>
+
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', flexWrap: 'wrap' }}>
+            <span style={{ padding: '0.4rem 0.85rem', borderRadius: '8px', background: 'rgba(56, 189, 248, 0.15)', border: '1px solid rgba(56, 189, 248, 0.3)', color: '#7dd3fc', fontSize: '0.75rem', fontWeight: 700 }}>
+              🇫🇷 France Compétences RS6776
+            </span>
+            <span style={{ padding: '0.4rem 0.85rem', borderRadius: '8px', background: 'rgba(168, 85, 247, 0.15)', border: '1px solid rgba(168, 85, 247, 0.3)', color: '#d8b4fe', fontSize: '0.75rem', fontWeight: 700 }}>
+              🇫🇷 France Compétences RS7351
+            </span>
+            <span style={{ padding: '0.4rem 0.85rem', borderRadius: '8px', background: 'rgba(234, 179, 8, 0.15)', border: '1px solid rgba(234, 179, 8, 0.3)', color: '#fde047', fontSize: '0.75rem', fontWeight: 700 }}>
+              🇫🇷 France Compétences RS7344
+            </span>
+          </div>
+        </div>
+
         <div className="footer-bottom">
-          <p>© {new Date().getFullYear()} Ô'TOP Formation — SAS Ô'TOP Formation • SIRET : 990 443 186 00012 • NAF : 8559A • RCS Toulon. Tous droits réservés.</p>
+          <p>© {new Date().getFullYear()} Ô&apos;TOP Formation — SAS Ô&apos;TOP Formation • SIRET : 990 443 186 00012 • NAF : 8559A • RCS Toulon. Tous droits réservés.</p>
           <span className="footer-nda" style={{ color: 'var(--gold-light)' }}>
-            🏆 Organisme de formation déclaré (NDA en cours) · démarche Qualiopi en cours (portage Eloqone) · Certifications Répertoire Spécifique France Compétences
+            🏆 Organisme de formation déclaré (NDA en cours) · démarche Qualiopi portée par Eloqone · Certifications Répertoire Spécifique France Compétences
           </span>
         </div>
       </div>

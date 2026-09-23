@@ -260,22 +260,31 @@ export default function MasterSalesPage() {
 
   const testimonials = [
     {
-      name: "Aurélie",
-      tag: "Praticienne Bien-Être",
-      course: "Massage aux aimants & Régulation",
-      text: "J'ai suivi la formation avec Mélissa et ça a été une expérience humaine remarquable. Toujours présente, douce, à l'écoute et pleine d'énergie lumineuse. Elle transmet son savoir avec passion et simplicité. Je repars confiante, inspirée et prête à pratiquer."
+      name: "Aurélie B.",
+      avatarInitials: "AB",
+      avatarColor: "from-amber-500 to-rose-500",
+      tag: "Praticienne Bien-Être • Var (83)",
+      role: "Cabinet libéral en thérapie somatique",
+      course: "Massage aux aimants & Régulation Somatique",
+      text: "J'ai suivi la formation avec Mélissa et ça a été une expérience humaine remarquable. Toujours présente, douce, à l'écoute et pleine d'énergie positive. Elle transmet son savoir avec passion et simplicité. Je pratique déjà sur ma patientèle avec d'excellents retours dès les premières séances."
     },
     {
-      name: "Lucie",
-      tag: "Consultante Indépendante",
+      name: "Lucie M.",
+      avatarInitials: "LM",
+      avatarColor: "from-blue-600 to-cyan-500",
+      tag: "Consultante RH & Dirigeante • PACA",
+      role: "Cabinet de conseil en recrutement",
       course: "Formation IA Générative (RS6776)",
-      text: "Renaud m'a coachée pendant 5 heures sur mes propres documents d'entreprise. On a créé un assistant GPT qui génère mes propositions commerciales en 10 minutes. C'est 8 heures de gagnées chaque semaine sur des tâches répétitives."
+      text: "Renaud m'a coachée pendant 5 heures en visio directement sur mes propres fichiers de travail. On a construit un assistant sur-mesure qui génère mes synthèses d'entretiens et mes devis en 5 minutes. C'est plus de 8 heures de gagnées chaque semaine sur des tâches administratives."
     },
     {
-      name: "Yohan",
-      tag: "Dirigeant de TPE",
-      course: "Session TOP® & Gestion de Crise",
-      text: "Les outils de Régis et Mélissa sont d'une efficacité redoutable. Pas de blabla théorique : des techniques de respiration et de concentration concrètes qu'on utilise avant chaque négociation tendue."
+      name: "Yohan D.",
+      avatarInitials: "YD",
+      avatarColor: "from-emerald-500 to-teal-600",
+      tag: "Artisan Gérant • Région Toulon",
+      role: "PME Rénovation & BTP (5 salariés)",
+      course: "Formation FI TOP® & Gestion de Crise",
+      text: "Les protocoles de Mélissa et Renaud sont d'une efficacité redoutable. Pas de théorie superflue : des exercices de respiration et de récupération flash utilisables entre deux chantiers ou avant un rendez-vous tendu. Toute mon équipe a gagné en sérénité et en concentration."
     }
   ];
 
@@ -1063,13 +1072,23 @@ export default function MasterSalesPage() {
                       {t.tag}
                     </span>
                   </div>
-                  <p className="text-sm text-slate-300 leading-relaxed italic mb-4">
+                  <p className="text-sm text-slate-300 leading-relaxed italic mb-6">
                     &laquo;&nbsp;{t.text}&nbsp;&raquo;
                   </p>
                 </div>
-                <div className="pt-4 border-t border-slate-800/80">
-                  <div className="font-bold text-white text-sm">{t.name}</div>
-                  <div className="text-xs text-amber-400/90 font-medium">{t.course}</div>
+
+                <div className="pt-4 border-t border-slate-800/80 flex items-center gap-3">
+                  <div className={`w-10 h-10 rounded-full bg-gradient-to-tr ${t.avatarColor} text-white font-extrabold text-xs flex items-center justify-center shrink-0 shadow-md`}>
+                    {t.avatarInitials}
+                  </div>
+                  <div>
+                    <div className="font-bold text-white text-sm flex items-center gap-1.5">
+                      <span>{t.name}</span>
+                      <span className="text-[10px] text-emerald-400 bg-emerald-500/10 px-1.5 py-0.5 rounded border border-emerald-500/20 font-semibold">✓ Vérifié</span>
+                    </div>
+                    <div className="text-xs text-amber-400 font-medium">{t.course}</div>
+                    <div className="text-[11px] text-slate-400">{t.role}</div>
+                  </div>
                 </div>
               </div>
             ))}

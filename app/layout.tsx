@@ -4,6 +4,8 @@ import './globals.css';
 import Nav from '@/components/Nav';
 import ScrollReveal from '@/components/ScrollReveal';
 import { ThemeProvider } from '@/components/ThemeProvider';
+import WhatsAppButton from '@/components/WhatsAppButton';
+import ExitIntentModal from '@/components/ExitIntentModal';
 import Script from 'next/script';
 
 const inter = Inter({ subsets: ['latin', 'latin-ext'], variable: '--font-inter' });
@@ -11,27 +13,79 @@ const inter = Inter({ subsets: ['latin', 'latin-ext'], variable: '--font-inter' 
 export const metadata: Metadata = {
   title: {
     template: "%s | Ô'TOP Formation",
-    default: "Ô'TOP Formation | Techniques d'Optimisation du Potentiel (TOP®)",
+    default: "Ô'TOP Formation | IA Générative, Réseaux Sociaux & Méthode TOP®",
   },
   description:
-    "Ô'TOP Formation accompagne les professionnels, entreprises et collectivités dans la gestion du stress, la préparation mentale et le développement des compétences psychosociales grâce aux Techniques d'Optimisation du Potentiel (TOP®).",
+    "Organisme de formation professionnelle à Ollioules (Var) spécialisé en IA Générative (RS6776), Réseaux Sociaux (RS7351) et Méthode TOP®. Formations certifiantes finançables à 100% (OPCO, FAF, CPF) avec 5h de coaching individuel 1-to-1 inclus.",
   keywords: [
-    'formation TOP', 'Techniques Optimisation Potentiel', 'gestion du stress', 'préparation mentale',
-    'formation QVT', 'prévention RPS', 'burn-out', 'performance professionnelle', 'motivation travail',
-    'bien-être entreprise', 'formation santé mentale', 'TOP®', 'Ollioules', 'Provence', 'PACA'
+    'formation TOP', 'Techniques Optimisation Potentiel', 'formation IA', 'ChatGPT',
+    'Claude', 'n8n', 'automatisation', 'réseaux sociaux', 'RS6776', 'RS7351', 'RS7344',
+    'gestion du stress', 'préparation mentale', 'financement OPCO', 'FAFCEA', 'FIFPL',
+    'Ollioules', 'Toulon', 'Var', 'PACA'
   ],
-  openGraph: {
-    title: "Ô'TOP Formation — Techniques d'Optimisation du Potentiel",
-    description: "Gérez votre stress, développez votre concentration et préservez votre énergie grâce aux TOP®. Organisme de formation certifié, présentiel ou distanciel.",
-    type: 'website',
-    locale: 'fr_FR',
+  metadataBase: new URL('https://o-topformation.vercel.app'),
+  alternates: {
+    canonical: '/',
   },
+  openGraph: {
+    title: "Ô'TOP Formation — Formations Certifiantes IA, Digital & Méthode TOP®",
+    description: "Développez votre entreprise avec l'IA et préservez votre énergie grâce aux TOP®. Prise en charge OPCO/FAF 100% avec 5h de coaching individuel inclus.",
+    url: 'https://o-topformation.vercel.app',
+    siteName: "Ô'TOP Formation",
+    locale: 'fr_FR',
+    type: 'website',
+  },
+};
+
+const organizationSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'EducationalOrganization',
+  name: "Ô'TOP Formation",
+  alternateName: "O'TOP Formation",
+  url: 'https://o-topformation.vercel.app',
+  logo: 'https://o-topformation.vercel.app/logo.png',
+  description:
+    "Organisme de formation certifiante en IA Générative, Réseaux Sociaux et Techniques d'Optimisation du Potentiel (TOP®) à Ollioules (Var, PACA). Financements OPCO, FAF, FIF-PL et CPF.",
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: 'Espace Gamma 1, 139 Chemin des 2 Frères',
+    addressLocality: 'Ollioules',
+    postalCode: '83190',
+    addressRegion: 'Var',
+    addressCountry: 'FR',
+  },
+  contactPoint: [
+    {
+      '@type': 'ContactPoint',
+      telephone: '+33767246825',
+      contactType: 'customer service',
+      areaServed: 'FR',
+      availableLanguage: 'French',
+    },
+    {
+      '@type': 'ContactPoint',
+      telephone: '+33674797509',
+      contactType: 'technical support',
+      areaServed: 'FR',
+      availableLanguage: 'French',
+    },
+  ],
+  sameAs: [
+    'https://www.linkedin.com/in/m%C3%A9lissa-formatrice-top%C2%AE-aa5714380/',
+    'https://www.instagram.com/otop.formations/',
+    'https://www.facebook.com/835767209621029',
+  ],
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="fr" className={inter.variable} data-theme="sombre">
       <head>
+        {/* Organization Schema.org */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+        />
         {/* Inline Theme Detection Script to avoid flash */}
         <script
           dangerouslySetInnerHTML={{
@@ -81,6 +135,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <div style={{ height: '60px' }} />
           <ScrollReveal />
           {children}
+          <WhatsAppButton />
+          <ExitIntentModal />
         </ThemeProvider>
       </body>
     </html>

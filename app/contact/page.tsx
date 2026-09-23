@@ -20,6 +20,7 @@ function ContactContent() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
+  const [showDetails, setShowDetails] = useState(false);
 
   useEffect(() => {
     const subjectParam = searchParams.get('subject');
@@ -160,40 +161,60 @@ function ContactContent() {
             {/* Colonne 2 : Formulaire de demande sécurisé & RGPD */}
             <div className="card" style={{ padding: '2.5rem', background: 'white', boxShadow: 'var(--shadow-md)', borderRadius: 'var(--radius)' }}>
               {submitted ? (
-                <div style={{ textAlign: 'center', padding: '2rem 1rem' }}>
-                  <div style={{ fontSize: '3.5rem', marginBottom: '1rem' }}>✅</div>
-                  <h3 style={{ color: 'var(--blue-900)', marginBottom: '1rem', fontSize: '1.5rem' }}>Demande reçue avec succès !</h3>
-                  <p style={{ color: 'var(--gray-600)', lineHeight: 1.7, marginBottom: '2rem' }}>
-                    Merci {form.nom}. Un conseiller pédagogique d&apos;Ô&apos;TOP Formation va examiner votre demande et vous recontacter par email ou téléphone sous 24h ouvrées.
-                  </p>
-                  <button
-                    onClick={() => {
-                      setSubmitted(false);
-                      setForm({
-                        nom: '',
-                        email: '',
-                        telephone: '',
-                        statut: 'independant',
-                        besoin: 'Formation IA Certifiante (RS6776)',
-                        message: '',
-                        rgpdConsent: false,
-                      });
-                    }}
-                    className="btn btn-secondary"
-                    style={{ padding: '0.75rem 1.5rem', fontSize: '0.9rem' }}
-                  >
-                    Envoyer une autre demande
-                  </button>
+                <div style={{ textAlign: 'center', padding: '2.5rem 1.5rem', background: '#f8fafc', borderRadius: 'var(--radius)', border: '2px solid #22c55e' }}>
+                  <div style={{ fontSize: '3.5rem', marginBottom: '1rem' }}>🎉</div>
+                  <h3 style={{ color: 'var(--blue-900)', marginBottom: '0.75rem', fontSize: '1.6rem', fontWeight: 800 }}>
+                    Demande validée avec succès !
+                  </h3>
+                  <div style={{ maxWidth: '440px', margin: '0 auto 1.5rem', color: 'var(--gray-700)', lineHeight: 1.7, fontSize: '0.95rem' }}>
+                    <p style={{ marginBottom: '0.75rem' }}>
+                      Merci <strong>{form.nom}</strong> ! Votre dossier a été transmis directement à <strong>Mélissa</strong> (Directrice des admissions).
+                    </p>
+                    <p style={{ background: '#ecfdf5', padding: '0.75rem 1rem', borderRadius: '8px', border: '1px solid #a7f3d0', color: '#065f46', fontSize: '0.88rem', fontWeight: 600 }}>
+                      ⚡ Vous serez recontacté(e) personnellement sous 24h ouvrées pour valider vos droits de financement (OPCO / FAF / CPF) et fixer votre diagnostic offert de 15 minutes.
+                    </p>
+                  </div>
+
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', alignItems: 'center' }}>
+                    <a
+                      href="https://wa.me/33767246825?text=Bonjour%20M%C3%A9lissa%2C%20je%20viens%20d%27envoyer%20une%20demande%20sur%20le%20site%20et%20je%20souhaite%20%C3%A9changer%20directement."
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="btn"
+                      style={{ background: '#25D366', color: 'white', padding: '0.85rem 1.75rem', borderRadius: '50px', fontWeight: 700, fontSize: '0.9rem', display: 'inline-flex', alignItems: 'center', gap: '0.5rem', textDecoration: 'none' }}
+                    >
+                      <span>💬 Échanger immédiatement avec Mélissa sur WhatsApp</span>
+                    </a>
+
+                    <button
+                      onClick={() => {
+                        setSubmitted(false);
+                        setForm({
+                          nom: '',
+                          email: '',
+                          telephone: '',
+                          statut: 'independant',
+                          besoin: 'Formation IA Certifiante (RS6776)',
+                          message: '',
+                          rgpdConsent: false,
+                        });
+                      }}
+                      className="btn btn-secondary"
+                      style={{ padding: '0.6rem 1.25rem', fontSize: '0.85rem', marginTop: '0.5rem' }}
+                    >
+                      Envoyer une autre demande
+                    </button>
+                  </div>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit}>
                   <div style={{ marginBottom: '1.5rem' }}>
-                    <span className="label" style={{ color: 'var(--blue-700)' }}>Formulaire Officiel</span>
-                    <h3 style={{ color: 'var(--blue-900)', fontSize: '1.5rem', marginBottom: '0.5rem' }}>
-                      Demander un diagnostic (15 min)
+                    <span className="label" style={{ color: 'var(--blue-700)' }}>Formulaire Rapide (4 Champs)</span>
+                    <h3 style={{ color: 'var(--blue-900)', fontSize: '1.5rem', marginBottom: '0.5rem', fontWeight: 800 }}>
+                      Demander votre diagnostic offert (15 min)
                     </h3>
                     <p style={{ fontSize: '0.9rem', color: 'var(--gray-500)' }}>
-                      Remplissez ce formulaire pour recevoir votre étude personnalisée et le programme détaillé.
+                      Vérifiez vos droits de prise en charge OPCO/FAF et recevez le programme détaillé.
                     </p>
                   </div>
 
@@ -203,10 +224,11 @@ function ContactContent() {
                     </div>
                   )}
 
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '1.1rem' }}>
+                    {/* Champ 1 : Nom */}
                     <div>
                       <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 700, marginBottom: '0.4rem', color: 'var(--gray-700)' }}>
-                        Nom & Prénom *
+                        1. Nom & Prénom *
                       </label>
                       <input
                         type="text"
@@ -218,97 +240,112 @@ function ContactContent() {
                       />
                     </div>
 
-                    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
-                      <div>
-                        <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 700, marginBottom: '0.4rem', color: 'var(--gray-700)' }}>
-                          Email professionnel *
-                        </label>
-                        <input
-                          type="email"
-                          required
-                          value={form.email}
-                          onChange={e => setForm({ ...form, email: e.target.value })}
-                          placeholder="sophie@entreprise.fr"
-                          style={{ width: '100%', padding: '0.85rem 1rem', borderRadius: 'var(--radius-sm)', border: '1.5px solid var(--gray-300)', fontSize: '0.95rem' }}
-                        />
-                      </div>
-
-                      <div>
-                        <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 700, marginBottom: '0.4rem', color: 'var(--gray-700)' }}>
-                          Téléphone (optionnel)
-                        </label>
-                        <input
-                          type="tel"
-                          value={form.telephone}
-                          onChange={e => setForm({ ...form, telephone: e.target.value })}
-                          placeholder="06 12 34 56 78"
-                          style={{ width: '100%', padding: '0.85rem 1rem', borderRadius: 'var(--radius-sm)', border: '1.5px solid var(--gray-300)', fontSize: '0.95rem' }}
-                        />
-                      </div>
-                    </div>
-
-                    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
-                      <div>
-                        <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 700, marginBottom: '0.4rem', color: 'var(--gray-700)' }}>
-                          Votre statut *
-                        </label>
-                        <select
-                          value={form.statut}
-                          onChange={e => setForm({ ...form, statut: e.target.value })}
-                          style={{ width: '100%', padding: '0.85rem 1rem', borderRadius: 'var(--radius-sm)', border: '1.5px solid var(--gray-300)', fontSize: '0.95rem', background: 'white' }}
-                        >
-                          <option value="independant">Indépendant / Freelance / Libéral</option>
-                          <option value="dirigeant">Dirigeant de TPE / PME</option>
-                          <option value="salarie">Salarié d&apos;entreprise</option>
-                          <option value="demandeur">Demandeur d&apos;emploi</option>
-                          <option value="autre">Autre situation</option>
-                        </select>
-                      </div>
-
-                      <div>
-                        <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 700, marginBottom: '0.4rem', color: 'var(--gray-700)' }}>
-                          Parcours souhaité *
-                        </label>
-                        <select
-                          value={form.besoin}
-                          onChange={e => setForm({ ...form, besoin: e.target.value })}
-                          style={{ width: '100%', padding: '0.85rem 1rem', borderRadius: 'var(--radius-sm)', border: '1.5px solid var(--gray-300)', fontSize: '0.95rem', background: 'white' }}
-                        >
-                          <option value="Formation IA Certifiante (RS6776)">⚡ IA Générative (RS6776)</option>
-                          <option value="Formation IA Dirigeants (RS7344)">🤖 IA Business Entreprise (RS7344)</option>
-                          <option value="Formation Réseaux Sociaux (RS7351)">📱 Prépa Réseaux Sociaux (RS7351)</option>
-                          <option value="Formation FI TOP (21h)">🧘 Formation Initiale FI TOP® (21h)</option>
-                          <option value="Formation FB-TOP (7h)">⏱️ Initiation FB-TOP (7h)</option>
-                          <option value="Autre projet">✨ Autre projet sur-mesure</option>
-                        </select>
-                      </div>
-                    </div>
-
+                    {/* Champ 2 : Email */}
                     <div>
                       <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 700, marginBottom: '0.4rem', color: 'var(--gray-700)' }}>
-                        Précisez vos attentes ou votre projet (optionnel)
+                        2. Email professionnel *
                       </label>
-                      <textarea
-                        rows={3}
-                        value={form.message}
-                        onChange={e => setForm({ ...form, message: e.target.value })}
-                        placeholder="Ex : Je souhaite automatiser la rédaction de mes devis et ma communication sans y passer 3h par jour..."
-                        style={{ width: '100%', padding: '0.85rem 1rem', borderRadius: 'var(--radius-sm)', border: '1.5px solid var(--gray-300)', fontSize: '0.95rem', resize: 'vertical' }}
+                      <input
+                        type="email"
+                        required
+                        value={form.email}
+                        onChange={e => setForm({ ...form, email: e.target.value })}
+                        placeholder="sophie@entreprise.fr"
+                        style={{ width: '100%', padding: '0.85rem 1rem', borderRadius: 'var(--radius-sm)', border: '1.5px solid var(--gray-300)', fontSize: '0.95rem' }}
                       />
                     </div>
 
+                    {/* Champ 3 : Téléphone */}
+                    <div>
+                      <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 700, marginBottom: '0.4rem', color: 'var(--gray-700)' }}>
+                        3. Numéro de téléphone direct *
+                      </label>
+                      <input
+                        type="tel"
+                        required
+                        value={form.telephone}
+                        onChange={e => setForm({ ...form, telephone: e.target.value })}
+                        placeholder="06 12 34 56 78 (pour l'appel de 15 min)"
+                        style={{ width: '100%', padding: '0.85rem 1rem', borderRadius: 'var(--radius-sm)', border: '1.5px solid var(--gray-300)', fontSize: '0.95rem' }}
+                      />
+                    </div>
+
+                    {/* Champ 4 : Parcours souhaité */}
+                    <div>
+                      <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 700, marginBottom: '0.4rem', color: 'var(--gray-700)' }}>
+                        4. Parcours de formation envisagé *
+                      </label>
+                      <select
+                        value={form.besoin}
+                        onChange={e => setForm({ ...form, besoin: e.target.value })}
+                        style={{ width: '100%', padding: '0.85rem 1rem', borderRadius: 'var(--radius-sm)', border: '1.5px solid var(--gray-300)', fontSize: '0.95rem', background: 'white' }}
+                      >
+                        <option value="Formation IA Certifiante (RS6776)">⚡ IA Générative pour Indépendants (RS6776)</option>
+                        <option value="Formation IA Dirigeants (RS7344)">🤖 IA & Automatisation Business (RS7344)</option>
+                        <option value="Formation Réseaux Sociaux (RS7351)">📱 Stratégie Réseaux Sociaux & Social Selling (RS7351)</option>
+                        <option value="Formation FI TOP (21h)">🧘 Formation Initiale FI TOP® (21h - Stress & Sommeil)</option>
+                        <option value="Formation FB-TOP (7h)">⏱️ Initiation FB-TOP (7h - Récupération Flash)</option>
+                        <option value="Autre projet">✨ Autre projet sur-mesure / Intra-entreprise</option>
+                      </select>
+                    </div>
+
+                    {/* Accordéon optionnel pour précisions */}
+                    <div style={{ borderTop: '1px dashed var(--gray-300)', paddingTop: '0.75rem' }}>
+                      <button
+                        type="button"
+                        onClick={() => setShowDetails(!showDetails)}
+                        style={{ background: 'none', border: 'none', color: 'var(--blue-700)', fontSize: '0.85rem', fontWeight: 700, cursor: 'pointer', padding: 0, display: 'flex', alignItems: 'center', gap: '0.4rem' }}
+                      >
+                        <span>{showDetails ? '➖ Masquer les précisions' : '➕ Préciser votre statut ou ajouter un message (optionnel)'}</span>
+                      </button>
+
+                      {showDetails && (
+                        <div style={{ marginTop: '0.85rem', display: 'flex', flexDirection: 'column', gap: '0.85rem' }}>
+                          <div>
+                            <label style={{ display: 'block', fontSize: '0.8rem', fontWeight: 600, marginBottom: '0.3rem', color: 'var(--gray-700)' }}>
+                              Votre statut professionnel
+                            </label>
+                            <select
+                              value={form.statut}
+                              onChange={e => setForm({ ...form, statut: e.target.value })}
+                              style={{ width: '100%', padding: '0.75rem 1rem', borderRadius: 'var(--radius-sm)', border: '1.5px solid var(--gray-300)', fontSize: '0.9rem', background: 'white' }}
+                            >
+                              <option value="independant">Indépendant / Freelance / Profession Libérale</option>
+                              <option value="dirigeant">Chef d&apos;entreprise / Dirigeant TPE-PME</option>
+                              <option value="salarie">Salarié d&apos;entreprise (plan de développement)</option>
+                              <option value="demandeur">Demandeur d&apos;emploi</option>
+                              <option value="autre">Autre situation</option>
+                            </select>
+                          </div>
+
+                          <div>
+                            <label style={{ display: 'block', fontSize: '0.8rem', fontWeight: 600, marginBottom: '0.3rem', color: 'var(--gray-700)' }}>
+                              Votre message ou question spécifique
+                            </label>
+                            <textarea
+                              rows={2}
+                              value={form.message}
+                              onChange={e => setForm({ ...form, message: e.target.value })}
+                              placeholder="Ex : Je souhaite automatiser mes devis et mes relances..."
+                              style={{ width: '100%', padding: '0.75rem 1rem', borderRadius: 'var(--radius-sm)', border: '1.5px solid var(--gray-300)', fontSize: '0.9rem', resize: 'vertical' }}
+                            />
+                          </div>
+                        </div>
+                      )}
+                    </div>
+
                     {/* Case RGPD */}
-                    <div style={{ display: 'flex', alignItems: 'flex-start', gap: '0.75rem', marginTop: '0.5rem' }}>
+                    <div style={{ display: 'flex', alignItems: 'flex-start', gap: '0.75rem', marginTop: '0.25rem' }}>
                       <input
                         type="checkbox"
                         id="rgpdConsentContact"
                         required
                         checked={form.rgpdConsent}
                         onChange={e => setForm({ ...form, rgpdConsent: e.target.checked })}
-                        style={{ marginTop: '0.25rem', width: '1rem', height: '1rem', accentColor: 'var(--blue-900)' }}
+                        style={{ marginTop: '0.25rem', width: '1.1rem', height: '1.1rem', accentColor: 'var(--blue-900)' }}
                       />
                       <label htmlFor="rgpdConsentContact" style={{ fontSize: '0.8rem', color: 'var(--gray-600)', lineHeight: 1.5 }}>
-                        J&apos;accepte que les données saisies soient traitées par SAS Ô&apos;TOP Formation pour répondre à ma demande d&apos;information et de diagnostic. Consultez notre <Link href="/politique-confidentialite" style={{ color: 'var(--blue-700)', textDecoration: 'underline' }}>Politique de confidentialité</Link>.
+                        J&apos;accepte d&apos;être recontacté(e) pour mon diagnostic de formation offert. Données confidentielles protégées. Consultez notre <Link href="/politique-confidentialite" style={{ color: 'var(--blue-700)', textDecoration: 'underline' }}>Politique de confidentialité</Link>.
                       </label>
                     </div>
 
