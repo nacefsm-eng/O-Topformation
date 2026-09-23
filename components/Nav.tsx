@@ -4,6 +4,8 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
+import ThemeToggle from '@/components/ThemeToggle';
+
 const formationsLinks = [
   { 
     label: '🤖 IA & Automatisation Business (RS7344)', 
@@ -26,8 +28,8 @@ const formationsLinks = [
     href: '/formations/fi-top' 
   },
   { 
-    label: '✨ Le Grand Récap : Toutes Nos Formations', 
-    desc: 'IA, Réseaux Sociaux, Méthode TOP® & Financement selon statut',
+    label: '✨ Page de Vente & Inscriptions Immédiates', 
+    desc: 'Récapitulatif des cursus, modalités de règlement & inscription en ligne',
     href: '/respirez' 
   },
 ];
@@ -89,11 +91,39 @@ export default function Nav() {
 
       {/* Main Glass Nav */}
       <nav className={`nav${scrolled ? ' scrolled' : ''}`}>
-        <div className="container" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+        <div className="container" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '1rem' }}>
           
-          {/* Logo */}
-          <Link href="/" className="nav-logo" aria-label="Accueil O'TOP Formation" style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
-            <img src="/logo.png" alt="O'TOP Formation" height={44} style={{ height: '44px', width: 'auto' }} />
+          {/* Logo with circular badge and brand typography */}
+          <Link href="/" className="nav-logo-wrap" aria-label="Accueil O'TOP Formation" style={{ textDecoration: 'none' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+              <div style={{ 
+                position: 'relative', 
+                width: '42px', 
+                height: '42px', 
+                borderRadius: '9999px', 
+                padding: '2px', 
+                background: 'linear-gradient(135deg, #2563eb, #38bdf8, #fbbf24)', 
+                display: 'flex', 
+                alignItems: 'center', 
+                justifyContent: 'center',
+                boxShadow: '0 2px 10px rgba(0,0,0,0.25)',
+                flexShrink: 0
+              }}>
+                <img 
+                  src="/logo.png" 
+                  alt="O'TOP Formation" 
+                  style={{ width: '100%', height: '100%', objectFit: 'contain', borderRadius: '9999px', background: '#ffffff' }} 
+                />
+              </div>
+              <div style={{ display: 'flex', flexDirection: 'column' }}>
+                <span className="brand-text" style={{ fontWeight: 800, fontSize: '1.05rem', letterSpacing: '-0.02em', lineHeight: 1.1 }}>
+                  Ô&apos;TOP <span style={{ color: '#38bdf8' }}>FORMATION</span>
+                </span>
+                <span style={{ fontSize: '0.6rem', letterSpacing: '0.12em', textTransform: 'uppercase', color: '#94a3b8', fontWeight: 600, marginTop: '2px' }}>
+                  IA • DIGITAL • MÉTHODE TOP®
+                </span>
+              </div>
+            </div>
           </Link>
 
           {/* Desktop links */}
@@ -163,22 +193,27 @@ export default function Nav() {
 
             <li role="none">
               <Link
-                href="/equipe"
-                className={pathname === '/equipe' ? 'active' : ''}
+                href="/respirez"
+                className={pathname === '/respirez' ? 'active' : ''}
                 role="menuitem"
+                style={{ color: '#fbbf24', fontWeight: 700 }}
               >
-                Équipe
+                ✨ Page de Vente
               </Link>
             </li>
           </ul>
 
-          {/* Desktop actions */}
-          <div className="nav-actions">
+          {/* Desktop actions with Theme Toggle */}
+          <div className="nav-actions" style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+            
+            {/* Multi-Color Theme Switcher (Sombre, Clair, Bleu Roi) */}
+            <ThemeToggle />
+
             <a
               href="https://wa.me/33767246825?text=Bonjour%2C%20je%20souhaite%20des%20informations%20sur%20les%20formations%20O%27TOP."
               target="_blank"
               rel="noopener noreferrer"
-              className="px-3.5 py-2 rounded-full text-xs font-bold flex items-center gap-1.5 transition-all"
+              className="px-3 py-1.5 rounded-full text-xs font-bold flex items-center gap-1.5 transition-all"
               style={{ background: 'rgba(16, 185, 129, 0.15)', border: '1px solid rgba(16, 185, 129, 0.4)', color: '#34d399' }}
             >
               <span>💬 WhatsApp</span>
@@ -186,7 +221,7 @@ export default function Nav() {
 
             <Link 
               href="/contact" 
-              className="px-4 py-2 rounded-full text-xs font-bold text-white transition-all shadow-lg hover:shadow-blue-500/25"
+              className="px-3.5 py-1.5 rounded-full text-xs font-bold text-white transition-all shadow-lg hover:shadow-blue-500/25"
               style={{ background: 'linear-gradient(135deg, #2563eb, #4f46e5)' }}
             >
               Diagnostic 15 min ⚡
@@ -194,16 +229,19 @@ export default function Nav() {
           </div>
 
           {/* Mobile hamburger button */}
-          <button
-            className={`nav-hamburger${mobileOpen ? ' open' : ''}`}
-            onClick={() => setMobileOpen(!mobileOpen)}
-            aria-label={mobileOpen ? 'Fermer le menu' : 'Ouvrir le menu'}
-            aria-expanded={mobileOpen}
-          >
-            <span className="nav-hamburger-bar" />
-            <span className="nav-hamburger-bar" />
-            <span className="nav-hamburger-bar" />
-          </button>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }} className="md:hidden">
+            <ThemeToggle />
+            <button
+              className={`nav-hamburger${mobileOpen ? ' open' : ''}`}
+              onClick={() => setMobileOpen(!mobileOpen)}
+              aria-label={mobileOpen ? 'Fermer le menu' : 'Ouvrir le menu'}
+              aria-expanded={mobileOpen}
+            >
+              <span className="nav-hamburger-bar" />
+              <span className="nav-hamburger-bar" />
+              <span className="nav-hamburger-bar" />
+            </button>
+          </div>
         </div>
       </nav>
 
@@ -214,7 +252,10 @@ export default function Nav() {
         style={{ background: '#030712', color: 'white' }}
       >
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '2rem' }}>
-          <img src="/logo.png" alt="O'TOP Formation" height={44} />
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+            <img src="/logo.png" alt="O'TOP Formation" style={{ width: '38px', height: '38px', borderRadius: '50%', background: '#fff' }} />
+            <span style={{ fontWeight: 800, fontSize: '1rem', color: '#fff' }}>Ô&apos;TOP FORMATION</span>
+          </div>
           <button
             onClick={() => setMobileOpen(false)}
             aria-label="Fermer le menu"
@@ -237,7 +278,7 @@ export default function Nav() {
           <li><Link href="/entreprises" onClick={() => setMobileOpen(false)} style={{ color: 'white', fontSize: '1.1rem' }}>Entreprises & B2B</Link></li>
           <li><Link href="/methode" onClick={() => setMobileOpen(false)} style={{ color: 'white', fontSize: '1.1rem' }}>La Méthode TOP®</Link></li>
           <li><Link href="/financement" onClick={() => setMobileOpen(false)} style={{ color: 'white', fontSize: '1.1rem' }}>Financement</Link></li>
-          <li><Link href="/equipe" onClick={() => setMobileOpen(false)} style={{ color: 'white', fontSize: '1.1rem' }}>Équipe</Link></li>
+          <li><Link href="/respirez" onClick={() => setMobileOpen(false)} style={{ color: '#fbbf24', fontSize: '1.1rem', fontWeight: 700 }}>✨ Page de Vente & Tarifs</Link></li>
           <li style={{ marginTop: '1rem' }}>
             <Link href="/contact" onClick={() => setMobileOpen(false)} className="w-full block py-3.5 text-center rounded-xl bg-blue-600 text-white font-bold">
               Demander un diagnostic (15 min) ⚡

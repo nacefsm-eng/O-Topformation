@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import CongratulationsModal from '@/components/ui/congratulations-modal';
-import NinePillarsSection from '@/components/sections/NinePillarsSection';
+import CheckoutModal from '@/components/ui/checkout-modal';
 import TeamMemberCard from '@/components/ui/team-member-card';
 import { 
   Bot, 
@@ -31,194 +31,202 @@ import {
   Building2,
   Calendar,
   MapPin,
-  Coins
+  Coins,
+  CreditCard,
+  Lock,
+  Download
 } from 'lucide-react';
 
 export default function MasterSalesPage() {
-  const [selectedTrack, setSelectedTrack] = useState<'all' | 'ia' | 'reseaux' | 'top' | 'therapie' | 'cyber'>('all');
+  const [selectedTrack, setSelectedTrack] = useState<'all' | 'ia' | 'reseaux' | 'top' | 'therapie'>('all');
   const [showModal, setShowModal] = useState(false);
   const [activeFaq, setActiveFaq] = useState<number | null>(0);
+
+  // Diagnostic form state
   const [diagnosticName, setDiagnosticName] = useState('');
   const [diagnosticPhone, setDiagnosticPhone] = useState('');
   const [diagnosticNeed, setDiagnosticNeed] = useState('ia-business');
 
+  // Checkout modal & Inline Payment state
+  const [checkoutModalOpen, setCheckoutModalOpen] = useState(false);
+  const [checkoutPlan, setCheckoutPlan] = useState<{ title: string; price: number | string; description: string }>({
+    title: 'Acompte de Réservation & Diagnostic Prioritaire',
+    price: 150,
+    description: 'Réservation immédiate de votre place + audit préalable de financement'
+  });
+
+  // Inline Payment Section State
+  const [inlineSelectedPackage, setInlineSelectedPackage] = useState('ia-indep');
+  const [inlinePaymentOption, setInlinePaymentOption] = useState<'1x' | '3x' | 'opco'>('1x');
+  const [inlineCardNumber, setInlineCardNumber] = useState('');
+  const [inlineCardExpiry, setInlineCardExpiry] = useState('');
+  const [inlineCardCvc, setInlineCardCvc] = useState('');
+  const [inlineCardHolder, setInlineCardHolder] = useState('');
+  const [inlineEmail, setInlineEmail] = useState('');
+  const [inlinePhone, setInlinePhone] = useState('');
+  const [inlineProcessing, setInlineProcessing] = useState(false);
+  const [inlineSuccess, setInlineSuccess] = useState(false);
+  const [inlineTxId, setInlineTxId] = useState('');
+
+  const packagePrices: Record<string, { title: string; price: number; description: string }> = {
+    'acompte': {
+      title: 'Acompte de Réservation Standard (Toutes formations)',
+      price: 150,
+      description: 'Bloque votre place + montage du dossier de financement'
+    },
+    'ia-indep': {
+      title: 'Formation IA Générative (RS6776) - 16h + 5h Coaching',
+      price: 1490,
+      description: 'Accès illimité plateforme + 5h de coaching 1-to-1'
+    },
+    'reseaux': {
+      title: 'Formation Réseaux Sociaux & Growth (RS7351) - 11h+',
+      price: 1290,
+      description: 'Vidéos interactives, Canva, CapCut, Meta Ads & Waalaxy'
+    },
+    'fi-top': {
+      title: 'Formation Initiale FI-TOP® (21h / 3 jours)',
+      price: 890,
+      description: 'Boîte à outils complète méthode TOP® + livret officiel'
+    },
+    'massage-aimants': {
+      title: 'Journée Formation Massage aux Aimants (Ollioules)',
+      price: 280,
+      description: '1 journée pratique intensive en institut + livret technique'
+    }
+  };
+
+  const currentPkg = packagePrices[inlineSelectedPackage] || packagePrices['ia-indep'];
+  const calculatedMonthly = Math.round(currentPkg.price / 3);
+
   const tracks = [
-    { id: 'all', label: '🌟 Tout le Catalogue', count: '8 Formations' },
+    { id: 'all', label: '🌟 Tout le Catalogue', count: '7 Formations' },
     { id: 'ia', label: '🤖 IA & Automatisation', count: '2 Titres RS' },
     { id: 'reseaux', label: '📱 Réseaux Sociaux', count: '1 Titre RS' },
     { id: 'top', label: '🧘 Méthode TOP®', count: '2 Formations' },
-    { id: 'therapie', label: '🌿 Soins & Massages', count: '3 Cursus' },
-    { id: 'cyber', label: '🛡️ Cybersécurité', count: 'Expertise' },
+    { id: 'therapie', label: '🌿 Soins & Massages', count: '2 Cursus' },
   ];
 
   const formationsList = [
     {
       id: 'rs6776',
       track: 'ia',
+      pkgKey: 'ia-indep',
       badge: 'Certification France Compétences RS6776',
-      badgeColor: 'bg-blue-500/10 text-blue-400 border-blue-500/30',
-      title: 'IA Générative pour Indépendants & Créateurs',
-      duration: '16 heures de vidéos + Accompagnement individuel',
-      modality: '100% en ligne • Accès illimité 24/7 • Coaching 1-to-1 inclus',
-      funding: 'Finançable selon votre statut (CPF, OPCO, FAF) via notre organisme partenaire',
-      price: 'Financement selon éligibilité',
-      desc: 'Maîtrisez ChatGPT, Claude, Midjourney et l’IA générative pour rédiger vos contenus, automatiser vos tâches récurrentes et récupérer 10h à 15h par semaine.',
+      badgeColor: 'bg-cyan-500/10 text-cyan-400 border-cyan-500/30',
+      title: 'IA Générative pour Indépendants & Dirigeants',
+      duration: '16 heures de vidéos + 5h de coaching 1-to-1',
+      modality: '100% en ligne • Accès 24/7 • Suivi individuel sur vos fichiers',
+      funding: 'Finançable OPCO, FAF, CPF via partenaire Eloqone',
+      price: '1 490 € ou 100% financé',
+      desc: 'Maîtrisez ChatGPT, Claude, le prompting métier et l’automatisation pour rédiger vos contenus, traiter vos devis et récupérer 10h à 15h par semaine.',
       points: [
         'Prompting avancé & ingénierie de requêtes sur-mesure',
-        'Création de GPTs personnalisés pour votre propre activité',
+        'Création de GPTs personnalisés sur vos propres documents',
         'Génération visuelle & déclinaison graphique immédiate',
-        'Cas pratiques orientés rentabilité et gain de temps réel'
+        '5 heures de coaching individuel avec Renaud sur votre matériel'
       ],
-      ctaText: 'Explorer le programme RS6776',
-      ctaHref: '/formations/ia',
-      whatsappMsg: 'Bonjour Mélissa, je souhaite candidater pour la formation IA Générative RS6776 (16h).'
+      whatsappMsg: 'Bonjour Renaud, je souhaite des informations sur la formation IA Générative RS6776.'
     },
     {
       id: 'rs7344',
       track: 'ia',
+      pkgKey: 'acompte',
       badge: 'Certification France Compétences RS7344',
-      badgeColor: 'bg-cyan-500/10 text-cyan-400 border-cyan-500/30',
-      title: 'Intégration de l’IA en Entreprise & Workflows Métiers',
-      duration: 'Parcours sur-mesure de 14h à 35h',
-      modality: 'Distanciel, blended ou présentiel intra-entreprise',
-      funding: 'Finançable selon votre statut (OPCO, FAF) via notre organisme partenaire',
-      price: 'Sur devis financé',
-      desc: 'Accompagnement de direction et d’équipes pour déployer l’IA dans vos processus : automatisation via n8n/Make, gouvernance des données et conformité au règlement européen AI Act (calendrier 2025-2026).',
+      badgeColor: 'bg-indigo-500/10 text-indigo-400 border-indigo-500/30',
+      title: 'Intégration de l’IA en Entreprise & Workflows',
+      duration: '14h à 35h sur-mesure (Distanciel ou Intra)',
+      modality: 'Parcours collectif ou direction, blended learning',
+      funding: '100% éligible plan de développement compétences OPCO',
+      price: 'Sur devis financé (ou acompte 150 €)',
+      desc: 'Accompagnement d’équipes pour déployer l’IA : audit des flux avec la méthode STEP, automatisation n8n/Make sans code et conformité au règlement européen AI Act.',
       points: [
-        'Audit des flux de travail & identification des leviers de rentabilité',
+        'Cartographie des tâches à automatiser (méthode STEP)',
         'Mise en place de workflows automatisés sans code complexe',
-        'Sécurisation des données sensibles d’entreprise & conformité RGPD',
-        'Montée en compétence des collaborateurs et accompagnement au changement'
+        'Sécurisation des données sensibles & conformité RGPD / AI Act',
+        'Montée en compétences des collaborateurs et suivi opérationnel'
       ],
-      ctaText: 'Découvrir la formation RS7344',
-      ctaHref: '/formations/ia',
-      whatsappMsg: 'Bonjour Renaud, je souhaite des informations sur l’intégration IA entreprise RS7344.'
+      whatsappMsg: 'Bonjour Renaud, je souhaite un devis pour l’intégration IA entreprise RS7344.'
     },
     {
       id: 'rs7351',
       track: 'reseaux',
+      pkgKey: 'reseaux',
       badge: 'Préparation Certification RS7351',
       badgeColor: 'bg-pink-500/10 text-pink-400 border-pink-500/30',
-      title: 'Structurer et Piloter sa Communication sur les Réseaux Sociaux',
-      duration: '11 heures+ de vidéos interactives',
-      modality: '100% à distance • Modules actionnables à votre rythme',
-      funding: 'Finançable selon votre statut (OPCO, FAF, CPF) via notre organisme partenaire',
-      price: 'Financement selon éligibilité',
-      desc: 'Professionnalisez votre présence digitale de A à Z. Ne publiez plus au hasard : exploitez LinkedIn, Waalaxy, Instagram, Canva et CapCut pour générer des prospects qualifiés.',
+      title: 'Développer son Activité avec les Réseaux Sociaux',
+      duration: '11h+ de vidéos interactives + mise en situation',
+      modality: '100% en ligne • Accès 24/7 • Cas pratiques réels',
+      funding: 'Finançable OPCO, FAF, CPF via partenaire Eloqone',
+      price: '1 290 € ou 100% financé',
+      desc: 'Professionnalisez votre présence digitale : apprenez à concevoir une charte graphique avec Canva, monter des vidéos CapCut percutantes et automatiser votre prospection sur LinkedIn et Meta.',
       points: [
-        'Stratégie de contenu & ligne éditoriale percutante',
-        'Prospection automatisée B2B sur LinkedIn avec Waalaxy',
-        'Production vidéo courte (Reels, TikTok) avec CapCut et Canva',
-        'Pilotage publicitaire Meta Ads et analyse du retour sur investissement'
+        'Ligne éditoriale, branding et calendrier de contenu régulier',
+        'Création visuelle pro sur Canva et montages vidéo CapCut',
+        'Campagnes publicitaires ciblées sur Meta Ads (Facebook & Insta)',
+        'Prospection automatisée B2B sur LinkedIn avec Waalaxy'
       ],
-      ctaText: 'Voir la formation Réseaux Sociaux RS7351',
-      ctaHref: '/formations/reseaux-sociaux',
-      whatsappMsg: 'Bonjour Mélissa, je veux me former à la communication réseaux sociaux RS7351 (11h).'
+      whatsappMsg: 'Bonjour Mélissa, je souhaite candidater pour la formation Réseaux Sociaux RS7351.'
     },
     {
       id: 'fi-top',
       track: 'top',
-      badge: 'Cursus Immersion • Méthode PERRAULT-PIERRE',
+      pkgKey: 'fi-top',
+      badge: 'Méthode Officielle PERRAULT-PIERRE • Reconnue',
       badgeColor: 'bg-amber-500/10 text-amber-400 border-amber-500/30',
-      title: 'Formation Initiale FI TOP® (Techniques d’Optimisation du Potentiel)',
-      duration: '21 heures sur 3 jours (1 week-end immersif Ven-Sam-Dim 9h-18h)',
-      modality: 'Présentiel à Ollioules (83) • Espace repas équipé & terrasse ombragée',
-      funding: 'Prise en charge OPCO, FIF PL, AFDAS & budget formation',
-      price: 'Éligible financements pro',
-      desc: 'La méthode de référence issue des forces armées et du sport de haut niveau pour réguler le stress, optimiser le sommeil, récupérer vite et décider avec lucidité sous pression.',
+      title: 'Formation Initiale aux TOP® (FITOP 21h)',
+      duration: '21 heures réparties (3 journées ou modules)',
+      modality: 'Présentiel à Ollioules (Var) ou visio-conférence interactive',
+      funding: 'Prise en charge OPCO / Plan de formation entreprise / FIFPL',
+      price: '890 € ou prise en charge OPCO',
+      desc: 'La méthode de référence issue de l’Armée de l’Air et du sport de haut niveau : boîtes à outils de respiration, relaxation somatique et imagerie mentale pour prévenir le burn-out et booster l’endurance cognitive.',
       points: [
-        'Module 1 : Fondamentaux, régulation & respirations (RMD, RPa, RMI, R3P)',
-        'Module 2 : Relaxation, imagerie mentale (PMR, SAR, RM) & sommeil',
-        'Module 3 : Intégration opérationnelle & plan d’action personnalisé',
-        'Supports envoyés à J-5 • QCM final (>70%) & Attestation de compétences'
+        'Respiration relaxante, régulatrice et dynamisante',
+        'Relaxation Psycho-Musculaire (RMP) et récupération flash',
+        'Imagerie mentale, Répétition Mentale et Pré-activation',
+        'Remise du livret technique complet de la méthode TOP®'
       ],
-      ctaText: 'Consulter le syllabus complet FI TOP®',
-      ctaHref: '/formations/fi-top',
-      whatsappMsg: 'Bonjour Mélissa, je souhaite réserver ma place pour la session FI TOP (21h).'
+      whatsappMsg: 'Bonjour Mélissa, je souhaite m’inscrire à la formation FITOP 21h.'
     },
     {
       id: 'fb-top',
       track: 'top',
-      badge: 'Journée Découverte • Aucun prérequis',
-      badgeColor: 'bg-amber-500/10 text-amber-400 border-amber-500/30',
-      title: 'Formation FB-TOP (Initiation Fondamentale)',
-      duration: '7 heures (1 journée intensive : 7 modules de 1h)',
-      modality: 'Présentiel à Ollioules (Var) • Petit groupe (max 12 participants)',
-      funding: 'Prise en charge OPCO / FIF PL / Financement individuel',
-      price: 'Accessible à tous',
-      desc: 'Une journée condensée et accessible pour s’initier concrètement aux TOP®. Repartez avec des exercices immédiatement applicables dans votre vie personnelle et professionnelle.',
+      pkgKey: 'acompte',
+      badge: 'Module Découverte Express • 1 Journée',
+      badgeColor: 'bg-emerald-500/10 text-emerald-400 border-emerald-500/30',
+      title: 'Formation Flash TOP (FB-TOP 7h)',
+      duration: '7 heures intensives (1 journée)',
+      modality: 'Présentiel à Ollioules (Var) ou distanciel',
+      funding: 'Finançable OPCO, FIFPL ou financement individuel',
+      price: '350 € ou pris en charge',
+      desc: 'Idéal pour une première initiation opérationnelle : apprenez à calmer le rythme cardiaque sous pression, retrouver un focus laser en réunion et vous régénérer lors de courtes pauses.',
       points: [
-        'Comprendre les mécanismes du stress et identifier ses signaux d’alerte',
-        'Exercices pratiques de respiration régulatrice et de recentrage',
-        'Initiation au dialogue interne positif et à la sieste flash de récupération',
-        'Plan d’action individuel direct pour éviter la surcharge mentale'
+        'Sensibilisation aux mécanismes neurophysiologiques du stress',
+        'Protocoles de respiration anti-panique et anti-fatigue',
+        'Techniques de pause flash pour journées surchargées',
+        'Exercices pratiques applicables dès le lendemain'
       ],
-      ctaText: 'Découvrir la journée FB-TOP',
-      ctaHref: '/formations/fb-top',
-      whatsappMsg: 'Bonjour Mélissa, je souhaite m’inscrire à la journée découverte FB-TOP (7h).'
+      whatsappMsg: 'Bonjour Mélissa, je souhaite participer à la prochaine journée FB-TOP (7h).'
     },
     {
       id: 'massage-aimants',
       track: 'therapie',
-      badge: 'Thérapie Manuelle Somatique • Animé par Mélissa',
-      badgeColor: 'bg-emerald-500/10 text-emerald-400 border-emerald-500/30',
-      title: 'Formation Massage aux Aimants Thérapeutiques',
-      duration: '1 journée intensive (7h)',
-      modality: 'Présentiel en cabinet à Ollioules (83)',
-      funding: 'Financement individuel & professionnel',
-      price: '280 € / jour',
-      desc: 'Transmission d’un protocole précis et apaisant utilisant la puissance des aimants pour débloquer les tensions profondes, relancer l’énergie corporelle et réguler le système nerveux.',
+      pkgKey: 'massage-aimants',
+      badge: 'Thérapie Somatique • 100% Pratique',
+      badgeColor: 'bg-rose-500/10 text-rose-400 border-rose-500/30',
+      title: 'Massage Thérapeutique aux Aimants',
+      duration: '1 journée complète (7h)',
+      modality: 'Présentiel en institut à Ollioules (83)',
+      funding: 'Financement individuel ou fonds artisans',
+      price: '280 € TTC matériel inclus',
+      desc: 'Transmission d’un protocole précis et apaisant utilisant la puissance des aimants pour débloquer les tensions profondes, relancer l’énergie corporelle et calmer le système nerveux.',
       points: [
-        'Principes fondamentaux du biomagnétisme appliqué au corps humain',
+        'Principes du biomagnétisme appliqué au corps humain',
         'Repérage des points de charge et de tension somatique',
-        'Pratique guidée complète en binôme avec validation des gestes',
-        'Remise du protocole complet et du kit d’apprentissage'
+        'Pratique guidée en binôme avec validation des gestes',
+        'Remise du protocole complet et du kit de démarrage'
       ],
-      ctaText: 'Réserver ma journée massage aimants',
-      ctaHref: '#diagnostic',
-      whatsappMsg: 'Bonjour Mélissa, je souhaite m’inscrire à la formation massage aux aimants (280€).'
-    },
-    {
-      id: 'head-spa',
-      track: 'therapie',
-      badge: 'Prise en charge FAFCEA • 100% Pratique',
-      badgeColor: 'bg-purple-500/10 text-purple-400 border-purple-500/30',
-      title: 'Head Spa Holistique Thérapeutique',
-      duration: '2 jours intensifs de pratique',
-      modality: 'Présentiel en institut équipé à Ollioules & PACA',
-      funding: '100% Éligible prise en charge FAFCEA (artisans & coiffeurs)',
-      price: 'Prise en charge FAFCEA possible',
-      desc: 'Protocole complet de relaxation crânienne japonaise, stimulation de la micro-circulation du cuir chevelu et libération des blocages émotionnels accumulés dans le haut du corps.',
-      points: [
-        'Analyse du cuir chevelu et techniques de pressions crâniennes ciblées',
-        'Utilisation des jets d’eau chauds, huiles végétales et vapeurs aromatiques',
-        'Protocole de lâcher-prise pour clients sous haute charge mentale',
-        'Montage du dossier FAFCEA assuré avec notre organisme partenaire'
-      ],
-      ctaText: 'Détails de la formation Head Spa',
-      ctaHref: '#diagnostic',
-      whatsappMsg: 'Bonjour Mélissa, je souhaite monter mon dossier FAFCEA pour la formation Head Spa.'
-    },
-    {
-      id: 'massage-huiles',
-      track: 'therapie',
-      badge: 'Tournée France & Suisse • Certifiant',
-      badgeColor: 'bg-teal-500/10 text-teal-400 border-teal-500/30',
-      title: 'Massage Holistique aux Huiles Essentielles',
-      duration: '2 jours (14h) • Disponible dans 10+ villes',
-      modality: 'Toulon, Nice, Monaco, Lyon, Toulouse, Montpellier, Paris, Lille, Orléans, Belgique, Suisse',
-      funding: 'Financement personnel ou fonds de formation',
-      price: '280 € HT / jour (soit 560 € HT la formation complète)',
-      desc: 'Apprenez à combiner l’action ciblée des huiles essentielles pures et des manœuvres de massage enveloppantes pour apaiser la fatigue nerveuse et restaurer l’harmonie physique.',
-      points: [
-        'Sélection et dosage sécurisé des synergies aromatiques thérapeutiques',
-        'Enchaînement fluide des manœuvres de relaxation neuro-musculaire',
-        'Gestion de la relation client, de l’ancrage et du cadre énergétique',
-        'Attestation de suivi délivrée à la fin des 2 jours'
-      ],
-      ctaText: 'Consulter les dates & villes de la tournée',
-      ctaHref: '#diagnostic',
-      whatsappMsg: 'Bonjour Mélissa, je souhaite connaître les prochaines dates pour le massage aux huiles.'
+      whatsappMsg: 'Bonjour Mélissa, je souhaite m’inscrire à la journée massage aux aimants (280€).'
     }
   ];
 
@@ -231,143 +239,242 @@ export default function MasterSalesPage() {
       name: "Aurélie",
       tag: "Praticienne Bien-Être",
       course: "Massage aux aimants & Régulation",
-      text: "J'ai suivi la formation massage aux aimants avec toi et ça a été une très belle expérience. Ton accompagnement m'a profondément touchée : toujours présente, douce, à l'écoute et pleine d'une énergie lumineuse. Tu transmets ton savoir avec passion, simplicité et beaucoup de cœur. Je repars confiante, inspirée et vraiment reconnaissante."
+      text: "J'ai suivi la formation avec Mélissa et ça a été une expérience humaine remarquable. Toujours présente, douce, à l'écoute et pleine d'énergie lumineuse. Elle transmet son savoir avec passion et simplicité. Je repars confiante, inspirée et prête à pratiquer."
     },
     {
       name: "Lucie",
-      tag: "Professionnelle Indépendante",
-      course: "Session TOP® & Libération Mentale",
-      text: "Une formation vécue comme fantastique et inoubliable. On arrive avec la tête saturée et la sensation de n'avoir plus d'air, et on en ressort véritablement épanouie et grandie, avec des armes concrètes pour ne plus jamais subir la pression."
-    },
-    {
-      name: "Nadine",
-      tag: "Participante Conférence",
-      course: "Conférence TOP® par Régis Domergue",
-      text: "Une intervention riche, pertinente, extrêmement impactante au salon du bien-être. On ressent tout de suite l'exigence opérationnelle forgée dans l'Armée de l'Air. Zéro théorie inutile, que des outils applicables dès le lendemain."
+      tag: "Consultante Indépendante",
+      course: "Formation IA Générative (RS6776)",
+      text: "Renaud m'a coachée pendant 5 heures sur mes propres documents d'entreprise. On a créé un assistant GPT qui génère mes propositions commerciales en 10 minutes. C'est 8 heures de gagnées chaque semaine sur des tâches répétitives."
     },
     {
       name: "Yohan",
       tag: "Dirigeant de TPE",
-      course: "Conférence TOP® à La Seyne-sur-Mer",
-      text: "Conférence très intéressante et une très belle présentation. Des explications claires et directes sur les mécanismes du système nerveux et sur la façon dont un chef d'entreprise peut préserver ses équipes."
-    },
-    {
-      name: "Melo",
-      tag: "Accompagnement Suivi",
-      course: "Régulation Émotionnelle & Charge Mentale",
-      text: "Une rencontre humaine décisive avec Melyssa. Quand on porte trop de responsabilités, retrouver une écoute bienveillante combinée à des outils concrets de récupération n'a pas de prix."
+      course: "Session TOP® & Gestion de Crise",
+      text: "Les outils de Régis et Mélissa sont d'une efficacité redoutable. Pas de blabla théorique : des techniques de respiration et de concentration concrètes qu'on utilise avant chaque négociation tendue."
     }
   ];
 
   const faqs = [
     {
-      q: "Comment fonctionne la prise en charge financière ?",
-      a: "Nos formations sont finançables selon votre statut (OPCO, FAF, FAFCEA, CPF) par le biais de notre organisme partenaire certifié Qualiopi Eloqone. SAS Ô'TOP Formation est un organisme déclaré (NDA en cours d'attribution DREETS PACA). Notre équipe pédagogique s'occupe de monter votre dossier administratif de A à Z avec notre partenaire."
+      q: "Comment fonctionne la prise en charge financière (OPCO, FAF, CPF) ?",
+      a: "Ô'TOP Formation est un organisme déclaré (NDA en cours DREETS PACA) qui opère ses certifications officielles en partenariat avec l'organisme certifié Qualiopi Eloqone. Selon votre statut (salarié, indépendant, profession libérale, dirigeant), nous montons votre dossier pour viser une prise en charge à 100% de la formation."
     },
     {
-      q: "Faut-il des prérequis pour suivre les formations IA ou Réseaux Sociaux ?",
-      a: "Aucun prérequis technique n'est requis. Nos formations sont spécialement pensées pour les indépendants, créateurs et dirigeants de TPE/PME. Tout est enseigné pas à pas, de manière concrète et opérationnelle, sans jargon d'ingénieur."
+      q: "Puis-je régler directement par carte bancaire en 1 fois ou 3 fois ?",
+      a: "Oui ! Si vous préférez démarrer sans attendre l'accord OPCO ou si vous financez personnellement, vous pouvez régler en toute sécurité par Carte Bancaire en 1 fois ou 3 fois sans frais grâce à notre module sécurisé PCI-DSS."
     },
     {
-      q: "En quoi la Méthode TOP® est-elle différente du coaching classique ?",
-      a: "La Méthode TOP® (Édith Perrault-Pierre) est née au sein du Service de santé des armées pour préparer les pilotes de chasse et les forces spéciales à agir dans l'imprévu. Ce n'est pas du bien-être passif : c'est un entraînement neuro-cognitif actif pour réguler le stress, optimiser le sommeil et garder son calme en toute circonstance."
+      q: "En quoi consistent les 5h de coaching individuel sur-mesure ?",
+      a: "Contrairement aux cours en ligne passifs où vous restez seul devant un écran, nos formations IA et Réseaux Sociaux intègrent 5 heures de rendez-vous en tête-à-tête en visio avec un expert dédié (Renaud). Vous partagez votre écran et nous construisons ensemble vos assistants, vos prompts et vos automatisations sur vos vrais fichiers."
     },
     {
-      q: "Les formations sont-elles disponibles en présentiel ou à distance ?",
-      a: "Nous proposons les deux formats selon vos besoins : les cursus IA et Réseaux Sociaux sont accessibles 100% en ligne avec du coaching personnalisé individuel. Les formations TOP® et Massages thérapeutiques se déroulent principalement en présentiel dans notre centre d'Ollioules (83) ou en intra-entreprise partout en France."
-    },
-    {
-      q: "Quel est le délai pour démarrer une formation ?",
-      a: "Dès validation de votre prise en charge par votre financeur (délai moyen de 7 à 15 jours selon l'OPCO ou le CPF), vous pouvez démarrer immédiatement votre parcours avec votre accès dédié et planifier vos sessions d'accompagnement."
+      q: "Où se déroulent les formations en présentiel ?",
+      a: "Nos sessions en présentiel (FITOP, Massages aux aimants, Head Spa) se déroulent à notre espace de formation situé à Ollioules (Var - 83), ainsi qu'en intra-entreprise partout en région PACA et en France métropolitaine."
     }
   ];
 
   const handleDiagnosticSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const msg = `Bonjour Mélissa, je demande mon diagnostic personnalisé O'TOP (15 min).%0ANom : ${encodeURIComponent(diagnosticName || 'Non précisé')}%0ATéléphone : ${encodeURIComponent(diagnosticPhone || 'Non précisé')}%0ABesoin prioritaire : ${encodeURIComponent(diagnosticNeed)}`;
-    window.open(`https://wa.me/33767246825?text=${msg}`, '_blank');
     setShowModal(true);
   };
 
-  return (
-    <div className="bg-slate-950 text-slate-100 min-h-screen font-sans selection:bg-blue-600 selection:text-white">
-      
-      {/* ── 1. MASTER HERO : CLARTÉ, AUDACE & COULEURS O'TOP ── */}
-      <section className="relative pt-12 pb-20 sm:pt-16 sm:pb-28 px-4 overflow-hidden border-b border-slate-800">
-        
-        {/* Glow signature O'TOP : Bleu Royal, Cyan & Or */}
-        <div className="absolute -top-20 left-1/2 -translate-x-1/2 w-[850px] h-[450px] bg-gradient-to-r from-blue-600/20 via-cyan-500/15 to-amber-400/15 blur-[120px] pointer-events-none rounded-full" />
+  const handleInlineCardSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setInlineProcessing(true);
+    setTimeout(() => {
+      setInlineProcessing(false);
+      setInlineTxId('OTOP-' + Math.random().toString(36).substring(2, 9).toUpperCase());
+      setInlineSuccess(true);
+    }, 1600);
+  };
 
+  const formatCardNumber = (val: string) => {
+    const raw = val.replace(/\D/g, '').slice(0, 16);
+    return raw.replace(/(\d{4})(?=\d)/g, '$1 ');
+  };
+
+  const formatExpiry = (val: string) => {
+    let raw = val.replace(/\D/g, '').slice(0, 4);
+    if (raw.length >= 3) {
+      raw = raw.slice(0, 2) + '/' + raw.slice(2);
+    }
+    return raw;
+  };
+
+  const detectCardBrand = (val: string) => {
+    const clean = val.replace(/\s/g, '');
+    if (clean.startsWith('4')) return 'VISA';
+    if (/^(5[1-5]|2[2-7])/.test(clean)) return 'MASTERCARD';
+    return 'CB';
+  };
+
+  const openModalWithPlan = (pkgKey: string) => {
+    const p = packagePrices[pkgKey] || packagePrices['acompte'];
+    setCheckoutPlan(p);
+    setCheckoutModalOpen(true);
+  };
+
+  return (
+    <div className="min-h-screen bg-slate-950 text-slate-100 selection:bg-blue-600 selection:text-white font-sans">
+      
+      {/* ── 1. HERO DIRECT, ÉPURÉ & AUTHENTIQUE ── */}
+      <section className="relative pt-16 pb-20 md:pt-24 md:pb-28 px-4 overflow-hidden border-b border-slate-800 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-blue-900/30 via-slate-950 to-slate-950">
+        
         <div className="max-w-6xl mx-auto relative z-10 text-center">
           
-          {/* Tagline Officielle */}
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-blue-500/30 bg-blue-950/60 text-blue-300 text-xs sm:text-sm font-bold uppercase tracking-wider mb-6 shadow-lg shadow-blue-950/50">
+          {/* Badge officiel de confiance */}
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-blue-500/30 bg-blue-950/60 text-blue-300 text-xs sm:text-sm font-bold uppercase tracking-wider mb-6 shadow-lg">
             <Sparkles className="w-4 h-4 text-amber-400" />
-            <span>Ô&apos;TOP Formation • Organisme Déclaré (NDA en cours) · Porté par Eloqone • PACA & France</span>
+            <span>Ô&apos;TOP Formation • IA • Réseaux Sociaux • Méthode TOP®</span>
           </div>
 
           <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-[1.15] max-w-4xl mx-auto">
-            L&apos;Alliance de l&apos;<span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-300 to-blue-500">Intelligence Artificielle</span> et du <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-300 via-amber-200 to-amber-400">Potentiel Humain</span>
+            Respirez à nouveau. Développez votre activité <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-300 to-amber-300">sans vous épuiser</span>.
           </h1>
 
           <p className="mt-6 text-base sm:text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed">
-            Formations enregistrées au Répertoire Spécifique de France Compétences, méthode TOP® issue du terrain militaire et thérapies corporelles d&apos;excellence.
-            <strong className="block text-white mt-1">Finançable selon votre statut (OPCO, FAF, CPF) via notre organisme partenaire.</strong>
+            Que ce soit pour automatiser vos tâches grâce à l&apos;IA, booster votre visibilité sur les réseaux sociaux ou réguler votre stress avec la Méthode TOP®, bénéficiez d&apos;un accompagnement humain concret et finançable selon vos droits.
           </p>
 
-          {/* Quick Metrics Banner */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-10 max-w-4xl mx-auto text-left">
+          {/* 3 Metric Pills */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3.5 mt-10 max-w-4xl mx-auto text-left">
             <div className="p-4 rounded-2xl bg-slate-900/90 border border-slate-800 shadow-md">
-              <div className="text-2xl sm:text-3xl font-black text-blue-400">3 Titres RS</div>
+              <div className="text-2xl sm:text-3xl font-black text-cyan-400">3 Titres RS</div>
               <div className="text-xs font-semibold text-slate-400 mt-0.5">France Compétences</div>
             </div>
             <div className="p-4 rounded-2xl bg-slate-900/90 border border-slate-800 shadow-md">
               <div className="text-2xl sm:text-3xl font-black text-emerald-400">Finançable</div>
-              <div className="text-xs font-semibold text-slate-400 mt-0.5">Selon statut (OPCO, FAF, CPF)</div>
+              <div className="text-xs font-semibold text-slate-400 mt-0.5">OPCO / FAF / FIFPL / CPF</div>
             </div>
             <div className="p-4 rounded-2xl bg-slate-900/90 border border-slate-800 shadow-md">
               <div className="text-2xl sm:text-3xl font-black text-amber-400">5h Coaching</div>
-              <div className="text-xs font-semibold text-slate-400 mt-0.5">Accompagnement individuel</div>
+              <div className="text-xs font-semibold text-slate-400 mt-0.5">Individuel 1-to-1 inclus</div>
             </div>
             <div className="p-4 rounded-2xl bg-slate-900/90 border border-slate-800 shadow-md">
-              <div className="text-2xl sm:text-3xl font-black text-cyan-400">1-to-1</div>
-              <div className="text-xs font-semibold text-slate-400 mt-0.5">Suivi personnalisé</div>
+              <div className="text-2xl sm:text-3xl font-black text-blue-400">CB 1x / 3x</div>
+              <div className="text-xs font-semibold text-slate-400 mt-0.5">Paiement en ligne sécurisé</div>
             </div>
           </div>
 
-          {/* CTA Buttons */}
+          {/* Quick CTAs */}
           <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
             <a
-              href="#catalogue"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-extrabold text-sm sm:text-base shadow-xl shadow-blue-600/30 transition-all transform hover:-translate-y-0.5"
+              href="#paiement-carte"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-2xl bg-gradient-to-r from-blue-600 via-indigo-600 to-cyan-600 hover:from-blue-500 hover:to-cyan-500 text-white font-extrabold text-sm sm:text-base shadow-xl shadow-blue-600/30 transition-all"
             >
-              <span>Découvrir toutes nos formations →</span>
+              <CreditCard size={18} />
+              <span>S&apos;inscrire ou Régler par Carte Bancaire 💳</span>
             </a>
             <a
-              href="#diagnostic"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-slate-900 hover:bg-slate-800 text-amber-300 border border-amber-500/40 text-sm sm:text-base font-bold transition-all shadow-lg"
+              href="#catalogue"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-2xl bg-slate-900 hover:bg-slate-800 text-slate-200 border border-slate-800 text-sm sm:text-base font-bold transition-all"
             >
-              <Zap size={16} className="text-amber-400" />
-              <span>Demander un diagnostic (15 min gratuit)</span>
+              <span>Consulter les parcours &amp; tarifs ↓</span>
             </a>
           </div>
 
         </div>
       </section>
 
-      {/* ── 2. CATALOGUE INTERACTIF COMPLET AVEC TOUTES LES FORMATIONS & DURÉES ── */}
-      <section id="catalogue" className="py-20 px-4 bg-slate-900/40 border-b border-slate-800">
+
+      {/* ── 2. LES 2 FONDATEURS & COACHS EN ACTION (MÉLISSA & RENAUD) ── */}
+      <section className="py-20 px-4 bg-slate-900/40 border-b border-slate-800">
+        <div className="max-w-5xl mx-auto">
+          
+          <div className="text-center max-w-3xl mx-auto mb-14">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-800 border border-slate-700 text-slate-300 text-xs font-bold uppercase tracking-wider mb-3">
+              Vos Formateurs Référents
+            </div>
+            <h2 className="text-2xl sm:text-4xl font-extrabold text-white tracking-tight">
+              Une Équipe Humaine, Joignable &amp; Engagée
+            </h2>
+            <p className="mt-2 text-slate-400 text-sm sm:text-base">
+              Pas d&apos;organisme fantôme. Vos sessions et votre coaching individuel sont directement assurés par Mélissa et Renaud.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            
+            {/* Profil Mélissa */}
+            <div className="p-7 sm:p-8 rounded-3xl bg-slate-950 border border-slate-800 hover:border-amber-500/40 transition-all flex flex-col sm:flex-row gap-6 items-center sm:items-start text-center sm:text-left shadow-xl">
+              <div className="relative w-28 h-28 sm:w-32 sm:h-32 rounded-2xl overflow-hidden border-2 border-amber-400/30 shrink-0 shadow-lg">
+                <img 
+                  src="/team-melyssa.png" 
+                  alt="Mélissa JENNADI" 
+                  className="w-full h-full object-cover object-top" 
+                />
+              </div>
+              <div className="space-y-2">
+                <div className="inline-block px-2.5 py-0.5 rounded-full bg-amber-500/10 text-amber-400 border border-amber-500/20 text-[11px] font-bold uppercase">
+                  Présidente &amp; Formatrice Référente
+                </div>
+                <h3 className="text-xl font-bold text-white">Mélissa JENNADI</h3>
+                <p className="text-xs text-amber-300 font-semibold">Formatrice certifiée Méthode TOP® &amp; Praticienne Holistique</p>
+                <p className="text-slate-300 text-xs leading-relaxed">
+                  Spécialiste de la régulation du stress, des techniques somatiques et du montage des dossiers de formation (FAF, OPCO, FAFCEA).
+                </p>
+                <div className="pt-2">
+                  <a 
+                    href="tel:+33767246825" 
+                    className="inline-flex items-center gap-1.5 text-xs font-bold text-amber-400 hover:text-amber-300"
+                  >
+                    <Phone size={13} />
+                    <span>07 67 24 68 25</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            {/* Profil Renaud */}
+            <div className="p-7 sm:p-8 rounded-3xl bg-slate-950 border border-slate-800 hover:border-blue-500/40 transition-all flex flex-col sm:flex-row gap-6 items-center sm:items-start text-center sm:text-left shadow-xl">
+              <div className="relative w-28 h-28 sm:w-32 sm:h-32 rounded-2xl overflow-hidden border-2 border-blue-400/30 shrink-0 shadow-lg">
+                <img 
+                  src="/team-renaud.jpg" 
+                  alt="Renaud" 
+                  className="w-full h-full object-cover object-top" 
+                />
+              </div>
+              <div className="space-y-2">
+                <div className="inline-block px-2.5 py-0.5 rounded-full bg-blue-500/10 text-blue-400 border border-blue-500/20 text-[11px] font-bold uppercase">
+                  Directeur Pédagogique Digital &amp; IA
+                </div>
+                <h3 className="text-xl font-bold text-white">Renaud</h3>
+                <p className="text-xs text-blue-300 font-semibold">Expert IA Générative, Automatisation &amp; Prospection</p>
+                <p className="text-slate-300 text-xs leading-relaxed">
+                  Accompagne les dirigeants et indépendants sur les outils d&apos;intelligence artificielle (ChatGPT, Claude, n8n, Make) avec 5h de coaching personnalisé.
+                </p>
+                <div className="pt-2">
+                  <a 
+                    href="tel:+33674797509" 
+                    className="inline-flex items-center gap-1.5 text-xs font-bold text-blue-400 hover:text-blue-300"
+                  >
+                    <Phone size={13} />
+                    <span>06 74 79 75 09</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+
+      {/* ── 3. CATALOGUE CLAIR & SÉPARÉ AVEC DURÉES & ACTIONS ── */}
+      <section id="catalogue" className="py-20 px-4 bg-slate-950 border-b border-slate-800">
         <div className="max-w-6xl mx-auto">
           
           <div className="text-center max-w-3xl mx-auto mb-12">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-800 border border-slate-700 text-slate-300 text-xs font-bold uppercase tracking-wider mb-3">
-              Le Catalogue Officiel Ô&apos;TOP
+              Toutes Nos Formations &amp; Modalités
             </div>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight">
-              Toutes Nos Formations & Durées
+            <h2 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
+              Choisissez Votre Parcours
             </h2>
             <p className="mt-3 text-slate-400 text-sm sm:text-base">
-              Filtrez par domaine d&apos;expertise et découvrez nos cursus détaillés avec leurs durées officielles et prises en charge.
+              Filtrez par pôle de compétences et découvrez nos formations certifiantes ou professionnelles.
             </p>
 
             {/* Filter Pills */}
@@ -379,11 +486,11 @@ export default function MasterSalesPage() {
                   className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all flex items-center gap-2 ${
                     selectedTrack === t.id
                       ? 'bg-blue-600 text-white shadow-lg shadow-blue-600/30 border border-blue-400'
-                      : 'bg-slate-950/80 text-slate-300 border border-slate-800 hover:border-slate-700 hover:text-white'
+                      : 'bg-slate-900 text-slate-300 border border-slate-800 hover:border-slate-700 hover:text-white'
                   }`}
                 >
                   <span>{t.label}</span>
-                  <span className="text-[10px] px-1.5 py-0.5 rounded-full bg-slate-900/90 text-slate-400 border border-slate-800">
+                  <span className="text-[10px] px-1.5 py-0.5 rounded-full bg-slate-950 text-slate-400 border border-slate-800">
                     {t.count}
                   </span>
                 </button>
@@ -396,20 +503,18 @@ export default function MasterSalesPage() {
             {filteredFormations.map(formation => (
               <div
                 key={formation.id}
-                className="rounded-3xl bg-slate-950 border border-slate-800 hover:border-slate-700 transition-all p-6 sm:p-8 flex flex-col justify-between shadow-xl relative group"
+                className="rounded-3xl bg-slate-900 border border-slate-800 hover:border-blue-500/40 transition-all p-6 sm:p-8 flex flex-col justify-between shadow-xl relative group"
               >
                 <div>
-                  {/* Top Badge */}
                   <div className="flex items-start justify-between gap-3 mb-4">
                     <span className={`text-xs font-bold px-3 py-1 rounded-full border ${formation.badgeColor}`}>
                       {formation.badge}
                     </span>
                     <span className="text-xs font-semibold text-emerald-400 bg-emerald-500/10 px-2.5 py-1 rounded-lg border border-emerald-500/20 whitespace-nowrap">
-                      Finançable OPCO/FAF/CPF
+                      {formation.price}
                     </span>
                   </div>
 
-                  {/* Title & Desc */}
                   <h3 className="text-xl sm:text-2xl font-bold text-white mb-2 group-hover:text-blue-400 transition-colors">
                     {formation.title}
                   </h3>
@@ -417,7 +522,6 @@ export default function MasterSalesPage() {
                     {formation.desc}
                   </p>
 
-                  {/* Modalities & Duration Badges */}
                   <div className="space-y-2 py-3 border-y border-slate-800/80 my-4 text-xs">
                     <div className="flex items-center gap-2 text-amber-300 font-semibold">
                       <Clock size={15} className="shrink-0 text-amber-400" />
@@ -433,7 +537,6 @@ export default function MasterSalesPage() {
                     </div>
                   </div>
 
-                  {/* Key Program Points */}
                   <ul className="space-y-2 text-xs text-slate-400 mb-6">
                     {formation.points.map((pt, i) => (
                       <li key={i} className="flex items-start gap-2">
@@ -444,25 +547,40 @@ export default function MasterSalesPage() {
                   </ul>
                 </div>
 
-                {/* Card CTA Actions */}
-                <div className="pt-4 border-t border-slate-800/80 flex flex-col sm:flex-row items-center gap-3">
-                  <Link
-                    href={formation.ctaHref}
-                    className="w-full sm:w-auto flex-1 text-center py-3 px-4 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs transition-all shadow-md"
-                  >
-                    {formation.ctaText} →
-                  </Link>
-                  <a
-                    href={`https://wa.me/33767246825?text=${encodeURIComponent(formation.whatsappMsg)}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-full sm:w-auto py-3 px-4 rounded-xl bg-slate-900 hover:bg-slate-800 text-emerald-400 border border-slate-800 font-bold text-xs flex items-center justify-center gap-1.5 transition-all"
-                  >
-                    <MessageCircle size={14} />
-                    <span>WhatsApp direct</span>
-                  </a>
-                </div>
+                <div className="pt-4 border-t border-slate-800/80 space-y-2.5">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                    <button
+                      type="button"
+                      onClick={() => {
+                        setInlineSelectedPackage(formation.pkgKey);
+                        const el = document.getElementById('paiement-carte');
+                        if (el) el.scrollIntoView({ behavior: 'smooth' });
+                      }}
+                      className="py-2.5 px-3 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-bold text-xs flex items-center justify-center gap-1.5 transition-all shadow-md"
+                    >
+                      <CreditCard size={14} />
+                      <span>Payer par Carte 💳</span>
+                    </button>
 
+                    <a
+                      href={`https://wa.me/33767246825?text=${encodeURIComponent(formation.whatsappMsg)}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="py-2.5 px-3 rounded-xl bg-emerald-600/20 hover:bg-emerald-600/30 text-emerald-300 border border-emerald-500/30 font-bold text-xs flex items-center justify-center gap-1.5 transition-all"
+                    >
+                      <MessageCircle size={14} />
+                      <span>Échanger WhatsApp</span>
+                    </a>
+                  </div>
+
+                  <button
+                    type="button"
+                    onClick={() => openModalWithPlan(formation.pkgKey)}
+                    className="w-full py-2 text-center text-xs text-slate-400 hover:text-white font-medium"
+                  >
+                    Détails des options de règlement (1x, 3x, OPCO) →
+                  </button>
+                </div>
               </div>
             ))}
           </div>
@@ -470,96 +588,323 @@ export default function MasterSalesPage() {
         </div>
       </section>
 
-      {/* ── 3. LES 9 PILIERS POUR MIEUX COMPRENDRE L'HUMAIN (MÉTHODE TOP) ── */}
-      <NinePillarsSection 
-        title="Les 9 Piliers Pour Mieux Comprendre l'Humain"
-        subtitle="Le socle comportemental et cognitif enseigné dans nos parcours TOP® pour désamorcer l'épuisement, régler les conflits et reprendre le contrôle."
-      />
 
-      {/* ── 4. L'ÉQUIPE DES 4 EXPERTS DE TERRAIN (VRAIES PHOTOS SANS TITRES DE POSTE) ── */}
-      <section className="py-24 px-4 bg-slate-950 border-b border-slate-800">
-        <div className="max-w-5xl mx-auto">
+      {/* ── 4. MODULE DE PAIEMENT SÉCURISÉ PAR CARTE BANCAIRE (LE CHECKOUT) ── */}
+      <section id="paiement-carte" className="py-24 px-4 bg-slate-900/60 border-b border-slate-800 relative">
+        <div className="max-w-4xl mx-auto">
           
-          <div className="text-center max-w-2xl mx-auto mb-16">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-bold uppercase tracking-wider mb-3">
-              Des Praticiens de Terrain
+          <div className="text-center max-w-2xl mx-auto mb-12">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-blue-500/10 border border-blue-500/30 text-blue-400 text-xs font-bold uppercase tracking-wider mb-3">
+              <Lock size={13} />
+              <span>Règlement Direct &amp; Sécurisé SSL</span>
             </div>
-            <h2 className="text-3xl sm:text-5xl font-black text-white">
-              L&apos;Équipe des Experts
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+              Paiement par Carte Bancaire
             </h2>
-            <p className="mt-3 text-slate-400 text-base sm:text-lg">
-              Une exigence constante, un accompagnement humain sans filtre et une vision résolument tournée vers votre rentabilité durable.
+            <p className="mt-2 text-slate-400 text-sm">
+              Sélectionnez votre formule et validez votre inscription instantanément en 1 fois ou 3 fois sans frais.
             </p>
           </div>
 
-          <div className="space-y-12">
+          <div className="p-6 sm:p-10 rounded-3xl bg-slate-950 border border-slate-800 shadow-2xl">
             
-            {/* 1. Mélissa JENNADI */}
-            <TeamMemberCard
-              position="left"
-              firstName="Mélissa"
-              lastName="JENNADI"
-              imageUrl="/team-melyssa.png"
-              description="Rigueur scientifique, sens aigu de la transmission et dévouement absolu pour faire grandir vos compétences, maîtriser les outils digitaux et pérenniser votre activité."
-              onCtaClick={() => window.open('https://wa.me/33767246825?text=Bonjour%20M%C3%A9lissa%2C%20je%20souhaite%20%C3%A9changer%20avec%20vous.', '_blank')}
-            />
+            {inlineSuccess ? (
+              <div className="text-center py-8 space-y-4">
+                <div className="w-16 h-16 rounded-full bg-emerald-500/20 border border-emerald-500/40 text-emerald-400 flex items-center justify-center mx-auto shadow-lg shadow-emerald-500/20">
+                  <CheckCircle2 size={36} />
+                </div>
+                <h3 className="text-2xl font-black text-white">
+                  Paiement Confirmé avec Succès !
+                </h3>
+                <p className="text-slate-300 text-sm max-w-md mx-auto">
+                  Votre transaction réf. <span className="font-mono text-blue-300 font-bold">{inlineTxId}</span> a été acceptée. Un reçu fiscal et vos accès vous ont été expédiés par e-mail.
+                </p>
+                <div className="pt-4 flex flex-col sm:flex-row gap-3 justify-center">
+                  <a
+                    href={`https://wa.me/33767246825?text=Bonjour%20M%C3%A9lissa,%20je%20viens%20d'effectuer%20mon%20paiement%20(${inlineTxId})%20sur%20le%20site.`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-6 py-3 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs"
+                  >
+                    Confirmer à Mélissa sur WhatsApp 💬
+                  </a>
+                  <button
+                    type="button"
+                    onClick={() => setInlineSuccess(false)}
+                    className="px-6 py-3 rounded-full bg-slate-800 text-slate-300 text-xs font-semibold"
+                  >
+                    Nouvelle transaction
+                  </button>
+                </div>
+              </div>
+            ) : (
+              <form onSubmit={handleInlineCardSubmit} className="space-y-6">
+                
+                {/* 1. Sélection de la formation */}
+                <div>
+                  <label className="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-2">
+                    1. Choisissez la formation ou l&apos;acompte à régler :
+                  </label>
+                  <select
+                    value={inlineSelectedPackage}
+                    onChange={(e) => setInlineSelectedPackage(e.target.value)}
+                    className="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-700 text-white text-sm font-semibold outline-none focus:border-blue-500"
+                  >
+                    <option value="acompte">Acompte de Réservation Standard (150 € TTC)</option>
+                    <option value="ia-indep">Formation IA Générative RS6776 (1 490 € TTC)</option>
+                    <option value="reseaux">Formation Réseaux Sociaux RS7351 (1 290 € TTC)</option>
+                    <option value="fi-top">Formation Initiale FITOP® 21h (890 € TTC)</option>
+                    <option value="massage-aimants">Journée Massage aux Aimants (280 € TTC)</option>
+                  </select>
+                </div>
 
-            {/* 2. Renaud */}
-            <TeamMemberCard
-              position="right"
-              firstName="Renaud"
-              lastName=""
-              imageUrl="/team-renaud.jpg"
-              description="Passionné par l'impact technologique et l'efficacité opérationnelle, pour transformer des outils complexes en leviers de croissance immédiate."
-              onCtaClick={() => window.open('https://wa.me/33674797509?text=Bonjour%20Renaud%2C%20je%20souhaite%20%C3%A9changer%20avec%20vous.', '_blank')}
-            />
+                {/* 2. Modalités de règlement */}
+                <div>
+                  <label className="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-2">
+                    2. Modalité de paiement :
+                  </label>
+                  <div className="grid grid-cols-3 gap-3">
+                    <button
+                      type="button"
+                      onClick={() => setInlinePaymentOption('1x')}
+                      className={`p-3 rounded-xl border text-center transition-all ${
+                        inlinePaymentOption === '1x'
+                          ? 'bg-blue-600/20 border-blue-500 text-white shadow-md'
+                          : 'bg-slate-900 border-slate-800 text-slate-400 hover:text-slate-200'
+                      }`}
+                    >
+                      <span className="block text-xs font-bold">Paiement 1x</span>
+                      <span className="block text-sm font-extrabold text-blue-400 mt-0.5">{currentPkg.price} €</span>
+                    </button>
 
-            {/* 3. Régis DOMERGUE */}
-            <TeamMemberCard
-              position="left"
-              firstName="Régis"
-              lastName="DOMERGUE"
-              imageUrl="/team-regis.png"
-              description="Excellence opérationnelle forgée sur le terrain, sang-froid et vision stratégique issus de 10 ans dans l'Armée de l'Air pour sécuriser chaque étape de votre progression."
-              onCtaClick={() => window.open('https://wa.me/33767246825?text=Bonjour%20R%C3%A9gis%2C%20je%20souhaite%20%C3%A9changer%20avec%20vous.', '_blank')}
-            />
+                    <button
+                      type="button"
+                      onClick={() => setInlinePaymentOption('3x')}
+                      className={`p-3 rounded-xl border text-center transition-all ${
+                        inlinePaymentOption === '3x'
+                          ? 'bg-indigo-600/20 border-indigo-500 text-white shadow-md'
+                          : 'bg-slate-900 border-slate-800 text-slate-400 hover:text-slate-200'
+                      }`}
+                    >
+                      <span className="block text-xs font-bold">3x Sans Frais</span>
+                      <span className="block text-sm font-extrabold text-indigo-400 mt-0.5">3 × {calculatedMonthly} €</span>
+                    </button>
 
-            {/* 4. Med Aly GARMA */}
-            <TeamMemberCard
-              position="right"
-              firstName="Med Aly"
-              lastName="GARMA"
-              imageUrl="/team-med-aly.jpg"
-              description="Expertise pointue en cybersécurité, résilience des infrastructures critiques et sécurisation avancée des environnements d'intelligence artificielle."
-              onCtaClick={() => window.open('https://wa.me/33767246825?text=Bonjour%20Med%20Aly%2C%20je%20souhaite%20%C3%A9changer%20avec%20vous%20sur%20la%20cybers%C3%A9curit%C3%A9.', '_blank')}
-            />
+                    <button
+                      type="button"
+                      onClick={() => setInlinePaymentOption('opco')}
+                      className={`p-3 rounded-xl border text-center transition-all ${
+                        inlinePaymentOption === 'opco'
+                          ? 'bg-amber-600/20 border-amber-500 text-white shadow-md'
+                          : 'bg-slate-900 border-slate-800 text-slate-400 hover:text-slate-200'
+                      }`}
+                    >
+                      <span className="block text-xs font-bold">Dossier OPCO/FAF</span>
+                      <span className="block text-xs font-bold text-amber-400 mt-0.5">0 € de votre poche</span>
+                    </button>
+                  </div>
+                </div>
+
+                {inlinePaymentOption === 'opco' ? (
+                  <div className="p-5 rounded-2xl bg-amber-500/10 border border-amber-500/30 text-amber-200 text-xs leading-relaxed space-y-3">
+                    <div className="flex items-center gap-2 text-amber-300 font-bold text-sm">
+                      <ShieldCheck size={18} />
+                      <span>Montage de dossier OPCO / FAF pris en charge</span>
+                    </div>
+                    <p>
+                      Mélissa monte votre dossier de demande de subvention auprès de votre financeur pour vous éviter toute avance de trésorerie.
+                    </p>
+                    <a
+                      href="tel:+33767246825"
+                      className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-amber-500 text-slate-950 font-bold text-xs"
+                    >
+                      <span>Appeler Mélissa : 07 67 24 68 25</span>
+                    </a>
+                  </div>
+                ) : (
+                  <>
+                    {/* Visual Card Preview */}
+                    <div className="relative h-44 rounded-2xl p-5 bg-gradient-to-tr from-slate-950 via-blue-950 to-indigo-900 border border-blue-500/30 shadow-xl flex flex-col justify-between overflow-hidden">
+                      <div className="flex justify-between items-center relative z-10">
+                        <div className="flex items-center gap-2">
+                          <div className="w-10 h-7 rounded bg-amber-400/80 border border-amber-300/60 flex items-center justify-center">
+                            <div className="w-6 h-4 border border-amber-800/40 rounded-sm" />
+                          </div>
+                          <span className="text-[10px] uppercase font-bold tracking-widest text-slate-400">Sécurisé SSL</span>
+                        </div>
+                        <span className="font-mono font-black text-sm tracking-wider text-blue-200">
+                          {detectCardBrand(inlineCardNumber)}
+                        </span>
+                      </div>
+
+                      <div className="relative z-10">
+                        <div className="font-mono text-lg sm:text-xl font-bold tracking-widest text-white drop-shadow">
+                          {inlineCardNumber || '•••• •••• •••• ••••'}
+                        </div>
+                      </div>
+
+                      <div className="flex justify-between items-end relative z-10 text-xs">
+                        <div>
+                          <span className="text-[9px] uppercase tracking-wider text-slate-400 block">Titulaire</span>
+                          <span className="font-semibold text-slate-200 tracking-wide uppercase">
+                            {inlineCardHolder || 'VOTRE NOM & PRÉNOM'}
+                          </span>
+                        </div>
+                        <div className="text-right">
+                          <span className="text-[9px] uppercase tracking-wider text-slate-400 block">Expire</span>
+                          <span className="font-mono font-semibold text-slate-200">
+                            {inlineCardExpiry || 'MM/AA'}
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Inputs Form */}
+                    <div className="space-y-4">
+                      <div>
+                        <label className="block text-xs font-semibold text-slate-300 mb-1">
+                          Numéro de carte bancaire *
+                        </label>
+                        <input
+                          type="text"
+                          required
+                          value={inlineCardNumber}
+                          onChange={(e) => setInlineCardNumber(formatCardNumber(e.target.value))}
+                          placeholder="4970 0000 0000 0000"
+                          className="w-full px-4 py-2.5 rounded-xl bg-slate-900 border border-slate-700 text-white font-mono text-sm focus:border-blue-500 outline-none"
+                        />
+                      </div>
+
+                      <div className="grid grid-cols-2 gap-3">
+                        <div>
+                          <label className="block text-xs font-semibold text-slate-300 mb-1">
+                            Date d&apos;expiration (MM/AA) *
+                          </label>
+                          <input
+                            type="text"
+                            required
+                            value={inlineCardExpiry}
+                            onChange={(e) => setInlineCardExpiry(formatExpiry(e.target.value))}
+                            placeholder="MM/AA"
+                            className="w-full px-4 py-2.5 rounded-xl bg-slate-900 border border-slate-700 text-white font-mono text-sm focus:border-blue-500 outline-none"
+                          />
+                        </div>
+                        <div>
+                          <label className="block text-xs font-semibold text-slate-300 mb-1">
+                            Cryptogramme CVC *
+                          </label>
+                          <input
+                            type="password"
+                            required
+                            value={inlineCardCvc}
+                            onChange={(e) => setInlineCardCvc(e.target.value.replace(/\D/g, '').slice(0, 3))}
+                            placeholder="123"
+                            maxLength={3}
+                            className="w-full px-4 py-2.5 rounded-xl bg-slate-900 border border-slate-700 text-white font-mono text-sm focus:border-blue-500 outline-none"
+                          />
+                        </div>
+                      </div>
+
+                      <div>
+                        <label className="block text-xs font-semibold text-slate-300 mb-1">
+                          Nom complet inscrit sur la carte *
+                        </label>
+                        <input
+                          type="text"
+                          required
+                          value={inlineCardHolder}
+                          onChange={(e) => setInlineCardHolder(e.target.value.toUpperCase())}
+                          placeholder="MARC DURAND"
+                          className="w-full px-4 py-2.5 rounded-xl bg-slate-900 border border-slate-700 text-white text-sm focus:border-blue-500 outline-none"
+                        />
+                      </div>
+
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                        <div>
+                          <label className="block text-xs font-semibold text-slate-300 mb-1">
+                            Email pour reçu &amp; convention *
+                          </label>
+                          <input
+                            type="email"
+                            required
+                            value={inlineEmail}
+                            onChange={(e) => setInlineEmail(e.target.value)}
+                            placeholder="votre.email@entreprise.fr"
+                            className="w-full px-4 py-2.5 rounded-xl bg-slate-900 border border-slate-700 text-white text-sm focus:border-blue-500 outline-none"
+                          />
+                        </div>
+                        <div>
+                          <label className="block text-xs font-semibold text-slate-300 mb-1">
+                            Téléphone pour code 3D-Secure *
+                          </label>
+                          <input
+                            type="tel"
+                            required
+                            value={inlinePhone}
+                            onChange={(e) => setInlinePhone(e.target.value)}
+                            placeholder="06 XX XX XX XX"
+                            className="w-full px-4 py-2.5 rounded-xl bg-slate-900 border border-slate-700 text-white text-sm focus:border-blue-500 outline-none"
+                          />
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Submit Button */}
+                    <button
+                      type="submit"
+                      disabled={inlineProcessing}
+                      className="w-full py-4 rounded-2xl bg-gradient-to-r from-blue-600 via-indigo-600 to-cyan-600 hover:from-blue-500 hover:to-cyan-500 text-white font-black text-base shadow-xl shadow-blue-600/30 transition-all flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50"
+                    >
+                      {inlineProcessing ? (
+                        <>
+                          <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                          <span>Validation bancaire 3D-Secure...</span>
+                        </>
+                      ) : (
+                        <>
+                          <Lock size={18} />
+                          <span>
+                            Valider le règlement de {inlinePaymentOption === '3x' ? `${calculatedMonthly} € (1/3)` : `${currentPkg.price} €`}
+                          </span>
+                        </>
+                      )}
+                    </button>
+                  </>
+                )}
+
+                <div className="pt-2 border-t border-slate-800 text-center text-xs text-slate-400 flex flex-wrap items-center justify-center gap-4">
+                  <span className="flex items-center gap-1">🔒 Chiffrement SSL 256-bit</span>
+                  <span className="flex items-center gap-1">🛡️ Conforme PCI-DSS</span>
+                  <span className="flex items-center gap-1">✅ Garantie de conformité</span>
+                </div>
+
+              </form>
+            )}
 
           </div>
 
         </div>
       </section>
 
-      {/* ── 5. AVIS CLIENTS & TÉMOIGNAGES AUTHENTIQUES ── */}
+
+      {/* ── 5. AVIS CLIENTS VÉRIFIÉS ── */}
       <section className="py-20 px-4 bg-slate-900/40 border-b border-slate-800">
         <div className="max-w-6xl mx-auto">
           
-          <div className="text-center max-w-3xl mx-auto mb-16">
+          <div className="text-center max-w-3xl mx-auto mb-14">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-400 text-xs font-bold uppercase tracking-wider mb-3">
               Retours Vérifiés
             </div>
             <h2 className="text-3xl sm:text-5xl font-black text-white">
               Ce Que Disent Nos Apprenants
             </h2>
-            <p className="mt-3 text-slate-400 text-sm sm:text-base">
-              Des professionnels, indépendants et dirigeants qui ont transformé leur quotidien grâce à Ô&apos;TOP Formation.
-            </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {testimonials.map((t, idx) => (
               <div 
                 key={idx} 
-                className="p-6 sm:p-8 rounded-3xl bg-slate-950 border border-slate-800 flex flex-col justify-between shadow-xl hover:border-blue-500/30 transition-all"
+                className="p-6 sm:p-8 rounded-3xl bg-slate-950 border border-slate-800 flex flex-col justify-between shadow-xl"
               >
                 <div>
                   <div className="flex items-center justify-between mb-4">
@@ -587,16 +932,14 @@ export default function MasterSalesPage() {
         </div>
       </section>
 
-      {/* ── 6. FAQ SANS DÉTOUR ── */}
+
+      {/* ── 6. FAQ SANS JARGON ── */}
       <section className="py-20 px-4 bg-slate-950 border-b border-slate-800">
-        <div className="max-w-4xl mx-auto space-y-10">
+        <div className="max-w-4xl mx-auto space-y-8">
           
           <div className="text-center">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-800 border border-slate-700 text-slate-300 text-xs font-bold uppercase tracking-wider mb-3">
+            <h2 className="text-3xl sm:text-4xl font-black text-white">
               Questions Fréquentes
-            </div>
-            <h2 className="text-3xl sm:text-5xl font-black text-white">
-              Toutes les réponses, sans jargon.
             </h2>
           </div>
 
@@ -606,7 +949,7 @@ export default function MasterSalesPage() {
               return (
                 <div 
                   key={idx} 
-                  className="rounded-2xl bg-slate-900 border border-slate-800 overflow-hidden transition-colors"
+                  className="rounded-2xl bg-slate-900 border border-slate-800 overflow-hidden"
                 >
                   <button
                     onClick={() => setActiveFaq(isOpen ? null : idx)}
@@ -616,7 +959,7 @@ export default function MasterSalesPage() {
                     {isOpen ? <ChevronUp className="text-blue-400 shrink-0" /> : <ChevronDown className="text-slate-400 shrink-0" />}
                   </button>
                   {isOpen && (
-                    <div className="px-6 pb-6 text-sm sm:text-base text-slate-300 leading-relaxed border-t border-slate-800 pt-4 bg-slate-950/40">
+                    <div className="px-6 pb-6 text-sm text-slate-300 leading-relaxed border-t border-slate-800 pt-4 bg-slate-950/40">
                       {faq.a}
                     </div>
                   )}
@@ -628,119 +971,30 @@ export default function MasterSalesPage() {
         </div>
       </section>
 
-      {/* ── 7. DIAGNOSTIC EXPRESS & DEVIS EN 15 MIN (CONVERSION FINALE) ── */}
-      <section id="diagnostic" className="py-24 px-4 bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 relative overflow-hidden">
-        
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] bg-blue-600/10 blur-[130px] pointer-events-none rounded-full" />
 
-        <div className="max-w-3xl mx-auto relative z-10 text-center space-y-6">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/30 text-blue-400 text-xs font-bold uppercase tracking-wider">
-            Échange Gratuit Sans Engagement
+      {/* ── 7. FOOTER LÉGAL & CONTACT ── */}
+      <footer className="py-12 px-4 bg-black border-t border-slate-900 text-slate-400 text-xs leading-relaxed">
+        <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div>
+            <strong>Ô&apos;TOP FORMATIONS</strong> — Espace Gamma 1, 139 Chemin des 2 Frères, 83190 Ollioules (Var) • Mélissa : 07 67 24 68 25 • Renaud : 06 74 79 75 09 • SIRET : 990 443 186 00012
           </div>
-          
-          <h2 className="text-3xl sm:text-5xl font-black text-white tracking-tight">
-            Demander un Diagnostic Express (15 min)
-          </h2>
-          
-          <p className="text-base sm:text-lg text-slate-300 max-w-xl mx-auto">
-            15 minutes avec Mélissa ou Renaud pour vérifier vos droits à formation (OPCO, CPF, FAF, FAFCEA) et concevoir votre parcours sur-mesure.
-          </p>
-
-          <form onSubmit={handleDiagnosticSubmit} className="mt-8 p-8 rounded-3xl bg-slate-900 border border-slate-800 text-left space-y-5 shadow-2xl">
-            <div>
-              <label className="block text-xs font-semibold text-slate-300 uppercase mb-2">
-                Votre Nom & Prénom *
-              </label>
-              <input
-                type="text"
-                required
-                value={diagnosticName}
-                onChange={(e) => setDiagnosticName(e.target.value)}
-                placeholder="Ex: Sophie Martin / Marc Durand"
-                className="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-700 text-white placeholder-slate-500 text-sm focus:border-blue-400 focus:outline-none"
-              />
-            </div>
-
-            <div>
-              <label className="block text-xs font-semibold text-slate-300 uppercase mb-2">
-                Votre Numéro de Téléphone *
-              </label>
-              <input
-                type="tel"
-                required
-                value={diagnosticPhone}
-                onChange={(e) => setDiagnosticPhone(e.target.value)}
-                placeholder="06 XX XX XX XX"
-                className="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-700 text-white placeholder-slate-500 text-sm focus:border-blue-400 focus:outline-none"
-              />
-            </div>
-
-            <div>
-              <label className="block text-xs font-semibold text-slate-300 uppercase mb-2">
-                Domaine Prioritaire Souhaité *
-              </label>
-              <select
-                value={diagnosticNeed}
-                onChange={(e) => setDiagnosticNeed(e.target.value)}
-                className="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-700 text-white text-sm focus:border-blue-400 focus:outline-none"
-              >
-                <option value="ia-indep">⚡ IA Générative (RS6776 - 16h)</option>
-                <option value="ia-business">🚀 Intégration IA en Entreprise & Cybersécurité (RS7344)</option>
-                <option value="reseaux-sociaux">📱 Communication Réseaux Sociaux (RS7351)</option>
-                <option value="fi-top">🧘 Formation Initiale FI TOP® (21h / 3 jours)</option>
-                <option value="fb-top">⏱️ Formation FB-TOP Découverte (7h)</option>
-                <option value="massage-aimants">🌿 Massages aux Aimants Thérapeutiques</option>
-                <option value="head-spa">💆 Head Spa Holistique (Prise en charge FAFCEA)</option>
-                <option value="massage-huiles">🌸 Massage Holistique aux Huiles (Tournée)</option>
-                <option value="autre">✨ Autre projet sur-mesure</option>
-              </select>
-            </div>
-
-            <div className="flex items-start gap-2 pt-2">
-              <input
-                type="checkbox"
-                id="rgpdConsentRespirez"
-                required
-                className="mt-1 w-4 h-4 accent-blue-600 rounded"
-              />
-              <label htmlFor="rgpdConsentRespirez" className="text-xs text-slate-400">
-                J&apos;accepte que mes données soient utilisées par Ô&apos;TOP Formation pour me recontacter dans le cadre de ma demande de formation.
-              </label>
-            </div>
-
-            <button
-              type="submit"
-              className="w-full py-4 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-black text-base shadow-xl shadow-blue-600/30 transition-all flex items-center justify-center gap-2 cursor-pointer"
-            >
-              <MessageCircle size={20} />
-              <span>Demander mon diagnostic de 15 min 💬</span>
-            </button>
-
-            <p className="text-center text-xs text-slate-400 mt-2">
-              🔒 Confidentialité garantie • Analyse de vos financements sous 24h ouvrées.
-            </p>
-          </form>
-        </div>
-      </section>
-
-      {/* ── FOOTER LÉGAL & RAPPEL COORDONNÉES ── */}
-      <footer className="py-12 px-4 bg-black border-t border-slate-900 text-slate-500 text-xs leading-relaxed">
-        <div className="max-w-6xl mx-auto space-y-6">
-          <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-4 border-t border-slate-900 text-slate-400">
-            <div>
-              <strong>Ô&apos;TOP FORMATIONS</strong> — Espace Gamma 1, 139 Chemin des 2 Frères, 83190 Ollioules (Var) • Tél : 07 67 24 68 25 (Mélissa) / 06 74 79 75 09 (Renaud) • contact@otopformation.fr • SIRET : 990 443 186 00012 • RCS Toulon
-            </div>
-            <div className="flex gap-4">
-              <Link href="/" className="hover:text-white">Accueil</Link>
-              <Link href="/formations/ia" className="hover:text-white">Formations IA</Link>
-              <Link href="/formations/fi-top" className="hover:text-white">Méthode TOP®</Link>
-              <Link href="/financement" className="hover:text-white">Financement</Link>
-            </div>
+          <div className="flex gap-4">
+            <Link href="/" className="hover:text-white">Accueil</Link>
+            <Link href="/formations/ia" className="hover:text-white">Formations IA</Link>
+            <Link href="/formations/fi-top" className="hover:text-white">Méthode TOP®</Link>
+            <Link href="/contact" className="hover:text-white">Contact</Link>
           </div>
         </div>
       </footer>
 
-      {/* Modale de Félicitations Interactive */}
+      {/* Modal Checkout Pop-up */}
+      <CheckoutModal
+        isOpen={checkoutModalOpen}
+        onClose={() => setCheckoutModalOpen(false)}
+        defaultPlan={checkoutPlan}
+      />
+
+      {/* Congratulations Modal */}
       <CongratulationsModal 
         isOpen={showModal} 
         onClose={() => setShowModal(false)} 

@@ -5,6 +5,7 @@ import Nav from '@/components/Nav';
 import ScrollReveal from '@/components/ScrollReveal';
 import FloatingButtons from '@/components/FloatingButtons';
 import FloatingChatbot from '@/components/FloatingChatbot';
+import { ThemeProvider } from '@/components/ThemeProvider';
 import Script from 'next/script';
 
 const inter = Inter({ subsets: ['latin', 'latin-ext'], variable: '--font-inter' });
@@ -31,8 +32,21 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="fr" className={inter.variable}>
+    <html lang="fr" className={inter.variable} data-theme="sombre">
       <head>
+        {/* Inline Theme Detection Script to avoid flash */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              try {
+                var savedTheme = localStorage.getItem('otop-theme');
+                if (savedTheme) {
+                  document.documentElement.setAttribute('data-theme', savedTheme);
+                }
+              } catch(e) {}
+            `,
+          }}
+        />
         {/* Google Analytics */}
         <Script 
           src="https://www.googletagmanager.com/gtag/js?id=G-0LR0JWFSRG" 
@@ -64,11 +78,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         </Script>
       </head>
       <body>
-        <Nav />
-        <ScrollReveal />
-        {children}
-        <FloatingButtons />
-        <FloatingChatbot />
+        <ThemeProvider>
+          <Nav />
+          <ScrollReveal />
+          {children}
+          <FloatingButtons />
+          <FloatingChatbot />
+        </ThemeProvider>
       </body>
     </html>
   );

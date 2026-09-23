@@ -1020,3 +1020,122 @@ p  { color: var(--gray-600); line-height: 1.8; }
   .float-btn { width: 48px; height: 48px; }
   .float-btn svg { width: 22px; height: 22px; }
 }
+
+/* ============= MULTI-THEME ENGINE (Sombre, Clair, Bleu Roi) ============= */
+
+/* 1. THEME CLAIR (Lumineux & Moderne) */
+html[data-theme="clair"] {
+  color-scheme: light;
+}
+html[data-theme="clair"] body {
+  background-color: #f8fafc !important;
+  color: #0f172a !important;
+}
+html[data-theme="clair"] main {
+  background-color: #f8fafc !important;
+  color: #0f172a !important;
+}
+html[data-theme="clair"] .bg-slate-950,
+html[data-theme="clair"] .bg-slate-900,
+html[data-theme="clair"] .bg-slate-900\/80,
+html[data-theme="clair"] .bg-slate-900\/60,
+html[data-theme="clair"] .bg-slate-900\/40 {
+  background-color: #ffffff !important;
+}
+html[data-theme="clair"] .border-slate-800,
+html[data-theme="clair"] .border-slate-850,
+html[data-theme="clair"] .border-slate-700 {
+  border-color: #e2e8f0 !important;
+}
+html[data-theme="clair"] .text-white {
+  color: #0f172a !important;
+}
+html[data-theme="clair"] .text-slate-100,
+html[data-theme="clair"] .text-slate-200 {
+  color: #1e293b !important;
+}
+html[data-theme="clair"] .text-slate-300,
+html[data-theme="clair"] .text-slate-400 {
+  color: #475569 !important;
+}
+html[data-theme="clair"] .nav {
+  background: rgba(255, 255, 255, 0.92) !important;
+  border-bottom: 1px solid #e2e8f0 !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05) !important;
+}
+html[data-theme="clair"] .nav.scrolled {
+  background: rgba(255, 255, 255, 0.98) !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08) !important;
+}
+html[data-theme="clair"] .nav-links a {
+  color: #334155 !important;
+}
+html[data-theme="clair"] .nav-links a:hover,
+html[data-theme="clair"] .nav-links a.active {
+  color: #0284c7 !important;
+}
+html[data-theme="clair"] .nav-dropdown-trigger {
+  color: #334155 !important;
+}
+html[data-theme="clair"] .nav-dropdown-menu {
+  background: #ffffff !important;
+  border: 1px solid #e2e8f0 !important;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12) !important;
+}
+html[data-theme="clair"] .nav-dropdown-menu a div:first-child {
+  color: #0f172a !important;
+}
+html[data-theme="clair"] .nav-mobile-menu {
+  background: #ffffff !important;
+  color: #0f172a !important;
+}
+html[data-theme="clair"] .nav-mobile-menu a {
+  color: #0f172a !important;
+}
+html[data-theme="clair"] .brand-text {
+  color: #0f172a !important;
+}
+
+/* 2. THEME BLEU ROI (Couleur Native Ô'TOP) */
+html[data-theme="bleu-roi"] {
+  color-scheme: dark;
+}
+html[data-theme="bleu-roi"] body {
+  background-color: #021a44 !important;
+  color: #f8fafc !important;
+}
+html[data-theme="bleu-roi"] main {
+  background-color: #021a44 !important;
+  color: #f8fafc !important;
+}
+html[data-theme="bleu-roi"] .bg-slate-950 {
+  background-color: #032156 !important;
+}
+html[data-theme="bleu-roi"] .bg-slate-900,
+html[data-theme="bleu-roi"] .bg-slate-900\/80,
+html[data-theme="bleu-roi"] .bg-slate-900\/60,
+html[data-theme="bleu-roi"] .bg-slate-900\/40 {
+  background-color: #062b6e !important;
+}
+html[data-theme="bleu-roi"] .border-slate-800,
+html[data-theme="bleu-roi"] .border-slate-850,
+html[data-theme="bleu-roi"] .border-slate-700 {
+  border-color: rgba(56, 189, 248, 0.22) !important;
+}
+html[data-theme="bleu-roi"] .nav {
+  background: rgba(2, 26, 68, 0.88) !important;
+  border-bottom: 1px solid rgba(56, 189, 248, 0.25) !important;
+}
+html[data-theme="bleu-roi"] .nav.scrolled {
+  background: rgba(2, 26, 68, 0.98) !important;
+  box-shadow: 0 10px 40px rgba(0, 20, 60, 0.7) !important;
+}
+html[data-theme="bleu-roi"] .top-bar {
+  background: #011333 !important;
+  border-bottom: 1px solid rgba(56, 189, 248, 0.15) !important;
+}
+html[data-theme="bleu-roi"] .nav-dropdown-menu {
+  background: #032156 !important;
+  border: 1px solid rgba(56, 189, 248, 0.3) !important;
+}
+
