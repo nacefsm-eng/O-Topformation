@@ -73,7 +73,7 @@ export default function HomePageClient() {
   const cardTranslateY = useTransform(scrollYProgress, [0, 0.8], [0, -40]);
 
   return (
-    <main className="min-h-screen bg-slate-950 text-slate-100 selection:bg-blue-600 selection:text-white font-sans">
+    <main className="min-h-screen bg-slate-950 text-slate-100 font-sans">
       
       {/* ─── 1. HERO ORIENTÉ RÉSULTAT AVEC 3 PREUVES COURTES ─────────────── */}
       <section ref={heroRef} className="relative pt-20 pb-20 md:pt-28 md:pb-32 overflow-hidden bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-blue-900/35 via-slate-950 to-slate-950 border-b border-slate-850">

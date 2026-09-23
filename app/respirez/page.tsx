@@ -340,7 +340,7 @@ export default function MasterSalesPage() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-100 selection:bg-blue-600 selection:text-white font-sans">
+    <div className="min-h-screen bg-slate-950 text-slate-100 font-sans">
       
       {/* ── 1. HERO DYNAMIQUE, ACTIF & VISUEL AVEC PHOTOS RÉELLES ── */}
       <section className="relative pt-16 pb-20 md:pt-24 md:pb-28 px-4 overflow-hidden border-b border-slate-800 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-blue-900/30 via-slate-950 to-slate-950">
