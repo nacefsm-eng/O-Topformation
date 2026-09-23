@@ -214,8 +214,10 @@ p  { color: var(--gray-600); line-height: 1.8; }
 .top-bar a:hover { color: #38bdf8; }
 
 .nav {
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
   z-index: 1000;
   display: flex;
   align-items: center;
@@ -227,6 +229,7 @@ p  { color: var(--gray-600); line-height: 1.8; }
   -webkit-backdrop-filter: blur(20px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
+.nav + *, main > section:first-child { scroll-margin-top: 70px; }
 .nav.scrolled {
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
   border-bottom: 1px solid rgba(59, 130, 246, 0.2);
@@ -1021,7 +1024,44 @@ p  { color: var(--gray-600); line-height: 1.8; }
   .float-btn svg { width: 22px; height: 22px; }
 }
 
-/* ============= MULTI-THEME ENGINE (Sombre, Clair, Bleu Roi) ============= */
+/* ============= MULTI-THEME ENGINE (Sombre, Clair) ============= */
+
+/* 0. THEME SOMBRE (Bleu Roi as base dark) */
+html[data-theme="sombre"] body,
+html[data-theme="sombre"] main {
+  background-color: #021a44 !important;
+  color: #f1f5f9 !important;
+}
+html[data-theme="sombre"] .bg-slate-950 {
+  background-color: #021a44 !important;
+}
+html[data-theme="sombre"] .bg-slate-900,
+html[data-theme="sombre"] .bg-slate-900\/80,
+html[data-theme="sombre"] .bg-slate-900\/60,
+html[data-theme="sombre"] .bg-slate-900\/40 {
+  background-color: #032156 !important;
+}
+html[data-theme="sombre"] .border-slate-800,
+html[data-theme="sombre"] .border-slate-850,
+html[data-theme="sombre"] .border-slate-700 {
+  border-color: rgba(56, 189, 248, 0.18) !important;
+}
+html[data-theme="sombre"] .nav {
+  background: rgba(2, 26, 68, 0.88) !important;
+  border-bottom: 1px solid rgba(56, 189, 248, 0.2) !important;
+}
+html[data-theme="sombre"] .nav.scrolled {
+  background: rgba(2, 26, 68, 0.98) !important;
+  box-shadow: 0 10px 40px rgba(0, 20, 60, 0.6) !important;
+}
+html[data-theme="sombre"] .top-bar {
+  background: #011333 !important;
+  border-bottom: 1px solid rgba(56, 189, 248, 0.12) !important;
+}
+html[data-theme="sombre"] .nav-dropdown-menu {
+  background: #032156 !important;
+  border: 1px solid rgba(56, 189, 248, 0.25) !important;
+}
 
 /* 1. THEME CLAIR (Lumineux & Moderne) */
 html[data-theme="clair"] {
@@ -1095,47 +1135,49 @@ html[data-theme="clair"] .nav-mobile-menu a {
 html[data-theme="clair"] .brand-text {
   color: #0f172a !important;
 }
-
-/* 2. THEME BLEU ROI (Couleur Native Ô'TOP) */
-html[data-theme="bleu-roi"] {
-  color-scheme: dark;
+html[data-theme="clair"] .bg-gradient-to-b.from-blue-900\/35 {
+  background: linear-gradient(to bottom, rgba(219, 234, 254, 0.5), #f8fafc) !important;
 }
-html[data-theme="bleu-roi"] body {
-  background-color: #021a44 !important;
-  color: #f8fafc !important;
+html[data-theme="clair"] .bg-blue-500\/10,
+html[data-theme="clair"] .bg-blue-500\/15 {
+  background-color: rgba(59, 130, 246, 0.06) !important;
 }
-html[data-theme="bleu-roi"] main {
-  background-color: #021a44 !important;
-  color: #f8fafc !important;
+html[data-theme="clair"] .bg-indigo-500\/10 {
+  background-color: rgba(99, 102, 241, 0.06) !important;
 }
-html[data-theme="bleu-roi"] .bg-slate-950 {
-  background-color: #032156 !important;
+html[data-theme="clair"] .bg-cyan-500\/10 {
+  background-color: rgba(6, 182, 212, 0.06) !important;
 }
-html[data-theme="bleu-roi"] .bg-slate-900,
-html[data-theme="bleu-roi"] .bg-slate-900\/80,
-html[data-theme="bleu-roi"] .bg-slate-900\/60,
-html[data-theme="bleu-roi"] .bg-slate-900\/40 {
-  background-color: #062b6e !important;
+html[data-theme="clair"] .top-bar {
+  background: #eef2ff !important;
+  border-bottom: 1px solid #e2e8f0 !important;
+  color: #334155 !important;
 }
-html[data-theme="bleu-roi"] .border-slate-800,
-html[data-theme="bleu-roi"] .border-slate-850,
-html[data-theme="bleu-roi"] .border-slate-700 {
-  border-color: rgba(56, 189, 248, 0.22) !important;
+html[data-theme="clair"] .top-bar a {
+  color: #334155 !important;
 }
-html[data-theme="bleu-roi"] .nav {
-  background: rgba(2, 26, 68, 0.88) !important;
-  border-bottom: 1px solid rgba(56, 189, 248, 0.25) !important;
+html[data-theme="clair"] .top-bar-socials a {
+  color: #475569 !important;
 }
-html[data-theme="bleu-roi"] .nav.scrolled {
-  background: rgba(2, 26, 68, 0.98) !important;
-  box-shadow: 0 10px 40px rgba(0, 20, 60, 0.7) !important;
+html[data-theme="clair"] footer {
+  background-color: #1e293b !important;
 }
-html[data-theme="bleu-roi"] .top-bar {
-  background: #011333 !important;
-  border-bottom: 1px solid rgba(56, 189, 248, 0.15) !important;
+html[data-theme="clair"] .shadow-2xl {
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08) !important;
 }
-html[data-theme="bleu-roi"] .nav-dropdown-menu {
-  background: #032156 !important;
-  border: 1px solid rgba(56, 189, 248, 0.3) !important;
+html[data-theme="clair"] section {
+  background-color: transparent !important;
+}
+html[data-theme="clair"] .bg-gradient-to-t.from-slate-950 {
+  background: linear-gradient(to top, rgba(248, 250, 252, 0.95), transparent) !important;
 }
 
+/* 3D Float Animation */
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  33% { transform: translateY(-15px) rotate(2deg); }
+  66% { transform: translateY(8px) rotate(-1deg); }
+}
+.animate-float-slow {
+  animation: float-slow 7s ease-in-out infinite;
+}

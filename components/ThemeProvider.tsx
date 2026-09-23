@@ -2,7 +2,7 @@
 
 import React, { createContext, useContext, useEffect, useState } from 'react';
 
-export type ThemeMode = 'sombre' | 'clair' | 'bleu-roi';
+export type ThemeMode = 'sombre' | 'clair';
 
 interface ThemeContextType {
   theme: ThemeMode;
@@ -21,7 +21,7 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     try {
       const savedTheme = localStorage.getItem('otop-theme') as ThemeMode | null;
-      if (savedTheme && (savedTheme === 'sombre' || savedTheme === 'clair' || savedTheme === 'bleu-roi')) {
+      if (savedTheme && (savedTheme === 'sombre' || savedTheme === 'clair')) {
         setThemeState(savedTheme);
         document.documentElement.setAttribute('data-theme', savedTheme);
       } else {

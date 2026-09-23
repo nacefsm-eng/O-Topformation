@@ -28,7 +28,7 @@ const formationsLinks = [
     href: '/formations/fi-top' 
   },
   { 
-    label: '✨ Page de Vente & Inscriptions Immédiates', 
+    label: '📋 Catalogue & Inscriptions', 
     desc: 'Récapitulatif des cursus, modalités de règlement & inscription en ligne',
     href: '/respirez' 
   },
@@ -95,34 +95,15 @@ export default function Nav() {
           
           {/* Logo with circular badge and brand typography */}
           <Link href="/" className="nav-logo-wrap" aria-label="Accueil O'TOP Formation" style={{ textDecoration: 'none' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
-              <div style={{ 
-                position: 'relative', 
-                width: '42px', 
-                height: '42px', 
-                borderRadius: '9999px', 
-                padding: '2px', 
-                background: 'linear-gradient(135deg, #2563eb, #38bdf8, #fbbf24)', 
-                display: 'flex', 
-                alignItems: 'center', 
-                justifyContent: 'center',
-                boxShadow: '0 2px 10px rgba(0,0,0,0.25)',
-                flexShrink: 0
-              }}>
-                <img 
-                  src="/logo.png" 
-                  alt="O'TOP Formation" 
-                  style={{ width: '100%', height: '100%', objectFit: 'contain', borderRadius: '9999px', background: '#ffffff' }} 
-                />
-              </div>
-              <div style={{ display: 'flex', flexDirection: 'column' }}>
-                <span className="brand-text" style={{ fontWeight: 800, fontSize: '1.05rem', letterSpacing: '-0.02em', lineHeight: 1.1 }}>
-                  Ô&apos;TOP <span style={{ color: '#38bdf8' }}>FORMATION</span>
-                </span>
-                <span style={{ fontSize: '0.6rem', letterSpacing: '0.12em', textTransform: 'uppercase', color: '#94a3b8', fontWeight: 600, marginTop: '2px' }}>
-                  IA • DIGITAL • MÉTHODE TOP®
-                </span>
-              </div>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
+              <img 
+                src="/logo.png" 
+                alt="O'TOP Formation" 
+                style={{ width: '40px', height: '40px', objectFit: 'contain', borderRadius: '9999px' }} 
+              />
+              <span className="brand-text" style={{ fontWeight: 800, fontSize: '1rem', letterSpacing: '-0.02em' }}>
+                Ô&apos;TOP <span style={{ color: '#38bdf8' }}>FORMATION</span>
+              </span>
             </div>
           </Link>
 
@@ -196,9 +177,8 @@ export default function Nav() {
                 href="/respirez"
                 className={pathname === '/respirez' ? 'active' : ''}
                 role="menuitem"
-                style={{ color: '#fbbf24', fontWeight: 700 }}
               >
-                ✨ Page de Vente
+                Nos Offres
               </Link>
             </li>
           </ul>
@@ -206,7 +186,7 @@ export default function Nav() {
           {/* Desktop actions with Theme Toggle */}
           <div className="nav-actions" style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
             
-            {/* Multi-Color Theme Switcher (Sombre, Clair, Bleu Roi) */}
+            {/* Multi-Color Theme Switcher */}
             <ThemeToggle />
 
             <a
@@ -230,7 +210,6 @@ export default function Nav() {
 
           {/* Mobile hamburger button */}
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }} className="md:hidden">
-            <ThemeToggle />
             <button
               className={`nav-hamburger${mobileOpen ? ' open' : ''}`}
               onClick={() => setMobileOpen(!mobileOpen)}
@@ -278,11 +257,14 @@ export default function Nav() {
           <li><Link href="/entreprises" onClick={() => setMobileOpen(false)} style={{ color: 'white', fontSize: '1.1rem' }}>Entreprises & B2B</Link></li>
           <li><Link href="/methode" onClick={() => setMobileOpen(false)} style={{ color: 'white', fontSize: '1.1rem' }}>La Méthode TOP®</Link></li>
           <li><Link href="/financement" onClick={() => setMobileOpen(false)} style={{ color: 'white', fontSize: '1.1rem' }}>Financement</Link></li>
-          <li><Link href="/respirez" onClick={() => setMobileOpen(false)} style={{ color: '#fbbf24', fontSize: '1.1rem', fontWeight: 700 }}>✨ Page de Vente & Tarifs</Link></li>
+          <li><Link href="/respirez" onClick={() => setMobileOpen(false)} style={{ color: 'white', fontSize: '1.1rem' }}>Nos Offres & Tarifs</Link></li>
           <li style={{ marginTop: '1rem' }}>
             <Link href="/contact" onClick={() => setMobileOpen(false)} className="w-full block py-3.5 text-center rounded-xl bg-blue-600 text-white font-bold">
               Demander un diagnostic (15 min) ⚡
             </Link>
+          </li>
+          <li style={{ marginTop: '1rem', display: 'flex', justifyContent: 'center' }}>
+            <ThemeToggle />
           </li>
         </ul>
       </div>

@@ -83,8 +83,29 @@ export default function HomePageClient() {
         <div className="absolute top-1/3 -left-40 w-96 h-96 bg-indigo-500/10 blur-[150px] pointer-events-none rounded-full" />
         <div className="absolute top-1/2 -right-40 w-96 h-96 bg-cyan-500/10 blur-[150px] pointer-events-none rounded-full" />
         
-        {/* Animated Background Grid */}
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff08_1px,transparent_1px),linear-gradient(to_bottom,#ffffff08_1px,transparent_1px)] bg-[size:48px_48px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] pointer-events-none" />
+        {/* 3D Floating Orbs */}
+        <div className="absolute inset-0 pointer-events-none overflow-hidden">
+          <div className="absolute top-[15%] left-[10%] w-32 h-32 rounded-full bg-gradient-to-br from-blue-500/30 to-cyan-400/20 blur-sm animate-float-slow" style={{ animationDelay: '0s' }} />
+          <div className="absolute top-[35%] right-[15%] w-24 h-24 rounded-full bg-gradient-to-br from-indigo-500/25 to-purple-400/15 blur-sm animate-float-slow" style={{ animationDelay: '2s' }} />
+          <div className="absolute bottom-[20%] left-[30%] w-20 h-20 rounded-full bg-gradient-to-br from-cyan-400/20 to-blue-500/10 blur-sm animate-float-slow" style={{ animationDelay: '4s' }} />
+          {/* 3D Sphere */}
+          <div className="absolute top-[20%] right-[8%] w-40 h-40 md:w-56 md:h-56 rounded-full opacity-60" 
+            style={{
+              background: 'radial-gradient(circle at 35% 35%, rgba(56,189,248,0.4), rgba(37,99,235,0.2) 50%, rgba(2,26,68,0.6) 100%)',
+              boxShadow: 'inset -8px -8px 20px rgba(0,0,0,0.4), inset 4px 4px 15px rgba(56,189,248,0.3), 0 0 60px rgba(37,99,235,0.15)',
+              animation: 'float-slow 8s ease-in-out infinite',
+            }} 
+          />
+          {/* Smaller accent sphere */}
+          <div className="absolute bottom-[25%] right-[25%] w-16 h-16 md:w-24 md:h-24 rounded-full opacity-50" 
+            style={{
+              background: 'radial-gradient(circle at 30% 30%, rgba(251,191,36,0.35), rgba(245,158,11,0.15) 50%, rgba(2,26,68,0.5) 100%)',
+              boxShadow: 'inset -4px -4px 12px rgba(0,0,0,0.3), inset 2px 2px 8px rgba(251,191,36,0.25), 0 0 30px rgba(245,158,11,0.1)',
+              animation: 'float-slow 6s ease-in-out infinite',
+              animationDelay: '3s',
+            }} 
+          />
+        </div>
 
         <div className="container mx-auto px-4 max-w-6xl relative z-10">
           <motion.div 
@@ -713,50 +734,6 @@ export default function HomePageClient() {
         </div>
       </section>
 
-
-      {/* ─── 4. LES OUTILS RÉELS ENSEIGNÉS (PREUVE CONCRÈTE) ──────────────── */}
-      <section className="py-16 px-4 bg-slate-900/30 border-b border-slate-800">
-        <div className="container mx-auto max-w-5xl text-center">
-          <p className="text-xs uppercase font-extrabold tracking-widest text-slate-400 mb-8">
-            Les outils réels que vous apprendrez à utiliser dans votre activité
-          </p>
-
-          <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-4 items-center">
-            <div className="p-3 rounded-xl bg-slate-950 border border-slate-800 text-xs font-bold text-slate-300 flex flex-col items-center gap-1.5">
-              <span className="text-emerald-400 text-base">🟢</span>
-              <span>ChatGPT</span>
-            </div>
-            <div className="p-3 rounded-xl bg-slate-950 border border-slate-800 text-xs font-bold text-slate-300 flex flex-col items-center gap-1.5">
-              <span className="text-amber-400 text-base">🟠</span>
-              <span>Claude</span>
-            </div>
-            <div className="p-3 rounded-xl bg-slate-950 border border-slate-800 text-xs font-bold text-slate-300 flex flex-col items-center gap-1.5">
-              <span className="text-red-400 text-base">🔴</span>
-              <span>n8n</span>
-            </div>
-            <div className="p-3 rounded-xl bg-slate-950 border border-slate-800 text-xs font-bold text-slate-300 flex flex-col items-center gap-1.5">
-              <span className="text-purple-400 text-base">🟣</span>
-              <span>Make</span>
-            </div>
-            <div className="p-3 rounded-xl bg-slate-950 border border-slate-800 text-xs font-bold text-slate-300 flex flex-col items-center gap-1.5">
-              <span className="text-cyan-400 text-base">🔵</span>
-              <span>Canva</span>
-            </div>
-            <div className="p-3 rounded-xl bg-slate-950 border border-slate-800 text-xs font-bold text-slate-300 flex flex-col items-center gap-1.5">
-              <span className="text-white text-base">⬛</span>
-              <span>CapCut</span>
-            </div>
-            <div className="p-3 rounded-xl bg-slate-950 border border-slate-800 text-xs font-bold text-slate-300 flex flex-col items-center gap-1.5">
-              <span className="text-blue-500 text-base">🔷</span>
-              <span>Meta Ads</span>
-            </div>
-            <div className="p-3 rounded-xl bg-slate-950 border border-slate-800 text-xs font-bold text-slate-300 flex flex-col items-center gap-1.5">
-              <span className="text-blue-400 text-base">🚀</span>
-              <span>Waalaxy</span>
-            </div>
-          </div>
-        </div>
-      </section>
 
 
       {/* ─── 5. TABLEAU COMPARATIF DES 3 PARCOURS ────────────────────────── */}
