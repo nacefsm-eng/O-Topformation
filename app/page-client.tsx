@@ -977,6 +977,30 @@ export default function HomePageClient() {
               description="Expertise pointue en cybersécurité, résilience des infrastructures critiques et sécurisation avancée des environnements d'intelligence artificielle."
               onCtaClick={() => window.open('https://wa.me/33767246825?text=Bonjour%20Med%20Aly%2C%20je%20souhaite%20%C3%A9changer%20avec%20vous%20sur%20la%20cybers%C3%A9curit%C3%A9.', '_blank')}
             />
+
+            {/* 5. Nacef - Lead Tech Web (Arrière-plan blanc) */}
+            <TeamMemberCard
+              position="left"
+              themeVariant="white"
+              roleTitle="Lead Développeur & Architecte Web"
+              firstName="Nacef"
+              lastName=""
+              imageUrl="/team-nacef.jpg"
+              description="Architecte technique & concepteur de la plateforme web Ô'TOP Formation. Expert en ingénierie logicielle full-stack, optimisation des performances, automatisation et expérience utilisateur moderne."
+              onCtaClick={() => window.open('https://wa.me/33767246825?text=Bonjour%20Nacef%2C%20je%20souhaite%20%C3%A9changer%20avec%20vous%20sur%20le%20site%20web.', '_blank')}
+            />
+
+            {/* 6. Hamouda - Community Manager (Arrière-plan noir) */}
+            <TeamMemberCard
+              position="right"
+              themeVariant="black"
+              roleTitle="Community Manager & Social Media"
+              firstName="Hamouda"
+              lastName=""
+              imageUrl="/team-hamouda.jpg"
+              description="Stratège de la communication et des réseaux sociaux. En charge de l'engagement des apprenants, de l'animation de nos communautés d'alumni et du rayonnement digital de la marque Ô'TOP."
+              onCtaClick={() => window.open('https://wa.me/33767246825?text=Bonjour%20Hamouda%2C%20je%20souhaite%20%C3%A9changer%20avec%20vous%20sur%20la%20communication.', '_blank')}
+            />
           </div>
 
         </div>
