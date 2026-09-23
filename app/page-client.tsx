@@ -32,9 +32,11 @@ import {
   Target,
   Workflow,
   Laptop,
-  CreditCard
+  CreditCard,
+  Code
 } from 'lucide-react';
 import CheckoutModal from '@/components/ui/checkout-modal';
+import TeamMemberCard from '@/components/ui/team-member-card';
 
 export default function HomePageClient() {
   // Pôle selection state
@@ -914,7 +916,115 @@ export default function HomePageClient() {
       {/* ─── 7. PREUVE SOCIALE & ÉTUDES DE CAS ─────────────────────── */}
       <ClientFeedback limit={3} />
 
-      {/* ─── 8. CTA CONVERSION IMMÉDIATE (DIRIGEANTS PRESSÉS) ───────────── */}
+      {/* ─── 8. ÉQUIPE & EXPERTS RÉFÉRENTS ──────────────────────────────── */}
+      <section id="equipe" className="py-20 px-4 bg-slate-900/30 border-t border-slate-800">
+        <div className="container mx-auto max-w-5xl">
+          
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-blue-500/10 border border-blue-400/20 text-blue-400 text-xs font-bold uppercase tracking-wider mb-3">
+              <Users size={14} />
+              Pôle Formation &amp; Direction
+            </div>
+            <h2 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
+              L&apos;Équipe des Experts &amp; Formateurs
+            </h2>
+            <p className="mt-3 text-slate-400 text-sm sm:text-base">
+              Pas d&apos;organisme anonyme. Vos sessions et vos coachings 1-to-1 sont directement assurés par nos experts référents.
+            </p>
+          </div>
+
+          <div className="space-y-12">
+            {/* 1. Mélissa */}
+            <TeamMemberCard
+              position="left"
+              roleTitle="Fondatrice & Formatrice Certifiée TOP®"
+              firstName="Mélissa"
+              lastName="JENNADI"
+              imageUrl="/team-melyssa.png"
+              description="Rigueur scientifique, sens aigu de la transmission et dévouement absolu pour faire grandir vos équipes et pérenniser votre activité."
+              onCtaClick={() => window.open('https://wa.me/33767246825?text=Bonjour%20M%C3%A9lissa%2C%20je%20souhaite%20%C3%A9changer%20avec%20vous.', '_blank')}
+            />
+
+            {/* 2. Renaud */}
+            <TeamMemberCard
+              position="right"
+              roleTitle="Directeur Pédagogique & IA"
+              firstName="Renaud"
+              lastName=""
+              imageUrl="/team-renaud.jpg"
+              description="Passionné par l'impact technologique et l'efficacité opérationnelle, pour transformer des outils complexes en leviers de croissance concrets."
+              onCtaClick={() => window.open('https://wa.me/33674797509?text=Bonjour%20Renaud%2C%20je%20souhaite%20%C3%A9changer%20avec%20vous.', '_blank')}
+            />
+
+            {/* 3. Med Aly (Daly) Garma */}
+            <TeamMemberCard
+              position="left"
+              roleTitle="Expert Cybersécurité & Résilience IA"
+              firstName="Med Aly"
+              lastName="GARMA"
+              imageUrl="/team-med-aly.jpg"
+              description="Expertise pointue en cybersécurité, résilience des infrastructures critiques et sécurisation avancée des environnements d'intelligence artificielle."
+              onCtaClick={() => window.open('https://wa.me/33767246825?text=Bonjour%20Med%20Aly%2C%20je%20souhaite%20%C3%A9changer%20avec%20vous%20sur%20la%20cybers%C3%A9curit%C3%A9.', '_blank')}
+            />
+
+            {/* 4. Régis */}
+            <TeamMemberCard
+              position="right"
+              roleTitle="Stratégie Opérationnelle & Gestion"
+              firstName="Régis"
+              lastName=""
+              imageUrl="/team-regis.png"
+              description="Excellence opérationnelle forgée sur le terrain, sang-froid et vision stratégique pour sécuriser chaque étape de votre transition."
+              onCtaClick={() => window.open('https://wa.me/33767246825?text=Bonjour%20R%C3%A9gis%2C%20je%20souhaite%20%C3%A9changer%20avec%20vous.', '_blank')}
+            />
+          </div>
+
+          {/* ── Séparation distincte : Équipe Technique & Digitale (Concepteurs du Site) ── */}
+          <div className="mt-20 pt-16 border-t border-slate-800/80">
+            <div className="text-center mb-12">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-cyan-500/10 border border-cyan-400/20 text-cyan-400 text-xs font-bold uppercase tracking-wider mb-3">
+                <Code size={14} />
+                Pôle Ingénierie &amp; Croissance Digitale
+              </div>
+              <h3 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
+                L&apos;Équipe Technique &amp; Web
+              </h3>
+              <p className="text-slate-400 text-sm max-w-xl mx-auto mt-2">
+                Les concepteurs de la plateforme web Ô&apos;TOP Formation et de notre écosystème numérique.
+              </p>
+            </div>
+
+            <div className="space-y-12">
+              {/* 5. Nacef - Lead Tech Web (Arrière-plan blanc) */}
+              <TeamMemberCard
+                position="left"
+                themeVariant="white"
+                roleTitle="Lead Développeur & Architecte Web"
+                firstName="Nacef"
+                lastName=""
+                imageUrl="/team-nacef.jpg"
+                description="Architecte technique & concepteur de la plateforme web Ô'TOP Formation. Expert en ingénierie logicielle full-stack, optimisation des performances, automatisation et expérience utilisateur moderne."
+                onCtaClick={() => window.open('https://wa.me/33767246825?text=Bonjour%20Nacef%2C%20je%20souhaite%20%C3%A9changer%20avec%20vous%20sur%20le%20site%20web.', '_blank')}
+              />
+
+              {/* 6. Hamouda - Community Manager (Arrière-plan noir) */}
+              <TeamMemberCard
+                position="right"
+                themeVariant="black"
+                roleTitle="Community Manager & Social Media"
+                firstName="Hamouda"
+                lastName=""
+                imageUrl="/team-hamouda.jpg"
+                description="Stratège de la communication et des réseaux sociaux. En charge de l'engagement des apprenants, de l'animation de nos communautés d'alumni et du rayonnement digital de la marque Ô'TOP."
+                onCtaClick={() => window.open('https://wa.me/33767246825?text=Bonjour%20Hamouda%2C%20je%20souhaite%20%C3%A9changer%20avec%20vous%20sur%20la%20communication.', '_blank')}
+              />
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      {/* ─── 9. CTA CONVERSION IMMÉDIATE (DIRIGEANTS PRESSÉS) ───────────── */}
       <section className="py-12 px-4 bg-gradient-to-r from-blue-950 via-slate-900 to-indigo-950 border-t border-b border-blue-500/20 relative">
         <div className="container mx-auto max-w-5xl flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="space-y-1 text-center md:text-left">

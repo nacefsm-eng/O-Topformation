@@ -431,6 +431,16 @@ p  { color: var(--gray-600); line-height: 1.8; }
   box-shadow: var(--shadow-sm);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   overflow: hidden;
+  color: #1e293b;
+}
+.card p {
+  color: #334155;
+}
+.card ul, .card ol, .card li {
+  color: #334155;
+}
+.card li strong {
+  color: #0f172a;
 }
 .card:hover {
   transform: translateY(-6px);

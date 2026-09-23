@@ -84,7 +84,7 @@ export default function FormationIAPage() {
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))', gap: '2.5rem' }}>
             {/* Parcours 1: Dirigeants / TPE */}
-            <div className="card" style={{ border: '2px solid var(--blue-900)', display: 'flex', flexDirection: 'column' }}>
+            <div className="card" style={{ background: '#ffffff', border: '2px solid var(--blue-900)', display: 'flex', flexDirection: 'column', color: '#1e293b' }}>
               <div style={{ padding: '2rem', flex: 1, display: 'flex', flexDirection: 'column' }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.25rem', gap: '0.75rem', flexWrap: 'wrap' }}>
                   <span className="label" style={{ color: 'var(--blue-600)', margin: 0 }}>Parcours Stratégique &amp; Opérationnel</span>
@@ -93,18 +93,18 @@ export default function FormationIAPage() {
                   </span>
                 </div>
                 <h3 style={{ marginBottom: '1rem', color: 'var(--blue-900)' }}>Déployer l’IA dans votre entreprise, sans désorganiser vos équipes</h3>
-                <p style={{ marginBottom: '1.5rem' }}>
+                <p style={{ marginBottom: '1.5rem', color: '#334155' }}>
                   Pour les dirigeants de TPE/PME et leurs collaborateurs stratégiques souhaitant structurer et piloter un véritable projet d&apos;intégration IA rentable.
                 </p>
 
                 <h4 style={{ fontSize: '1rem', marginBottom: '0.75rem', color: 'var(--blue-900)' }}>Programme en 5 Modules :</h4>
-                <ul style={{ listStyle: 'none', padding: 0, marginBottom: '2rem', display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
-                  <li style={{ display: 'flex', gap: '0.5rem' }}><span>✓</span> <strong>Module 1 :</strong> Identifier les opportunités d&apos;intégration &amp; méthode STEP</li>
-                  <li style={{ display: 'flex', gap: '0.5rem' }}><span>✓</span> <strong>Module 2 :</strong> Plan d&apos;intégration, budget réaliste &amp; conformité AI Act</li>
-                  <li style={{ display: 'flex', gap: '0.5rem' }}><span>✓</span> <strong>Module 3 :</strong> Implémentation opérationnelle (marketing, admin, prompts)</li>
-                  <li style={{ display: 'flex', gap: '0.5rem' }}><span>✓</span> <strong>Module 4 :</strong> Conduite du changement &amp; charte éthique interne</li>
-                  <li style={{ display: 'flex', gap: '0.5rem' }}><span>✓</span> <strong>Module 5 :</strong> Mesure de performance, KPI &amp; cycle d&apos;optimisation PDCA</li>
-                  <li style={{ display: 'flex', gap: '0.5rem' }}><span>✓</span> <strong>Coaching :</strong> 5h de coaching inclus (individuel ou petit groupe, selon le parcours)</li>
+                <ul style={{ listStyle: 'none', padding: 0, marginBottom: '2rem', display: 'flex', flexDirection: 'column', gap: '0.6rem', color: '#334155' }}>
+                  <li style={{ display: 'flex', gap: '0.5rem', color: '#334155' }}><span style={{ color: 'var(--blue-600)', fontWeight: 700 }}>✓</span> <strong style={{ color: '#0f172a' }}>Module 1 :</strong> Identifier les opportunités d&apos;intégration &amp; méthode STEP</li>
+                  <li style={{ display: 'flex', gap: '0.5rem', color: '#334155' }}><span style={{ color: 'var(--blue-600)', fontWeight: 700 }}>✓</span> <strong style={{ color: '#0f172a' }}>Module 2 :</strong> Plan d&apos;intégration, budget réaliste &amp; conformité AI Act</li>
+                  <li style={{ display: 'flex', gap: '0.5rem', color: '#334155' }}><span style={{ color: 'var(--blue-600)', fontWeight: 700 }}>✓</span> <strong style={{ color: '#0f172a' }}>Module 3 :</strong> Implémentation opérationnelle (marketing, admin, prompts)</li>
+                  <li style={{ display: 'flex', gap: '0.5rem', color: '#334155' }}><span style={{ color: 'var(--blue-600)', fontWeight: 700 }}>✓</span> <strong style={{ color: '#0f172a' }}>Module 4 :</strong> Conduite du changement &amp; charte éthique interne</li>
+                  <li style={{ display: 'flex', gap: '0.5rem', color: '#334155' }}><span style={{ color: 'var(--blue-600)', fontWeight: 700 }}>✓</span> <strong style={{ color: '#0f172a' }}>Module 5 :</strong> Mesure de performance, KPI &amp; cycle d&apos;optimisation PDCA</li>
+                  <li style={{ display: 'flex', gap: '0.5rem', color: '#334155' }}><span style={{ color: 'var(--blue-600)', fontWeight: 700 }}>✓</span> <strong style={{ color: '#0f172a' }}>Coaching :</strong> 5h de coaching inclus (individuel ou petit groupe, selon le parcours)</li>
                 </ul>
 
                 <div style={{ background: 'var(--blue-50)', padding: '1rem', borderRadius: 'var(--radius-sm)', marginBottom: '1.5rem', fontSize: '0.9rem', color: 'var(--blue-900)' }}>
@@ -120,7 +120,7 @@ export default function FormationIAPage() {
             </div>
 
             {/* Parcours 2: Indépendants / IA Générative */}
-            <div className="card" style={{ border: '2px solid var(--gold)', display: 'flex', flexDirection: 'column' }}>
+            <div className="card" style={{ background: '#ffffff', border: '2px solid var(--gold)', display: 'flex', flexDirection: 'column', color: '#1e293b' }}>
               <div style={{ padding: '2rem', flex: 1, display: 'flex', flexDirection: 'column' }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.25rem', gap: '0.75rem', flexWrap: 'wrap' }}>
                   <span className="label" style={{ color: 'var(--gold-dark)', margin: 0 }}>Parcours Pratique &amp; Productivité</span>
@@ -129,16 +129,16 @@ export default function FormationIAPage() {
                   </span>
                 </div>
                 <h3 style={{ marginBottom: '1rem', color: 'var(--blue-900)' }}>Créez vos assistants IA et récupérez du temps chaque semaine</h3>
-                <p style={{ marginBottom: '1.5rem' }}>
+                <p style={{ marginBottom: '1.5rem', color: '#334155' }}>
                   Pour coachs, thérapeutes, consultants et indépendants souhaitant produire leur contenu en autonomie et déléguer les tâches chronophages à des assistants IA.
                 </p>
 
                 <h4 style={{ fontSize: '1rem', marginBottom: '0.75rem', color: 'var(--blue-900)' }}>Programme en 3 Modules Pratiques (16h vidéo + 5h coaching) :</h4>
-                <ul style={{ listStyle: 'none', padding: 0, marginBottom: '2rem', display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
-                  <li style={{ display: 'flex', gap: '0.5rem' }}><span>✓</span> <strong>Module 1 :</strong> Stratégie d&apos;implémentation &amp; choix des outils selon budget</li>
-                  <li style={{ display: 'flex', gap: '0.5rem' }}><span>✓</span> <strong>Module 2 :</strong> Création de contenus rédactionnels, visuels &amp; GPTs sur mesure</li>
-                  <li style={{ display: 'flex', gap: '0.5rem' }}><span>✓</span> <strong>Module 3 :</strong> Sécurité, conformité RGPD &amp; non-exposition des données</li>
-                  <li style={{ display: 'flex', gap: '0.5rem' }}><span>✓</span> <strong>Coaching :</strong> 5h de coaching inclus (individuel ou petit groupe, selon le parcours)</li>
+                <ul style={{ listStyle: 'none', padding: 0, marginBottom: '2rem', display: 'flex', flexDirection: 'column', gap: '0.6rem', color: '#334155' }}>
+                  <li style={{ display: 'flex', gap: '0.5rem', color: '#334155' }}><span style={{ color: 'var(--gold-dark)', fontWeight: 700 }}>✓</span> <strong style={{ color: '#0f172a' }}>Module 1 :</strong> Stratégie d&apos;implémentation &amp; choix des outils selon budget</li>
+                  <li style={{ display: 'flex', gap: '0.5rem', color: '#334155' }}><span style={{ color: 'var(--gold-dark)', fontWeight: 700 }}>✓</span> <strong style={{ color: '#0f172a' }}>Module 2 :</strong> Création de contenus rédactionnels, visuels &amp; GPTs sur mesure</li>
+                  <li style={{ display: 'flex', gap: '0.5rem', color: '#334155' }}><span style={{ color: 'var(--gold-dark)', fontWeight: 700 }}>✓</span> <strong style={{ color: '#0f172a' }}>Module 3 :</strong> Sécurité, conformité RGPD &amp; non-exposition des données</li>
+                  <li style={{ display: 'flex', gap: '0.5rem', color: '#334155' }}><span style={{ color: 'var(--gold-dark)', fontWeight: 700 }}>✓</span> <strong style={{ color: '#0f172a' }}>Coaching :</strong> 5h de coaching inclus (individuel ou petit groupe, selon le parcours)</li>
                 </ul>
 
                 <div style={{ background: '#fdfbf7', padding: '1rem', borderRadius: 'var(--radius-sm)', marginBottom: '1.5rem', fontSize: '0.9rem', color: 'var(--gray-800)', border: '1px solid var(--gold-light)' }}>
