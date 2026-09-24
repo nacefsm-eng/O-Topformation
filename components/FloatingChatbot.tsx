@@ -8,7 +8,7 @@ const OTOP_QUESTIONS = [
   { q: "Quelles sont les formations certifiées ?", a: "Nous proposons 3 formations certifiantes officielles France Compétences : 1. IA Générative pour indépendants (RS6776), 2. Développer son activité avec l'IA (RS7344), 3. Réseaux Sociaux & Social Selling (RS7351), ainsi que la méthode TOP® pour la gestion du stress." },
   { q: "Quelles sont les modalités de financement ?", a: "Financement possible selon votre statut et sous réserve d'acceptation par votre financeur. Dossier accompagné avec notre partenaire certifié Qualiopi Eloqone (OPCO, FAF, CPF). Mélissa monte votre dossier de prise en charge." },
   { q: "Y a-t-il un accompagnement humain ?", a: "Oui, absolument ! Nos formations incluent 5h de coaching (individuel ou en petit groupe selon le parcours) avec nos formateurs pour appliquer directement les outils sur votre propre entreprise." },
-  { q: "Je n'ai pas de compétences techniques, est-ce un problème ?", a: "Non, aucun prérequis technique n'est nécessaire. Les parcours sont construits pour les dirigeants, indépendants et salariés, avec des templates prêts à l'emploi et des cas concrets." },
+  { q: "Je n'ai pas de compétences techniques, est-ce un problème ?", a: "Non, aucun prérequis technique n'est nécessaire. Les parcours sont construits pour les dirigeants, indépendants et collaborateurs, avec des templates prêts à l'emploi et des cas concrets." },
   { q: "Je veux réserver un diagnostic offert (15 min)", a: "Avec grand plaisir ! Cliquez ci-dessous pour joindre directement Mélissa sur WhatsApp ou réserver votre appel de cadrage." }
 ];
 

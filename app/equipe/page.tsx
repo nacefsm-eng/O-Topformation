@@ -46,11 +46,11 @@ export default function EquipePage() {
             {/* 2. Renaud */}
             <TeamMemberCard
               position="right"
-              roleTitle="Directeur Pédagogique & IA"
+              roleTitle="Consultant Expert IA & Systèmes d'Information"
               firstName="Renaud"
               lastName=""
               imageUrl="/team-renaud.jpg"
-              description="Passionné par l'impact technologique et l'efficacité opérationnelle, pour transformer des outils complexes en leviers de croissance concrets."
+              description="Accompagnement des dirigeants et collaborateurs dans la conduite du changement, l'adoption concrète des bénéfices de l'IA et l'optimisation des processus opérationnels."
               onCtaClick={() => window.open('https://wa.me/33674797509?text=Bonjour%20Renaud%2C%20je%20souhaite%20%C3%A9changer%20avec%20vous.', '_blank')}
             />
 

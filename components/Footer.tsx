@@ -13,7 +13,7 @@ export default function Footer() {
             
             <ul className="footer-contact" style={{ marginTop: '1.5rem', listStyle: 'none', padding: 0 }}>
               <li style={{ marginBottom: '0.4rem' }}><span>📞</span> <strong>Mélissa (Inscriptions & Diagnostic) :</strong> <a href="tel:+33767246825">07 67 24 68 25</a></li>
-              <li style={{ marginBottom: '0.4rem' }}><span>📞</span> <strong>Renaud (Expert Digital & IA) :</strong> <a href="tel:+33674797509">06 74 79 75 09</a></li>
+              <li style={{ marginBottom: '0.4rem' }}><span>📞</span> <strong>Renaud (Consultant Expert IA) :</strong> <a href="tel:+33674797509">06 74 79 75 09</a></li>
               <li style={{ marginBottom: '0.4rem' }}><span>📧</span> <a href="mailto:formation.rmcf@gmail.com">Formation.rmcf@gmail.com</a></li>
               <li><span>📍</span> Espace Gamma 1, 139 Chemin des 2 Frères, 83190 Ollioules (Var)</li>
             </ul>

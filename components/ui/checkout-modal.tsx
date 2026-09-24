@@ -326,7 +326,7 @@ export default function CheckoutModal({ isOpen, onClose, defaultPlan }: Checkout
                   >
                     <option value="independant">Indépendant / Freelance / Libéral</option>
                     <option value="dirigeant">Dirigeant TPE / PME</option>
-                    <option value="salarie">Salarié d&apos;entreprise</option>
+                    <option value="salarie">Collaborateur d&apos;entreprise</option>
                     <option value="demandeur">Demandeur d&apos;emploi</option>
                   </select>
                 </div>

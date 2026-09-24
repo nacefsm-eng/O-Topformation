@@ -35,21 +35,21 @@ export default function AProposPage() {
       <section className="py-20 px-4 bg-slate-900 border-b border-slate-800">
         <div className="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           
-          <div className="lg:col-span-7 space-y-6 text-slate-300 text-sm sm:text-base leading-relaxed">
+          <div className="lg:col-span-7 space-y-6 text-slate-200 text-sm sm:text-base leading-relaxed">
             <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-blue-600/10 border border-blue-500/30 text-blue-400 text-xs font-bold uppercase tracking-wider">
               Pourquoi nous existons
             </div>
             <h2 className="text-3xl sm:text-4xl font-black text-white tracking-tight">
               Réconcilier efficacité digitale et sérénité opérationnelle
             </h2>
-            <p>
+            <p className="text-slate-200" style={{ color: '#e2e8f0' }}>
               Dans un quotidien pro saturé, intégrer les bons outils est devenu indispensable, mais cela ne doit pas se faire au détriment de l’équilibre des équipes.
             </p>
-            <p>
+            <p className="text-slate-200" style={{ color: '#e2e8f0' }}>
               Trop de formations au digital se limitent à des modules génériques sans application directe. À l’inverse, les démarches de bien-être ignorent souvent les impératifs de rentabilité et les contraintes quotidiennes des entreprises.
             </p>
-            <p>
-              <strong>Notre rôle :</strong> vous donner les clés pour automatiser ce qui doit l’être, structurer vos processus et préserver votre concentration et votre énergie au fil des semaines.
+            <p className="text-slate-200" style={{ color: '#e2e8f0' }}>
+              <strong className="text-white" style={{ color: '#ffffff' }}>Notre rôle :</strong> vous donner les clés pour automatiser ce qui doit l’être, structurer vos processus et préserver votre concentration et votre énergie au fil des semaines.
             </p>
             <div className="p-4 rounded-xl bg-blue-950/40 border border-blue-500/30 text-xs text-blue-200">
               ℹ️ Ô’TOP Formation intervient avec son partenaire Eloqone, organisme certifié Qualiopi, qui porte les actions de formation et accompagne les démarches de financement. Les possibilités de prise en charge sont étudiées selon votre statut et restent soumises à l’accord de l’organisme financeur.
@@ -164,11 +164,11 @@ export default function AProposPage() {
               />
               <div className="space-y-2 text-center sm:text-left">
                 <span className="text-xs font-bold text-blue-400 bg-blue-500/10 px-2.5 py-0.5 rounded-full border border-blue-500/20">
-                  Directeur Pédagogique Digital &amp; IA
+                  Consultant Expert IA &amp; Systèmes d&apos;Information
                 </span>
                 <h3 className="text-xl font-bold text-white">Renaud</h3>
                 <p className="text-xs text-slate-300 leading-relaxed">
-                  Expert en IA générative, prompt engineering et automatisation no-code (Make, n8n). Il accompagne les dirigeants et indépendants pour convertir la technologie en résultats mesurables.
+                  Consultant expert en ingénierie et IA générative. Il pilote la conduite du changement, l&apos;acculturation des collaborateurs aux bénéfices concrets de l&apos;IA et l&apos;optimisation des processus opérationnels.
                 </p>
               </div>
             </div>

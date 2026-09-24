@@ -234,7 +234,7 @@ export default function Nav() {
           <li><Link href="/respirez" onClick={() => setMobileOpen(false)} style={{ color: 'white', fontSize: '1.1rem' }}>Nos Offres & Tarifs</Link></li>
           <li style={{ marginTop: '1rem' }}>
             <Link href="/contact" onClick={() => setMobileOpen(false)} className="w-full block py-3.5 text-center rounded-xl bg-blue-600 text-white font-bold">
-              Demander un diagnostic (15 min) ⚡
+              Demander un diagnostic <span className="whitespace-nowrap">15 min ⚡</span>
             </Link>
           </li>
           <li style={{ marginTop: '1rem', display: 'flex', justifyContent: 'center' }}>

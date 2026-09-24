@@ -75,24 +75,19 @@ export default function MasterSalesPage() {
       description: 'Bloque votre place + montage du dossier de financement'
     },
     'ia-indep': {
-      title: 'Formation IA Générative (RS6776) - 16h + 5h Coaching',
+      title: 'Formation IA Générative (RS6776) - 21h + Coaching',
       price: 1490,
-      description: 'Accès illimité plateforme + 5h de coaching 1-to-1'
+      description: 'Accès e-learning complet + 2h de coaching individuel 1-to-1'
     },
     'reseaux': {
-      title: 'Formation Réseaux Sociaux & Growth (RS7351) - 11h+',
-      price: 1290,
-      description: 'Vidéos interactives, Canva, CapCut, Meta Ads & Waalaxy'
+      title: 'Formation Réseaux Sociaux & Social Selling (RS7351) - 21h + Coaching',
+      price: 1490,
+      description: 'Vidéos interactives, Canva, CapCut, Waalaxy + 5h coaching'
     },
     'fi-top': {
       title: 'Formation Initiale FI-TOP® (21h / 3 jours)',
       price: 890,
       description: 'Boîte à outils complète méthode TOP® + livret officiel'
-    },
-    'massage-aimants': {
-      title: 'Journée Formation Massage aux Aimants (Ollioules)',
-      price: 280,
-      description: '1 journée pratique intensive en institut + livret technique'
     }
   };
 
@@ -100,11 +95,10 @@ export default function MasterSalesPage() {
   const calculatedMonthly = Math.round(currentPkg.price / 3);
 
   const tracks = [
-    { id: 'all', label: '🌟 Tout le Catalogue', count: '7 Formations' },
+    { id: 'all', label: '🌟 Tout le Catalogue', count: '5 Formations' },
     { id: 'ia', label: '🤖 IA & Automatisation', count: '2 Titres RS' },
     { id: 'reseaux', label: '📱 Réseaux Sociaux', count: '1 Titre RS' },
     { id: 'top', label: '🧘 Méthode TOP®', count: '2 Formations' },
-    { id: 'therapie', label: '🌿 Soins & Massages', count: '2 Cursus' },
   ];
 
   const formationsList = [
@@ -115,20 +109,20 @@ export default function MasterSalesPage() {
       image: '/card-ai.jpg',
       instructor: 'Renaud',
       instructorPhoto: '/team-renaud.jpg',
-      instructorRole: 'Directeur Pédagogique IA',
-      badge: 'Certification France Compétences RS6776',
+      instructorRole: 'Consultant Expert IA',
+      badge: 'Certification France Compétences RS6776 • IA Métier',
       badgeColor: 'bg-cyan-500/10 text-cyan-400 border-cyan-500/30',
       title: 'IA Générative pour Indépendants & Dirigeants',
-      duration: '16 heures de vidéos + 5h de coaching 1-to-1',
-      modality: '100% en ligne • Accès 24/7 • Suivi individuel sur vos fichiers',
-      funding: 'Finançable OPCO, FAF, CPF via partenaire Eloqone',
-      price: '1 490 € (Prise en charge selon statut)',
+      duration: '21 heures (e-learning + 2h de coaching individuel 1-to-1)',
+      modality: '100% en ligne à votre rythme • Accompagnement sur vos fichiers',
+      funding: 'Finançable OPCO, FAF, FIF-PL via partenaire Eloqone',
+      price: '1 490 € TTC (Offre spéciale : 610 € TTC)',
       desc: 'Maîtrisez ChatGPT, Claude, le prompting métier et l’automatisation pour rédiger vos contenus, traiter vos devis et récupérer un temps précieux chaque semaine.',
       points: [
         'Prompting avancé & ingénierie de requêtes sur-mesure',
         'Création de GPTs personnalisés sur vos propres documents',
-        'Génération visuelle & déclinaison graphique immédiate',
-        '5 heures de coaching individuel avec Renaud sur votre matériel'
+        'Automatisation de flux sans code (Make, n8n) & conformité AI Act',
+        'Cas pratiques guidés, quiz de validation et coaching individuel avec Renaud'
       ],
       whatsappMsg: 'Bonjour Renaud, je souhaite des informations sur la formation IA Générative RS6776.'
     },
@@ -139,20 +133,20 @@ export default function MasterSalesPage() {
       image: '/formation-ai-dev.jpg',
       instructor: 'Renaud',
       instructorPhoto: '/team-renaud.jpg',
-      instructorRole: 'Directeur Pédagogique IA',
+      instructorRole: 'Consultant Expert IA',
       badge: 'Certification France Compétences RS7344',
       badgeColor: 'bg-indigo-500/10 text-indigo-400 border-indigo-500/30',
-      title: 'Intégration de l’IA en Entreprise & Workflows',
-      duration: '14h à 35h sur-mesure (Distanciel ou Intra)',
-      modality: 'Parcours collectif ou direction, blended learning',
-      funding: 'Éligible plan de développement des compétences OPCO',
-      price: 'Sur devis financé (ou acompte 150 €)',
-      desc: 'Accompagnement d’équipes pour déployer l’IA : audit des flux avec la méthode STEP, automatisation n8n/Make sans code et conformité au règlement européen AI Act.',
+      title: 'Développer son Activité avec l’IA & Processus Web',
+      duration: '21 heures (e-learning + 5h de coaching expert)',
+      modality: 'Distanciel ou blended learning sur-mesure',
+      funding: 'Éligible OPCO, FAF (plan de compétences & indépendants)',
+      price: '1 490 € TTC (Prise en charge selon statut)',
+      desc: 'Accompagnement d’équipes et de dirigeants pour déployer l’IA : audit des flux avec la méthode STEP, automatisation n8n/Make sans code et conformité au règlement européen AI Act.',
       points: [
         'Cartographie des tâches à automatiser (méthode STEP)',
-        'Mise en place de workflows automatisés sans code complexe',
+        'Mise en place de workflows automatisés et assistants internes',
         'Sécurisation des données sensibles & conformité RGPD / AI Act',
-        'Montée en compétences des collaborateurs et suivi opérationnel'
+        'Cas pratiques guidés, quiz d’évaluation et préparation certification'
       ],
       whatsappMsg: 'Bonjour Renaud, je souhaite un devis pour l’intégration IA entreprise RS7344.'
     },
@@ -164,19 +158,19 @@ export default function MasterSalesPage() {
       instructor: 'Renaud & Mélissa',
       instructorPhoto: '/team-melyssa.png',
       instructorRole: 'Création Contenu & Acquisition',
-      badge: 'Préparation Certification RS7351',
+      badge: 'Certification France Compétences RS7351',
       badgeColor: 'bg-pink-500/10 text-pink-400 border-pink-500/30',
-      title: 'Développer son Activité avec les Réseaux Sociaux',
-      duration: '11h+ de vidéos interactives + mise en situation',
+      title: 'Développer son Activité avec les Réseaux Sociaux & Social Selling',
+      duration: '21 heures (e-learning + 5h de coaching expert)',
       modality: '100% en ligne • Accès 24/7 • Cas pratiques réels',
-      funding: 'Finançable OPCO, FAF, CPF via partenaire Eloqone',
-      price: '1 290 € (Prise en charge selon statut)',
+      funding: 'Finançable OPCO, FAF, FIF-PL via partenaire Eloqone',
+      price: '1 490 € TTC (Prise en charge selon statut)',
       desc: 'Professionnalisez votre présence digitale : apprenez à concevoir une charte graphique avec Canva, monter des vidéos CapCut percutantes et automatiser votre prospection sur LinkedIn et Meta.',
       points: [
-        'Ligne éditoriale, branding et calendrier de contenu régulier',
+        'Ligne éditoriale, personal branding et calendrier de contenu régulier',
         'Création visuelle pro sur Canva et montages vidéo CapCut',
-        'Campagnes publicitaires ciblées sur Meta Ads (Facebook & Insta)',
-        'Prospection automatisée B2B sur LinkedIn avec Waalaxy'
+        'Prospection ciblée et acquisition de prospects sans budget pub',
+        'Cas pratiques guidés, quiz de validation et plan d’action trimestriel'
       ],
       whatsappMsg: 'Bonjour Mélissa, je souhaite candidater pour la formation Réseaux Sociaux RS7351.'
     },
@@ -194,7 +188,7 @@ export default function MasterSalesPage() {
       duration: '21 heures réparties (3 journées ou modules)',
       modality: 'Présentiel à Ollioules (Var) ou visio-conférence interactive',
       funding: 'Prise en charge OPCO / Plan de formation entreprise / FIFPL',
-      price: '890 € (Éligible prise en charge OPCO/FAF)',
+      price: '890 € TTC (Éligible prise en charge OPCO/FAF)',
       desc: 'La méthode de référence issue de l’Armée de l’Air et du sport de haut niveau : boîtes à outils de respiration, relaxation somatique et imagerie mentale pour prévenir le burn-out et booster l’endurance cognitive.',
       points: [
         'Respiration relaxante, régulatrice et dynamisante',
@@ -218,7 +212,7 @@ export default function MasterSalesPage() {
       duration: '7 heures intensives (1 journée)',
       modality: 'Présentiel à Ollioules (Var) ou distanciel',
       funding: 'Finançable OPCO, FIFPL ou financement individuel',
-      price: '350 € ou pris en charge',
+      price: '390 € TTC (Prise en charge OPCO possible)',
       desc: 'Idéal pour une première initiation opérationnelle : apprenez à calmer le rythme cardiaque sous pression, retrouver un focus laser en réunion et vous régénérer lors de courtes pauses.',
       points: [
         'Sensibilisation aux mécanismes neurophysiologiques du stress',
@@ -227,30 +221,6 @@ export default function MasterSalesPage() {
         'Exercices pratiques applicables dès le lendemain'
       ],
       whatsappMsg: 'Bonjour Mélissa, je souhaite participer à la prochaine journée FB-TOP (7h).'
-    },
-    {
-      id: 'massage-aimants',
-      track: 'therapie',
-      pkgKey: 'massage-aimants',
-      image: '/formation-presentiel.png',
-      instructor: 'Mélissa JENNADI',
-      instructorPhoto: '/team-melyssa.png',
-      instructorRole: 'Formatrice & Praticienne Bien-Être',
-      badge: 'Protocole Bien-Être • 100% Pratique',
-      badgeColor: 'bg-rose-500/10 text-rose-400 border-rose-500/30',
-      title: 'Protocole de Bien-Être & Relaxation aux Aimants',
-      duration: '1 journée complète (7h)',
-      modality: 'Présentiel en institut à Ollioules (83)',
-      funding: 'Financement individuel ou fonds artisans',
-      price: '280 € TTC matériel inclus',
-      desc: 'Transmission d’un protocole précis et apaisant utilisant la puissance des aimants pour débloquer les tensions profondes, relancer l’énergie corporelle et calmer le système nerveux.',
-      points: [
-        'Principes du biomagnétisme appliqué au corps humain',
-        'Repérage des points de charge et de tension somatique',
-        'Pratique guidée en binôme avec validation des gestes',
-        'Remise du protocole complet et du kit de démarrage'
-      ],
-      whatsappMsg: 'Bonjour Mélissa, je souhaite m’inscrire à la journée relaxation aux aimants (280€).'
     }
   ];
 
@@ -263,10 +233,10 @@ export default function MasterSalesPage() {
       name: "Aurélie B.",
       avatarInitials: "AB",
       avatarColor: "from-amber-500 to-rose-500",
-      tag: "Praticienne Bien-Être • Var (83)",
-      role: "Cabinet libéral en thérapie somatique",
-      course: "Massage aux aimants & Régulation Somatique",
-      text: "J'ai suivi la formation avec Mélissa et ça a été une expérience humaine remarquable. Toujours présente, douce, à l'écoute et pleine d'énergie positive. Elle transmet son savoir avec passion et simplicité. Je pratique déjà sur ma patientèle avec d'excellents retours dès les premières séances."
+      tag: "Praticienne & Dirigeante • Var (83)",
+      role: "Cabinet libéral & Accompagnement",
+      course: "Méthode TOP® & Régulation du Stress (FI TOP®)",
+      text: "J'ai suivi la formation avec Mélissa et ça a été une expérience humaine et professionnelle remarquable. Toujours présente, douce, à l'écoute et pleine d'énergie positive. Elle transmet les techniques de régulation vagale et de respiration avec passion et simplicité. J'applique ces outils au quotidien avec des résultats immédiats sur ma charge mentale."
     },
     {
       name: "Lucie M.",
@@ -282,7 +252,7 @@ export default function MasterSalesPage() {
       avatarInitials: "YD",
       avatarColor: "from-emerald-500 to-teal-600",
       tag: "Artisan Gérant • Région Toulon",
-      role: "PME Rénovation & BTP (5 salariés)",
+      role: "PME Rénovation & BTP (5 collaborateurs)",
       course: "Formation FI TOP® & Gestion de Crise",
       text: "Les protocoles de Mélissa et Renaud sont d'une efficacité redoutable. Pas de théorie superflue : des exercices de respiration et de récupération flash utilisables entre deux chantiers ou avant un rendez-vous tendu. Toute mon équipe a gagné en sérénité et en concentration."
     }
@@ -291,19 +261,19 @@ export default function MasterSalesPage() {
   const faqs = [
     {
       q: "Comment fonctionne la prise en charge financière (OPCO, FAF, CPF) ?",
-      a: "Ô’TOP Formation intervient avec son partenaire Eloqone, organisme certifié Qualiopi, qui porte les actions de formation et accompagne les démarches de financement. Les possibilités de prise en charge sont étudiées selon votre statut (salarié, indépendant, profession libérale, dirigeant) et restent soumises à l’accord de l’organisme financeur."
+      a: "Ô’TOP Formation intervient avec son partenaire Eloqone, organisme certifié Qualiopi, qui porte les actions de formation et accompagne les démarches de financement. Les possibilités de prise en charge sont étudiées selon votre statut (collaborateur, indépendant, profession libérale, dirigeant) et restent soumises à l’accord de l’organisme financeur."
     },
     {
       q: "Puis-je régler directement par carte bancaire en 1 fois ou 3 fois ?",
       a: "Oui. Vous pouvez régler par virement bancaire, ou via un lien direct sécurisé Stripe en 1 fois ou 3 fois sans frais, ou engager une demande de prise en charge OPCO/FAF avec notre accompagnement."
     },
     {
-      q: "En quoi consistent les 5h de coaching individuel sur-mesure ?",
-      a: "Contrairement aux cours en ligne passifs où vous restez seul devant un écran, nos formations IA et Réseaux Sociaux intègrent 5 heures de rendez-vous en tête-à-tête en visio avec un expert dédié (Renaud). Vous partagez votre écran et nous construisons ensemble vos assistants, vos prompts et vos automatisations sur vos vrais fichiers."
+      q: "En quoi consistent les 2h à 5h de coaching individuel sur-mesure ?",
+      a: "Contrairement aux cours en ligne passifs où vous restez seul devant un écran, nos formations IA et Réseaux Sociaux intègrent des séances individuelles en visio (2h à 5h selon la formule) avec notre consultant expert dédié (Renaud). Vous partagez votre écran et nous construisons ensemble vos assistants, vos prompts et vos automatisations sur vos vrais fichiers."
     },
     {
       q: "Où se déroulent les formations en présentiel ?",
-      a: "Nos sessions en présentiel (FITOP, Massages aux aimants, Head Spa) se déroulent à notre espace de formation situé à Ollioules (Var - 83), ainsi qu'en intra-entreprise partout en région PACA et en France métropolitaine."
+      a: "Nos sessions en présentiel (FITOP, ateliers entreprises) se déroulent à notre espace de formation situé à Ollioules (Var - 83), ainsi qu'en intra-entreprise partout en région PACA et en France métropolitaine."
     }
   ];
 
@@ -579,12 +549,12 @@ export default function MasterSalesPage() {
               </div>
               <div className="space-y-2">
                 <div className="inline-block px-2.5 py-0.5 rounded-full bg-blue-500/10 text-blue-400 border border-blue-500/20 text-[11px] font-bold uppercase">
-                  Directeur Pédagogique Digital &amp; IA
+                  Consultant Expert IA &amp; Systèmes d&apos;Information
                 </div>
                 <h3 className="text-xl font-bold text-white">Renaud</h3>
-                <p className="text-xs text-blue-300 font-semibold">Expert IA Générative, Automatisation &amp; Prospection</p>
+                <p className="text-xs text-blue-300 font-semibold">Conduite du changement, IA &amp; Optimisation des processus</p>
                 <p className="text-slate-300 text-xs leading-relaxed">
-                  Accompagne les dirigeants et indépendants sur les outils d&apos;intelligence artificielle (ChatGPT, Claude, n8n, Make) avec 5h de coaching personnalisé.
+                  Accompagne les dirigeants et collaborateurs dans l&apos;adoption concrète des bénéfices de l&apos;IA, la structuration des flux et le perfectionnement des prompts avec coaching personnalisé.
                 </p>
                 <div className="pt-2">
                   <a 
@@ -834,10 +804,10 @@ export default function MasterSalesPage() {
                     className="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-700 text-white text-sm font-semibold outline-none focus:border-blue-500"
                   >
                     <option value="acompte">Acompte de Réservation Standard (150 € TTC)</option>
-                    <option value="ia-indep">Formation IA Générative RS6776 (1 490 € TTC)</option>
-                    <option value="reseaux">Formation Réseaux Sociaux RS7351 (1 290 € TTC)</option>
+                    <option value="ia-indep">Formation IA Générative RS6776 (1 490 € TTC - Offre spéciale 610 €)</option>
+                    <option value="reseaux">Formation Réseaux Sociaux &amp; Social Selling RS7351 (1 490 € TTC)</option>
                     <option value="fi-top">Formation Initiale FITOP® 21h (890 € TTC)</option>
-                    <option value="massage-aimants">Protocole Bien-Être aux Aimants (280 € TTC)</option>
+                    <option value="fb-top">Formation Flash TOP FB-TOP 7h (390 € TTC)</option>
                   </select>
                 </div>
 
@@ -1004,7 +974,7 @@ export default function MasterSalesPage() {
                       >
                         <option value="independant">Indépendant / Libéral (FIF-PL / Agefice)</option>
                         <option value="dirigeant">Chef d&apos;entreprise / Dirigeant</option>
-                        <option value="salarie">Salarié d&apos;entreprise (OPCO)</option>
+                        <option value="salarie">Collaborateur d&apos;entreprise (OPCO)</option>
                         <option value="demandeur">Demandeur d&apos;emploi</option>
                         <option value="autre">Financement individuel personnel</option>
                       </select>

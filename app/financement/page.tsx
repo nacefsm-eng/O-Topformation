@@ -149,7 +149,7 @@ export default function FinancementPage() {
               Prise en Charge selon Votre Statut
             </h2>
             <p className="text-slate-400 text-sm mt-2">
-              Que vous soyez indépendant, chef d&apos;entreprise ou salarié, des fonds dédiés existent.
+              Que vous soyez indépendant, chef d&apos;entreprise ou collaborateur, des fonds dédiés existent.
             </p>
           </div>
 
@@ -159,7 +159,7 @@ export default function FinancementPage() {
               <div className="w-10 h-10 rounded-xl bg-blue-500/10 border border-blue-500/20 text-blue-400 flex items-center justify-center font-bold">
                 <Building2 size={20} />
               </div>
-              <h3 className="text-lg font-bold text-white">Entreprises &amp; Salariés (OPCO)</h3>
+              <h3 className="text-lg font-bold text-white">Entreprises &amp; Collaborateurs (OPCO)</h3>
               <p className="text-sm text-slate-300 leading-relaxed">
                 Atlas, Akto, Opco EP, etc. Votre plan de développement des compétences prend en charge vos formations professionnelles d&apos;équipe ou individuelles.
               </p>
@@ -298,9 +298,9 @@ export default function FinancementPage() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
             <Link
               href="/contact"
-              className="px-8 py-4 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-sm shadow-xl shadow-blue-600/30 transition-all"
+              className="px-8 py-4 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-sm shadow-xl shadow-blue-600/30 transition-all text-center"
             >
-              Réserver mon diagnostic gratuit de 15 min ⚡
+              Réserver mon diagnostic gratuit <span className="whitespace-nowrap">15 min ⚡</span>
             </Link>
             <a
               href="mailto:formation.rmcf@gmail.com"

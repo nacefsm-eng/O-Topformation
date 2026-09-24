@@ -141,7 +141,9 @@ export default function MethodeTop() {
             <span className="label label-gold">Passez à l&apos;action</span>
             <h2 className="cta-title">Envie de maîtriser ces outils ?</h2>
             <div className="cta-actions" style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap', marginBottom: '2rem' }}>
-              <Link href="/contact" className="btn btn-gold">Réserver mon diagnostic gratuit de 15 min ⚡</Link>
+              <Link href="/contact" className="btn btn-gold">
+                Réserver mon diagnostic gratuit <span style={{ whiteSpace: 'nowrap' }}>15 min ⚡</span>
+              </Link>
               <Link href="/formations/fi-top" className="btn btn-outline-white">Découvrir la formation FI TOP® (21h)</Link>
             </div>
             <div style={{ background: 'rgba(255, 255, 255, 0.08)', borderRadius: '12px', padding: '1rem 1.5rem', textAlign: 'center', maxWidth: '800px', margin: '0 auto' }}>

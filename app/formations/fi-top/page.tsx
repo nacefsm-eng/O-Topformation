@@ -121,7 +121,7 @@ export default function FiTopPage() {
                 href="/contact"
                 className="w-full sm:w-auto px-8 py-4 rounded-2xl bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-400 hover:to-orange-500 text-white font-black text-sm sm:text-base shadow-xl shadow-amber-600/30 flex items-center justify-center gap-2 transition-all hover:scale-105"
               >
-                <span>Réserver mon diagnostic gratuit de 15 min ⚡</span>
+                <span>Réserver mon diagnostic gratuit <span className="whitespace-nowrap">15 min ⚡</span></span>
               </Link>
 
               <a

@@ -317,7 +317,7 @@ function ContactContent() {
                             >
                               <option value="independant">Indépendant / Freelance / Profession Libérale</option>
                               <option value="dirigeant">Chef d&apos;entreprise / Dirigeant TPE-PME</option>
-                              <option value="salarie">Salarié d&apos;entreprise (plan de développement)</option>
+                              <option value="salarie">Collaborateur d&apos;entreprise (plan de développement)</option>
                               <option value="demandeur">Demandeur d&apos;emploi</option>
                               <option value="autre">Autre situation</option>
                             </select>

@@ -60,7 +60,7 @@ const articles = [
     excerpt:
       "Chaque année, des milliers de professionnels cotisent à la formation professionnelle sans jamais utiliser leur budget disponible. Découvrez comment obtenir une prise en charge intégrale sans aucune avance de trésorerie.",
     content: [
-      "Que vous soyez travailleur indépendant (inscrit à l'URSSAF, affilié FIF-PL, AGEFICE ou FAFCEA) ou chef d'entreprise salarié (rattaché à un OPCO comme Atlas, Akto, Opco EP), vous disposez d'une enveloppe de formation annuelle qui se renouvelle chaque 1er janvier.",
+      "Que vous soyez travailleur indépendant (inscrit à l'URSSAF, affilié FIF-PL, AGEFICE ou FAFCEA) ou dirigeant / collaborateur d'entreprise (rattaché à un OPCO comme Atlas, Akto, Opco EP), vous disposez d'une enveloppe de formation annuelle qui se renouvelle chaque 1er janvier.",
       "Si vous ne l'utilisez pas avant la fin de l'année, ce budget est définitivement perdu : il n'est pas reportable !",
       "Grâce à notre portage certifié Qualiopi avec Eloqone, Mélissa monte votre dossier de demande de prise en charge de A à Z. Dans 95% des cas avec subrogation de paiement, vous ne déboursez rien : votre financeur règle directement l'organisme."
     ],

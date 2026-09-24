@@ -10,105 +10,89 @@ export const metadata: Metadata = {
 export default function BrochurePage() {
   const formations = [
     {
+      title: "RS6776 — IA Générative & Automatisation Métier",
+      subtitle: "Cursus Certifiant France Compétences • Pôle IA N°1",
+      duration: "21 heures (e-learning + 2h coaching expert)",
+      format: "100% e-learning à votre rythme + accompagnement 1-to-1",
+      price: "1 490 € TTC",
+      specialOffer: "Offre spéciale durée limitée : 610 € TTC",
+      funding: "Éligible OPCO, FAF (FIF-PL, AGEFICE, FAFCEA)",
+      badge: "Formation Star • IA Métier",
+      badgeColor: "bg-blue-600/20 text-blue-400 border-blue-500/30",
+      description: "Maîtrisez l'intelligence artificielle générative pour booster votre productivité. Intégrez ChatGPT, Claude, créez vos GPTs personnalisés et automatisez vos flux avec tuteur IA et quiz de validation.",
+      points: [
+        "Fondamentaux de l'IA & prompt engineering avancé",
+        "Automatisation de workflows métiers sans coder (Make, n8n)",
+        "Création de bases de données internes & GPTs sur mesure",
+        "Cas pratiques guidés, quiz de validation à chaque module & conformité AI Act"
+      ]
+    },
+    {
+      title: "RS7351 — Stratégie Réseaux Sociaux & Social Selling",
+      subtitle: "Cursus Certifiant France Compétences (remplace RS6240)",
+      duration: "21 heures (e-learning + 5h coaching expert)",
+      format: "Distanciel avec accompagnement individuel",
+      price: "1 490 € TTC",
+      funding: "Éligible OPCO, FAF (FIF-PL, AGEFICE)",
+      badge: "Certifiant RS7351",
+      badgeColor: "bg-emerald-600/20 text-emerald-400 border-emerald-500/30",
+      description: "Transformez vos réseaux sociaux (LinkedIn & Instagram) en un levier d'acquisition régulier et rentable sans dépendre de la publicité payante.",
+      points: [
+        "Ligne éditoriale d'autorité et personal branding percutant",
+        "Création de visuels et vidéos engageantes avec Canva & CapCut",
+        "Prospection éthique et conversion en messagerie directe",
+        "Cas pratiques métier, quiz de validation et calendrier trimestriel prêt à l'emploi"
+      ]
+    },
+    {
+      title: "RS7344 — Création de Site Web Moderne & SEO",
+      subtitle: "Cursus Certifiant France Compétences • Développer son activité avec l'IA",
+      duration: "21 heures (e-learning + 5h coaching expert)",
+      format: "Distanciel ou Présentiel",
+      price: "1 490 € TTC",
+      funding: "Éligible OPCO, FAF (FIF-PL, AGEFICE)",
+      badge: "Certifiant RS7344",
+      badgeColor: "bg-cyan-600/20 text-cyan-400 border-cyan-500/30",
+      description: "Développez votre activité grâce aux leviers web modernes : site professionnel, tunnel de conversion, SEO local optimisé et intégration de l'IA.",
+      points: [
+        "Architecture d'un site web taillé pour la conversion",
+        "Référencement naturel (SEO) local et technique",
+        "Cartographie des processus et feuilles de route IA",
+        "Cas pratiques guidés, quiz d'évaluation et soutenance de certification"
+      ]
+    },
+    {
       title: "FI TOP® — Formation Initiale TOP®",
       subtitle: "Cursus Référence Préparation Mentale & Gestion du Stress",
       duration: "21 heures (3 jours)",
       format: "Présentiel (Var / PACA) ou Distanciel (Visio synchrone)",
-      price: "890 € net de taxe",
+      price: "890 € TTC",
       funding: "Éligible OPCO & FAF (FIF-PL, AGEFICE)",
-      badge: "Formation Phare",
-      badgeColor: "bg-blue-600/20 text-blue-400 border-blue-500/30",
+      badge: "Méthode TOP®",
+      badgeColor: "bg-purple-600/20 text-purple-400 border-purple-500/30",
       description: "Munissez-vous de l'essentiel de la boîte à outils TOP pour vous auto-gérer au quotidien. Prérequis obligatoire pour accéder au cursus de Praticien TOP®.",
       points: [
         "Régulation du stress aigu et prévention de l'épuisement professionnel (burn-out)",
         "Techniques respiratoires dynamisantes et relaxantes ciblées",
-        "Imagerie mentale et répétition mentale des actions réussies",
+        "Imagerie mentale et répétition mentale des actions réussies (RMA)",
         "Récupération flash (SRF) et gestion du sommeil"
       ]
     },
     {
       title: "FB-TOP — Fondamentaux & Gestion de Crise",
-      subtitle: "Format court intensif pour décideurs pressés",
+      subtitle: "Format court intensif pour décideurs et équipes",
       duration: "7 heures (1 jour)",
       format: "Intra-entreprise ou Inter-entreprises",
-      price: "390 € net de taxe",
-      funding: "Prise en charge OPCO 100%",
+      price: "390 € TTC",
+      funding: "Prise en charge OPCO possible",
       badge: "Format Express",
-      badgeColor: "bg-emerald-600/20 text-emerald-400 border-emerald-500/30",
-      description: "Acquérez les réflexes mentaux immédiats pour garder son sang-froid face aux situations d'urgence, négociations tendues ou prises de parole à fort enjeu.",
+      badgeColor: "bg-amber-600/20 text-amber-400 border-amber-500/30",
+      description: "Acquérez les réflexes mentaux immédiats pour garder votre lucidité décisionnelle face aux situations d'urgence, négociations tendues ou prises de parole à fort enjeu.",
       points: [
         "Désamorçage instantané du pic de stress émotionnel",
-        "Maintien de la lucidité décisionnelle sous haute pression",
+        "Maintien de la concentration et de la lucidité sous haute pression",
         "Exercices pratiques d'ancrage somatique",
-        "Plan d'action personnalisé pour le quotidien professionnel"
-      ]
-    },
-    {
-      title: "Massage Bien-Être & Magnétisme / Aimants",
-      subtitle: "Récupération physique, somatique et décharge nerveuse",
-      duration: "14 heures (2 jours)",
-      format: "Présentiel exclusivement (Ollioules, 83)",
-      price: "650 € net de taxe",
-      funding: "Facilités 3x sans frais",
-      badge: "Bien-Être Somatique",
-      badgeColor: "bg-purple-600/20 text-purple-400 border-purple-500/30",
-      description: "Techniques manuelles et biomagnétiques de récupération profonde pour libérer les tensions myofasciales et restaurer l'harmonie posturale.",
-      points: [
-        "Protocoles de détente des trapèzes, nuque et région dorsale",
-        "Application ciblée des aimants biomagnétiques thérapeutiques",
-        "Techniques d'ancrage et de recentrage énergétique",
-        "Idéal en complément de la régulation mentale TOP®"
-      ]
-    },
-    {
-      title: "RS6776 — IA Générative & Automatisation Métier",
-      subtitle: "Cursus Certifiant France Compétences",
-      duration: "21 heures (3 jours)",
-      format: "Distanciel synchrone ou Présentiel",
-      price: "1 250 € net de taxe",
-      funding: "Financement OPCO / FAF intégral",
-      badge: "Certifiant RS6776",
-      badgeColor: "bg-amber-600/20 text-amber-400 border-amber-500/30",
-      description: "Passez de spectateur à pilote de l'intelligence artificielle. Automatisez vos tâches chronophages et créez vos propres agents IA sur-mesure.",
-      points: [
-        "Maîtrise opérationnelle de ChatGPT, Claude 3.5 et outils multimodaux",
-        "Automatisation de workflows métiers sans coder (Make, Zapier, n8n)",
-        "Création de bases de connaissances internes et GPTs métiers",
-        "Gain de productivité prouvé de 5 à 10 heures par semaine"
-      ]
-    },
-    {
-      title: "RS7344 — Création de Site Web Moderne & SEO",
-      subtitle: "Cursus Certifiant France Compétences",
-      duration: "28 heures (4 jours)",
-      format: "Distanciel synchrone ou Présentiel",
-      price: "1 450 € net de taxe",
-      funding: "Financement OPCO / FAF",
-      badge: "Certifiant RS7344",
-      badgeColor: "bg-cyan-600/20 text-cyan-400 border-cyan-500/30",
-      description: "Concevez un site web professionnel, rapide, sécurisé et taillé pour convertir vos visiteurs en rendez-vous qualifiés et ventes directes.",
-      points: [
-        "Architecture d'un site web à fort taux de conversion",
-        "Référencement naturel (SEO) local et technique",
-        "Gestion autonome des contenus et de la conformité RGPD",
-        "Mise en place d'un tunnel de vente et de prise de rendez-vous"
-      ]
-    },
-    {
-      title: "RS7351 — Stratégie Réseaux Sociaux & Social Selling",
-      subtitle: "Cursus Certifiant France Compétences",
-      duration: "21 heures (3 jours)",
-      format: "Distanciel synchrone ou Présentiel",
-      price: "1 150 € net de taxe",
-      funding: "Financement OPCO / FAF",
-      badge: "Certifiant RS7351",
-      badgeColor: "bg-rose-600/20 text-rose-400 border-rose-500/30",
-      description: "Transformez vos réseaux sociaux (LinkedIn & Instagram) en un canal régulier et prédictible d'acquisition de clients qualifiés.",
-      points: [
-        "Positionnement éditorial et personal branding d'autorité",
-        "Création de formats engageants (carrousels, vidéos courtes, posts texte)",
-        "Techniques de prospection douce et closing par messagerie directe",
-        "Plan de publication trimestriel prêt à l'emploi"
+        "Fiches réflexes prêtes à l'emploi pour le quotidien professionnel"
       ]
     }
   ];
@@ -167,14 +151,14 @@ export default function BrochurePage() {
             <div className="p-4 rounded-xl bg-slate-900/60 border border-slate-800 flex items-start gap-3">
               <Sparkles className="text-blue-400 shrink-0 mt-0.5" size={20} />
               <div>
-                <div className="font-bold text-white text-sm">5h de Coaching</div>
-                <div className="text-xs text-slate-400">Inclus dans chaque formation</div>
+                <div className="font-bold text-white text-sm">2h à 5h de Coaching</div>
+                <div className="text-xs text-slate-400">1-to-1 individuel inclus</div>
               </div>
             </div>
             <div className="p-4 rounded-xl bg-slate-900/60 border border-slate-800 flex items-start gap-3">
               <ShieldCheck className="text-emerald-400 shrink-0 mt-0.5" size={20} />
               <div>
-                <div className="font-bold text-white text-sm">100% Finançable</div>
+                <div className="font-bold text-white text-sm">Financement Possible</div>
                 <div className="text-xs text-slate-400">OPCO, FAF, FIF-PL &amp; AGEFICE</div>
               </div>
             </div>
@@ -196,14 +180,14 @@ export default function BrochurePage() {
           
           <div className="text-center max-w-3xl mx-auto mb-12">
             <h2 className="text-2xl sm:text-4xl font-extrabold text-white mb-4">
-              Sommaire de nos 6 Formations Professionnelles
+              Sommaire de nos 5 Formations Professionnelles
             </h2>
             <p className="text-slate-400 text-sm sm:text-base">
-              Chaque cursus a été conçu par des experts terrain pour offrir un transfert de compétences direct et immédiatement actionnable.
+              Chaque cursus a été conçu par des experts terrain pour offrir un transfert de compétences direct, des cas pratiques guidés et des quiz de validation.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
             {formations.map((f, i) => (
               <div 
                 key={i} 
@@ -223,16 +207,22 @@ export default function BrochurePage() {
                   <h3 className="text-xl sm:text-2xl font-bold text-white mb-1">
                     {f.title}
                   </h3>
-                  <div className="text-sm text-blue-400 font-medium mb-4">
+                  <div className="text-sm text-blue-400 font-medium mb-3">
                     {f.subtitle}
                   </div>
+
+                  {f.specialOffer && (
+                    <div className="inline-block px-3 py-1 rounded-lg bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-bold mb-4">
+                      ⏱ {f.specialOffer}
+                    </div>
+                  )}
 
                   <p className="text-slate-300 text-sm mb-6 leading-relaxed">
                     {f.description}
                   </p>
 
                   <div className="space-y-2 mb-6">
-                    <div className="text-xs font-bold text-slate-400 uppercase tracking-wider">Compétences acquises :</div>
+                    <div className="text-xs font-bold text-slate-400 uppercase tracking-wider">Compétences &amp; Validation :</div>
                     {f.points.map((pt, j) => (
                       <div key={j} className="flex items-start gap-2 text-xs sm:text-sm text-slate-200 font-medium">
                         <CheckCircle2 size={16} className="text-emerald-400 shrink-0 mt-0.5" />
@@ -245,7 +235,7 @@ export default function BrochurePage() {
                 <div className="pt-6 border-t border-slate-800/80">
                   <div className="flex items-center justify-between mb-4">
                     <div>
-                      <div className="text-xs text-slate-400">Tarif net de taxe</div>
+                      <div className="text-xs text-slate-400">Tarif officiel TTC</div>
                       <div className="text-xl font-bold text-white">{f.price}</div>
                     </div>
                     <div className="text-right">
@@ -274,6 +264,91 @@ export default function BrochurePage() {
 
               </div>
             ))}
+          </div>
+
+          {/* ── GRILLE TARIFAIRE OFFICIELLE : PACKS DE COUPLAGE & MODULES D'ACCOMPAGNEMENT ── */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+            
+            {/* Tableau 1 : Offres de couplage (Packs Duo & Trio) */}
+            <div className="p-6 sm:p-8 rounded-2xl bg-slate-900 border border-slate-800 space-y-6">
+              <div className="flex items-center gap-3">
+                <Sparkles className="text-amber-400" size={24} />
+                <h3 className="text-xl font-bold text-white">Offres de Couplage (Packs Duo / Trio)</h3>
+              </div>
+              <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                Formules combinées pour les indépendants et dirigeants souhaitant coupler IA, Réseaux Sociaux et Web.
+              </p>
+              
+              <div className="overflow-x-auto">
+                <table className="w-full text-left text-xs sm:text-sm">
+                  <thead>
+                    <tr className="border-b border-slate-800 text-slate-400">
+                      <th className="pb-3 font-semibold">Formule combinée</th>
+                      <th className="pb-3 font-semibold text-center">Prix cumulé</th>
+                      <th className="pb-3 font-semibold text-right">Tarif Pack TTC</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-slate-800/60">
+                    <tr>
+                      <td className="py-3 text-white font-medium">Pack Duo (2 formations au choix)</td>
+                      <td className="py-3 text-center text-slate-400 line-through">2 980 €</td>
+                      <td className="py-3 text-right text-emerald-400 font-bold text-base">2 490 € TTC</td>
+                    </tr>
+                    <tr>
+                      <td className="py-3 text-white font-medium">Pack Trio (les 3 formations)</td>
+                      <td className="py-3 text-center text-slate-400 line-through">4 470 €</td>
+                      <td className="py-3 text-right text-emerald-400 font-bold text-base">3 390 € TTC</td>
+                    </tr>
+                    <tr>
+                      <td className="py-3 text-white font-medium">Formule Entreprise (OPCO - 40h total)</td>
+                      <td className="py-3 text-center text-slate-400">-</td>
+                      <td className="py-3 text-right text-blue-400 font-bold text-base">3 200 € TTC</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            {/* Tableau 2 : Modules d'accompagnement supplémentaires */}
+            <div className="p-6 sm:p-8 rounded-2xl bg-slate-900 border border-slate-800 space-y-6">
+              <div className="flex items-center gap-3">
+                <Clock className="text-blue-400" size={24} />
+                <h3 className="text-xl font-bold text-white">Modules d&apos;Accompagnement Expert</h3>
+              </div>
+              <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                Heures additionnelles de coaching 1-to-1 en visio avec Renaud ou Mélissa sur vos propres outils et flux.
+              </p>
+              
+              <div className="overflow-x-auto">
+                <table className="w-full text-left text-xs sm:text-sm">
+                  <thead>
+                    <tr className="border-b border-slate-800 text-slate-400">
+                      <th className="pb-3 font-semibold">Module</th>
+                      <th className="pb-3 font-semibold text-center">Tarif TTC</th>
+                      <th className="pb-3 font-semibold text-right">Équivalent horaire</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-slate-800/60">
+                    <tr>
+                      <td className="py-3 text-white font-medium">Heure additionnelle (à l&apos;unité)</td>
+                      <td className="py-3 text-center text-white font-bold">120 € TTC</td>
+                      <td className="py-3 text-right text-slate-400">120 € / h</td>
+                    </tr>
+                    <tr>
+                      <td className="py-3 text-white font-medium">Forfait 5 heures d&apos;accompagnement</td>
+                      <td className="py-3 text-center text-emerald-400 font-bold">550 € TTC</td>
+                      <td className="py-3 text-right text-slate-400">110 € / h</td>
+                    </tr>
+                    <tr>
+                      <td className="py-3 text-white font-medium">Forfait 10 heures d&apos;accompagnement</td>
+                      <td className="py-3 text-center text-emerald-400 font-bold">1 000 € TTC</td>
+                      <td className="py-3 text-right text-slate-400">100 € / h</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
           </div>
 
         </div>

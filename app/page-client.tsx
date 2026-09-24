@@ -172,7 +172,7 @@ export default function HomePageClient() {
                 href="#contact"
                 className="w-full sm:w-auto px-8 py-4 rounded-2xl bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-bold text-base shadow-xl shadow-blue-600/30 flex items-center justify-center gap-2 transition-all hover:scale-[1.02] active:scale-[0.98]"
               >
-                <span>Réserver mon diagnostic gratuit de 15 min ⚡</span>
+                <span>Réserver mon diagnostic gratuit <span className="whitespace-nowrap">15 min ⚡</span></span>
               </a>
 
               <a
@@ -322,7 +322,7 @@ export default function HomePageClient() {
                 <div className="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400 mb-5">
                   <Workflow size={24} />
                 </div>
-                <h3 className="text-lg font-bold text-white mb-2">Équipes &amp; Salariés</h3>
+                <h3 className="text-lg font-bold text-white mb-2">Équipes &amp; Collaborateurs</h3>
                 <p className="text-xs text-cyan-300 font-semibold mb-3">« Nous voulons monter en compétences sur les outils de pointe »</p>
                 <p className="text-slate-300 text-sm leading-relaxed mb-4">
                   Maîtrisez Canva pro, CapCut, Waalaxy et les outils d&apos;automatisation pour accélérer la production sans dépendre d&apos;une agence externe.
@@ -404,68 +404,68 @@ export default function HomePageClient() {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
             
             {/* Carte Parcours 1 : IA Générative RS6776 */}
             {(selectedPole === 'all' || selectedPole === 'ia') && (
-              <div className="rounded-3xl bg-slate-900/80 border-2 border-cyan-500/40 p-7 flex flex-col justify-between shadow-2xl relative overflow-hidden group">
+              <div className="h-full rounded-3xl bg-slate-900/90 border-2 border-cyan-500/40 p-7 flex flex-col justify-between shadow-2xl relative overflow-hidden group hover:border-cyan-400 transition-all duration-300">
                 <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-blue-500 via-cyan-400 to-indigo-500" />
                 
                 <div>
-                  <div className="flex items-center justify-between gap-2 mb-4">
+                  <div className="flex items-center justify-between gap-2 mb-4 min-h-[28px]">
                     <span className="px-3 py-1 rounded-full bg-cyan-500/20 text-cyan-300 text-xs font-bold border border-cyan-500/30">
-                      Pôle IA • RS6776
+                      🤖 Pôle IA • RS6776
                     </span>
-                    <span className="text-xs text-slate-400 font-semibold">100% en ligne</span>
+                    <span className="text-xs text-slate-400 font-semibold">100% en ligne • Éligible OPCO / CPF</span>
                   </div>
 
-                  <h3 className="text-xl sm:text-2xl font-bold text-white mb-2">
+                  <h3 className="text-xl sm:text-2xl font-bold text-white mb-2 min-h-[58px] flex items-center">
                     IA Générative pour Indépendants &amp; Dirigeants
                   </h3>
 
-                  <p className="text-xs text-cyan-400 font-semibold mb-3">
-                    ChatGPT, Claude, Prompts avancés &amp; Automatisation
+                  <p className="text-xs text-cyan-400 font-semibold mb-3 min-h-[34px] flex items-center">
+                    ChatGPT, Claude, Assistants Sur-Mesure &amp; Automatisation
                   </p>
 
-                  <p className="text-sm text-slate-300 leading-relaxed mb-6">
-                    Le parcours référence pour maîtriser le prompting métier, créer vos assistants personnalisés et récupérer entre 5 et 10h par semaine (selon votre activité et vos processus).
+                  <p className="text-sm text-slate-300 leading-relaxed mb-6 min-h-[72px]">
+                    Le parcours de référence pour automatiser vos tâches quotidiennes, concevoir des assistants personnalisés et gagner un temps précieux sur vos devis et livrables.
                   </p>
 
-                  <div className="space-y-2.5 py-4 border-y border-slate-800 text-xs text-slate-300 mb-6">
+                  <div className="space-y-2.5 py-4 border-y border-slate-800 text-xs text-slate-300 mb-6 min-h-[148px] flex flex-col justify-center bg-slate-950/40 rounded-xl px-3.5">
                     <div className="flex items-center gap-2">
                       <Clock size={15} className="text-cyan-400 shrink-0" />
-                      <span><strong>Format :</strong> 16h vidéos + <strong>5h coaching 1-to-1</strong></span>
+                      <span><strong>Durée :</strong> 21h certifiantes (E-learning 24/7 + coaching expert 1-to-1)</span>
                     </div>
                     <div className="flex items-center gap-2">
                       <Award size={15} className="text-amber-400 shrink-0" />
-                      <span><strong>Certification :</strong> Enregistrée au Répertoire Spécifique : RS6776</span>
+                      <span><strong>Validation :</strong> Quizz de certification &amp; cas pratiques sur vos outils</span>
                     </div>
                     <div className="flex items-center gap-2">
                       <ShieldCheck size={15} className="text-emerald-400 shrink-0" />
-                      <span><strong>Financement :</strong> 1 490 € ou pris en charge selon éligibilité (OPCO, FAF, CPF)</span>
+                      <span><strong>Tarif :</strong> 1 490 € TTC (offre découverte 610 €) • Éligible OPCO/FAF/CPF</span>
                     </div>
                   </div>
 
-                  <ul className="space-y-2 text-xs text-slate-400 mb-6">
+                  <ul className="space-y-2.5 text-xs text-slate-400 mb-6 min-h-[96px]">
                     <li className="flex items-start gap-2">
                       <Check size={14} className="text-cyan-400 shrink-0 mt-0.5" />
-                      <span>Création de votre assistant IA personnalisé sur vos documents</span>
+                      <span>Création de votre assistant IA personnalisé entraîné sur vos propres données</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <Check size={14} className="text-cyan-400 shrink-0 mt-0.5" />
-                      <span>Génération immédiate de devis, propositions &amp; contenus</span>
+                      <span>Génération accélérée de propositions commerciales, devis et synthèses</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <Check size={14} className="text-cyan-400 shrink-0 mt-0.5" />
-                      <span>Sécurité des données &amp; conformité AI Act</span>
+                      <span>Sécurité des données confidentielles, prompt engineering &amp; conformité AI Act</span>
                     </li>
                   </ul>
                 </div>
 
-                <div className="space-y-2.5 pt-2">
+                <div className="mt-auto space-y-2.5 pt-4 border-t border-slate-800/80">
                   <button
                     type="button"
-                    onClick={() => handleOpenCheckout('Formation IA Générative RS6776', 1490, '16h vidéos + 5h coaching individuel 1-to-1')}
+                    onClick={() => handleOpenCheckout('Formation IA Générative RS6776', 1490, '21h de formation certifiante avec quizz, cas pratiques et coaching individuel 1-to-1 inclus')}
                     className="w-full py-3 px-4 rounded-xl bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-500 hover:to-cyan-500 text-white font-bold text-xs shadow-lg shadow-cyan-600/25 transition-all flex items-center justify-center gap-2 cursor-pointer"
                   >
                     <CreditCard size={15} />
@@ -475,7 +475,7 @@ export default function HomePageClient() {
                     href="#contact"
                     className="w-full block py-2.5 text-center rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 font-semibold text-xs transition-all"
                   >
-                    Dossier Financement OPCO / FAF ⚡
+                    Dossier Financement OPCO / FAF <span className="whitespace-nowrap">15 min ⚡</span>
                   </a>
                   <Link
                     href="/formations/ia"
@@ -489,74 +489,74 @@ export default function HomePageClient() {
 
             {/* Carte Parcours 2 : IA Entreprise RS7344 */}
             {(selectedPole === 'all' || selectedPole === 'ia') && (
-              <div className="rounded-3xl bg-slate-900/80 border-2 border-indigo-500/40 p-7 flex flex-col justify-between shadow-2xl relative overflow-hidden group">
+              <div className="h-full rounded-3xl bg-slate-900/90 border-2 border-indigo-500/40 p-7 flex flex-col justify-between shadow-2xl relative overflow-hidden group hover:border-indigo-400 transition-all duration-300">
                 <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500" />
                 
                 <div>
-                  <div className="flex items-center justify-between gap-2 mb-4">
+                  <div className="flex items-center justify-between gap-2 mb-4 min-h-[28px]">
                     <span className="px-3 py-1 rounded-full bg-indigo-500/20 text-indigo-300 text-xs font-bold border border-indigo-500/30">
-                      Pôle IA • RS7344
+                      🚀 Pôle IA • RS7344
                     </span>
-                    <span className="text-xs text-slate-400 font-semibold">Distanciel ou Intra</span>
+                    <span className="text-xs text-slate-400 font-semibold">Distanciel ou Intra • Financement OPCO</span>
                   </div>
 
-                  <h3 className="text-xl sm:text-2xl font-bold text-white mb-2">
-                    Intégration de l&apos;IA en Entreprise &amp; Workflows
+                  <h3 className="text-xl sm:text-2xl font-bold text-white mb-2 min-h-[58px] flex items-center">
+                    Développer son Activité grâce à l&apos;IA &amp; aux Workflows
                   </h3>
 
-                  <p className="text-xs text-indigo-400 font-semibold mb-3">
+                  <p className="text-xs text-indigo-400 font-semibold mb-3 min-h-[34px] flex items-center">
                     Méthode STEP, Workflows n8n/Make &amp; AI Act
                   </p>
 
-                  <p className="text-sm text-slate-300 leading-relaxed mb-6">
-                    Pour directions et managers : auditez vos processus avec la méthode STEP, automatisez les flux d&apos;équipes sans code complexe et sécurisez vos données.
+                  <p className="text-sm text-slate-300 leading-relaxed mb-6 min-h-[72px]">
+                    Pour dirigeants et équipes : auditez vos processus avec la méthode STEP, automatisez les flux d&apos;équipes sans code complexe et sécurisez vos données.
                   </p>
 
-                  <div className="space-y-2.5 py-4 border-y border-slate-800 text-xs text-slate-300 mb-6">
+                  <div className="space-y-2.5 py-4 border-y border-slate-800 text-xs text-slate-300 mb-6 min-h-[148px] flex flex-col justify-center bg-slate-950/40 rounded-xl px-3.5">
                     <div className="flex items-center gap-2">
                       <Clock size={15} className="text-indigo-400 shrink-0" />
-                      <span><strong>Format :</strong> 14h à 35h sur-mesure pour vos équipes</span>
+                      <span><strong>Durée :</strong> 21h certifiantes (Formation opérationnelle + 5h accompagnement expert)</span>
                     </div>
                     <div className="flex items-center gap-2">
                       <Award size={15} className="text-amber-400 shrink-0" />
-                      <span><strong>Certification :</strong> Enregistrée au Répertoire Spécifique : RS7344</span>
+                      <span><strong>Validation :</strong> Quizz de validation &amp; cas pratiques réels d&apos;entreprise</span>
                     </div>
                     <div className="flex items-center gap-2">
                       <ShieldCheck size={15} className="text-emerald-400 shrink-0" />
-                      <span><strong>Financement :</strong> Plan de développement des compétences OPCO</span>
+                      <span><strong>Tarif :</strong> 1 490 € TTC • Éligible plan de développement compétences OPCO</span>
                     </div>
                   </div>
 
-                  <ul className="space-y-2 text-xs text-slate-400 mb-6">
+                  <ul className="space-y-2.5 text-xs text-slate-400 mb-6 min-h-[96px]">
                     <li className="flex items-start gap-2">
                       <Check size={14} className="text-indigo-400 shrink-0 mt-0.5" />
-                      <span>Cartographie des flux chronophages (méthode STEP)</span>
+                      <span>Cartographie complète des flux chronophages d&apos;équipe (méthode STEP)</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <Check size={14} className="text-indigo-400 shrink-0 mt-0.5" />
-                      <span>Automatisations n8n / Make connectées à vos logiciels</span>
+                      <span>Déploiement de connecteurs n8n / Make reliés directement à vos outils</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <Check size={14} className="text-indigo-400 shrink-0 mt-0.5" />
-                      <span>Charte éthique IA &amp; conformité RGPD / AI Act</span>
+                      <span>Mise en place de la charte éthique IA &amp; conformité RGPD / AI Act européen</span>
                     </li>
                   </ul>
                 </div>
 
-                <div className="space-y-2.5 pt-2">
+                <div className="mt-auto space-y-2.5 pt-4 border-t border-slate-800/80">
                   <button
                     type="button"
-                    onClick={() => handleOpenCheckout('Intégration IA Entreprise RS7344 (Acompte)', 450, 'Acompte de réservation de session intra/distanciel')}
+                    onClick={() => handleOpenCheckout('Développer son Activité grâce à l&apos;IA (RS7344)', 1490, '21h de formation certifiante avec 5h de coaching expert individuel et cas pratiques réels')}
                     className="w-full py-3 px-4 rounded-xl bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white font-bold text-xs shadow-lg shadow-indigo-600/25 transition-all flex items-center justify-center gap-2 cursor-pointer"
                   >
                     <CreditCard size={15} />
-                    <span>Réserver une session intra (Acompte) 💳</span>
+                    <span>S&apos;inscrire / Régler en ligne 💳</span>
                   </button>
                   <a
                     href="#contact"
                     className="w-full block py-2.5 text-center rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 font-semibold text-xs transition-all"
                   >
-                    Demander un devis OPCO Entreprise ⚡
+                    Demander un devis OPCO Entreprise <span className="whitespace-nowrap">15 min ⚡</span>
                   </a>
                   <Link
                     href="/formations/ia"
@@ -568,66 +568,66 @@ export default function HomePageClient() {
               </div>
             )}
 
-            {/* Carte Parcours 3 : Réseaux Sociaux Prépa RS7351 */}
+            {/* Carte Parcours 3 : Réseaux Sociaux & IA RS7351 */}
             {(selectedPole === 'all' || selectedPole === 'reseaux') && (
-              <div className="rounded-3xl bg-slate-900/80 border-2 border-pink-500/40 p-7 flex flex-col justify-between shadow-2xl relative overflow-hidden group">
+              <div className="h-full rounded-3xl bg-slate-900/90 border-2 border-pink-500/40 p-7 flex flex-col justify-between shadow-2xl relative overflow-hidden group hover:border-pink-400 transition-all duration-300">
                 <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-pink-500 via-rose-500 to-amber-500" />
                 
                 <div>
-                  <div className="flex items-center justify-between gap-2 mb-4">
+                  <div className="flex items-center justify-between gap-2 mb-4 min-h-[28px]">
                     <span className="px-3 py-1 rounded-full bg-pink-500/20 text-pink-300 text-xs font-bold border border-pink-500/30">
-                      Pôle Réseaux • RS7351
+                      📱 Pôle Digital &amp; IA • RS7351
                     </span>
-                    <span className="text-xs text-slate-400 font-semibold">100% à distance</span>
+                    <span className="text-xs text-slate-400 font-semibold">100% à distance • Éligible OPCO / CPF</span>
                   </div>
 
-                  <h3 className="text-xl sm:text-2xl font-bold text-white mb-2">
-                    Communication &amp; Réseaux Sociaux
+                  <h3 className="text-xl sm:text-2xl font-bold text-white mb-2 min-h-[58px] flex items-center">
+                    Communication, Réseaux Sociaux &amp; IA
                   </h3>
 
-                  <p className="text-xs text-pink-400 font-semibold mb-3">
-                    Canva, CapCut, Meta Ads &amp; LinkedIn Waalaxy
+                  <p className="text-xs text-pink-400 font-semibold mb-3 min-h-[34px] flex items-center">
+                    Canva IA, CapCut, Meta Ads &amp; Prospection LinkedIn Waalaxy
                   </p>
 
-                  <p className="text-sm text-slate-300 leading-relaxed mb-6">
-                    Professionnalisez votre visibilité : créez des visuels percutants, produisez des vidéos courtes engageantes et automatisez vos prises de contacts B2B.
+                  <p className="text-sm text-slate-300 leading-relaxed mb-6 min-h-[72px]">
+                    Professionnalisez votre visibilité : créez des visuels percutants grâce à l&apos;IA, produisez des vidéos courtes engageantes et automatisez vos prises de contacts B2B.
                   </p>
 
-                  <div className="space-y-2.5 py-4 border-y border-slate-800 text-xs text-slate-300 mb-6">
+                  <div className="space-y-2.5 py-4 border-y border-slate-800 text-xs text-slate-300 mb-6 min-h-[148px] flex flex-col justify-center bg-slate-950/40 rounded-xl px-3.5">
                     <div className="flex items-center gap-2">
                       <Clock size={15} className="text-pink-400 shrink-0" />
-                      <span><strong>Format :</strong> 11h+ de vidéos interactives + cas pratiques</span>
+                      <span><strong>Durée :</strong> 21h certifiantes (Vidéos interactives + 5h accompagnement 1-to-1)</span>
                     </div>
                     <div className="flex items-center gap-2">
                       <Award size={15} className="text-amber-400 shrink-0" />
-                      <span><strong>Certification :</strong> Préparation certification RS7351</span>
+                      <span><strong>Validation :</strong> Quizz de progression &amp; cas pratiques de création de contenu</span>
                     </div>
                     <div className="flex items-center gap-2">
                       <ShieldCheck size={15} className="text-emerald-400 shrink-0" />
-                      <span><strong>Financement :</strong> 1 290 € ou pris en charge selon éligibilité (OPCO, FAF, CPF)</span>
+                      <span><strong>Tarif :</strong> 1 490 € TTC • Éligible prise en charge OPCO / FAF / CPF</span>
                     </div>
                   </div>
 
-                  <ul className="space-y-2 text-xs text-slate-400 mb-6">
+                  <ul className="space-y-2.5 text-xs text-slate-400 mb-6 min-h-[96px]">
                     <li className="flex items-start gap-2">
                       <Check size={14} className="text-pink-400 shrink-0 mt-0.5" />
-                      <span>Ligne éditoriale et calendrier de publication actionnable</span>
+                      <span>Stratégie éditoriale et calendrier de publications accéléré par l&apos;IA</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <Check size={14} className="text-pink-400 shrink-0 mt-0.5" />
-                      <span>Maîtrise de Canva Pro, CapCut (Reels/TikTok) et Meta Ads</span>
+                      <span>Maîtrise de Canva IA, CapCut (Reels / TikTok) et campagnes Meta Ads</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <Check size={14} className="text-pink-400 shrink-0 mt-0.5" />
-                      <span>Prospection automatisée B2B sur LinkedIn via Waalaxy</span>
+                      <span>Prospection B2B automatisée et ciblée sur LinkedIn via Waalaxy</span>
                     </li>
                   </ul>
                 </div>
 
-                <div className="space-y-2.5 pt-2">
+                <div className="mt-auto space-y-2.5 pt-4 border-t border-slate-800/80">
                   <button
                     type="button"
-                    onClick={() => handleOpenCheckout('Formation Réseaux Sociaux (RS7351)', 1290, '11h+ vidéos interactives + mise en pratique')}
+                    onClick={() => handleOpenCheckout('Formation Communication & Réseaux Sociaux (RS7351)', 1490, '21h de formation certifiante avec quizz, cas pratiques guidés et 5h de coaching individuel inclus')}
                     className="w-full py-3 px-4 rounded-xl bg-gradient-to-r from-pink-600 to-rose-600 hover:from-pink-500 hover:to-rose-500 text-white font-bold text-xs shadow-lg shadow-pink-600/25 transition-all flex items-center justify-center gap-2 cursor-pointer"
                   >
                     <CreditCard size={15} />
@@ -637,7 +637,7 @@ export default function HomePageClient() {
                     href="#contact"
                     className="w-full block py-2.5 text-center rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 font-semibold text-xs transition-all"
                   >
-                    Dossier Financement OPCO / FAF ⚡
+                    Dossier Financement OPCO / FAF <span className="whitespace-nowrap">15 min ⚡</span>
                   </a>
                   <Link
                     href="/formations/reseaux-sociaux"
@@ -649,66 +649,66 @@ export default function HomePageClient() {
               </div>
             )}
 
-            {/* Carte Parcours 4 : Méthode TOP® (FITOP 21h) */}
+            {/* Carte Parcours 4 : Méthode TOP® & Clarté Mentale (FITOP 21h) */}
             {(selectedPole === 'all' || selectedPole === 'top') && (
-              <div className="rounded-3xl bg-slate-900/80 border-2 border-amber-500/40 p-7 flex flex-col justify-between shadow-2xl relative overflow-hidden group">
+              <div className="h-full rounded-3xl bg-slate-900/90 border-2 border-amber-500/40 p-7 flex flex-col justify-between shadow-2xl relative overflow-hidden group hover:border-amber-400 transition-all duration-300">
                 <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-amber-400 via-emerald-400 to-cyan-400" />
                 
                 <div>
-                  <div className="flex items-center justify-between gap-2 mb-4">
+                  <div className="flex items-center justify-between gap-2 mb-4 min-h-[28px]">
                     <span className="px-3 py-1 rounded-full bg-amber-500/20 text-amber-300 text-xs font-bold border border-amber-500/30">
-                      Pôle TOP® • Gestion du Stress
+                      🧠 Neurosciences &amp; IA • FI-TOP®
                     </span>
-                    <span className="text-xs text-slate-400 font-semibold">Présentiel ou Visio</span>
+                    <span className="text-xs text-slate-400 font-semibold">Présentiel ou Visio • Financement OPCO/FAF</span>
                   </div>
 
-                  <h3 className="text-xl sm:text-2xl font-bold text-white mb-2">
-                    Formation Initiale aux TOP® (FITOP 21h)
+                  <h3 className="text-xl sm:text-2xl font-bold text-white mb-2 min-h-[58px] flex items-center">
+                    Méthode TOP® &amp; Clarté Mentale à l&apos;Ère de l&apos;IA
                   </h3>
 
-                  <p className="text-xs text-amber-400 font-semibold mb-3">
-                    Méthode PERRAULT-PIERRE • Issue de l&apos;Armée de l&apos;Air
+                  <p className="text-xs text-amber-400 font-semibold mb-3 min-h-[34px] flex items-center">
+                    Régulation du Stress, Focus Cognitif &amp; Prévention du Burnout
                   </p>
 
-                  <p className="text-sm text-slate-300 leading-relaxed mb-6">
-                    Apprenez à réguler votre stress en direct, dynamiser votre énergie sans caféine, préserver votre sommeil et prévenir le burnout face aux charges mentales intenses.
+                  <p className="text-sm text-slate-300 leading-relaxed mb-6 min-h-[72px]">
+                    Face au flux d&apos;informations et à l&apos;accélération technologique, apprenez à réguler votre stress en temps réel, préserver votre sommeil et optimiser votre lucidité décisionnelle.
                   </p>
 
-                  <div className="space-y-2.5 py-4 border-y border-slate-800 text-xs text-slate-300 mb-6">
+                  <div className="space-y-2.5 py-4 border-y border-slate-800 text-xs text-slate-300 mb-6 min-h-[148px] flex flex-col justify-center bg-slate-950/40 rounded-xl px-3.5">
                     <div className="flex items-center gap-2">
                       <Clock size={15} className="text-amber-400 shrink-0" />
-                      <span><strong>Format :</strong> 21 heures réparties (3 jours ou modules)</span>
+                      <span><strong>Durée :</strong> 21 heures réparties (3 jours ou modules fractionnés)</span>
                     </div>
                     <div className="flex items-center gap-2">
                       <Award size={15} className="text-emerald-400 shrink-0" />
-                      <span><strong>Formateurs :</strong> Mélissa JENNADI &amp; Régis Domergue</span>
+                      <span><strong>Validation :</strong> Quizz d&apos;assimilation &amp; exercices pratiques guidés</span>
                     </div>
                     <div className="flex items-center gap-2">
                       <ShieldCheck size={15} className="text-emerald-400 shrink-0" />
-                      <span><strong>Tarif :</strong> 890 € ou prise en charge OPCO / FAF</span>
+                      <span><strong>Tarif :</strong> 890 € TTC • Éligible prise en charge OPCO / FAF / Entreprise</span>
                     </div>
                   </div>
 
-                  <ul className="space-y-2 text-xs text-slate-400 mb-6">
+                  <ul className="space-y-2.5 text-xs text-slate-400 mb-6 min-h-[96px]">
                     <li className="flex items-start gap-2">
                       <Check size={14} className="text-amber-400 shrink-0 mt-0.5" />
-                      <span>Boîte à outils complète : respiration relaxante &amp; dynamisante</span>
+                      <span>Boîte à outils complète : respiration relaxante et dynamisante sur le vif</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <Check size={14} className="text-amber-400 shrink-0 mt-0.5" />
-                      <span>Imagerie mentale, Pré-activation Mentale &amp; RMP</span>
+                      <span>Pré-activation mentale, imagerie motrice &amp; Récupération Modulée</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <Check size={14} className="text-amber-400 shrink-0 mt-0.5" />
-                      <span>Livret technique officiel remis à chaque participant</span>
+                      <span>Livret technique officiel remis à chaque stagiaire &amp; plan d&apos;action personnalisé</span>
                     </li>
                   </ul>
                 </div>
 
-                <div className="space-y-2.5 pt-2">
+                <div className="mt-auto space-y-2.5 pt-4 border-t border-slate-800/80">
                   <button
                     type="button"
-                    onClick={() => handleOpenCheckout('Formation Initiale FITOP® (21h)', 890, 'Cursus officiel 21h Méthode TOP®')}
+                    onClick={() => handleOpenCheckout('Formation Initiale FITOP® (21h)', 890, 'Cursus officiel 21h Méthode TOP® avec livret technique et suivi personnalisé')}
                     className="w-full py-3 px-4 rounded-xl bg-gradient-to-r from-amber-600 to-emerald-600 hover:from-amber-500 hover:to-emerald-500 text-white font-bold text-xs shadow-lg shadow-amber-600/25 transition-all flex items-center justify-center gap-2 cursor-pointer"
                   >
                     <CreditCard size={15} />
@@ -718,7 +718,7 @@ export default function HomePageClient() {
                     href="#contact"
                     className="w-full block py-2.5 text-center rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 font-semibold text-xs transition-all"
                   >
-                    Demander prise en charge entreprise / OPCO ⚡
+                    Demander prise en charge entreprise / OPCO <span className="whitespace-nowrap">15 min ⚡</span>
                   </a>
                   <Link
                     href="/formations/fi-top"
@@ -737,7 +737,7 @@ export default function HomePageClient() {
 
 
 
-      {/* ─── 5. TABLEAU COMPARATIF DES 3 PARCOURS ────────────────────────── */}
+      {/* ─── 5. TABLEAU COMPARATIF DES 4 PARCOURS ────────────────────────── */}
       <section className="py-20 px-4 bg-slate-950 border-b border-slate-850">
         <div className="container mx-auto max-w-6xl">
           
@@ -769,14 +769,14 @@ export default function HomePageClient() {
               <tbody className="divide-y divide-slate-800/80 text-slate-300">
                 <tr className="hover:bg-slate-900/40 transition-colors">
                   <td className="p-4 sm:p-5 font-bold text-white">
-                    <span className="text-blue-400 block text-xs uppercase mb-1">Parcours 1</span>
+                    <span className="text-cyan-400 block text-xs uppercase mb-1">Pôle IA</span>
                     IA Générative pour Indépendants &amp; Dirigeants
                   </td>
                   <td className="p-4 sm:p-5 text-xs sm:text-sm">
                     Indépendants, freelances, consultants, dirigeants de TPE
                   </td>
-                  <td className="p-4 sm:p-5 font-semibold text-blue-300 text-xs sm:text-sm whitespace-nowrap">
-                    16h vidéos<br />+ <strong>5h coaching 1-to-1</strong>
+                  <td className="p-4 sm:p-5 font-semibold text-cyan-300 text-xs sm:text-sm whitespace-nowrap">
+                    21h certifiantes<br />+ <strong>coaching 1-to-1</strong><br />+ quizz &amp; cas pratiques
                   </td>
                   <td className="p-4 sm:p-5 text-xs sm:text-sm">
                     <span className="px-2.5 py-1 rounded-md bg-blue-500/10 border border-blue-500/30 text-blue-300 font-bold whitespace-nowrap">
@@ -784,23 +784,23 @@ export default function HomePageClient() {
                     </span>
                   </td>
                   <td className="p-4 sm:p-5 text-xs text-emerald-400 font-medium">
-                    OPCO, FAF, CPF<br />via partenaire
+                    1 490 € (offre 610 €)<br />OPCO / FAF / CPF
                   </td>
                   <td className="p-4 sm:p-5 text-xs sm:text-sm">
-                    Automatisation de vos contenus, prompts sur-mesure et gain de 5 à 10h / semaine (selon votre activité)
+                    Assistant IA sur-mesure sur vos données, prompts métier et gain de 5 à 10h / semaine
                   </td>
                 </tr>
 
                 <tr className="hover:bg-slate-900/40 transition-colors">
                   <td className="p-4 sm:p-5 font-bold text-white">
-                    <span className="text-indigo-400 block text-xs uppercase mb-1">Parcours 2</span>
-                    Intégration de l&apos;IA en Entreprise &amp; Workflows
+                    <span className="text-indigo-400 block text-xs uppercase mb-1">Pôle IA &amp; Workflows</span>
+                    Développer son Activité grâce à l&apos;IA &amp; aux Workflows
                   </td>
                   <td className="p-4 sm:p-5 text-xs sm:text-sm">
-                    Dirigeants de TPE/PME, managers et leurs équipes
+                    Dirigeants de TPE/PME, managers et collaborateurs
                   </td>
                   <td className="p-4 sm:p-5 font-semibold text-indigo-300 text-xs sm:text-sm whitespace-nowrap">
-                    14h à 35h<br />sur-mesure
+                    21h certifiantes<br />+ <strong>5h coaching expert</strong><br />+ quizz &amp; cas pratiques
                   </td>
                   <td className="p-4 sm:p-5 text-xs sm:text-sm">
                     <span className="px-2.5 py-1 rounded-md bg-indigo-500/10 border border-indigo-500/30 text-indigo-300 font-bold whitespace-nowrap">
@@ -808,23 +808,23 @@ export default function HomePageClient() {
                     </span>
                   </td>
                   <td className="p-4 sm:p-5 text-xs text-emerald-400 font-medium">
-                    Plan de dev. compétences, OPCO, FAF
+                    1 490 €<br />Plan dev. compétences OPCO
                   </td>
                   <td className="p-4 sm:p-5 text-xs sm:text-sm">
-                    Feuille de route d&apos;automatisation, charte éthique et conformité AI Act
+                    Automatisation de flux d&apos;équipes n8n/Make, charte éthique et conformité AI Act
                   </td>
                 </tr>
 
                 <tr className="hover:bg-slate-900/40 transition-colors">
                   <td className="p-4 sm:p-5 font-bold text-white">
-                    <span className="text-pink-400 block text-xs uppercase mb-1">Parcours 3</span>
-                    Communication &amp; Réseaux Sociaux
+                    <span className="text-pink-400 block text-xs uppercase mb-1">Pôle Digital &amp; IA</span>
+                    Communication, Réseaux Sociaux &amp; IA
                   </td>
                   <td className="p-4 sm:p-5 text-xs sm:text-sm">
-                    Créateurs, commerçants, indépendants gérant seuls leur visibilité
+                    Créateurs, indépendants, équipes marketing gérant leur acquisition
                   </td>
                   <td className="p-4 sm:p-5 font-semibold text-pink-300 text-xs sm:text-sm whitespace-nowrap">
-                    11h+ vidéos<br />+ mise en situation
+                    21h certifiantes<br />+ <strong>5h coaching expert</strong><br />+ quizz &amp; cas pratiques
                   </td>
                   <td className="p-4 sm:p-5 text-xs sm:text-sm">
                     <span className="px-2.5 py-1 rounded-md bg-pink-500/10 border border-pink-500/30 text-pink-300 font-bold whitespace-nowrap">
@@ -832,10 +832,34 @@ export default function HomePageClient() {
                     </span>
                   </td>
                   <td className="p-4 sm:p-5 text-xs text-emerald-400 font-medium">
-                    OPCO, FAF, CPF<br />via partenaire
+                    1 490 €<br />OPCO / FAF / CPF
                   </td>
                   <td className="p-4 sm:p-5 text-xs sm:text-sm">
-                    Canva, CapCut et Meta Ads maîtrisés, génération continue de prospects
+                    Visuels Canva IA, vidéos CapCut, prospection LinkedIn automatisée et Meta Ads
+                  </td>
+                </tr>
+
+                <tr className="hover:bg-slate-900/40 transition-colors">
+                  <td className="p-4 sm:p-5 font-bold text-white">
+                    <span className="text-amber-400 block text-xs uppercase mb-1">Pôle Méthode TOP®</span>
+                    Méthode TOP® &amp; Clarté Mentale à l&apos;Ère de l&apos;IA
+                  </td>
+                  <td className="p-4 sm:p-5 text-xs sm:text-sm">
+                    Dirigeants, managers, collaborateurs sous forte charge mentale
+                  </td>
+                  <td className="p-4 sm:p-5 font-semibold text-amber-300 text-xs sm:text-sm whitespace-nowrap">
+                    21h officielles<br />3 jours ou modules<br />+ quizz &amp; mises en situation
+                  </td>
+                  <td className="p-4 sm:p-5 text-xs sm:text-sm">
+                    <span className="px-2.5 py-1 rounded-md bg-amber-500/10 border border-amber-500/30 text-amber-300 font-bold whitespace-nowrap">
+                      Attestation FI-TOP®
+                    </span>
+                  </td>
+                  <td className="p-4 sm:p-5 text-xs text-emerald-400 font-medium">
+                    890 €<br />OPCO / FAF / Entreprise
+                  </td>
+                  <td className="p-4 sm:p-5 text-xs sm:text-sm">
+                    Régulation du stress en direct, dynamisation de l&apos;énergie, récupération et focus mental
                   </td>
                 </tr>
               </tbody>
@@ -948,11 +972,11 @@ export default function HomePageClient() {
             {/* 2. Renaud */}
             <TeamMemberCard
               position="right"
-              roleTitle="Directeur Pédagogique & IA"
+              roleTitle="Consultant Expert IA & Systèmes d'Information"
               firstName="Renaud"
               lastName=""
               imageUrl="/team-renaud.jpg"
-              description="Passionné par l'impact technologique et l'efficacité opérationnelle, pour transformer des outils complexes en leviers de croissance concrets."
+              description="Accompagnement des dirigeants et collaborateurs dans la conduite du changement, l'adoption concrète des bénéfices de l'IA et l'optimisation des processus opérationnels."
               onCtaClick={() => window.open('https://wa.me/33674797509?text=Bonjour%20Renaud%2C%20je%20souhaite%20%C3%A9changer%20avec%20vous.', '_blank')}
             />
 
@@ -1043,7 +1067,7 @@ export default function HomePageClient() {
               href="#contact"
               className="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-bold text-sm text-center transition-all shadow-xl shadow-blue-600/30 whitespace-nowrap"
             >
-              Réserver mon diagnostic (15 min) ⚡
+              Réserver mon diagnostic <span className="whitespace-nowrap">15 min ⚡</span>
             </a>
             <a
               href="https://wa.me/33767246825?text=Bonjour%20M%C3%A9lissa%2C%20je%20souhaite%20un%20diagnostic%20rapide%20sur%20mes%20droits%20de%20formation."

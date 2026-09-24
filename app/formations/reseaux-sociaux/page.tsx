@@ -35,7 +35,7 @@ export default function FormationReseauxSociauxPage() {
             </div>
             <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
               <Link href="/contact?subject=Reseaux_Sociaux_Diagnostic" className="btn btn-primary" style={{ background: 'var(--red-600)', color: 'white', fontWeight: 800, padding: '1rem 2rem' }}>
-                Réserver mon diagnostic gratuit de 15 min ⚡
+                Réserver mon diagnostic gratuit <span style={{ whiteSpace: 'nowrap' }}>15 min ⚡</span>
               </Link>
               <Link href="/financement" className="btn btn-ghost" style={{ color: 'white', borderColor: 'rgba(255, 255, 255, 0.4)' }}>
                 Étudier mes possibilités de financement →
@@ -202,7 +202,7 @@ export default function FormationReseauxSociauxPage() {
           </p>
           <div style={{ display: 'flex', justifyContent: 'center', gap: '1rem', flexWrap: 'wrap' }}>
             <Link href="/contact?subject=Reseaux_Diagnostic" className="btn btn-primary" style={{ background: 'var(--red-600)', color: 'white', padding: '1rem 2.5rem', fontWeight: 800 }}>
-              Réserver mon diagnostic gratuit de 15 min ⚡
+              Réserver mon diagnostic gratuit <span style={{ whiteSpace: 'nowrap' }}>15 min ⚡</span>
             </Link>
             <a href="https://wa.me/33767246825?text=Bonjour%2C%20je%20souhaite%20%C3%AAtre%20rappel%C3%A9%20par%20un%20formateur%20sur%20la%20formation%20R%C3%A9seaux%20Sociaux." target="_blank" rel="noopener noreferrer" className="btn btn-ghost" style={{ color: 'white', borderColor: 'rgba(255,255,255,0.4)' }}>
               📞 Être rappelé(e) par un formateur

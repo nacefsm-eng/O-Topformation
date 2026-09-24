@@ -1026,6 +1026,18 @@ html[data-theme="sombre"] main {
   background-color: #021a44 !important;
   color: #f1f5f9 !important;
 }
+html[data-theme="sombre"] p {
+  color: #cbd5e1 !important;
+}
+html[data-theme="sombre"] .text-slate-300 {
+  color: #cbd5e1 !important;
+}
+html[data-theme="sombre"] .text-slate-400 {
+  color: #94a3b8 !important;
+}
+html[data-theme="sombre"] strong {
+  color: #ffffff !important;
+}
 html[data-theme="sombre"] .bg-slate-950 {
   background-color: #021a44 !important;
 }

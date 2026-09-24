@@ -209,7 +209,7 @@ export default function GetInTouch() {
                       >
                         <option value="independant">Indépendant / Freelance / Libéral</option>
                         <option value="dirigeant">Dirigeant de TPE / PME</option>
-                        <option value="salarie">Salarié d’entreprise</option>
+                        <option value="salarie">Collaborateur d’entreprise</option>
                         <option value="demandeur">Demandeur d’emploi</option>
                         <option value="autre">Autre statut</option>
                       </select>
@@ -228,9 +228,9 @@ export default function GetInTouch() {
                         className="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-700/80 text-white focus:outline-none focus:border-blue-500 text-sm"
                       >
                         <option value="1">Indépendant(e) seul(e)</option>
-                        <option value="1-5">1 à 5 salariés</option>
-                        <option value="6-19">6 à 19 salariés</option>
-                        <option value="20+">20 salariés et plus</option>
+                        <option value="1-5">1 à 5 collaborateurs</option>
+                        <option value="6-19">6 à 19 collaborateurs</option>
+                        <option value="20+">20 collaborateurs et plus</option>
                       </select>
                     </div>
 
@@ -305,7 +305,7 @@ export default function GetInTouch() {
                     className="w-full py-4 px-6 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-sm flex items-center justify-center gap-2 transition-all shadow-xl shadow-blue-600/30 cursor-pointer disabled:opacity-50"
                   >
                     <Send size={16} />
-                    <span>{isSubmitting ? 'Transmission en cours...' : 'Réserver mon diagnostic gratuit de 15 min →'}</span>
+                    <span>{isSubmitting ? 'Transmission en cours...' : 'Réserver mon diagnostic gratuit (15 min) →'}</span>
                   </button>
 
                   <p className="text-center text-[11px] text-slate-400">

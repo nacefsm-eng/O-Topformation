@@ -28,7 +28,7 @@ export default function Entreprises() {
           </p>
           <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
             <Link href="/contact?subject=Entreprise_B2B" className="btn btn-primary" style={{ background: 'var(--red-600)', color: 'white', padding: '1rem 2rem', fontWeight: 800 }}>
-              Réserver mon diagnostic gratuit de 15 min ⚡
+              Réserver mon diagnostic gratuit <span style={{ whiteSpace: 'nowrap' }}>15 min ⚡</span>
             </Link>
             <a href="https://wa.me/33767246825?text=Bonjour%2C%20je%20souhaite%20un%20%C3%A9change%20concernant%20les%20solutions%20entreprises." target="_blank" rel="noopener noreferrer" className="btn btn-ghost" style={{ color: '#25D366', borderColor: '#25D366', background: 'rgba(37,211,102,0.1)' }}>
               💬 Être rappelé(e) sur WhatsApp
@@ -43,67 +43,67 @@ export default function Entreprises() {
           <div className="section-header" style={{ textAlign: 'center', maxWidth: '800px', margin: '0 auto 4rem' }}>
             <span className="label">Nos 4 Piliers d'Intervention</span>
             <h2 style={{ fontSize: '2.4rem', color: 'var(--blue-900)' }}>Un partenaire unique pour votre croissance</h2>
-            <p>Du bien-être de vos salariés à l'automatisation technique de vos ventes.</p>
+            <p>De l'acculturation de vos collaborateurs à l'automatisation technique de vos processus.</p>
           </div>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '2.5rem' }}>
-            {/* Pilier 1 : Santé Mentale & QVT */}
+            {/* Pilier 1 : Digitalisation & Automatisation IA */}
             <div className="card" style={{ padding: '2.5rem', borderTop: '5px solid var(--blue-900)' }}>
-              <div style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>🧘</div>
-              <h3 style={{ color: 'var(--blue-900)', fontSize: '1.35rem', marginBottom: '1rem' }}>1. Santé Mentale & Prévention RPS</h3>
-              <p style={{ color: 'var(--gray-600)', fontSize: '0.95rem', marginBottom: '1.5rem' }}>
-                Formations intra-entreprise aux Techniques d'Optimisation du Potentiel (TOP®). Réduisez l'absentéisme, prévenez le burn-out et améliorez la concentration sous forte pression.
-              </p>
-              <ul style={{ listStyle: 'none', padding: 0, fontSize: '0.9rem', display: 'flex', flexDirection: 'column', gap: '0.5rem', color: 'var(--gray-700)' }}>
-                <li>✓ Formations intra 7h / 21h dans vos locaux</li>
-                <li>✓ Ateliers QVT (gestion du sommeil, micro-sieste, stress express)</li>
-                <li>✓ Conférences & séminaires d'entreprise</li>
-                <li>✓ Prise en charge OPCO possible</li>
-              </ul>
-            </div>
-
-            {/* Pilier 2 : Création Web & Applications pour le CA */}
-            <div className="card" style={{ padding: '2.5rem', borderTop: '5px solid var(--gold-dark)' }}>
-              <div style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>🚀</div>
-              <h3 style={{ color: 'var(--blue-900)', fontSize: '1.35rem', marginBottom: '1rem' }}>2. Création de Sites & Applications</h3>
-              <p style={{ color: 'var(--gray-600)', fontSize: '0.95rem', marginBottom: '1.5rem' }}>
-                Conception de plateformes web modernes, sites vitrines premium et applications métier sur mesure conçues pour convertir vos visiteurs et augmenter immédiatement votre chiffre d'affaires.
-              </p>
-              <ul style={{ listStyle: 'none', padding: 0, fontSize: '0.9rem', display: 'flex', flexDirection: 'column', gap: '0.5rem', color: 'var(--gray-700)' }}>
-                <li>✓ Sites vitrines & tunnels de vente haute conversion</li>
-                <li>✓ Applications web & mobiles métier</li>
-                <li>✓ Design responsive & référencement SEO optimisé</li>
-                <li>✓ Suivi des conversions & tracking publicitaire</li>
-              </ul>
-            </div>
-
-            {/* Pilier 3 : IA & Automatisation des Process */}
-            <div className="card" style={{ padding: '2.5rem', borderTop: '5px solid var(--red-600)' }}>
               <div style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>🤖</div>
-              <h3 style={{ color: 'var(--blue-900)', fontSize: '1.35rem', marginBottom: '1rem' }}>3. Digitalisation &amp; Automatisation IA</h3>
+              <h3 style={{ color: 'var(--blue-900)', fontSize: '1.35rem', marginBottom: '1rem' }}>1. Digitalisation &amp; Automatisation IA</h3>
               <p style={{ color: 'var(--gray-600)', fontSize: '0.95rem', marginBottom: '1.5rem' }}>
-                Gagnez du temps chaque semaine et sécurisez vos usages numériques. Nous connectons vos outils, automatisons vos tâches administratives et formons vos équipes à l'utilisation sécurisée de l'IA (RS7344).
+                Fondamentaux de l&apos;IA, prompt engineering avancé et automatisation de vos flux de travail. Nous connectons vos outils, supprimons les tâches chronophages et formons vos équipes à l&apos;utilisation productive et sécurisée de l&apos;IA.
               </p>
               <ul style={{ listStyle: 'none', padding: 0, fontSize: '0.9rem', display: 'flex', flexDirection: 'column', gap: '0.5rem', color: 'var(--gray-700)' }}>
-                <li>✓ Connexion CRM, facturation &amp; webhooks automatisés</li>
-                <li>✓ Formation certifiante IA pour dirigeants &amp; collaborateurs</li>
-                <li>✓ Conformité AI Act européen (calendrier d&apos;application 2025-2026)</li>
-                <li>✓ Assistants IA internes personnalisés</li>
+                <li>✓ Fondamentaux de l&apos;IA &amp; cas pratiques immédiats</li>
+                <li>✓ Connexion CRM, facturation &amp; webhooks automatisés (n8n, Make)</li>
+                <li>✓ Création de GPTs et assistants métiers personnalisés</li>
+                <li>✓ Conformité AI Act européen &amp; sécurité des données</li>
               </ul>
             </div>
 
-            {/* Pilier 4 : Réseaux Sociaux & Visibilité B2B */}
+            {/* Pilier 2 : Communication & Acquisition Social Media */}
             <div className="card" style={{ padding: '2.5rem', borderTop: '5px solid #25D366' }}>
               <div style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>📱</div>
-              <h3 style={{ color: 'var(--blue-900)', fontSize: '1.35rem', marginBottom: '1rem' }}>4. Communication & Acquisition Social Media</h3>
+              <h3 style={{ color: 'var(--blue-900)', fontSize: '1.35rem', marginBottom: '1rem' }}>2. Communication &amp; Acquisition Social Media</h3>
               <p style={{ color: 'var(--gray-600)', fontSize: '0.95rem', marginBottom: '1.5rem' }}>
-                Développez la notoriété de votre marque et générez des prospects qualifiés sur LinkedIn, Meta et Google My Business grâce à notre programme préparant à la certification RS7351.
+                Développez la visibilité de votre entreprise et générez des prospects qualifiés sur LinkedIn, Meta et Google grâce à notre méthodologie de social selling et notre cursus préparant à la certification RS7351.
               </p>
               <ul style={{ listStyle: 'none', padding: 0, fontSize: '0.9rem', display: 'flex', flexDirection: 'column', gap: '0.5rem', color: 'var(--gray-700)' }}>
                 <li>✓ Stratégie éditoriale B2B et calendrier de diffusion</li>
-                <li>✓ Formation aux outils graphiques et vidéo (Canva, CapCut)</li>
-                <li>✓ Prospection automatisée LinkedIn (Waalaxy)</li>
+                <li>✓ Création de contenus visuels et vidéo (Canva, CapCut)</li>
+                <li>✓ Prospection ciblée et acquisition de prospects sans budget pub</li>
                 <li>✓ Préparation à la certification France Compétences RS7351</li>
+              </ul>
+            </div>
+
+            {/* Pilier 3 : Création de Sites & Applications */}
+            <div className="card" style={{ padding: '2.5rem', borderTop: '5px solid var(--gold-dark)' }}>
+              <div style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>🚀</div>
+              <h3 style={{ color: 'var(--blue-900)', fontSize: '1.35rem', marginBottom: '1rem' }}>3. Création de Sites &amp; Applications</h3>
+              <p style={{ color: 'var(--gray-600)', fontSize: '0.95rem', marginBottom: '1.5rem' }}>
+                Conception de plateformes web modernes, sites vitrines premium et applications métier sur mesure conçues pour convertir vos visiteurs et augmenter immédiatement votre chiffre d&apos;affaires.
+              </p>
+              <ul style={{ listStyle: 'none', padding: 0, fontSize: '0.9rem', display: 'flex', flexDirection: 'column', gap: '0.5rem', color: 'var(--gray-700)' }}>
+                <li>✓ Sites vitrines &amp; tunnels de vente haute conversion</li>
+                <li>✓ Applications web &amp; interfaces métier réactives</li>
+                <li>✓ Design responsive &amp; référencement SEO local optimisé</li>
+                <li>✓ Suivi des conversions &amp; tracking analytique</li>
+              </ul>
+            </div>
+
+            {/* Pilier 4 : Conduite du Changement & Qualité de Vie au Travail */}
+            <div className="card" style={{ padding: '2.5rem', borderTop: '5px solid var(--red-600)' }}>
+              <div style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>🧘</div>
+              <h3 style={{ color: 'var(--blue-900)', fontSize: '1.35rem', marginBottom: '1rem' }}>4. Conduite du Changement &amp; Qualité de Vie au Travail</h3>
+              <p style={{ color: 'var(--gray-600)', fontSize: '0.95rem', marginBottom: '1.5rem' }}>
+                Accompagner les collaborateurs pour faire comprendre et adopter les bénéfices des nouveaux outils, optimiser les processus et préserver l&apos;énergie collective grâce à la Méthode TOP® (Techniques d&apos;Optimisation du Potentiel).
+              </p>
+              <ul style={{ listStyle: 'none', padding: 0, fontSize: '0.9rem', display: 'flex', flexDirection: 'column', gap: '0.5rem', color: 'var(--gray-700)' }}>
+                <li>✓ Accompagnement managérial à la conduite du changement</li>
+                <li>✓ Régulation du stress professionnel &amp; récupération flash (SRF)</li>
+                <li>✓ Ateliers QVCT &amp; cohésion d&apos;équipe en entreprise</li>
+                <li>✓ Prise en charge OPCO possible dans le plan de développement</li>
               </ul>
             </div>
           </div>
@@ -149,7 +149,7 @@ export default function Entreprises() {
           </p>
           <div style={{ display: 'flex', justifyContent: 'center', gap: '1rem', flexWrap: 'wrap', marginBottom: '2.5rem' }}>
             <Link href="/contact" className="btn btn-primary" style={{ background: 'var(--red-600)', color: 'white', padding: '1rem 2.5rem', fontWeight: 800 }}>
-              Réserver mon diagnostic gratuit de 15 min ⚡
+              Réserver mon diagnostic gratuit <span style={{ whiteSpace: 'nowrap' }}>15 min ⚡</span>
             </Link>
             <a href="tel:+33767246825" className="btn btn-ghost" style={{ color: 'white', borderColor: 'rgba(255,255,255,0.4)' }}>
               📞 Mélissa : 07 67 24 68 25
