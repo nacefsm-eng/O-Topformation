@@ -57,6 +57,7 @@ const organizationSchema = {
     {
       '@type': 'ContactPoint',
       telephone: '+33767246825',
+      email: 'formation.rmcf@gmail.com',
       contactType: 'customer service',
       areaServed: 'FR',
       availableLanguage: 'French',

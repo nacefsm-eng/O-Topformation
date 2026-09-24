@@ -77,7 +77,7 @@ export default function CGV() {
 
             <div>
               <h2 style={{ fontSize: '1.4rem', marginBottom: '1rem' }}>8. Réclamations</h2>
-              <p>Toute réclamation doit être adressée à : <a href="mailto:contact@otopformation.fr" style={{ color: 'var(--blue-700)' }}>contact@otopformation.fr</a> — Téléphone : 07 67 24 68 25. Nous nous engageons à y répondre sous 5 jours ouvrés.</p>
+              <p>Toute réclamation doit être adressée à : <a href="mailto:formation.rmcf@gmail.com" style={{ color: 'var(--blue-700)' }}>Formation.rmcf@gmail.com</a> — Téléphone : 07 67 24 68 25. Nous nous engageons à y répondre sous 5 jours ouvrés.</p>
             </div>
 
             <div>

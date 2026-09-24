@@ -66,7 +66,7 @@ function ContactContent() {
         setErrorMessage(data.error || 'Une erreur est survenue lors de l\'envoi.');
       }
     } catch {
-      setErrorMessage('Impossible d\'envoyer le message. Vous pouvez nous écrire directement à contact@otopformation.fr.');
+      setErrorMessage('Impossible d\'envoyer le message. Vous pouvez nous écrire directement à Formation.rmcf@gmail.com.');
     } finally {
       setIsSubmitting(false);
     }
@@ -105,7 +105,7 @@ function ContactContent() {
               <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
                 {/* Carte Email Officiel */}
                 <a
-                  href="mailto:contact@otopformation.fr"
+                  href="mailto:formation.rmcf@gmail.com"
                   className="card"
                   style={{ padding: '1.5rem', display: 'flex', alignItems: 'center', gap: '1.25rem', border: '1.5px solid var(--gray-200)', background: 'white' }}
                 >
@@ -113,7 +113,7 @@ function ContactContent() {
                     ✉️
                   </div>
                   <div>
-                    <div style={{ fontWeight: 800, color: 'var(--blue-900)', fontSize: '1.05rem' }}>contact@otopformation.fr</div>
+                    <div style={{ fontWeight: 800, color: 'var(--blue-900)', fontSize: '1.05rem' }}>Formation.rmcf@gmail.com</div>
                     <div style={{ fontSize: '0.85rem', color: 'var(--gray-600)' }}>Email officiel d&apos;accueil & inscriptions</div>
                   </div>
                 </a>

@@ -38,7 +38,7 @@ export default function MentionsLegales() {
                   <tr><th>Directrice de la publication</th><td>Mélissa JENNADI (Présidente)</td></tr>
                   <tr><th>Partenariat Qualiopi &amp; NDA</th><td>Ô&apos;TOP Formation intervient avec l&apos;organisme partenaire Eloqone, certifié Qualiopi, qui porte les actions de formation et les démarches de financement. NDA Ô&apos;TOP Formation en cours d&apos;attribution.</td></tr>
                   <tr><th>Siège social &amp; Centre</th><td>Espace Gamma 1, 139 Chemin des 2 Frères, 83190 Ollioules (Var), France</td></tr>
-                  <tr><th>Email officiel</th><td><a href="mailto:contact@otopformation.fr" style={{ color: 'var(--blue-700)' }}>contact@otopformation.fr</a></td></tr>
+                  <tr><th>Email officiel</th><td><a href="mailto:formation.rmcf@gmail.com" style={{ color: 'var(--blue-700)' }}>Formation.rmcf@gmail.com</a></td></tr>
                   <tr><th>Téléphone</th><td><a href="tel:+33767246825" style={{ color: 'var(--blue-700)' }}>07 67 24 68 25</a></td></tr>
                 </tbody>
               </table>
@@ -57,7 +57,7 @@ export default function MentionsLegales() {
 
             <div>
               <h2 style={{ fontSize: '1.5rem', marginBottom: '1.5rem' }}>4. Données personnelles</h2>
-              <p>Conformément au RGPD, vous disposez d&apos;un droit d&apos;accès, de rectification et d&apos;effacement de vos données. Pour exercer ces droits : <a href="mailto:contact@otopformation.fr" style={{ color: 'var(--blue-700)' }}>contact@otopformation.fr</a></p>
+              <p>Conformément au RGPD, vous disposez d&apos;un droit d&apos;accès, de rectification et d&apos;effacement de vos données. Pour exercer ces droits : <a href="mailto:formation.rmcf@gmail.com" style={{ color: 'var(--blue-700)' }}>Formation.rmcf@gmail.com</a></p>
               <p style={{ marginTop: '1rem' }}><Link href="/politique-confidentialite" style={{ color: 'var(--blue-700)' }}>Voir notre Politique de Confidentialité</Link></p>
             </div>
 

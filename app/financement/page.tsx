@@ -264,7 +264,7 @@ export default function FinancementPage() {
                 Toutes nos formations sont accessibles aux personnes en situation de handicap. Notre référent handicap étudie chaque situation pour adapter les rythmes, les modalités d&apos;évaluation et les supports pédagogiques.
               </p>
               <div className="text-xs text-slate-400 pt-2 border-t border-slate-800">
-                Contact référent handicap : <a href="mailto:contact@otopformation.fr" className="text-blue-400 underline">contact@otopformation.fr</a>
+                Contact référent handicap : <a href="mailto:formation.rmcf@gmail.com" className="text-blue-400 underline">Formation.rmcf@gmail.com</a>
               </div>
             </div>
 
@@ -278,7 +278,7 @@ export default function FinancementPage() {
                 Conformément à nos engagements, toute réclamation ou difficulté rencontrée fait l&apos;objet d&apos;une instruction sous 5 jours ouvrés avec proposition de solution écrite.
               </p>
               <div className="text-xs text-slate-400 pt-2 border-t border-slate-800">
-                Service réclamation : <a href="mailto:contact@otopformation.fr" className="text-blue-400 underline">contact@otopformation.fr</a>
+                Service réclamation : <a href="mailto:formation.rmcf@gmail.com" className="text-blue-400 underline">Formation.rmcf@gmail.com</a>
               </div>
             </div>
 
@@ -303,10 +303,10 @@ export default function FinancementPage() {
               Réserver mon diagnostic gratuit de 15 min ⚡
             </Link>
             <a
-              href="mailto:contact@otopformation.fr"
+              href="mailto:formation.rmcf@gmail.com"
               className="px-6 py-4 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-200 border border-slate-700 text-sm font-semibold transition-all"
             >
-              ✉️ Écrire à contact@otopformation.fr
+              ✉️ Écrire à Formation.rmcf@gmail.com
             </a>
           </div>
         </div>

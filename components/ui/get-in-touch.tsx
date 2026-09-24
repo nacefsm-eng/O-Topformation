@@ -83,7 +83,7 @@ export default function GetInTouch() {
 
               <div className="space-y-3 pt-2">
                 <a
-                  href="mailto:contact@otopformation.fr"
+                  href="mailto:formation.rmcf@gmail.com"
                   className="flex items-center gap-3.5 p-3.5 rounded-2xl bg-slate-800/60 border border-slate-700/60 hover:border-blue-500/50 hover:bg-slate-800 transition-all group"
                 >
                   <div className="w-10 h-10 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400 group-hover:scale-105 transition-transform">
@@ -91,7 +91,7 @@ export default function GetInTouch() {
                   </div>
                   <div>
                     <div className="text-xs text-slate-400 font-medium">Email professionnel direct</div>
-                    <div className="text-sm font-semibold text-white">contact@otopformation.fr</div>
+                    <div className="text-sm font-semibold text-white">Formation.rmcf@gmail.com</div>
                   </div>
                 </a>
 
