@@ -281,54 +281,66 @@ export default function HomePageClient() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             
             {/* Profil 1 : Dirigeants TPE / PME */}
-            <div className="p-7 rounded-2xl bg-slate-950 border border-slate-800 hover:border-blue-500/40 transition-all flex flex-col justify-between">
+            <div className="p-7 rounded-2xl bg-slate-900/90 border border-slate-800 hover:border-blue-500/50 transition-all flex flex-col justify-between h-full shadow-lg">
               <div>
                 <div className="w-12 h-12 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400 mb-5">
                   <Briefcase size={24} />
                 </div>
-                <h3 className="text-lg font-bold text-white mb-2">Dirigeants de TPE &amp; PME</h3>
-                <p className="text-xs text-blue-300 font-semibold mb-3">« Je manque de bras et mes équipes sont débordées »</p>
-                <p className="text-slate-300 text-sm leading-relaxed mb-4">
+                <h3 className="text-lg font-bold text-white mb-2 min-h-[28px] flex items-center">
+                  Dirigeants de TPE &amp; PME
+                </h3>
+                <p className="text-xs text-blue-300 font-semibold mb-3 min-h-[38px] flex items-center">
+                  « Je manque de bras et mes équipes sont débordées »
+                </p>
+                <p className="text-sm leading-relaxed mb-5 min-h-[88px]" style={{ color: '#e2e8f0' }}>
                   Automatisez le traitement des devis, les relances factures et la synthèse des réunions. Intégrez l&apos;IA dans vos équipes sans risque de fuite de données (AI Act).
                 </p>
               </div>
-              <ul className="space-y-1.5 text-xs text-slate-400 border-t border-slate-900 pt-4">
+              <ul className="space-y-2 text-xs border-t border-slate-800/80 pt-4 mt-auto" style={{ color: '#cbd5e1' }}>
                 <li className="flex items-center gap-2">✓ Éligible plans de compétences OPCO</li>
                 <li className="flex items-center gap-2">✓ ROI mesurable dès le 1er mois</li>
               </ul>
             </div>
 
             {/* Profil 2 : Indépendants & Professionnels Libéraux */}
-            <div className="p-7 rounded-2xl bg-slate-950 border border-slate-800 hover:border-indigo-500/40 transition-all flex flex-col justify-between">
+            <div className="p-7 rounded-2xl bg-slate-900/90 border border-slate-800 hover:border-indigo-500/50 transition-all flex flex-col justify-between h-full shadow-lg">
               <div>
                 <div className="w-12 h-12 rounded-xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400 mb-5">
                   <Target size={24} />
                 </div>
-                <h3 className="text-lg font-bold text-white mb-2">Indépendants &amp; Consultants</h3>
-                <p className="text-xs text-indigo-300 font-semibold mb-3">« Je passe trop d&apos;heures sur des tâches non facturables »</p>
-                <p className="text-slate-300 text-sm leading-relaxed mb-4">
+                <h3 className="text-lg font-bold text-white mb-2 min-h-[28px] flex items-center">
+                  Indépendants &amp; Consultants
+                </h3>
+                <p className="text-xs text-indigo-300 font-semibold mb-3 min-h-[38px] flex items-center">
+                  « Je passe trop d&apos;heures sur des tâches non facturables »
+                </p>
+                <p className="text-sm leading-relaxed mb-5 min-h-[88px]" style={{ color: '#e2e8f0' }}>
                   Créez vos assistants GPT sur-mesure pour rédiger vos propositions, générer vos posts LinkedIn et préparer vos livrables en quelques minutes.
                 </p>
               </div>
-              <ul className="space-y-1.5 text-xs text-slate-400 border-t border-slate-900 pt-4">
+              <ul className="space-y-2 text-xs border-t border-slate-800/80 pt-4 mt-auto" style={{ color: '#cbd5e1' }}>
                 <li className="flex items-center gap-2">✓ 5h de coaching 1-to-1 incluses</li>
                 <li className="flex items-center gap-2">✓ Gain moyen de 6h à 10h / semaine</li>
               </ul>
             </div>
 
             {/* Profil 3 : Équipes Marketing & Commerciales */}
-            <div className="p-7 rounded-2xl bg-slate-950 border border-slate-800 hover:border-cyan-500/40 transition-all flex flex-col justify-between">
+            <div className="p-7 rounded-2xl bg-slate-900/90 border border-slate-800 hover:border-cyan-500/50 transition-all flex flex-col justify-between h-full shadow-lg">
               <div>
                 <div className="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400 mb-5">
                   <Workflow size={24} />
                 </div>
-                <h3 className="text-lg font-bold text-white mb-2">Équipes &amp; Collaborateurs</h3>
-                <p className="text-xs text-cyan-300 font-semibold mb-3">« Nous voulons monter en compétences sur les outils de pointe »</p>
-                <p className="text-slate-300 text-sm leading-relaxed mb-4">
+                <h3 className="text-lg font-bold text-white mb-2 min-h-[28px] flex items-center">
+                  Équipes &amp; Collaborateurs
+                </h3>
+                <p className="text-xs text-cyan-300 font-semibold mb-3 min-h-[38px] flex items-center">
+                  « Nous voulons monter en compétences sur les outils de pointe »
+                </p>
+                <p className="text-sm leading-relaxed mb-5 min-h-[88px]" style={{ color: '#e2e8f0' }}>
                   Maîtrisez Canva pro, CapCut, Waalaxy et les outils d&apos;automatisation pour accélérer la production sans dépendre d&apos;une agence externe.
                 </p>
               </div>
-              <ul className="space-y-1.5 text-xs text-slate-400 border-t border-slate-900 pt-4">
+              <ul className="space-y-2 text-xs border-t border-slate-800/80 pt-4 mt-auto" style={{ color: '#cbd5e1' }}>
                 <li className="flex items-center gap-2">✓ Certifications officielles RS</li>
                 <li className="flex items-center gap-2">✓ Pratique directe sur vos outils</li>
               </ul>

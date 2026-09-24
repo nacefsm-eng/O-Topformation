@@ -1488,3 +1488,38 @@ html[data-theme="clair"] [class*="bg-slate-950/85"] span[class*="text-emerald-"]
 .animate-float-slow {
   animation: float-slow 7s ease-in-out infinite;
 }
+
+/* ============= GLOBAL CONTRAST & LEGIBILITY ASSURANCE ============= */
+/* Light Mode: All cards and text on white backgrounds must have crisp, dark text */
+html[data-theme="clair"] body,
+html[data-theme="clair"] main {
+  background-color: #f8fafc !important;
+  color: #0f172a !important;
+}
+
+html[data-theme="clair"] h1:not(footer *),
+html[data-theme="clair"] h2:not(footer *),
+html[data-theme="clair"] h3:not(footer *),
+html[data-theme="clair"] h4:not(footer *) {
+  color: #0f172a !important;
+}
+
+html[data-theme="clair"] p:not(footer *):not([class*="bg-blue-"]):not([class*="bg-gradient"]):not(button *):not(.btn *),
+html[data-theme="clair"] .text-slate-300:not(footer *):not([class*="bg-slate-950/"]):not([class*="bg-slate-950\\/"]),
+html[data-theme="clair"] .text-slate-200:not(footer *):not([class*="bg-slate-950/"]):not([class*="bg-slate-950\\/"]),
+html[data-theme="clair"] .text-slate-400:not(footer *):not([class*="bg-slate-950/"]):not([class*="bg-slate-950\\/"]) {
+  color: #1e293b !important;
+}
+
+/* Keep primary buttons and badges legible */
+html[data-theme="clair"] a[class*="bg-gradient"],
+html[data-theme="clair"] button[class*="bg-gradient"],
+html[data-theme="clair"] .btn-primary {
+  color: #ffffff !important;
+}
+html[data-theme="clair"] a[class*="bg-gradient"] *,
+html[data-theme="clair"] button[class*="bg-gradient"] *,
+html[data-theme="clair"] .btn-primary * {
+  color: #ffffff !important;
+}
+

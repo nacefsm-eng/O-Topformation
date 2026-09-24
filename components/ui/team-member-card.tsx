@@ -19,8 +19,8 @@ interface TeamMemberCardProps {
 }
 
 /**
- * Editorial-style team member card with overlapping portrait, large display
- * typography, circular CTA toggle, and staggered entrance animations.
+ * Editorial-style team member card with high-contrast typography,
+ * explicit text colors for guaranteed visibility, and pixel-perfect alignment.
  */
 export default function TeamMemberCard({
   position = 'left',
@@ -36,6 +36,7 @@ export default function TeamMemberCard({
 }: TeamMemberCardProps) {
   const fullName = `${firstName} ${lastName}`.trim();
   const isPositionRight = position === 'right';
+  const isWhite = themeVariant === 'white';
 
   return (
     <motion.div
@@ -53,9 +54,10 @@ export default function TeamMemberCard({
         >
           <p
             className={cn(
-              'mb-4 text-xs font-semibold tracking-[0.25em] text-zinc-400 uppercase',
+              'mb-4 text-xs font-semibold tracking-[0.25em] uppercase',
               isPositionRight && 'text-right'
             )}
+            style={{ color: isWhite ? '#475569' : '#94a3b8' }}
           >
             {jobPosition}
           </p>
@@ -73,20 +75,23 @@ export default function TeamMemberCard({
           transition={{ duration: 0.7, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
           className={cn(
             'relative h-[380px] sm:h-[440px] md:h-[480px] w-full max-w-[340px] shrink-0 overflow-hidden rounded-2xl shadow-2xl',
-            themeVariant === 'white' && 'bg-white border-2 border-slate-200 shadow-slate-300/40',
-            themeVariant === 'black' && 'bg-black border-2 border-slate-800 shadow-black/80',
-            themeVariant === 'default' && 'border border-zinc-200/50 bg-zinc-900',
             isPositionRight && 'md:order-1'
           )}
+          style={{
+            backgroundColor: isWhite ? '#ffffff' : '#0f172a',
+            border: isWhite ? '2px solid #cbd5e1' : '2px solid #334155',
+            boxShadow: isWhite ? '0 20px 40px -10px rgba(0,0,0,0.12)' : '0 25px 50px -12px rgba(0,0,0,0.7)',
+          }}
         >
           {/* Subtle overlay for contrast */}
-          {themeVariant === 'black' ? (
-            <div className="pointer-events-none absolute inset-0 z-10 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
-          ) : themeVariant === 'white' ? (
-            <div className="pointer-events-none absolute inset-0 z-10 bg-gradient-to-t from-slate-900/10 via-transparent to-transparent" />
-          ) : (
-            <div className="pointer-events-none absolute inset-0 z-10 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
-          )}
+          <div 
+            className="pointer-events-none absolute inset-0 z-10" 
+            style={{
+              background: isWhite 
+                ? 'linear-gradient(to top, rgba(15, 23, 42, 0.15), transparent)' 
+                : 'linear-gradient(to top, rgba(2, 6, 23, 0.6), transparent)'
+            }}
+          />
           <img
             src={imageUrl}
             alt={fullName}
@@ -106,80 +111,77 @@ export default function TeamMemberCard({
               : 'md:-left-8 md:items-start text-left'
           )}
         >
-          {/* Display name — large editorial type */}
-          <div className={cn(
-            'p-6 sm:p-8 rounded-2xl shadow-xl max-w-lg transition-all',
-            themeVariant === 'white' && 'bg-white/95 backdrop-blur-md border-2 border-slate-200 text-slate-900 shadow-2xl shadow-slate-300/50',
-            themeVariant === 'black' && 'bg-slate-950/95 backdrop-blur-md border-2 border-slate-800 text-white shadow-2xl shadow-black/80',
-            themeVariant === 'default' && 'bg-white/80 backdrop-blur-md border border-zinc-100 shadow-lg text-zinc-900'
-          )}>
+          {/* Display name & description card */}
+          <div 
+            className="p-6 sm:p-8 rounded-2xl shadow-2xl max-w-lg transition-all w-full"
+            style={{
+              backgroundColor: isWhite ? '#ffffff' : '#0f172a',
+              border: isWhite ? '2px solid #cbd5e1' : '2px solid #334155',
+              boxShadow: isWhite ? '0 20px 40px -10px rgba(0,0,0,0.15)' : '0 25px 50px -12px rgba(0,0,0,0.8)',
+            }}
+          >
             {roleTitle ? (
-              <span className={cn(
-                'text-xs font-extrabold uppercase tracking-widest block mb-2 px-3 py-1 rounded-full w-fit border',
-                themeVariant === 'white' && 'bg-blue-50 text-blue-700 border-blue-200',
-                themeVariant === 'black' && 'bg-slate-900 text-cyan-400 border-slate-700',
-                themeVariant === 'default' && 'bg-blue-50 text-blue-900 border-blue-100'
-              )}>
+              <span 
+                className="text-xs font-extrabold uppercase tracking-widest inline-block mb-3 px-3 py-1 rounded-full border"
+                style={{
+                  backgroundColor: isWhite ? '#eff6ff' : 'rgba(56, 189, 248, 0.15)',
+                  color: isWhite ? '#1d4ed8' : '#38bdf8',
+                  borderColor: isWhite ? '#bfdbfe' : 'rgba(56, 189, 248, 0.35)',
+                }}
+              >
                 {roleTitle}
               </span>
             ) : null}
 
-            <p className={cn(
-              'text-3xl sm:text-4xl md:text-5xl leading-[1.1] font-light tracking-tight',
-              themeVariant === 'white' && 'text-slate-900',
-              themeVariant === 'black' && 'text-white',
-              themeVariant === 'default' && 'text-zinc-900'
-            )}>
-              {firstName}
-              <br />
-              <span className={cn(
-                'font-extrabold',
-                themeVariant === 'white' && 'text-blue-600',
-                themeVariant === 'black' && 'text-cyan-400',
-                themeVariant === 'default' && 'text-blue-900'
-              )}>
-                {lastName}
+            {/* Display full name with absolute high contrast */}
+            <div className="text-3xl sm:text-4xl md:text-5xl leading-[1.15] tracking-tight mb-2">
+              <span 
+                className="font-extrabold block"
+                style={{ color: isWhite ? '#0f172a' : '#ffffff' }}
+              >
+                {firstName}
               </span>
-            </p>
+              {lastName ? (
+                <span 
+                  className="font-black block mt-0.5"
+                  style={{ color: isWhite ? '#003492' : '#38bdf8' }}
+                >
+                  {lastName}
+                </span>
+              ) : null}
+            </div>
 
             {/* Details row — toggle + bio */}
-            <div className={cn(
-              'flex items-center gap-5 mt-6 pt-5 border-t',
-              themeVariant === 'white' && 'border-slate-100',
-              themeVariant === 'black' && 'border-slate-800',
-              themeVariant === 'default' && 'border-zinc-100'
-            )}>
+            <div 
+              className="flex items-center gap-5 mt-5 pt-5 border-t"
+              style={{
+                borderColor: isWhite ? '#e2e8f0' : '#1e293b'
+              }}
+            >
               {/* Circular CTA with hover pulse */}
               <motion.div
                 whileHover={{ scale: 1.08 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={onCtaClick}
-                className={cn(
-                  'group flex h-14 w-14 shrink-0 cursor-pointer items-center justify-center rounded-full border transition-colors duration-300 shadow-sm',
-                  themeVariant === 'white' && 'border-blue-600/30 bg-blue-50 hover:bg-blue-600',
-                  themeVariant === 'black' && 'border-slate-700 bg-slate-900 hover:bg-cyan-500',
-                  themeVariant === 'default' && 'border-blue-900/20 bg-blue-50/50 hover:bg-blue-900'
-                )}
+                className="group flex h-14 w-14 shrink-0 cursor-pointer items-center justify-center rounded-full border transition-all duration-300 shadow-md"
+                style={{
+                  backgroundColor: isWhite ? '#003492' : '#1e293b',
+                  borderColor: isWhite ? '#003492' : '#475569',
+                }}
               >
                 <ArrowRight
                   size={20}
-                  className={cn(
-                    'transition-all duration-300 group-hover:-rotate-45',
-                    themeVariant === 'white' && 'text-blue-600 group-hover:text-white',
-                    themeVariant === 'black' && 'text-cyan-400 group-hover:text-slate-950',
-                    themeVariant === 'default' && 'text-blue-900 group-hover:text-white'
-                  )}
+                  className="transition-all duration-300 group-hover:-rotate-45"
+                  style={{ color: '#ffffff' }}
                 />
               </motion.div>
 
-              {/* Bio copy — restrained body text */}
+              {/* Bio copy — guaranteed visible high-contrast typography */}
               <div>
-                <p className={cn(
-                  'text-sm sm:text-base leading-[1.6] font-medium',
-                  themeVariant === 'white' && 'text-slate-600',
-                  themeVariant === 'black' && 'text-slate-300',
-                  themeVariant === 'default' && 'text-zinc-600'
-                )}>
+                <p 
+                  className="text-sm sm:text-base leading-relaxed font-normal"
+                  style={{ color: isWhite ? '#1e293b' : '#f1f5f9' }}
+                >
                   {description}
                 </p>
               </div>
