@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import Footer from '@/components/Footer';
+import PracticalInfoBlock from '@/components/PracticalInfoBlock';
 
 export const metadata: Metadata = {
   title: "Formation Préparant à la Certification Réseaux Sociaux (RS7351) — O'TOP Formations",
@@ -196,6 +197,16 @@ export default function FormationReseauxSociauxPage() {
           </div>
         </div>
       </section>
+
+      {/* Bloc C5 — Informations Pratiques */}
+      <PracticalInfoBlock 
+        duration="21 heures de formation certifiante (dont 2 h d'accompagnement individuel avec un expert)"
+        format="E-learning tutoré, vidéos méthodologiques, ateliers d'application sur vos comptes et suivi personnalisé"
+        location="100% en ligne sur notre plateforme e-learning sécurisée"
+        certification="Gérer la communication digitale d'une entreprise via les réseaux sociaux (RS7351) — Évaluation facultative sur demande : dossier de mise en situation + 2 jurys professionnels"
+        funding="Financement possible OPCO / FAF / FIF-PL porté par notre partenaire certifié Qualiopi Eloq-One"
+        prerequisites="Accessible à tous les porteurs de projet, dirigeants et indépendants souhaitant professionnaliser leur communication."
+      />
 
       {/* CTA Final */}
       <section className="section" style={{ background: 'var(--blue-900)', color: 'white', textAlign: 'center' }}>

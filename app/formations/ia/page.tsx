@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import Footer from '@/components/Footer';
+import PracticalInfoBlock from '@/components/PracticalInfoBlock';
 
 export const metadata: Metadata = {
   title: "Formations Certifiantes IA — O'TOP Formations",
@@ -55,14 +56,14 @@ export default function FormationIAPage() {
               <span style={{ fontSize: '0.85rem', color: 'var(--gray-500)' }}>RS7344 (Entreprises) &amp; RS6776 (Indépendants)</span>
             </div>
             <div className="card" style={{ padding: '1.5rem' }}>
-              <div style={{ fontSize: '2.2rem', fontWeight: 900, color: 'var(--gold-dark)' }}>5h Incluses</div>
-              <p style={{ fontWeight: 600, color: 'var(--gray-700)', margin: '0.25rem 0' }}>Coaching 1-to-1</p>
-              <span style={{ fontSize: '0.85rem', color: 'var(--gray-500)' }}>Individuel ou groupe selon le parcours</span>
+              <div style={{ fontSize: '2.2rem', fontWeight: 900, color: 'var(--gold-dark)' }}>2h Incluses</div>
+              <p style={{ fontWeight: 600, color: 'var(--gray-700)', margin: '0.25rem 0' }}>Accompagnement Expert</p>
+              <span style={{ fontSize: '0.85rem', color: 'var(--gray-500)' }}>Individuel en visioconférence</span>
             </div>
             <div className="card" style={{ padding: '1.5rem' }}>
-              <div style={{ fontSize: '2.2rem', fontWeight: 900, color: 'var(--red-600)' }}>J+21</div>
-              <p style={{ fontWeight: 600, color: 'var(--gray-700)', margin: '0.25rem 0' }}>Validation Rapide</p>
-              <span style={{ fontSize: '0.85rem', color: 'var(--gray-500)' }}>Dossier &amp; soutenance devant jury</span>
+              <div style={{ fontSize: '2.2rem', fontWeight: 900, color: 'var(--red-600)' }}>21 h</div>
+              <p style={{ fontWeight: 600, color: 'var(--gray-700)', margin: '0.25rem 0' }}>Formation Complète</p>
+              <span style={{ fontSize: '0.85rem', color: 'var(--gray-500)' }}>Dont 2 h d&apos;accompagnement expert</span>
             </div>
             <div className="card" style={{ padding: '1.5rem' }}>
               <div style={{ fontSize: '2.2rem', fontWeight: 900, color: '#25D366' }}>100% Pratique</div>
@@ -94,7 +95,7 @@ export default function FormationIAPage() {
                 </div>
                 <h3 style={{ marginBottom: '1rem', color: 'var(--blue-900)' }}>Déployer l’IA dans votre entreprise, sans désorganiser vos équipes</h3>
                 <p style={{ marginBottom: '1.5rem', color: '#334155' }}>
-                  Pour les dirigeants de TPE/PME et leurs collaborateurs stratégiques souhaitant structurer et piloter un véritable projet d&apos;intégration IA rentable.
+                  Pour les dirigeants de TPE/PME et leurs collaborateurs stratégiques souhaitant structurer et piloter un véritable projet d&apos;intégration IA rentable (21 h dont 2 h d&apos;accompagnement expert).
                 </p>
 
                 <h4 style={{ fontSize: '1rem', marginBottom: '0.75rem', color: 'var(--blue-900)' }}>Programme en 5 Modules :</h4>
@@ -102,13 +103,13 @@ export default function FormationIAPage() {
                   <li style={{ display: 'flex', gap: '0.5rem', color: '#334155' }}><span style={{ color: 'var(--blue-600)', fontWeight: 700 }}>✓</span> <strong style={{ color: '#0f172a' }}>Module 1 :</strong> Identifier les opportunités d&apos;intégration &amp; méthode STEP</li>
                   <li style={{ display: 'flex', gap: '0.5rem', color: '#334155' }}><span style={{ color: 'var(--blue-600)', fontWeight: 700 }}>✓</span> <strong style={{ color: '#0f172a' }}>Module 2 :</strong> Plan d&apos;intégration, budget réaliste &amp; conformité AI Act</li>
                   <li style={{ display: 'flex', gap: '0.5rem', color: '#334155' }}><span style={{ color: 'var(--blue-600)', fontWeight: 700 }}>✓</span> <strong style={{ color: '#0f172a' }}>Module 3 :</strong> Implémentation opérationnelle (marketing, admin, prompts)</li>
-                  <li style={{ display: 'flex', gap: '0.5rem', color: '#334155' }}><span style={{ color: 'var(--blue-600)', fontWeight: 700 }}>✓</span> <strong style={{ color: '#0f172a' }}>Module 4 :</strong> Conduite du changement &amp; charte éthique interne</li>
+                  <li style={{ display: 'flex', gap: '0.5rem', color: '#334155' }}><span style={{ color: 'var(--blue-600)', fontWeight: 700 }}>✓</span> <strong style={{ color: '#0f172a' }}>Module 4 :</strong> Conduite du changement &amp; ateliers Méthode TOP® en option pour accompagner les équipes</li>
                   <li style={{ display: 'flex', gap: '0.5rem', color: '#334155' }}><span style={{ color: 'var(--blue-600)', fontWeight: 700 }}>✓</span> <strong style={{ color: '#0f172a' }}>Module 5 :</strong> Mesure de performance, KPI &amp; cycle d&apos;optimisation PDCA</li>
-                  <li style={{ display: 'flex', gap: '0.5rem', color: '#334155' }}><span style={{ color: 'var(--blue-600)', fontWeight: 700 }}>✓</span> <strong style={{ color: '#0f172a' }}>Coaching :</strong> 5h de coaching inclus (individuel ou petit groupe, selon le parcours)</li>
+                  <li style={{ display: 'flex', gap: '0.5rem', color: '#334155' }}><span style={{ color: 'var(--blue-600)', fontWeight: 700 }}>✓</span> <strong style={{ color: '#0f172a' }}>Accompagnement :</strong> 2 h d&apos;accompagnement individuel avec un expert incluses</li>
                 </ul>
 
                 <div style={{ background: 'var(--blue-50)', padding: '1rem', borderRadius: 'var(--radius-sm)', marginBottom: '1.5rem', fontSize: '0.9rem', color: 'var(--blue-900)' }}>
-                  <strong>🏆 Résultat concret :</strong> Vous repartez avec un plan d&apos;action chiffré, des outils connectés et votre certification RS7344 en poche.
+                  <strong>🏆 Résultat concret :</strong> Vous repartez avec un plan d&apos;action chiffré, des outils configurés et la préparation complète à la certification RS7344 (évaluation facultative sur demande).
                 </div>
               </div>
 
@@ -140,29 +141,36 @@ export default function FormationIAPage() {
                   Pour coachs, thérapeutes, consultants et indépendants souhaitant produire leur contenu en autonomie et déléguer les tâches chronophages à des assistants IA.
                 </p>
 
-                <h4 style={{ fontSize: '1rem', marginBottom: '0.75rem', color: 'var(--blue-900)' }}>Programme en 3 Modules Pratiques (16h vidéo + 5h coaching) :</h4>
+                <h4 style={{ fontSize: '1rem', marginBottom: '0.75rem', color: 'var(--blue-900)' }}>Programme en 3 Modules Pratiques (21 h dont 2 h d&apos;accompagnement expert) :</h4>
                 <ul style={{ listStyle: 'none', padding: 0, marginBottom: '2rem', display: 'flex', flexDirection: 'column', gap: '0.6rem', color: '#334155' }}>
                   <li style={{ display: 'flex', gap: '0.5rem', color: '#334155' }}><span style={{ color: 'var(--gold-dark)', fontWeight: 700 }}>✓</span> <strong style={{ color: '#0f172a' }}>Module 1 :</strong> Stratégie d&apos;implémentation &amp; choix des outils selon budget</li>
-                  <li style={{ display: 'flex', gap: '0.5rem', color: '#334155' }}><span style={{ color: 'var(--gold-dark)', fontWeight: 700 }}>✓</span> <strong style={{ color: '#0f172a' }}>Module 2 :</strong> Création de contenus rédactionnels, visuels &amp; GPTs sur mesure</li>
+                  <li style={{ display: 'flex', gap: '0.5rem', color: '#334155' }}><span style={{ color: 'var(--gold-dark)', fontWeight: 700 }}>✓</span> <strong style={{ color: '#0f172a' }}>Module 2 :</strong> Création de contenus rédactionnels, visuels &amp; assistants IA sur mesure</li>
                   <li style={{ display: 'flex', gap: '0.5rem', color: '#334155' }}><span style={{ color: 'var(--gold-dark)', fontWeight: 700 }}>✓</span> <strong style={{ color: '#0f172a' }}>Module 3 :</strong> Sécurité, conformité RGPD &amp; non-exposition des données</li>
-                  <li style={{ display: 'flex', gap: '0.5rem', color: '#334155' }}><span style={{ color: 'var(--gold-dark)', fontWeight: 700 }}>✓</span> <strong style={{ color: '#0f172a' }}>Coaching :</strong> 5h de coaching inclus (individuel ou petit groupe, selon le parcours)</li>
+                  <li style={{ display: 'flex', gap: '0.5rem', color: '#334155' }}><span style={{ color: 'var(--gold-dark)', fontWeight: 700 }}>✓</span> <strong style={{ color: '#0f172a' }}>Accompagnement :</strong> 2 h d&apos;accompagnement individuel avec un expert incluses</li>
                 </ul>
 
                 <div style={{ background: '#fdfbf7', padding: '1rem', borderRadius: 'var(--radius-sm)', marginBottom: '1.5rem', fontSize: '0.9rem', color: 'var(--gray-800)', border: '1px solid var(--gold-light)' }}>
-                  <strong>⚡ Gain direct :</strong> Produisez seul vos visuels et textes pros, sans graphiste ni rédacteur externe, en toute sécurité.
+                  <strong>⚡ Offre Spéciale : 600 €</strong> (au lieu de 1 490 €) jusqu&apos;au 31/10/2026. Possibilité de règlement en 3 × 200 €.
                 </div>
               </div>
 
               <div style={{ padding: '1.5rem 2rem', borderTop: '1px solid var(--gray-200)', background: 'var(--gray-50)', display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
                 <a 
-                  href="https://buy.stripe.com/5kQ4gB6MkfRSaKxaMhb7y01" 
+                  href="https://buy.stripe.com/bJebJ3gmUgVWdWJ5rXb7y0c" 
                   className="btn" 
-                  style={{ width: '100%', justifyContent: 'center', background: 'linear-gradient(135deg, #d97706, #059669)', color: 'white', fontWeight: 700 }}
+                  style={{ width: '100%', justifyContent: 'center', background: 'linear-gradient(135deg, #d97706, #059669)', color: 'white', fontWeight: 800 }}
                 >
-                  S&apos;inscrire / Régler en ligne (1 490 €) 💳
+                  Profiter de l&apos;offre Promo 600 € 💳
+                </a>
+                <a 
+                  href="https://buy.stripe.com/5kQ4gB6MkfRSaKxaMhb7y01" 
+                  className="btn btn-ghost" 
+                  style={{ width: '100%', justifyContent: 'center', fontSize: '0.85rem' }}
+                >
+                  Tarif standard 1 490 €
                 </a>
                 <Link href="/contact?subject=IA_Generative_RS6776" className="btn btn-secondary" style={{ width: '100%', justifyContent: 'center' }}>
-                  Étudier mes possibilités de financement →
+                  Étudier mes possibilités de financement OPCO / FAF →
                 </Link>
               </div>
             </div>
@@ -203,6 +211,16 @@ export default function FormationIAPage() {
           </div>
         </div>
       </section>
+
+      {/* Bloc C5 — Informations Pratiques */}
+      <PracticalInfoBlock 
+        duration="21 heures par parcours (dont 2 h d'accompagnement individuel avec un expert)"
+        format="E-learning tutoré à distance avec vidéos, fiches mémo et visioconférences individuelles"
+        location="100% en ligne sur notre plateforme sécurisée accessible 24/7"
+        certification="Préparation aux certifications France Compétences RS6776 ou RS7344 (évaluation facultative sur demande : dossier + jury)"
+        funding="Prise en charge intégrale possible OPCO / FAF / FIF-PL via notre partenaire porteur certifié Qualiopi Eloq-One"
+        prerequisites="Aucun prérequis informatique obligatoire. Accessible à tous dirigeants et indépendants."
+      />
 
       {/* CTA Final */}
       <section className="section" style={{ background: 'var(--blue-900)', color: 'white', textAlign: 'center' }}>

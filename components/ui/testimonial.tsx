@@ -97,11 +97,11 @@ export default function ClientFeedback({ limit }: { limit?: number }) {
                 <div className="space-y-3">
                   <div className="flex items-center justify-between">
                     <div className="flex text-amber-300 text-sm">★★★★★</div>
-                    <span className="text-[10px] font-bold uppercase tracking-wider text-white bg-blue-700/80 px-2 py-0.5 rounded">5h Coaching 1-to-1</span>
+                    <span className="text-[10px] font-bold uppercase tracking-wider text-white bg-blue-700/80 px-2 py-0.5 rounded">2h Accompagnement Expert</span>
                   </div>
                   <div className="text-xs space-y-1.5 text-blue-50">
                     <div><strong className="text-white">Défi :</strong> Structurer l&apos;usage de l&apos;IA pour l&apos;analyse de profils sans risquer de fuite de données confidentielles.</div>
-                    <div><strong className="text-white">Solution :</strong> 5h en tête-à-tête avec Renaud pour paramétrer un environnement sécurisé et des prompts d&apos;évaluation.</div>
+                    <div><strong className="text-white">Solution :</strong> 2h d&apos;accompagnement ciblé pour paramétrer un environnement sécurisé et des prompts d&apos;évaluation.</div>
                     <div><strong className="text-cyan-200 font-semibold">Résultat :</strong> Temps de synthèse divisé par 3, dossier de financement FIF-PL instruit via le partenaire porteur.</div>
                   </div>
                   <div className="flex items-center gap-3 pt-3 border-t border-blue-500/60">
@@ -158,20 +158,20 @@ export default function ClientFeedback({ limit }: { limit?: number }) {
                 <div className="space-y-3">
                   <div className="flex items-center justify-between">
                     <div className="flex text-amber-400 text-sm">★★★★★</div>
-                    <span className="text-[10px] font-bold uppercase tracking-wider text-amber-400 bg-amber-950/60 px-2 py-0.5 rounded border border-amber-800/40">Pôle TOP® (21h)</span>
+                    <span className="text-[10px] font-bold uppercase tracking-wider text-amber-400 bg-amber-950/60 px-2 py-0.5 rounded border border-amber-800/40">Méthode TOP® (FI-TOP)</span>
                   </div>
                   <div className="text-xs space-y-1.5 text-slate-300">
-                    <div><strong className="text-slate-200">Défi :</strong> Charge mentale élevée, tensions d&apos;équipe et sommeil altéré en période de clôture.</div>
-                    <div><strong className="text-slate-200">Outils TOP :</strong> Techniques de Respiration Relaxante (RR), RMP et gestion des pics de stress avant prise de parole.</div>
-                    <div><strong className="text-emerald-400 font-semibold">Résultat :</strong> Lucidité préservée dans les urgences, récupération flash efficace en journée.</div>
+                    <div><strong className="text-slate-200">Défi :</strong> Surcharge mentale chronique et pics de pression lors des comités de direction.</div>
+                    <div><strong className="text-slate-200">Pratique TOP® :</strong> Respiration synchronique et imagerie mentale guidée avec Mélissa avant chaque échéance critique.</div>
+                    <div><strong className="text-emerald-400 font-semibold">Résultat :</strong> Sérénité retrouvée, prise de recul immédiate et qualité de sommeil nettement améliorée.</div>
                   </div>
                   <div className="flex items-center gap-3 pt-3 border-t border-slate-800">
-                    <div className="w-10 h-10 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center font-bold text-blue-400 text-sm">
-                      CL
+                    <div className="w-10 h-10 rounded-full bg-amber-500/20 border border-amber-500/40 flex items-center justify-center font-bold text-amber-300 text-sm">
+                      AB
                     </div>
                     <div>
-                      <h3 className="font-bold text-white text-sm">Céline Laurent</h3>
-                      <p className="text-slate-400 text-[11px]">Responsable Ressources Humaines — Industrie &amp; Logistique</p>
+                      <h3 className="font-bold text-white text-sm">Aurélie B.</h3>
+                      <p className="text-slate-400 text-[11px]">Manager d&apos;Équipe &amp; Consultante — Var</p>
                     </div>
                   </div>
                 </div>
@@ -220,20 +220,20 @@ export default function ClientFeedback({ limit }: { limit?: number }) {
                 <div className="relative z-10 space-y-3">
                   <div className="flex items-center justify-between">
                     <div className="flex text-amber-400 text-sm">★★★★★</div>
-                    <span className="text-[10px] font-bold uppercase tracking-wider text-purple-400 bg-purple-950/60 px-2 py-0.5 rounded border border-purple-800/40">Accompagnement Sur-Mesure</span>
+                    <span className="text-[10px] font-bold uppercase tracking-wider text-amber-400 bg-amber-950/60 px-2 py-0.5 rounded border border-amber-800/40">Méthode TOP® (Performance Durable)</span>
                   </div>
                   <div className="text-xs space-y-1.5 text-slate-300">
-                    <div><strong className="text-slate-200">Défi :</strong> Former l&apos;encadrement à la transition digitale sans jargon informatique rébarbatif.</div>
-                    <div><strong className="text-slate-200">Approche :</strong> Pédagogie active, ateliers pratiques en direct et montage rapide du dossier OPCO.</div>
-                    <div><strong className="text-emerald-400 font-semibold">Résultat :</strong> Équipes autonomes, gain d&apos;efficacité immédiat et zéro friction technique.</div>
+                    <div><strong className="text-slate-200">Défi :</strong> Gestion des pics d&apos;activité opérationnelle et maintien de la lucidité dans les phases critiques.</div>
+                    <div><strong className="text-slate-200">Approche :</strong> Protocole d&apos;ancrage somato-cognitif et régulation émotionnelle adaptés aux missions intenses.</div>
+                    <div><strong className="text-emerald-400 font-semibold">Résultat :</strong> Concentration stabilisée, fatigue résiduelle minimisée et meilleure récupération post-effort.</div>
                   </div>
                   <div className="flex items-center gap-3 pt-3 border-t border-slate-800">
-                    <div className="w-10 h-10 rounded-full bg-gradient-to-br from-indigo-500 to-purple-700 flex items-center justify-center font-bold text-white text-sm">
-                      EK
+                    <div className="w-10 h-10 rounded-full bg-gradient-to-br from-amber-500 to-orange-700 flex items-center justify-center font-bold text-white text-sm">
+                      YD
                     </div>
                     <div>
-                      <h3 className="font-bold text-white text-sm">Élodie Klein</h3>
-                      <p className="text-slate-400 text-[11px]">Directrice Générale — Distribution Spécialisée</p>
+                      <h3 className="font-bold text-white text-sm">Yohan D.</h3>
+                      <p className="text-slate-400 text-[11px]">Chef de Projet Opérationnel &amp; Formateur</p>
                     </div>
                   </div>
                 </div>

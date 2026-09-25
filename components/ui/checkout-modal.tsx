@@ -38,6 +38,8 @@ export default function CheckoutModal({ isOpen, onClose, defaultPlan }: Checkout
   const [phone, setPhone] = useState('');
   const [professionalStatus, setProfessionalStatus] = useState('independant');
   const [companyName, setCompanyName] = useState('');
+  const [cgvAccepted, setCgvAccepted] = useState(false);
+  const [retractationAccepted, setRetractationAccepted] = useState(false);
   
   // Status states
   const [isProcessing, setIsProcessing] = useState(false);
@@ -102,6 +104,10 @@ export default function CheckoutModal({ isOpen, onClose, defaultPlan }: Checkout
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    if (!cgvAccepted || !retractationAccepted) {
+      alert("Veuillez accepter les Conditions Générales de Vente et la clause de rétractation pour continuer.");
+      return;
+    }
     setIsProcessing(true);
     
     // If Stripe payment chosen, redirect directly to the secure Stripe Checkout URL
@@ -408,11 +414,40 @@ export default function CheckoutModal({ isOpen, onClose, defaultPlan }: Checkout
               </div>
             </div>
 
+            {/* Cases CGV & Rétractation obligatoires */}
+            <div className="space-y-2.5 pt-1">
+              <label className="flex items-start gap-2.5 cursor-pointer text-xs text-slate-300">
+                <input 
+                  type="checkbox"
+                  required
+                  checked={cgvAccepted}
+                  onChange={(e) => setCgvAccepted(e.target.checked)}
+                  className="mt-0.5 rounded border-slate-700 bg-slate-950 text-blue-600 focus:ring-blue-500 w-4 h-4 cursor-pointer shrink-0"
+                />
+                <span>
+                  J&apos;ai lu et j&apos;accepte les <a href="/cgv" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:underline font-semibold">Conditions Générales de Vente (CGV)</a>. *
+                </span>
+              </label>
+
+              <label className="flex items-start gap-2.5 cursor-pointer text-xs text-slate-300">
+                <input 
+                  type="checkbox"
+                  required
+                  checked={retractationAccepted}
+                  onChange={(e) => setRetractationAccepted(e.target.checked)}
+                  className="mt-0.5 rounded border-slate-700 bg-slate-950 text-blue-600 focus:ring-blue-500 w-4 h-4 cursor-pointer shrink-0"
+                />
+                <span>
+                  Je reconnais bénéficier d&apos;un délai légal de rétractation de 14 jours (ou demande express d&apos;accès anticipé avec renoncement conformément aux CGV). *
+                </span>
+              </label>
+            </div>
+
             {/* Submit Button */}
             <button
               type="submit"
-              disabled={isProcessing}
-              className="w-full py-3.5 px-6 rounded-2xl bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-700 hover:from-blue-500 hover:to-indigo-500 text-white font-extrabold text-sm sm:text-base shadow-xl shadow-blue-900/30 transition-all flex items-center justify-center gap-2 cursor-pointer disabled:opacity-60"
+              disabled={isProcessing || !cgvAccepted || !retractationAccepted}
+              className="w-full py-3.5 px-6 rounded-2xl bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-700 hover:from-blue-500 hover:to-indigo-500 text-white font-extrabold text-sm sm:text-base shadow-xl shadow-blue-900/30 transition-all flex items-center justify-center gap-2 cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed"
             >
               {isProcessing ? (
                 <>

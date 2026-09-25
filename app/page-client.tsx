@@ -55,6 +55,30 @@ export default function HomePageClient() {
     setCheckoutOpen(true);
   };
 
+  // Compte à rebours promo RS6776 (31/10/2026)
+  const [timeLeft, setTimeLeft] = useState<{ days: number; hours: number; minutes: number; seconds: number }>({
+    days: 0,
+    hours: 0,
+    minutes: 0,
+    seconds: 0
+  });
+
+  React.useEffect(() => {
+    const targetDate = new Date('2026-10-31T23:59:59').getTime();
+    const updateCountdown = () => {
+      const now = new Date().getTime();
+      const diff = Math.max(0, targetDate - now);
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+      setTimeLeft({ days, hours, minutes, seconds });
+    };
+    updateCountdown();
+    const interval = setInterval(updateCountdown, 1000);
+    return () => clearInterval(interval);
+  }, []);
+
   // Hero Scroll Animation Ref
   const heroRef = React.useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
@@ -69,8 +93,40 @@ export default function HomePageClient() {
   return (
     <main className="min-h-screen bg-slate-950 text-slate-100 font-sans">
       
+      {/* ─── BANNIÈRE PROMOTIONNELLE C1 : OFFRE SPÉCIALE RS6776 À 600 € ──────── */}
+      <aside aria-label="Offre promotionnelle" className="bg-gradient-to-r from-cyan-950 via-blue-900 to-indigo-950 border-b border-cyan-500/30 text-white py-2.5 px-4 sticky top-0 z-50 shadow-lg backdrop-blur-md">
+        <div className="container mx-auto max-w-6xl flex flex-wrap items-center justify-between gap-3 text-xs sm:text-sm">
+          <div className="flex items-center gap-2 font-medium">
+            <span className="px-2 py-0.5 rounded-full bg-amber-500 text-slate-950 font-black text-[11px] uppercase tracking-wide animate-pulse">
+              Offre limitée
+            </span>
+            <span>
+              Formation IA Générative (RS6776) à <strong>600 €</strong> <span className="hidden md:inline">(au lieu de 1 490 €) ou 3 × 200 €</span>
+            </span>
+          </div>
+
+          <div className="flex items-center gap-4">
+            <div className="flex items-center gap-1.5 font-mono text-cyan-300 font-bold bg-slate-950/60 px-3 py-1 rounded-lg border border-cyan-500/20">
+              <Clock size={14} className="text-amber-400" />
+              <span>Fin le 31/10/2026 :</span>
+              <span className="text-white">{timeLeft.days}j</span>
+              <span>{String(timeLeft.hours).padStart(2, '0')}h</span>
+              <span>{String(timeLeft.minutes).padStart(2, '0')}m</span>
+              <span>{String(timeLeft.seconds).padStart(2, '0')}s</span>
+            </div>
+
+            <button
+              onClick={() => handleOpenCheckout('Offre Promo RS6776 (Durée limitée)', 600, '21h de formation certifiante en e-learning + 2h accompagnement expert individuel - Tarif promotionnel')}
+              className="px-3.5 py-1 rounded-lg bg-gradient-to-r from-amber-400 to-emerald-400 text-slate-950 font-bold text-xs hover:from-amber-300 hover:to-emerald-300 transition-all cursor-pointer whitespace-nowrap shadow"
+            >
+              En profiter →
+            </button>
+          </div>
+        </div>
+      </aside>
+
       {/* ─── 1. HERO ORIENTÉ RÉSULTAT AVEC 3 PREUVES COURTES ─────────────── */}
-      <section ref={heroRef} className="relative pt-20 pb-20 md:pt-28 md:pb-32 overflow-hidden bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-blue-900/35 via-slate-950 to-slate-950 border-b border-slate-850">
+      <section ref={heroRef} className="relative pt-12 pb-20 md:pt-16 md:pb-32 overflow-hidden bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-blue-900/35 via-slate-950 to-slate-950 border-b border-slate-850">
         
         {/* Glow ambient meshes */}
         <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-[850px] h-[450px] bg-blue-500/15 blur-[180px] pointer-events-none rounded-full" />
@@ -153,7 +209,7 @@ export default function HomePageClient() {
               </div>
               <div className="flex items-center gap-2.5 p-3 rounded-xl bg-slate-900/80 border border-slate-800">
                 <CheckCircle2 size={18} className="text-emerald-400 shrink-0" />
-                <span className="text-xs sm:text-sm text-slate-200 font-medium"><strong>Coaching individuel</strong> selon le parcours</span>
+                <span className="text-xs sm:text-sm text-slate-200 font-medium"><strong>2h d&apos;accompagnement expert</strong> incluses dans chaque formation</span>
               </div>
               <div className="flex items-center gap-2.5 p-3 rounded-xl bg-slate-900/80 border border-slate-800">
                 <CheckCircle2 size={18} className="text-amber-400 shrink-0" />
@@ -218,8 +274,8 @@ export default function HomePageClient() {
                   </p>
                 </div>
                 <div className="hidden sm:block text-right">
-                  <span className="text-emerald-400 font-extrabold text-lg">Pratique 1-to-1</span>
-                  <div className="text-slate-400 text-xs">5h coaching inclus</div>
+                  <span className="text-emerald-400 font-extrabold text-lg">Accompagnement</span>
+                  <div className="text-slate-400 text-xs">2h expert incluses</div>
                 </div>
               </div>
             </div>
@@ -1224,36 +1280,68 @@ export default function HomePageClient() {
       </section>
 
 
-      {/* ─── 9. PASSERELLE VERS LE PÔLE MÉTHODE TOP® & GESTION DU STRESS ──────── */}
-      <section className="py-14 px-4 bg-gradient-to-r from-amber-950/40 via-slate-900 to-slate-950 border-b border-amber-500/20">
-        <div className="container mx-auto max-w-6xl">
-          <div className="p-8 sm:p-10 rounded-3xl bg-slate-900/90 border border-amber-500/30 shadow-2xl relative overflow-hidden flex flex-col lg:flex-row items-center justify-between gap-8">
+      {/* ─── 9. BLOC C2 & C3 : POURQUOI LA MÉTHODE TOP® DANS UN PROJET IA ? & OFFRE IA & HUMAIN ──────── */}
+      <section className="py-16 px-4 bg-gradient-to-r from-blue-950/60 via-slate-900 to-amber-950/40 border-b border-slate-800">
+        <div className="container mx-auto max-w-6xl space-y-8">
+          
+          {/* Bloc C2 : Pourquoi la Méthode TOP dans un projet IA ? */}
+          <div className="p-8 sm:p-10 rounded-3xl bg-slate-900/90 border border-blue-500/30 shadow-2xl relative overflow-hidden">
+            <div className="max-w-3xl">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/30 text-blue-300 text-xs font-bold uppercase tracking-wider mb-4">
+                <span>⚡</span> La Dimension Humaine de la Transition IA
+              </div>
+              <h2 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
+                Pourquoi la Méthode TOP® dans un projet IA ?
+              </h2>
+              <p className="mt-4 text-slate-300 text-sm sm:text-base leading-relaxed">
+                L&apos;intégration de l&apos;Intelligence Artificielle en entreprise n&apos;est pas seulement un défi technique, c&apos;est avant tout une <strong>conduite du changement humain</strong>. L&apos;irruption de nouveaux outils bouscule les repères, suscite des craintes de déclassement et engendre une charge cognitive accrue.
+              </p>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-6">
+                <div className="p-4 rounded-xl bg-slate-950/60 border border-slate-800">
+                  <div className="font-bold text-amber-300 text-sm mb-1">Réguler le stress du changement</div>
+                  <div className="text-xs text-slate-400">Désamorcer les résistances et peurs liées à l&apos;automatisation.</div>
+                </div>
+                <div className="p-4 rounded-xl bg-slate-950/60 border border-slate-800">
+                  <div className="font-bold text-cyan-300 text-sm mb-1">Préserver la lucidité décisionnelle</div>
+                  <div className="text-xs text-slate-400">Techniques flash de récupération mentale sous surcharge informationnelle.</div>
+                </div>
+                <div className="p-4 rounded-xl bg-slate-950/60 border border-slate-800">
+                  <div className="font-bold text-emerald-300 text-sm mb-1">Engagement &amp; adhésion durable</div>
+                  <div className="text-xs text-slate-400">Concilier performance technologique et bien-être des collaborateurs.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Bloc C3 : Offre Entreprise IA & Humain */}
+          <div className="p-8 sm:p-10 rounded-3xl bg-slate-900/90 border border-amber-500/30 shadow-2xl flex flex-col lg:flex-row items-center justify-between gap-8">
             <div className="max-w-2xl">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-300 text-xs font-bold uppercase tracking-wider mb-3">
-                <span>🧘</span> Univers Complémentaire : Gestion du Stress &amp; Prévention des RPS
+                <span>🏢</span> Offre Entreprise Exclusive
               </div>
               <h3 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
-                La Méthode TOP® : Endurance Cognitive &amp; Régulation Émotionnelle
+                Offre « IA &amp; Humain » — Sur Devis
               </h3>
               <p className="mt-3 text-slate-300 text-sm sm:text-base leading-relaxed">
-                Issue des armées et du sport de haut niveau (méthode Édith Perrault-Pierre), la Méthode TOP® permet aux dirigeants, soignants et forces de l&apos;ordre d&apos;optimiser leur sommeil, désamorcer l&apos;épuisement et décider avec lucidité sous pression.
+                Le parcours hybride sur mesure associant la formation pratique aux outils IA (gains de productivité, sécurisation des flux) et les ateliers Méthode TOP® (prévention des RPS, régulation de la charge mentale et adhésion des équipes).
               </p>
             </div>
             <div className="flex flex-col sm:flex-row gap-3 w-full lg:w-auto shrink-0">
               <Link
-                href="/methode"
-                className="px-6 py-3.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-sm text-center transition-all shadow-lg shadow-amber-500/20 whitespace-nowrap"
+                href="/contact?subject=Offre_IA_et_Humain"
+                className="px-6 py-3.5 rounded-xl bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-slate-950 font-bold text-sm text-center transition-all shadow-lg shadow-amber-500/20 whitespace-nowrap"
               >
-                Découvrir les 9 Piliers TOP →
+                Demander un devis sur mesure →
               </Link>
               <Link
-                href="/respirez"
+                href="/methode"
                 className="px-6 py-3.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 font-medium text-sm text-center border border-slate-700 transition-all whitespace-nowrap"
               >
-                Toutes nos formations bien-être
+                Découvrir la Méthode TOP®
               </Link>
             </div>
           </div>
+
         </div>
       </section>
 
@@ -1281,23 +1369,23 @@ export default function HomePageClient() {
             </div>
 
             <div className="p-6 rounded-2xl bg-slate-900 border border-slate-800">
-              <h3 className="font-bold text-white text-base mb-2">Comment s&apos;organisent les 5 heures de coaching individuel ?</h3>
+              <h3 className="font-bold text-white text-base mb-2">Comment s&apos;organisent les 2 heures d&apos;accompagnement incluses ?</h3>
               <p className="text-sm text-slate-400 leading-relaxed">
-                Vous planifiez vos sessions de coaching 1-to-1 en visioconférence selon vos disponibilités. Nous travaillons directement sur vos propres documents, vos processus d&apos;entreprise et vos outils pour débloquer chaque point d&apos;automatisation.
+                Chaque formation inclut 2 heures d&apos;accompagnement individuel avec un expert en visioconférence. Vous réservez vos créneaux selon votre rythme pour poser vos questions, faire le point sur vos projets et lever tous vos blocages. Des forfaits complémentaires (1h, 5h, 10h) sont également disponibles si vous souhaitez un suivi sur mesure.
               </p>
             </div>
 
             <div className="p-6 rounded-2xl bg-slate-900 border border-slate-800">
               <h3 className="font-bold text-white text-base mb-2">Comment fonctionne le financement via votre partenaire Eloq-One ?</h3>
               <p className="text-sm text-slate-400 leading-relaxed">
-                SAS Ô&apos;TOP Formation est en cours de déclaration d&apos;activité (DREETS PACA). Les conventions, programmes et facturations sont instruits et portés par notre organisme partenaire certifié Qualiopi Eloq-One auprès de votre OPCO, FAF ou .
+                Les formations financées par un OPCO ou un FAF sont portées administrativement par notre partenaire <strong>Eloq-One</strong>, organisme certifié Qualiopi. Nous vous accompagnons pour monter votre dossier complet de prise en charge avant le démarrage de votre formation.
               </p>
             </div>
 
             <div className="p-6 rounded-2xl bg-slate-900 border border-slate-800">
-              <h3 className="font-bold text-white text-base mb-2">Quelle est la valeur des certifications obtenues ?</h3>
+              <h3 className="font-bold text-white text-base mb-2">Comment se déroule la certification professionnelle ?</h3>
               <p className="text-sm text-slate-400 leading-relaxed">
-                Les certifications (RS6776, RS7344, préparation RS7351) sont enregistrées au Répertoire Spécifique de France Compétences. Elles attestent officiellement de vos compétences opérationnelles auprès de vos clients, banques et partenaires.
+                Nos formations préparent aux certifications enregistrées au Répertoire Spécifique de France Compétences (RS6776, RS7344, RS7351). L&apos;évaluation certificative est facultative et proposée sur demande : elle comprend la constitution d&apos;un dossier de pratique professionnelle et un passage devant un jury d&apos;évaluation officiel.
               </p>
             </div>
 

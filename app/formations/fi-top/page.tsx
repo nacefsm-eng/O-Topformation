@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Footer from '@/components/Footer';
 import CongratulationsModal from '@/components/ui/congratulations-modal';
 import NinePillarsSection from '@/components/sections/NinePillarsSection';
+import PracticalInfoBlock from '@/components/PracticalInfoBlock';
 import { 
   Brain, 
   Clock, 
@@ -80,7 +81,7 @@ export default function FiTopPage() {
             {/* Top Tag */}
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/10 border border-amber-400/30 text-amber-300 text-xs sm:text-sm font-bold uppercase tracking-wider mb-6">
               <Brain size={16} />
-              Cursus Gestion du Stress & Performance &amp; Prérequis pour Intégrer le Praticien TOP
+              FORMATION PROFESSIONNELLE • MÉTHODE TOP® POUR COLLABORATEURS ET MANAGERS
             </div>
 
             <h1 className="text-3xl sm:text-5xl md:text-6xl font-black text-white tracking-tight leading-tight mb-6">
@@ -270,6 +271,15 @@ export default function FiTopPage() {
         </div>
       </section>
 
+      {/* Bloc C5 — Informations Pratiques FI-TOP */}
+      <PracticalInfoBlock 
+        duration="21 heures (3 journées intensives de 7h en présentiel ou distanciel synchrone)"
+        format="Présentiel à Ollioules ou distanciel synchrone (visioconférence interactive avec Mélissa Jennadi)"
+        location="Espace Gamma 1, 139 Chemin des 2 Frères, 83190 Ollioules (Var) ou en ligne"
+        certification="Attestation de fin de formation officielle FI TOP® permettant l'accès direct au cursus Praticien TOP"
+        funding="Financement possible OPCO / FAF / FIF-PL porté par notre partenaire certifié Qualiopi Eloq-One"
+        prerequisites="Aucun prérequis médical ou sportif. Formation accessible à tout collaborateur, manager et indépendant."
+      />
 
       {/* ── MODALITÉS D'ÉVALUATIONS & CERTIFICATION ── */}
       <section className="py-20 px-4 border-b border-slate-850">
