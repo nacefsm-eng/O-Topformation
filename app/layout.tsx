@@ -77,6 +77,85 @@ const organizationSchema = {
   ],
 };
 
+const coursesSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  itemListElement: [
+    {
+      '@type': 'Course',
+      position: 1,
+      name: 'Formation IA Générative & Automatisation (RS6776)',
+      description: 'Formation certifiante de 21h en intelligence artificielle générative et prompt engineering avec accompagnement expert 1-to-1.',
+      provider: {
+        '@type': 'EducationalOrganization',
+        name: "Ô'TOP Formation",
+        sameAs: 'https://o-topformation.vercel.app',
+      },
+      offers: {
+        '@type': 'Offer',
+        price: '1490.00',
+        priceCurrency: 'EUR',
+        category: 'Formation professionnelle continue',
+        availability: 'https://schema.org/InStock',
+      },
+      hasCourseInstance: {
+        '@type': 'CourseInstance',
+        courseMode: ['Online', 'Blended'],
+        duration: 'PT21H',
+        inLanguage: 'fr',
+      },
+    },
+    {
+      '@type': 'Course',
+      position: 2,
+      name: 'Développer son Activité grâce à l’IA & aux Workflows (RS7344)',
+      description: '21h de formation certifiante pour dirigeants et collaborateurs pour automatiser les flux d’entreprise avec n8n/Make et sécuriser les données.',
+      provider: {
+        '@type': 'EducationalOrganization',
+        name: "Ô'TOP Formation",
+        sameAs: 'https://o-topformation.vercel.app',
+      },
+      offers: {
+        '@type': 'Offer',
+        price: '1490.00',
+        priceCurrency: 'EUR',
+        category: 'Formation professionnelle continue',
+        availability: 'https://schema.org/InStock',
+      },
+      hasCourseInstance: {
+        '@type': 'CourseInstance',
+        courseMode: ['Online', 'Blended'],
+        duration: 'PT21H',
+        inLanguage: 'fr',
+      },
+    },
+    {
+      '@type': 'Course',
+      position: 3,
+      name: 'Formation Initiale FI-TOP® — Techniques d’Optimisation du Potentiel',
+      description: '21h de formation certifiante aux Techniques d’Optimisation du Potentiel pour réguler le stress, dynamiser son énergie et préserver sa lucidité.',
+      provider: {
+        '@type': 'EducationalOrganization',
+        name: "Ô'TOP Formation",
+        sameAs: 'https://o-topformation.vercel.app',
+      },
+      offers: {
+        '@type': 'Offer',
+        price: '890.00',
+        priceCurrency: 'EUR',
+        category: 'Formation professionnelle continue',
+        availability: 'https://schema.org/InStock',
+      },
+      hasCourseInstance: {
+        '@type': 'CourseInstance',
+        courseMode: ['Online', 'Onsite'],
+        duration: 'PT21H',
+        inLanguage: 'fr',
+      },
+    },
+  ],
+};
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="fr" className={inter.variable} data-theme="sombre">
@@ -85,6 +164,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+        />
+        {/* Courses List Schema.org for Google Rich Results */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(coursesSchema) }}
         />
         {/* Inline Theme Detection Script to avoid flash */}
         <script

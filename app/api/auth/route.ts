@@ -5,7 +5,15 @@ export async function POST(req: NextRequest) {
   try {
     const { password } = await req.json();
 
-    const adminPassword = process.env.ADMIN_PASSWORD || 'OtopAdmin2025!';
+    const adminPassword = process.env.ADMIN_PASSWORD;
+
+    if (!adminPassword) {
+      console.error('CRITICAL: ADMIN_PASSWORD environment variable is not set!');
+      return NextResponse.json(
+        { success: false, error: 'Configuration serveur requise : ADMIN_PASSWORD non défini.' },
+        { status: 503 }
+      );
+    }
 
     if (password === adminPassword) {
       // Créer un token simple (en production, utiliser JWT)
