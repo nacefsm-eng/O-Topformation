@@ -475,14 +475,23 @@ export default function HomePageClient() {
                 </div>
 
                 <div className="mt-auto space-y-2.5 pt-4 border-t border-slate-800/80">
-                  <button
-                    type="button"
-                    onClick={() => handleOpenCheckout('Formation IA Générative RS6776', 1490, '21h de formation certifiante avec quizz, cas pratiques et coaching individuel 1-to-1 inclus')}
-                    className="w-full py-3 px-4 rounded-xl bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-500 hover:to-cyan-500 text-white font-bold text-xs shadow-lg shadow-cyan-600/25 transition-all flex items-center justify-center gap-2 cursor-pointer"
-                  >
-                    <CreditCard size={15} />
-                    <span>S&apos;inscrire / Régler en ligne 💳</span>
-                  </button>
+                  <div className="grid grid-cols-2 gap-2">
+                    <button
+                      type="button"
+                      onClick={() => handleOpenCheckout('Formation IA Générative RS6776 (Standard)', 1490, '21h de formation certifiante avec quizz, cas pratiques et coaching individuel 1-to-1 inclus')}
+                      className="py-2.5 px-2 rounded-xl bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-500 hover:to-cyan-500 text-white font-bold text-xs shadow-md transition-all flex items-center justify-center gap-1 cursor-pointer"
+                    >
+                      <CreditCard size={13} />
+                      <span>Régler 1 490 €</span>
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => handleOpenCheckout('Offre Spéciale IA RS6776 (Durée limitée)', 610, '21h de formation certifiante en e-learning + 2h accompagnement expert individuel - Tarif promotionnel')}
+                      className="py-2.5 px-2 rounded-xl bg-gradient-to-r from-amber-500 to-emerald-500 hover:from-amber-400 hover:to-emerald-400 text-slate-950 font-black text-xs shadow-md transition-all flex items-center justify-center gap-1 cursor-pointer"
+                    >
+                      <span>⏱ Promo 610 €</span>
+                    </button>
+                  </div>
                   <a
                     href="#contact"
                     className="w-full block py-2.5 text-center rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 font-semibold text-xs transition-all"
@@ -878,7 +887,132 @@ export default function HomePageClient() {
             </table>
           </div>
 
-          <p className="mt-4 text-center text-xs text-slate-400">
+          {/* ─── PACKS COUPLAGE & MODULES D'ACCOMPAGNEMENT EXPERT ─── */}
+          <div className="mt-16 pt-12 border-t border-slate-800">
+            <div className="text-center max-w-2xl mx-auto mb-10">
+              <span className="px-3.5 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/30 text-indigo-300 text-xs font-bold uppercase tracking-wider">
+                Offres de Couplage &amp; Accompagnement
+              </span>
+              <h3 className="text-2xl sm:text-3xl font-extrabold text-white mt-2">
+                Packs Duo, Trio &amp; Formules Entreprise
+              </h3>
+              <p className="text-xs sm:text-sm text-slate-400 mt-1">
+                Tarifs officiels dégressifs avec accompagnement expert et certification.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+              {/* Pack Duo */}
+              <div className="p-6 rounded-3xl bg-slate-900 border border-slate-800 flex flex-col justify-between hover:border-blue-500/50 transition-all">
+                <div>
+                  <span className="px-2.5 py-1 rounded-full bg-blue-500/10 text-blue-400 text-xs font-bold">Pack Économique</span>
+                  <h4 className="text-xl font-bold text-white mt-2">Pack Duo</h4>
+                  <p className="text-xs text-slate-400 mt-1">2 formations certifiantes au choix parmi RS6776, RS7344 ou RS7351.</p>
+                  <div className="my-4">
+                    <span className="text-xs text-slate-500 line-through">2 980 € TTC</span>
+                    <div className="text-3xl font-black text-white">2 490 € <span className="text-xs text-emerald-400 font-normal">(-490 €)</span></div>
+                  </div>
+                  <ul className="text-xs text-slate-300 space-y-2 mb-6">
+                    <li className="flex items-center gap-2">✓ 2 Cursus complets (42h au total)</li>
+                    <li className="flex items-center gap-2">✓ 2 Certifications officielles préparées</li>
+                    <li className="flex items-center gap-2">✓ Accompagnement expert dédié</li>
+                  </ul>
+                </div>
+                <button
+                  type="button"
+                  onClick={() => handleOpenCheckout('Pack Duo — 2 Formations au Choix', 2490, 'Cursus combiné 2 formations certifiantes au choix avec accompagnement expert')}
+                  className="w-full py-3 px-4 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs shadow-lg transition-all cursor-pointer flex items-center justify-center gap-2"
+                >
+                  <CreditCard size={15} />
+                  <span>Réserver le Pack Duo (2 490 €)</span>
+                </button>
+              </div>
+
+              {/* Pack Trio */}
+              <div className="p-6 rounded-3xl bg-slate-900 border-2 border-indigo-500/50 flex flex-col justify-between shadow-xl relative overflow-hidden">
+                <div className="absolute top-0 right-0 bg-indigo-600 text-white text-[10px] font-extrabold uppercase px-3 py-1 rounded-bl-xl">
+                  Recommandé
+                </div>
+                <div>
+                  <span className="px-2.5 py-1 rounded-full bg-indigo-500/20 text-indigo-300 text-xs font-bold">Pack Intégral</span>
+                  <h4 className="text-xl font-bold text-white mt-2">Pack Trio</h4>
+                  <p className="text-xs text-slate-400 mt-1">Les 3 formations : IA Générative + Workflows + Réseaux Sociaux &amp; Prospection.</p>
+                  <div className="my-4">
+                    <span className="text-xs text-slate-500 line-through">4 470 € TTC</span>
+                    <div className="text-3xl font-black text-emerald-400">3 390 € <span className="text-xs text-emerald-400 font-normal">(-1 080 €)</span></div>
+                  </div>
+                  <ul className="text-xs text-slate-300 space-y-2 mb-6">
+                    <li className="flex items-center gap-2">✓ 3 Cursus complets (63h au total)</li>
+                    <li className="flex items-center gap-2">✓ 3 Certifications France Compétences</li>
+                    <li className="flex items-center gap-2">✓ Maîtrise complète IA + Digital</li>
+                  </ul>
+                </div>
+                <button
+                  type="button"
+                  onClick={() => handleOpenCheckout('Pack Trio — Les 3 Formations Complètes', 3390, 'Cursus intégral 3 formations certifiantes (RS6776 + RS7344 + RS7351)')}
+                  className="w-full py-3 px-4 rounded-xl bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white font-bold text-xs shadow-lg transition-all cursor-pointer flex items-center justify-center gap-2"
+                >
+                  <CreditCard size={15} />
+                  <span>Réserver le Pack Trio (3 390 €)</span>
+                </button>
+              </div>
+
+              {/* Formule Entreprise OPCO */}
+              <div className="p-6 rounded-3xl bg-slate-900 border border-slate-800 flex flex-col justify-between hover:border-amber-500/50 transition-all">
+                <div>
+                  <span className="px-2.5 py-1 rounded-full bg-amber-500/10 text-amber-400 text-xs font-bold">B2B &amp; Salariés</span>
+                  <h4 className="text-xl font-bold text-white mt-2">Formule Entreprise</h4>
+                  <p className="text-xs text-slate-400 mt-1">40h au total par formation (e-learning + accompagnement d&apos;équipe expert).</p>
+                  <div className="my-4">
+                    <div className="text-3xl font-black text-white">3 200 € <span className="text-xs text-slate-400 font-normal">TTC</span></div>
+                    <span className="text-xs text-emerald-400">Prise en charge OPCO intégrale possible</span>
+                  </div>
+                  <ul className="text-xs text-slate-300 space-y-2 mb-6">
+                    <li className="flex items-center gap-2">✓ 40h de parcours adapté aux équipes</li>
+                    <li className="flex items-center gap-2">✓ Plan de développement des compétences</li>
+                    <li className="flex items-center gap-2">✓ Montage dossier via Eloqone (Qualiopi)</li>
+                  </ul>
+                </div>
+                <button
+                  type="button"
+                  onClick={() => handleOpenCheckout('Formule Entreprise (40h OPCO)', 3200, '40h au total (e-learning + accompagnement d’équipe) - Éligible financement OPCO')}
+                  className="w-full py-3 px-4 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-700 text-white font-bold text-xs transition-all cursor-pointer flex items-center justify-center gap-2"
+                >
+                  <ShieldCheck size={15} className="text-amber-400" />
+                  <span>Dossier OPCO Entreprise (3 200 €)</span>
+                </button>
+              </div>
+            </div>
+
+            {/* Coaching Additionnel */}
+            <div className="p-6 rounded-2xl bg-slate-950 border border-slate-800/80 flex flex-col sm:flex-row items-center justify-between gap-4">
+              <div>
+                <h5 className="text-sm font-bold text-white">Besoin d&apos;heures de coaching individuel en plus ?</h5>
+                <p className="text-xs text-slate-400 mt-0.5">
+                  Heure supplémentaire : <strong>120 €/h</strong> • Forfait 5h : <strong>550 €</strong> (110 €/h) • Forfait 10h : <strong>1 000 €</strong> (100 €/h)
+                </p>
+              </div>
+              <div className="flex gap-2 shrink-0">
+                <button
+                  type="button"
+                  onClick={() => handleOpenCheckout('Coaching Expert (Forfait 5h)', 550, '5h d’accompagnement individuel personnalisé avec un expert')}
+                  className="px-3.5 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-semibold"
+                >
+                  Forfait 5h (550 €)
+                </button>
+                <button
+                  type="button"
+                  onClick={() => handleOpenCheckout('Coaching Expert (Forfait 10h)', 1000, '10h d’accompagnement individuel personnalisé avec un expert')}
+                  className="px-3.5 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-semibold"
+                >
+                  Forfait 10h (1 000 €)
+                </button>
+              </div>
+            </div>
+
+          </div>
+
+          <p className="mt-8 text-center text-xs text-slate-400">
             * Note légale : Prise en charge étudiée selon votre statut par le biais de notre organisme partenaire porteur certifié Qualiopi.
           </p>
 

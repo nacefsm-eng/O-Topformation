@@ -46,17 +46,45 @@ export default function CheckoutModal({ isOpen, onClose, defaultPlan }: Checkout
 
   if (!isOpen) return null;
 
-  // Stripe Payment Links Mapping
+  // Stripe Payment Links Mapping complet selon la grille tarifaire officielle
   const STRIPE_LINKS: Record<string, string> = {
-    'ia-rs6776': 'https://buy.stripe.com/5kQ4gB6MkfRSaKxaMhb7y01',
-    'ia-rs7344': 'https://buy.stripe.com/3cI4gBfiQ9tubOB8E9b7y03',
-    'ia-rs7351': 'https://buy.stripe.com/6oUaEZb2A0WY5qd6w1b7y04',
-    'top-fitop': 'https://buy.stripe.com/00w3cxc6E7lm7yldYtb7y02',
+    'ia-rs6776': 'https://buy.stripe.com/5kQ4gB6MkfRSaKxaMhb7y01', // 1 490 €
+    'ia-rs6776-promo': 'https://buy.stripe.com/28EeVf2w49tuaKx2fLb7y05', // 610 € (Offre limitée)
+    'ia-rs7344': 'https://buy.stripe.com/3cI4gBfiQ9tubOB8E9b7y03', // 1 490 €
+    'ia-rs7351': 'https://buy.stripe.com/6oUaEZb2A0WY5qd6w1b7y04', // 1 490 €
+    'pack-duo': 'https://buy.stripe.com/14AaEZ7QodJK7yl07Db7y06', // 2 490 €
+    'pack-trio': 'https://buy.stripe.com/3cI6oJ5Ig8pq19X2fLb7y07', // 3 390 €
+    'entreprise-opco': 'https://buy.stripe.com/eVqdRb3A8gVW5qddYtb7y08', // 3 200 €
+    'coaching-5h': 'https://buy.stripe.com/aFa00lb2A5decSF6w1b7y09', // 550 €
+    'coaching-10h': 'https://buy.stripe.com/9B6cN7gmUcFGcSFdYtb7y0a', // 1 000 €
+    'coaching-1h': 'https://buy.stripe.com/9B6bJ3fiQ0WY8Cpf2xb7y0b', // 120 €
+    'top-fitop': 'https://buy.stripe.com/00w3cxc6E7lm7yldYtb7y02', // 890 €
     'default': 'https://buy.stripe.com/cNieVf9YwgVWf0N7A5b7y00',
   };
 
   const getStripeUrl = () => {
     const offerLower = (selectedOffer || '').toLowerCase();
+    if (amount === 610 || offerLower.includes('610') || offerLower.includes('spéciale') || offerLower.includes('découverte')) {
+      return STRIPE_LINKS['ia-rs6776-promo'];
+    }
+    if (amount === 2490 || offerLower.includes('duo')) {
+      return STRIPE_LINKS['pack-duo'];
+    }
+    if (amount === 3390 || offerLower.includes('trio')) {
+      return STRIPE_LINKS['pack-trio'];
+    }
+    if (amount === 3200 || offerLower.includes('entreprise')) {
+      return STRIPE_LINKS['entreprise-opco'];
+    }
+    if (amount === 550 || offerLower.includes('5h')) {
+      return STRIPE_LINKS['coaching-5h'];
+    }
+    if (amount === 1000 || offerLower.includes('10h')) {
+      return STRIPE_LINKS['coaching-10h'];
+    }
+    if (amount === 120 || offerLower.includes('heure')) {
+      return STRIPE_LINKS['coaching-1h'];
+    }
     if (offerLower.includes('6776') || (offerLower.includes('ia') && amount === 1490 && !offerLower.includes('7344') && !offerLower.includes('7351') && !offerLower.includes('réseaux'))) {
       return STRIPE_LINKS['ia-rs6776'];
     }
