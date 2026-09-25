@@ -193,7 +193,7 @@ export default function HomePageClient() {
               transition={{ duration: 0.7, delay: 0.2 }}
               className="text-base sm:text-xl text-slate-300 max-w-3xl mx-auto mb-8 leading-relaxed font-normal"
             >
-              Des parcours pratiques pour indépendants, dirigeants et équipes, avec accompagnement humain sur vos outils et vos cas réels.
+              Des parcours pratiques pour indépendants, dirigeants et équipes, avec un accompagnement humain par nos experts.
             </motion.p>
 
             {/* 3 Preuves Courtes Immédiates */}
@@ -205,11 +205,11 @@ export default function HomePageClient() {
             >
               <div className="flex items-center gap-2.5 p-3 rounded-xl bg-slate-900/80 border border-slate-800">
                 <CheckCircle2 size={18} className="text-blue-400 shrink-0" />
-                <span className="text-xs sm:text-sm text-slate-200 font-medium">Certifications préparées (<strong>RS enregistrées</strong>)</span>
+                <span className="text-xs sm:text-sm text-slate-200 font-medium">Formations préparant à <strong>3 certifications RS</strong></span>
               </div>
               <div className="flex items-center gap-2.5 p-3 rounded-xl bg-slate-900/80 border border-slate-800">
                 <CheckCircle2 size={18} className="text-emerald-400 shrink-0" />
-                <span className="text-xs sm:text-sm text-slate-200 font-medium"><strong>2h d&apos;accompagnement expert</strong> incluses dans chaque formation</span>
+                <span className="text-xs sm:text-sm text-slate-200 font-medium"><strong>2 h d&apos;accompagnement avec un expert</strong> incluses</span>
               </div>
               <div className="flex items-center gap-2.5 p-3 rounded-xl bg-slate-900/80 border border-slate-800">
                 <CheckCircle2 size={18} className="text-amber-400 shrink-0" />
@@ -267,15 +267,15 @@ export default function HomePageClient() {
                     ⚡ Vos cas d&apos;usage réels
                   </div>
                   <h2 className="text-xl sm:text-2xl font-bold text-white">
-                    Assistants sur-mesure &amp; Workflows automatisés
+                    Assistants IA sur mesure
                   </h2>
                   <p className="text-xs sm:text-sm text-slate-300 max-w-md mt-1">
-                    ChatGPT, Claude, n8n, Make : automatisez sans coder et sécurisez vos données professionnelles.
+                    ChatGPT, Claude : créez vos assistants et sécurisez vos données professionnelles.
                   </p>
                 </div>
                 <div className="hidden sm:block text-right">
-                  <span className="text-emerald-400 font-extrabold text-lg">Accompagnement</span>
-                  <div className="text-slate-400 text-xs">2h expert incluses</div>
+                  <span className="text-emerald-400 font-extrabold text-lg">Accompagnement individuel</span>
+                  <div className="text-slate-400 text-xs">2 h incluses</div>
                 </div>
               </div>
             </div>
@@ -291,8 +291,8 @@ export default function HomePageClient() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent" />
                 <div className="absolute bottom-4 left-4 right-4">
-                  <span className="text-xs font-bold text-pink-400 uppercase tracking-wider">Prépa RS7351 • 11h+ Vidéos</span>
-                  <h3 className="text-sm sm:text-base font-bold text-white mt-0.5">Réseaux Sociaux &amp; Acquisition</h3>
+                  <span className="text-xs font-bold text-pink-400 uppercase tracking-wider">RS7351 • 21 h dont 2 h d&apos;accompagnement</span>
+                  <h3 className="text-sm sm:text-base font-bold text-white mt-0.5">Communication digitale &amp; réseaux sociaux</h3>
                   <p className="text-xs text-slate-300">Canva, CapCut, Meta Ads, Waalaxy</p>
                 </div>
               </div>
@@ -306,8 +306,8 @@ export default function HomePageClient() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent" />
                 <div className="absolute bottom-4 left-4 right-4">
-                  <span className="text-xs font-bold text-cyan-400 uppercase tracking-wider">RS7344 • 14h à 35h</span>
-                  <h3 className="text-sm sm:text-base font-bold text-white mt-0.5">Intégration IA en Entreprise</h3>
+                  <span className="text-xs font-bold text-cyan-400 uppercase tracking-wider">RS7344 • 21 h dont 2 h d&apos;accompagnement</span>
+                  <h3 className="text-sm sm:text-base font-bold text-white mt-0.5">Développer son activité avec l&apos;IA</h3>
                   <p className="text-xs text-slate-300">Méthode STEP &amp; conformité AI Act</p>
                 </div>
               </div>
@@ -349,12 +349,12 @@ export default function HomePageClient() {
                   « Je manque de bras et mes équipes sont débordées »
                 </p>
                 <p className="text-sm leading-relaxed mb-5 min-h-[88px]" style={{ color: '#e2e8f0' }}>
-                  Automatisez le traitement des devis, les relances factures et la synthèse des réunions. Intégrez l&apos;IA dans vos équipes sans risque de fuite de données (AI Act).
+                  Automatisez le traitement des devis, les relances factures et la synthèse des réunions. Intégrez l&apos;IA dans vos équipes en maîtrisant les risques de fuite de données (RGPD, AI Act).
                 </p>
               </div>
               <ul className="space-y-2 text-xs border-t border-slate-800/80 pt-4 mt-auto" style={{ color: '#cbd5e1' }}>
                 <li className="flex items-center gap-2">✓ Éligible plans de compétences OPCO</li>
-                <li className="flex items-center gap-2">✓ ROI mesurable dès le 1er mois</li>
+                <li className="flex items-center gap-2">✓ 5 à 10 h gagnées par semaine, selon votre activité</li>
               </ul>
             </div>
 
@@ -371,12 +371,12 @@ export default function HomePageClient() {
                   « Je passe trop d&apos;heures sur des tâches non facturables »
                 </p>
                 <p className="text-sm leading-relaxed mb-5 min-h-[88px]" style={{ color: '#e2e8f0' }}>
-                  Créez vos assistants GPT sur-mesure pour rédiger vos propositions, générer vos posts LinkedIn et préparer vos livrables en quelques minutes.
+                  Créez vos assistants GPT sur mesure pour rédiger vos propositions, générer vos posts et préparer vos livrables en quelques minutes.
                 </p>
               </div>
               <ul className="space-y-2 text-xs border-t border-slate-800/80 pt-4 mt-auto" style={{ color: '#cbd5e1' }}>
-                <li className="flex items-center gap-2">✓ 5h de coaching 1-to-1 incluses</li>
-                <li className="flex items-center gap-2">✓ Gain moyen de 6h à 10h / semaine</li>
+                <li className="flex items-center gap-2">✓ 2 h d&apos;accompagnement avec un expert incluses</li>
+                <li className="flex items-center gap-2">✓ Gain de 5 à 10 h par semaine</li>
               </ul>
             </div>
 
@@ -393,11 +393,11 @@ export default function HomePageClient() {
                   « Nous voulons monter en compétences sur les outils de pointe »
                 </p>
                 <p className="text-sm leading-relaxed mb-5 min-h-[88px]" style={{ color: '#e2e8f0' }}>
-                  Maîtrisez Canva pro, CapCut, Waalaxy et les outils d&apos;automatisation pour accélérer la production sans dépendre d&apos;une agence externe.
+                  Maîtrisez Canva, CapCut, Waalaxy et les outils de communication pour accélérer la production sans dépendre d&apos;une agence externe.
                 </p>
               </div>
               <ul className="space-y-2 text-xs border-t border-slate-800/80 pt-4 mt-auto" style={{ color: '#cbd5e1' }}>
-                <li className="flex items-center gap-2">✓ Certifications officielles RS</li>
+                <li className="flex items-center gap-2">✓ Formations préparant aux certifications RS</li>
                 <li className="flex items-center gap-2">✓ Pratique directe sur vos outils</li>
               </ul>
             </div>
@@ -484,40 +484,40 @@ export default function HomePageClient() {
                     <span className="px-3 py-1 rounded-full bg-cyan-500/20 text-cyan-300 text-xs font-bold border border-cyan-500/30">
                       🤖 Pôle IA • RS6776
                     </span>
-                    <span className="text-xs text-slate-400 font-semibold">100% en ligne • Éligible OPCO / </span>
+                    <span className="text-xs text-slate-400 font-semibold">100 % en ligne • Finançable OPCO / FAF</span>
                   </div>
 
                   <h3 className="text-xl sm:text-2xl font-bold text-white mb-2 min-h-[58px] flex items-center">
-                    IA Générative pour Indépendants &amp; Dirigeants
+                    IA générative : création de contenus rédactionnels et visuels responsables
                   </h3>
 
                   <p className="text-xs text-cyan-400 font-semibold mb-3 min-h-[34px] flex items-center">
-                    ChatGPT, Claude, Assistants Sur-Mesure &amp; Automatisation
+                    ChatGPT, Claude, assistants sur mesure &amp; contenus
                   </p>
 
                   <p className="text-sm text-slate-300 leading-relaxed mb-6 min-h-[72px]">
-                    Le parcours de référence pour automatiser vos tâches quotidiennes, concevoir des assistants personnalisés et gagner un temps précieux sur vos devis et livrables.
+                    Le parcours de référence pour automatiser vos tâches quotidiennes, concevoir des assistants personnalisés et gagner 5 à 10 h par semaine selon votre activité.
                   </p>
 
                   <div className="space-y-2.5 py-4 border-y border-slate-800 text-xs text-slate-300 mb-6 min-h-[148px] flex flex-col justify-center bg-slate-950/40 rounded-xl px-3.5">
                     <div className="flex items-center gap-2">
                       <Clock size={15} className="text-cyan-400 shrink-0" />
-                      <span><strong>Durée :</strong> 21h certifiantes (E-learning 24/7 + coaching expert 1-to-1)</span>
+                      <span><strong>Durée :</strong> 21 h, dont 2 h d&apos;accompagnement avec un expert</span>
                     </div>
                     <div className="flex items-center gap-2">
                       <Award size={15} className="text-amber-400 shrink-0" />
-                      <span><strong>Validation :</strong> Quizz de certification &amp; cas pratiques sur vos outils</span>
+                      <span><strong>Évaluation :</strong> quiz et cas pratiques. Certification RS6776 sur demande (rapport écrit + soutenance orale devant jury).</span>
                     </div>
                     <div className="flex items-center gap-2">
                       <ShieldCheck size={15} className="text-emerald-400 shrink-0" />
-                      <span><strong>Tarif :</strong> 1 490 € (offre découverte 600 €) • Éligible OPCO/FAF/</span>
+                      <span><strong>Tarif :</strong> 600 € au lieu de 1 490 €, jusqu&apos;au 31 octobre 2026 • Finançable OPCO / FAF</span>
                     </div>
                   </div>
 
                   <ul className="space-y-2.5 text-xs text-slate-400 mb-6 min-h-[96px]">
                     <li className="flex items-start gap-2">
                       <Check size={14} className="text-cyan-400 shrink-0 mt-0.5" />
-                      <span>Création de votre assistant IA personnalisé entraîné sur vos propres données</span>
+                      <span>Création de votre assistant GPT personnalisé, sans exposer vos données sensibles</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <Check size={14} className="text-cyan-400 shrink-0 mt-0.5" />
@@ -531,21 +531,15 @@ export default function HomePageClient() {
                 </div>
 
                 <div className="mt-auto space-y-2.5 pt-4 border-t border-slate-800/80">
-                  <div className="grid grid-cols-2 gap-2">
-                    <button
-                      type="button"
-                      onClick={() => handleOpenCheckout('Formation IA Générative RS6776 (Standard)', 1490, '21h de formation certifiante avec quizz, cas pratiques et coaching individuel 1-to-1 inclus')}
-                      className="py-2.5 px-2 rounded-xl bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-500 hover:to-cyan-500 text-white font-bold text-xs shadow-md transition-all flex items-center justify-center gap-1 cursor-pointer"
-                    >
-                      <CreditCard size={13} />
-                      <span>Régler 1 490 €</span>
-                    </button>
+                  <div className="flex items-center gap-2">
+                    <span className="text-sm text-slate-500 line-through">1 490 €</span>
                     <button
                       type="button"
                       onClick={() => handleOpenCheckout('Offre Promo RS6776 (Durée limitée)', 600, '21h de formation certifiante en e-learning + 2h accompagnement expert individuel - Tarif promotionnel')}
-                      className="py-2.5 px-2 rounded-xl bg-gradient-to-r from-amber-500 to-emerald-500 hover:from-amber-400 hover:to-emerald-400 text-slate-950 font-black text-xs shadow-md transition-all flex items-center justify-center gap-1 cursor-pointer"
+                      className="flex-1 py-3 px-4 rounded-xl bg-gradient-to-r from-amber-500 to-emerald-500 hover:from-amber-400 hover:to-emerald-400 text-slate-950 font-black text-xs shadow-md transition-all flex items-center justify-center gap-1.5 cursor-pointer"
                     >
-                      <span>⏱ Promo 600 €</span>
+                      <CreditCard size={14} />
+                      <span>Profiter de l&apos;offre à 600 € (ou 3 × 200 €)</span>
                     </button>
                   </div>
                   <a
@@ -574,33 +568,33 @@ export default function HomePageClient() {
                     <span className="px-3 py-1 rounded-full bg-indigo-500/20 text-indigo-300 text-xs font-bold border border-indigo-500/30">
                       🚀 Pôle IA • RS7344
                     </span>
-                    <span className="text-xs text-slate-400 font-semibold">Distanciel ou Intra • Financement OPCO</span>
+                    <span className="text-xs text-slate-400 font-semibold">100 % en ligne (intra possible) • Finançable OPCO / FAF</span>
                   </div>
 
                   <h3 className="text-xl sm:text-2xl font-bold text-white mb-2 min-h-[58px] flex items-center">
-                    Développer son Activité grâce à l&apos;IA &amp; aux Workflows
+                    Développer son activité avec l&apos;IA
                   </h3>
 
                   <p className="text-xs text-indigo-400 font-semibold mb-3 min-h-[34px] flex items-center">
-                    Méthode STEP, Workflows n8n/Make &amp; AI Act
+                    Méthode STEP, conduite du changement &amp; AI Act
                   </p>
 
                   <p className="text-sm text-slate-300 leading-relaxed mb-6 min-h-[72px]">
-                    Pour dirigeants et équipes : auditez vos processus avec la méthode STEP, automatisez les flux d&apos;équipes sans code complexe et sécurisez vos données.
+                    Pour dirigeants et équipes : intégrez l&apos;IA dans vos processus (administratif, marketing, relation client), pilotez le changement et sécurisez vos données.
                   </p>
 
                   <div className="space-y-2.5 py-4 border-y border-slate-800 text-xs text-slate-300 mb-6 min-h-[148px] flex flex-col justify-center bg-slate-950/40 rounded-xl px-3.5">
                     <div className="flex items-center gap-2">
                       <Clock size={15} className="text-indigo-400 shrink-0" />
-                      <span><strong>Durée :</strong> 21h certifiantes (Formation opérationnelle + 5h accompagnement expert)</span>
+                      <span><strong>Durée :</strong> 21 h, dont 2 h d&apos;accompagnement avec un expert</span>
                     </div>
                     <div className="flex items-center gap-2">
                       <Award size={15} className="text-amber-400 shrink-0" />
-                      <span><strong>Validation :</strong> Quizz de validation &amp; cas pratiques réels d&apos;entreprise</span>
+                      <span><strong>Évaluation :</strong> quiz et cas pratiques. Certification RS7344 sur demande (dossier à J+15 et soutenance orale de 25 min à J+21).</span>
                     </div>
                     <div className="flex items-center gap-2">
                       <ShieldCheck size={15} className="text-emerald-400 shrink-0" />
-                      <span><strong>Tarif :</strong> 1 490 € • Éligible plan de développement compétences OPCO</span>
+                      <span><strong>Tarif :</strong> 1 490 € • Finançable OPCO / FAF</span>
                     </div>
                   </div>
 
@@ -611,11 +605,14 @@ export default function HomePageClient() {
                     </li>
                     <li className="flex items-start gap-2">
                       <Check size={14} className="text-indigo-400 shrink-0 mt-0.5" />
-                      <span>Déploiement de connecteurs n8n / Make reliés directement à vos outils</span>
+                      <span>Intégration de l&apos;IA dans vos processus : administratif, marketing, relation client</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <Check size={14} className="text-indigo-400 shrink-0 mt-0.5" />
                       <span>Mise en place de la charte éthique IA &amp; conformité RGPD / AI Act européen</span>
+                    </li>
+                    <li className="flex items-start gap-2 text-amber-300 font-medium">
+                      <span>➕ Option équipes : ateliers Méthode TOP® pour accompagner le changement (sur devis)</span>
                     </li>
                   </ul>
                 </div>
@@ -623,11 +620,11 @@ export default function HomePageClient() {
                 <div className="mt-auto space-y-2.5 pt-4 border-t border-slate-800/80">
                   <button
                     type="button"
-                    onClick={() => handleOpenCheckout('Développer son Activité grâce à l&apos;IA (RS7344)', 1490, '21h de formation certifiante avec 5h de coaching expert individuel et cas pratiques réels')}
+                    onClick={() => handleOpenCheckout('Développer son Activité avec l\'IA (RS7344)', 1490, '21 h dont 2 h d\'accompagnement expert individuel et cas pratiques réels')}
                     className="w-full py-3 px-4 rounded-xl bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white font-bold text-xs shadow-lg shadow-indigo-600/25 transition-all flex items-center justify-center gap-2 cursor-pointer"
                   >
                     <CreditCard size={15} />
-                    <span>S&apos;inscrire / Régler en ligne 💳</span>
+                    <span>S&apos;inscrire / Régler en ligne (1 490 €) 💳</span>
                   </button>
                   <a
                     href="#contact"
@@ -653,50 +650,50 @@ export default function HomePageClient() {
                 <div>
                   <div className="flex items-center justify-between gap-2 mb-4 min-h-[28px]">
                     <span className="px-3 py-1 rounded-full bg-pink-500/20 text-pink-300 text-xs font-bold border border-pink-500/30">
-                      📱 Pôle Digital &amp; IA • RS7351
+                      📱 Pôle Réseaux sociaux • RS7351
                     </span>
-                    <span className="text-xs text-slate-400 font-semibold">100% à distance • Éligible OPCO / </span>
+                    <span className="text-xs text-slate-400 font-semibold">100 % à distance • Finançable OPCO / FAF</span>
                   </div>
 
                   <h3 className="text-xl sm:text-2xl font-bold text-white mb-2 min-h-[58px] flex items-center">
-                    Communication, Réseaux Sociaux &amp; IA
+                    Gérer la communication digitale d&apos;une entreprise via les réseaux sociaux
                   </h3>
 
                   <p className="text-xs text-pink-400 font-semibold mb-3 min-h-[34px] flex items-center">
-                    Canva IA, CapCut, Meta Ads &amp; Prospection LinkedIn Waalaxy
+                    Canva, CapCut, Meta Ads &amp; prospection LinkedIn (Waalaxy)
                   </p>
 
                   <p className="text-sm text-slate-300 leading-relaxed mb-6 min-h-[72px]">
-                    Professionnalisez votre visibilité : créez des visuels percutants grâce à l&apos;IA, produisez des vidéos courtes engageantes et automatisez vos prises de contacts B2B.
+                    Professionnalisez votre visibilité : créez des visuels percutants avec Canva, produisez des vidéos courtes engageantes et structurez vos prises de contacts B2B.
                   </p>
 
                   <div className="space-y-2.5 py-4 border-y border-slate-800 text-xs text-slate-300 mb-6 min-h-[148px] flex flex-col justify-center bg-slate-950/40 rounded-xl px-3.5">
                     <div className="flex items-center gap-2">
                       <Clock size={15} className="text-pink-400 shrink-0" />
-                      <span><strong>Durée :</strong> 21h certifiantes (Vidéos interactives + 5h accompagnement 1-to-1)</span>
+                      <span><strong>Durée :</strong> 21 h, dont 2 h d&apos;accompagnement avec un expert</span>
                     </div>
                     <div className="flex items-center gap-2">
                       <Award size={15} className="text-amber-400 shrink-0" />
-                      <span><strong>Validation :</strong> Quizz de progression &amp; cas pratiques de création de contenu</span>
+                      <span><strong>Évaluation :</strong> quiz et cas pratiques. Certification RS7351 sur demande : mise en situation orale d&apos;environ 1 h devant 2 jurys professionnels (14/20 min).</span>
                     </div>
                     <div className="flex items-center gap-2">
                       <ShieldCheck size={15} className="text-emerald-400 shrink-0" />
-                      <span><strong>Tarif :</strong> 1 490 € • Éligible prise en charge OPCO / FAF / </span>
+                      <span><strong>Tarif :</strong> 1 490 € • Finançable OPCO / FAF</span>
                     </div>
                   </div>
 
                   <ul className="space-y-2.5 text-xs text-slate-400 mb-6 min-h-[96px]">
                     <li className="flex items-start gap-2">
                       <Check size={14} className="text-pink-400 shrink-0 mt-0.5" />
-                      <span>Stratégie éditoriale et calendrier de publications accéléré par l&apos;IA</span>
+                      <span>Stratégie éditoriale et planning de publications régulier</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <Check size={14} className="text-pink-400 shrink-0 mt-0.5" />
-                      <span>Maîtrise de Canva IA, CapCut (Reels / TikTok) et campagnes Meta Ads</span>
+                      <span>Création graphique avec Canva, vidéos CapCut (Reels / TikTok) et Meta Ads</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <Check size={14} className="text-pink-400 shrink-0 mt-0.5" />
-                      <span>Prospection B2B automatisée et ciblée sur LinkedIn via Waalaxy</span>
+                      <span>Prospection B2B ciblée et structurée sur LinkedIn via Waalaxy</span>
                     </li>
                   </ul>
                 </div>
@@ -704,11 +701,11 @@ export default function HomePageClient() {
                 <div className="mt-auto space-y-2.5 pt-4 border-t border-slate-800/80">
                   <button
                     type="button"
-                    onClick={() => handleOpenCheckout('Formation Communication & Réseaux Sociaux (RS7351)', 1490, '21h de formation certifiante avec quizz, cas pratiques guidés et 5h de coaching individuel inclus')}
+                    onClick={() => handleOpenCheckout('Gérer la communication digitale d\'une entreprise via les réseaux sociaux (RS7351)', 1490, '21 h dont 2 h d\'accompagnement expert individuel et cas pratiques réels')}
                     className="w-full py-3 px-4 rounded-xl bg-gradient-to-r from-pink-600 to-rose-600 hover:from-pink-500 hover:to-rose-500 text-white font-bold text-xs shadow-lg shadow-pink-600/25 transition-all flex items-center justify-center gap-2 cursor-pointer"
                   >
                     <CreditCard size={15} />
-                    <span>S&apos;inscrire / Régler en ligne 💳</span>
+                    <span>S&apos;inscrire / Régler en ligne (1 490 €) 💳</span>
                   </button>
                   <a
                     href="#contact"
@@ -734,17 +731,17 @@ export default function HomePageClient() {
                 <div>
                   <div className="flex items-center justify-between gap-2 mb-4 min-h-[28px]">
                     <span className="px-3 py-1 rounded-full bg-amber-500/20 text-amber-300 text-xs font-bold border border-amber-500/30">
-                      🧠 Sciences Cognitives &amp; IA • FI-TOP®
+                      🧘 Méthode TOP® &amp; IA • FI-TOP®
                     </span>
-                    <span className="text-xs text-slate-400 font-semibold">Présentiel ou Visio • Financement OPCO/FAF</span>
+                    <span className="text-xs text-slate-400 font-semibold">Présentiel ou Visio • Finançable OPCO / FAF</span>
                   </div>
 
                   <h3 className="text-xl sm:text-2xl font-bold text-white mb-2 min-h-[58px] flex items-center">
-                    Méthode TOP® &amp; Clarté Mentale à l&apos;Ère de l&apos;IA
+                    Formation initiale aux Techniques d&apos;Optimisation du Potentiel (FI-TOP®)
                   </h3>
 
                   <p className="text-xs text-amber-400 font-semibold mb-3 min-h-[34px] flex items-center">
-                    Régulation du Stress, Focus Cognitif &amp; Prévention du Burnout
+                    Clarté mentale et adaptation au changement à l&apos;ère de l&apos;IA
                   </p>
 
                   <p className="text-sm text-slate-300 leading-relaxed mb-6 min-h-[72px]">
@@ -754,15 +751,15 @@ export default function HomePageClient() {
                   <div className="space-y-2.5 py-4 border-y border-slate-800 text-xs text-slate-300 mb-6 min-h-[148px] flex flex-col justify-center bg-slate-950/40 rounded-xl px-3.5">
                     <div className="flex items-center gap-2">
                       <Clock size={15} className="text-amber-400 shrink-0" />
-                      <span><strong>Durée :</strong> 21 heures réparties (3 jours ou modules fractionnés)</span>
+                      <span><strong>Durée :</strong> 21 h réparties (3 jours intensifs en présentiel ou visio)</span>
                     </div>
                     <div className="flex items-center gap-2">
                       <Award size={15} className="text-emerald-400 shrink-0" />
-                      <span><strong>Validation :</strong> Quizz d&apos;assimilation &amp; exercices pratiques guidés</span>
+                      <span><strong>Validation :</strong> exercices pratiques guidés et attestation officielle de fin de formation.</span>
                     </div>
                     <div className="flex items-center gap-2">
                       <ShieldCheck size={15} className="text-emerald-400 shrink-0" />
-                      <span><strong>Tarif :</strong> 890 € • Éligible prise en charge OPCO / FAF / Entreprise</span>
+                      <span><strong>Tarif :</strong> 890 € • Finançable OPCO / FAF / Entreprise</span>
                     </div>
                   </div>
 
@@ -847,91 +844,93 @@ export default function HomePageClient() {
                 <tr className="hover:bg-slate-900/40 transition-colors">
                   <td className="p-4 sm:p-5 font-bold text-white">
                     <span className="text-cyan-400 block text-xs uppercase mb-1">Pôle IA</span>
-                    IA Générative pour Indépendants &amp; Dirigeants
+                    IA générative : création de contenus rédactionnels et visuels responsables
                   </td>
                   <td className="p-4 sm:p-5 text-xs sm:text-sm">
                     Indépendants, freelances, consultants, dirigeants de TPE
                   </td>
                   <td className="p-4 sm:p-5 font-semibold text-cyan-300 text-xs sm:text-sm whitespace-nowrap">
-                    21h certifiantes<br />+ <strong>coaching 1-to-1</strong><br />+ quizz &amp; cas pratiques
+                    21 h, dont 2 h d&apos;accompagnement<br />+ quiz &amp; cas pratiques
                   </td>
                   <td className="p-4 sm:p-5 text-xs sm:text-sm">
                     <span className="px-2.5 py-1 rounded-md bg-blue-500/10 border border-blue-500/30 text-blue-300 font-bold whitespace-nowrap">
-                      Certif. RS6776
+                      Prépare à RS6776
                     </span>
                   </td>
                   <td className="p-4 sm:p-5 text-xs text-emerald-400 font-medium">
-                    1 490 € (offre 600 €)<br />OPCO / FAF / </td>
+                    600 € jusqu&apos;au 31/10/2026 (au lieu de 1 490 €)<br />OPCO / FAF
+                  </td>
                   <td className="p-4 sm:p-5 text-xs sm:text-sm">
-                    Assistant IA sur-mesure sur vos données, prompts métier et gain de 5 à 10h / semaine
+                    Assistant IA sur mesure, prompts métier et gain de 5 à 10 h par semaine selon activité
                   </td>
                 </tr>
 
                 <tr className="hover:bg-slate-900/40 transition-colors">
                   <td className="p-4 sm:p-5 font-bold text-white">
-                    <span className="text-indigo-400 block text-xs uppercase mb-1">Pôle IA &amp; Workflows</span>
-                    Développer son Activité grâce à l&apos;IA &amp; aux Workflows
+                    <span className="text-indigo-400 block text-xs uppercase mb-1">Pôle IA &amp; Entreprise</span>
+                    Développer son activité avec l&apos;IA
                   </td>
                   <td className="p-4 sm:p-5 text-xs sm:text-sm">
                     Dirigeants de TPE/PME, managers et collaborateurs
                   </td>
                   <td className="p-4 sm:p-5 font-semibold text-indigo-300 text-xs sm:text-sm whitespace-nowrap">
-                    21h certifiantes<br />+ <strong>5h coaching expert</strong><br />+ quizz &amp; cas pratiques
+                    21 h, dont 2 h d&apos;accompagnement<br />+ quiz &amp; cas pratiques
                   </td>
                   <td className="p-4 sm:p-5 text-xs sm:text-sm">
                     <span className="px-2.5 py-1 rounded-md bg-indigo-500/10 border border-indigo-500/30 text-indigo-300 font-bold whitespace-nowrap">
-                      Certif. RS7344
+                      Prépare à RS7344
                     </span>
                   </td>
                   <td className="p-4 sm:p-5 text-xs text-emerald-400 font-medium">
-                    1 490 €<br />Plan dev. compétences OPCO
+                    1 490 €<br />Finançable OPCO / FAF
                   </td>
                   <td className="p-4 sm:p-5 text-xs sm:text-sm">
-                    Automatisation de flux d&apos;équipes n8n/Make, charte éthique et conformité AI Act
+                    Feuille de route IA, processus optimisés, charte éthique et conformité AI Act
                   </td>
                 </tr>
 
                 <tr className="hover:bg-slate-900/40 transition-colors">
                   <td className="p-4 sm:p-5 font-bold text-white">
-                    <span className="text-pink-400 block text-xs uppercase mb-1">Pôle Digital &amp; IA</span>
-                    Communication, Réseaux Sociaux &amp; IA
+                    <span className="text-pink-400 block text-xs uppercase mb-1">Pôle Réseaux Sociaux</span>
+                    Gérer la communication digitale d&apos;une entreprise via les réseaux sociaux
                   </td>
                   <td className="p-4 sm:p-5 text-xs sm:text-sm">
                     Créateurs, indépendants, équipes marketing gérant leur acquisition
                   </td>
                   <td className="p-4 sm:p-5 font-semibold text-pink-300 text-xs sm:text-sm whitespace-nowrap">
-                    21h certifiantes<br />+ <strong>5h coaching expert</strong><br />+ quizz &amp; cas pratiques
+                    21 h, dont 2 h d&apos;accompagnement<br />+ quiz &amp; cas pratiques
                   </td>
                   <td className="p-4 sm:p-5 text-xs sm:text-sm">
                     <span className="px-2.5 py-1 rounded-md bg-pink-500/10 border border-pink-500/30 text-pink-300 font-bold whitespace-nowrap">
-                      Prépa RS7351
+                      Prépare à RS7351
                     </span>
                   </td>
                   <td className="p-4 sm:p-5 text-xs text-emerald-400 font-medium">
-                    1 490 €<br />OPCO / FAF / </td>
+                    1 490 €<br />Finançable OPCO / FAF
+                  </td>
                   <td className="p-4 sm:p-5 text-xs sm:text-sm">
-                    Visuels Canva IA, vidéos CapCut, prospection LinkedIn automatisée et Meta Ads
+                    Visuels Canva, vidéos CapCut, prospection LinkedIn et Meta Ads
                   </td>
                 </tr>
 
                 <tr className="hover:bg-slate-900/40 transition-colors">
                   <td className="p-4 sm:p-5 font-bold text-white">
                     <span className="text-amber-400 block text-xs uppercase mb-1">Pôle Méthode TOP®</span>
-                    Méthode TOP® &amp; Clarté Mentale à l&apos;Ère de l&apos;IA
+                    Formation initiale aux Techniques d&apos;Optimisation du Potentiel (FI-TOP®)
                   </td>
                   <td className="p-4 sm:p-5 text-xs sm:text-sm">
                     Dirigeants, managers, collaborateurs sous forte charge mentale
                   </td>
                   <td className="p-4 sm:p-5 font-semibold text-amber-300 text-xs sm:text-sm whitespace-nowrap">
-                    21h officielles<br />3 jours ou modules<br />+ quizz &amp; mises en situation
+                    21 h (3 jours)<br />exercices guidés
                   </td>
                   <td className="p-4 sm:p-5 text-xs sm:text-sm">
                     <span className="px-2.5 py-1 rounded-md bg-amber-500/10 border border-amber-500/30 text-amber-300 font-bold whitespace-nowrap">
-                      Attestation FI-TOP®
+                      Attestation de fin de formation
                     </span>
                   </td>
                   <td className="p-4 sm:p-5 text-xs text-emerald-400 font-medium">
-                    890 €<br />OPCO / FAF / Entreprise
+                    890 €<br />Finançable OPCO / FAF / Entreprise
                   </td>
                   <td className="p-4 sm:p-5 text-xs sm:text-sm">
                     Régulation du stress en direct, dynamisation de l&apos;énergie, récupération et focus mental
@@ -967,9 +966,9 @@ export default function HomePageClient() {
                     <div className="text-3xl font-black text-white">2 490 € <span className="text-xs text-emerald-400 font-normal">(-490 €)</span></div>
                   </div>
                   <ul className="text-xs text-slate-300 space-y-2 mb-6">
-                    <li className="flex items-center gap-2">✓ 2 Cursus complets (42h au total)</li>
-                    <li className="flex items-center gap-2">✓ 2 Certifications officielles préparées</li>
-                    <li className="flex items-center gap-2">✓ Accompagnement expert dédié</li>
+                    <li className="flex items-center gap-2">✓ 2 formations complètes (42 h, dont 4 h d&apos;accompagnement)</li>
+                    <li className="flex items-center gap-2">✓ Préparation à 2 certifications RS</li>
+                    <li className="flex items-center gap-2">✓ 2 h d&apos;accompagnement par formation</li>
                   </ul>
                 </div>
                 <button
@@ -996,9 +995,9 @@ export default function HomePageClient() {
                     <div className="text-3xl font-black text-emerald-400">3 390 € <span className="text-xs text-emerald-400 font-normal">(-1 080 €)</span></div>
                   </div>
                   <ul className="text-xs text-slate-300 space-y-2 mb-6">
-                    <li className="flex items-center gap-2">✓ 3 Cursus complets (63h au total)</li>
-                    <li className="flex items-center gap-2">✓ 3 Certifications France Compétences</li>
-                    <li className="flex items-center gap-2">✓ Maîtrise complète IA + Digital</li>
+                    <li className="flex items-center gap-2">✓ 3 formations complètes (63 h, dont 6 h d&apos;accompagnement)</li>
+                    <li className="flex items-center gap-2">✓ Préparation à 3 certifications RS</li>
+                    <li className="flex items-center gap-2">✓ 2 h d&apos;accompagnement par formation</li>
                   </ul>
                 </div>
                 <button
@@ -1016,15 +1015,15 @@ export default function HomePageClient() {
                 <div>
                   <span className="px-2.5 py-1 rounded-full bg-amber-500/10 text-amber-400 text-xs font-bold">B2B &amp; Salariés</span>
                   <h4 className="text-xl font-bold text-white mt-2">Formule Entreprise</h4>
-                  <p className="text-xs text-slate-400 mt-1">40h au total par formation (e-learning + accompagnement d&apos;équipe expert).</p>
+                  <p className="text-xs text-slate-400 mt-1">40 h au total : l&apos;une de nos formations (21 h) complétée par des heures d&apos;accompagnement avec un expert. Une durée adaptée à une prise en charge par votre OPCO.</p>
                   <div className="my-4">
                     <div className="text-3xl font-black text-white">3 200 € <span className="text-xs text-slate-400 font-normal"></span></div>
-                    <span className="text-xs text-emerald-400">Prise en charge OPCO intégrale possible</span>
+                    <span className="text-xs text-emerald-400">Prise en charge OPCO possible, sous réserve d&apos;accord</span>
                   </div>
                   <ul className="text-xs text-slate-300 space-y-2 mb-6">
-                    <li className="flex items-center gap-2">✓ 40h de parcours adapté aux équipes</li>
+                    <li className="flex items-center gap-2">✓ 40 h de parcours adapté aux équipes</li>
                     <li className="flex items-center gap-2">✓ Plan de développement des compétences</li>
-                    <li className="flex items-center gap-2">✓ Montage dossier via Eloq-One (Qualiopi)</li>
+                    <li className="flex items-center gap-2">✓ Montage du dossier avec Eloq-One (certifié Qualiopi)</li>
                   </ul>
                 </div>
                 <button
@@ -1041,9 +1040,9 @@ export default function HomePageClient() {
             {/* Coaching Additionnel */}
             <div className="p-6 rounded-2xl bg-slate-950 border border-slate-800/80 flex flex-col sm:flex-row items-center justify-between gap-4">
               <div>
-                <h5 className="text-sm font-bold text-white">Besoin d&apos;heures de coaching individuel en plus ?</h5>
+                <h5 className="text-sm font-bold text-white">Besoin d&apos;aller plus loin ?</h5>
                 <p className="text-xs text-slate-400 mt-0.5">
-                  Heure supplémentaire : <strong>120 €/h</strong> • Forfait 5h : <strong>550 €</strong> (110 €/h) • Forfait 10h : <strong>1 000 €</strong> (100 €/h)
+                  Accompagnement sur mesure, vendu séparément, notamment pour le déploiement de l&apos;IA et sa mise en œuvre sur vos cas d&apos;usage : <strong>1 h : 120 €</strong> • Forfait 5 h : <strong>550 €</strong> (110 €/h) • Forfait 10 h : <strong>1 000 €</strong> (100 €/h)
                 </p>
               </div>
               <div className="flex gap-2 shrink-0">
@@ -1116,9 +1115,9 @@ export default function HomePageClient() {
               <div className="w-8 h-8 rounded-full bg-emerald-600 text-white font-black text-sm flex items-center justify-center mb-4">
                 3
               </div>
-              <h3 className="font-bold text-white text-base mb-2">Démarrage &amp; 5h Coaching</h3>
+              <h3 className="font-bold text-white text-base mb-2">Démarrage &amp; accompagnement</h3>
               <p className="text-xs sm:text-sm text-slate-400 leading-relaxed">
-                Dès l&apos;accord de prise en charge, accès immédiat à la plateforme et planification de vos 5h d&apos;accompagnement 1-to-1.
+                Dès l&apos;accord de prise en charge, accès immédiat à la plateforme et planification de vos 2 h d&apos;accompagnement avec un expert.
               </p>
             </div>
           </div>
@@ -1153,7 +1152,7 @@ export default function HomePageClient() {
               L&apos;Équipe des Experts &amp; Formateurs
             </h2>
             <p className="mt-3 text-slate-400 text-sm sm:text-base">
-              Pas d&apos;organisme anonyme. Vos sessions et vos coachings 1-to-1 sont directement assurés par nos experts référents.
+              Pas d&apos;organisme anonyme. Vos sessions et votre accompagnement sont assurés directement par nos formateurs référents.
             </p>
           </div>
 
@@ -1194,9 +1193,9 @@ export default function HomePageClient() {
             {/* 4. Régis */}
             <TeamMemberCard
               position="right"
-              roleTitle="Stratégie Opérationnelle & Gestion"
+              roleTitle="Formateur certifié Méthode TOP® & Stratégie Opérationnelle"
               firstName="Régis"
-              lastName=""
+              lastName="Domergue"
               imageUrl="/team-regis.png"
               description="Excellence opérationnelle forgée sur le terrain, sang-froid et vision stratégique pour sécuriser chaque étape de votre transition."
               onCtaClick={() => window.open('https://wa.me/33767246825?text=Bonjour%20R%C3%A9gis%2C%20je%20souhaite%20%C3%A9changer%20avec%20vous.', '_blank')}
@@ -1369,23 +1368,23 @@ export default function HomePageClient() {
             </div>
 
             <div className="p-6 rounded-2xl bg-slate-900 border border-slate-800">
-              <h3 className="font-bold text-white text-base mb-2">Comment s&apos;organisent les 2 heures d&apos;accompagnement incluses ?</h3>
+              <h3 className="font-bold text-white text-base mb-2">Comment s&apos;organise l&apos;accompagnement ?</h3>
               <p className="text-sm text-slate-400 leading-relaxed">
-                Chaque formation inclut 2 heures d&apos;accompagnement individuel avec un expert en visioconférence. Vous réservez vos créneaux selon votre rythme pour poser vos questions, faire le point sur vos projets et lever tous vos blocages. Des forfaits complémentaires (1h, 5h, 10h) sont également disponibles si vous souhaitez un suivi sur mesure.
+                Chaque formation inclut 2 h d&apos;accompagnement avec un expert, en visioconférence, à planifier selon vos disponibilités. Pour aller plus loin, notamment pour déployer l&apos;IA sur vos cas d&apos;usage, un accompagnement sur mesure est proposé séparément (crédit d&apos;heures).
               </p>
             </div>
 
             <div className="p-6 rounded-2xl bg-slate-900 border border-slate-800">
-              <h3 className="font-bold text-white text-base mb-2">Comment fonctionne le financement via votre partenaire Eloq-One ?</h3>
+              <h3 className="font-bold text-white text-base mb-2">Comment fonctionne le financement avec notre partenaire Eloq-One ?</h3>
               <p className="text-sm text-slate-400 leading-relaxed">
-                Les formations financées par un OPCO ou un FAF sont portées administrativement par notre partenaire <strong>Eloq-One</strong>, organisme certifié Qualiopi. Nous vous accompagnons pour monter votre dossier complet de prise en charge avant le démarrage de votre formation.
+                Ô&apos;TOP Formations est un organisme de formation déclaré. Lorsque votre formation est financée par un OPCO ou un FAF, la convention et la facturation sont portées par notre partenaire Eloq-One, organisme certifié Qualiopi. La prise en charge reste soumise à l&apos;accord du financeur.
               </p>
             </div>
 
             <div className="p-6 rounded-2xl bg-slate-900 border border-slate-800">
-              <h3 className="font-bold text-white text-base mb-2">Comment se déroule la certification professionnelle ?</h3>
+              <h3 className="font-bold text-white text-base mb-2">À quelles certifications préparent nos formations ?</h3>
               <p className="text-sm text-slate-400 leading-relaxed">
-                Nos formations préparent aux certifications enregistrées au Répertoire Spécifique de France Compétences (RS6776, RS7344, RS7351). L&apos;évaluation certificative est facultative et proposée sur demande : elle comprend la constitution d&apos;un dossier de pratique professionnelle et un passage devant un jury d&apos;évaluation officiel.
+                Nos formations préparent aux certifications RS6776, RS7344 et RS7351, enregistrées au Répertoire spécifique de France Compétences. Le passage de la certification se fait sur demande, devant un jury. Une fois obtenue, elle atteste de vos compétences auprès de vos clients et partenaires.
               </p>
             </div>
 

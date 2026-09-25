@@ -35,7 +35,7 @@ export default function FinancementPage() {
     {
       num: '03',
       title: 'Accord de prise en charge & Formation',
-      desc: 'Dès validation de votre financeur (OPCO, FAF), vous démarrez votre formation avec accès 24/7 et vos créneaux de coaching individuel.',
+      desc: 'Dès validation de votre financeur (OPCO, FAF), vous démarrez votre formation avec accès 24/7 et vos 2 h d\'accompagnement avec un expert.',
     },
   ];
 
@@ -185,25 +185,12 @@ export default function FinancementPage() {
               <div className="w-10 h-10 rounded-xl bg-purple-500/10 border border-purple-500/20 text-purple-400 flex items-center justify-center font-bold">
                 <Sparkles size={20} />
               </div>
-              <h3 className="text-lg font-bold text-white">Artisans &amp; Esthétique (FAFCEA)</h3>
+              <h3 className="text-lg font-bold text-white">Artisans (FAFCEA)</h3>
               <p className="text-sm text-slate-300 leading-relaxed">
-                Prise en charge étudiée selon les critères FAFCEA pour les artisans et professionnels immatriculés au CMA pour les formations pratiques et corporelles.
+                Prise en charge étudiée selon les critères du FAFCEA pour les artisans immatriculés à la Chambre de métiers et de l&apos;artisanat.
               </p>
               <div className="text-xs text-purple-400 font-semibold pt-2">
                 Montage du dossier FAFCEA assuré
-              </div>
-            </div>
-
-            <div className="p-6 sm:p-8 rounded-2xl bg-slate-900 border border-slate-800 space-y-3">
-              <div className="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 flex items-center justify-center font-bold">
-                <ShieldCheck size={20} />
-              </div>
-              <h3 className="text-lg font-bold text-white">Compte Personnel de Formation ()</h3>
-              <p className="text-sm text-slate-300 leading-relaxed">
-                Disponible pour les formations certifiées enregistrées au Répertoire Spécifique de France Compétences via notre organisme partenaire porteur.
-              </p>
-              <div className="text-xs text-emerald-400 font-semibold pt-2">
-                Mobilisation directe sur OPCO/FAF
               </div>
             </div>
 

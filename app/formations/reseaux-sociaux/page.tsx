@@ -16,13 +16,16 @@ export default function FormationReseauxSociauxPage() {
         <div className="container">
           <div style={{ maxWidth: '850px' }}>
             <span className="badge" style={{ background: 'rgba(255, 59, 59, 0.2)', color: '#ff8585', border: '1px solid var(--red-600)', marginBottom: '1.25rem' }}>
-              📱 Préparation Certification France Compétences RS7351 • Formation portée par Eloq-One
+              ⏱ Formation préparant à la certification RS7351 (France Compétences)
             </span>
-            <h1 style={{ color: 'white', marginBottom: '1.5rem', fontSize: 'clamp(2.2rem, 4.5vw, 3.5rem)' }}>
+            <h1 style={{ color: 'white', marginBottom: '0.75rem', fontSize: 'clamp(2.2rem, 4.5vw, 3.5rem)' }}>
               Structurez votre visibilité, attirez des clients et gagnez du temps sur vos réseaux.
             </h1>
-            <p style={{ color: 'var(--blue-100)', fontSize: '1.2rem', lineHeight: '1.8', marginBottom: '1.5rem' }}>
-              Une formation pratique pour bâtir une stratégie régulière, produire vos contenus efficacement (visuels, vidéos, textes) et transformer votre audience en opportunités concrètes.
+            <p style={{ color: 'var(--gold-light)', fontSize: '1.1rem', fontWeight: 600, marginBottom: '1.25rem' }}>
+              Gérer la communication digitale d&apos;une entreprise via les réseaux sociaux (RS7351)
+            </p>
+            <p style={{ color: 'var(--blue-100)', fontSize: '1.15rem', lineHeight: '1.8', marginBottom: '1.5rem' }}>
+              Une formation pratique pour bâtir une stratégie régulière, produire vos contenus efficacement (visuels, vidéos, textes) et transformer votre audience en opportunités concrètes. 2 h d&apos;accompagnement avec un expert incluses.
             </p>
             <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap', marginBottom: '1.5rem', fontSize: '0.9rem', color: '#cbd5e1' }}>
               <span>✓ Parcours adapté à votre activité</span>
@@ -55,9 +58,9 @@ export default function FormationReseauxSociauxPage() {
         <div className="container">
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '2rem', textAlign: 'center' }}>
             <div className="card" style={{ padding: '1.5rem' }}>
-              <div style={{ fontSize: '2.2rem', fontWeight: 900, color: 'var(--blue-900)' }}>5 Modules</div>
-              <p style={{ fontWeight: 600, color: 'var(--gray-700)', margin: '0.25rem 0' }}>11h+ Vidéos &amp; Pratique</p>
-              <span style={{ fontSize: '0.85rem', color: 'var(--gray-500)' }}>Ateliers concrets sur vos comptes</span>
+              <div style={{ fontSize: '2.2rem', fontWeight: 900, color: 'var(--blue-900)' }}>21 h</div>
+              <p style={{ fontWeight: 600, color: 'var(--gray-700)', margin: '0.25rem 0' }}>Formation Complète</p>
+              <span style={{ fontSize: '0.85rem', color: 'var(--gray-500)' }}>Dont 2 h d&apos;accompagnement avec un expert</span>
             </div>
             <div className="card" style={{ padding: '1.5rem' }}>
               <div style={{ fontSize: '2.2rem', fontWeight: 900, color: 'var(--gold-dark)' }}>RS7351</div>
@@ -65,9 +68,9 @@ export default function FormationReseauxSociauxPage() {
               <span style={{ fontSize: '0.85rem', color: 'var(--gray-500)' }}>Financement OPCO / FAF possible</span>
             </div>
             <div className="card" style={{ padding: '1.5rem' }}>
-              <div style={{ fontSize: '2.2rem', fontWeight: 900, color: 'var(--red-600)' }}>1h</div>
+              <div style={{ fontSize: '2.2rem', fontWeight: 900, color: 'var(--red-600)' }}>1 h</div>
               <p style={{ fontWeight: 600, color: 'var(--gray-700)', margin: '0.25rem 0' }}>Mise en Situation</p>
-              <span style={{ fontSize: '0.85rem', color: 'var(--gray-500)' }}>Évaluation devant 2 jurys pros</span>
+              <span style={{ fontSize: '0.85rem', color: 'var(--gray-500)' }}>Devant un jury de 2 professionnels</span>
             </div>
             <div className="card" style={{ padding: '1.5rem' }}>
               <div style={{ fontSize: '2.2rem', fontWeight: 900, color: '#25D366' }}>14 / 20</div>
@@ -115,7 +118,7 @@ export default function FormationReseauxSociauxPage() {
             {/* Module 3 */}
             <div className="card" style={{ padding: '2rem', borderTop: '4px solid var(--gold-dark)' }}>
               <div style={{ color: 'var(--gold-dark)', fontWeight: 800, fontSize: '0.85rem', textTransform: 'uppercase', marginBottom: '0.5rem' }}>Module 3</div>
-              <h3 style={{ fontSize: '1.3rem', marginBottom: '1rem', color: 'var(--blue-900)' }}>Création de Contenus (Canva, CapCut, IA)</h3>
+              <h3 style={{ fontSize: '1.3rem', marginBottom: '1rem', color: 'var(--blue-900)' }}>Création de contenus (Canva, CapCut)</h3>
               <p style={{ fontSize: '0.95rem', marginBottom: '1.25rem' }}>
                 Prise en main de Canva pour les visuels, CapCut pour les Reels/TikTok, rédaction optimisée et respect de l'accessibilité numérique.
               </p>
@@ -132,31 +135,31 @@ export default function FormationReseauxSociauxPage() {
                 Programmation avec Meta Business Suite, gestion de communauté, Google My Business et premières campagnes sponsorisées (Meta Ads).
               </p>
               <div style={{ background: 'var(--red-100)', padding: '0.75rem', borderRadius: 'var(--radius-sm)', fontSize: '0.85rem', color: 'var(--red-600)' }}>
-                <strong>📌 Bénéfice :</strong> Diffusion automatisée et acquisition ciblée avec des budgets maîtrisés.
+                <strong>📌 Bénéfice :</strong> Diffusion programmée et premières campagnes Meta Ads avec un budget maîtrisé.
               </div>
             </div>
 
             {/* Module 5 */}
             <div className="card" style={{ padding: '2rem', borderTop: '4px solid #25D366' }}>
               <div style={{ color: '#128C7E', fontWeight: 800, fontSize: '0.85rem', textTransform: 'uppercase', marginBottom: '0.5rem' }}>Module 5</div>
-              <h3 style={{ fontSize: '1.3rem', marginBottom: '1rem', color: 'var(--blue-900)' }}>Tableau de Reporting & Optimisation</h3>
+              <h3 style={{ fontSize: '1.3rem', marginBottom: '1rem', color: 'var(--blue-900)' }}>Mesure de vos performances (tableau de reporting)</h3>
               <p style={{ fontSize: '0.95rem', marginBottom: '1.25rem' }}>
-                Mesure du ROI, études de cas concrètes de marques, conformité RGPD européenne et ajustement continu des résultats.
+                Mesure de vos performances (tableau de reporting), études de cas de marques, conformité RGPD et ajustement continu.
               </p>
               <div style={{ background: '#eafaf1', padding: '0.75rem', borderRadius: 'var(--radius-sm)', fontSize: '0.85rem', color: '#128C7E' }}>
-                <strong>📌 Bénéfice :</strong> Un tableau de bord de pilotage pour mesurer chaque euro ou heure investie.
+                <strong>📌 Bénéfice :</strong> Un tableau de reporting pour piloter votre stratégie dans la durée.
               </div>
             </div>
 
             {/* Certification */}
             <div className="card" style={{ padding: '2rem', border: '2px solid var(--gold)', background: 'linear-gradient(180deg, #ffffff 0%, var(--gray-50) 100%)' }}>
               <div style={{ color: 'var(--gold-dark)', fontWeight: 800, fontSize: '0.85rem', textTransform: 'uppercase', marginBottom: '0.5rem' }}>Certification Finale</div>
-              <h3 style={{ fontSize: '1.3rem', marginBottom: '1rem', color: 'var(--blue-900)' }}>Jury Professionnel (1h)</h3>
+              <h3 style={{ fontSize: '1.3rem', marginBottom: '1rem', color: 'var(--blue-900)' }}>Certification sur demande (1 h)</h3>
               <p style={{ fontSize: '0.95rem', marginBottom: '1.25rem' }}>
-                Présentation de votre dossier de communication appliquée à votre propre entreprise devant 2 professionnels du digital.
+                Mise en situation professionnelle orale devant un jury de 2 professionnels. Note minimale : 14/20. Certification délivrée par le certificateur Labkom.
               </p>
               <div style={{ background: 'var(--blue-900)', color: 'white', padding: '0.75rem', borderRadius: 'var(--radius-sm)', fontSize: '0.85rem', textAlign: 'center', fontWeight: 700 }}>
-                🎓 Certification RS7351 (évaluation facultative) Officiel RS7351 délivré
+                🎓 Préparation Certification RS7351 (évaluation facultative sur demande)
               </div>
             </div>
           </div>
@@ -178,7 +181,7 @@ export default function FormationReseauxSociauxPage() {
             <ul style={{ listStyle: 'none', padding: 0, margin: '2rem 0', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
               <li style={{ display: 'flex', gap: '0.75rem' }}>
                 <span style={{ color: 'var(--blue-600)', fontWeight: 800 }}>✓</span>
-                <div><strong>Pour les organismes et prescripteurs :</strong> Intégrez cette formation certifiante RS7351 à votre catalogue pour vos clients dirigeants, créateurs et freelances.</div>
+                <div><strong>Pour les organismes et prescripteurs :</strong> Intégrez cette formation préparant à la certification RS7351 à votre catalogue pour vos clients dirigeants, créateurs et freelances.</div>
               </li>
               <li style={{ display: 'flex', gap: '0.75rem' }}>
                 <span style={{ color: 'var(--blue-600)', fontWeight: 800 }}>✓</span>

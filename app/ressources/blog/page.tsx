@@ -27,8 +27,8 @@ const articles = [
       "Entre formations théoriques sur YouTube et promesses d'enrichissement rapide, comment identifier une formation professionnelle sérieuse qui transforme réellement votre quotidien d'artisan, dirigeant ou libéral ?",
     content: [
       "Le premier piège à éviter : les cours magistraux passifs. L'IA générative (ChatGPT, Claude, Mistral) ne s'apprend pas en regardant quelqu'un d'autre taper des prompts. Vous devez pratiquer sur vos propres devis, vos propres mails et vos propres fiches clients.",
-      "Le deuxième critère essentiel : le coaching individuel 1-to-1. Chez Ô'TOP Formation, chaque apprenant bénéficie de 5h d'accompagnement direct en visio. Nous prenons vos fichiers, nous installons vos assistants et nous automatisons vos tâches récurrentes ensemble.",
-      "Le troisième critère : la certification officielle France Compétences. Privilégiez des parcours préparant à un titre officiel du Répertoire Spécifique (comme la RS6776 ou RS7344), gages de sérieux et condition sine qua non pour une prise en charge à 100% par les OPCO et FAF."
+      "Le deuxième critère essentiel : l'accompagnement humain. Chez Ô'TOP Formations, chaque formation inclut 2 h d'accompagnement avec un expert, en visio. Pour aller plus loin, un accompagnement sur mesure permet de déployer l'IA sur vos cas d'usage.",
+      "Le troisième critère : la certification officielle France Compétences. Privilégiez des parcours préparant à un titre officiel du Répertoire Spécifique (comme la RS6776 ou RS7344), gages de sérieux et condition d'éligibilité aux financements OPCO et FAF."
     ],
   },
   {
@@ -44,13 +44,13 @@ const articles = [
       "L'entrée en vigueur du règlement européen sur l'IA (AI Act) impose de nouvelles règles de conformité, de transparence et de confidentialité des données. Voici les réflexes à adopter dès maintenant.",
     content: [
       "Beaucoup de chefs d'entreprise ignorent qu'en utilisant des versions grand public gratuites d'outils d'IA, ils exposent potentiellement le secret commercial ou les données de leurs clients à l'entraînement des modèles américains.",
-      "L'AI Act classe les usages selon leur niveau de risque. Pour les TPE et PME qui utilisent l'IA pour la communication, l'automatisation administrative ou le support client, le risque est faible mais exige une transparence et un contrôle humain obligatoire.",
+      "L'AI Act classe les usages selon leur niveau de risque. Pour les TPE et PME qui utilisent l'IA pour la communication, l'automatisation administrative ou le support client, le risque est généralement limité. En revanche, depuis le 2 février 2025, l'article 4 de l'AI Act impose aux entreprises qui utilisent l'IA de veiller à un niveau suffisant de maîtrise de l'IA de leurs équipes.",
       "Notre module dédié à la sécurité dans la certification RS6776 vous apprend à paramétrer des environnements sécurisés (opt-out d'entraînement, pseudonymisation des documents et hébergement souverain avec des modèles européens comme Mistral)."
     ],
   },
   {
     slug: 'financement-opco-faf-guide-remboursement-100',
-    title: "Financement OPCO & FAF : le guide étape par étape pour être financé à 100%",
+    title: "Financement OPCO & FAF : le guide étape par étape pour faire financer votre formation",
     category: "Financement & Droits",
     categoryColor: "bg-emerald-500/10 text-emerald-400 border-emerald-500/20",
     readTime: "4 min de lecture",
@@ -58,11 +58,11 @@ const articles = [
     author: "Mélissa JENNADI — Directrice des Admissions",
     image: "/formation-social-growth.jpg",
     excerpt:
-      "Chaque année, des milliers de professionnels cotisent à la formation professionnelle sans jamais utiliser leur budget disponible. Découvrez comment obtenir une prise en charge intégrale sans aucune avance de trésorerie.",
+      "Chaque année, des milliers de professionnels cotisent à la formation professionnelle sans toujours utiliser leur budget disponible. Découvrez comment mobiliser vos fonds de formation.",
     content: [
       "Que vous soyez travailleur indépendant (inscrit à l'URSSAF, affilié FIF-PL, AGEFICE ou FAFCEA) ou dirigeant / collaborateur d'entreprise (rattaché à un OPCO comme Atlas, Akto, Opco EP), vous disposez d'une enveloppe de formation annuelle qui se renouvelle chaque 1er janvier.",
-      "Si vous ne l'utilisez pas avant la fin de l'année, ce budget est définitivement perdu : il n'est pas reportable !",
-      "Grâce à notre portage certifié Qualiopi avec Eloq-One, Mélissa monte votre dossier de demande de prise en charge de A à Z. Dans 95% des cas avec subrogation de paiement, vous ne déboursez rien : votre financeur règle directement l'organisme."
+      "Si vous ne l'utilisez pas avant la fin de l'année, en règle générale, ce budget annuel n'est pas reportable.",
+      "Grâce aux formations portées par notre partenaire Eloq-One certifié Qualiopi, nous vous accompagnons dans le montage de votre dossier de demande de prise en charge pour mobiliser vos fonds."
     ],
   },
 ];
@@ -157,7 +157,7 @@ export default function BlogPage() {
                 Vous souhaitez monter en compétences avec un expert ?
               </h3>
               <p className="text-slate-400 text-xs sm:text-sm max-w-xl">
-                Nos formateurs adaptent le programme à vos objectifs réels et vous accompagnent pas à pas avec 5h de coaching individuel.
+                Nos formateurs vous accompagnent pas à pas, avec 2 h d&apos;accompagnement avec un expert incluses dans chaque formation.
               </p>
             </div>
             <div className="flex gap-3 shrink-0">

@@ -4,7 +4,7 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: "Solutions Entreprises & Digitalisation — Ô'TOP Formation",
-  description: "Accompagnement B2B complet : Formations Qualiopi (gestion du stress/TOP®, IA, Réseaux Sociaux), Création de sites web/apps pour augmenter le CA, et digitalisation des process.",
+  description: "Formations IA, réseaux sociaux et Méthode TOP® pour vos équipes, création de sites web et SEO/GEO, digitalisation de vos process.",
 };
 
 export default function Entreprises() {
@@ -18,7 +18,7 @@ export default function Entreprises() {
             <span>Solutions Entreprises</span>
           </div>
           <span className="badge" style={{ background: 'rgba(205, 175, 93, 0.2)', color: 'var(--gold-light)', border: '1px solid var(--gold)', marginBottom: '1rem' }}>
-            🏢 Accompagnement B2B &amp; Formation Professionnelle · Actions portées avec notre partenaire Qualiopi Eloq-One
+            ⏱ Accompagnement B2B &amp; formation professionnelle · Formations financées portées par Eloq-One, certifié Qualiopi
           </span>
           <h1 style={{ color: 'white', fontSize: 'clamp(2.3rem, 4.5vw, 3.6rem)', marginBottom: '1.5rem' }}>
             Accompagnement, formation et solutions digitales pour vos équipes
@@ -64,54 +64,54 @@ export default function Entreprises() {
               </ul>
             </div>
 
-            {/* Pilier 2 : Communication & Acquisition Social Media */}
+            {/* Pilier 2 : Conduite du Changement & Méthode TOP (Passé en 2e position) */}
+            <div className="card" style={{ padding: '2.5rem', borderTop: '5px solid var(--red-600)', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', height: '100%' }}>
+              <div>
+                <div style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>🧘</div>
+                <h3 style={{ color: 'var(--blue-900)', fontSize: '1.35rem', marginBottom: '1rem' }}>2. Conduite du Changement &amp; Méthode TOP®</h3>
+                <p style={{ color: 'var(--gray-700)', fontSize: '0.95rem', lineHeight: 1.6, marginBottom: '1.5rem' }}>
+                  L&apos;intégration de l&apos;IA bouscule les repères et suscite des craintes de déclassement. Nous associons l&apos;apprentissage des outils aux ateliers Méthode TOP® pour réguler le stress, préserver la lucidité et sécuriser l&apos;adhésion des équipes.
+                </p>
+              </div>
+              <ul style={{ listStyle: 'none', padding: 0, fontSize: '0.9rem', display: 'flex', flexDirection: 'column', gap: '0.6rem', color: 'var(--gray-800)', borderTop: '1px solid var(--gray-200)', paddingTop: '1.25rem', marginTop: 'auto' }}>
+                <li>✓ Accompagnement managérial à la conduite du changement</li>
+                <li>✓ Régulation du stress professionnel &amp; récupération flash</li>
+                <li>✓ Prévention des RPS &amp; lucidité décisionnelle sous pression</li>
+                <li>✓ <strong>Offre hybride « IA &amp; Humain » sur devis</strong></li>
+              </ul>
+            </div>
+
+            {/* Pilier 3 : Communication & Acquisition Social Media */}
             <div className="card" style={{ padding: '2.5rem', borderTop: '5px solid #25D366', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', height: '100%' }}>
               <div>
                 <div style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>📱</div>
-                <h3 style={{ color: 'var(--blue-900)', fontSize: '1.35rem', marginBottom: '1rem' }}>2. Communication &amp; Acquisition Social Media</h3>
+                <h3 style={{ color: 'var(--blue-900)', fontSize: '1.35rem', marginBottom: '1rem' }}>3. Communication &amp; Acquisition Social Media</h3>
                 <p style={{ color: 'var(--gray-700)', fontSize: '0.95rem', lineHeight: 1.6, marginBottom: '1.5rem' }}>
-                  Développez la visibilité de votre entreprise et générez des prospects qualifiés sur LinkedIn, Meta et Google grâce à notre méthodologie de social selling et notre cursus préparant à la certification RS7351.
+                  Développez la visibilité de votre entreprise et générez des prospects qualifiés sur LinkedIn, Meta et Google grâce à notre méthodologie de communication digitale et notre cursus préparant à la certification RS7351.
                 </p>
               </div>
               <ul style={{ listStyle: 'none', padding: 0, fontSize: '0.9rem', display: 'flex', flexDirection: 'column', gap: '0.6rem', color: 'var(--gray-800)', borderTop: '1px solid var(--gray-200)', paddingTop: '1.25rem', marginTop: 'auto' }}>
                 <li>✓ Stratégie éditoriale B2B et calendrier de diffusion</li>
                 <li>✓ Création de contenus visuels et vidéo (Canva, CapCut)</li>
-                <li>✓ Prospection ciblée et acquisition de prospects sans budget pub</li>
+                <li>✓ Prospection LinkedIn ciblée et campagnes Meta Ads maîtrisées</li>
                 <li>✓ Préparation à la certification France Compétences RS7351</li>
               </ul>
             </div>
 
-            {/* Pilier 3 : Création de Sites & Applications */}
+            {/* Pilier 4 : Création de Sites & Applications */}
             <div className="card" style={{ padding: '2.5rem', borderTop: '5px solid var(--gold-dark)', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', height: '100%' }}>
               <div>
                 <div style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>🚀</div>
-                <h3 style={{ color: 'var(--blue-900)', fontSize: '1.35rem', marginBottom: '1rem' }}>3. Création de Sites &amp; Applications</h3>
+                <h3 style={{ color: 'var(--blue-900)', fontSize: '1.35rem', marginBottom: '1rem' }}>4. Création de Sites &amp; Applications</h3>
                 <p style={{ color: 'var(--gray-700)', fontSize: '0.95rem', lineHeight: 1.6, marginBottom: '1.5rem' }}>
-                  Conception de plateformes web modernes, sites vitrines premium et applications métier sur mesure conçues pour convertir vos visiteurs et augmenter immédiatement votre chiffre d&apos;affaires.
+                  Conception de plateformes web modernes, sites vitrines premium et applications métier sur mesure conçues pour convertir vos visiteurs en clients.
                 </p>
               </div>
               <ul style={{ listStyle: 'none', padding: 0, fontSize: '0.9rem', display: 'flex', flexDirection: 'column', gap: '0.6rem', color: 'var(--gray-800)', borderTop: '1px solid var(--gray-200)', paddingTop: '1.25rem', marginTop: 'auto' }}>
                 <li>✓ Sites vitrines &amp; tunnels de vente haute conversion</li>
                 <li>✓ Applications web &amp; interfaces métier réactives</li>
-                <li>✓ Design responsive &amp; référencement SEO local optimisé</li>
-                <li>✓ Suivi des conversions &amp; tracking analytique</li>
-              </ul>
-            </div>
-
-            {/* Pilier 4 : Conduite du Changement & Qualité de Vie au Travail */}
-            <div className="card" style={{ padding: '2.5rem', borderTop: '5px solid var(--red-600)', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', height: '100%' }}>
-              <div>
-                <div style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>🧘</div>
-                <h3 style={{ color: 'var(--blue-900)', fontSize: '1.35rem', marginBottom: '1rem' }}>4. Conduite du Changement &amp; Qualité de Vie au Travail</h3>
-                <p style={{ color: 'var(--gray-700)', fontSize: '0.95rem', lineHeight: 1.6, marginBottom: '1.5rem' }}>
-                  Accompagner les collaborateurs pour faire comprendre et adopter les bénéfices des nouveaux outils, optimiser les processus et préserver l&apos;énergie collective grâce à la Méthode TOP® (Techniques d&apos;Optimisation du Potentiel).
-                </p>
-              </div>
-              <ul style={{ listStyle: 'none', padding: 0, fontSize: '0.9rem', display: 'flex', flexDirection: 'column', gap: '0.6rem', color: 'var(--gray-800)', borderTop: '1px solid var(--gray-200)', paddingTop: '1.25rem', marginTop: 'auto' }}>
-                <li>✓ Accompagnement managérial à la conduite du changement</li>
-                <li>✓ Régulation du stress professionnel &amp; récupération flash (SRF)</li>
-                <li>✓ Ateliers QVCT &amp; cohésion d&apos;équipe en entreprise</li>
-                <li>✓ Prise en charge OPCO possible dans le plan de développement</li>
+                <li>✓ Référencement naturel (SEO) et visibilité dans les moteurs de réponse IA (GEO)</li>
+                <li>✓ Prestation sur devis (hors financement formation)</li>
               </ul>
             </div>
           </div>

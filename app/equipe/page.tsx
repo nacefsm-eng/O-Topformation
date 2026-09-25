@@ -57,9 +57,9 @@ export default function EquipePage() {
             {/* 3. Régis */}
             <TeamMemberCard
               position="left"
-              roleTitle="Stratégie Opérationnelle & Gestion"
+              roleTitle="Formateur certifié Méthode TOP® & Stratégie Opérationnelle"
               firstName="Régis"
-              lastName=""
+              lastName="Domergue"
               imageUrl="/team-regis.png"
               description="Excellence opérationnelle forgée sur le terrain, sang-froid et vision stratégique pour sécuriser chaque étape de votre transition."
               onCtaClick={() => window.open('https://wa.me/33767246825?text=Bonjour%20R%C3%A9gis%2C%20je%20souhaite%20%C3%A9changer%20avec%20vous.', '_blank')}
@@ -114,7 +114,7 @@ export default function EquipePage() {
               firstName="Henri"
               lastName=""
               imageUrl="/team-hamouda.jpg"
-              description="Stratège de la communication et des réseaux sociaux. En charge de l'engagement des apprenants, de l'animation de nos communautés d'alumni et du rayonnement digital de la marque Ô'TOP."
+              description="Stratège de la communication et des réseaux sociaux. En charge de l'engagement des apprenants, de l'animation de nos communautés et du rayonnement digital de la marque Ô'TOP."
               onCtaClick={() => window.open('https://wa.me/33767246825?text=Bonjour%20Henri%2C%20je%20souhaite%20%C3%A9changer%20avec%20vous%20sur%20la%20communication.', '_blank')}
             />
           </div>

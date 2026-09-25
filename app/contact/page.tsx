@@ -150,12 +150,12 @@ function ContactContent() {
                   </div>
                 </a>
 
-                {/* Bloc Adresse & NDA */}
+                {/* Bloc Adresse & Partenaire */}
                 <div style={{ padding: '1.25rem', background: '#eef2f6', borderRadius: 'var(--radius)', fontSize: '0.85rem', color: 'var(--gray-700)', lineHeight: 1.6 }}>
                   <strong>Centre pédagogique :</strong><br />
                   Espace Gamma 1, 139 Chemin des 2 Frères, 83190 Ollioules (Var)<br />
                   <span style={{ fontSize: '0.8rem', color: 'var(--gray-600)', marginTop: '0.5rem', display: 'block', lineHeight: 1.5 }}>
-                    Ô&apos;TOP Formation intervient avec l&apos;organisme partenaire Eloq-One, certifié Qualiopi, qui porte les actions de formation et les démarches de financement. NDA Ô&apos;TOP Formation en cours d&apos;attribution.
+                    Ô&apos;TOP Formation intervient avec son partenaire Eloq-One, organisme certifié Qualiopi, qui porte les actions de formation et accompagne les démarches de financement. Les possibilités de prise en charge sont étudiées selon votre statut et restent soumises à l&apos;accord de l&apos;organisme financeur.
                   </span>
                 </div>
               </div>
@@ -174,7 +174,7 @@ function ContactContent() {
                       Merci <strong>{form.nom}</strong> ! Votre dossier a été transmis directement à <strong>Mélissa</strong> (Directrice des admissions).
                     </p>
                     <p style={{ background: '#ecfdf5', padding: '0.75rem 1rem', borderRadius: '8px', border: '1px solid #a7f3d0', color: '#065f46', fontSize: '0.88rem', fontWeight: 600 }}>
-                      ⚡ Vous serez recontacté(e) personnellement sous 24h ouvrées pour valider vos droits de financement (OPCO / FAF / ) et fixer votre diagnostic offert de 15 minutes.
+                      ⚡ Vous serez recontacté(e) personnellement sous 24h ouvrées pour valider vos droits de financement (OPCO / FAF) et fixer votre diagnostic offert de 15 minutes.
                     </p>
                   </div>
 
@@ -285,12 +285,12 @@ function ContactContent() {
                         onChange={e => setForm({ ...form, besoin: e.target.value })}
                         style={{ width: '100%', padding: '0.85rem 1rem', borderRadius: 'var(--radius-sm)', border: '1.5px solid var(--gray-300)', fontSize: '0.95rem', background: 'white' }}
                       >
-                        <option value="Formation IA Certifiante (RS6776)">⚡ IA Générative pour Indépendants (RS6776)</option>
-                        <option value="Formation IA Dirigeants (RS7344)">🤖 IA & Automatisation Business (RS7344)</option>
-                        <option value="Formation Réseaux Sociaux (RS7351)">📱 Stratégie Réseaux Sociaux & Social Selling (RS7351)</option>
-                        <option value="Formation FI TOP (21h)">🧘 Formation Initiale FI TOP® (21h - Stress & Sommeil)</option>
-                        <option value="Formation FB-TOP (7h)">⏱️ Initiation FB-TOP (7h - Récupération Flash)</option>
-                        <option value="Autre projet">✨ Autre projet sur-mesure / Intra-entreprise</option>
+                        <option value="IA générative : création de contenus rédactionnels et visuels responsables (RS6776 – 21 h)">⚡ IA générative : contenus rédactionnels et visuels (RS6776 – 21 h)</option>
+                        <option value="Développer son activité avec l'IA (RS7344 – 21 h)">🤖 Développer son activité avec l&apos;IA (RS7344 – 21 h)</option>
+                        <option value="Communication digitale & réseaux sociaux (RS7351 – 21 h)">📱 Communication digitale &amp; réseaux sociaux (RS7351 – 21 h)</option>
+                        <option value="FI-TOP® (21 h — gestion du stress & changement)">🧘 FI-TOP® (21 h — gestion du stress &amp; changement)</option>
+                        <option value="FB-TOP (7 h)">⏱️ FB-TOP (7 h)</option>
+                        <option value="Offre IA & Méthode TOP® pour vos équipes (sur devis)">✨ Offre IA &amp; Méthode TOP® pour vos équipes (sur devis)</option>
                       </select>
                     </div>
 

@@ -241,7 +241,7 @@ export default function CheckoutModal({ isOpen, onClose, defaultPlan }: Checkout
                 <p className="text-xs text-slate-400">Inclus : accès plateforme + accompagnement pédagogique dédié</p>
               </div>
               <div className="text-right shrink-0">
-                <span className="text-xs text-slate-400 block">Tarif indicatif TTC</span>
+                <span className="text-xs text-slate-400 block">Tarif</span>
                 <span className="text-2xl font-black text-emerald-400">{amount} €</span>
               </div>
             </div>

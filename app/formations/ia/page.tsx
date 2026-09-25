@@ -16,7 +16,7 @@ export default function FormationIAPage() {
         <div className="container">
           <div style={{ maxWidth: '850px' }}>
             <span className="badge" style={{ background: 'rgba(205, 175, 93, 0.2)', color: 'var(--gold-light)', border: '1px solid var(--gold)', marginBottom: '1.25rem' }}>
-              🎓 Certifications France Compétences RS7344 &amp; RS6776 • Formation portée par Eloq-One
+              ⏱ Formations préparant aux certifications RS6776 et RS7344 (France Compétences)
             </span>
             <h1 style={{ color: 'white', marginBottom: '1.5rem', fontSize: 'clamp(2.2rem, 4.5vw, 3.5rem)' }}>
               Utilisez l’IA pour gagner du temps sur les tâches qui ralentissent votre activité.
@@ -27,7 +27,7 @@ export default function FormationIAPage() {
             <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap', marginBottom: '1.5rem', fontSize: '0.9rem', color: '#cbd5e1' }}>
               <span>✓ Parcours adapté à votre profil</span>
               <span>•</span>
-              <span>✓ Coaching sur cas réels selon la formule</span>
+              <span>✓ Accompagnement sur vos cas réels</span>
               <span>•</span>
               <span>✓ Financement étudié avec Eloq-One</span>
             </div>
@@ -51,23 +51,23 @@ export default function FormationIAPage() {
         <div className="container">
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '2rem', textAlign: 'center' }}>
             <div className="card" style={{ padding: '1.5rem' }}>
-              <div style={{ fontSize: '2.2rem', fontWeight: 900, color: 'var(--blue-900)' }}>2 Parcours</div>
-              <p style={{ fontWeight: 600, color: 'var(--gray-700)', margin: '0.25rem 0' }}>Certifiants Métiers</p>
-              <span style={{ fontSize: '0.85rem', color: 'var(--gray-500)' }}>RS7344 (Entreprises) &amp; RS6776 (Indépendants)</span>
+              <div style={{ fontSize: '2.2rem', fontWeight: 900, color: 'var(--blue-900)' }}>2 Formations</div>
+              <p style={{ fontWeight: 600, color: 'var(--gray-700)', margin: '0.25rem 0' }}>Préparant aux Certifications RS</p>
+              <span style={{ fontSize: '0.85rem', color: 'var(--gray-500)' }}>RS7344 &amp; RS6776</span>
             </div>
             <div className="card" style={{ padding: '1.5rem' }}>
-              <div style={{ fontSize: '2.2rem', fontWeight: 900, color: 'var(--gold-dark)' }}>2h Incluses</div>
-              <p style={{ fontWeight: 600, color: 'var(--gray-700)', margin: '0.25rem 0' }}>Accompagnement Expert</p>
+              <div style={{ fontSize: '2.2rem', fontWeight: 900, color: 'var(--gold-dark)' }}>2 h Incluses</div>
+              <p style={{ fontWeight: 600, color: 'var(--gray-700)', margin: '0.25rem 0' }}>Avec un Expert</p>
               <span style={{ fontSize: '0.85rem', color: 'var(--gray-500)' }}>Individuel en visioconférence</span>
             </div>
             <div className="card" style={{ padding: '1.5rem' }}>
               <div style={{ fontSize: '2.2rem', fontWeight: 900, color: 'var(--red-600)' }}>21 h</div>
-              <p style={{ fontWeight: 600, color: 'var(--gray-700)', margin: '0.25rem 0' }}>Formation Complète</p>
-              <span style={{ fontSize: '0.85rem', color: 'var(--gray-500)' }}>Dont 2 h d&apos;accompagnement expert</span>
+              <p style={{ fontWeight: 600, color: 'var(--gray-700)', margin: '0.25rem 0' }}>Par Formation</p>
+              <span style={{ fontSize: '0.85rem', color: 'var(--gray-500)' }}>Dont 2 h d&apos;accompagnement</span>
             </div>
             <div className="card" style={{ padding: '1.5rem' }}>
               <div style={{ fontSize: '2.2rem', fontWeight: 900, color: '#25D366' }}>100% Pratique</div>
-              <p style={{ fontWeight: 600, color: 'var(--gray-700)', margin: '0.25rem 0' }}>Aucun prérequis tech</p>
+              <p style={{ fontWeight: 600, color: 'var(--gray-700)', margin: '0.25rem 0' }}>Sur vos cas réels</p>
               <span style={{ fontSize: '0.85rem', color: 'var(--gray-500)' }}>Outils configurés immédiatement</span>
             </div>
           </div>
@@ -78,8 +78,8 @@ export default function FormationIAPage() {
       <section className="section">
         <div className="container">
           <div className="text-center" style={{ maxWidth: '750px', margin: '0 auto 4rem' }}>
-            <span className="label">Deux parcours adaptés à vos objectifs</span>
-            <h2>Choisissez votre programme certifiant</h2>
+            <span className="label">Deux formations adaptées à vos objectifs</span>
+            <h2>Choisissez votre programme</h2>
             <p>Conçus pour l&apos;action et le résultat immédiat dans votre entreprise ou activité freelance.</p>
           </div>
 
@@ -88,14 +88,14 @@ export default function FormationIAPage() {
             <div className="card" style={{ background: '#ffffff', border: '2px solid var(--blue-900)', display: 'flex', flexDirection: 'column', color: '#1e293b' }}>
               <div style={{ padding: '2rem', flex: 1, display: 'flex', flexDirection: 'column' }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.25rem', gap: '0.75rem', flexWrap: 'wrap' }}>
-                  <span className="label" style={{ color: 'var(--blue-600)', margin: 0 }}>Parcours Stratégique &amp; Opérationnel</span>
+                  <span className="label" style={{ color: 'var(--blue-600)', margin: 0 }}>Intitulé officiel France Compétences</span>
                   <span style={{ background: 'var(--blue-900)', color: 'white', padding: '4px 12px', borderRadius: '9999px', fontSize: '0.8rem', fontWeight: 700 }}>
-                    RS7344 — Dirigeants &amp; Managers
+                    RS7344
                   </span>
                 </div>
-                <h3 style={{ marginBottom: '1rem', color: 'var(--blue-900)' }}>Déployer l’IA dans votre entreprise, sans désorganiser vos équipes</h3>
+                <h3 style={{ marginBottom: '1rem', color: 'var(--blue-900)' }}>Développer son activité avec l&apos;intelligence artificielle (RS7344)</h3>
                 <p style={{ marginBottom: '1.5rem', color: '#334155' }}>
-                  Pour les dirigeants de TPE/PME et leurs collaborateurs stratégiques souhaitant structurer et piloter un véritable projet d&apos;intégration IA rentable (21 h dont 2 h d&apos;accompagnement expert).
+                  Pour dirigeants, managers et collaborateurs : structurer et piloter un projet d&apos;intégration de l&apos;IA (21 h, dont 2 h d&apos;accompagnement avec un expert).
                 </p>
 
                 <h4 style={{ fontSize: '1rem', marginBottom: '0.75rem', color: 'var(--blue-900)' }}>Programme en 5 Modules :</h4>
@@ -103,13 +103,13 @@ export default function FormationIAPage() {
                   <li style={{ display: 'flex', gap: '0.5rem', color: '#334155' }}><span style={{ color: 'var(--blue-600)', fontWeight: 700 }}>✓</span> <strong style={{ color: '#0f172a' }}>Module 1 :</strong> Identifier les opportunités d&apos;intégration &amp; méthode STEP</li>
                   <li style={{ display: 'flex', gap: '0.5rem', color: '#334155' }}><span style={{ color: 'var(--blue-600)', fontWeight: 700 }}>✓</span> <strong style={{ color: '#0f172a' }}>Module 2 :</strong> Plan d&apos;intégration, budget réaliste &amp; conformité AI Act</li>
                   <li style={{ display: 'flex', gap: '0.5rem', color: '#334155' }}><span style={{ color: 'var(--blue-600)', fontWeight: 700 }}>✓</span> <strong style={{ color: '#0f172a' }}>Module 3 :</strong> Implémentation opérationnelle (marketing, admin, prompts)</li>
-                  <li style={{ display: 'flex', gap: '0.5rem', color: '#334155' }}><span style={{ color: 'var(--blue-600)', fontWeight: 700 }}>✓</span> <strong style={{ color: '#0f172a' }}>Module 4 :</strong> Conduite du changement &amp; ateliers Méthode TOP® en option pour accompagner les équipes</li>
+                  <li style={{ display: 'flex', gap: '0.5rem', color: '#334155' }}><span style={{ color: 'var(--blue-600)', fontWeight: 700 }}>✓</span> <strong style={{ color: '#0f172a' }}>Module 4 :</strong> Conduite du changement, acculturation des équipes &amp; ateliers Méthode TOP® (en option)</li>
                   <li style={{ display: 'flex', gap: '0.5rem', color: '#334155' }}><span style={{ color: 'var(--blue-600)', fontWeight: 700 }}>✓</span> <strong style={{ color: '#0f172a' }}>Module 5 :</strong> Mesure de performance, KPI &amp; cycle d&apos;optimisation PDCA</li>
-                  <li style={{ display: 'flex', gap: '0.5rem', color: '#334155' }}><span style={{ color: 'var(--blue-600)', fontWeight: 700 }}>✓</span> <strong style={{ color: '#0f172a' }}>Accompagnement :</strong> 2 h d&apos;accompagnement individuel avec un expert incluses</li>
+                  <li style={{ display: 'flex', gap: '0.5rem', color: '#334155' }}><span style={{ color: 'var(--blue-600)', fontWeight: 700 }}>✓</span> <strong style={{ color: '#0f172a' }}>Accompagnement :</strong> 2 h avec un expert incluses (accompagnement sur mesure possible)</li>
                 </ul>
 
                 <div style={{ background: 'var(--blue-50)', padding: '1rem', borderRadius: 'var(--radius-sm)', marginBottom: '1.5rem', fontSize: '0.9rem', color: 'var(--blue-900)' }}>
-                  <strong>🏆 Résultat concret :</strong> Vous repartez avec un plan d&apos;action chiffré, des outils configurés et la préparation complète à la certification RS7344 (évaluation facultative sur demande).
+                  <strong>🏆 Résultat concret :</strong> Vous repartez avec une feuille de route IA, des processus optimisés et la préparation à la certification RS7344 (passage sur demande devant jury).
                 </div>
               </div>
 
@@ -131,22 +131,22 @@ export default function FormationIAPage() {
             <div className="card" style={{ background: '#ffffff', border: '2px solid var(--gold)', display: 'flex', flexDirection: 'column', color: '#1e293b' }}>
               <div style={{ padding: '2rem', flex: 1, display: 'flex', flexDirection: 'column' }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.25rem', gap: '0.75rem', flexWrap: 'wrap' }}>
-                  <span className="label" style={{ color: 'var(--gold-dark)', margin: 0 }}>Parcours Pratique &amp; Productivité</span>
+                  <span className="label" style={{ color: 'var(--gold-dark)', margin: 0 }}>Intitulé officiel France Compétences</span>
                   <span style={{ background: 'var(--gold-dark)', color: 'white', padding: '4px 12px', borderRadius: '9999px', fontSize: '0.8rem', fontWeight: 700 }}>
-                    RS6776 — Indépendants &amp; Créateurs
+                    RS6776
                   </span>
                 </div>
-                <h3 style={{ marginBottom: '1rem', color: 'var(--blue-900)' }}>Créez vos assistants IA et récupérez du temps chaque semaine</h3>
+                <h3 style={{ marginBottom: '1rem', color: 'var(--blue-900)' }}>RS6776 — IA générative : création de contenus rédactionnels et visuels responsables</h3>
                 <p style={{ marginBottom: '1.5rem', color: '#334155' }}>
-                  Pour coachs, thérapeutes, consultants et indépendants souhaitant produire leur contenu en autonomie et déléguer les tâches chronophages à des assistants IA.
+                  Pour coachs, indépendants, créateurs et professionnels : maîtriser la génération de contenus tout en respectant le cadre éthique et légal.
                 </p>
 
-                <h4 style={{ fontSize: '1rem', marginBottom: '0.75rem', color: 'var(--blue-900)' }}>Programme en 3 Modules Pratiques (21 h dont 2 h d&apos;accompagnement expert) :</h4>
+                <h4 style={{ fontSize: '1rem', marginBottom: '0.75rem', color: 'var(--blue-900)' }}>Programme en 3 modules (21 h, dont 2 h d&apos;accompagnement avec un expert) :</h4>
                 <ul style={{ listStyle: 'none', padding: 0, marginBottom: '2rem', display: 'flex', flexDirection: 'column', gap: '0.6rem', color: '#334155' }}>
                   <li style={{ display: 'flex', gap: '0.5rem', color: '#334155' }}><span style={{ color: 'var(--gold-dark)', fontWeight: 700 }}>✓</span> <strong style={{ color: '#0f172a' }}>Module 1 :</strong> Stratégie d&apos;implémentation &amp; choix des outils selon budget</li>
                   <li style={{ display: 'flex', gap: '0.5rem', color: '#334155' }}><span style={{ color: 'var(--gold-dark)', fontWeight: 700 }}>✓</span> <strong style={{ color: '#0f172a' }}>Module 2 :</strong> Création de contenus rédactionnels, visuels &amp; assistants IA sur mesure</li>
-                  <li style={{ display: 'flex', gap: '0.5rem', color: '#334155' }}><span style={{ color: 'var(--gold-dark)', fontWeight: 700 }}>✓</span> <strong style={{ color: '#0f172a' }}>Module 3 :</strong> Sécurité, conformité RGPD &amp; non-exposition des données</li>
-                  <li style={{ display: 'flex', gap: '0.5rem', color: '#334155' }}><span style={{ color: 'var(--gold-dark)', fontWeight: 700 }}>✓</span> <strong style={{ color: '#0f172a' }}>Accompagnement :</strong> 2 h d&apos;accompagnement individuel avec un expert incluses</li>
+                  <li style={{ display: 'flex', gap: '0.5rem', color: '#334155' }}><span style={{ color: 'var(--gold-dark)', fontWeight: 700 }}>✓</span> <strong style={{ color: '#0f172a' }}>Module 3 :</strong> Conformité, éthique &amp; réglementation (AI Act, RGPD, confidentialité)</li>
+                  <li style={{ display: 'flex', gap: '0.5rem', color: '#334155' }}><span style={{ color: 'var(--gold-dark)', fontWeight: 700 }}>✓</span> <strong style={{ color: '#0f172a' }}>Accompagnement :</strong> 2 h avec un expert incluses (accompagnement sur mesure possible)</li>
                 </ul>
 
                 <div style={{ background: '#fdfbf7', padding: '1rem', borderRadius: 'var(--radius-sm)', marginBottom: '1.5rem', fontSize: '0.9rem', color: 'var(--gray-800)', border: '1px solid var(--gold-light)' }}>
@@ -160,7 +160,7 @@ export default function FormationIAPage() {
                   className="btn" 
                   style={{ width: '100%', justifyContent: 'center', background: 'linear-gradient(135deg, #d97706, #059669)', color: 'white', fontWeight: 800 }}
                 >
-                  Profiter de l&apos;offre Promo 600 € 💳
+                  Profiter de l&apos;offre à 600 € (jusqu&apos;au 31/10/2026) ⏱
                 </a>
                 <a 
                   href="https://buy.stripe.com/5kQ4gB6MkfRSaKxaMhb7y01" 
@@ -184,7 +184,7 @@ export default function FormationIAPage() {
           <div className="text-center" style={{ maxWidth: '750px', margin: '0 auto 3.5rem' }}>
             <span className="label">Méthode Pédagogique O&apos;TOP</span>
             <h2>Un accompagnement humain qui fait la différence</h2>
-            <p>Contrairement aux simples cours en ligne, nous combinons autonomie et suivi direct par nos formateurs pour garantir la réussite de votre certification.</p>
+            <p>Contrairement aux simples cours en ligne, nous combinons autonomie et suivi par nos formateurs pour vous préparer à la certification.</p>
           </div>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2rem' }}>
@@ -200,13 +200,13 @@ export default function FormationIAPage() {
             </div>
             <div className="card" style={{ padding: '2rem' }}>
               <div style={{ fontSize: '2rem', marginBottom: '1rem' }}>👥</div>
-              <h4>Masterclass &amp; Suivi</h4>
-              <p>Sessions en petit groupe et tutorat individuel avec nos formateurs pour débloquer chaque cas pratique.</p>
+              <h4>Accompagnement</h4>
+              <p>2 h avec un expert incluses, en visioconférence pour débloquer chaque cas pratique.</p>
             </div>
             <div className="card" style={{ padding: '2rem' }}>
               <div style={{ fontSize: '2rem', marginBottom: '1rem' }}>🏆</div>
-              <h4>Jury Professionnel</h4>
-              <p>Mise en situation réelle et soutenance orale pour valider officiellement votre certification France Compétences.</p>
+              <h4>Certification sur demande</h4>
+              <p>Évaluation devant un jury professionnel, selon les modalités du certificateur.</p>
             </div>
           </div>
         </div>

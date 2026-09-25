@@ -21,17 +21,17 @@ const PREDEFINED_QUESTIONS: PredefinedQA[] = [
   },
   {
     id: 'coaching',
-    question: '⚡ Détails des 5h de coaching 1-to-1 en IA',
+    question: '⚡ Détails des 2 h d&apos;accompagnement en IA',
     answer:
-      "Contrairement aux vidéos passives, nos formations IA et Réseaux Sociaux incluent 5 heures en visio individuelle avec Renaud. Vous partagez votre écran et vous construisez vos assistants personnalisés et automatisations sur vos propres documents d'entreprise.",
+      "Chaque formation inclut 2 heures d'accompagnement individuel en visioconférence avec un expert pour déployer concrètement vos outils et flux sur vos cas réels.",
     whatsappMessage:
-      "Bonjour Mélissa, je souhaite des précisions sur le déroulement des 5h de coaching individuel 1-to-1 en IA avec Renaud.",
+      "Bonjour Mélissa, je souhaite des précisions sur le déroulement des 2 h d'accompagnement individuel avec un expert.",
   },
   {
     id: 'top',
     question: '🧘 C&apos;est quoi la Méthode TOP® ?',
     answer:
-      "Les Techniques d'Optimisation du Potentiel (TOP®) sont une méthode psycho-cognitive issue des forces d'élite et du sport olympique. Elle vous donne des boîtes à outils de respiration, relaxation somatique et imagerie mentale pour gérer le stress, récupérer en 5 minutes et booster votre concentration.",
+      "Les Techniques d'Optimisation du Potentiel (TOP®) sont une méthode pédagogique issue du Service de santé des armées et du sport de haut niveau, aujourd'hui largement déployée en entreprise. Elle vous donne des outils concrets de respiration, relaxation et imagerie mentale pour réguler le stress et préserver votre énergie.",
     whatsappMessage:
       "Bonjour Mélissa, je souhaite découvrir la méthode TOP® (formation FI TOP 21h ou FB-TOP 7h). Pouvez-vous m'en dire plus ?",
   },

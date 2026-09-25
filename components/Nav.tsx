@@ -8,29 +8,29 @@ import ThemeToggle from '@/components/ThemeToggle';
 
 const formationsLinks = [
   { 
-    label: '🤖 IA & Automatisation Business (RS7344)', 
-    desc: 'Intégration de l\'IA dans l\'entreprise, workflows & conformité AI Act',
-    href: '/formations/ia' 
+    label: '⏱ Développer son activité avec l\'IA (RS7344)', 
+    desc: 'Intégrer l\'IA dans l\'entreprise, conduite du changement & AI Act',
+    href: '/formations/ia#rs7344' 
   },
   { 
-    label: '⚡ IA Générative pour Indépendants (RS6776)', 
-    desc: '16h vidéos + 5h coaching, prompts métiers & gain de 5 à 10h/semaine',
-    href: '/formations/ia' 
+    label: '⚡ IA générative : contenus rédactionnels et visuels (RS6776)', 
+    desc: '21 h dont 2 h d\'accompagnement, 5 à 10 h gagnées par semaine selon votre activité',
+    href: '/formations/ia#rs6776' 
   },
   { 
-    label: '📱 Préparation Certification Réseaux Sociaux (RS7351)', 
-    desc: 'Formation préparant à la certification RS7351 • 11h+ vidéos, LinkedIn, Waalaxy, Instagram & Meta Ads',
+    label: '⏱ Communication digitale & réseaux sociaux (RS7351)', 
+    desc: '21 h dont 2 h d\'accompagnement : LinkedIn, Instagram, Meta Ads',
     href: '/formations/reseaux-sociaux' 
   },
   { 
-    label: '🧘 Méthode TOP® & Gestion du Stress', 
-    desc: 'Régulation du stress, prévention du burnout & endurance cognitive',
+    label: '⏱ Méthode TOP® & conduite du changement', 
+    desc: 'Gestion du stress, efficacité des équipes, adoption des nouveaux outils',
     href: '/formations/fi-top' 
   },
   { 
     label: '📋 Catalogue & Inscriptions', 
     desc: 'Récapitulatif des cursus, modalités de règlement & inscription en ligne',
-    href: '/respirez' 
+    href: '/catalogue' 
   },
 ];
 
@@ -156,6 +156,16 @@ export default function Nav() {
 
             <li role="none">
               <Link
+                href="/equipe"
+                className={pathname === '/equipe' ? 'active' : ''}
+                role="menuitem"
+              >
+                Équipe
+              </Link>
+            </li>
+
+            <li role="none">
+              <Link
                 href="/brochure"
                 className={pathname === '/brochure' ? 'active' : ''}
                 role="menuitem"
@@ -166,11 +176,11 @@ export default function Nav() {
 
             <li role="none">
               <Link
-                href="/respirez"
-                className={pathname === '/respirez' ? 'active' : ''}
+                href="/catalogue"
+                className={pathname === '/catalogue' ? 'active' : ''}
                 role="menuitem"
               >
-                Nos Offres
+                Catalogue
               </Link>
             </li>
           </ul>
@@ -230,8 +240,9 @@ export default function Nav() {
           <li><Link href="/entreprises" onClick={() => setMobileOpen(false)} style={{ color: 'white', fontSize: '1.1rem' }}>Entreprises & B2B</Link></li>
           <li><Link href="/methode" onClick={() => setMobileOpen(false)} style={{ color: 'white', fontSize: '1.1rem' }}>La Méthode TOP®</Link></li>
           <li><Link href="/financement" onClick={() => setMobileOpen(false)} style={{ color: 'white', fontSize: '1.1rem' }}>Financement</Link></li>
+          <li><Link href="/equipe" onClick={() => setMobileOpen(false)} style={{ color: 'white', fontSize: '1.1rem' }}>Notre Équipe</Link></li>
           <li><Link href="/brochure" onClick={() => setMobileOpen(false)} style={{ color: 'white', fontSize: '1.1rem' }}>Brochure & Plaquette 📄</Link></li>
-          <li><Link href="/respirez" onClick={() => setMobileOpen(false)} style={{ color: 'white', fontSize: '1.1rem' }}>Nos Offres & Tarifs</Link></li>
+          <li><Link href="/catalogue" onClick={() => setMobileOpen(false)} style={{ color: 'white', fontSize: '1.1rem' }}>Catalogue Officiel</Link></li>
           <li style={{ marginTop: '1rem' }}>
             <Link href="/contact" onClick={() => setMobileOpen(false)} className="w-full block py-3.5 text-center rounded-xl bg-blue-600 text-white font-bold">
               Demander un diagnostic <span className="whitespace-nowrap">15 min ⚡</span>

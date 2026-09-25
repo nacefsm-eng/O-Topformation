@@ -227,7 +227,7 @@ export default function NinePillarsSection({
               <span>🎯</span> Une méthode éprouvée sur le terrain, pas des gadgets théoriques
             </h4>
             <p className="mt-1 text-sm text-slate-300 leading-relaxed">
-              Chacun de ces 9 piliers fait l&apos;objet d&apos;exercices pratiques (respiration RMD, relaxation paradoxale, imagerie PMR, scénarios sous tension) pour un ancrage neuro-physiologique immédiat.
+              Chacun de ces 9 piliers fait l&apos;objet d&apos;exercices pratiques (respiration RMD, relaxation paradoxale, imagerie PMR, scénarios sous tension) pour un ancrage durable par la pratique.
             </p>
           </div>
           <div className="flex-shrink-0">

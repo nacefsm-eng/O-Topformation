@@ -89,15 +89,15 @@ export default function FiTopPage() {
             </h1>
 
             <p className="text-base sm:text-xl text-slate-300 max-w-3xl mx-auto mb-10 leading-relaxed font-normal">
-              Formation Initiale aux Techniques d’Optimisation du Potentiel (FI TOP® — 21h). Une boîte à outils concrète et éprouvée pour mieux récupérer, réguler vos émotions et maintenir votre efficacité au quotidien dans vos contextes professionnels et personnels les plus exigeants.
+              Formation initiale aux Techniques d&apos;Optimisation du Potentiel (FI-TOP®, 21 h). Une boîte à outils concrète et éprouvée pour mieux récupérer, réguler vos émotions et rester efficace dans vos contextes professionnels les plus exigeants, notamment lors de changements d&apos;outils et d&apos;organisation comme l&apos;intégration de l&apos;IA.
             </p>
 
             {/* Quick Badges */}
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-3xl mx-auto mb-10 text-left">
               <div className="p-4 rounded-2xl bg-slate-900/80 border border-slate-800">
                 <div className="text-xs text-slate-400 font-medium">Durée</div>
-                <div className="text-lg font-bold text-white">21h (3 jours)</div>
-                <div className="text-xs text-amber-400">1 week-end complet</div>
+                <div className="text-lg font-bold text-white">21 h (3 jours)</div>
+                <div className="text-xs text-amber-400">Inter ou intra-entreprise</div>
               </div>
               <div className="p-4 rounded-2xl bg-slate-900/80 border border-slate-800">
                 <div className="text-xs text-slate-400 font-medium">Format</div>
@@ -307,7 +307,7 @@ export default function FiTopPage() {
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">3</span>
-                    <span><strong>En fin :</strong> QCM sommatif (seuil de réussite supérieur à 70%) donnant droit à la <strong>délivrance de l&apos;Attestation / Certificat de compétences</strong>.</span>
+                    <span><strong>En fin :</strong> QCM (seuil de réussite supérieur à 70 %) donnant lieu à la <strong>délivrance d&apos;une attestation de fin de formation</strong>.</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">4</span>
@@ -330,7 +330,7 @@ export default function FiTopPage() {
                 <div className="p-4 rounded-xl bg-slate-900 border border-slate-800 text-left text-xs space-y-2">
                   <div className="flex justify-between text-slate-300">
                     <span>Partenaire Qualiopi :</span>
-                    <strong className="text-white">Portage certifié via Eloq-One</strong>
+                    <strong className="text-white">Formations financées portées par Eloq-One, organisme certifié Qualiopi</strong>
                   </div>
                   <div className="flex justify-between text-slate-300">
                     <span>Contact Direct :</span>

@@ -46,7 +46,7 @@ export default function AProposPage() {
               Dans un quotidien pro saturé, intégrer les bons outils est devenu indispensable, mais cela ne doit pas se faire au détriment de l’équilibre des équipes.
             </p>
             <p className="text-slate-200" style={{ color: '#e2e8f0' }}>
-              Trop de formations au digital se limitent à des modules génériques sans application directe. À l’inverse, les démarches de bien-être ignorent souvent les impératifs de rentabilité et les contraintes quotidiennes des entreprises.
+              Intégrer l&apos;IA change les habitudes et les process. Pour que vos équipes adoptent durablement ces nouvelles pratiques, nous associons nos formations IA à la Méthode TOP® : gestion du stress, concentration et conduite du changement.
             </p>
             <p className="text-slate-200" style={{ color: '#e2e8f0' }}>
               <strong className="text-white" style={{ color: '#ffffff' }}>Notre rôle :</strong> vous donner les clés pour automatiser ce qui doit l’être, structurer vos processus et préserver votre concentration et votre énergie au fil des semaines.
@@ -115,7 +115,7 @@ export default function AProposPage() {
               </div>
               <h3 className="text-xl font-bold text-white">3. Accompagnement Rigoureux</h3>
               <p className="text-slate-300 text-sm leading-relaxed">
-                Un suivi individuel avec nos formateurs et un accompagnement complet dans vos démarches de prise en charge, en partenariat avec l’organisme certifié Qualiopi Eloq-One.
+                Un suivi individuel avec nos formateurs et un accompagnement complet dans vos démarches de prise en charge, en partenariat avec Eloq-One, organisme certifié Qualiopi, pour les formations financées.
               </p>
             </div>
 
@@ -147,11 +147,11 @@ export default function AProposPage() {
               />
               <div className="space-y-2 text-center sm:text-left">
                 <span className="text-xs font-bold text-amber-400 bg-amber-500/10 px-2.5 py-0.5 rounded-full border border-amber-500/20">
-                  Présidente &amp; Formatrice TOP®
+                  Fondatrice &amp; Formatrice Certifiée TOP®
                 </span>
                 <h3 className="text-xl font-bold text-white">Mélissa JENNADI</h3>
                 <p className="text-xs text-slate-300 leading-relaxed">
-                  Praticienne certifiée aux Techniques d&apos;Optimisation du Potentiel (TOP®), spécialisée dans la régulation émotionnelle, le sommeil réparateur et la gestion des dossiers de subvention formation.
+                  Formatrice certifiée Méthode TOP®, spécialisée dans la gestion du stress et la performance durable des équipes. Référente des dossiers de financement de formation.
                 </p>
               </div>
             </div>
@@ -193,14 +193,14 @@ export default function AProposPage() {
             <div className="p-8 rounded-3xl bg-slate-950 border border-slate-800 flex flex-col sm:flex-row gap-6 items-center sm:items-start shadow-xl">
               <img
                 src="/team-regis.png"
-                alt="Régis"
+                alt="Régis Domergue"
                 className="w-28 h-28 rounded-2xl object-cover border-2 border-emerald-400/40 shrink-0"
               />
               <div className="space-y-2 text-center sm:text-left">
                 <span className="text-xs font-bold text-emerald-400 bg-emerald-500/10 px-2.5 py-0.5 rounded-full border border-emerald-500/20">
-                  Stratégie Opérationnelle &amp; Gestion
+                  Formateur certifié Méthode TOP® &amp; Stratégie Opérationnelle
                 </span>
-                <h3 className="text-xl font-bold text-white">Régis</h3>
+                <h3 className="text-xl font-bold text-white">Régis Domergue</h3>
                 <p className="text-xs text-slate-300 leading-relaxed">
                   Excellence opérationnelle forgée sur le terrain, sang-froid et vision stratégique pour sécuriser chaque étape de la transition et la gestion quotidienne.
                 </p>

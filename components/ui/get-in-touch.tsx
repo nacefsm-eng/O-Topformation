@@ -261,13 +261,13 @@ export default function GetInTouch() {
                       onChange={(e) => setParcours(e.target.value)}
                       className="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-700/80 text-white focus:outline-none focus:border-blue-500 text-sm"
                     >
-                      <option value="rs6776">⚡ IA Générative pour Indépendants (RS6776 - 16h)</option>
-                      <option value="rs7344">🤖 Intégration de l’IA en Entreprise &amp; Workflows (RS7344)</option>
-                      <option value="rs7351">📱 Préparation Certification Réseaux Sociaux (RS7351 - 11h+)</option>
-                      <option value="fi-top">🧘 Formation Initiale FI TOP® (21h / 3 jours)</option>
-                      <option value="fb-top">⏱️ Formation FB-TOP Initiation (7h)</option>
-                      <option value="intra">🏢 Formation intra-entreprise sur-mesure</option>
-                      <option value="autre">✨ Autre besoin d’accompagnement</option>
+                      <option value="rs6776">⚡ IA générative : contenus rédactionnels et visuels (RS6776 – 21 h)</option>
+                      <option value="rs7344">⏱ Développer son activité avec l&apos;IA (RS7344 – 21 h)</option>
+                      <option value="rs7351">⏱ Communication digitale &amp; réseaux sociaux (RS7351 – 21 h)</option>
+                      <option value="fi-top">🧘 FI-TOP® (21 h / 3 jours)</option>
+                      <option value="fb-top">⏱ FB-TOP (7 h)</option>
+                      <option value="ia-top">🏢 Offre IA &amp; Méthode TOP® pour vos équipes (sur devis)</option>
+                      <option value="autre">✨ Autre besoin d’accompagnement sur mesure</option>
                     </select>
                   </div>
 

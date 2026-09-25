@@ -10,86 +10,86 @@ export const metadata: Metadata = {
 export default function BrochurePage() {
   const formations = [
     {
-      title: "RS6776 — IA Générative & Automatisation Métier",
-      subtitle: "Cursus Certifiant France Compétences • Pôle IA N°1",
-      duration: "21 heures (e-learning + 2h coaching expert)",
+      title: "RS6776 — IA générative : création de contenus rédactionnels et visuels responsables",
+      subtitle: "Prépare à la certification RS6776 (France Compétences)",
+      duration: "21 h, dont 2 h d'accompagnement avec un expert",
       format: "100% e-learning à votre rythme + accompagnement 1-to-1",
       price: "1 490 €",
-      specialOffer: "Offre spéciale durée limitée : 600 €",
+      specialOffer: "Offre : 600 € au lieu de 1 490 €, jusqu'au 31 octobre 2026",
       funding: "Éligible OPCO, FAF (FIF-PL, AGEFICE, FAFCEA)",
-      badge: "Formation Star • IA Métier",
+      badge: "Formation Phare • IA",
       badgeColor: "bg-blue-600/20 text-blue-400 border-blue-500/30",
-      description: "Maîtrisez l'intelligence artificielle générative pour booster votre productivité. Intégrez ChatGPT, Claude, créez vos GPTs personnalisés et automatisez vos flux avec tuteur IA et quiz de validation.",
+      description: "Maîtrisez l'intelligence artificielle générative pour booster votre productivité. Intégrez ChatGPT, Claude, créez vos GPTs personnalisés avec tuteur IA et quiz de validation.",
       points: [
         "Fondamentaux de l'IA & prompt engineering avancé",
-        "Automatisation de workflows métiers sans coder (Make, n8n)",
-        "Création de bases de données internes & GPTs sur mesure",
-        "Cas pratiques guidés, quiz de validation à chaque module & conformité AI Act"
+        "Création de contenus rédactionnels et visuels responsables",
+        "Création de votre assistant GPT personnalisé & conformité AI Act",
+        "Quiz de validation à chaque module & accompagnement avec Renaud"
       ]
     },
     {
-      title: "RS7351 — Stratégie Réseaux Sociaux & Social Selling",
-      subtitle: "Cursus Certifiant France Compétences (remplace RS6240)",
-      duration: "21 heures (e-learning + 5h coaching expert)",
+      title: "RS7351 — Gérer la communication digitale d'une entreprise via les réseaux sociaux",
+      subtitle: "Prépare à la certification RS7351 (France Compétences)",
+      duration: "21 h, dont 2 h d'accompagnement avec un expert",
       format: "Distanciel avec accompagnement individuel",
       price: "1 490 €",
       funding: "Éligible OPCO, FAF (FIF-PL, AGEFICE)",
       badge: "Certifiant RS7351",
       badgeColor: "bg-emerald-600/20 text-emerald-400 border-emerald-500/30",
-      description: "Transformez vos réseaux sociaux (LinkedIn & Instagram) en un levier d'acquisition régulier et rentable sans dépendre de la publicité payante.",
+      description: "Transformez vos réseaux sociaux en un levier d'acquisition régulier en combinant contenus organiques et premières campagnes Meta Ads.",
       points: [
-        "Ligne éditoriale d'autorité et personal branding percutant",
+        "Veille, stratégie et ligne éditoriale",
         "Création de visuels et vidéos engageantes avec Canva & CapCut",
-        "Prospection éthique et conversion en messagerie directe",
-        "Cas pratiques métier, quiz de validation et calendrier trimestriel prêt à l'emploi"
+        "Diffusion, modération (Meta Business Suite) et prospection LinkedIn",
+        "Tableau de reporting prêt à l'emploi et suivi ROI"
       ]
     },
     {
-      title: "RS7344 — Création de Site Web Moderne & SEO",
-      subtitle: "Cursus Certifiant France Compétences • Développer son activité avec l'IA",
-      duration: "21 heures (e-learning + 5h coaching expert)",
+      title: "RS7344 — Développer son activité avec l'IA",
+      subtitle: "Prépare à la certification RS7344 (France Compétences)",
+      duration: "21 h, dont 2 h d'accompagnement avec un expert",
       format: "Distanciel ou Présentiel",
       price: "1 490 €",
       funding: "Éligible OPCO, FAF (FIF-PL, AGEFICE)",
       badge: "Certifiant RS7344",
       badgeColor: "bg-cyan-600/20 text-cyan-400 border-cyan-500/30",
-      description: "Développez votre activité grâce aux leviers web modernes : site professionnel, tunnel de conversion, SEO local optimisé et intégration de l'IA.",
+      description: "Identifiez les opportunités de l'IA, construisez votre plan d'intégration, déployez l'IA dans vos processus et embarquez vos équipes.",
       points: [
-        "Architecture d'un site web taillé pour la conversion",
-        "Référencement naturel (SEO) local et technique",
-        "Cartographie des processus et feuilles de route IA",
-        "Cas pratiques guidés, quiz d'évaluation et soutenance de certification"
+        "Opportunités & méthode STEP",
+        "Plan d'intégration, budget & conformité AI Act",
+        "Déploiement dans vos processus & charte éthique IA",
+        "Indicateurs & amélioration continue (PDCA) · Jury sur demande"
       ]
     },
     {
-      title: "FI TOP® — Formation Initiale TOP®",
-      subtitle: "Cursus Référence Préparation Mentale & Gestion du Stress",
-      duration: "21 heures (3 jours)",
-      format: "Présentiel (Var / PACA) ou Distanciel (Visio synchrone)",
+      title: "FI-TOP® — Formation Initiale TOP®",
+      subtitle: "Cursus Référence Gestion du Stress & Performance",
+      duration: "21 h (3 jours)",
+      format: "Présentiel (Ollioules / PACA) ou Distanciel",
       price: "890 €",
       funding: "Éligible OPCO & FAF (FIF-PL, AGEFICE)",
       badge: "Méthode TOP®",
       badgeColor: "bg-purple-600/20 text-purple-400 border-purple-500/30",
-      description: "Munissez-vous de l'essentiel de la boîte à outils TOP pour vous auto-gérer au quotidien. Prérequis obligatoire pour accéder au cursus de Praticien TOP®.",
+      description: "Munissez-vous de l'essentiel de la boîte à outils TOP pour vous auto-gérer au quotidien dans vos contextes professionnels les plus exigeants.",
       points: [
-        "Régulation du stress aigu et prévention de l'épuisement professionnel (épuisement professionnel)",
+        "Gestion du stress aigu et préservation de l'énergie au travail",
         "Techniques respiratoires dynamisantes et relaxantes ciblées",
-        "Imagerie mentale et répétition mentale des actions réussies (RMA)",
-        "Récupération flash (SRF) et gestion du sommeil"
+        "Imagerie mentale et répétition mentale des actions réussies",
+        "Récupération flash et régulation de la charge mentale"
       ]
     },
     {
-      title: "FB-TOP — Fondamentaux & Gestion de Crise",
+      title: "Formation flash TOP® (FB-TOP) — 7 h",
       subtitle: "Format court intensif pour décideurs et équipes",
-      duration: "7 heures (1 jour)",
+      duration: "7 h (1 jour)",
       format: "Intra-entreprise ou Inter-entreprises",
       price: "390 €",
       funding: "Prise en charge OPCO possible",
       badge: "Format Express",
       badgeColor: "bg-amber-600/20 text-amber-400 border-amber-500/30",
-      description: "Acquérez les réflexes mentaux immédiats pour garder votre lucidité décisionnelle face aux situations d'urgence, négociations tendues ou prises de parole à fort enjeu.",
+      description: "Acquérez les réflexes mentaux immédiats pour garder votre lucidité décisionnelle face aux situations d'urgence ou de stress aigu.",
       points: [
-        "Désamorçage instantané du pic de stress émotionnel",
+        "Gestion du pic de stress émotionnel",
         "Maintien de la concentration et de la lucidité sous haute pression",
         "Exercices pratiques d'ancrage somatique",
         "Fiches réflexes prêtes à l'emploi pour le quotidien professionnel"
@@ -151,8 +151,8 @@ export default function BrochurePage() {
             <div className="p-4 rounded-xl bg-slate-900/60 border border-slate-800 flex items-start gap-3">
               <Sparkles className="text-blue-400 shrink-0 mt-0.5" size={20} />
               <div>
-                <div className="font-bold text-white text-sm">2h à 5h de Coaching</div>
-                <div className="text-xs text-slate-400">1-to-1 individuel inclus</div>
+                <div className="font-bold text-white text-sm">2 h d&apos;accompagnement</div>
+                <div className="text-xs text-slate-400">Incluses par formation</div>
               </div>
             </div>
             <div className="p-4 rounded-xl bg-slate-900/60 border border-slate-800 flex items-start gap-3">
@@ -165,8 +165,8 @@ export default function BrochurePage() {
             <div className="p-4 rounded-xl bg-slate-900/60 border border-slate-800 flex items-start gap-3">
               <Users className="text-purple-400 shrink-0 mt-0.5" size={20} />
               <div>
-                <div className="font-bold text-white text-sm">Groupes Réduits</div>
-                <div className="text-xs text-slate-400">Max 8 à 10 participants</div>
+                <div className="font-bold text-white text-sm">Groupes réduits</div>
+                <div className="text-xs text-slate-400">Sessions en présentiel (Méthode TOP®)</div>
               </div>
             </div>
           </div>
@@ -276,7 +276,7 @@ export default function BrochurePage() {
                 <h3 className="text-xl font-bold text-white">Offres de Couplage (Packs Duo / Trio)</h3>
               </div>
               <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
-                Formules combinées pour les indépendants et dirigeants souhaitant coupler IA, Réseaux Sociaux et Web.
+                Formules combinées pour les indépendants et dirigeants souhaitant coupler IA et réseaux sociaux.
               </p>
               
               <div className="overflow-x-auto">
@@ -285,7 +285,7 @@ export default function BrochurePage() {
                     <tr className="border-b border-slate-800 text-slate-400">
                       <th className="pb-3 font-semibold">Formule combinée</th>
                       <th className="pb-3 font-semibold text-center">Prix cumulé</th>
-                      <th className="pb-3 font-semibold text-right">Tarif Pack</th>
+                      <th className="pb-3 font-semibold text-right">Tarif pack</th>
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-slate-800/60">
@@ -300,7 +300,7 @@ export default function BrochurePage() {
                       <td className="py-3 text-right text-emerald-400 font-bold text-base">3 390 €</td>
                     </tr>
                     <tr>
-                      <td className="py-3 text-white font-medium">Formule Entreprise (OPCO - 40h total)</td>
+                      <td className="py-3 text-white font-medium">Formule entreprise (40 h)</td>
                       <td className="py-3 text-center text-slate-400">-</td>
                       <td className="py-3 text-right text-blue-400 font-bold text-base">3 200 €</td>
                     </tr>
@@ -313,10 +313,10 @@ export default function BrochurePage() {
             <div className="p-6 sm:p-8 rounded-2xl bg-slate-900 border border-slate-800 space-y-6">
               <div className="flex items-center gap-3">
                 <Clock className="text-blue-400" size={24} />
-                <h3 className="text-xl font-bold text-white">Modules d&apos;Accompagnement Expert</h3>
+                <h3 className="text-xl font-bold text-white">Accompagnement sur mesure (vendu séparément)</h3>
               </div>
               <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
-                Heures additionnelles de coaching 1-to-1 en visio avec Renaud ou Mélissa sur vos propres outils et flux.
+                Crédit d&apos;heures en visio avec un expert, notamment pour le déploiement de l&apos;IA et sa mise en œuvre sur vos cas d&apos;usage.
               </p>
               
               <div className="overflow-x-auto">
@@ -361,10 +361,8 @@ export default function BrochurePage() {
             Informations Administratives &amp; Démarche Qualité
           </h3>
           <p className="text-xs sm:text-sm text-slate-400 leading-relaxed max-w-3xl mx-auto mb-6">
-            Ô&apos;TOP Formation est une marque exploitée par nos intervenants certifiés. 
-            Afin de permettre la prise en charge financière de vos formations auprès des organismes financeurs (OPCO, FIF-PL, AGEFICE, FAFCEA), 
-            nos actions de formation s&apos;effectuent sous le portage certifié <strong>Qualiopi de la société Eloq-One</strong>.
-            SIREN : 935 241 247 • Déclaration d&apos;activité de formation en cours d&apos;enregistrement auprès de la DREETS PACA.
+            Ô&apos;TOP Formations est la marque de la SAS O&apos;TOP FORMATION (SIRET 990 443 186 00012), organisme de formation déclaré. 
+            Les formations financées par un OPCO ou un FAF (FIF-PL, AGEFICE, FAFCEA) sont portées par Eloq-One, organisme certifié Qualiopi.
           </p>
           <div className="inline-flex items-center gap-6 justify-center text-xs font-semibold text-slate-300">
             <span>✅ Audit et conformité pédagogique</span>

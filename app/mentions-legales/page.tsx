@@ -29,16 +29,16 @@ export default function MentionsLegales() {
               <h2 style={{ fontSize: '1.5rem', marginBottom: '1.5rem' }}>1. Identité de l&apos;éditeur</h2>
               <table className="info-table">
                 <tbody>
-                  <tr><th>Raison sociale</th><td>SAS Ô&apos;TOP Formation</td></tr>
+                  <tr><th>Raison sociale</th><td>SAS O&apos;TOP FORMATION</td></tr>
                   <tr><th>Forme juridique</th><td>Société par Actions Simplifiée (SAS)</td></tr>
                   <tr><th>Capital social</th><td>1 000 €</td></tr>
                   <tr><th>SIRET</th><td>990 443 186 00012</td></tr>
                   <tr><th>Numéro RCS</th><td>RCS Toulon 990 443 186</td></tr>
                   <tr><th>Code NAF / APE</th><td>8559A (Formation continue d&apos;adultes)</td></tr>
                   <tr><th>Directrice de la publication</th><td>Mélissa JENNADI (Présidente)</td></tr>
-                  <tr><th>Partenaire Qualiopi</th><td>Ô&apos;TOP Formation intervient avec l&apos;organisme partenaire <strong>Eloq-One</strong>, certifié Qualiopi, qui porte les actions de formation certifiantes et les démarches de financement OPCO & FAF.</td></tr>
+                  <tr><th>Portage Qualiopi</th><td>Les formations financées par un OPCO ou un FAF sont portées par <strong>Eloq-One</strong>, organisme certifié Qualiopi.</td></tr>
                   <tr><th>Siège social &amp; Centre</th><td>Espace Gamma 1, 139 Chemin des 2 Frères, 83190 Ollioules (Var), France</td></tr>
-                  <tr><th>Email officiel</th><td><a href="mailto:formation.rmcf@gmail.com" style={{ color: 'var(--blue-700)' }}>Formation.rmcf@gmail.com</a></td></tr>
+                  <tr><th>Email officiel</th><td><a href="mailto:contact@otopformations.fr" style={{ color: 'var(--blue-700)' }}>contact@otopformations.fr</a></td></tr>
                   <tr><th>Téléphone</th><td><a href="tel:+33767246825" style={{ color: 'var(--blue-700)' }}>07 67 24 68 25</a></td></tr>
                 </tbody>
               </table>
@@ -51,13 +51,13 @@ export default function MentionsLegales() {
 
             <div>
               <h2 style={{ fontSize: '1.5rem', marginBottom: '1.5rem' }}>3. Propriété intellectuelle</h2>
-              <p>L&apos;ensemble du contenu de ce site (textes, images, logos, structure) est la propriété exclusive de SAS Ô&apos;TOP Formation, sauf mention contraire. Toute reproduction sans autorisation écrite est interdite.</p>
-              <p style={{ marginTop: '1rem' }}>La marque TOP® est la propriété de ses auteurs (Méthode Perrault-Pierre). Ô&apos;TOP Formation l&apos;utilise dans le cadre de son activité de formation.</p>
+              <p>L&apos;ensemble du contenu de ce site (textes, images, logos, structure) est la propriété exclusive de SAS O&apos;TOP FORMATION, sauf mention contraire. Toute reproduction sans autorisation écrite est interdite.</p>
+              <p style={{ marginTop: '1rem' }}>TOP® est une marque déposée. Les formations Méthode TOP® d&apos;Ô&apos;TOP Formations sont animées par des formateurs certifiés.</p>
             </div>
 
             <div>
               <h2 style={{ fontSize: '1.5rem', marginBottom: '1.5rem' }}>4. Données personnelles</h2>
-              <p>Conformément au RGPD, vous disposez d&apos;un droit d&apos;accès, de rectification et d&apos;effacement de vos données. Pour exercer ces droits : <a href="mailto:formation.rmcf@gmail.com" style={{ color: 'var(--blue-700)' }}>Formation.rmcf@gmail.com</a></p>
+              <p>Conformément au RGPD, vous disposez d&apos;un droit d&apos;accès, de rectification et d&apos;effacement de vos données. Pour exercer ces droits : <a href="mailto:contact@otopformations.fr" style={{ color: 'var(--blue-700)' }}>contact@otopformations.fr</a></p>
               <p style={{ marginTop: '1rem' }}><Link href="/politique-confidentialite" style={{ color: 'var(--blue-700)' }}>Voir notre Politique de Confidentialité</Link></p>
             </div>
 

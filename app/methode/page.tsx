@@ -4,7 +4,8 @@ import type { Metadata } from 'next';
 import NinePillarsSection from '@/components/sections/NinePillarsSection';
 
 export const metadata: Metadata = {
-  title: "La Méthode TOP®",
+  title: "La Méthode TOP® — Ô'TOP Formations",
+  description: "La Méthode TOP® (Techniques d'Optimisation du Potentiel) : gestion du stress, concentration et récupération pour les équipes, notamment en conduite du changement. Formations à Ollioules ou à distance.",
 };
 
 export default function MethodeTop() {
@@ -18,7 +19,7 @@ export default function MethodeTop() {
             <span>La Méthode TOP®</span>
           </div>
           <h1>La Méthode TOP®</h1>
-          <p>Développées au sein des armées françaises, les Techniques d&apos;Optimisation du Potentiel (TOP®) sont aujourd&apos;hui le référentiel de la performance mentale appliquée au monde professionnel.</p>
+          <p>Développées au sein des armées françaises, les Techniques d&apos;Optimisation du Potentiel (TOP®) sont aujourd&apos;hui une référence de la performance mentale appliquée au monde professionnel.</p>
         </div>
       </div>
 
@@ -27,7 +28,7 @@ export default function MethodeTop() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '4rem', alignItems: 'center' }}>
             <div>
               <span className="label">Historique</span>
-              <h2 style={{ fontSize: '2rem', marginBottom: '1.5rem', color: 'var(--blue-900)' }}>Des gestion du stress à l&apos;entreprise</h2>
+              <h2 style={{ fontSize: '2rem', marginBottom: '1.5rem', color: 'var(--blue-900)' }}>Des armées à l&apos;entreprise</h2>
               <p style={{ marginBottom: '1rem', lineHeight: 1.7, color: 'var(--gray-700)', fontSize: '1rem' }}>
                 Créées dans les années 1990 par le Dr Édith Perreaut-Pierre au sein du service de santé des armées, les TOP® ont d&apos;abord été conçues pour préparer les militaires et les sportifs de haut niveau aux situations d&apos;exception.
               </p>
@@ -83,7 +84,7 @@ export default function MethodeTop() {
               </div>
               <h3 style={{ fontSize: '1.25rem', marginBottom: '1rem', color: 'var(--blue-900)' }}>Imagerie mentale</h3>
               <p style={{ color: 'var(--gray-700)', lineHeight: 1.6, fontSize: '0.95rem' }}>
-                La balade sensorielle, la Préparation Mentale de la Réussite (PMR) et la Répétition Mentale (RM) permettent de préparer le cerveau à l&apos;action par la visualisation. Issue du sport de haut niveau, cette technique est redoutablement efficace en entreprise.
+                La balade sensorielle, la Préparation Mentale de la Réussite (PMR) et la Répétition Mentale (RM) permettent de préparer le cerveau à l&apos;action par la visualisation. Issue du sport de haut niveau, cette technique est largement utilisée en entreprise.
               </p>
             </div>
 
@@ -104,7 +105,7 @@ export default function MethodeTop() {
       {/* 9 Piliers Pour Mieux Comprendre l'Humain */}
       <NinePillarsSection 
         title="9 Piliers pour Mieux Comprendre l'Humain"
-        subtitle="Intégrés à la méthode TOP®, ces 9 piliers structurent l'accompagnement individuel et collectif pour désamorcer l'épuisement et restaurer le plein potentiel."
+        subtitle="Intégrés à la méthode TOP®, ces 9 piliers structurent l'accompagnement individuel et collectif pour prévenir l'épuisement et mobiliser pleinement son potentiel."
       />
 
       <section className="section" style={{ background: 'white' }}>
@@ -123,7 +124,7 @@ export default function MethodeTop() {
               ['💡', 'Prise de décision', 'Conserver sa lucidité dans les moments complexes ou critiques.'],
               ['💪', 'Motivation', 'Mobiliser son énergie sur le long terme sans s\'épuiser.'],
               ['🧠', 'Adaptabilité', 'Développer sa flexibilité mentale face au changement.'],
-              ['⚕️', 'Prévention', 'Agir concrètement contre les Risques Psychosociaux (RPS) et le épuisement professionnel.']
+              ['⚕️', 'Prévention', 'Contribuer à la prévention des risques psychosociaux (RPS).']
             ].map(([icon, title, desc], i) => (
               <div key={i} style={{ padding: '1.5rem', border: '1px solid var(--gray-200)', borderRadius: 'var(--radius)', background: 'var(--gray-50)' }}>
                 <span style={{ fontSize: '2rem', display: 'block', marginBottom: '1rem' }}>{icon}</span>
