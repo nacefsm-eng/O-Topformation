@@ -46,10 +46,45 @@ export default function CheckoutModal({ isOpen, onClose, defaultPlan }: Checkout
 
   if (!isOpen) return null;
 
+  // Stripe Payment Links Mapping
+  const STRIPE_LINKS: Record<string, string> = {
+    'ia-rs6776': 'https://buy.stripe.com/5kQ4gB6MkfRSaKxaMhb7y01',
+    'ia-rs7344': 'https://buy.stripe.com/3cI4gBfiQ9tubOB8E9b7y03',
+    'ia-rs7351': 'https://buy.stripe.com/6oUaEZb2A0WY5qd6w1b7y04',
+    'top-fitop': 'https://buy.stripe.com/00w3cxc6E7lm7yldYtb7y02',
+    'default': 'https://buy.stripe.com/cNieVf9YwgVWf0N7A5b7y00',
+  };
+
+  const getStripeUrl = () => {
+    const offerLower = (selectedOffer || '').toLowerCase();
+    if (offerLower.includes('6776') || (offerLower.includes('ia') && amount === 1490 && !offerLower.includes('7344') && !offerLower.includes('7351') && !offerLower.includes('réseaux'))) {
+      return STRIPE_LINKS['ia-rs6776'];
+    }
+    if (offerLower.includes('7344') || offerLower.includes('activité') || offerLower.includes('workflow')) {
+      return STRIPE_LINKS['ia-rs7344'];
+    }
+    if (offerLower.includes('7351') || offerLower.includes('réseaux') || offerLower.includes('communication')) {
+      return STRIPE_LINKS['ia-rs7351'];
+    }
+    if (offerLower.includes('top') || offerLower.includes('fitop') || amount === 890) {
+      return STRIPE_LINKS['top-fitop'];
+    }
+    return STRIPE_LINKS['default'];
+  };
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setIsProcessing(true);
     
+    // If Stripe payment chosen, redirect directly to the secure Stripe Checkout URL
+    if (modality === 'stripe') {
+      const stripeUrl = getStripeUrl();
+      setTimeout(() => {
+        window.location.href = stripeUrl;
+      }, 600);
+      return;
+    }
+
     setTimeout(() => {
       setIsProcessing(false);
       const ref = 'OTOP-' + Math.random().toString(36).substring(2, 8).toUpperCase();
@@ -354,14 +389,14 @@ export default function CheckoutModal({ isOpen, onClose, defaultPlan }: Checkout
               {isProcessing ? (
                 <>
                   <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-                  <span>Enregistrement en cours...</span>
+                  <span>{modality === 'stripe' ? 'Redirection vers le paiement Stripe sécurisé...' : 'Enregistrement en cours...'}</span>
                 </>
               ) : (
                 <>
                   <Lock size={18} />
                   <span>
                     {modality === 'stripe'
-                      ? `Valider & Recevoir le lien Stripe sécurisé (${paymentInstallments === '3x' ? `3 × ${calculatedMonthly} €` : `${amount} €`})`
+                      ? `Régler en ligne via Stripe sécurisé (${paymentInstallments === '3x' ? `3 × ${calculatedMonthly} €` : `${amount} €`}) →`
                       : modality === 'opco'
                       ? 'Transmettre ma demande d’accompagnement OPCO'
                       : 'Demander le devis officiel & convention'}

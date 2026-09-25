@@ -117,22 +117,19 @@ export default function FiTopPage() {
 
             {/* CTAs */}
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <a
+                href="https://buy.stripe.com/00w3cxc6E7lm7yldYtb7y02"
+                className="w-full sm:w-auto px-8 py-4 rounded-2xl bg-gradient-to-r from-amber-500 to-emerald-600 hover:from-amber-400 hover:to-emerald-500 text-white font-black text-sm sm:text-base shadow-xl shadow-amber-600/30 flex items-center justify-center gap-2 transition-all hover:scale-105"
+              >
+                <span>S&apos;inscrire / Régler en ligne (890 €) 💳</span>
+              </a>
+
               <Link
                 href="/contact"
-                className="w-full sm:w-auto px-8 py-4 rounded-2xl bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-400 hover:to-orange-500 text-white font-black text-sm sm:text-base shadow-xl shadow-amber-600/30 flex items-center justify-center gap-2 transition-all hover:scale-105"
-              >
-                <span>Réserver mon diagnostic gratuit <span className="whitespace-nowrap">15 min ⚡</span></span>
-              </Link>
-
-              <a
-                href="https://wa.me/33767246825?text=Bonjour%20M%C3%A9lissa%2C%20je%20souhaite%20%C3%A9changer%20sur%20la%20formation%20FI%20TOP%C2%AE%20(21h)."
-                target="_blank"
-                rel="noopener noreferrer"
                 className="w-full sm:w-auto px-8 py-4 rounded-2xl bg-slate-900 hover:bg-slate-800 border border-slate-700 text-slate-200 font-bold text-sm sm:text-base flex items-center justify-center gap-2 transition-all"
               >
-                <MessageCircle size={18} className="text-emerald-400" />
-                <span>Être rappelé(e) par Mélissa (Formatrice TOP®)</span>
-              </a>
+                <span>Diagnostic gratuit <span className="whitespace-nowrap">15 min ⚡</span></span>
+              </Link>
             </div>
 
           </div>

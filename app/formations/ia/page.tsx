@@ -112,9 +112,16 @@ export default function FormationIAPage() {
                 </div>
               </div>
 
-              <div style={{ padding: '1.5rem 2rem', borderTop: '1px solid var(--gray-200)', background: 'var(--gray-50)' }}>
-                <Link href="/contact?subject=IA_Dirigeant_RS7344" className="btn btn-primary" style={{ width: '100%', justifyContent: 'center' }}>
-                  Étudier mes possibilités de financement →
+              <div style={{ padding: '1.5rem 2rem', borderTop: '1px solid var(--gray-200)', background: 'var(--gray-50)', display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+                <a 
+                  href="https://buy.stripe.com/3cI4gBfiQ9tubOB8E9b7y03" 
+                  className="btn btn-primary" 
+                  style={{ width: '100%', justifyContent: 'center', background: 'linear-gradient(135deg, #2563eb, #4f46e5)', color: 'white', fontWeight: 700 }}
+                >
+                  S&apos;inscrire / Régler en ligne (1 490 €) 💳
+                </a>
+                <Link href="/contact?subject=IA_Dirigeant_RS7344" className="btn btn-secondary" style={{ width: '100%', justifyContent: 'center' }}>
+                  Étudier mes possibilités de financement OPCO →
                 </Link>
               </div>
             </div>
@@ -146,8 +153,15 @@ export default function FormationIAPage() {
                 </div>
               </div>
 
-              <div style={{ padding: '1.5rem 2rem', borderTop: '1px solid var(--gray-200)', background: 'var(--gray-50)' }}>
-                <Link href="/contact?subject=IA_Generative_RS6776" className="btn" style={{ width: '100%', justifyContent: 'center', background: 'var(--gold-dark)', color: 'white', fontWeight: 700 }}>
+              <div style={{ padding: '1.5rem 2rem', borderTop: '1px solid var(--gray-200)', background: 'var(--gray-50)', display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+                <a 
+                  href="https://buy.stripe.com/5kQ4gB6MkfRSaKxaMhb7y01" 
+                  className="btn" 
+                  style={{ width: '100%', justifyContent: 'center', background: 'linear-gradient(135deg, #d97706, #059669)', color: 'white', fontWeight: 700 }}
+                >
+                  S&apos;inscrire / Régler en ligne (1 490 €) 💳
+                </a>
+                <Link href="/contact?subject=IA_Generative_RS6776" className="btn btn-secondary" style={{ width: '100%', justifyContent: 'center' }}>
                   Étudier mes possibilités de financement →
                 </Link>
               </div>
