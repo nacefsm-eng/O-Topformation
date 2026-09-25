@@ -19,8 +19,8 @@ interface TeamMemberCardProps {
 }
 
 /**
- * Editorial-style team member card with high-contrast typography,
- * explicit text colors for guaranteed visibility, and pixel-perfect alignment.
+ * Editorial-style team member card with flawless contrast
+ * in both Dark Mode and Light Mode.
  */
 export default function TeamMemberCard({
   position = 'left',
@@ -32,11 +32,9 @@ export default function TeamMemberCard({
   description = 'Accompagnement de haut niveau, exigence pédagogique et engagement total pour le développement de vos compétences.',
   className,
   onCtaClick,
-  themeVariant = 'default',
 }: TeamMemberCardProps) {
   const fullName = `${firstName} ${lastName}`.trim();
   const isPositionRight = position === 'right';
-  const isWhite = themeVariant === 'white';
 
   return (
     <motion.div
@@ -54,10 +52,9 @@ export default function TeamMemberCard({
         >
           <p
             className={cn(
-              'mb-4 text-xs font-semibold tracking-[0.25em] uppercase',
+              'mb-4 text-xs font-semibold tracking-[0.25em] uppercase text-slate-400',
               isPositionRight && 'text-right'
             )}
-            style={{ color: isWhite ? '#475569' : '#94a3b8' }}
           >
             {jobPosition}
           </p>
@@ -74,24 +71,12 @@ export default function TeamMemberCard({
           animate={{ opacity: 1, scale: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
           className={cn(
-            'relative h-[380px] sm:h-[440px] md:h-[480px] w-full max-w-[340px] shrink-0 overflow-hidden rounded-2xl shadow-2xl',
+            'team-member-portrait relative h-[380px] sm:h-[440px] md:h-[480px] w-full max-w-[340px] shrink-0 overflow-hidden rounded-2xl shadow-2xl border-2 border-slate-700/60 bg-slate-900',
             isPositionRight && 'md:order-1'
           )}
-          style={{
-            backgroundColor: isWhite ? '#ffffff' : '#0f172a',
-            border: isWhite ? '2px solid #cbd5e1' : '2px solid #334155',
-            boxShadow: isWhite ? '0 20px 40px -10px rgba(0,0,0,0.12)' : '0 25px 50px -12px rgba(0,0,0,0.7)',
-          }}
         >
           {/* Subtle overlay for contrast */}
-          <div 
-            className="pointer-events-none absolute inset-0 z-10" 
-            style={{
-              background: isWhite 
-                ? 'linear-gradient(to top, rgba(15, 23, 42, 0.15), transparent)' 
-                : 'linear-gradient(to top, rgba(2, 6, 23, 0.6), transparent)'
-            }}
-          />
+          <div className="pointer-events-none absolute inset-0 z-10 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent" />
           <img
             src={imageUrl}
             alt={fullName}
@@ -112,76 +97,43 @@ export default function TeamMemberCard({
           )}
         >
           {/* Display name & description card */}
-          <div 
-            className="p-6 sm:p-8 rounded-2xl shadow-2xl max-w-lg transition-all w-full"
-            style={{
-              backgroundColor: isWhite ? '#ffffff' : '#0f172a',
-              border: isWhite ? '2px solid #cbd5e1' : '2px solid #334155',
-              boxShadow: isWhite ? '0 20px 40px -10px rgba(0,0,0,0.15)' : '0 25px 50px -12px rgba(0,0,0,0.8)',
-            }}
-          >
+          <div className="team-member-info-card p-6 sm:p-8 rounded-2xl max-w-lg transition-all w-full">
             {roleTitle ? (
-              <span 
-                className="text-xs font-extrabold uppercase tracking-widest inline-block mb-3 px-3 py-1 rounded-full border"
-                style={{
-                  backgroundColor: isWhite ? '#eff6ff' : 'rgba(56, 189, 248, 0.15)',
-                  color: isWhite ? '#1d4ed8' : '#38bdf8',
-                  borderColor: isWhite ? '#bfdbfe' : 'rgba(56, 189, 248, 0.35)',
-                }}
-              >
+              <span className="team-member-badge text-xs font-extrabold uppercase tracking-widest inline-block mb-3 px-3 py-1 rounded-full border border-blue-400/30 bg-blue-500/15 text-blue-300">
                 {roleTitle}
               </span>
             ) : null}
 
             {/* Display full name with absolute high contrast */}
             <div className="text-3xl sm:text-4xl md:text-5xl leading-[1.15] tracking-tight mb-2">
-              <span 
-                className="font-extrabold block"
-                style={{ color: isWhite ? '#0f172a' : '#ffffff' }}
-              >
+              <span className="team-member-name-first font-extrabold block">
                 {firstName}
               </span>
               {lastName ? (
-                <span 
-                  className="font-black block mt-0.5"
-                  style={{ color: isWhite ? '#003492' : '#38bdf8' }}
-                >
+                <span className="team-member-name-last font-black block mt-0.5">
                   {lastName}
                 </span>
               ) : null}
             </div>
 
             {/* Details row — toggle + bio */}
-            <div 
-              className="flex items-center gap-5 mt-5 pt-5 border-t"
-              style={{
-                borderColor: isWhite ? '#e2e8f0' : '#1e293b'
-              }}
-            >
+            <div className="team-member-divider flex items-center gap-5 mt-5 pt-5 border-t border-slate-700/60">
               {/* Circular CTA with hover pulse */}
               <motion.div
                 whileHover={{ scale: 1.08 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={onCtaClick}
-                className="group flex h-14 w-14 shrink-0 cursor-pointer items-center justify-center rounded-full border transition-all duration-300 shadow-md"
-                style={{
-                  backgroundColor: isWhite ? '#003492' : '#1e293b',
-                  borderColor: isWhite ? '#003492' : '#475569',
-                }}
+                className="team-member-btn group flex h-14 w-14 shrink-0 cursor-pointer items-center justify-center rounded-full border transition-all duration-300 shadow-md"
               >
                 <ArrowRight
                   size={20}
                   className="transition-all duration-300 group-hover:-rotate-45"
-                  style={{ color: '#ffffff' }}
                 />
               </motion.div>
 
               {/* Bio copy — guaranteed visible high-contrast typography */}
               <div>
-                <p 
-                  className="text-sm sm:text-base leading-relaxed font-normal"
-                  style={{ color: isWhite ? '#1e293b' : '#f1f5f9' }}
-                >
+                <p className="team-member-desc text-sm sm:text-base leading-relaxed font-normal">
                   {description}
                 </p>
               </div>

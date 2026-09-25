@@ -38,23 +38,25 @@ export default function Entreprises() {
       </div>
 
       {/* 4 Piliers d'Intervention B2B */}
-      <section className="section" style={{ background: 'white' }}>
+      <section className="section" style={{ background: 'var(--white)' }}>
         <div className="container">
-          <div className="section-header" style={{ textAlign: 'center', maxWidth: '800px', margin: '0 auto 4rem' }}>
+          <div className="section-header" style={{ textAlign: 'center', maxWidth: '800px', margin: '0 auto 3.5rem' }}>
             <span className="label">Nos 4 Piliers d'Intervention</span>
             <h2 style={{ fontSize: '2.4rem', color: 'var(--blue-900)' }}>Un partenaire unique pour votre croissance</h2>
-            <p>De l'acculturation de vos collaborateurs à l'automatisation technique de vos processus.</p>
+            <p style={{ color: 'var(--gray-700)', fontSize: '1.05rem', marginTop: '0.5rem' }}>De l&apos;acculturation de vos collaborateurs à l&apos;automatisation technique de vos processus.</p>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '2.5rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(360px, 1fr))', gap: '2rem', maxWidth: '1100px', margin: '0 auto' }}>
             {/* Pilier 1 : Digitalisation & Automatisation IA */}
-            <div className="card" style={{ padding: '2.5rem', borderTop: '5px solid var(--blue-900)' }}>
-              <div style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>🤖</div>
-              <h3 style={{ color: 'var(--blue-900)', fontSize: '1.35rem', marginBottom: '1rem' }}>1. Digitalisation &amp; Automatisation IA</h3>
-              <p style={{ color: 'var(--gray-600)', fontSize: '0.95rem', marginBottom: '1.5rem' }}>
-                Fondamentaux de l&apos;IA, prompt engineering avancé et automatisation de vos flux de travail. Nous connectons vos outils, supprimons les tâches chronophages et formons vos équipes à l&apos;utilisation productive et sécurisée de l&apos;IA.
-              </p>
-              <ul style={{ listStyle: 'none', padding: 0, fontSize: '0.9rem', display: 'flex', flexDirection: 'column', gap: '0.5rem', color: 'var(--gray-700)' }}>
+            <div className="card" style={{ padding: '2.5rem', borderTop: '5px solid var(--blue-900)', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', height: '100%' }}>
+              <div>
+                <div style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>🤖</div>
+                <h3 style={{ color: 'var(--blue-900)', fontSize: '1.35rem', marginBottom: '1rem' }}>1. Digitalisation &amp; Automatisation IA</h3>
+                <p style={{ color: 'var(--gray-700)', fontSize: '0.95rem', lineHeight: 1.6, marginBottom: '1.5rem' }}>
+                  Fondamentaux de l&apos;IA, prompt engineering avancé et automatisation de vos flux de travail. Nous connectons vos outils, supprimons les tâches chronophages et formons vos équipes à l&apos;utilisation productive et sécurisée de l&apos;IA.
+                </p>
+              </div>
+              <ul style={{ listStyle: 'none', padding: 0, fontSize: '0.9rem', display: 'flex', flexDirection: 'column', gap: '0.6rem', color: 'var(--gray-800)', borderTop: '1px solid var(--gray-200)', paddingTop: '1.25rem', marginTop: 'auto' }}>
                 <li>✓ Fondamentaux de l&apos;IA &amp; cas pratiques immédiats</li>
                 <li>✓ Connexion CRM, facturation &amp; webhooks automatisés (n8n, Make)</li>
                 <li>✓ Création de GPTs et assistants métiers personnalisés</li>
@@ -63,13 +65,15 @@ export default function Entreprises() {
             </div>
 
             {/* Pilier 2 : Communication & Acquisition Social Media */}
-            <div className="card" style={{ padding: '2.5rem', borderTop: '5px solid #25D366' }}>
-              <div style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>📱</div>
-              <h3 style={{ color: 'var(--blue-900)', fontSize: '1.35rem', marginBottom: '1rem' }}>2. Communication &amp; Acquisition Social Media</h3>
-              <p style={{ color: 'var(--gray-600)', fontSize: '0.95rem', marginBottom: '1.5rem' }}>
-                Développez la visibilité de votre entreprise et générez des prospects qualifiés sur LinkedIn, Meta et Google grâce à notre méthodologie de social selling et notre cursus préparant à la certification RS7351.
-              </p>
-              <ul style={{ listStyle: 'none', padding: 0, fontSize: '0.9rem', display: 'flex', flexDirection: 'column', gap: '0.5rem', color: 'var(--gray-700)' }}>
+            <div className="card" style={{ padding: '2.5rem', borderTop: '5px solid #25D366', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', height: '100%' }}>
+              <div>
+                <div style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>📱</div>
+                <h3 style={{ color: 'var(--blue-900)', fontSize: '1.35rem', marginBottom: '1rem' }}>2. Communication &amp; Acquisition Social Media</h3>
+                <p style={{ color: 'var(--gray-700)', fontSize: '0.95rem', lineHeight: 1.6, marginBottom: '1.5rem' }}>
+                  Développez la visibilité de votre entreprise et générez des prospects qualifiés sur LinkedIn, Meta et Google grâce à notre méthodologie de social selling et notre cursus préparant à la certification RS7351.
+                </p>
+              </div>
+              <ul style={{ listStyle: 'none', padding: 0, fontSize: '0.9rem', display: 'flex', flexDirection: 'column', gap: '0.6rem', color: 'var(--gray-800)', borderTop: '1px solid var(--gray-200)', paddingTop: '1.25rem', marginTop: 'auto' }}>
                 <li>✓ Stratégie éditoriale B2B et calendrier de diffusion</li>
                 <li>✓ Création de contenus visuels et vidéo (Canva, CapCut)</li>
                 <li>✓ Prospection ciblée et acquisition de prospects sans budget pub</li>
@@ -78,13 +82,15 @@ export default function Entreprises() {
             </div>
 
             {/* Pilier 3 : Création de Sites & Applications */}
-            <div className="card" style={{ padding: '2.5rem', borderTop: '5px solid var(--gold-dark)' }}>
-              <div style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>🚀</div>
-              <h3 style={{ color: 'var(--blue-900)', fontSize: '1.35rem', marginBottom: '1rem' }}>3. Création de Sites &amp; Applications</h3>
-              <p style={{ color: 'var(--gray-600)', fontSize: '0.95rem', marginBottom: '1.5rem' }}>
-                Conception de plateformes web modernes, sites vitrines premium et applications métier sur mesure conçues pour convertir vos visiteurs et augmenter immédiatement votre chiffre d&apos;affaires.
-              </p>
-              <ul style={{ listStyle: 'none', padding: 0, fontSize: '0.9rem', display: 'flex', flexDirection: 'column', gap: '0.5rem', color: 'var(--gray-700)' }}>
+            <div className="card" style={{ padding: '2.5rem', borderTop: '5px solid var(--gold-dark)', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', height: '100%' }}>
+              <div>
+                <div style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>🚀</div>
+                <h3 style={{ color: 'var(--blue-900)', fontSize: '1.35rem', marginBottom: '1rem' }}>3. Création de Sites &amp; Applications</h3>
+                <p style={{ color: 'var(--gray-700)', fontSize: '0.95rem', lineHeight: 1.6, marginBottom: '1.5rem' }}>
+                  Conception de plateformes web modernes, sites vitrines premium et applications métier sur mesure conçues pour convertir vos visiteurs et augmenter immédiatement votre chiffre d&apos;affaires.
+                </p>
+              </div>
+              <ul style={{ listStyle: 'none', padding: 0, fontSize: '0.9rem', display: 'flex', flexDirection: 'column', gap: '0.6rem', color: 'var(--gray-800)', borderTop: '1px solid var(--gray-200)', paddingTop: '1.25rem', marginTop: 'auto' }}>
                 <li>✓ Sites vitrines &amp; tunnels de vente haute conversion</li>
                 <li>✓ Applications web &amp; interfaces métier réactives</li>
                 <li>✓ Design responsive &amp; référencement SEO local optimisé</li>
@@ -93,13 +99,15 @@ export default function Entreprises() {
             </div>
 
             {/* Pilier 4 : Conduite du Changement & Qualité de Vie au Travail */}
-            <div className="card" style={{ padding: '2.5rem', borderTop: '5px solid var(--red-600)' }}>
-              <div style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>🧘</div>
-              <h3 style={{ color: 'var(--blue-900)', fontSize: '1.35rem', marginBottom: '1rem' }}>4. Conduite du Changement &amp; Qualité de Vie au Travail</h3>
-              <p style={{ color: 'var(--gray-600)', fontSize: '0.95rem', marginBottom: '1.5rem' }}>
-                Accompagner les collaborateurs pour faire comprendre et adopter les bénéfices des nouveaux outils, optimiser les processus et préserver l&apos;énergie collective grâce à la Méthode TOP® (Techniques d&apos;Optimisation du Potentiel).
-              </p>
-              <ul style={{ listStyle: 'none', padding: 0, fontSize: '0.9rem', display: 'flex', flexDirection: 'column', gap: '0.5rem', color: 'var(--gray-700)' }}>
+            <div className="card" style={{ padding: '2.5rem', borderTop: '5px solid var(--red-600)', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', height: '100%' }}>
+              <div>
+                <div style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>🧘</div>
+                <h3 style={{ color: 'var(--blue-900)', fontSize: '1.35rem', marginBottom: '1rem' }}>4. Conduite du Changement &amp; Qualité de Vie au Travail</h3>
+                <p style={{ color: 'var(--gray-700)', fontSize: '0.95rem', lineHeight: 1.6, marginBottom: '1.5rem' }}>
+                  Accompagner les collaborateurs pour faire comprendre et adopter les bénéfices des nouveaux outils, optimiser les processus et préserver l&apos;énergie collective grâce à la Méthode TOP® (Techniques d&apos;Optimisation du Potentiel).
+                </p>
+              </div>
+              <ul style={{ listStyle: 'none', padding: 0, fontSize: '0.9rem', display: 'flex', flexDirection: 'column', gap: '0.6rem', color: 'var(--gray-800)', borderTop: '1px solid var(--gray-200)', paddingTop: '1.25rem', marginTop: 'auto' }}>
                 <li>✓ Accompagnement managérial à la conduite du changement</li>
                 <li>✓ Régulation du stress professionnel &amp; récupération flash (SRF)</li>
                 <li>✓ Ateliers QVCT &amp; cohésion d&apos;équipe en entreprise</li>

@@ -26,10 +26,10 @@
   --gray-50:  #f8fafc;
   --gray-100: #f1f5f9;
   --gray-200: #e2e8f0;
-  --gray-400: #94a3b8;
-  --gray-600: #475569;
-  --gray-700: #334155;
-  --gray-800: #1e293b;
+  --gray-400: #64748b;
+  --gray-600: #334155;
+  --gray-700: #1e293b;
+  --gray-800: #0f172a;
   --gray-900: #0a1128;
 
   --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
@@ -1490,7 +1490,87 @@ html[data-theme="clair"] [class*="bg-slate-950/85"] span[class*="text-emerald-"]
 }
 
 /* ============= GLOBAL CONTRAST & LEGIBILITY ASSURANCE ============= */
-/* Light Mode: All cards and text on white backgrounds must have crisp, dark text */
+
+/* --- 1. TEAM MEMBER CARDS (High contrast in both Dark & Light modes) --- */
+.team-member-info-card {
+  background-color: #0f172a;
+  border: 2px solid #334155;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+}
+.team-member-name-first {
+  color: #ffffff !important;
+}
+.team-member-name-last {
+  color: #38bdf8 !important;
+}
+.team-member-desc {
+  color: #f1f5f9 !important;
+}
+.team-member-btn {
+  background-color: #1e293b;
+  border-color: #475569;
+  color: #ffffff;
+}
+
+/* Team cards in Light Mode */
+html[data-theme="clair"] .team-member-portrait {
+  background-color: #ffffff !important;
+  border-color: #cbd5e1 !important;
+  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.12) !important;
+}
+html[data-theme="clair"] .team-member-info-card {
+  background-color: #ffffff !important;
+  border: 2px solid #cbd5e1 !important;
+  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.12) !important;
+}
+html[data-theme="clair"] .team-member-badge {
+  background-color: #eff6ff !important;
+  color: #1d4ed8 !important;
+  border-color: #bfdbfe !important;
+}
+html[data-theme="clair"] .team-member-name-first {
+  color: #0f172a !important;
+}
+html[data-theme="clair"] .team-member-name-last {
+  color: #003492 !important;
+}
+html[data-theme="clair"] .team-member-divider {
+  border-color: #e2e8f0 !important;
+}
+html[data-theme="clair"] .team-member-desc {
+  color: #1e293b !important;
+}
+html[data-theme="clair"] .team-member-btn {
+  background-color: #003492 !important;
+  border-color: #003492 !important;
+  color: #ffffff !important;
+}
+
+/* --- 2. DARK MODE UNIVERSAL RULES (No invisible text on dark screens) --- */
+html[data-theme="sombre"] section[style*="background: white"],
+html[data-theme="sombre"] section[style*="background:white"],
+html[data-theme="sombre"] section[style*="background: var(--gray-50)"],
+html[data-theme="sombre"] div[style*="background: white"],
+html[data-theme="sombre"] div[style*="background:white"],
+html[data-theme="sombre"] .card {
+  background-color: #0f172a !important;
+  border-color: #1e293b !important;
+  color: #f8fafc !important;
+}
+
+html[data-theme="sombre"] h1:not(footer *),
+html[data-theme="sombre"] h2:not(footer *),
+html[data-theme="sombre"] h3:not(footer *),
+html[data-theme="sombre"] h4:not(footer *) {
+  color: #ffffff !important;
+}
+
+html[data-theme="sombre"] p:not(footer *):not([class*="bg-blue-"]):not([class*="bg-gradient"]):not(button *):not(.btn *),
+html[data-theme="sombre"] li:not(footer *) {
+  color: #cbd5e1 !important;
+}
+
+/* --- 3. LIGHT MODE UNIVERSAL RULES (No invisible/faint text on white screens) --- */
 html[data-theme="clair"] body,
 html[data-theme="clair"] main {
   background-color: #f8fafc !important;
@@ -1505,13 +1585,14 @@ html[data-theme="clair"] h4:not(footer *) {
 }
 
 html[data-theme="clair"] p:not(footer *):not([class*="bg-blue-"]):not([class*="bg-gradient"]):not(button *):not(.btn *),
+html[data-theme="clair"] li:not(footer *),
 html[data-theme="clair"] .text-slate-300:not(footer *):not([class*="bg-slate-950/"]):not([class*="bg-slate-950\\/"]),
 html[data-theme="clair"] .text-slate-200:not(footer *):not([class*="bg-slate-950/"]):not([class*="bg-slate-950\\/"]),
 html[data-theme="clair"] .text-slate-400:not(footer *):not([class*="bg-slate-950/"]):not([class*="bg-slate-950\\/"]) {
   color: #1e293b !important;
 }
 
-/* Keep primary buttons and badges legible */
+/* Keep primary buttons and badges legible in both modes */
 html[data-theme="clair"] a[class*="bg-gradient"],
 html[data-theme="clair"] button[class*="bg-gradient"],
 html[data-theme="clair"] .btn-primary {
@@ -1522,4 +1603,5 @@ html[data-theme="clair"] button[class*="bg-gradient"] *,
 html[data-theme="clair"] .btn-primary * {
   color: #ffffff !important;
 }
+
 

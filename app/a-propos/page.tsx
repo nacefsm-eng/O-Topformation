@@ -173,6 +173,40 @@ export default function AProposPage() {
               </div>
             </div>
 
+            <div className="p-8 rounded-3xl bg-slate-950 border border-slate-800 flex flex-col sm:flex-row gap-6 items-center sm:items-start shadow-xl">
+              <img
+                src="/team-med-aly.jpg"
+                alt="Med Aly Garma"
+                className="w-28 h-28 rounded-2xl object-cover border-2 border-cyan-400/40 shrink-0"
+              />
+              <div className="space-y-2 text-center sm:text-left">
+                <span className="text-xs font-bold text-cyan-400 bg-cyan-500/10 px-2.5 py-0.5 rounded-full border border-cyan-500/20">
+                  Expert Cybersécurité &amp; Résilience IA
+                </span>
+                <h3 className="text-xl font-bold text-white">Med Aly GARMA</h3>
+                <p className="text-xs text-slate-300 leading-relaxed">
+                  Expertise pointue en cybersécurité, résilience des infrastructures critiques et sécurisation avancée des flux d&apos;intelligence artificielle en entreprise.
+                </p>
+              </div>
+            </div>
+
+            <div className="p-8 rounded-3xl bg-slate-950 border border-slate-800 flex flex-col sm:flex-row gap-6 items-center sm:items-start shadow-xl">
+              <img
+                src="/team-regis.png"
+                alt="Régis"
+                className="w-28 h-28 rounded-2xl object-cover border-2 border-emerald-400/40 shrink-0"
+              />
+              <div className="space-y-2 text-center sm:text-left">
+                <span className="text-xs font-bold text-emerald-400 bg-emerald-500/10 px-2.5 py-0.5 rounded-full border border-emerald-500/20">
+                  Stratégie Opérationnelle &amp; Gestion
+                </span>
+                <h3 className="text-xl font-bold text-white">Régis</h3>
+                <p className="text-xs text-slate-300 leading-relaxed">
+                  Excellence opérationnelle forgée sur le terrain, sang-froid et vision stratégique pour sécuriser chaque étape de la transition et la gestion quotidienne.
+                </p>
+              </div>
+            </div>
+
           </div>
 
           {/* Bannière CTA */}

@@ -502,7 +502,7 @@ export default function MasterSalesPage() {
               Une Équipe Humaine, Joignable &amp; Engagée
             </h2>
             <p className="mt-2 text-slate-400 text-sm sm:text-base">
-              Pas d&apos;organisme fantôme. Vos sessions et votre coaching individuel sont directement assurés par Mélissa et Renaud.
+              Pas d&apos;organisme fantôme. Vos sessions et votre coaching individuel sont directement assurés par nos experts référents : Mélissa, Renaud, Med Aly et Régis.
             </p>
           </div>
 
@@ -563,6 +563,68 @@ export default function MasterSalesPage() {
                   >
                     <Phone size={13} />
                     <span>06 74 79 75 09</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            {/* Profil Med Aly Garma */}
+            <div className="p-7 sm:p-8 rounded-3xl bg-slate-950 border border-slate-800 hover:border-cyan-500/40 transition-all flex flex-col sm:flex-row gap-6 items-center sm:items-start text-center sm:text-left shadow-xl">
+              <div className="relative w-28 h-28 sm:w-32 sm:h-32 rounded-2xl overflow-hidden border-2 border-cyan-400/30 shrink-0 shadow-lg">
+                <img 
+                  src="/team-med-aly.jpg" 
+                  alt="Med Aly Garma" 
+                  className="w-full h-full object-cover object-top" 
+                />
+              </div>
+              <div className="space-y-2">
+                <div className="inline-block px-2.5 py-0.5 rounded-full bg-cyan-500/10 text-cyan-300 border border-cyan-500/20 text-[11px] font-bold uppercase">
+                  Expert Cybersécurité &amp; Résilience IA
+                </div>
+                <h3 className="text-xl font-bold text-white">Med Aly GARMA</h3>
+                <p className="text-xs text-cyan-300 font-semibold">Résilience des infrastructures &amp; Sécurisation des IA</p>
+                <p className="text-slate-300 text-xs leading-relaxed">
+                  Expertise pointue en cybersécurité, audits de robustesse et sécurisation avancée des données d&apos;entreprise pour les intégrations d&apos;intelligence artificielle.
+                </p>
+                <div className="pt-2">
+                  <a 
+                    href="https://wa.me/33767246825?text=Bonjour%20Med%20Aly%2C%20je%20souhaite%20%C3%A9changer%20avec%20vous%20sur%20la%20cybers%C3%A9curit%C3%A9." 
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 text-xs font-bold text-cyan-400 hover:text-cyan-300"
+                  >
+                    <span>Contacter Med Aly →</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            {/* Profil Régis */}
+            <div className="p-7 sm:p-8 rounded-3xl bg-slate-950 border border-slate-800 hover:border-emerald-500/40 transition-all flex flex-col sm:flex-row gap-6 items-center sm:items-start text-center sm:text-left shadow-xl">
+              <div className="relative w-28 h-28 sm:w-32 sm:h-32 rounded-2xl overflow-hidden border-2 border-emerald-400/30 shrink-0 shadow-lg">
+                <img 
+                  src="/team-regis.png" 
+                  alt="Régis" 
+                  className="w-full h-full object-cover object-top" 
+                />
+              </div>
+              <div className="space-y-2">
+                <div className="inline-block px-2.5 py-0.5 rounded-full bg-emerald-500/10 text-emerald-300 border border-emerald-500/20 text-[11px] font-bold uppercase">
+                  Stratégie Opérationnelle &amp; Gestion
+                </div>
+                <h3 className="text-xl font-bold text-white">Régis</h3>
+                <p className="text-xs text-emerald-300 font-semibold">Excellence opérationnelle &amp; Conduite du changement</p>
+                <p className="text-slate-300 text-xs leading-relaxed">
+                  Pratique forgée sur le terrain, sang-froid et vision stratégique pour sécuriser chaque étape de la transition et la gestion opérationnelle des équipes.
+                </p>
+                <div className="pt-2">
+                  <a 
+                    href="https://wa.me/33767246825?text=Bonjour%20R%C3%A9gis%2C%20je%20souhaite%20%C3%A9changer%20avec%20vous." 
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 text-xs font-bold text-emerald-400 hover:text-emerald-300"
+                  >
+                    <span>Contacter Régis →</span>
                   </a>
                 </div>
               </div>
