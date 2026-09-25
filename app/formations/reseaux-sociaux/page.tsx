@@ -15,7 +15,7 @@ export default function FormationReseauxSociauxPage() {
         <div className="container">
           <div style={{ maxWidth: '850px' }}>
             <span className="badge" style={{ background: 'rgba(255, 59, 59, 0.2)', color: '#ff8585', border: '1px solid var(--red-600)', marginBottom: '1.25rem' }}>
-              📱 Préparation Certification France Compétences RS7351 • Formation portée par Eloqone
+              📱 Préparation Certification France Compétences RS7351 • Formation portée par Eloq-One
             </span>
             <h1 style={{ color: 'white', marginBottom: '1.5rem', fontSize: 'clamp(2.2rem, 4.5vw, 3.5rem)' }}>
               Structurez votre visibilité, attirez des clients et gagnez du temps sur vos réseaux.
@@ -28,10 +28,10 @@ export default function FormationReseauxSociauxPage() {
               <span>•</span>
               <span>✓ Cas pratiques sur vos propres comptes</span>
               <span>•</span>
-              <span>✓ Financement étudié avec Eloqone</span>
+              <span>✓ Financement étudié avec Eloq-One</span>
             </div>
             <div style={{ padding: '0.85rem 1.25rem', borderRadius: '12px', background: 'rgba(255, 255, 255, 0.08)', border: '1px solid rgba(255, 255, 255, 0.15)', fontSize: '0.82rem', color: '#93c5fd', marginBottom: '2rem', lineHeight: 1.5 }}>
-              ℹ️ Ô’TOP Formation intervient avec son partenaire Eloqone, organisme certifié Qualiopi, qui porte les actions de formation et accompagne les démarches de financement. Les possibilités de prise en charge sont étudiées selon votre statut et restent soumises à l’accord de l’organisme financeur.
+              ℹ️ Ô’TOP Formation intervient avec son partenaire Eloq-One, organisme certifié Qualiopi, qui porte les actions de formation et accompagne les démarches de financement. Les possibilités de prise en charge sont étudiées selon votre statut et restent soumises à l’accord de l’organisme financeur.
             </div>
             <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', alignItems: 'center' }}>
               <a 
@@ -155,7 +155,7 @@ export default function FormationReseauxSociauxPage() {
                 Présentation de votre dossier de communication appliquée à votre propre entreprise devant 2 professionnels du digital.
               </p>
               <div style={{ background: 'var(--blue-900)', color: 'white', padding: '0.75rem', borderRadius: 'var(--radius-sm)', fontSize: '0.85rem', textAlign: 'center', fontWeight: 700 }}>
-                🎓 Parchemin Officiel RS7351 délivré
+                🎓 Certification RS7351 (évaluation facultative) Officiel RS7351 délivré
               </div>
             </div>
           </div>

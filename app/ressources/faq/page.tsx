@@ -31,9 +31,9 @@ const FAQ_ITEMS: FaqItem[] = [
   },
   {
     id: 4,
-    question: "Peut-on financer la formation via un OPCO ou le CPF ?",
+    question: "Peut-on financer la formation via un OPCO ou le  ?",
     answer:
-      "Oui, plusieurs dispositifs de financement sont mobilisables selon votre situation professionnelle. Les collaborateurs d'entreprise peuvent solliciter leur OPCO (Opérateur de Compétences) dans le cadre du plan de développement des compétences de leur entreprise. Le financement via le CPF (Compte Personnel de Formation) sera possible dès lors que notre formation sera référencée sur la plateforme Mon Compte Formation, ce qui sera engagé après l'obtention de notre NDA et la certification Qualiopi. Les demandeurs d'emploi peuvent se rapprocher de leur conseiller France Travail. Pour toute question sur le financement, contactez-nous directement, nous vous accompagnons dans vos démarches.",
+      "Oui, plusieurs dispositifs de financement sont mobilisables selon votre situation professionnelle. Les collaborateurs d'entreprise peuvent solliciter leur OPCO (Opérateur de Compétences) dans le cadre du plan de développement des compétences de leur entreprise. Le financement via le  (Compte Personnel de Formation) sera possible dès lors que notre formation sera référencée sur la plateforme Mon Compte Formation, ce qui sera engagé après l'obtention de notre NDA et la certification Qualiopi. Les demandeurs d'emploi peuvent se rapprocher de leur conseiller France Travail. Pour toute question sur le financement, contactez-nous directement, nous vous accompagnons dans vos démarches.",
   },
   {
     id: 5,

@@ -41,7 +41,7 @@ export default function PdfModal({
           <div>
             <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 text-xs font-bold uppercase tracking-wider">
               <ShieldCheck size={12} />
-              Certifié Qualiopi
+              Partenaire Eloq-One (certifié Qualiopi)
             </div>
             <h3 className="text-xl font-bold text-white mt-1">
               {documentTitle}
@@ -50,7 +50,7 @@ export default function PdfModal({
         </div>
 
         <p className="text-slate-300 text-sm leading-relaxed mb-6">
-          Consultez la plaquette officielle d&apos;Ô&apos;TOP Formation avec le détail des modules, les modalités d&apos;évaluation et les options de financement étudiées selon votre situation via notre partenaire Eloqone (OPCO, FAF, CPF).
+          Consultez la plaquette officielle d&apos;Ô&apos;TOP Formation avec le détail des modules, les modalités d&apos;évaluation et les options de financement étudiées selon votre situation via notre partenaire Eloq-One (OPCO, FAF).
         </p>
 
         {/* Action Buttons */}

@@ -27,7 +27,7 @@ export default function MethodeTop() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '4rem', alignItems: 'center' }}>
             <div>
               <span className="label">Historique</span>
-              <h2 style={{ fontSize: '2rem', marginBottom: '1.5rem', color: 'var(--blue-900)' }}>Des forces spéciales à l&apos;entreprise</h2>
+              <h2 style={{ fontSize: '2rem', marginBottom: '1.5rem', color: 'var(--blue-900)' }}>Des gestion du stress à l&apos;entreprise</h2>
               <p style={{ marginBottom: '1rem', lineHeight: 1.7, color: 'var(--gray-700)', fontSize: '1rem' }}>
                 Créées dans les années 1990 par le Dr Édith Perreaut-Pierre au sein du service de santé des armées, les TOP® ont d&apos;abord été conçues pour préparer les militaires et les sportifs de haut niveau aux situations d&apos;exception.
               </p>
@@ -123,7 +123,7 @@ export default function MethodeTop() {
               ['💡', 'Prise de décision', 'Conserver sa lucidité dans les moments complexes ou critiques.'],
               ['💪', 'Motivation', 'Mobiliser son énergie sur le long terme sans s\'épuiser.'],
               ['🧠', 'Adaptabilité', 'Développer sa flexibilité mentale face au changement.'],
-              ['⚕️', 'Prévention', 'Agir concrètement contre les Risques Psychosociaux (RPS) et le burn-out.']
+              ['⚕️', 'Prévention', 'Agir concrètement contre les Risques Psychosociaux (RPS) et le épuisement professionnel.']
             ].map(([icon, title, desc], i) => (
               <div key={i} style={{ padding: '1.5rem', border: '1px solid var(--gray-200)', borderRadius: 'var(--radius)', background: 'var(--gray-50)' }}>
                 <span style={{ fontSize: '2rem', display: 'block', marginBottom: '1rem' }}>{icon}</span>
@@ -148,7 +148,7 @@ export default function MethodeTop() {
             </div>
             <div style={{ background: 'rgba(255, 255, 255, 0.08)', borderRadius: '12px', padding: '1rem 1.5rem', textAlign: 'center', maxWidth: '800px', margin: '0 auto' }}>
               <p style={{ margin: 0, fontSize: '0.85rem', color: 'rgba(255, 255, 255, 0.75)', lineHeight: 1.5 }}>
-                Ô’TOP Formation intervient avec son partenaire Eloqone, organisme certifié Qualiopi, qui porte les actions de formation et accompagne les démarches de financement. Les possibilités de prise en charge sont étudiées selon votre statut et restent soumises à l’accord de l’organisme financeur.
+                Ô’TOP Formation intervient avec son partenaire Eloq-One, organisme certifié Qualiopi, qui porte les actions de formation et accompagne les démarches de financement. Les possibilités de prise en charge sont étudiées selon votre statut et restent soumises à l’accord de l’organisme financeur.
               </p>
             </div>
           </div>

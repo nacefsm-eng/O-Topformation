@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     default: "Ô'TOP Formation | IA Générative, Réseaux Sociaux & Méthode TOP®",
   },
   description:
-    "Organisme de formation professionnelle à Ollioules (Var) spécialisé en IA Générative (RS6776), Réseaux Sociaux (RS7351) et Méthode TOP®. Formations certifiantes avec financement possible (OPCO, FAF, CPF) et 5h de coaching inclus.",
+    "Organisme de formation professionnelle à Ollioules (Var) spécialisé en IA Générative (RS6776), Réseaux Sociaux (RS7351) et Méthode TOP®. Formations certifiantes avec financement possible (OPCO, FAF) et 5h de coaching inclus.",
   keywords: [
     'formation TOP', 'Techniques Optimisation Potentiel', 'formation IA', 'ChatGPT',
     'Claude', 'n8n', 'automatisation', 'réseaux sociaux', 'RS6776', 'RS7351', 'RS7344',
@@ -44,7 +44,7 @@ const organizationSchema = {
   url: 'https://o-topformation.vercel.app',
   logo: 'https://o-topformation.vercel.app/logo.png',
   description:
-    "Organisme de formation certifiante en IA Générative, Réseaux Sociaux et Techniques d'Optimisation du Potentiel (TOP®) à Ollioules (Var, PACA). Financements OPCO, FAF, FIF-PL et CPF.",
+    "Organisme de formation certifiante en IA Générative, Réseaux Sociaux et Techniques d'Optimisation du Potentiel (TOP®) à Ollioules (Var, PACA). Financements OPCO, FAF, FIF-PL et .",
   address: {
     '@type': 'PostalAddress',
     streetAddress: 'Espace Gamma 1, 139 Chemin des 2 Frères',

@@ -157,7 +157,7 @@ export default function HomePageClient() {
               </div>
               <div className="flex items-center gap-2.5 p-3 rounded-xl bg-slate-900/80 border border-slate-800">
                 <CheckCircle2 size={18} className="text-amber-400 shrink-0" />
-                <span className="text-xs sm:text-sm text-slate-200 font-medium">Financement étudié avec <strong>notre partenaire Eloqone</strong></span>
+                <span className="text-xs sm:text-sm text-slate-200 font-medium">Financement étudié avec <strong>notre partenaire Eloq-One</strong></span>
               </div>
             </motion.div>
 
@@ -428,7 +428,7 @@ export default function HomePageClient() {
                     <span className="px-3 py-1 rounded-full bg-cyan-500/20 text-cyan-300 text-xs font-bold border border-cyan-500/30">
                       🤖 Pôle IA • RS6776
                     </span>
-                    <span className="text-xs text-slate-400 font-semibold">100% en ligne • Éligible OPCO / CPF</span>
+                    <span className="text-xs text-slate-400 font-semibold">100% en ligne • Éligible OPCO / </span>
                   </div>
 
                   <h3 className="text-xl sm:text-2xl font-bold text-white mb-2 min-h-[58px] flex items-center">
@@ -454,7 +454,7 @@ export default function HomePageClient() {
                     </div>
                     <div className="flex items-center gap-2">
                       <ShieldCheck size={15} className="text-emerald-400 shrink-0" />
-                      <span><strong>Tarif :</strong> 1 490 € TTC (offre découverte 610 €) • Éligible OPCO/FAF/CPF</span>
+                      <span><strong>Tarif :</strong> 1 490 € (offre découverte 600 €) • Éligible OPCO/FAF/</span>
                     </div>
                   </div>
 
@@ -486,10 +486,10 @@ export default function HomePageClient() {
                     </button>
                     <button
                       type="button"
-                      onClick={() => handleOpenCheckout('Offre Spéciale IA RS6776 (Durée limitée)', 610, '21h de formation certifiante en e-learning + 2h accompagnement expert individuel - Tarif promotionnel')}
+                      onClick={() => handleOpenCheckout('Offre Promo RS6776 (Durée limitée)', 600, '21h de formation certifiante en e-learning + 2h accompagnement expert individuel - Tarif promotionnel')}
                       className="py-2.5 px-2 rounded-xl bg-gradient-to-r from-amber-500 to-emerald-500 hover:from-amber-400 hover:to-emerald-400 text-slate-950 font-black text-xs shadow-md transition-all flex items-center justify-center gap-1 cursor-pointer"
                     >
-                      <span>⏱ Promo 610 €</span>
+                      <span>⏱ Promo 600 €</span>
                     </button>
                   </div>
                   <a
@@ -544,7 +544,7 @@ export default function HomePageClient() {
                     </div>
                     <div className="flex items-center gap-2">
                       <ShieldCheck size={15} className="text-emerald-400 shrink-0" />
-                      <span><strong>Tarif :</strong> 1 490 € TTC • Éligible plan de développement compétences OPCO</span>
+                      <span><strong>Tarif :</strong> 1 490 € • Éligible plan de développement compétences OPCO</span>
                     </div>
                   </div>
 
@@ -599,7 +599,7 @@ export default function HomePageClient() {
                     <span className="px-3 py-1 rounded-full bg-pink-500/20 text-pink-300 text-xs font-bold border border-pink-500/30">
                       📱 Pôle Digital &amp; IA • RS7351
                     </span>
-                    <span className="text-xs text-slate-400 font-semibold">100% à distance • Éligible OPCO / CPF</span>
+                    <span className="text-xs text-slate-400 font-semibold">100% à distance • Éligible OPCO / </span>
                   </div>
 
                   <h3 className="text-xl sm:text-2xl font-bold text-white mb-2 min-h-[58px] flex items-center">
@@ -625,7 +625,7 @@ export default function HomePageClient() {
                     </div>
                     <div className="flex items-center gap-2">
                       <ShieldCheck size={15} className="text-emerald-400 shrink-0" />
-                      <span><strong>Tarif :</strong> 1 490 € TTC • Éligible prise en charge OPCO / FAF / CPF</span>
+                      <span><strong>Tarif :</strong> 1 490 € • Éligible prise en charge OPCO / FAF / </span>
                     </div>
                   </div>
 
@@ -706,7 +706,7 @@ export default function HomePageClient() {
                     </div>
                     <div className="flex items-center gap-2">
                       <ShieldCheck size={15} className="text-emerald-400 shrink-0" />
-                      <span><strong>Tarif :</strong> 890 € TTC • Éligible prise en charge OPCO / FAF / Entreprise</span>
+                      <span><strong>Tarif :</strong> 890 € • Éligible prise en charge OPCO / FAF / Entreprise</span>
                     </div>
                   </div>
 
@@ -805,8 +805,7 @@ export default function HomePageClient() {
                     </span>
                   </td>
                   <td className="p-4 sm:p-5 text-xs text-emerald-400 font-medium">
-                    1 490 € (offre 610 €)<br />OPCO / FAF / CPF
-                  </td>
+                    1 490 € (offre 600 €)<br />OPCO / FAF / </td>
                   <td className="p-4 sm:p-5 text-xs sm:text-sm">
                     Assistant IA sur-mesure sur vos données, prompts métier et gain de 5 à 10h / semaine
                   </td>
@@ -853,8 +852,7 @@ export default function HomePageClient() {
                     </span>
                   </td>
                   <td className="p-4 sm:p-5 text-xs text-emerald-400 font-medium">
-                    1 490 €<br />OPCO / FAF / CPF
-                  </td>
+                    1 490 €<br />OPCO / FAF / </td>
                   <td className="p-4 sm:p-5 text-xs sm:text-sm">
                     Visuels Canva IA, vidéos CapCut, prospection LinkedIn automatisée et Meta Ads
                   </td>
@@ -909,7 +907,7 @@ export default function HomePageClient() {
                   <h4 className="text-xl font-bold text-white mt-2">Pack Duo</h4>
                   <p className="text-xs text-slate-400 mt-1">2 formations certifiantes au choix parmi RS6776, RS7344 ou RS7351.</p>
                   <div className="my-4">
-                    <span className="text-xs text-slate-500 line-through">2 980 € TTC</span>
+                    <span className="text-xs text-slate-500 line-through">2 980 €</span>
                     <div className="text-3xl font-black text-white">2 490 € <span className="text-xs text-emerald-400 font-normal">(-490 €)</span></div>
                   </div>
                   <ul className="text-xs text-slate-300 space-y-2 mb-6">
@@ -938,7 +936,7 @@ export default function HomePageClient() {
                   <h4 className="text-xl font-bold text-white mt-2">Pack Trio</h4>
                   <p className="text-xs text-slate-400 mt-1">Les 3 formations : IA Générative + Workflows + Réseaux Sociaux &amp; Prospection.</p>
                   <div className="my-4">
-                    <span className="text-xs text-slate-500 line-through">4 470 € TTC</span>
+                    <span className="text-xs text-slate-500 line-through">4 470 €</span>
                     <div className="text-3xl font-black text-emerald-400">3 390 € <span className="text-xs text-emerald-400 font-normal">(-1 080 €)</span></div>
                   </div>
                   <ul className="text-xs text-slate-300 space-y-2 mb-6">
@@ -964,13 +962,13 @@ export default function HomePageClient() {
                   <h4 className="text-xl font-bold text-white mt-2">Formule Entreprise</h4>
                   <p className="text-xs text-slate-400 mt-1">40h au total par formation (e-learning + accompagnement d&apos;équipe expert).</p>
                   <div className="my-4">
-                    <div className="text-3xl font-black text-white">3 200 € <span className="text-xs text-slate-400 font-normal">TTC</span></div>
+                    <div className="text-3xl font-black text-white">3 200 € <span className="text-xs text-slate-400 font-normal"></span></div>
                     <span className="text-xs text-emerald-400">Prise en charge OPCO intégrale possible</span>
                   </div>
                   <ul className="text-xs text-slate-300 space-y-2 mb-6">
                     <li className="flex items-center gap-2">✓ 40h de parcours adapté aux équipes</li>
                     <li className="flex items-center gap-2">✓ Plan de développement des compétences</li>
-                    <li className="flex items-center gap-2">✓ Montage dossier via Eloqone (Qualiopi)</li>
+                    <li className="flex items-center gap-2">✓ Montage dossier via Eloq-One (Qualiopi)</li>
                   </ul>
                 </div>
                 <button
@@ -1032,7 +1030,7 @@ export default function HomePageClient() {
               Comment se déroule votre financement ?
             </h2>
             <div className="mt-4 p-4 rounded-xl bg-blue-950/40 border border-blue-500/30 max-w-2xl mx-auto text-xs sm:text-sm text-blue-200 leading-relaxed text-center">
-              Ô&apos;TOP Formation intervient avec son partenaire Eloqone, organisme certifié Qualiopi, qui porte les actions de formation et accompagne les démarches de financement. Les possibilités de prise en charge sont étudiées selon votre statut et restent soumises à l&apos;accord de l&apos;organisme financeur.
+              Ô&apos;TOP Formation intervient avec son partenaire Eloq-One, organisme certifié Qualiopi, qui porte les actions de formation et accompagne les démarches de financement. Les possibilités de prise en charge sont étudiées selon votre statut et restent soumises à l&apos;accord de l&apos;organisme financeur.
             </div>
           </div>
 
@@ -1052,7 +1050,7 @@ export default function HomePageClient() {
               <div className="w-8 h-8 rounded-full bg-indigo-600 text-white font-black text-sm flex items-center justify-center mb-4">
                 2
               </div>
-              <h3 className="font-bold text-white text-base mb-2">Montage avec Eloqone</h3>
+              <h3 className="font-bold text-white text-base mb-2">Montage avec Eloq-One</h3>
               <p className="text-xs sm:text-sm text-slate-400 leading-relaxed">
                 Notre partenaire porteur prépare la convention normée, le programme et le devis pour soumission à votre financeur.
               </p>
@@ -1226,13 +1224,13 @@ export default function HomePageClient() {
       </section>
 
 
-      {/* ─── 9. PASSERELLE VERS LE PÔLE MÉTHODE TOP® & SANTÉ MENTALE ──────── */}
+      {/* ─── 9. PASSERELLE VERS LE PÔLE MÉTHODE TOP® & GESTION DU STRESS ──────── */}
       <section className="py-14 px-4 bg-gradient-to-r from-amber-950/40 via-slate-900 to-slate-950 border-b border-amber-500/20">
         <div className="container mx-auto max-w-6xl">
           <div className="p-8 sm:p-10 rounded-3xl bg-slate-900/90 border border-amber-500/30 shadow-2xl relative overflow-hidden flex flex-col lg:flex-row items-center justify-between gap-8">
             <div className="max-w-2xl">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-300 text-xs font-bold uppercase tracking-wider mb-3">
-                <span>🧘</span> Univers Complémentaire : Santé Mentale &amp; Prévention du Stress
+                <span>🧘</span> Univers Complémentaire : Gestion du Stress &amp; Prévention des RPS
               </div>
               <h3 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
                 La Méthode TOP® : Endurance Cognitive &amp; Régulation Émotionnelle
@@ -1290,9 +1288,9 @@ export default function HomePageClient() {
             </div>
 
             <div className="p-6 rounded-2xl bg-slate-900 border border-slate-800">
-              <h3 className="font-bold text-white text-base mb-2">Comment fonctionne le financement via votre partenaire Eloqone ?</h3>
+              <h3 className="font-bold text-white text-base mb-2">Comment fonctionne le financement via votre partenaire Eloq-One ?</h3>
               <p className="text-sm text-slate-400 leading-relaxed">
-                SAS Ô&apos;TOP Formation est en cours de déclaration d&apos;activité (DREETS PACA). Les conventions, programmes et facturations sont instruits et portés par notre organisme partenaire certifié Qualiopi Eloqone auprès de votre OPCO, FAF ou CPF.
+                SAS Ô&apos;TOP Formation est en cours de déclaration d&apos;activité (DREETS PACA). Les conventions, programmes et facturations sont instruits et portés par notre organisme partenaire certifié Qualiopi Eloq-One auprès de votre OPCO, FAF ou .
               </p>
             </div>
 

@@ -83,7 +83,7 @@ function ContactContent() {
             Contactez notre équipe pédagogique
           </h1>
           <p style={{ color: 'var(--blue-100)', fontSize: '1.15rem', lineHeight: 1.7 }}>
-            Un échange personnalisé de 15 minutes pour évaluer vos besoins, vérifier vos financements (OPCO, FAF, CPF) et concevoir votre parcours.
+            Un échange personnalisé de 15 minutes pour évaluer vos besoins, vérifier vos financements (OPCO, FAF) et concevoir votre parcours.
           </p>
         </div>
       </div>
@@ -155,7 +155,7 @@ function ContactContent() {
                   <strong>Centre pédagogique :</strong><br />
                   Espace Gamma 1, 139 Chemin des 2 Frères, 83190 Ollioules (Var)<br />
                   <span style={{ fontSize: '0.8rem', color: 'var(--gray-600)', marginTop: '0.5rem', display: 'block', lineHeight: 1.5 }}>
-                    Ô&apos;TOP Formation intervient avec l&apos;organisme partenaire Eloqone, certifié Qualiopi, qui porte les actions de formation et les démarches de financement. NDA Ô&apos;TOP Formation en cours d&apos;attribution.
+                    Ô&apos;TOP Formation intervient avec l&apos;organisme partenaire Eloq-One, certifié Qualiopi, qui porte les actions de formation et les démarches de financement. NDA Ô&apos;TOP Formation en cours d&apos;attribution.
                   </span>
                 </div>
               </div>
@@ -174,7 +174,7 @@ function ContactContent() {
                       Merci <strong>{form.nom}</strong> ! Votre dossier a été transmis directement à <strong>Mélissa</strong> (Directrice des admissions).
                     </p>
                     <p style={{ background: '#ecfdf5', padding: '0.75rem 1rem', borderRadius: '8px', border: '1px solid #a7f3d0', color: '#065f46', fontSize: '0.88rem', fontWeight: 600 }}>
-                      ⚡ Vous serez recontacté(e) personnellement sous 24h ouvrées pour valider vos droits de financement (OPCO / FAF / CPF) et fixer votre diagnostic offert de 15 minutes.
+                      ⚡ Vous serez recontacté(e) personnellement sous 24h ouvrées pour valider vos droits de financement (OPCO / FAF / ) et fixer votre diagnostic offert de 15 minutes.
                     </p>
                   </div>
 

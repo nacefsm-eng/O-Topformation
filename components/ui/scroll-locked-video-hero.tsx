@@ -29,7 +29,7 @@ export default function MetroHero({
   videoSrc = DEFAULT_VIDEO,
   title = "DOMINEZ L'IA & LE DIGITAL",
   scrollHint = "DÉFILEZ POUR DÉCOUVRIR",
-  tagline = "L'excellence certifiée France Compétences & Qualiopi pour transformer votre avenir.",
+  tagline = "Formations professionnelles certifiées France Compétences — Financements OPCO & FAF étudiés selon votre statut.",
   signature = false,
   scrubDistance = 2400,
   className,
@@ -353,7 +353,7 @@ export default function MetroHero({
           {title}
         </span>
         <span style={{ fontSize: 'clamp(12px, 1.6vw, 18px)', color: '#38bdf8', fontWeight: 700, marginTop: '16px', letterSpacing: '0.08em', textTransform: 'uppercase' }}>
-          Ô&apos;TOP FORMATION • ORGANISME DÉCLARÉ (NDA EN COURS) · PORTÉ PAR ELOQONE
+          Ô&apos;TOP FORMATION • SAS O&apos;TOP FORMATION · SIRET 990 443 186 00012 · NAF 8559A · Porté par Eloq-One (certifié Qualiopi)
         </span>
       </div>
 

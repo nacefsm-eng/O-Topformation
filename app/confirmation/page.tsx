@@ -50,7 +50,7 @@ export default function ConfirmationPage() {
           <div className="flex items-start gap-3">
             <span className="w-6 h-6 rounded-full bg-blue-600/30 text-blue-400 flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">3</span>
             <p className="text-slate-300">
-              <strong className="text-white">Partenaire Qualiopi Eloqone :</strong> Délivrance de vos conventions et attestations officielles de formation.
+              <strong className="text-white">Partenaire Qualiopi Eloq-One :</strong> Délivrance de vos conventions et attestations officielles de formation.
             </p>
           </div>
         </div>

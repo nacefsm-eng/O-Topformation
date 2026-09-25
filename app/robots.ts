@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
       disallow: ['/api/', '/admin/'],
     },
-    sitemap: 'https://otop-formation.fr/sitemap.xml',
+    sitemap: 'https://o-topformation.vercel.app/sitemap.xml',
   };
 }

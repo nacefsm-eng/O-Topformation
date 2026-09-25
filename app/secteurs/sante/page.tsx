@@ -4,7 +4,7 @@ import Footer from '@/components/Footer';
 
 export const metadata: Metadata = {
   title: "Formation TOP® Santé & Médico-social | Ô'TOP Formation",
-  description: "Formations certifiantes aux Techniques d'Optimisation du Potentiel pour les professionnels de santé, EHPAD et CHU. Prévention du burn-out et gestion du stress.",
+  description: "Formations certifiantes aux Techniques d'Optimisation du Potentiel pour les professionnels de santé, EHPAD et CHU. Prévention du épuisement professionnel et gestion du stress.",
 };
 
 export default function SantePage() {
@@ -20,7 +20,7 @@ export default function SantePage() {
           <h1>Gérer le stress et prévenir l'épuisement des soignants</h1>
           <p>
             Des outils concrets et immédiats pour faire face à la charge mentale, 
-            à l'urgence et prévenir le burn-out dans le milieu médical.
+            à l'urgence et prévenir le épuisement professionnel dans le milieu médical.
           </p>
         </div>
       </div>
@@ -35,7 +35,7 @@ export default function SantePage() {
                 Manque de personnel, horaires décalés, confrontation quotidienne à la souffrance et aux urgences... Les professionnels de santé (CHU, cliniques, EHPAD) sont en première ligne face à l'épuisement professionnel.
               </p>
               <ul className="check-list">
-                <li>Prévenir l'épuisement professionnel (Burn-out)</li>
+                <li>Prévenir l'épuisement professionnel (épuisement professionnel)</li>
                 <li>Gérer la charge émotionnelle et le stress aigu</li>
                 <li>Améliorer la qualité de récupération entre les gardes</li>
                 <li>Fidéliser les équipes et réduire l'absentéisme</li>

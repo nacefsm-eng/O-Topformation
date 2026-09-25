@@ -52,7 +52,7 @@ export default function AProposPage() {
               <strong className="text-white" style={{ color: '#ffffff' }}>Notre rôle :</strong> vous donner les clés pour automatiser ce qui doit l’être, structurer vos processus et préserver votre concentration et votre énergie au fil des semaines.
             </p>
             <div className="p-4 rounded-xl bg-blue-950/40 border border-blue-500/30 text-xs text-blue-200">
-              ℹ️ Ô’TOP Formation intervient avec son partenaire Eloqone, organisme certifié Qualiopi, qui porte les actions de formation et accompagne les démarches de financement. Les possibilités de prise en charge sont étudiées selon votre statut et restent soumises à l’accord de l’organisme financeur.
+              ℹ️ Ô’TOP Formation intervient avec son partenaire Eloq-One, organisme certifié Qualiopi, qui porte les actions de formation et accompagne les démarches de financement. Les possibilités de prise en charge sont étudiées selon votre statut et restent soumises à l’accord de l’organisme financeur.
             </div>
           </div>
 
@@ -115,7 +115,7 @@ export default function AProposPage() {
               </div>
               <h3 className="text-xl font-bold text-white">3. Accompagnement Rigoureux</h3>
               <p className="text-slate-300 text-sm leading-relaxed">
-                Un suivi individuel avec nos formateurs et un accompagnement complet dans vos démarches de prise en charge, en partenariat avec l’organisme certifié Qualiopi Eloqone.
+                Un suivi individuel avec nos formateurs et un accompagnement complet dans vos démarches de prise en charge, en partenariat avec l’organisme certifié Qualiopi Eloq-One.
               </p>
             </div>
 

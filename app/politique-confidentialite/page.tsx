@@ -84,12 +84,23 @@ export default function PolitiqueConfidentialite() {
             </div>
 
             <div>
-              <h2 style={{ fontSize: '1.4rem', marginBottom: '1rem' }}>7. Sécurité des données</h2>
-              <p>Nous mettons en œuvre des mesures techniques et organisationnelles appropriées pour protéger vos données contre tout accès non autorisé, perte ou divulgation.</p>
+              <h2 style={{ fontSize: '1.4rem', marginBottom: '1rem' }}>8. Sous-traitants et transferts de données</h2>
+              <p style={{ marginBottom: '0.75rem' }}>Vos données peuvent être transmises aux sous-traitants suivants, dans le cadre strict de la prestation :</p>
+              <ul className="check-list">
+                <li><strong>Stripe Inc.</strong> (paiement en ligne sécurisé) — Données bancaires chiffrées, hébergées aux États-Unis sous clauses contractuelles standard (RGPD)</li>
+                <li><strong>Vercel Inc.</strong> (hébergement du site) — San Francisco, CA — Aucune donnée personnelle stockée hors formulaires de contact</li>
+                <li><strong>Eloq-One</strong> (partenaire portage Qualiopi) — Données d&apos;inscription transmises dans le cadre de l&apos;organisation des formations et des dossiers de financement OPCO/FAF</li>
+                <li><strong>Google Analytics / Meta Pixel</strong> (mesure d&apos;audience anonymisée) — Données agrégées, sans identification personnelle</li>
+              </ul>
+            </div>
+
+            <div>
+              <h2 style={{ fontSize: '1.4rem', marginBottom: '1rem' }}>9. Cookies</h2>
+              <p>Ce site utilise des cookies techniques (nécessaires au fonctionnement), des cookies analytiques (Google Analytics, anonymisés) et des cookies marketing (Meta Pixel, désactivables). Vous pouvez gérer vos préférences via les paramètres de votre navigateur ou en nous contactant.</p>
             </div>
 
             <div style={{ background: 'var(--gray-50)', padding: '1.5rem', borderRadius: 'var(--radius)', border: '1px solid var(--gray-200)' }}>
-              <p style={{ fontSize: '0.85rem', color: 'var(--gray-400)' }}>Dernière mise à jour : Juin 2026</p>
+              <p style={{ fontSize: '0.85rem', color: 'var(--gray-400)' }}>Dernière mise à jour : Octobre 2026 — SAS O&apos;TOP FORMATION (SIRET 990 443 186 00012)</p>
             </div>
           </div>
         </div>

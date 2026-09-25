@@ -36,7 +36,7 @@ export default function MentionsLegales() {
                   <tr><th>Numéro RCS</th><td>RCS Toulon 990 443 186</td></tr>
                   <tr><th>Code NAF / APE</th><td>8559A (Formation continue d&apos;adultes)</td></tr>
                   <tr><th>Directrice de la publication</th><td>Mélissa JENNADI (Présidente)</td></tr>
-                  <tr><th>Partenariat Qualiopi &amp; NDA</th><td>Ô&apos;TOP Formation intervient avec l&apos;organisme partenaire Eloqone, certifié Qualiopi, qui porte les actions de formation et les démarches de financement. NDA Ô&apos;TOP Formation en cours d&apos;attribution.</td></tr>
+                  <tr><th>Partenaire Qualiopi</th><td>Ô&apos;TOP Formation intervient avec l&apos;organisme partenaire <strong>Eloq-One</strong>, certifié Qualiopi, qui porte les actions de formation certifiantes et les démarches de financement OPCO & FAF.</td></tr>
                   <tr><th>Siège social &amp; Centre</th><td>Espace Gamma 1, 139 Chemin des 2 Frères, 83190 Ollioules (Var), France</td></tr>
                   <tr><th>Email officiel</th><td><a href="mailto:formation.rmcf@gmail.com" style={{ color: 'var(--blue-700)' }}>Formation.rmcf@gmail.com</a></td></tr>
                   <tr><th>Téléphone</th><td><a href="tel:+33767246825" style={{ color: 'var(--blue-700)' }}>07 67 24 68 25</a></td></tr>
@@ -62,8 +62,13 @@ export default function MentionsLegales() {
             </div>
 
             <div>
-              <h2 style={{ fontSize: '1.5rem', marginBottom: '1.5rem' }}>5. Droit applicable</h2>
-              <p>Le présent site est soumis au droit français. En cas de litige, les tribunaux français seront seuls compétents.</p>
+              <h2 style={{ fontSize: '1.5rem', marginBottom: '1.5rem' }}>5. Médiation et droit applicable</h2>
+              <p>Le présent site est soumis au droit français. En cas de litige non résolu à l&apos;amiable dans un délai de 60 jours, le consommateur peut recourir gratuitement à un médiateur de la consommation :</p>
+              <p style={{ marginTop: '0.75rem' }}>
+                <strong>CNPM — Médiation de la Consommation</strong><br />
+                <a href="https://www.cnpm-mediation-consommation.eu" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--blue-700)' }}>www.cnpm-mediation-consommation.eu</a>
+              </p>
+              <p style={{ marginTop: '0.75rem' }}>À défaut, les tribunaux compétents sont ceux du ressort de Toulon (Var).</p>
             </div>
 
           </div>

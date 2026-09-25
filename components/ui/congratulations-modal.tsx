@@ -79,7 +79,7 @@ export default function CongratulationsModal({
 
           <p className="text-slate-300 text-sm leading-relaxed mb-6 max-w-md mx-auto">
             {candidateName ? `Merci ${candidateName} ! ` : ''}
-            Votre demande pour <strong>{displayTitle}</strong> est enregistrée. Mélissa et Renaud préparent l&apos;étude de vos financements (OPCO, FIF-PL, CPF) sous 24h ouvrées.
+            Votre demande pour <strong>{displayTitle}</strong> est enregistrée. Mélissa et Renaud préparent l&apos;étude de vos financements (OPCO, FIF-PL) sous 24h ouvrées.
           </p>
 
           {/* Action Cards */}

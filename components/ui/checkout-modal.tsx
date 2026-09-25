@@ -49,7 +49,7 @@ export default function CheckoutModal({ isOpen, onClose, defaultPlan }: Checkout
   // Stripe Payment Links Mapping complet selon la grille tarifaire officielle
   const STRIPE_LINKS: Record<string, string> = {
     'ia-rs6776': 'https://buy.stripe.com/5kQ4gB6MkfRSaKxaMhb7y01', // 1 490 €
-    'ia-rs6776-promo': 'https://buy.stripe.com/28EeVf2w49tuaKx2fLb7y05', // 610 € (Offre limitée)
+    'ia-rs6776-promo': 'https://buy.stripe.com/bJebJ3gmUgVWdWJ5rXb7y0c', // 600 € (Offre Promo RS6776)
     'ia-rs7344': 'https://buy.stripe.com/3cI4gBfiQ9tubOB8E9b7y03', // 1 490 €
     'ia-rs7351': 'https://buy.stripe.com/6oUaEZb2A0WY5qd6w1b7y04', // 1 490 €
     'pack-duo': 'https://buy.stripe.com/14AaEZ7QodJK7yl07Db7y06', // 2 490 €
@@ -64,7 +64,7 @@ export default function CheckoutModal({ isOpen, onClose, defaultPlan }: Checkout
 
   const getStripeUrl = () => {
     const offerLower = (selectedOffer || '').toLowerCase();
-    if (amount === 610 || offerLower.includes('610') || offerLower.includes('spéciale') || offerLower.includes('découverte')) {
+    if (amount === 600 || offerLower.includes('600') || offerLower.includes('spéciale') || offerLower.includes('découverte')) {
       return STRIPE_LINKS['ia-rs6776-promo'];
     }
     if (amount === 2490 || offerLower.includes('duo')) {
@@ -197,7 +197,7 @@ export default function CheckoutModal({ isOpen, onClose, defaultPlan }: Checkout
                 </span>
               ) : modality === 'opco' ? (
                 <span>
-                  📁 Mélissa et notre partenaire certifié Qualiopi Eloqone vont vous contacter sous 24h ouvrées pour collecter les documents nécessaires et soumettre votre demande de prise en charge à votre financeur.
+                  📁 Mélissa et notre partenaire certifié Qualiopi Eloq-One vont vous contacter sous 24h ouvrées pour collecter les documents nécessaires et soumettre votre demande de prise en charge à votre financeur.
                 </span>
               ) : (
                 <span>
@@ -324,10 +324,10 @@ export default function CheckoutModal({ isOpen, onClose, defaultPlan }: Checkout
               <div className="p-4 rounded-xl bg-amber-500/10 border border-amber-500/30 text-amber-200 text-xs leading-relaxed space-y-2">
                 <div className="font-bold flex items-center gap-1.5 text-amber-300">
                   <ShieldCheck size={16} />
-                  <span>Accompagnement Financement avec Eloqone</span>
+                  <span>Accompagnement Financement avec Eloq-One</span>
                 </div>
                 <p>
-                  Financement étudié selon votre statut et sous réserve d’accord de votre financeur. Notre partenaire certifié Qualiopi, Eloqone, monte et transmet votre dossier complet.
+                  Financement étudié selon votre statut et sous réserve d’accord de votre financeur. Notre partenaire certifié Qualiopi, Eloq-One, monte et transmet votre dossier complet.
                 </p>
               </div>
             )}
@@ -442,11 +442,11 @@ export default function CheckoutModal({ isOpen, onClose, defaultPlan }: Checkout
                 </span>
                 <span className="flex items-center gap-1.5">
                   <ShieldCheck size={14} className="text-emerald-400" />
-                  Partenaire Qualiopi : Eloqone
+                  Partenaire Qualiopi : Eloq-One
                 </span>
               </div>
               <p className="text-[10.5px] text-slate-400 max-w-lg mx-auto leading-relaxed">
-                Ô’TOP Formation intervient avec son partenaire Eloqone, organisme certifié Qualiopi, qui porte les actions de formation et accompagne les démarches de financement. Les possibilités de prise en charge sont étudiées selon votre statut et restent soumises à l’accord de l’organisme financeur.
+                Ô’TOP Formation intervient avec son partenaire Eloq-One, organisme certifié Qualiopi, qui porte les actions de formation et accompagne les démarches de financement. Les possibilités de prise en charge sont étudiées selon votre statut et restent soumises à l’accord de l’organisme financeur.
               </p>
             </div>
 

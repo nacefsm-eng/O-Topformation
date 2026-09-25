@@ -41,7 +41,7 @@ export default function AnnulationPage() {
           </div>
 
           <p className="text-slate-300 text-xs leading-relaxed">
-            Nos formations sont éligibles à une prise en charge par votre <strong>OPCO</strong>, le <strong>FIF-PL</strong>, l&apos;<strong>AGEFICE</strong> ou votre entreprise via notre partenaire certifié Qualiopi <strong>Eloqone</strong>.
+            Nos formations sont éligibles à une prise en charge par votre <strong>OPCO</strong>, le <strong>FIF-PL</strong>, l&apos;<strong>AGEFICE</strong> ou votre entreprise via notre partenaire certifié Qualiopi <strong>Eloq-One</strong>.
           </p>
 
           <div className="p-3.5 rounded-xl bg-blue-950/40 border border-blue-500/30 text-xs text-blue-200">

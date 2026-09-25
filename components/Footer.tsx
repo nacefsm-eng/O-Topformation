@@ -8,11 +8,11 @@ export default function Footer() {
           {/* Column 1: Brand */}
           <div className="footer-brand">
             <img src="/logo.png" alt="O'TOP Formation" style={{ height: '52px', width: 'auto', marginBottom: '1rem', objectFit: 'contain' }} />
-            <p>Ô&apos;TOP Formation intervient avec l&apos;organisme partenaire Eloqone, certifié Qualiopi, qui porte les actions de formation et les démarches de financement. NDA Ô&apos;TOP Formation en cours d&apos;attribution. Formations préparant aux certifications enregistrées au Répertoire Spécifique de France Compétences.</p>
-            <p className="footer-brand-tagline">&quot;Former pour transformer : optimiser le potentiel humain & décupler la performance digitale.&quot;</p>
+            <p>Ô&apos;TOP Formation intervient avec l&apos;organisme partenaire Eloq-One, certifié Qualiopi, qui porte les actions de formation et les démarches de financement. Formations préparant aux certifications enregistrées au Répertoire Spécifique de France Compétences.</p>
+            <p className="footer-brand-tagline">&quot;Former pour transformer : optimiser le potentiel humain &amp; décupler la performance digitale.&quot;</p>
             
             <ul className="footer-contact" style={{ marginTop: '1.5rem', listStyle: 'none', padding: 0 }}>
-              <li style={{ marginBottom: '0.4rem' }}><span>📞</span> <strong>Mélissa (Inscriptions & Diagnostic) :</strong> <a href="tel:+33767246825">07 67 24 68 25</a></li>
+              <li style={{ marginBottom: '0.4rem' }}><span>📞</span> <strong>Mélissa (Inscriptions &amp; Diagnostic) :</strong> <a href="tel:+33767246825">07 67 24 68 25</a></li>
               <li style={{ marginBottom: '0.4rem' }}><span>📞</span> <strong>Renaud (Consultant Expert IA) :</strong> <a href="tel:+33674797509">06 74 79 75 09</a></li>
               <li style={{ marginBottom: '0.4rem' }}><span>📧</span> <a href="mailto:formation.rmcf@gmail.com">Formation.rmcf@gmail.com</a></li>
               <li><span>📍</span> Espace Gamma 1, 139 Chemin des 2 Frères, 83190 Ollioules (Var)</li>
@@ -29,22 +29,22 @@ export default function Footer() {
           <div className="footer-col">
             <h4>Formations Certifiantes</h4>
             <ul className="footer-links">
-              <li><Link href="/formations/fi-top">🧘 Formation FI TOP® (21h - Santé & Stress)</Link></li>
+              <li><Link href="/formations/fi-top">🧘 FI-TOP® — Gestion du Stress &amp; Prévention des RPS (21h)</Link></li>
               <li><Link href="/brochure" style={{ color: '#38bdf8', fontWeight: 600 }}>📄 Télécharger la Brochure Officielle</Link></li>
-              <li><Link href="/respirez" style={{ color: 'var(--gold-light)', fontWeight: 600 }}>✨ Le Grand Récap : Toutes Nos Formations</Link></li>
-              <li><Link href="/formations/ia">🤖 IA pour Dirigeants (RS7344)</Link></li>
-              <li><Link href="/formations/ia">⚡ IA Générative pour Indépendants (RS6776)</Link></li>
-              <li><Link href="/formations/reseaux-sociaux">📱 Réseaux Sociaux & Acquisition (RS7351)</Link></li>
-              <li><Link href="/methode">La Méthode TOP® & 9 Piliers</Link></li>
+              <li><Link href="/catalogue" style={{ color: 'var(--gold-light)', fontWeight: 600 }}>✨ Catalogue : Toutes Nos Formations</Link></li>
+              <li><Link href="/formations/ia">🤖 IA pour Dirigeants — RS7344 (21h)</Link></li>
+              <li><Link href="/formations/ia">⚡ IA Générative pour Indépendants — RS6776 (21h)</Link></li>
+              <li><Link href="/formations/reseaux-sociaux">📱 Communication Digitale via Réseaux Sociaux — RS7351 (21h)</Link></li>
+              <li><Link href="/methode">La Méthode TOP® &amp; 9 Piliers</Link></li>
             </ul>
           </div>
 
           {/* Column 3: Solutions Entreprises */}
           <div className="footer-col">
-            <h4>Solutions Digitales & B2B</h4>
+            <h4>Solutions Digitales &amp; B2B</h4>
             <ul className="footer-links">
-              <li><Link href="/entreprises">Création de Sites Web & Apps</Link></li>
-              <li><Link href="/entreprises">Digitalisation & Automatisation de Process</Link></li>
+              <li><Link href="/entreprises">Création de Sites Web &amp; Apps</Link></li>
+              <li><Link href="/entreprises">Digitalisation &amp; Automatisation de Process</Link></li>
               <li><Link href="/entreprises">Formations Intra-Entreprise</Link></li>
               <li><Link href="/entreprises">Sécurisation des Données &amp; Conformité IA</Link></li>
               <li><Link href="/contact">Demande de Diagnostic Gratuit</Link></li>
@@ -57,7 +57,7 @@ export default function Footer() {
             <ul className="footer-links">
               <li><Link href="/a-propos">À Propos d&apos;Ô&apos;TOP</Link></li>
               <li><Link href="/ressources/blog">Blog &amp; Guides Stratégiques</Link></li>
-              <li><Link href="/financement">Financement (OPCO, FAF, CPF)</Link></li>
+              <li><Link href="/financement">Financement (OPCO, FAF)</Link></li>
               <li><Link href="/financement">Démarche Qualité &amp; Handicap</Link></li>
               <li><Link href="/mentions-legales">Mentions légales</Link></li>
               <li><Link href="/cgv">CGV</Link></li>
@@ -67,19 +67,19 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Accreditation & Eloqone Qualiopi Partner Strip */}
+        {/* Accreditation & Eloq-One Qualiopi Partner Strip */}
         <div style={{ margin: '2.5rem 0 1.5rem', padding: '1.25rem 1.5rem', borderRadius: '16px', background: 'rgba(255, 255, 255, 0.04)', border: '1px solid rgba(255, 255, 255, 0.1)', display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between', gap: '1.25rem' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', flex: '1 1 320px' }}>
             <div style={{ padding: '0.5rem 0.75rem', background: 'white', borderRadius: '8px', color: '#0f172a', fontWeight: 900, fontSize: '0.85rem', letterSpacing: '-0.02em', border: '1.5px solid #2563eb', flexShrink: 0 }}>
-              <span style={{ color: '#0284c7' }}>Qualiopi</span>
-              <span style={{ fontSize: '0.62rem', display: 'block', color: '#475569', fontWeight: 600 }}>RÉPUBLIQUE FRANÇAISE</span>
+              <span style={{ color: '#0284c7' }}>Eloq-One</span>
+              <span style={{ fontSize: '0.62rem', display: 'block', color: '#475569', fontWeight: 600 }}>CERTIFIÉ QUALIOPI</span>
             </div>
             <div>
               <div style={{ fontWeight: 800, color: 'white', fontSize: '0.9rem' }}>
-                Portage Qualiopi par <a href="https://eloqone.fr" target="_blank" rel="noopener noreferrer" style={{ color: '#38bdf8', textDecoration: 'underline' }}>Eloqone</a> • Démarche Financement Accompagnée
+                Portage Qualiopi par <a href="https://eloq-one.fr" target="_blank" rel="noopener noreferrer" style={{ color: '#38bdf8', textDecoration: 'underline' }}>Eloq-One</a> • Démarche Financement Accompagnée
               </div>
               <div style={{ fontSize: '0.78rem', color: '#94a3b8', lineHeight: 1.4, marginTop: '2px' }}>
-                Financement possible selon votre statut et sous réserve d’acceptation par votre financeur. Dossier accompagné avec notre partenaire certifié Qualiopi Eloqone.
+                Financement possible selon votre statut et sous réserve d&apos;acceptation par votre financeur. Dossier accompagné avec notre partenaire certifié Qualiopi Eloq-One.
               </div>
             </div>
           </div>
@@ -98,9 +98,9 @@ export default function Footer() {
         </div>
 
         <div className="footer-bottom">
-          <p>© {new Date().getFullYear()} Ô&apos;TOP Formation — SAS Ô&apos;TOP Formation • SIRET : 990 443 186 00012 • NAF : 8559A • RCS Toulon. Tous droits réservés.</p>
+          <p>© 2026 Ô&apos;TOP Formations — SAS O&apos;TOP FORMATION • SIRET 990 443 186 00012 • NAF 8559A • RCS Toulon. Tous droits réservés.</p>
           <span className="footer-nda" style={{ color: 'var(--gold-light)' }}>
-            Ô’TOP Formation intervient avec son partenaire Eloqone, organisme certifié Qualiopi, qui porte les actions de formation et accompagne les démarches de financement. Les possibilités de prise en charge sont étudiées selon votre statut et restent soumises à l’accord de l’organisme financeur.
+            Ô&apos;TOP Formation intervient avec son partenaire Eloq-One, organisme certifié Qualiopi, qui porte les actions de formation et accompagne les démarches de financement. Les possibilités de prise en charge sont étudiées selon votre statut et restent soumises à l&apos;accord de l&apos;organisme financeur.
           </span>
         </div>
       </div>

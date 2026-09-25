@@ -4,7 +4,7 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: "Solutions Entreprises & Digitalisation — Ô'TOP Formation",
-  description: "Accompagnement B2B complet : Formations Qualiopi (Santé Mentale/TOP®, IA, Réseaux Sociaux), Création de sites web/apps pour augmenter le CA, et digitalisation des process.",
+  description: "Accompagnement B2B complet : Formations Qualiopi (gestion du stress/TOP®, IA, Réseaux Sociaux), Création de sites web/apps pour augmenter le CA, et digitalisation des process.",
 };
 
 export default function Entreprises() {
@@ -18,7 +18,7 @@ export default function Entreprises() {
             <span>Solutions Entreprises</span>
           </div>
           <span className="badge" style={{ background: 'rgba(205, 175, 93, 0.2)', color: 'var(--gold-light)', border: '1px solid var(--gold)', marginBottom: '1rem' }}>
-            🏢 Accompagnement B2B &amp; Formation Professionnelle · Actions portées avec notre partenaire Qualiopi Eloqone
+            🏢 Accompagnement B2B &amp; Formation Professionnelle · Actions portées avec notre partenaire Qualiopi Eloq-One
           </span>
           <h1 style={{ color: 'white', fontSize: 'clamp(2.3rem, 4.5vw, 3.6rem)', marginBottom: '1.5rem' }}>
             Accompagnement, formation et solutions digitales pour vos équipes
@@ -169,7 +169,7 @@ export default function Entreprises() {
 
           <div style={{ background: 'rgba(255, 255, 255, 0.08)', borderRadius: '12px', padding: '1rem 1.5rem', textAlign: 'center' }}>
             <p style={{ margin: 0, fontSize: '0.85rem', color: 'rgba(255, 255, 255, 0.75)', lineHeight: 1.5 }}>
-              Ô’TOP Formation intervient avec son partenaire Eloqone, organisme certifié Qualiopi, qui porte les actions de formation et accompagne les démarches de financement. Les possibilités de prise en charge sont étudiées selon votre statut et restent soumises à l’accord de l’organisme financeur.
+              Ô’TOP Formation intervient avec son partenaire Eloq-One, organisme certifié Qualiopi, qui porte les actions de formation et accompagne les démarches de financement. Les possibilités de prise en charge sont étudiées selon votre statut et restent soumises à l’accord de l’organisme financeur.
             </p>
           </div>
         </div>

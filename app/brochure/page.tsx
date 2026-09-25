@@ -14,8 +14,8 @@ export default function BrochurePage() {
       subtitle: "Cursus Certifiant France Compétences • Pôle IA N°1",
       duration: "21 heures (e-learning + 2h coaching expert)",
       format: "100% e-learning à votre rythme + accompagnement 1-to-1",
-      price: "1 490 € TTC",
-      specialOffer: "Offre spéciale durée limitée : 610 € TTC",
+      price: "1 490 €",
+      specialOffer: "Offre spéciale durée limitée : 600 €",
       funding: "Éligible OPCO, FAF (FIF-PL, AGEFICE, FAFCEA)",
       badge: "Formation Star • IA Métier",
       badgeColor: "bg-blue-600/20 text-blue-400 border-blue-500/30",
@@ -32,7 +32,7 @@ export default function BrochurePage() {
       subtitle: "Cursus Certifiant France Compétences (remplace RS6240)",
       duration: "21 heures (e-learning + 5h coaching expert)",
       format: "Distanciel avec accompagnement individuel",
-      price: "1 490 € TTC",
+      price: "1 490 €",
       funding: "Éligible OPCO, FAF (FIF-PL, AGEFICE)",
       badge: "Certifiant RS7351",
       badgeColor: "bg-emerald-600/20 text-emerald-400 border-emerald-500/30",
@@ -49,7 +49,7 @@ export default function BrochurePage() {
       subtitle: "Cursus Certifiant France Compétences • Développer son activité avec l'IA",
       duration: "21 heures (e-learning + 5h coaching expert)",
       format: "Distanciel ou Présentiel",
-      price: "1 490 € TTC",
+      price: "1 490 €",
       funding: "Éligible OPCO, FAF (FIF-PL, AGEFICE)",
       badge: "Certifiant RS7344",
       badgeColor: "bg-cyan-600/20 text-cyan-400 border-cyan-500/30",
@@ -66,13 +66,13 @@ export default function BrochurePage() {
       subtitle: "Cursus Référence Préparation Mentale & Gestion du Stress",
       duration: "21 heures (3 jours)",
       format: "Présentiel (Var / PACA) ou Distanciel (Visio synchrone)",
-      price: "890 € TTC",
+      price: "890 €",
       funding: "Éligible OPCO & FAF (FIF-PL, AGEFICE)",
       badge: "Méthode TOP®",
       badgeColor: "bg-purple-600/20 text-purple-400 border-purple-500/30",
       description: "Munissez-vous de l'essentiel de la boîte à outils TOP pour vous auto-gérer au quotidien. Prérequis obligatoire pour accéder au cursus de Praticien TOP®.",
       points: [
-        "Régulation du stress aigu et prévention de l'épuisement professionnel (burn-out)",
+        "Régulation du stress aigu et prévention de l'épuisement professionnel (épuisement professionnel)",
         "Techniques respiratoires dynamisantes et relaxantes ciblées",
         "Imagerie mentale et répétition mentale des actions réussies (RMA)",
         "Récupération flash (SRF) et gestion du sommeil"
@@ -83,7 +83,7 @@ export default function BrochurePage() {
       subtitle: "Format court intensif pour décideurs et équipes",
       duration: "7 heures (1 jour)",
       format: "Intra-entreprise ou Inter-entreprises",
-      price: "390 € TTC",
+      price: "390 €",
       funding: "Prise en charge OPCO possible",
       badge: "Format Express",
       badgeColor: "bg-amber-600/20 text-amber-400 border-amber-500/30",
@@ -145,7 +145,7 @@ export default function BrochurePage() {
               <Award className="text-amber-400 shrink-0 mt-0.5" size={20} />
               <div>
                 <div className="font-bold text-white text-sm">Portage Qualiopi</div>
-                <div className="text-xs text-slate-400">Via notre partenaire ELOQONE</div>
+                <div className="text-xs text-slate-400">Via notre partenaire Eloq-One</div>
               </div>
             </div>
             <div className="p-4 rounded-xl bg-slate-900/60 border border-slate-800 flex items-start gap-3">
@@ -235,7 +235,7 @@ export default function BrochurePage() {
                 <div className="pt-6 border-t border-slate-800/80">
                   <div className="flex items-center justify-between mb-4">
                     <div>
-                      <div className="text-xs text-slate-400">Tarif officiel TTC</div>
+                      <div className="text-xs text-slate-400">Tarif officiel</div>
                       <div className="text-xl font-bold text-white">{f.price}</div>
                     </div>
                     <div className="text-right">
@@ -285,24 +285,24 @@ export default function BrochurePage() {
                     <tr className="border-b border-slate-800 text-slate-400">
                       <th className="pb-3 font-semibold">Formule combinée</th>
                       <th className="pb-3 font-semibold text-center">Prix cumulé</th>
-                      <th className="pb-3 font-semibold text-right">Tarif Pack TTC</th>
+                      <th className="pb-3 font-semibold text-right">Tarif Pack</th>
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-slate-800/60">
                     <tr>
                       <td className="py-3 text-white font-medium">Pack Duo (2 formations au choix)</td>
                       <td className="py-3 text-center text-slate-400 line-through">2 980 €</td>
-                      <td className="py-3 text-right text-emerald-400 font-bold text-base">2 490 € TTC</td>
+                      <td className="py-3 text-right text-emerald-400 font-bold text-base">2 490 €</td>
                     </tr>
                     <tr>
                       <td className="py-3 text-white font-medium">Pack Trio (les 3 formations)</td>
                       <td className="py-3 text-center text-slate-400 line-through">4 470 €</td>
-                      <td className="py-3 text-right text-emerald-400 font-bold text-base">3 390 € TTC</td>
+                      <td className="py-3 text-right text-emerald-400 font-bold text-base">3 390 €</td>
                     </tr>
                     <tr>
                       <td className="py-3 text-white font-medium">Formule Entreprise (OPCO - 40h total)</td>
                       <td className="py-3 text-center text-slate-400">-</td>
-                      <td className="py-3 text-right text-blue-400 font-bold text-base">3 200 € TTC</td>
+                      <td className="py-3 text-right text-blue-400 font-bold text-base">3 200 €</td>
                     </tr>
                   </tbody>
                 </table>
@@ -324,24 +324,24 @@ export default function BrochurePage() {
                   <thead>
                     <tr className="border-b border-slate-800 text-slate-400">
                       <th className="pb-3 font-semibold">Module</th>
-                      <th className="pb-3 font-semibold text-center">Tarif TTC</th>
+                      <th className="pb-3 font-semibold text-center">Tarif</th>
                       <th className="pb-3 font-semibold text-right">Équivalent horaire</th>
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-slate-800/60">
                     <tr>
                       <td className="py-3 text-white font-medium">Heure additionnelle (à l&apos;unité)</td>
-                      <td className="py-3 text-center text-white font-bold">120 € TTC</td>
+                      <td className="py-3 text-center text-white font-bold">120 €</td>
                       <td className="py-3 text-right text-slate-400">120 € / h</td>
                     </tr>
                     <tr>
                       <td className="py-3 text-white font-medium">Forfait 5 heures d&apos;accompagnement</td>
-                      <td className="py-3 text-center text-emerald-400 font-bold">550 € TTC</td>
+                      <td className="py-3 text-center text-emerald-400 font-bold">550 €</td>
                       <td className="py-3 text-right text-slate-400">110 € / h</td>
                     </tr>
                     <tr>
                       <td className="py-3 text-white font-medium">Forfait 10 heures d&apos;accompagnement</td>
-                      <td className="py-3 text-center text-emerald-400 font-bold">1 000 € TTC</td>
+                      <td className="py-3 text-center text-emerald-400 font-bold">1 000 €</td>
                       <td className="py-3 text-right text-slate-400">100 € / h</td>
                     </tr>
                   </tbody>
@@ -363,7 +363,7 @@ export default function BrochurePage() {
           <p className="text-xs sm:text-sm text-slate-400 leading-relaxed max-w-3xl mx-auto mb-6">
             Ô&apos;TOP Formation est une marque exploitée par nos intervenants certifiés. 
             Afin de permettre la prise en charge financière de vos formations auprès des organismes financeurs (OPCO, FIF-PL, AGEFICE, FAFCEA), 
-            nos actions de formation s&apos;effectuent sous le portage certifié <strong>Qualiopi de la société ELOQONE</strong>.
+            nos actions de formation s&apos;effectuent sous le portage certifié <strong>Qualiopi de la société Eloq-One</strong>.
             SIREN : 935 241 247 • Déclaration d&apos;activité de formation en cours d&apos;enregistrement auprès de la DREETS PACA.
           </p>
           <div className="inline-flex items-center gap-6 justify-center text-xs font-semibold text-slate-300">

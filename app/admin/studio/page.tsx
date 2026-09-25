@@ -80,7 +80,7 @@ export default function ContentStudio() {
               <textarea
                 value={topic}
                 onChange={e => setTopic(e.target.value)}
-                placeholder="Ex : Comment la méthode TOP aide les managers à réduire le burn-out de leurs équipes..."
+                placeholder="Ex : Comment la méthode TOP aide les managers à réduire le épuisement professionnel de leurs équipes..."
                 required
                 style={{ width: '100%', padding: '1rem', minHeight: '130px', borderRadius: '12px', border: '1.5px solid rgba(255,255,255,0.15)', background: 'rgba(255,255,255,0.08)', color: 'white', fontFamily: 'inherit', fontSize: '0.9rem', resize: 'vertical', outline: 'none', boxSizing: 'border-box', lineHeight: 1.6 }}
               />

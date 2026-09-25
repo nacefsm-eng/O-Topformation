@@ -35,7 +35,7 @@ export default function FinancementPage() {
     {
       num: '03',
       title: 'Accord de prise en charge & Formation',
-      desc: 'Dès validation de votre financeur (OPCO, FAF, CPF), vous démarrez votre formation avec accès 24/7 et vos créneaux de coaching individuel.',
+      desc: 'Dès validation de votre financeur (OPCO, FAF), vous démarrez votre formation avec accès 24/7 et vos créneaux de coaching individuel.',
     },
   ];
 
@@ -86,7 +86,7 @@ export default function FinancementPage() {
             Financement &amp; Démarche Qualité
           </h1>
           <p className="text-slate-300 text-base sm:text-lg max-w-3xl mx-auto leading-relaxed">
-            Ô’TOP Formation intervient avec son partenaire Eloqone, organisme certifié Qualiopi, qui porte les actions de formation et accompagne les démarches de financement. Les possibilités de prise en charge sont étudiées selon votre statut et restent soumises à l’accord de l’organisme financeur.
+            Ô’TOP Formation intervient avec son partenaire Eloq-One, organisme certifié Qualiopi, qui porte les actions de formation et accompagne les démarches de financement. Les possibilités de prise en charge sont étudiées selon votre statut et restent soumises à l’accord de l’organisme financeur.
           </p>
         </div>
       </section>
@@ -133,7 +133,7 @@ export default function FinancementPage() {
 
           <div className="mt-10 p-6 rounded-2xl bg-blue-950/40 border border-blue-500/30 text-center max-w-3xl mx-auto">
             <p className="text-sm sm:text-base text-blue-200 font-medium">
-              💡 <strong>Financement étudié selon votre statut (OPCO, FAF, CPF)</strong> sous réserve d'accord de votre financeur. Dossier monté et vérifié en amont avec notre partenaire certifié Eloqone.
+              💡 <strong>Financement étudié selon votre statut (OPCO, FAF)</strong> sous réserve d'accord de votre financeur. Dossier monté et vérifié en amont avec notre partenaire certifié Eloq-One.
             </p>
           </div>
 
@@ -198,7 +198,7 @@ export default function FinancementPage() {
               <div className="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 flex items-center justify-center font-bold">
                 <ShieldCheck size={20} />
               </div>
-              <h3 className="text-lg font-bold text-white">Compte Personnel de Formation (CPF)</h3>
+              <h3 className="text-lg font-bold text-white">Compte Personnel de Formation ()</h3>
               <p className="text-sm text-slate-300 leading-relaxed">
                 Disponible pour les formations certifiées enregistrées au Répertoire Spécifique de France Compétences via notre organisme partenaire porteur.
               </p>
@@ -226,7 +226,7 @@ export default function FinancementPage() {
                   Notre Démarche Qualité &amp; Mentions Légales
                 </h3>
                 <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
-                  Ô’TOP Formation intervient avec son partenaire Eloqone, organisme certifié Qualiopi, qui porte les actions de formation et accompagne les démarches de financement. Les possibilités de prise en charge sont étudiées selon votre statut et restent soumises à l’accord de l’organisme financeur.
+                  Ô’TOP Formation intervient avec son partenaire Eloq-One, organisme certifié Qualiopi, qui porte les actions de formation et accompagne les démarches de financement. Les possibilités de prise en charge sont étudiées selon votre statut et restent soumises à l’accord de l’organisme financeur.
                 </p>
               </div>
             </div>
