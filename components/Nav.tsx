@@ -23,7 +23,7 @@ const formationsLinks = [
     href: '/formations/reseaux-sociaux' 
   },
   { 
-    label: '🧘 Méthode TOP® & Santé Mentale', 
+    label: '🧘 Méthode TOP® & Gestion du Stress', 
     desc: 'Régulation du stress, prévention du burnout & endurance cognitive',
     href: '/formations/fi-top' 
   },

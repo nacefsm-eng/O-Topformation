@@ -21,7 +21,7 @@ const FAQ_ITEMS: FaqItem[] = [
     id: 2,
     question: "Y a-t-il des prérequis pour suivre une formation ?",
     answer:
-      "Non, il n'y a aucun prérequis pour suivre nos formations. Les TOP® sont conçues pour être accessibles à tout public, quelle que soit votre profession, votre niveau d'études ou votre expérience préalable en développement personnel. Que vous soyez manager, sportif, soignant, enseignant ou simplement en quête d'outils pour mieux gérer votre quotidien, vous pouvez intégrer nos formations. Un entretien de positionnement est réalisé en amont pour adapter le parcours à votre profil et à vos objectifs spécifiques.",
+      "Non, il n'y a aucun prérequis pour suivre nos formations. Les TOP® sont conçues pour être accessibles à tout public, quelle que soit votre profession, votre niveau d'études ou votre expérience préalable en gestion du stress et performance. Que vous soyez manager, sportif, soignant, enseignant ou simplement en quête d'outils pour mieux gérer votre quotidien, vous pouvez intégrer nos formations. Un entretien de positionnement est réalisé en amont pour adapter le parcours à votre profil et à vos objectifs spécifiques.",
   },
   {
     id: 3,
@@ -33,7 +33,7 @@ const FAQ_ITEMS: FaqItem[] = [
     id: 4,
     question: "Peut-on financer la formation via un OPCO ou le  ?",
     answer:
-      "Oui, plusieurs dispositifs de financement sont mobilisables selon votre situation professionnelle. Les collaborateurs d'entreprise peuvent solliciter leur OPCO (Opérateur de Compétences) dans le cadre du plan de développement des compétences de leur entreprise. Le financement via le  (Compte Personnel de Formation) sera possible dès lors que notre formation sera référencée sur la plateforme Mon Compte Formation, ce qui sera engagé après l'obtention de notre NDA et la certification Qualiopi. Les demandeurs d'emploi peuvent se rapprocher de leur conseiller France Travail. Pour toute question sur le financement, contactez-nous directement, nous vous accompagnons dans vos démarches.",
+      "Oui, plusieurs dispositifs de financement sont mobilisables selon votre situation professionnelle. Les collaborateurs d'entreprise peuvent solliciter leur OPCO (Opérateur de Compétences) dans le cadre du plan de développement des compétences de leur entreprise. Le financement via le  (Compte Personnel de Formation) sera possible dès lors que notre formation sera référencée sur la plateforme OPCO / FAF, ce qui sera engagé après l'obtention de notre NDA et la certification Qualiopi. Les demandeurs d'emploi peuvent se rapprocher de leur conseiller France Travail. Pour toute question sur le financement, contactez-nous directement, nous vous accompagnons dans vos démarches.",
   },
   {
     id: 5,

@@ -77,7 +77,7 @@ export default function ExitIntentModal() {
         </h3>
 
         <p className="text-slate-300 text-xs sm:text-sm leading-relaxed mb-5">
-          Consultez à tête reposée nos programmes de formation, les plannings et les modalités d&apos;étude de financement auprès de votre OPCO ou FAF via notre partenaire certifié Qualiopi Eloqone.
+          Consultez à tête reposée nos programmes de formation, les plannings et les modalités d&apos;étude de financement auprès de votre OPCO ou FAF via notre partenaire certifié Qualiopi Eloq-One.
         </p>
 
         {/* Features list */}

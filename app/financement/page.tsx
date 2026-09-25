@@ -203,7 +203,7 @@ export default function FinancementPage() {
                 Disponible pour les formations certifiées enregistrées au Répertoire Spécifique de France Compétences via notre organisme partenaire porteur.
               </p>
               <div className="text-xs text-emerald-400 font-semibold pt-2">
-                Mobilisation directe sur MonCompteFormation
+                Mobilisation directe sur OPCO/FAF
               </div>
             </div>
 

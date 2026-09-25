@@ -678,7 +678,7 @@ export default function HomePageClient() {
                 <div>
                   <div className="flex items-center justify-between gap-2 mb-4 min-h-[28px]">
                     <span className="px-3 py-1 rounded-full bg-amber-500/20 text-amber-300 text-xs font-bold border border-amber-500/30">
-                      🧠 Neurosciences &amp; IA • FI-TOP®
+                      🧠 Sciences Cognitives &amp; IA • FI-TOP®
                     </span>
                     <span className="text-xs text-slate-400 font-semibold">Présentiel ou Visio • Financement OPCO/FAF</span>
                   </div>

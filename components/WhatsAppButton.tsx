@@ -13,9 +13,9 @@ interface PredefinedQA {
 const PREDEFINED_QUESTIONS: PredefinedQA[] = [
   {
     id: 'financement',
-    question: '💰 Financement possible (OPCO / FAF / CPF)',
+    question: '💰 Financement possible (OPCO / FAF )',
     answer:
-      "Financement possible selon votre statut et sous réserve d'acceptation par votre financeur. Dossier accompagné avec notre partenaire certifié Qualiopi Eloqone. Je monte personnellement le dossier pour étudier vos droits disponibles.",
+      "Financement possible selon votre statut et sous réserve d'acceptation par votre financeur. Dossier accompagné avec notre partenaire certifié Qualiopi Eloq-One. Je monte personnellement le dossier pour étudier vos droits disponibles.",
     whatsappMessage:
       "Bonjour Mélissa, je souhaite savoir si ma situation me permet de bénéficier d'une prise en charge OPCO ou FAF pour une formation Ô'TOP.",
   },
