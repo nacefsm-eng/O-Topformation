@@ -201,7 +201,7 @@ export default function AdminDashboard() {
         <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
           <span style={{ fontSize: '1.5rem' }}>🏛️</span>
           <div>
-            <h1 style={{ margin: 0, fontSize: '1.2rem', fontWeight: 800 }}>Ô'TOP Formation — Dashboard</h1>
+            <h1 style={{ margin: 0, fontSize: '1.2rem', fontWeight: 800 }}>Ô'TOP Formations — Dashboard</h1>
             <p style={{ margin: 0, fontSize: '0.8rem', opacity: 0.7 }}>Espace de gestion privé</p>
           </div>
         </div>

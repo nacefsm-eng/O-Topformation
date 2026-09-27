@@ -149,7 +149,7 @@ export default function MethodeTop() {
             </div>
             <div style={{ background: 'rgba(255, 255, 255, 0.08)', borderRadius: '12px', padding: '1rem 1.5rem', textAlign: 'center', maxWidth: '800px', margin: '0 auto' }}>
               <p style={{ margin: 0, fontSize: '0.85rem', color: 'rgba(255, 255, 255, 0.75)', lineHeight: 1.5 }}>
-                Ô’TOP Formation intervient avec son partenaire Eloq-One, organisme certifié Qualiopi, qui porte les actions de formation et accompagne les démarches de financement. Les possibilités de prise en charge sont étudiées selon votre statut et restent soumises à l’accord de l’organisme financeur.
+                Ô'TOP Formations intervient avec son partenaire Eloq-One, organisme certifié Qualiopi, qui porte les actions de formation et accompagne les démarches de financement. Les possibilités de prise en charge sont étudiées selon votre statut et restent soumises à l’accord de l’organisme financeur.
               </p>
             </div>
           </div>

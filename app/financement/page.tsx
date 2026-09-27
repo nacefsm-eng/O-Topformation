@@ -86,7 +86,7 @@ export default function FinancementPage() {
             Financement &amp; Démarche Qualité
           </h1>
           <p className="text-slate-300 text-base sm:text-lg max-w-3xl mx-auto leading-relaxed">
-            Ô’TOP Formation intervient avec son partenaire Eloq-One, organisme certifié Qualiopi, qui porte les actions de formation et accompagne les démarches de financement. Les possibilités de prise en charge sont étudiées selon votre statut et restent soumises à l’accord de l’organisme financeur.
+            Ô'TOP Formations intervient avec son partenaire Eloq-One, organisme certifié Qualiopi, qui porte les actions de formation et accompagne les démarches de financement. Les possibilités de prise en charge sont étudiées selon votre statut et restent soumises à l’accord de l’organisme financeur.
           </p>
         </div>
       </section>
@@ -213,7 +213,7 @@ export default function FinancementPage() {
                   Notre Démarche Qualité &amp; Mentions Légales
                 </h3>
                 <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
-                  Ô’TOP Formation intervient avec son partenaire Eloq-One, organisme certifié Qualiopi, qui porte les actions de formation et accompagne les démarches de financement. Les possibilités de prise en charge sont étudiées selon votre statut et restent soumises à l’accord de l’organisme financeur.
+                  Ô'TOP Formations intervient avec son partenaire Eloq-One, organisme certifié Qualiopi, qui porte les actions de formation et accompagne les démarches de financement. Les possibilités de prise en charge sont étudiées selon votre statut et restent soumises à l’accord de l’organisme financeur.
                 </p>
               </div>
             </div>

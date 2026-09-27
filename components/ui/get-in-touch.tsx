@@ -327,7 +327,7 @@ export default function GetInTouch() {
         candidateName={name}
         courseTitle="votre diagnostic de formation"
         onWhatsAppClick={() => {
-          const formattedMessage = `Bonjour Mélissa (Ô'TOP Formation), je viens de transmettre ma demande de diagnostic (${name}, ${email}). Je souhaite faire le point sur mon projet.`;
+          const formattedMessage = `Bonjour Mélissa (Ô'TOP Formations), je viens de transmettre ma demande de diagnostic (${name}, ${email}). Je souhaite faire le point sur mon projet.`;
           window.open(`https://wa.me/33767246825?text=${encodeURIComponent(formattedMessage)}`, '_blank');
         }}
       />

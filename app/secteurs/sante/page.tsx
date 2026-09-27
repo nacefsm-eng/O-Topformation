@@ -3,7 +3,7 @@ import Link from 'next/link';
 import Footer from '@/components/Footer';
 
 export const metadata: Metadata = {
-  title: "Formation TOP® Santé & Médico-social | Ô'TOP Formation",
+  title: "Formation TOP® Santé & Médico-social | Ô'TOP Formations",
   description: "Formations certifiantes aux Techniques d'Optimisation du Potentiel pour les professionnels de santé, EHPAD et CHU. Prévention du épuisement professionnel et gestion du stress.",
 };
 

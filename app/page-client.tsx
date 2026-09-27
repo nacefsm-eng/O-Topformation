@@ -94,34 +94,46 @@ export default function HomePageClient() {
     <main className="min-h-screen bg-slate-950 text-slate-100 font-sans">
       
       {/* ─── BANNIÈRE PROMOTIONNELLE C1 : OFFRE SPÉCIALE RS6776 À 600 € ──────── */}
-      <aside aria-label="Offre promotionnelle" className="bg-gradient-to-r from-cyan-950 via-blue-900 to-indigo-950 border-b border-cyan-500/30 text-white py-2.5 px-4 sticky top-0 z-50 shadow-lg backdrop-blur-md">
-        <div className="container mx-auto max-w-6xl flex flex-wrap items-center justify-between gap-3 text-xs sm:text-sm">
-          <div className="flex items-center gap-2 font-medium">
-            <span className="px-2 py-0.5 rounded-full bg-amber-500 text-slate-950 font-black text-[11px] uppercase tracking-wide animate-pulse">
-              Offre limitée
+      <aside aria-label="Offre promotionnelle d'urgence" className="bg-gradient-to-r from-amber-950 via-slate-900 to-blue-950 border-b-2 border-amber-400/40 text-white py-3 px-4 sticky top-0 z-50 shadow-2xl backdrop-blur-md">
+        <div className="container mx-auto max-w-7xl flex flex-wrap items-center justify-between gap-3 text-xs sm:text-sm">
+          
+          <div className="flex items-center gap-3 font-medium">
+            <span className="px-2.5 py-1 rounded-full bg-gradient-to-r from-amber-400 to-amber-500 text-slate-950 font-black text-xs uppercase tracking-wider shadow animate-pulse flex items-center gap-1">
+              🔥 PROMO -60%
             </span>
-            <span>
-              Formation IA Générative (RS6776) à <strong>600 €</strong> <span className="hidden md:inline">(au lieu de 1 490 €) ou 3 × 200 €</span>
-            </span>
+            <div className="flex flex-wrap items-center gap-x-2 gap-y-1">
+              <span className="font-bold text-white text-sm sm:text-base">
+                Formation IA Générative (RS6776) :
+              </span>
+              <span className="text-base sm:text-lg font-black text-emerald-400">600 €</span>
+              <span className="text-xs sm:text-sm text-slate-400 line-through decoration-red-400 decoration-2 font-bold">1 490 €</span>
+              <span className="hidden sm:inline-block px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-bold text-xs">
+                Économisez 890 €
+              </span>
+              <span className="hidden lg:inline text-slate-300 text-xs">
+                (ou 3 × 200 € sans frais)
+              </span>
+            </div>
           </div>
 
-          <div className="flex items-center gap-4">
-            <div className="flex items-center gap-1.5 font-mono text-cyan-300 font-bold bg-slate-950/60 px-3 py-1 rounded-lg border border-cyan-500/20">
-              <Clock size={14} className="text-amber-400" />
-              <span>Fin le 31/10/2026 :</span>
-              <span className="text-white">{timeLeft.days}j</span>
+          <div className="flex items-center gap-3 sm:gap-4 ml-auto sm:ml-0">
+            <div className="flex items-center gap-1.5 font-mono text-amber-300 font-bold bg-slate-950/80 px-3 py-1.5 rounded-xl border border-amber-500/30 shadow-inner text-xs sm:text-sm">
+              <Clock size={15} className="text-amber-400 animate-spin" style={{ animationDuration: '4s' }} />
+              <span className="hidden sm:inline text-slate-300">Expire le 31 octobre 2026 :</span>
+              <span className="text-white font-extrabold">{timeLeft.days}j</span>
               <span>{String(timeLeft.hours).padStart(2, '0')}h</span>
               <span>{String(timeLeft.minutes).padStart(2, '0')}m</span>
-              <span>{String(timeLeft.seconds).padStart(2, '0')}s</span>
+              <span className="text-amber-400">{String(timeLeft.seconds).padStart(2, '0')}s</span>
             </div>
 
             <button
               onClick={() => handleOpenCheckout('Offre Promo RS6776 (Durée limitée)', 600, '21h de formation certifiante en e-learning + 2h accompagnement expert individuel - Tarif promotionnel')}
-              className="px-3.5 py-1 rounded-lg bg-gradient-to-r from-amber-400 to-emerald-400 text-slate-950 font-bold text-xs hover:from-amber-300 hover:to-emerald-300 transition-all cursor-pointer whitespace-nowrap shadow"
+              className="px-4 py-2 rounded-xl bg-gradient-to-r from-amber-400 via-amber-300 to-emerald-400 text-slate-950 font-black text-xs hover:scale-105 active:scale-95 transition-all cursor-pointer whitespace-nowrap shadow-lg shadow-amber-500/20 flex items-center gap-1.5"
             >
-              En profiter →
+              <span>En profiter à 600 € →</span>
             </button>
           </div>
+
         </div>
       </aside>
 
@@ -495,11 +507,28 @@ export default function HomePageClient() {
                     ChatGPT, Claude, assistants sur mesure &amp; contenus
                   </p>
 
-                  <p className="text-sm text-slate-300 leading-relaxed mb-6 min-h-[72px]">
-                    Le parcours de référence pour automatiser vos tâches quotidiennes, concevoir des assistants personnalisés et gagner 5 à 10 h par semaine selon votre activité.
-                  </p>
+                  {/* Encart promotionnel exceptionnel - Mise en avant forte */}
+                  <div className="p-4 rounded-2xl bg-gradient-to-r from-amber-500/15 via-emerald-500/15 to-cyan-500/10 border-2 border-amber-400/40 mb-6 shadow-lg">
+                    <div className="flex items-center justify-between gap-2 mb-1.5">
+                      <span className="text-[11px] font-black uppercase tracking-wider text-amber-300 flex items-center gap-1">
+                        <Sparkles size={14} className="text-amber-400 animate-pulse" /> OFFRE SPÉCIALE • DURÉE LIMITÉE
+                      </span>
+                      <span className="px-2 py-0.5 rounded-full bg-red-500/20 text-red-300 text-[11px] font-extrabold border border-red-500/30">
+                        -60% (-890 €)
+                      </span>
+                    </div>
+                    <div className="flex items-baseline gap-3">
+                      <span className="text-3xl font-black text-emerald-400">600 €</span>
+                      <span className="text-lg text-slate-400 line-through decoration-red-500 decoration-2 font-bold">1 490 €</span>
+                      <span className="text-xs text-slate-300 font-medium">(ou 3 × 200 € sans frais)</span>
+                    </div>
+                    <div className="text-xs text-amber-200/90 mt-2 font-semibold flex items-center gap-1.5">
+                      <Clock size={13} className="text-amber-400 shrink-0" />
+                      <span>Message d&apos;urgence : offre valable exclusivement jusqu&apos;au <strong>31 octobre 2026</strong></span>
+                    </div>
+                  </div>
 
-                  <div className="space-y-2.5 py-4 border-y border-slate-800 text-xs text-slate-300 mb-6 min-h-[148px] flex flex-col justify-center bg-slate-950/40 rounded-xl px-3.5">
+                  <div className="space-y-2.5 py-4 border-y border-slate-800 text-xs text-slate-300 mb-6 min-h-[110px] flex flex-col justify-center bg-slate-950/40 rounded-xl px-3.5">
                     <div className="flex items-center gap-2">
                       <Clock size={15} className="text-cyan-400 shrink-0" />
                       <span><strong>Durée :</strong> 21 h, dont 2 h d&apos;accompagnement avec un expert</span>
@@ -510,7 +539,7 @@ export default function HomePageClient() {
                     </div>
                     <div className="flex items-center gap-2">
                       <ShieldCheck size={15} className="text-emerald-400 shrink-0" />
-                      <span><strong>Tarif :</strong> 600 € au lieu de 1 490 €, jusqu&apos;au 31 octobre 2026 • Finançable OPCO / FAF</span>
+                      <span><strong>Financement :</strong> Éligible OPCO / FAF (prise en charge selon vos droits)</span>
                     </div>
                   </div>
 
@@ -532,14 +561,13 @@ export default function HomePageClient() {
 
                 <div className="mt-auto space-y-2.5 pt-4 border-t border-slate-800/80">
                   <div className="flex items-center gap-2">
-                    <span className="text-sm text-slate-500 line-through">1 490 €</span>
                     <button
                       type="button"
                       onClick={() => handleOpenCheckout('Offre Promo RS6776 (Durée limitée)', 600, '21h de formation certifiante en e-learning + 2h accompagnement expert individuel - Tarif promotionnel')}
-                      className="flex-1 py-3 px-4 rounded-xl bg-gradient-to-r from-amber-500 to-emerald-500 hover:from-amber-400 hover:to-emerald-400 text-slate-950 font-black text-xs shadow-md transition-all flex items-center justify-center gap-1.5 cursor-pointer"
+                      className="w-full py-3.5 px-4 rounded-xl bg-gradient-to-r from-amber-400 via-amber-300 to-emerald-400 hover:from-amber-300 hover:to-emerald-300 text-slate-950 font-black text-sm shadow-xl shadow-amber-500/20 transition-all flex items-center justify-center gap-2 cursor-pointer hover:scale-[1.02] active:scale-[0.98]"
                     >
-                      <CreditCard size={14} />
-                      <span>Profiter de l&apos;offre à 600 € (ou 3 × 200 €)</span>
+                      <CreditCard size={16} />
+                      <span>Profiter de la promo à 600 € (au lieu de 1 490 €)</span>
                     </button>
                   </div>
                   <a
@@ -1225,7 +1253,7 @@ export default function HomePageClient() {
                 firstName="Hugo"
                 lastName=""
                 imageUrl="/team-nacef.jpg"
-                description="Architecte technique & concepteur de la plateforme web Ô'TOP Formation. Expert en ingénierie logicielle full-stack, optimisation des performances, automatisation et expérience utilisateur moderne."
+                description="Architecte technique & concepteur de la plateforme web Ô'TOP Formations. Expert en ingénierie logicielle full-stack, optimisation des performances, automatisation et expérience utilisateur moderne."
                 onCtaClick={() => window.open('https://wa.me/33767246825?text=Bonjour%20Hugo%2C%20je%20souhaite%20%C3%A9changer%20avec%20vous%20sur%20le%20site%20web.', '_blank')}
               />
 

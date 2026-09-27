@@ -5,7 +5,7 @@ import type { Metadata } from 'next';
 import { Calendar, Clock, ArrowRight, Tag, BookOpen, Sparkles, CheckCircle2 } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: "Blog & Ressources : IA Générative, Méthode TOP® & Financements OPCO | Ô'TOP Formation",
+  title: "Blog & Ressources : IA Générative, Méthode TOP® & Financements OPCO | Ô'TOP Formations",
   description:
     "Guides pratiques, décryptages et conseils d'experts sur l'Intelligence Artificielle en entreprise, l'AI Act européen, la régulation du stress (TOP®) et le financement OPCO à 100%.",
   alternates: {

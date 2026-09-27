@@ -103,7 +103,7 @@ export default function EquipePage() {
               firstName="Hugo"
               lastName=""
               imageUrl="/team-nacef.jpg"
-              description="Architecte technique & concepteur de la plateforme web Ô'TOP Formation. Expert en ingénierie logicielle full-stack, optimisation des performances, automatisation et expérience utilisateur moderne."
+              description="Architecte technique & concepteur de la plateforme web Ô'TOP Formations. Expert en ingénierie logicielle full-stack, optimisation des performances, automatisation et expérience utilisateur moderne."
               onCtaClick={() => window.open('https://wa.me/33767246825?text=Bonjour%20Hugo%2C%20je%20souhaite%20%C3%A9changer%20avec%20vous%20sur%20le%20site%20web.', '_blank')}
             />
 

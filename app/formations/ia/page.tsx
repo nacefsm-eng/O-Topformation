@@ -32,7 +32,7 @@ export default function FormationIAPage() {
               <span>✓ Financement étudié avec Eloq-One</span>
             </div>
             <div style={{ padding: '0.85rem 1.25rem', borderRadius: '12px', background: 'rgba(255, 255, 255, 0.08)', border: '1px solid rgba(255, 255, 255, 0.15)', fontSize: '0.82rem', color: '#93c5fd', marginBottom: '2rem', lineHeight: 1.5 }}>
-              ℹ️ Ô’TOP Formation intervient avec son partenaire Eloq-One, organisme certifié Qualiopi, qui porte les actions de formation et accompagne les démarches de financement. Les possibilités de prise en charge sont étudiées selon votre statut et restent soumises à l’accord de l’organisme financeur.
+              ℹ️ Ô'TOP Formations intervient avec son partenaire Eloq-One, organisme certifié Qualiopi, qui porte les actions de formation et accompagne les démarches de financement. Les possibilités de prise en charge sont étudiées selon votre statut et restent soumises à l’accord de l’organisme financeur.
             </div>
             <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
               <Link href="/contact?subject=IA_Diagnostic" className="btn btn-primary" style={{ background: 'var(--red-600)', color: 'white', fontWeight: 800, padding: '1rem 2rem' }}>
@@ -149,8 +149,24 @@ export default function FormationIAPage() {
                   <li style={{ display: 'flex', gap: '0.5rem', color: '#334155' }}><span style={{ color: 'var(--gold-dark)', fontWeight: 700 }}>✓</span> <strong style={{ color: '#0f172a' }}>Accompagnement :</strong> 2 h avec un expert incluses (accompagnement sur mesure possible)</li>
                 </ul>
 
-                <div style={{ background: '#fdfbf7', padding: '1rem', borderRadius: 'var(--radius-sm)', marginBottom: '1.5rem', fontSize: '0.9rem', color: 'var(--gray-800)', border: '1px solid var(--gold-light)' }}>
-                  <strong>⚡ Offre Spéciale : 600 €</strong> (au lieu de 1 490 €) jusqu&apos;au 31/10/2026. Possibilité de règlement en 3 × 200 €.
+                {/* Encart Promo Éclatant */}
+                <div style={{ background: 'linear-gradient(135deg, #fef3c7, #ecfdf5)', padding: '1.25rem', borderRadius: '12px', marginBottom: '1.5rem', border: '2px solid #f59e0b' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '0.5rem', marginBottom: '0.5rem', flexWrap: 'wrap' }}>
+                    <span style={{ fontSize: '0.75rem', fontWeight: 900, textTransform: 'uppercase', color: '#b45309', background: '#fde68a', padding: '2px 8px', borderRadius: '4px' }}>
+                      🔥 OFFRE FLASH LIMITÉE
+                    </span>
+                    <span style={{ fontSize: '0.75rem', fontWeight: 800, color: '#dc2626', background: '#fee2e2', padding: '2px 8px', borderRadius: '4px' }}>
+                      -60% DE REMISE (-890 €)
+                    </span>
+                  </div>
+                  <div style={{ display: 'flex', alignItems: 'baseline', gap: '0.75rem', marginBottom: '0.5rem' }}>
+                    <span style={{ fontSize: '2rem', fontWeight: 900, color: '#047857' }}>600 €</span>
+                    <span style={{ fontSize: '1.15rem', color: '#94a3b8', textDecoration: 'line-through', fontWeight: 700 }}>1 490 €</span>
+                    <span style={{ fontSize: '0.8rem', color: '#475569' }}>(ou 3 × 200 € sans frais)</span>
+                  </div>
+                  <div style={{ fontSize: '0.8rem', color: '#b45309', fontWeight: 600 }}>
+                    ⏰ Message d&apos;urgence : tarif promotionnel garanti jusqu&apos;au <strong>31 octobre 2026</strong>.
+                  </div>
                 </div>
               </div>
 
@@ -158,16 +174,9 @@ export default function FormationIAPage() {
                 <a 
                   href="https://buy.stripe.com/bJebJ3gmUgVWdWJ5rXb7y0c" 
                   className="btn" 
-                  style={{ width: '100%', justifyContent: 'center', background: 'linear-gradient(135deg, #d97706, #059669)', color: 'white', fontWeight: 800 }}
+                  style={{ width: '100%', justifyContent: 'center', background: 'linear-gradient(135deg, #d97706, #059669)', color: 'white', fontWeight: 800, padding: '0.85rem 1rem', fontSize: '0.95rem' }}
                 >
-                  Profiter de l&apos;offre à 600 € (jusqu&apos;au 31/10/2026) ⏱
-                </a>
-                <a 
-                  href="https://buy.stripe.com/5kQ4gB6MkfRSaKxaMhb7y01" 
-                  className="btn btn-ghost" 
-                  style={{ width: '100%', justifyContent: 'center', fontSize: '0.85rem' }}
-                >
-                  Tarif standard 1 490 €
+                  Profiter de l&apos;offre à 600 € (au lieu de 1 490 €) ⏱
                 </a>
                 <Link href="/contact?subject=IA_Generative_RS6776" className="btn btn-secondary" style={{ width: '100%', justifyContent: 'center' }}>
                   Étudier mes possibilités de financement OPCO / FAF →

@@ -3,7 +3,7 @@ import Link from 'next/link';
 import Footer from '@/components/Footer';
 
 export const metadata: Metadata = {
-  title: "Formation TOP® Fonction Publique | Ô'TOP Formation",
+  title: "Formation TOP® Fonction Publique | Ô'TOP Formations",
   description: "Accompagnement des agents territoriaux, mairies et collectivités. Outils de gestion du stress et prévention RPS dans la fonction publique.",
 };
 

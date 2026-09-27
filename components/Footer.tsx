@@ -7,7 +7,7 @@ export default function Footer() {
         <div className="footer-grid">
           {/* Column 1: Brand */}
           <div className="footer-brand">
-            <img src="/logo.png" alt="O'TOP Formation" style={{ height: '52px', width: 'auto', marginBottom: '1rem', objectFit: 'contain' }} />
+            <img src="/logo.png" alt="Ô'TOP Formations" style={{ height: '52px', width: 'auto', marginBottom: '1rem', objectFit: 'contain' }} />
             <p>Ô&apos;TOP Formation intervient avec l&apos;organisme partenaire Eloq-One, certifié Qualiopi, qui porte les actions de formation et les démarches de financement. Formations préparant aux certifications enregistrées au Répertoire Spécifique de France Compétences.</p>
             <p className="footer-brand-tagline">&quot;Former pour transformer : optimiser le potentiel humain &amp; décupler la performance digitale.&quot;</p>
             

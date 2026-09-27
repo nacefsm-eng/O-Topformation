@@ -181,7 +181,7 @@ function ContactContent() {
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', alignItems: 'center' }}>
                     <a
                       href={`https://wa.me/33767246825?text=${encodeURIComponent(
-                        `Bonjour Mélissa, je viens de soumettre ma demande de diagnostic sur le site Ô'TOP Formation :\n\n👤 Nom : ${lastSubmittedData?.nom || form.nom}\n📧 Email : ${lastSubmittedData?.email || form.email}\n📞 Téléphone : ${lastSubmittedData?.telephone || form.telephone}\n🎓 Parcours souhaité : ${lastSubmittedData?.besoin || form.besoin}${lastSubmittedData?.statut ? `\n💼 Statut : ${lastSubmittedData.statut}` : ''}${lastSubmittedData?.message ? `\n📝 Précision : ${lastSubmittedData.message}` : ''}`
+                        `Bonjour Mélissa, je viens de soumettre ma demande de diagnostic sur le site Ô'TOP Formations :\n\n👤 Nom : ${lastSubmittedData?.nom || form.nom}\n📧 Email : ${lastSubmittedData?.email || form.email}\n📞 Téléphone : ${lastSubmittedData?.telephone || form.telephone}\n🎓 Parcours souhaité : ${lastSubmittedData?.besoin || form.besoin}${lastSubmittedData?.statut ? `\n💼 Statut : ${lastSubmittedData.statut}` : ''}${lastSubmittedData?.message ? `\n📝 Précision : ${lastSubmittedData.message}` : ''}`
                       )}`}
                       target="_blank"
                       rel="noopener noreferrer"

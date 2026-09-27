@@ -5,9 +5,9 @@ import type { Metadata } from 'next';
 import { ShieldCheck, HeartHandshake, Zap, Target, MapPin, Users, Award, ArrowRight } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: "À Propos d'Ô'TOP Formation | Notre Histoire, Mission & Équipe à Ollioules",
+  title: "À Propos d'Ô'TOP Formations | Notre Histoire, Mission & Équipe à Ollioules",
   description:
-    "Découvrez l'histoire d'Ô'TOP Formation à Ollioules (Var) : la synergie unique entre l'Intelligence Artificielle et la Méthode TOP® (Techniques d'Optimisation du Potentiel) pour développer votre entreprise sans vous épuiser.",
+    "Découvrez l'histoire d'Ô'TOP Formations à Ollioules (Var) : la synergie unique entre l'Intelligence Artificielle et la Méthode TOP® (Techniques d'Optimisation du Potentiel) pour développer votre entreprise sans vous épuiser.",
   alternates: {
     canonical: 'https://o-topformation.vercel.app/a-propos',
   },
@@ -26,7 +26,7 @@ export default function AProposPage() {
           </div>
           <h1>L’IA et l’humain au service d’une performance durable.</h1>
           <p>
-            Ô’TOP Formation est né d’une conviction simple : le digital doit vous faire gagner du temps, de la clarté et de l’énergie — pas ajouter de la charge mentale.
+            Ô'TOP Formations est né d’une conviction simple : le digital doit vous faire gagner du temps, de la clarté et de l’énergie — pas ajouter de la charge mentale.
           </p>
         </div>
       </section>
@@ -52,7 +52,7 @@ export default function AProposPage() {
               <strong className="text-white" style={{ color: '#ffffff' }}>Notre rôle :</strong> vous donner les clés pour automatiser ce qui doit l’être, structurer vos processus et préserver votre concentration et votre énergie au fil des semaines.
             </p>
             <div className="p-4 rounded-xl bg-blue-950/40 border border-blue-500/30 text-xs text-blue-200">
-              ℹ️ Ô’TOP Formation intervient avec son partenaire Eloq-One, organisme certifié Qualiopi, qui porte les actions de formation et accompagne les démarches de financement. Les possibilités de prise en charge sont étudiées selon votre statut et restent soumises à l’accord de l’organisme financeur.
+              ℹ️ Ô'TOP Formations intervient avec son partenaire Eloq-One, organisme certifié Qualiopi, qui porte les actions de formation et accompagne les démarches de financement. Les possibilités de prise en charge sont étudiées selon votre statut et restent soumises à l’accord de l’organisme financeur.
             </div>
           </div>
 
@@ -60,7 +60,7 @@ export default function AProposPage() {
             <div className="relative rounded-3xl overflow-hidden border border-slate-700 shadow-2xl group">
               <img
                 src="/hero-workshop.jpg"
-                alt="Centre Ô'TOP Formation Ollioules"
+                alt="Centre Ô'TOP Formations Ollioules"
                 className="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-700"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent" />

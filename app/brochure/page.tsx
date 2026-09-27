@@ -3,8 +3,8 @@ import Link from 'next/link';
 import { Download, FileText, CheckCircle2, Phone, Mail, Sparkles, Brain, Award, Clock, ArrowRight, ShieldCheck, Users } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: "Plaquette & Brochure Officielle 2026 | Ô'TOP Formation",
-  description: "Téléchargez la plaquette officielle Ô'TOP Formation 2026. Découvrez nos cursus en Techniques d'Optimisation du Potentiel (TOP®), IA générative et digital business.",
+  title: "Plaquette & Brochure Officielle 2026 | Ô'TOP Formations",
+  description: "Téléchargez la plaquette officielle Ô'TOP Formations 2026. Découvrez nos cursus en Techniques d'Optimisation du Potentiel (TOP®), IA générative et digital business.",
 };
 
 export default function BrochurePage() {

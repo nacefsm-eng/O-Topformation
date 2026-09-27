@@ -277,7 +277,7 @@ export default function NinePillarsSection({
               <div className="mt-4 rounded-xl overflow-hidden bg-slate-950 border border-slate-800 flex items-center justify-center">
                 <img
                   src="/9-piliers-top.png"
-                  alt="9 Piliers pour mieux comprendre l'humain - O'TOP Formation"
+                  alt="9 Piliers pour mieux comprendre l'humain - Ô'TOP Formations"
                   className="max-h-[70vh] w-auto object-contain"
                 />
               </div>

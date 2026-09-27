@@ -3,7 +3,7 @@ import Link from 'next/link';
 import Footer from '@/components/Footer';
 
 export const metadata: Metadata = {
-  title: "Formation TOP® Éducation Nationale | Ô'TOP Formation",
+  title: "Formation TOP® Éducation Nationale | Ô'TOP Formations",
   description: "Accompagnement des enseignants, CPE et personnels administratifs. Gestion du stress en classe et prévention des violences grâce aux TOP®.",
 };
 

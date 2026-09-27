@@ -3,7 +3,7 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: "Mentions Légales | Ô'TOP Formation",
+  title: "Mentions Légales | Ô'TOP Formations",
 };
 
 export default function MentionsLegales() {

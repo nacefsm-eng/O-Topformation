@@ -60,7 +60,7 @@ export default function ContentStudio() {
           <span style={{ fontSize: '2rem' }}>🤖</span>
           <div>
             <h1 style={{ color: 'white', margin: 0, fontSize: '1.5rem', fontWeight: 800 }}>Content Studio IA</h1>
-            <p style={{ color: 'rgba(255,255,255,0.55)', margin: 0, fontSize: '0.85rem' }}>Générez vos posts en 1 clic • O'TOP Formation</p>
+            <p style={{ color: 'rgba(255,255,255,0.55)', margin: 0, fontSize: '0.85rem' }}>Générez vos posts en 1 clic • Ô'TOP Formations</p>
           </div>
         </div>
         <Link href="/admin" style={{ color: 'rgba(255,255,255,0.7)', textDecoration: 'none', fontSize: '0.875rem', display: 'flex', alignItems: 'center', gap: '0.4rem', background: 'rgba(255,255,255,0.1)', padding: '0.5rem 1rem', borderRadius: '8px', transition: 'background 0.2s' }}>

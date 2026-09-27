@@ -339,7 +339,7 @@ export default function FiTopPage() {
                 </div>
 
                 <p className="text-[11px] text-slate-500 italic text-left">
-                  Ô’TOP Formation intervient avec son partenaire Eloq-One, organisme certifié Qualiopi, qui porte les actions de formation et accompagne les démarches de financement. Les possibilités de prise en charge sont étudiées selon votre statut et restent soumises à l’accord de l’organisme financeur.
+                  Ô'TOP Formations intervient avec son partenaire Eloq-One, organisme certifié Qualiopi, qui porte les actions de formation et accompagne les démarches de financement. Les possibilités de prise en charge sont étudiées selon votre statut et restent soumises à l’accord de l’organisme financeur.
                 </p>
 
                 <button

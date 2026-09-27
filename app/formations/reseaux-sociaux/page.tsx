@@ -35,7 +35,7 @@ export default function FormationReseauxSociauxPage() {
               <span>✓ Financement étudié avec Eloq-One</span>
             </div>
             <div style={{ padding: '0.85rem 1.25rem', borderRadius: '12px', background: 'rgba(255, 255, 255, 0.08)', border: '1px solid rgba(255, 255, 255, 0.15)', fontSize: '0.82rem', color: '#93c5fd', marginBottom: '2rem', lineHeight: 1.5 }}>
-              ℹ️ Ô’TOP Formation intervient avec son partenaire Eloq-One, organisme certifié Qualiopi, qui porte les actions de formation et accompagne les démarches de financement. Les possibilités de prise en charge sont étudiées selon votre statut et restent soumises à l’accord de l’organisme financeur.
+              ℹ️ Ô'TOP Formations intervient avec son partenaire Eloq-One, organisme certifié Qualiopi, qui porte les actions de formation et accompagne les démarches de financement. Les possibilités de prise en charge sont étudiées selon votre statut et restent soumises à l’accord de l’organisme financeur.
             </div>
             <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', alignItems: 'center' }}>
               <a 

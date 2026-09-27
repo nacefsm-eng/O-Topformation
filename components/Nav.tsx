@@ -70,15 +70,15 @@ export default function Nav() {
         <div className="container" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '1rem' }}>
           
           {/* Logo with circular badge and brand typography */}
-          <Link href="/" className="nav-logo-wrap" aria-label="Accueil O'TOP Formation" style={{ textDecoration: 'none' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
+          <Link href="/" className="nav-logo-wrap" aria-label="Accueil Ô'TOP Formations" style={{ textDecoration: 'none' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
               <img 
                 src="/logo.png" 
-                alt="O'TOP Formation" 
-                style={{ width: '40px', height: '40px', objectFit: 'contain', borderRadius: '9999px' }} 
+                alt="Ô'TOP Formations" 
+                style={{ width: '48px', height: '48px', objectFit: 'contain', borderRadius: '9999px', boxShadow: '0 0 12px rgba(56, 189, 248, 0.25)' }} 
               />
-              <span className="brand-text" style={{ fontWeight: 800, fontSize: '1rem', letterSpacing: '-0.02em' }}>
-                Ô&apos;TOP <span style={{ color: '#38bdf8' }}>FORMATION</span>
+              <span className="brand-text" style={{ fontWeight: 800, fontSize: '1.12rem', letterSpacing: '-0.02em' }}>
+                Ô&apos;TOP <span style={{ color: '#38bdf8' }}>FORMATIONS</span>
               </span>
             </div>
           </Link>
@@ -213,9 +213,9 @@ export default function Nav() {
         style={{ background: '#030712', color: 'white' }}
       >
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '2rem' }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-            <img src="/logo.png" alt="O'TOP Formation" style={{ width: '38px', height: '38px', borderRadius: '50%', background: '#fff' }} />
-            <span style={{ fontWeight: 800, fontSize: '1rem', color: '#fff' }}>Ô&apos;TOP FORMATION</span>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.65rem' }}>
+            <img src="/logo.png" alt="Ô'TOP Formations" style={{ width: '44px', height: '44px', borderRadius: '50%', background: '#fff', objectFit: 'contain' }} />
+            <span style={{ fontWeight: 800, fontSize: '1.05rem', color: '#fff' }}>Ô&apos;TOP <span style={{ color: '#38bdf8' }}>FORMATIONS</span></span>
           </div>
           <button
             onClick={() => setMobileOpen(false)}

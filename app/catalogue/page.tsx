@@ -203,15 +203,27 @@ export default function CataloguePage() {
                   </ul>
 
                   <div className="mt-auto pt-4 border-t border-slate-800 flex flex-col gap-3">
-                    <div className="flex items-baseline gap-3">
+                    <div className="flex flex-col gap-1.5">
                       {f.isPromo ? (
                         <>
-                          <span className="text-3xl font-black text-amber-400">{f.promoPriceDisplay}</span>
-                          <span className="text-lg text-slate-500 line-through">{f.priceDisplay}</span>
-                          <span className="text-xs text-slate-400">· ou 3 × 200 €</span>
+                          <div className="flex items-center gap-2">
+                            <span className="px-2 py-0.5 rounded bg-red-500/20 text-red-300 font-extrabold text-xs border border-red-500/30">
+                              REMISE -60% (-890 €)
+                            </span>
+                            <span className="text-xs text-amber-300 font-semibold">
+                              ⏰ Valable jusqu&apos;au 31 octobre 2026
+                            </span>
+                          </div>
+                          <div className="flex items-baseline gap-3 mt-1">
+                            <span className="text-3xl font-black text-emerald-400">{f.promoPriceDisplay}</span>
+                            <span className="text-lg text-slate-400 line-through decoration-red-500 decoration-2 font-bold">{f.priceDisplay}</span>
+                            <span className="text-xs text-slate-300">· ou 3 × 200 € sans frais</span>
+                          </div>
                         </>
                       ) : (
-                        <span className="text-3xl font-black text-white">{f.priceDisplay}</span>
+                        <div className="flex items-baseline gap-3">
+                          <span className="text-3xl font-black text-white">{f.priceDisplay}</span>
+                        </div>
                       )}
                     </div>
 

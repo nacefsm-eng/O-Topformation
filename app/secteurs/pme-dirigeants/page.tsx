@@ -3,7 +3,7 @@ import Link from 'next/link';
 import Footer from '@/components/Footer';
 
 export const metadata: Metadata = {
-  title: "Formation TOP® pour Dirigeants & PME | Ô'TOP Formation",
+  title: "Formation TOP® pour Dirigeants & PME | Ô'TOP Formations",
   description: "Formations en Qualité de Vie au Travail (QVT) et leadership. Techniques d'Optimisation du Potentiel pour les cadres et dirigeants de PME.",
 };
 

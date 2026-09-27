@@ -3,7 +3,7 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: "Solutions Entreprises & Digitalisation — Ô'TOP Formation",
+  title: "Solutions Entreprises & Digitalisation — Ô'TOP Formations",
   description: "Formations IA, réseaux sociaux et Méthode TOP® pour vos équipes, création de sites web et SEO/GEO, digitalisation de vos process.",
 };
 
@@ -169,7 +169,7 @@ export default function Entreprises() {
 
           <div style={{ background: 'rgba(255, 255, 255, 0.08)', borderRadius: '12px', padding: '1rem 1.5rem', textAlign: 'center' }}>
             <p style={{ margin: 0, fontSize: '0.85rem', color: 'rgba(255, 255, 255, 0.75)', lineHeight: 1.5 }}>
-              Ô’TOP Formation intervient avec son partenaire Eloq-One, organisme certifié Qualiopi, qui porte les actions de formation et accompagne les démarches de financement. Les possibilités de prise en charge sont étudiées selon votre statut et restent soumises à l’accord de l’organisme financeur.
+              Ô'TOP Formations intervient avec son partenaire Eloq-One, organisme certifié Qualiopi, qui porte les actions de formation et accompagne les démarches de financement. Les possibilités de prise en charge sont étudiées selon votre statut et restent soumises à l’accord de l’organisme financeur.
             </p>
           </div>
         </div>

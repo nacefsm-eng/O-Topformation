@@ -11,8 +11,8 @@ const inter = Inter({ subsets: ['latin', 'latin-ext'], variable: '--font-inter' 
 
 export const metadata: Metadata = {
   title: {
-    template: "%s | Ô'TOP Formation",
-    default: "Ô'TOP Formation | IA Générative, Réseaux Sociaux & Méthode TOP®",
+    template: "%s | Ô'TOP Formations",
+    default: "Ô'TOP Formations | IA Générative, Réseaux Sociaux & Méthode TOP®",
   },
   description:
     "Organisme de formation professionnelle à Ollioules (Var) spécialisé en IA Générative (RS6776), Réseaux Sociaux (RS7351) et Méthode TOP®. Formations certifiantes avec financement possible (OPCO, FAF) et 5h de coaching inclus.",
@@ -27,10 +27,10 @@ export const metadata: Metadata = {
     canonical: '/',
   },
   openGraph: {
-    title: "Ô'TOP Formation — Formations Certifiantes IA, Digital & Méthode TOP®",
+    title: "Ô'TOP Formations — Formations Certifiantes IA, Digital & Méthode TOP®",
     description: "Développez votre entreprise avec l'IA et préservez votre énergie grâce aux TOP®. Financement OPCO/FAF étudié selon votre profil avec 5h de coaching inclus.",
     url: 'https://o-topformation.vercel.app',
-    siteName: "Ô'TOP Formation",
+    siteName: "Ô'TOP Formations",
     locale: 'fr_FR',
     type: 'website',
   },
@@ -39,8 +39,8 @@ export const metadata: Metadata = {
 const organizationSchema = {
   '@context': 'https://schema.org',
   '@type': 'EducationalOrganization',
-  name: "Ô'TOP Formation",
-  alternateName: "O'TOP Formation",
+  name: "Ô'TOP Formations",
+  alternateName: "Ô'TOP Formations",
   url: 'https://o-topformation.vercel.app',
   logo: 'https://o-topformation.vercel.app/logo.png',
   description:
@@ -88,7 +88,7 @@ const coursesSchema = {
       description: 'Formation certifiante de 21h en intelligence artificielle générative et prompt engineering avec accompagnement expert 1-to-1.',
       provider: {
         '@type': 'EducationalOrganization',
-        name: "Ô'TOP Formation",
+        name: "Ô'TOP Formations",
         sameAs: 'https://o-topformation.vercel.app',
       },
       offers: {
@@ -112,7 +112,7 @@ const coursesSchema = {
       description: '21h de formation certifiante pour dirigeants et collaborateurs pour automatiser les flux d’entreprise avec n8n/Make et sécuriser les données.',
       provider: {
         '@type': 'EducationalOrganization',
-        name: "Ô'TOP Formation",
+        name: "Ô'TOP Formations",
         sameAs: 'https://o-topformation.vercel.app',
       },
       offers: {
@@ -136,7 +136,7 @@ const coursesSchema = {
       description: '21h de formation certifiante aux Techniques d’Optimisation du Potentiel pour réguler le stress, dynamiser son énergie et préserver sa lucidité.',
       provider: {
         '@type': 'EducationalOrganization',
-        name: "Ô'TOP Formation",
+        name: "Ô'TOP Formations",
         sameAs: 'https://o-topformation.vercel.app',
       },
       offers: {
