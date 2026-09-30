@@ -1604,4 +1604,71 @@ html[data-theme="clair"] .btn-primary * {
   color: #ffffff !important;
 }
 
+/* =====================================================================
+   PLAQUETTE TOP DÉDIÉE — RÈGLES DE CONTRASTE ET LISIBILITÉ ABSOLUES
+   ===================================================================== */
+html[data-theme="sombre"] #plaquette-top-root,
+html[data-theme="clair"] #plaquette-top-root,
+#plaquette-top-root {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+}
+
+html[data-theme="sombre"] #plaquette-top-root h1,
+html[data-theme="sombre"] #plaquette-top-root h2,
+html[data-theme="sombre"] #plaquette-top-root h3,
+html[data-theme="sombre"] #plaquette-top-root h4,
+#plaquette-top-root h1,
+#plaquette-top-root h2,
+#plaquette-top-root h3,
+#plaquette-top-root h4 {
+  color: #0a1128 !important;
+}
+
+html[data-theme="sombre"] #plaquette-top-root p,
+html[data-theme="sombre"] #plaquette-top-root li,
+#plaquette-top-root p,
+#plaquette-top-root li {
+  color: #1e293b !important;
+}
+
+html[data-theme="sombre"] #plaquette-top-root strong,
+#plaquette-top-root strong {
+  color: #003492 !important;
+}
+
+html[data-theme="sombre"] #plaquette-top-root span.text-otop-red,
+#plaquette-top-root span.text-otop-red {
+  color: #dc2626 !important;
+}
+
+html[data-theme="sombre"] #plaquette-top-root span.text-otop-blue,
+#plaquette-top-root span.text-otop-blue {
+  color: #003492 !important;
+}
+
+/* Footer sombre spécifique */
+html[data-theme="sombre"] #plaquette-top-root footer,
+#plaquette-top-root footer {
+  background-color: #0a1128 !important;
+  color: #cbd5e1 !important;
+}
+html[data-theme="sombre"] #plaquette-top-root footer h3,
+html[data-theme="sombre"] #plaquette-top-root footer h4,
+html[data-theme="sombre"] #plaquette-top-root footer strong,
+html[data-theme="sombre"] #plaquette-top-root footer .text-white,
+#plaquette-top-root footer h3,
+#plaquette-top-root footer h4,
+#plaquette-top-root footer strong,
+#plaquette-top-root footer .text-white {
+  color: #ffffff !important;
+}
+html[data-theme="sombre"] #plaquette-top-root footer p,
+html[data-theme="sombre"] #plaquette-top-root footer li,
+#plaquette-top-root footer p,
+#plaquette-top-root footer li {
+  color: #94a3b8 !important;
+}
+
+
 
