@@ -1625,11 +1625,19 @@ html[data-theme="sombre"] #plaquette-top-root h4,
   color: #0a1128 !important;
 }
 
-html[data-theme="sombre"] #plaquette-top-root p,
-html[data-theme="sombre"] #plaquette-top-root li,
-#plaquette-top-root p,
-#plaquette-top-root li {
-  color: #1e293b !important;
+html[data-theme="sombre"] #plaquette-top-root p:not(.text-white):not(.force-text-white),
+html[data-theme="sombre"] #plaquette-top-root li:not(.text-white):not(.force-text-white),
+#plaquette-top-root p:not(.text-white):not(.force-text-white),
+#plaquette-top-root li:not(.text-white):not(.force-text-white) {
+  color: #1e293b;
+}
+
+#plaquette-top-root .text-white,
+#plaquette-top-root .force-text-white,
+#plaquette-top-root .text-white p,
+#plaquette-top-root .text-white li,
+#plaquette-top-root .text-white span {
+  color: #ffffff !important;
 }
 
 html[data-theme="sombre"] #plaquette-top-root strong,

@@ -1028,58 +1028,123 @@ export default function PlaquetteTopView() {
           {/* ── ENCADRÉ FOCUS DU LIVRET : PROGRAMME PHARE & MILIEU SCOLAIRE ── */}
           <div
             style={{
-              backgroundColor: '#0a1128',
-              border: '2px solid #1e3a8a',
+              backgroundColor: '#ffffff',
+              border: '2px solid #003492',
+              boxShadow: '0 20px 45px -10px rgba(0, 52, 146, 0.12)',
             }}
-            className="text-white rounded-3xl p-8 sm:p-12 shadow-2xl relative overflow-hidden"
+            className="rounded-3xl p-6 sm:p-10 lg:p-12 relative overflow-hidden"
           >
-            <div className="relative z-10 max-w-4xl">
+            <div className="max-w-6xl">
               <div
                 style={{ backgroundColor: '#dc2626' }}
-                className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-white text-xs font-black uppercase tracking-wider mb-4"
+                className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-white text-xs font-black uppercase tracking-wider mb-4 shadow-sm"
               >
-                <GraduationCap size={15} />
-                <span>Cas Réel • Pages 13 à 16 du Livret d&apos;Accueil</span>
+                <GraduationCap size={16} />
+                <span>Cas Réel • Pages 13 à 16 du Livret d&apos;Accueil Officiel</span>
               </div>
 
-              <h3 className="text-2xl sm:text-3xl font-black tracking-tight mb-4 text-white">
+              <h3 style={{ color: '#0a1128' }} className="text-2xl sm:text-3xl font-black tracking-tight mb-4">
                 Milieu Scolaire & Lutte contre le Harcèlement (Programme pHARe)
               </h3>
 
-              <p className="text-slate-200 text-sm sm:text-base leading-relaxed mb-8 font-medium">
+              <p style={{ color: '#1e293b' }} className="text-sm sm:text-base leading-relaxed mb-8 font-medium max-w-4xl">
                 Les Techniques d’Optimisation du Potentiel sont déployées par Ô&apos;TOP Formations dans les
-                établissements scolaires pour <strong>prévenir et gérer le harcèlement</strong>, restaurer un climat de
-                classe serein et soutenir élèves, enseignants et personnels de direction.
+                collèges, lycées et rectorats pour <strong style={{ color: '#003492' }}>prévenir et désamorcer le harcèlement scolaire</strong>, restaurer un climat de
+                classe serein et apporter des outils concrets et immédiatement applicables aux élèves, enseignants et personnels de direction.
               </p>
 
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-8 text-xs">
-                <div className="p-4 rounded-xl bg-white/10 border border-white/15">
-                  <strong className="block text-[#93c5fd] font-bold mb-1.5 text-sm">
-                    1. Soutien aux Victimes
-                  </strong>
-                  <p className="text-slate-300 leading-relaxed font-medium">
-                    Réduction immédiate de l’angoisse, sentiment de sécurité intérieure retrouvé, affirmation de soi et
-                    préparation sereine au retour en classe.
-                  </p>
+              <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
+                {/* Pilier 1 */}
+                <div
+                  style={{ backgroundColor: '#f8fafc', border: '1.5px solid #bfdbfe' }}
+                  className="p-5 rounded-2xl shadow-sm flex flex-col justify-between"
+                >
+                  <div>
+                    <div className="flex items-center gap-2 mb-2">
+                      <span className="w-2.5 h-2.5 rounded-full bg-[#003492]"></span>
+                      <strong style={{ color: '#003492' }} className="text-sm font-black">
+                        1. Soutien aux Victimes
+                      </strong>
+                    </div>
+                    <p style={{ color: '#334155' }} className="text-xs leading-relaxed font-medium">
+                      Réduction immédiate de l’angoisse, sentiment de sécurité intérieure retrouvé, affirmation de soi et
+                      préparation sereine au retour en classe.
+                    </p>
+                  </div>
+                  <div style={{ color: '#003492' }} className="mt-4 pt-3 border-t border-blue-100 text-[11px] font-bold">
+                    Outils : Respiration 4-6 & Ancrage
+                  </div>
                 </div>
 
-                <div className="p-4 rounded-xl bg-white/10 border border-white/15">
-                  <strong className="block text-[#fca5a5] font-bold mb-1.5 text-sm">
-                    2. Auteurs & Témoins
-                  </strong>
-                  <p className="text-slate-300 leading-relaxed font-medium">
-                    Canalisation de l’impulsivité, prise de recul avant d’agir, renforcement de l’empathie et
-                    responsabilisation bienveillante.
-                  </p>
+                {/* Pilier 2 */}
+                <div
+                  style={{ backgroundColor: '#fef2f2', border: '1.5px solid #fecaca' }}
+                  className="p-5 rounded-2xl shadow-sm flex flex-col justify-between"
+                >
+                  <div>
+                    <div className="flex items-center gap-2 mb-2">
+                      <span className="w-2.5 h-2.5 rounded-full bg-[#dc2626]"></span>
+                      <strong style={{ color: '#dc2626' }} className="text-sm font-black">
+                        2. Auteurs & Témoins
+                      </strong>
+                    </div>
+                    <p style={{ color: '#334155' }} className="text-xs leading-relaxed font-medium">
+                      Canalisation de l’impulsivité, prise de recul avant d’agir, renforcement de l’empathie et
+                      responsabilisation bienveillante.
+                    </p>
+                  </div>
+                  <div style={{ color: '#dc2626' }} className="mt-4 pt-3 border-t border-red-100 text-[11px] font-bold">
+                    Outils : Stop Émotionnel & Relaxation
+                  </div>
                 </div>
 
-                <div className="p-4 rounded-xl bg-white/10 border border-white/15">
-                  <strong className="block text-[#93c5fd] font-bold mb-1.5 text-sm">
-                    3. Équipes Éducatives
-                  </strong>
-                  <p className="text-slate-300 leading-relaxed font-medium">
-                    Posture calme lors d’entretiens délicats, désamorçage de la fatigue professionnelle et protocoles « 5
-                    minutes TOP » en début de classe.
+                {/* Pilier 3 */}
+                <div
+                  style={{ backgroundColor: '#eff6ff', border: '1.5px solid #bfdbfe' }}
+                  className="p-5 rounded-2xl shadow-sm flex flex-col justify-between"
+                >
+                  <div>
+                    <div className="flex items-center gap-2 mb-2">
+                      <span className="w-2.5 h-2.5 rounded-full bg-[#003492]"></span>
+                      <strong style={{ color: '#003492' }} className="text-sm font-black">
+                        3. Équipes Éducatives
+                      </strong>
+                    </div>
+                    <p style={{ color: '#334155' }} className="text-xs leading-relaxed font-medium">
+                      Posture calme lors d’entretiens délicats, désamorçage de la fatigue professionnelle et protocoles « 5
+                      minutes TOP » en début de cours.
+                    </p>
+                  </div>
+                  <div style={{ color: '#003492' }} className="mt-4 pt-3 border-t border-blue-100 text-[11px] font-bold">
+                    Outils : SAS de décompression & Focus
+                  </div>
+                </div>
+              </div>
+
+              {/* Photo d'intervention pHARe & Contact */}
+              <div
+                style={{ backgroundColor: '#f8fafc', border: '1px solid #e2e8f0' }}
+                className="rounded-2xl p-5 mb-8 flex flex-col md:flex-row items-center gap-6"
+              >
+                <div className="w-full md:w-56 h-36 shrink-0 rounded-xl overflow-hidden border border-slate-200 shadow-sm relative">
+                  <img
+                    src="/ecole-phare-top.jpg"
+                    alt="Atelier TOP en classe pour le programme pHARe"
+                    className="w-full h-full object-cover"
+                  />
+                  <div
+                    style={{ backgroundColor: '#003492' }}
+                    className="absolute top-2 left-2 text-white text-[9px] font-black uppercase px-2 py-0.5 rounded shadow"
+                  >
+                    Atelier en classe
+                  </div>
+                </div>
+                <div className="space-y-1.5 text-center md:text-left">
+                  <div style={{ color: '#0a1128' }} className="font-black text-sm">
+                    Intervention terrain animée par Mélissa Jennadi & Régis Domergue
+                  </div>
+                  <p style={{ color: '#475569' }} className="text-xs leading-relaxed">
+                    Déplacements sur site dans les établissements scolaires (collèges, lycées, cités scolaires) en région PACA et partout en France. Séances adaptées aux élèves comme aux équipes pédagogiques.
                   </p>
                 </div>
               </div>
@@ -1088,7 +1153,7 @@ export default function PlaquetteTopView() {
                 <a
                   href="#contact"
                   style={{ backgroundColor: '#dc2626' }}
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl hover:bg-[#b91c1c] text-white font-extrabold text-xs shadow-lg transition"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl hover:bg-[#b91c1c] text-white font-black text-xs shadow-lg transition hover:scale-105"
                 >
                   <span>Mettre en place une intervention dans mon établissement</span>
                   <ArrowRight size={14} />
@@ -1096,10 +1161,11 @@ export default function PlaquetteTopView() {
 
                 <a
                   href="tel:+33767246825"
-                  className="text-xs text-white hover:text-[#93c5fd] flex items-center gap-1.5 transition font-bold"
+                  style={{ color: '#003492' }}
+                  className="text-xs hover:underline flex items-center gap-1.5 transition font-extrabold"
                 >
-                  <Phone size={13} className="text-[#ef4444]" />
-                  <span>Contacter Mélissa Jennadi : 07 67 24 68 25</span>
+                  <Phone size={14} className="text-[#dc2626]" />
+                  <span>Contacter directement Mélissa Jennadi : 07 67 24 68 25</span>
                 </a>
               </div>
             </div>
@@ -1428,10 +1494,10 @@ export default function PlaquetteTopView() {
                 <FileText size={14} className="text-[#fca5a5]" />
                 <span>Document Pédagogique Officiel</span>
               </span>
-              <h3 className="text-2xl sm:text-3xl font-black tracking-tight text-white">
+              <h3 style={{ color: '#ffffff' }} className="text-2xl sm:text-3xl font-black tracking-tight text-white">
                 Téléchargez le Livret d’Accueil Complet (34 pages)
               </h3>
-              <p className="text-slate-100 text-sm leading-relaxed font-medium">
+              <p style={{ color: '#ffffff' }} className="text-sm leading-relaxed font-medium text-white force-text-white">
                 Retrouvez l’intégralité des fiches pédagogiques, la grille détaillée des modules, le protocole
                 d’intervention en milieu scolaire (programme pHARe), l’organigramme, la démarche qualité et les
                 conditions d’accessibilité aux personnes en situation de handicap.
