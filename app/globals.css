@@ -1565,8 +1565,8 @@ html[data-theme="sombre"] h4:not(footer *) {
   color: #ffffff !important;
 }
 
-html[data-theme="sombre"] p:not(footer *):not([class*="bg-blue-"]):not([class*="bg-gradient"]):not(button *):not(.btn *),
-html[data-theme="sombre"] li:not(footer *) {
+html[data-theme="sombre"] p:not(footer *):not([class*="bg-blue-"]):not([class*="bg-gradient"]):not(button *):not(.btn *):not(#plaquette-top-root *),
+html[data-theme="sombre"] li:not(footer *):not(#plaquette-top-root *) {
   color: #cbd5e1 !important;
 }
 
@@ -1584,11 +1584,11 @@ html[data-theme="clair"] h4:not(footer *) {
   color: #0f172a !important;
 }
 
-html[data-theme="clair"] p:not(footer *):not([class*="bg-blue-"]):not([class*="bg-gradient"]):not(button *):not(.btn *),
-html[data-theme="clair"] li:not(footer *),
-html[data-theme="clair"] .text-slate-300:not(footer *):not([class*="bg-slate-950/"]):not([class*="bg-slate-950\\/"]),
-html[data-theme="clair"] .text-slate-200:not(footer *):not([class*="bg-slate-950/"]):not([class*="bg-slate-950\\/"]),
-html[data-theme="clair"] .text-slate-400:not(footer *):not([class*="bg-slate-950/"]):not([class*="bg-slate-950\\/"]) {
+html[data-theme="clair"] p:not(footer *):not([class*="bg-blue-"]):not([class*="bg-gradient"]):not(button *):not(.btn *):not(#plaquette-top-root *),
+html[data-theme="clair"] li:not(footer *):not(#plaquette-top-root *),
+html[data-theme="clair"] .text-slate-300:not(footer *):not([class*="bg-slate-950/"]):not([class*="bg-slate-950\\/"]):not(#plaquette-top-root *),
+html[data-theme="clair"] .text-slate-200:not(footer *):not([class*="bg-slate-950/"]):not([class*="bg-slate-950\\/"]):not(#plaquette-top-root *),
+html[data-theme="clair"] .text-slate-400:not(footer *):not([class*="bg-slate-950/"]):not([class*="bg-slate-950\\/"]):not(#plaquette-top-root *) {
   color: #1e293b !important;
 }
 
@@ -1606,30 +1606,41 @@ html[data-theme="clair"] .btn-primary * {
 
 /* =====================================================================
    PLAQUETTE TOP DÉDIÉE — RÈGLES DE CONTRASTE ET LISIBILITÉ ABSOLUES
+   ZÉRO TEXTE GRIS : TOUT EN NOIR INTENSE (#000000) ET COULEURS MARQUE NETTES
    ===================================================================== */
 html[data-theme="sombre"] #plaquette-top-root,
 html[data-theme="clair"] #plaquette-top-root,
 #plaquette-top-root {
   background-color: #ffffff !important;
-  color: #0f172a !important;
+  color: #000000 !important;
 }
 
 html[data-theme="sombre"] #plaquette-top-root h1,
 html[data-theme="sombre"] #plaquette-top-root h2,
-html[data-theme="sombre"] #plaquette-top-root h3,
-html[data-theme="sombre"] #plaquette-top-root h4,
+html[data-theme="sombre"] #plaquette-top-root h3:not(footer *),
+html[data-theme="sombre"] #plaquette-top-root h4:not(footer *),
 #plaquette-top-root h1,
 #plaquette-top-root h2,
-#plaquette-top-root h3,
-#plaquette-top-root h4 {
-  color: #0a1128 !important;
+#plaquette-top-root h3:not(footer *),
+#plaquette-top-root h4:not(footer *) {
+  color: #000000 !important;
 }
 
-html[data-theme="sombre"] #plaquette-top-root p:not(.text-white):not(.force-text-white),
-html[data-theme="sombre"] #plaquette-top-root li:not(.text-white):not(.force-text-white),
-#plaquette-top-root p:not(.text-white):not(.force-text-white),
-#plaquette-top-root li:not(.text-white):not(.force-text-white) {
-  color: #1e293b;
+/* AUCUN TEXTE GRIS : NOIR NET (#000000) */
+html[data-theme="sombre"] #plaquette-top-root p:not(.text-white):not(.force-text-white):not(footer *),
+html[data-theme="sombre"] #plaquette-top-root li:not(.text-white):not(.force-text-white):not(footer *),
+html[data-theme="sombre"] #plaquette-top-root span:not(.text-white):not(.force-text-white):not(.text-otop-red):not(.text-otop-blue):not(footer *):not([class*="bg-"]):not([style*="color"]),
+html[data-theme="clair"] #plaquette-top-root p:not(.text-white):not(.force-text-white):not(footer *),
+html[data-theme="clair"] #plaquette-top-root li:not(.text-white):not(.force-text-white):not(footer *),
+#plaquette-top-root p:not(.text-white):not(.force-text-white):not(footer *),
+#plaquette-top-root li:not(.text-white):not(.force-text-white):not(footer *) {
+  color: #000000 !important;
+}
+
+/* Neutraliser les classes grises pour forcer en noir */
+#plaquette-top-root [class*="text-slate-"]:not(.text-white):not(.force-text-white):not(footer *),
+#plaquette-top-root [class*="text-gray-"]:not(.text-white):not(.force-text-white):not(footer *) {
+  color: #000000 !important;
 }
 
 #plaquette-top-root .text-white,

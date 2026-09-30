@@ -288,7 +288,7 @@ export default function PlaquetteTopView() {
                 Ô&apos;TOP <span className="text-otop-red" style={{ color: '#dc2626' }}>FORMATIONS</span>
               </div>
               <div
-                style={{ color: '#475569' }}
+                style={{ color: '#000000' }}
                 className="text-[11px] font-bold uppercase tracking-wider"
               >
                 Pôle Bien-être & Performance • Méthode TOP®
@@ -382,7 +382,7 @@ export default function PlaquetteTopView() {
               </p>
 
               <p
-                style={{ color: '#1e293b' }}
+                style={{ color: '#000000' }}
                 className="text-base sm:text-lg font-medium leading-relaxed max-w-2xl mx-auto lg:mx-0"
               >
                 Conçues initialement pour les forces armées et les pilotes, les TOP® sont une boîte à outils
@@ -405,7 +405,7 @@ export default function PlaquetteTopView() {
                     <strong style={{ color: '#0a1128' }} className="block font-bold">
                       100% Autonome en 3 jours
                     </strong>
-                    <span style={{ color: '#475569' }}>Des outils de 2 à 5 min utilisables en poste de travail.</span>
+                    <span style={{ color: '#000000' }}>Des outils de 2 à 5 min utilisables en poste de travail.</span>
                   </div>
                 </div>
 
@@ -418,7 +418,7 @@ export default function PlaquetteTopView() {
                     <strong style={{ color: '#0a1128' }} className="block font-bold">
                       Expertise Opérationnelle
                     </strong>
-                    <span style={{ color: '#475569' }}>10 ans Armée de l’Air & accompagnement éducatif pHARe.</span>
+                    <span style={{ color: '#000000' }}>10 ans Armée de l’Air & accompagnement éducatif pHARe.</span>
                   </div>
                 </div>
 
@@ -431,7 +431,7 @@ export default function PlaquetteTopView() {
                     <strong style={{ color: '#0a1128' }} className="block font-bold">
                       Petits Groupes (Max 12)
                     </strong>
-                    <span style={{ color: '#475569' }}>70% de pratique et suivi individualisé bienveillant.</span>
+                    <span style={{ color: '#000000' }}>70% de pratique et suivi individualisé bienveillant.</span>
                   </div>
                 </div>
 
@@ -444,7 +444,7 @@ export default function PlaquetteTopView() {
                     <strong style={{ color: '#0a1128' }} className="block font-bold">
                       Financement Pris en Charge
                     </strong>
-                    <span style={{ color: '#475569' }}>Éligible OPCO, FAFCEA, FIF-PL & plan employeur.</span>
+                    <span style={{ color: '#000000' }}>Éligible OPCO, FAFCEA, FIF-PL & plan employeur.</span>
                   </div>
                 </div>
               </div>
@@ -537,7 +537,7 @@ export default function PlaquetteTopView() {
                     >
                       Co-fondateur & Expert TOP
                     </div>
-                    <p style={{ color: '#475569' }} className="text-[11px] mt-1 leading-snug font-medium">
+                    <p style={{ color: '#000000' }} className="text-[11px] mt-1 leading-snug font-medium">
                       10 ans Armée de l&apos;Air et de l&apos;Espace • Facteurs humains & performance
                     </p>
                   </div>
@@ -563,7 +563,7 @@ export default function PlaquetteTopView() {
                     >
                       Fondatrice & Pédagogie
                     </div>
-                    <p style={{ color: '#475569' }} className="text-[11px] mt-1 leading-snug font-medium">
+                    <p style={{ color: '#000000' }} className="text-[11px] mt-1 leading-snug font-medium">
                       Spécialiste Stress, Sommeil & Fatigue • Accompagnement terrain éducatif
                     </p>
                   </div>
@@ -584,14 +584,14 @@ export default function PlaquetteTopView() {
                     <Award size={15} className="text-[#dc2626]" />
                     <span>Cursus Unique : FI-TOP (3 jours / 21h)</span>
                   </div>
-                  <p style={{ color: '#334155' }} className="leading-relaxed text-[11px] font-medium">
+                  <p style={{ color: '#000000' }} className="leading-relaxed text-[11px] font-medium">
                     Nous ne faisons pas de long cursus de « maître praticien » : notre choix engagé est la{' '}
                     <strong>Formation Initiale de 3 jours</strong>, intensive, pragmatique et immédiatement applicable.
                   </p>
                 </div>
 
                 <div
-                  style={{ color: '#64748b' }}
+                  style={{ color: '#000000' }}
                   className="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs font-semibold"
                 >
                   <span className="flex items-center gap-1" style={{ color: '#003492' }}>
@@ -631,14 +631,14 @@ export default function PlaquetteTopView() {
                 Qu&apos;est-ce que la Méthode TOP® ?
               </h2>
               <p
-                style={{ color: '#1e293b' }}
+                style={{ color: '#000000' }}
                 className="text-base sm:text-lg leading-relaxed font-medium"
               >
                 Créées dans les années 1990 par le Dr Édith Perreaut-Pierre au sein des forces armées et du sport de
                 haut niveau, les Techniques d’Optimisation du Potentiel (TOP®) constituent la méthode de référence pour{' '}
                 <strong style={{ color: '#003492' }}>faire face à la pression, récupérer vite et décider avec clarté</strong>.
               </p>
-              <p style={{ color: '#334155' }} className="text-sm leading-relaxed font-medium">
+              <p style={{ color: '#000000' }} className="text-sm leading-relaxed font-medium">
                 Ce n’est ni de la relaxation passive ni de la théorie abstraite : c’est une véritable boîte à outils
                 psycho-physiologique d’action immédiate, utilisable en tenue de travail, les yeux ouverts, en quelques
                 secondes ou minutes.
@@ -703,7 +703,7 @@ export default function PlaquetteTopView() {
               <h3 style={{ color: '#0a1128' }} className="text-lg font-bold mb-2">
                 Simplicité & Autonomie
               </h3>
-              <p style={{ color: '#334155' }} className="text-xs sm:text-sm leading-relaxed font-medium">
+              <p style={{ color: '#000000' }} className="text-xs sm:text-sm leading-relaxed font-medium">
                 Aucun équipement nécessaire. Les exercices s’exécutent discrètement : assis à votre poste, en marchant ou
                 avant un rendez-vous à fort enjeu.
               </p>
@@ -722,7 +722,7 @@ export default function PlaquetteTopView() {
               <h3 style={{ color: '#0a1128' }} className="text-lg font-bold mb-2">
                 Validation Scientifique
               </h3>
-              <p style={{ color: '#334155' }} className="text-xs sm:text-sm leading-relaxed font-medium">
+              <p style={{ color: '#000000' }} className="text-xs sm:text-sm leading-relaxed font-medium">
                 Fondée sur la neurophysiologie, la chronobiologie et la variabilité cardiaque. Des résultats mesurables
                 sur la baisse du cortisol et la régulation du sommeil.
               </p>
@@ -741,7 +741,7 @@ export default function PlaquetteTopView() {
               <h3 style={{ color: '#0a1128' }} className="text-lg font-bold mb-2">
                 Action dans l’Instant
               </h3>
-              <p style={{ color: '#334155' }} className="text-xs sm:text-sm leading-relaxed font-medium">
+              <p style={{ color: '#000000' }} className="text-xs sm:text-sm leading-relaxed font-medium">
                 Contrairement au yoga ou à la méditation passive, les TOP s’activent dans le feu de l’action pour
                 mobiliser votre lucidité quand chaque seconde compte.
               </p>
@@ -777,7 +777,7 @@ export default function PlaquetteTopView() {
             >
               Les 3 Piliers de la Méthode TOP®
             </h2>
-            <p style={{ color: '#334155' }} className="mt-4 text-base font-medium">
+            <p style={{ color: '#000000' }} className="mt-4 text-base font-medium">
               Tout le cursus repose sur l’apprentissage de trois leviers physiologiques et cognitifs complémentaires :
             </p>
           </div>
@@ -798,27 +798,27 @@ export default function PlaquetteTopView() {
                 <h3 style={{ color: '#003492' }} className="text-xl font-black mb-3">
                   La Respiration
                 </h3>
-                <p style={{ color: '#334155' }} className="text-sm font-medium leading-relaxed mb-6">
+                <p style={{ color: '#000000' }} className="text-sm font-medium leading-relaxed mb-6">
                   Le levier physiologique le plus rapide pour calmer le cœur et réoxygéner le cerveau sous pression.
                 </p>
                 <ul className="space-y-3 text-xs">
                   <li className="flex items-start gap-2">
                     <CheckCircle2 size={16} className="text-[#003492] shrink-0 mt-0.5" />
-                    <span style={{ color: '#1e293b' }} className="font-medium">
+                    <span style={{ color: '#000000' }} className="font-medium">
                       <strong>Respiration relaxante « 4-6 » :</strong> abaissement immédiat du rythme cardiaque et de
                       l’angoisse.
                     </span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle2 size={16} className="text-[#003492] shrink-0 mt-0.5" />
-                    <span style={{ color: '#1e293b' }} className="font-medium">
+                    <span style={{ color: '#000000' }} className="font-medium">
                       <strong>Respiration dynamisante :</strong> réactivation de la vigilance sans palpitations avant un
                       défi.
                     </span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle2 size={16} className="text-[#003492] shrink-0 mt-0.5" />
-                    <span style={{ color: '#1e293b' }} className="font-medium">
+                    <span style={{ color: '#000000' }} className="font-medium">
                       <strong>Cohérence cardiaque intégrée :</strong> régulation durable de l’humeur et du cortisol.
                     </span>
                   </li>
@@ -847,27 +847,27 @@ export default function PlaquetteTopView() {
                 <h3 style={{ color: '#dc2626' }} className="text-xl font-black mb-3">
                   Relaxation & Récupération
                 </h3>
-                <p style={{ color: '#334155' }} className="text-sm font-medium leading-relaxed mb-6">
+                <p style={{ color: '#000000' }} className="text-sm font-medium leading-relaxed mb-6">
                   Restaurer ses réserves d’énergie physique et nerveuse au fil de la journée pour éliminer la fatigue.
                 </p>
                 <ul className="space-y-3 text-xs">
                   <li className="flex items-start gap-2">
                     <CheckCircle2 size={16} className="text-[#dc2626] shrink-0 mt-0.5" />
-                    <span style={{ color: '#1e293b' }} className="font-medium">
+                    <span style={{ color: '#000000' }} className="font-medium">
                       <strong>Relaxation neuromusculaire différentielle :</strong> relâcher les trapèzes et la mâchoire
                       assis à son bureau.
                     </span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle2 size={16} className="text-[#dc2626] shrink-0 mt-0.5" />
-                    <span style={{ color: '#1e293b' }} className="font-medium">
+                    <span style={{ color: '#000000' }} className="font-medium">
                       <strong>Micro-siestes flash (5 à 15 min) :</strong> technique militaire pour récupérer 2h de
                       lucidité.
                     </span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle2 size={16} className="text-[#dc2626] shrink-0 mt-0.5" />
-                    <span style={{ color: '#1e293b' }} className="font-medium">
+                    <span style={{ color: '#000000' }} className="font-medium">
                       <strong>Régulation de la météo intérieure :</strong> repérer la fatigue avant d’atteindre le
                       point de rupture.
                     </span>
@@ -897,27 +897,27 @@ export default function PlaquetteTopView() {
                 <h3 style={{ color: '#002b7a' }} className="text-xl font-black mb-3">
                   L’Imagerie Mentale
                 </h3>
-                <p style={{ color: '#334155' }} className="text-sm font-medium leading-relaxed mb-6">
+                <p style={{ color: '#000000' }} className="text-sm font-medium leading-relaxed mb-6">
                   Programmer son cerveau à la réussite et désamorcer le stress anticipatoire par la visualisation.
                 </p>
                 <ul className="space-y-3 text-xs">
                   <li className="flex items-start gap-2">
                     <CheckCircle2 size={16} className="text-[#002b7a] shrink-0 mt-0.5" />
-                    <span style={{ color: '#1e293b' }} className="font-medium">
+                    <span style={{ color: '#000000' }} className="font-medium">
                       <strong>Répétition mentale pré-action :</strong> visualiser le déroulement idéal d’un entretien ou
                       d’un cours.
                     </span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle2 size={16} className="text-[#002b7a] shrink-0 mt-0.5" />
-                    <span style={{ color: '#1e293b' }} className="font-medium">
+                    <span style={{ color: '#000000' }} className="font-medium">
                       <strong>Ancrage ressource :</strong> conditionnement pour convoquer instantanément le calme sur
                       commande.
                     </span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle2 size={16} className="text-[#002b7a] shrink-0 mt-0.5" />
-                    <span style={{ color: '#1e293b' }} className="font-medium">
+                    <span style={{ color: '#000000' }} className="font-medium">
                       <strong>Débriefing positif :</strong> ancrer ce qui a marché pour bâtir une confiance
                       inébranlable.
                     </span>
@@ -959,7 +959,7 @@ export default function PlaquetteTopView() {
             >
               Où s&apos;appliquent les Techniques TOP® ?
             </h2>
-            <p style={{ color: '#334155' }} className="mt-4 text-base font-medium">
+            <p style={{ color: '#000000' }} className="mt-4 text-base font-medium">
               Extraits directs du livret d’accueil Ô&apos;TOP Formations : les contextes où nos outils font la différence.
             </p>
           </div>
@@ -1006,7 +1006,7 @@ export default function PlaquetteTopView() {
                       <div style={{ color: '#003492' }} className="text-xs font-extrabold uppercase mb-1">
                         {app.category}
                       </div>
-                      <p style={{ color: '#334155' }} className="text-xs sm:text-sm leading-relaxed mb-4 font-medium">
+                      <p style={{ color: '#000000' }} className="text-xs sm:text-sm leading-relaxed mb-4 font-medium">
                         {app.desc}
                       </p>
 
@@ -1014,7 +1014,7 @@ export default function PlaquetteTopView() {
                         {app.points.map((pt, pIdx) => (
                           <li key={pIdx} className="flex items-start gap-1.5">
                             <Check size={14} className="text-[#003492] shrink-0 mt-0.5 font-bold" />
-                            <span style={{ color: '#1e293b' }} className="font-medium">{pt}</span>
+                            <span style={{ color: '#000000' }} className="font-medium">{pt}</span>
                           </li>
                         ))}
                       </ul>
@@ -1047,7 +1047,7 @@ export default function PlaquetteTopView() {
                 Milieu Scolaire & Lutte contre le Harcèlement (Programme pHARe)
               </h3>
 
-              <p style={{ color: '#1e293b' }} className="text-sm sm:text-base leading-relaxed mb-8 font-medium max-w-4xl">
+              <p style={{ color: '#000000' }} className="text-sm sm:text-base leading-relaxed mb-8 font-medium max-w-4xl">
                 Les Techniques d’Optimisation du Potentiel sont déployées par Ô&apos;TOP Formations dans les
                 collèges, lycées et rectorats pour <strong style={{ color: '#003492' }}>prévenir et désamorcer le harcèlement scolaire</strong>, restaurer un climat de
                 classe serein et apporter des outils concrets et immédiatement applicables aux élèves, enseignants et personnels de direction.
@@ -1066,7 +1066,7 @@ export default function PlaquetteTopView() {
                         1. Soutien aux Victimes
                       </strong>
                     </div>
-                    <p style={{ color: '#334155' }} className="text-xs leading-relaxed font-medium">
+                    <p style={{ color: '#000000' }} className="text-xs leading-relaxed font-medium">
                       Réduction immédiate de l’angoisse, sentiment de sécurité intérieure retrouvé, affirmation de soi et
                       préparation sereine au retour en classe.
                     </p>
@@ -1088,7 +1088,7 @@ export default function PlaquetteTopView() {
                         2. Auteurs & Témoins
                       </strong>
                     </div>
-                    <p style={{ color: '#334155' }} className="text-xs leading-relaxed font-medium">
+                    <p style={{ color: '#000000' }} className="text-xs leading-relaxed font-medium">
                       Canalisation de l’impulsivité, prise de recul avant d’agir, renforcement de l’empathie et
                       responsabilisation bienveillante.
                     </p>
@@ -1110,7 +1110,7 @@ export default function PlaquetteTopView() {
                         3. Équipes Éducatives
                       </strong>
                     </div>
-                    <p style={{ color: '#334155' }} className="text-xs leading-relaxed font-medium">
+                    <p style={{ color: '#000000' }} className="text-xs leading-relaxed font-medium">
                       Posture calme lors d’entretiens délicats, désamorçage de la fatigue professionnelle et protocoles « 5
                       minutes TOP » en début de cours.
                     </p>
@@ -1143,7 +1143,7 @@ export default function PlaquetteTopView() {
                   <div style={{ color: '#0a1128' }} className="font-black text-sm">
                     Intervention terrain animée par Mélissa Jennadi & Régis Domergue
                   </div>
-                  <p style={{ color: '#475569' }} className="text-xs leading-relaxed">
+                  <p style={{ color: '#000000' }} className="text-xs leading-relaxed">
                     Déplacements sur site dans les établissements scolaires (collèges, lycées, cités scolaires) en région PACA et partout en France. Séances adaptées aux élèves comme aux équipes pédagogiques.
                   </p>
                 </div>
@@ -1200,7 +1200,7 @@ export default function PlaquetteTopView() {
             >
               Formation Initiale FI-TOP® (3 jours / 21h)
             </h2>
-            <p style={{ color: '#334155' }} className="mt-4 text-base font-medium">
+            <p style={{ color: '#000000' }} className="mt-4 text-base font-medium">
               Un cursus intensif structuré en 7 modules concrets pour une autonomie totale et immédiate.
             </p>
             <div
@@ -1286,7 +1286,7 @@ export default function PlaquetteTopView() {
                     <h3 style={{ color: '#003492' }} className="text-xl sm:text-2xl font-black mt-2">
                       {modules[activeModule].title}
                     </h3>
-                    <p style={{ color: '#64748b' }} className="text-xs font-bold mt-1">
+                    <p style={{ color: '#000000' }} className="text-xs font-bold mt-1">
                       {modules[activeModule].subtitle}
                     </p>
                   </div>
@@ -1300,7 +1300,7 @@ export default function PlaquetteTopView() {
                     {modules[activeModule].content.map((item, itemIdx) => (
                       <li key={itemIdx} className="flex items-start gap-3 text-sm font-medium leading-relaxed">
                         <CheckCircle2 size={18} className="text-[#003492] shrink-0 mt-0.5" />
-                        <span style={{ color: '#1e293b' }} className="font-medium">{item}</span>
+                        <span style={{ color: '#000000' }} className="font-medium">{item}</span>
                       </li>
                     ))}
                   </ul>
@@ -1311,7 +1311,7 @@ export default function PlaquetteTopView() {
                 style={{ backgroundColor: '#f8fafc', border: '1px solid #e2e8f0' }}
                 className="mt-8 pt-4 pb-4 px-4 rounded-2xl flex flex-col sm:flex-row items-center justify-between gap-4"
               >
-                <div style={{ color: '#334155' }} className="text-xs font-medium">
+                <div style={{ color: '#000000' }} className="text-xs font-medium">
                   <strong>Pédagogie active :</strong> 70% exercices réels • Livret stagiaire remis • Attestation de compétences
                 </div>
                 <a
@@ -1352,7 +1352,7 @@ export default function PlaquetteTopView() {
             >
               Vos Formateurs : 2 Voix, 1 Mission
             </h2>
-            <p style={{ color: '#334155' }} className="mt-4 text-base font-medium">
+            <p style={{ color: '#000000' }} className="mt-4 text-base font-medium">
               L’alliance de la rigueur opérationnelle militaire et de l’écoute bienveillante sur la gestion du sommeil
               et de l’épuisement.
             </p>
@@ -1384,13 +1384,13 @@ export default function PlaquetteTopView() {
                     >
                       Co-fondateur & Expert T.O.P • Conférencier
                     </div>
-                    <div style={{ color: '#64748b' }} className="text-xs font-bold mt-1">
+                    <div style={{ color: '#000000' }} className="text-xs font-bold mt-1">
                       Plus de 10 ans au sein de l’Armée de l’Air et de l’Espace
                     </div>
                   </div>
                 </div>
 
-                <p style={{ color: '#334155' }} className="text-sm leading-relaxed mb-6 font-medium">
+                <p style={{ color: '#000000' }} className="text-sm leading-relaxed mb-6 font-medium">
                   Fort de plus de dix années d’expérience opérationnelle dans l’Armée de l’Air et de l’Espace, Régis
                   apporte une expertise unique sur la performance humaine, la gestion des facteurs de risque et la prise
                   de décision sous contrainte intense.
@@ -1444,13 +1444,13 @@ export default function PlaquetteTopView() {
                     >
                       Fondatrice & Responsable Pédagogique
                     </div>
-                    <div style={{ color: '#64748b' }} className="text-xs font-bold mt-1">
+                    <div style={{ color: '#000000' }} className="text-xs font-bold mt-1">
                       Formatrice TOP® • Spécialiste Stress, Sommeil & Fatigue
                     </div>
                   </div>
                 </div>
 
-                <p style={{ color: '#334155' }} className="text-sm leading-relaxed mb-6 font-medium">
+                <p style={{ color: '#000000' }} className="text-sm leading-relaxed mb-6 font-medium">
                   Formatrice en Techniques d’Optimisation du Potentiel (T.O.P), Mélissa est animée par la conviction
                   profonde que la performance ne doit jamais se faire au prix de la santé et de l&apos;épuisement.
                   <br />
@@ -1556,7 +1556,7 @@ export default function PlaquetteTopView() {
             >
               Modalités et Délais d’Accès
             </h2>
-            <p style={{ color: '#334155' }} className="mt-4 text-base font-medium">
+            <p style={{ color: '#000000' }} className="mt-4 text-base font-medium">
               Informations pratiques extraites du livret d’accueil pour préparer votre session :
             </p>
           </div>
@@ -1575,7 +1575,7 @@ export default function PlaquetteTopView() {
               <h3 style={{ color: '#0a1128' }} className="text-sm font-bold mb-1">
                 Durée & Format
               </h3>
-              <p style={{ color: '#334155' }} className="text-xs leading-relaxed font-medium">
+              <p style={{ color: '#000000' }} className="text-xs leading-relaxed font-medium">
                 <strong style={{ color: '#003492' }}>3 jours (21 heures)</strong> en présentiel. Sessions inter ou
                 intra sur site client (Var, PACA, France entière, Suisse, Belgique).
               </p>
@@ -1594,7 +1594,7 @@ export default function PlaquetteTopView() {
               <h3 style={{ color: '#0a1128' }} className="text-sm font-bold mb-1">
                 Public & Prérequis
               </h3>
-              <p style={{ color: '#334155' }} className="text-xs leading-relaxed font-medium">
+              <p style={{ color: '#000000' }} className="text-xs leading-relaxed font-medium">
                 <strong style={{ color: '#dc2626' }}>Aucun prérequis.</strong> Ouvert à tous : salariés, dirigeants,
                 enseignants, soignants, particuliers. Effectif limité à 10-12 max.
               </p>
@@ -1613,7 +1613,7 @@ export default function PlaquetteTopView() {
               <h3 style={{ color: '#0a1128' }} className="text-sm font-bold mb-1">
                 Financement Possible
               </h3>
-              <p style={{ color: '#334155' }} className="text-xs leading-relaxed font-medium">
+              <p style={{ color: '#000000' }} className="text-xs leading-relaxed font-medium">
                 Éligible OPCO (salariés), FAFCEA (artisans), FIF-PL / AGEFICE (indépendants) et plan de compétences.
                 Montage du dossier accompagné par Mélissa.
               </p>
@@ -1632,7 +1632,7 @@ export default function PlaquetteTopView() {
               <h3 style={{ color: '#0a1128' }} className="text-sm font-bold mb-1">
                 Délais d’Accès
               </h3>
-              <p style={{ color: '#334155' }} className="text-xs leading-relaxed font-medium">
+              <p style={{ color: '#000000' }} className="text-xs leading-relaxed font-medium">
                 Accès sous 7 à 15 jours après signature de la convention. Questionnaire préalable des besoins pour
                 adapter le cursus.
               </p>
@@ -1654,7 +1654,7 @@ export default function PlaquetteTopView() {
               <strong style={{ color: '#0a1128' }} className="block font-black mb-0.5 text-sm">
                 Accessibilité & Référent Handicap (extrait livret p.4 & p.20) :
               </strong>
-              <span style={{ color: '#334155' }} className="font-medium">
+              <span style={{ color: '#000000' }} className="font-medium">
                 Formations ouvertes à tous. Un entretien préalable permet d’adapter le contenu et les conditions
                 d’accueil aux personnes en situation de handicap. Référente dédiée : Mélissa Jennadi.
               </span>
@@ -1683,12 +1683,12 @@ export default function PlaquetteTopView() {
               ))}
             </div>
             <h2
-              style={{ color: '#0a1128' }}
+              style={{ color: '#000000' }}
               className="text-2xl sm:text-3xl lg:text-4xl font-black tracking-tight"
             >
               Une Confiance TOP®
             </h2>
-            <p style={{ color: '#334155' }} className="mt-2 text-base font-medium">
+            <p style={{ color: '#000000' }} className="mt-2 text-base font-bold">
               Retours d&apos;expérience de participants à nos formations et interventions de terrain.
             </p>
           </div>
@@ -1697,24 +1697,24 @@ export default function PlaquetteTopView() {
             {testimonials.map((t, idx) => (
               <div
                 key={idx}
-                style={{ backgroundColor: '#f8fafc', border: '1px solid #cbd5e1' }}
-                className="rounded-2xl p-6 flex flex-col justify-between shadow-sm"
+                style={{ backgroundColor: '#ffffff', border: '2px solid #003492', boxShadow: '0 10px 25px -5px rgba(0, 52, 146, 0.1)' }}
+                className="rounded-2xl p-6 flex flex-col justify-between"
               >
                 <div>
                   <div className="flex items-center gap-1 text-[#dc2626] mb-3">
                     {[...Array(t.note)].map((_, n) => (
-                      <Star key={n} size={14} className="fill-[#dc2626]" />
+                      <Star key={n} size={16} className="fill-[#dc2626] text-[#dc2626]" />
                     ))}
                   </div>
-                  <p style={{ color: '#1e293b' }} className="text-xs sm:text-sm italic leading-relaxed mb-6 font-medium">
+                  <p style={{ color: '#000000' }} className="text-sm italic leading-relaxed mb-6 font-bold">
                     « {t.text} »
                   </p>
                 </div>
-                <div className="border-t border-slate-200 pt-3">
-                  <div style={{ color: '#0a1128' }} className="font-black text-xs">
+                <div className="border-t border-slate-300 pt-3">
+                  <div style={{ color: '#003492' }} className="font-black text-sm">
                     {t.name}
                   </div>
-                  <div style={{ color: '#64748b' }} className="text-[11px] font-semibold">
+                  <div style={{ color: '#000000' }} className="text-xs font-extrabold mt-0.5">
                     {t.role}
                   </div>
                 </div>
@@ -1795,7 +1795,7 @@ export default function PlaquetteTopView() {
                 </button>
                 {activeFaq === fIdx && (
                   <div
-                    style={{ color: '#334155' }}
+                    style={{ color: '#000000' }}
                     className="px-4 pb-5 sm:px-5 text-xs sm:text-sm leading-relaxed border-t border-slate-100 pt-3 font-medium"
                   >
                     {faq.a}
@@ -1834,7 +1834,7 @@ export default function PlaquetteTopView() {
                 >
                   Échangeons sur Votre Projet
                 </h2>
-                <p style={{ color: '#334155' }} className="mt-2 text-sm leading-relaxed font-medium">
+                <p style={{ color: '#000000' }} className="mt-2 text-sm leading-relaxed font-medium">
                   Réservez un échange téléphonique bienveillant de 15 minutes avec <strong>Mélissa Jennadi</strong> pour
                   clarifier vos besoins, valider le calendrier des sessions et étudier vos financements disponibles.
                 </p>
@@ -1857,7 +1857,7 @@ export default function PlaquetteTopView() {
                     <Phone size={18} />
                   </div>
                   <div>
-                    <div style={{ color: '#64748b' }} className="text-[10px] font-bold uppercase">
+                    <div style={{ color: '#000000' }} className="text-[10px] font-bold uppercase">
                       Téléphone direct
                     </div>
                     <div style={{ color: '#0a1128' }} className="text-sm font-black">
@@ -1877,7 +1877,7 @@ export default function PlaquetteTopView() {
                     <MessageCircle size={18} />
                   </div>
                   <div>
-                    <div style={{ color: '#64748b' }} className="text-[10px] font-bold uppercase">
+                    <div style={{ color: '#000000' }} className="text-[10px] font-bold uppercase">
                       WhatsApp direct
                     </div>
                     <div className="text-sm font-black text-emerald-700">
@@ -1898,7 +1898,7 @@ export default function PlaquetteTopView() {
                     <FileText size={18} />
                   </div>
                   <div>
-                    <div style={{ color: '#64748b' }} className="text-[10px] font-bold uppercase">
+                    <div style={{ color: '#000000' }} className="text-[10px] font-bold uppercase">
                       Email officiel
                     </div>
                     <div style={{ color: '#0a1128' }} className="text-sm font-black">
@@ -1937,7 +1937,7 @@ export default function PlaquetteTopView() {
               <h3 style={{ color: '#003492' }} className="text-lg font-black mb-1">
                 Demande de Devis & Diagnostic Offert (15 min)
               </h3>
-              <p style={{ color: '#64748b' }} className="text-xs mb-6 font-semibold">
+              <p style={{ color: '#000000' }} className="text-xs mb-6 font-semibold">
                 Remplissez ce formulaire et Mélissa vous répondra sous 24h ouvrées.
               </p>
 
