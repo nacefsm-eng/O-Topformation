@@ -29,13 +29,7 @@ const securityHeaders = [
 
 const nextConfig: NextConfig = {
   async redirects() {
-    return [
-      {
-        source: '/respirez',
-        destination: '/catalogue',
-        permanent: true, // 301
-      },
-    ];
+    return [];
   },
   async headers() {
     return [

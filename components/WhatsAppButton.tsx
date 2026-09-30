@@ -3,6 +3,8 @@
 import React, { useState } from 'react';
 import { X, Send, Phone, MessageSquare, Sparkles, CheckCircle2, ChevronRight } from 'lucide-react';
 
+import { usePathname } from 'next/navigation';
+
 interface PredefinedQA {
   id: string;
   question: string;
@@ -46,9 +48,17 @@ const PREDEFINED_QUESTIONS: PredefinedQA[] = [
 ];
 
 export default function WhatsAppButton() {
+  const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
   const [activeQA, setActiveQA] = useState<PredefinedQA | null>(null);
   const [customText, setCustomText] = useState('');
+
+  const isIsolated = ['/respirez', '/formation-top', '/plaquette-top'].some(
+    (p) => pathname === p || pathname?.startsWith(p + '/')
+  );
+  if (isIsolated) {
+    return null;
+  }
 
   const handleSelectQuestion = (qa: PredefinedQA) => {
     setActiveQA(qa);

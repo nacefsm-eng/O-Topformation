@@ -63,7 +63,10 @@ export default function Nav() {
     setMobileOpen(false);
   }, [pathname]);
 
-  if (pathname === '/respirez') {
+  const isIsolated = ['/respirez', '/formation-top', '/plaquette-top'].some(
+    (p) => pathname === p || pathname?.startsWith(p + '/')
+  );
+  if (isIsolated) {
     return null;
   }
 
