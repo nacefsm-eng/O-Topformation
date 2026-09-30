@@ -216,7 +216,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         <ThemeProvider>
           <Nav />
-          <div style={{ height: '60px' }} />
           <ScrollReveal />
           {children}
           <WhatsAppButton />

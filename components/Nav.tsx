@@ -63,6 +63,10 @@ export default function Nav() {
     setMobileOpen(false);
   }, [pathname]);
 
+  if (pathname === '/respirez') {
+    return null;
+  }
+
   return (
     <>
       {/* Main Glass Nav */}
@@ -205,6 +209,7 @@ export default function Nav() {
           </div>
         </div>
       </nav>
+      <div style={{ height: '60px' }} />
 
       {/* Mobile menu overlay */}
       <div
