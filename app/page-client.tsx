@@ -98,27 +98,19 @@ export default function HomePageClient() {
         <div className="container mx-auto max-w-7xl flex flex-wrap items-center justify-between gap-3 text-xs sm:text-sm">
           
           <div className="flex items-center gap-3 font-medium">
-            <span className="px-2.5 py-1 rounded-full bg-gradient-to-r from-amber-400 to-amber-500 text-slate-950 font-black text-xs uppercase tracking-wider shadow animate-pulse flex items-center gap-1">
-              🔥 PROMO -60%
+            <span className="px-2.5 py-1 rounded-full bg-gradient-to-r from-amber-400 to-amber-500 text-slate-950 font-black text-xs uppercase tracking-wider shadow flex items-center gap-1">
+              🚀 OFFRE DE LANCEMENT
             </span>
             <div className="flex flex-wrap items-center gap-x-2 gap-y-1">
-              <span className="font-bold text-white text-sm sm:text-base">
-                Formation IA Générative (RS6776) :
-              </span>
-              <span className="text-base sm:text-lg font-black text-emerald-400">600 €</span>
-              <span className="text-xs sm:text-sm text-slate-400 line-through decoration-red-400 decoration-2 font-bold">1 490 €</span>
-              <span className="hidden sm:inline-block px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-bold text-xs">
-                Économisez 890 €
-              </span>
-              <span className="hidden lg:inline text-slate-300 text-xs">
-                (ou 3 × 200 € sans frais)
+              <span className="text-white text-sm">
+                Prix de lancement : la formation IA générative à <strong className="text-emerald-400">600 €</strong> (ou 3 × 200 € sans frais) jusqu’au 31 octobre 2026.
               </span>
             </div>
           </div>
 
           <div className="flex items-center gap-3 sm:gap-4 ml-auto sm:ml-0">
             <div className="flex items-center gap-1.5 font-mono text-amber-300 font-bold bg-slate-950/80 px-3 py-1.5 rounded-xl border border-amber-500/30 shadow-inner text-xs sm:text-sm">
-              <Clock size={15} className="text-amber-400 animate-spin" style={{ animationDuration: '4s' }} />
+              <Clock size={15} className="text-amber-400" />
               <span className="hidden sm:inline text-slate-300">Expire le 31 octobre 2026 :</span>
               <span className="text-white font-extrabold">{timeLeft.days}j</span>
               <span>{String(timeLeft.hours).padStart(2, '0')}h</span>
@@ -126,18 +118,18 @@ export default function HomePageClient() {
               <span className="text-amber-400">{String(timeLeft.seconds).padStart(2, '0')}s</span>
             </div>
 
-            <button
-              onClick={() => handleOpenCheckout('Offre Promo RS6776 (Durée limitée)', 600, '21h de formation certifiante en e-learning + 2h accompagnement expert individuel - Tarif promotionnel')}
-              className="px-4 py-2 rounded-xl bg-gradient-to-r from-amber-400 via-amber-300 to-emerald-400 text-slate-950 font-black text-xs hover:scale-105 active:scale-95 transition-all cursor-pointer whitespace-nowrap shadow-lg shadow-amber-500/20 flex items-center gap-1.5"
+            <Link
+              href="/commander?offre=rs6776"
+              className="px-4 py-2 rounded-xl bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white font-black text-xs transition-all cursor-pointer whitespace-nowrap shadow-lg shadow-red-600/30 flex items-center gap-1.5"
             >
-              <span>En profiter à 600 € →</span>
-            </button>
+              <span>Je m’inscris →</span>
+            </Link>
           </div>
 
         </div>
       </aside>
 
-      {/* ─── 1. HERO ORIENTÉ RÉSULTAT AVEC 3 PREUVES COURTES ─────────────── */}
+      {/* ─── 1. HERO ORIENTÉ RÉSULTAT AVEC 4 PREUVES COURTES ─────────────── */}
       <section ref={heroRef} className="relative pt-12 pb-20 md:pt-16 md:pb-32 overflow-hidden bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-blue-900/35 via-slate-950 to-slate-950 border-b border-slate-850">
         
         {/* Glow ambient meshes */}
@@ -183,9 +175,9 @@ export default function HomePageClient() {
               className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-500/10 border border-blue-400/30 text-blue-300 text-xs sm:text-sm font-semibold mb-6 backdrop-blur-md shadow-lg shadow-blue-900/20"
             >
               <span className="flex h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
-              <span>Formations Professionnelles IA &amp; Digital</span>
+              <span>Formations Professionnelles 100 % en ligne</span>
               <span className="text-slate-600">•</span>
-              <span className="text-slate-300">Indépendants &amp; PME</span>
+              <span className="text-slate-300">Indépendants &amp; TPE</span>
             </motion.div>
 
             {/* Main Headline H1 Concret & Orienté Résultat */}
@@ -195,7 +187,7 @@ export default function HomePageClient() {
               transition={{ duration: 0.7, delay: 0.1 }}
               className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tight leading-[1.1] mb-6 text-white"
             >
-              Formez-vous à l&apos;IA pour gagner du temps, mieux travailler et développer votre activité.
+              L’IA peut vous faire gagner du temps. Encore faut-il savoir l’utiliser correctement.
             </motion.h1>
 
             {/* Subtitle */}
@@ -205,27 +197,31 @@ export default function HomePageClient() {
               transition={{ duration: 0.7, delay: 0.2 }}
               className="text-base sm:text-xl text-slate-300 max-w-3xl mx-auto mb-8 leading-relaxed font-normal"
             >
-              Des parcours pratiques pour indépendants, dirigeants et équipes, avec un accompagnement humain par nos experts.
+              Des formations 100 % en ligne pour identifier les bons usages, éviter les erreurs et intégrer l’IA dans votre activité, avec 2 h d’accompagnement individuel par un expert.
             </motion.p>
 
-            {/* 3 Preuves Courtes Immédiates */}
+            {/* 4 Preuves Clés Immédiates */}
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.25 }}
-              className="grid grid-cols-1 sm:grid-cols-3 gap-3 max-w-3xl mx-auto mb-10 text-left"
+              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 max-w-4xl mx-auto mb-10 text-left"
             >
               <div className="flex items-center gap-2.5 p-3 rounded-xl bg-slate-900/80 border border-slate-800">
-                <CheckCircle2 size={18} className="text-blue-400 shrink-0" />
-                <span className="text-xs sm:text-sm text-slate-200 font-medium">Formations préparant à <strong>3 certifications RS</strong></span>
+                <CheckCircle2 size={18} className="text-emerald-400 shrink-0" />
+                <span className="text-xs sm:text-sm text-slate-200 font-medium"><strong>21 h en ligne</strong>, dont 2 h avec un expert</span>
               </div>
               <div className="flex items-center gap-2.5 p-3 rounded-xl bg-slate-900/80 border border-slate-800">
-                <CheckCircle2 size={18} className="text-emerald-400 shrink-0" />
-                <span className="text-xs sm:text-sm text-slate-200 font-medium"><strong>2 h d&apos;accompagnement avec un expert</strong> incluses</span>
+                <CheckCircle2 size={18} className="text-cyan-400 shrink-0" />
+                <span className="text-xs sm:text-sm text-slate-200 font-medium">Accès <strong>sous 24 h, à vie</strong></span>
+              </div>
+              <div className="flex items-center gap-2.5 p-3 rounded-xl bg-slate-900/80 border border-slate-800">
+                <CheckCircle2 size={18} className="text-blue-400 shrink-0" />
+                <span className="text-xs sm:text-sm text-slate-200 font-medium">Prépare à une <strong>certification RS</strong> (en option)</span>
               </div>
               <div className="flex items-center gap-2.5 p-3 rounded-xl bg-slate-900/80 border border-slate-800">
                 <CheckCircle2 size={18} className="text-amber-400 shrink-0" />
-                <span className="text-xs sm:text-sm text-slate-200 font-medium">Financement étudié avec <strong>notre partenaire Eloq-One</strong></span>
+                <span className="text-xs sm:text-sm text-slate-200 font-medium"><strong>Paiement en 3x</strong> ou financement possible</span>
               </div>
             </motion.div>
 
@@ -234,29 +230,35 @@ export default function HomePageClient() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.3 }}
-              className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-14"
+              className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8"
             >
-              <a
-                href="#contact"
-                className="w-full sm:w-auto px-8 py-4 rounded-2xl bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-bold text-base shadow-xl shadow-blue-600/30 flex items-center justify-center gap-2 transition-all hover:scale-[1.02] active:scale-[0.98]"
+              <Link
+                href="/commander?offre=rs6776"
+                className="w-full sm:w-auto px-8 py-4 rounded-2xl bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white font-extrabold text-base shadow-xl shadow-red-600/30 flex items-center justify-center gap-2 transition-all hover:scale-[1.02] active:scale-[0.98]"
               >
-                <span>Réserver mon diagnostic gratuit <span className="whitespace-nowrap">15 min ⚡</span></span>
-              </a>
+                <span>Commencer mon inscription →</span>
+              </Link>
 
               <a
-                href="#parcours"
+                href="https://calendly.com/otop-formation"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-full sm:w-auto px-7 py-4 rounded-2xl bg-slate-900/90 border border-slate-700 hover:border-slate-500 text-slate-200 font-bold text-base flex items-center justify-center gap-2 transition-all hover:bg-slate-800"
               >
-                <span>Découvrir les formations →</span>
+                <span>Échanger 15 min avec Mélissa ou Renaud</span>
               </a>
-
-              <Link
-                href="/brochure"
-                className="w-full sm:w-auto px-6 py-4 rounded-2xl bg-blue-950/60 border border-blue-500/30 hover:border-blue-400 text-cyan-300 hover:text-white font-bold text-base flex items-center justify-center gap-2 transition-all hover:bg-blue-900/50"
-              >
-                <span>📄 Plaquette &amp; Brochure</span>
-              </Link>
             </motion.div>
+
+            {/* Bande de confiance Eloq-One Qualiopi */}
+            <div className="inline-flex flex-wrap items-center justify-center gap-4 px-6 py-2.5 rounded-2xl bg-slate-900/60 border border-slate-800 text-xs text-slate-300 mb-12">
+              <div className="flex items-center gap-2">
+                <img src="/logo-eloqone.png" alt="Eloq-One" className="h-6 w-auto object-contain opacity-90" />
+                <img src="/logo-qualiopi.png" alt="Qualiopi" className="h-6 w-auto object-contain opacity-90" />
+              </div>
+              <span className="text-slate-400">
+                Notre partenaire <strong>Eloq-One</strong> est certifié Qualiopi (actions de formation).
+              </span>
+            </div>
 
           </motion.div>
 
@@ -339,10 +341,10 @@ export default function HomePageClient() {
               À qui s&apos;adressent nos parcours ?
             </div>
             <h2 className="text-2xl sm:text-4xl font-extrabold text-white tracking-tight">
-              Des formations pensées pour résoudre vos contraintes réelles
+              Des formations pensées pour vos contraintes réelles
             </h2>
             <p className="mt-2 text-slate-400 text-sm sm:text-base">
-              Pas de théorie d&apos;ingénieur : nous transformons l&apos;IA en un gain d&apos;efficacité immédiat pour votre quotidien.
+              Des formations pensées pour vos contraintes réelles. Pas de théorie d’ingénieur : des usages concrets, applicables dès la première semaine.
             </p>
           </div>
 
@@ -364,10 +366,18 @@ export default function HomePageClient() {
                   Automatisez le traitement des devis, les relances factures et la synthèse des réunions. Intégrez l&apos;IA dans vos équipes en maîtrisant les risques de fuite de données (RGPD, AI Act).
                 </p>
               </div>
-              <ul className="space-y-2 text-xs border-t border-slate-800/80 pt-4 mt-auto" style={{ color: '#cbd5e1' }}>
-                <li className="flex items-center gap-2">✓ Éligible plans de compétences OPCO</li>
-                <li className="flex items-center gap-2">✓ 5 à 10 h gagnées par semaine, selon votre activité</li>
-              </ul>
+              <div className="border-t border-slate-800/80 pt-4 mt-auto">
+                <ul className="space-y-2 text-xs mb-4" style={{ color: '#cbd5e1' }}>
+                  <li className="flex items-center gap-2">✓ Financement OPCO possible, sous réserve d’accord</li>
+                  <li className="flex items-center gap-2">✓ Objectif : gagner du temps sur vos tâches récurrentes</li>
+                </ul>
+                <Link
+                  href="/commander?offre=rs7344"
+                  className="w-full py-2.5 px-4 rounded-xl bg-blue-600/20 hover:bg-blue-600/30 border border-blue-500/30 text-blue-300 hover:text-white font-bold text-xs flex items-center justify-center gap-1.5 transition-all text-center"
+                >
+                  <span>Voir la formation pour moi →</span>
+                </Link>
+              </div>
             </div>
 
             {/* Profil 2 : Indépendants & Professionnels Libéraux */}
@@ -386,10 +396,18 @@ export default function HomePageClient() {
                   Créez vos assistants GPT sur mesure pour rédiger vos propositions, générer vos posts et préparer vos livrables en quelques minutes.
                 </p>
               </div>
-              <ul className="space-y-2 text-xs border-t border-slate-800/80 pt-4 mt-auto" style={{ color: '#cbd5e1' }}>
-                <li className="flex items-center gap-2">✓ 2 h d&apos;accompagnement avec un expert incluses</li>
-                <li className="flex items-center gap-2">✓ Gain de 5 à 10 h par semaine</li>
-              </ul>
+              <div className="border-t border-slate-800/80 pt-4 mt-auto">
+                <ul className="space-y-2 text-xs mb-4" style={{ color: '#cbd5e1' }}>
+                  <li className="flex items-center gap-2">✓ 2 h d’accompagnement avec un expert incluses</li>
+                  <li className="flex items-center gap-2">✓ Paiement en 3 fois sans frais</li>
+                </ul>
+                <Link
+                  href="/commander?offre=rs6776"
+                  className="w-full py-2.5 px-4 rounded-xl bg-indigo-600/20 hover:bg-indigo-600/30 border border-indigo-500/30 text-indigo-300 hover:text-white font-bold text-xs flex items-center justify-center gap-1.5 transition-all text-center"
+                >
+                  <span>Voir la formation pour moi →</span>
+                </Link>
+              </div>
             </div>
 
             {/* Profil 3 : Équipes Marketing & Commerciales */}
@@ -408,10 +426,18 @@ export default function HomePageClient() {
                   Maîtrisez Canva, CapCut, Waalaxy et les outils de communication pour accélérer la production sans dépendre d&apos;une agence externe.
                 </p>
               </div>
-              <ul className="space-y-2 text-xs border-t border-slate-800/80 pt-4 mt-auto" style={{ color: '#cbd5e1' }}>
-                <li className="flex items-center gap-2">✓ Formations préparant aux certifications RS</li>
-                <li className="flex items-center gap-2">✓ Pratique directe sur vos outils</li>
-              </ul>
+              <div className="border-t border-slate-800/80 pt-4 mt-auto">
+                <ul className="space-y-2 text-xs mb-4" style={{ color: '#cbd5e1' }}>
+                  <li className="flex items-center gap-2">✓ Formations préparant aux certifications RS</li>
+                  <li className="flex items-center gap-2">✓ Pratique directe sur vos outils</li>
+                </ul>
+                <Link
+                  href="/commander?offre=rs7351"
+                  className="w-full py-2.5 px-4 rounded-xl bg-cyan-600/20 hover:bg-cyan-600/30 border border-cyan-500/30 text-cyan-300 hover:text-white font-bold text-xs flex items-center justify-center gap-1.5 transition-all text-center"
+                >
+                  <span>Voir la formation pour moi →</span>
+                </Link>
+              </div>
             </div>
 
           </div>
@@ -494,9 +520,9 @@ export default function HomePageClient() {
                 <div>
                   <div className="flex items-center justify-between gap-2 mb-4 min-h-[28px]">
                     <span className="px-3 py-1 rounded-full bg-cyan-500/20 text-cyan-300 text-xs font-bold border border-cyan-500/30">
-                      🤖 Pôle IA • RS6776
+                      🤖 IA générative • Prépare à RS6776
                     </span>
-                    <span className="text-xs text-slate-400 font-semibold">100 % en ligne • Finançable OPCO / FAF</span>
+                    <span className="text-xs text-slate-400 font-semibold">100 % en ligne • Financement OPCO / FAF possible</span>
                   </div>
 
                   <h3 className="text-xl sm:text-2xl font-bold text-white mb-2 min-h-[58px] flex items-center">
@@ -507,24 +533,21 @@ export default function HomePageClient() {
                     ChatGPT, Claude, assistants sur mesure &amp; contenus
                   </p>
 
-                  {/* Encart promotionnel exceptionnel - Mise en avant forte */}
+                  {/* Encart promotionnel exceptionnel */}
                   <div className="p-4 rounded-2xl bg-gradient-to-r from-amber-500/15 via-emerald-500/15 to-cyan-500/10 border-2 border-amber-400/40 mb-6 shadow-lg">
                     <div className="flex items-center justify-between gap-2 mb-1.5">
                       <span className="text-[11px] font-black uppercase tracking-wider text-amber-300 flex items-center gap-1">
-                        <Sparkles size={14} className="text-amber-400 animate-pulse" /> OFFRE SPÉCIALE • DURÉE LIMITÉE
-                      </span>
-                      <span className="px-2 py-0.5 rounded-full bg-red-500/20 text-red-300 text-[11px] font-extrabold border border-red-500/30">
-                        -60% (-890 €)
+                        <Sparkles size={14} className="text-amber-400 animate-pulse" /> PRIX DE LANCEMENT JUSQU’AU 31/10
                       </span>
                     </div>
                     <div className="flex items-baseline gap-3">
                       <span className="text-3xl font-black text-emerald-400">600 €</span>
                       <span className="text-lg text-slate-400 line-through decoration-red-500 decoration-2 font-bold">1 490 €</span>
-                      <span className="text-xs text-slate-300 font-medium">(ou 3 × 200 € sans frais)</span>
+                      <span className="text-xs text-slate-300 font-medium">ou 3 × 200 € sans frais</span>
                     </div>
                     <div className="text-xs text-amber-200/90 mt-2 font-semibold flex items-center gap-1.5">
                       <Clock size={13} className="text-amber-400 shrink-0" />
-                      <span>Message d&apos;urgence : offre valable exclusivement jusqu&apos;au <strong>31 octobre 2026</strong></span>
+                      <span>Prix de lancement valable jusqu’au <strong>31 octobre 2026</strong>.</span>
                     </div>
                   </div>
 
@@ -535,11 +558,11 @@ export default function HomePageClient() {
                     </div>
                     <div className="flex items-center gap-2">
                       <Award size={15} className="text-amber-400 shrink-0" />
-                      <span><strong>Évaluation :</strong> quiz et cas pratiques. Certification RS6776 sur demande (rapport écrit + soutenance orale devant jury).</span>
+                      <span><strong>Évaluation :</strong> quiz et cas pratiques intégrés. Certification RS6776 en option : non incluse dans le prix, organisée par notre partenaire Eloq-One.</span>
                     </div>
                     <div className="flex items-center gap-2">
                       <ShieldCheck size={15} className="text-emerald-400 shrink-0" />
-                      <span><strong>Financement :</strong> Éligible OPCO / FAF (prise en charge selon vos droits)</span>
+                      <span><strong>Financement :</strong> possible par votre OPCO ou votre FAF, sous réserve de leur accord.</span>
                     </div>
                   </div>
 
@@ -561,26 +584,25 @@ export default function HomePageClient() {
 
                 <div className="mt-auto space-y-2.5 pt-4 border-t border-slate-800/80">
                   <div className="flex items-center gap-2">
-                    <button
-                      type="button"
-                      onClick={() => handleOpenCheckout('Offre Promo RS6776 (Durée limitée)', 600, '21h de formation certifiante en e-learning + 2h accompagnement expert individuel - Tarif promotionnel')}
-                      className="w-full py-3.5 px-4 rounded-xl bg-gradient-to-r from-amber-400 via-amber-300 to-emerald-400 hover:from-amber-300 hover:to-emerald-300 text-slate-950 font-black text-sm shadow-xl shadow-amber-500/20 transition-all flex items-center justify-center gap-2 cursor-pointer hover:scale-[1.02] active:scale-[0.98]"
+                    <Link
+                      href="/commander?offre=rs6776"
+                      className="w-full py-3.5 px-4 rounded-xl bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white font-black text-sm shadow-xl shadow-red-600/25 transition-all flex items-center justify-center gap-2 cursor-pointer hover:scale-[1.02] active:scale-[0.98]"
                     >
                       <CreditCard size={16} />
-                      <span>Profiter de la promo à 600 € (au lieu de 1 490 €)</span>
-                    </button>
+                      <span>Commencer mon inscription — 600 €</span>
+                    </Link>
                   </div>
                   <a
                     href="#contact"
                     className="w-full block py-2.5 text-center rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 font-semibold text-xs transition-all"
                   >
-                    Dossier Financement OPCO / FAF <span className="whitespace-nowrap">15 min ⚡</span>
+                    Demander une étude de financement
                   </a>
                   <Link
                     href="/formations/ia"
                     className="w-full block py-2 text-center text-slate-400 hover:text-white text-xs font-medium transition-all"
                   >
-                    Consulter le programme complet →
+                    Voir le programme complet →
                   </Link>
                 </div>
               </div>
@@ -594,9 +616,9 @@ export default function HomePageClient() {
                 <div>
                   <div className="flex items-center justify-between gap-2 mb-4 min-h-[28px]">
                     <span className="px-3 py-1 rounded-full bg-indigo-500/20 text-indigo-300 text-xs font-bold border border-indigo-500/30">
-                      🚀 Pôle IA • RS7344
+                      🚀 Développer son activité avec l’IA • Prépare à RS7344
                     </span>
-                    <span className="text-xs text-slate-400 font-semibold">100 % en ligne (intra possible) • Finançable OPCO / FAF</span>
+                    <span className="text-xs text-slate-400 font-semibold">100 % en ligne (intra possible) • Financement OPCO / FAF possible</span>
                   </div>
 
                   <h3 className="text-xl sm:text-2xl font-bold text-white mb-2 min-h-[58px] flex items-center">
@@ -618,11 +640,11 @@ export default function HomePageClient() {
                     </div>
                     <div className="flex items-center gap-2">
                       <Award size={15} className="text-amber-400 shrink-0" />
-                      <span><strong>Évaluation :</strong> quiz et cas pratiques. Certification RS7344 sur demande (dossier à J+15 et soutenance orale de 25 min à J+21).</span>
+                      <span><strong>Évaluation :</strong> quiz et cas pratiques intégrés. Certification RS7344 en option : non incluse dans le prix, organisée par notre partenaire Eloq-One.</span>
                     </div>
                     <div className="flex items-center gap-2">
                       <ShieldCheck size={15} className="text-emerald-400 shrink-0" />
-                      <span><strong>Tarif :</strong> 1 490 € • Finançable OPCO / FAF</span>
+                      <span><strong>Tarif :</strong> 1 490 € (ou 3 × 496,67 €) • Financement OPCO / FAF possible</span>
                     </div>
                   </div>
 
@@ -646,25 +668,24 @@ export default function HomePageClient() {
                 </div>
 
                 <div className="mt-auto space-y-2.5 pt-4 border-t border-slate-800/80">
-                  <button
-                    type="button"
-                    onClick={() => handleOpenCheckout('Développer son Activité avec l\'IA (RS7344)', 1490, '21 h dont 2 h d\'accompagnement expert individuel et cas pratiques réels')}
-                    className="w-full py-3 px-4 rounded-xl bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white font-bold text-xs shadow-lg shadow-indigo-600/25 transition-all flex items-center justify-center gap-2 cursor-pointer"
+                  <Link
+                    href="/commander?offre=rs7344"
+                    className="w-full py-3.5 px-4 rounded-xl bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white font-extrabold text-sm shadow-lg shadow-red-600/25 transition-all flex items-center justify-center gap-2 cursor-pointer"
                   >
                     <CreditCard size={15} />
-                    <span>S&apos;inscrire / Régler en ligne (1 490 €) 💳</span>
-                  </button>
+                    <span>Commencer mon inscription — 1 490 €</span>
+                  </Link>
                   <a
                     href="#contact"
                     className="w-full block py-2.5 text-center rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 font-semibold text-xs transition-all"
                   >
-                    Demander un devis OPCO Entreprise <span className="whitespace-nowrap">15 min ⚡</span>
+                    Demander une étude de financement
                   </a>
                   <Link
                     href="/formations/ia"
                     className="w-full block py-2 text-center text-slate-400 hover:text-white text-xs font-medium transition-all"
                   >
-                    Consulter le programme complet →
+                    Voir le programme complet →
                   </Link>
                 </div>
               </div>
@@ -678,9 +699,9 @@ export default function HomePageClient() {
                 <div>
                   <div className="flex items-center justify-between gap-2 mb-4 min-h-[28px]">
                     <span className="px-3 py-1 rounded-full bg-pink-500/20 text-pink-300 text-xs font-bold border border-pink-500/30">
-                      📱 Pôle Réseaux sociaux • RS7351
+                      📱 Réseaux sociaux • Prépare à RS7351
                     </span>
-                    <span className="text-xs text-slate-400 font-semibold">100 % à distance • Finançable OPCO / FAF</span>
+                    <span className="text-xs text-slate-400 font-semibold">100 % en ligne • Financement OPCO / FAF possible</span>
                   </div>
 
                   <h3 className="text-xl sm:text-2xl font-bold text-white mb-2 min-h-[58px] flex items-center">
@@ -702,11 +723,11 @@ export default function HomePageClient() {
                     </div>
                     <div className="flex items-center gap-2">
                       <Award size={15} className="text-amber-400 shrink-0" />
-                      <span><strong>Évaluation :</strong> quiz et cas pratiques. Certification RS7351 sur demande : mise en situation orale d&apos;environ 1 h devant 2 jurys professionnels (14/20 min).</span>
+                      <span><strong>Évaluation :</strong> quiz et cas pratiques intégrés. Certification RS7351 en option : non incluse dans le prix, organisée par notre partenaire Eloq-One.</span>
                     </div>
                     <div className="flex items-center gap-2">
                       <ShieldCheck size={15} className="text-emerald-400 shrink-0" />
-                      <span><strong>Tarif :</strong> 1 490 € • Finançable OPCO / FAF</span>
+                      <span><strong>Tarif :</strong> 1 490 € (ou 3 × 496,67 €) • Financement OPCO / FAF possible</span>
                     </div>
                   </div>
 
@@ -727,25 +748,24 @@ export default function HomePageClient() {
                 </div>
 
                 <div className="mt-auto space-y-2.5 pt-4 border-t border-slate-800/80">
-                  <button
-                    type="button"
-                    onClick={() => handleOpenCheckout('Gérer la communication digitale d\'une entreprise via les réseaux sociaux (RS7351)', 1490, '21 h dont 2 h d\'accompagnement expert individuel et cas pratiques réels')}
-                    className="w-full py-3 px-4 rounded-xl bg-gradient-to-r from-pink-600 to-rose-600 hover:from-pink-500 hover:to-rose-500 text-white font-bold text-xs shadow-lg shadow-pink-600/25 transition-all flex items-center justify-center gap-2 cursor-pointer"
+                  <Link
+                    href="/commander?offre=rs7351"
+                    className="w-full py-3.5 px-4 rounded-xl bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white font-extrabold text-sm shadow-lg shadow-red-600/25 transition-all flex items-center justify-center gap-2 cursor-pointer"
                   >
                     <CreditCard size={15} />
-                    <span>S&apos;inscrire / Régler en ligne (1 490 €) 💳</span>
-                  </button>
+                    <span>Commencer mon inscription — 1 490 €</span>
+                  </Link>
                   <a
                     href="#contact"
                     className="w-full block py-2.5 text-center rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 font-semibold text-xs transition-all"
                   >
-                    Dossier Financement OPCO / FAF <span className="whitespace-nowrap">15 min ⚡</span>
+                    Demander une étude de financement
                   </a>
                   <Link
                     href="/formations/reseaux-sociaux"
                     className="w-full block py-2 text-center text-slate-400 hover:text-white text-xs font-medium transition-all"
                   >
-                    Consulter le programme complet →
+                    Voir le programme complet →
                   </Link>
                 </div>
               </div>
@@ -759,9 +779,9 @@ export default function HomePageClient() {
                 <div>
                   <div className="flex items-center justify-between gap-2 mb-4 min-h-[28px]">
                     <span className="px-3 py-1 rounded-full bg-amber-500/20 text-amber-300 text-xs font-bold border border-amber-500/30">
-                      🧘 Méthode TOP® &amp; IA • FI-TOP®
+                      🧭 Conduite du changement • Méthode TOP®
                     </span>
-                    <span className="text-xs text-slate-400 font-semibold">Présentiel ou Visio • Finançable OPCO / FAF</span>
+                    <span className="text-xs text-slate-400 font-semibold">Présentiel ou visio • Financement OPCO / FAF possible</span>
                   </div>
 
                   <h3 className="text-xl sm:text-2xl font-bold text-white mb-2 min-h-[58px] flex items-center">
@@ -769,36 +789,36 @@ export default function HomePageClient() {
                   </h3>
 
                   <p className="text-xs text-amber-400 font-semibold mb-3 min-h-[34px] flex items-center">
-                    Clarté mentale et adaptation au changement à l&apos;ère de l&apos;IA
+                    Conduite du changement &amp; clarté mentale à l&apos;ère de l&apos;IA
                   </p>
 
                   <p className="text-sm text-slate-300 leading-relaxed mb-6 min-h-[72px]">
-                    Face au flux d&apos;informations et à l&apos;accélération technologique, apprenez à réguler votre stress en temps réel, préserver votre sommeil et optimiser votre lucidité décisionnelle.
+                    Face au flux d’informations et à l’accélération technologique, apprenez des techniques concrètes pour rester concentré, gérer la pression du changement et garder votre lucidité décisionnelle pendant l’intégration de l’IA.
                   </p>
 
                   <div className="space-y-2.5 py-4 border-y border-slate-800 text-xs text-slate-300 mb-6 min-h-[148px] flex flex-col justify-center bg-slate-950/40 rounded-xl px-3.5">
                     <div className="flex items-center gap-2">
                       <Clock size={15} className="text-amber-400 shrink-0" />
-                      <span><strong>Durée :</strong> 21 h réparties (3 jours intensifs en présentiel ou visio)</span>
+                      <span><strong>Durée :</strong> 21 h réparties (3 jours en présentiel ou visio)</span>
                     </div>
                     <div className="flex items-center gap-2">
                       <Award size={15} className="text-emerald-400 shrink-0" />
-                      <span><strong>Validation :</strong> exercices pratiques guidés et attestation officielle de fin de formation.</span>
+                      <span><strong>Validation :</strong> exercices pratiques guidés et attestation de fin de formation.</span>
                     </div>
                     <div className="flex items-center gap-2">
                       <ShieldCheck size={15} className="text-emerald-400 shrink-0" />
-                      <span><strong>Tarif :</strong> 890 € • Finançable OPCO / FAF / Entreprise</span>
+                      <span><strong>Tarif :</strong> 890 € (ou 3 × 296,67 €) • Financement OPCO / FAF possible</span>
                     </div>
                   </div>
 
                   <ul className="space-y-2.5 text-xs text-slate-400 mb-6 min-h-[96px]">
                     <li className="flex items-start gap-2">
                       <Check size={14} className="text-amber-400 shrink-0 mt-0.5" />
-                      <span>Boîte à outils complète : respiration relaxante et dynamisante sur le vif</span>
+                      <span>Boîte à outils complète : respiration régulatrice et dynamisante</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <Check size={14} className="text-amber-400 shrink-0 mt-0.5" />
-                      <span>Pré-activation mentale, imagerie motrice &amp; Récupération Modulée</span>
+                      <span>Pré-activation mentale, imagerie motrice &amp; récupération active</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <Check size={14} className="text-amber-400 shrink-0 mt-0.5" />
@@ -808,25 +828,24 @@ export default function HomePageClient() {
                 </div>
 
                 <div className="mt-auto space-y-2.5 pt-4 border-t border-slate-800/80">
-                  <button
-                    type="button"
-                    onClick={() => handleOpenCheckout('Formation Initiale FITOP® (21h)', 890, 'Cursus officiel 21h Méthode TOP® avec livret technique et suivi personnalisé')}
-                    className="w-full py-3 px-4 rounded-xl bg-gradient-to-r from-amber-600 to-emerald-600 hover:from-amber-500 hover:to-emerald-500 text-white font-bold text-xs shadow-lg shadow-amber-600/25 transition-all flex items-center justify-center gap-2 cursor-pointer"
+                  <Link
+                    href="/commander?offre=top"
+                    className="w-full py-3.5 px-4 rounded-xl bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white font-extrabold text-sm shadow-lg shadow-red-600/25 transition-all flex items-center justify-center gap-2 cursor-pointer"
                   >
                     <CreditCard size={15} />
-                    <span>S&apos;inscrire / Régler en ligne 💳</span>
-                  </button>
+                    <span>Commencer mon inscription — 890 €</span>
+                  </Link>
                   <a
                     href="#contact"
                     className="w-full block py-2.5 text-center rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 font-semibold text-xs transition-all"
                   >
-                    Demander prise en charge entreprise / OPCO <span className="whitespace-nowrap">15 min ⚡</span>
+                    Demander une étude de financement
                   </a>
                   <Link
                     href="/formations/fi-top"
                     className="w-full block py-2 text-center text-slate-400 hover:text-white text-xs font-medium transition-all"
                   >
-                    Consulter le programme FITOP® →
+                    Voir le programme →
                   </Link>
                 </div>
               </div>
@@ -886,10 +905,10 @@ export default function HomePageClient() {
                     </span>
                   </td>
                   <td className="p-4 sm:p-5 text-xs text-emerald-400 font-medium">
-                    600 € jusqu&apos;au 31/10/2026 (au lieu de 1 490 €)<br />OPCO / FAF
+                    600 € (prix de lancement jusqu’au 31/10/2026)<br />financement possible
                   </td>
                   <td className="p-4 sm:p-5 text-xs sm:text-sm">
-                    Assistant IA sur mesure, prompts métier et gain de 5 à 10 h par semaine selon activité
+                    Assistant IA sur mesure et prompts métier pour gagner du temps sur vos tâches récurrentes
                   </td>
                 </tr>
 
@@ -910,7 +929,7 @@ export default function HomePageClient() {
                     </span>
                   </td>
                   <td className="p-4 sm:p-5 text-xs text-emerald-400 font-medium">
-                    1 490 €<br />Finançable OPCO / FAF
+                    1 490 €<br />financement possible
                   </td>
                   <td className="p-4 sm:p-5 text-xs sm:text-sm">
                     Feuille de route IA, processus optimisés, charte éthique et conformité AI Act
@@ -934,7 +953,7 @@ export default function HomePageClient() {
                     </span>
                   </td>
                   <td className="p-4 sm:p-5 text-xs text-emerald-400 font-medium">
-                    1 490 €<br />Finançable OPCO / FAF
+                    1 490 €<br />financement possible
                   </td>
                   <td className="p-4 sm:p-5 text-xs sm:text-sm">
                     Visuels Canva, vidéos CapCut, prospection LinkedIn et Meta Ads
@@ -947,7 +966,7 @@ export default function HomePageClient() {
                     Formation initiale aux Techniques d&apos;Optimisation du Potentiel (FI-TOP®)
                   </td>
                   <td className="p-4 sm:p-5 text-xs sm:text-sm">
-                    Dirigeants, managers, collaborateurs sous forte charge mentale
+                    Dirigeants, managers et équipes en période de transformation
                   </td>
                   <td className="p-4 sm:p-5 font-semibold text-amber-300 text-xs sm:text-sm whitespace-nowrap">
                     21 h (3 jours)<br />exercices guidés
@@ -958,10 +977,10 @@ export default function HomePageClient() {
                     </span>
                   </td>
                   <td className="p-4 sm:p-5 text-xs text-emerald-400 font-medium">
-                    890 €<br />Finançable OPCO / FAF / Entreprise
+                    890 €<br />financement possible
                   </td>
                   <td className="p-4 sm:p-5 text-xs sm:text-sm">
-                    Régulation du stress en direct, dynamisation de l&apos;énergie, récupération et focus mental
+                    Gestion de la pression, concentration et adhésion au changement
                   </td>
                 </tr>
               </tbody>
@@ -978,7 +997,7 @@ export default function HomePageClient() {
                 Packs Duo, Trio &amp; Formules Entreprise
               </h3>
               <p className="text-xs sm:text-sm text-slate-400 mt-1">
-                Tarifs officiels dégressifs avec accompagnement expert et certification.
+                Packs Duo, Trio et formule Entreprise : des tarifs dégressifs, 2 h d’accompagnement par formation. Certification en option.
               </p>
             </div>
 
@@ -988,25 +1007,25 @@ export default function HomePageClient() {
                 <div>
                   <span className="px-2.5 py-1 rounded-full bg-blue-500/10 text-blue-400 text-xs font-bold">Pack Économique</span>
                   <h4 className="text-xl font-bold text-white mt-2">Pack Duo</h4>
-                  <p className="text-xs text-slate-400 mt-1">2 formations certifiantes au choix parmi RS6776, RS7344 ou RS7351.</p>
+                  <p className="text-xs text-slate-400 mt-1">2 formations au choix parmi IA générative (RS6776), Développer son activité avec l’IA (RS7344) et Réseaux sociaux (RS7351).</p>
                   <div className="my-4">
-                    <span className="text-xs text-slate-500 line-through">2 980 €</span>
-                    <div className="text-3xl font-black text-white">2 490 € <span className="text-xs text-emerald-400 font-normal">(-490 €)</span></div>
+                    <span className="text-xs text-slate-500 line-through">Dès 2 090 €</span>
+                    <div className="text-2xl sm:text-3xl font-black text-white">Dès 1 790 € <span className="text-xs text-emerald-400 font-normal">(-300 € à -490 €)</span></div>
+                    <p className="text-[11px] text-slate-400 mt-1">Avec RS6776 : 1 790 € (au lieu de 2 090 €). RS7344 + RS7351 : 2 490 € (au lieu de 2 980 €).</p>
                   </div>
                   <ul className="text-xs text-slate-300 space-y-2 mb-6">
                     <li className="flex items-center gap-2">✓ 2 formations complètes (42 h, dont 4 h d&apos;accompagnement)</li>
-                    <li className="flex items-center gap-2">✓ Préparation à 2 certifications RS</li>
+                    <li className="flex items-center gap-2">✓ Préparation à 2 certifications RS (passage en option)</li>
                     <li className="flex items-center gap-2">✓ 2 h d&apos;accompagnement par formation</li>
                   </ul>
                 </div>
-                <button
-                  type="button"
-                  onClick={() => handleOpenCheckout('Pack Duo — 2 Formations au Choix', 2490, 'Cursus combiné 2 formations certifiantes au choix avec accompagnement expert')}
-                  className="w-full py-3 px-4 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs shadow-lg transition-all cursor-pointer flex items-center justify-center gap-2"
+                <Link
+                  href="/commander?offre=duo"
+                  className="w-full py-3 px-4 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs shadow-lg transition-all cursor-pointer flex items-center justify-center gap-2 text-center"
                 >
                   <CreditCard size={15} />
-                  <span>Réserver le Pack Duo (2 490 €)</span>
-                </button>
+                  <span>Choisir mon Pack Duo →</span>
+                </Link>
               </div>
 
               {/* Pack Trio */}
@@ -1017,25 +1036,25 @@ export default function HomePageClient() {
                 <div>
                   <span className="px-2.5 py-1 rounded-full bg-indigo-500/20 text-indigo-300 text-xs font-bold">Pack Intégral</span>
                   <h4 className="text-xl font-bold text-white mt-2">Pack Trio</h4>
-                  <p className="text-xs text-slate-400 mt-1">Les 3 formations : IA Générative + Workflows + Réseaux Sociaux &amp; Prospection.</p>
+                  <p className="text-xs text-slate-400 mt-1">Les 3 formations : IA générative + Développer son activité avec l’IA + Réseaux sociaux.</p>
                   <div className="my-4">
-                    <span className="text-xs text-slate-500 line-through">4 470 €</span>
-                    <div className="text-3xl font-black text-emerald-400">3 390 € <span className="text-xs text-emerald-400 font-normal">(-1 080 €)</span></div>
+                    <span className="text-xs text-slate-500 line-through">3 580 €</span>
+                    <div className="text-3xl font-black text-emerald-400">2 890 € <span className="text-xs text-emerald-400 font-normal">(-690 €)</span></div>
+                    <p className="text-[11px] text-amber-300 font-semibold mt-1">La 3e formation pour 400 € de plus que le Duo RS7344 + RS7351 (jusqu&apos;au 31/10/2026).</p>
                   </div>
                   <ul className="text-xs text-slate-300 space-y-2 mb-6">
                     <li className="flex items-center gap-2">✓ 3 formations complètes (63 h, dont 6 h d&apos;accompagnement)</li>
-                    <li className="flex items-center gap-2">✓ Préparation à 3 certifications RS</li>
+                    <li className="flex items-center gap-2">✓ Préparation à 3 certifications RS (passage en option)</li>
                     <li className="flex items-center gap-2">✓ 2 h d&apos;accompagnement par formation</li>
                   </ul>
                 </div>
-                <button
-                  type="button"
-                  onClick={() => handleOpenCheckout('Pack Trio — Les 3 Formations Complètes', 3390, 'Cursus intégral 3 formations certifiantes (RS6776 + RS7344 + RS7351)')}
-                  className="w-full py-3 px-4 rounded-xl bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white font-bold text-xs shadow-lg transition-all cursor-pointer flex items-center justify-center gap-2"
+                <Link
+                  href="/commander?offre=trio"
+                  className="w-full py-3 px-4 rounded-xl bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white font-bold text-xs shadow-lg transition-all cursor-pointer flex items-center justify-center gap-2 text-center"
                 >
                   <CreditCard size={15} />
-                  <span>Réserver le Pack Trio (3 390 €)</span>
-                </button>
+                  <span>Choisir mon Pack Trio →</span>
+                </Link>
               </div>
 
               {/* Formule Entreprise OPCO */}
@@ -1043,7 +1062,7 @@ export default function HomePageClient() {
                 <div>
                   <span className="px-2.5 py-1 rounded-full bg-amber-500/10 text-amber-400 text-xs font-bold">B2B &amp; Salariés</span>
                   <h4 className="text-xl font-bold text-white mt-2">Formule Entreprise</h4>
-                  <p className="text-xs text-slate-400 mt-1">40 h au total : l&apos;une de nos formations (21 h) complétée par des heures d&apos;accompagnement avec un expert. Une durée adaptée à une prise en charge par votre OPCO.</p>
+                  <p className="text-xs text-slate-400 mt-1">40 h au total : l’une de nos formations (21 h) complétée par des heures d’accompagnement avec un expert, pensée pour votre plan de développement des compétences.</p>
                   <div className="my-4">
                     <div className="text-3xl font-black text-white">3 200 € <span className="text-xs text-slate-400 font-normal"></span></div>
                     <span className="text-xs text-emerald-400">Prise en charge OPCO possible, sous réserve d&apos;accord</span>
@@ -1051,17 +1070,16 @@ export default function HomePageClient() {
                   <ul className="text-xs text-slate-300 space-y-2 mb-6">
                     <li className="flex items-center gap-2">✓ 40 h de parcours adapté aux équipes</li>
                     <li className="flex items-center gap-2">✓ Plan de développement des compétences</li>
-                    <li className="flex items-center gap-2">✓ Montage du dossier avec Eloq-One (certifié Qualiopi)</li>
+                    <li className="flex items-center gap-2">✓ Convention établie par Eloq-One, certifié Qualiopi</li>
                   </ul>
                 </div>
-                <button
-                  type="button"
-                  onClick={() => handleOpenCheckout('Formule Entreprise (40h OPCO)', 3200, '40h au total (e-learning + accompagnement d’équipe) - Éligible financement OPCO')}
-                  className="w-full py-3 px-4 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-700 text-white font-bold text-xs transition-all cursor-pointer flex items-center justify-center gap-2"
+                <Link
+                  href="/commander?offre=entreprise"
+                  className="w-full py-3 px-4 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-700 text-white font-bold text-xs transition-all cursor-pointer flex items-center justify-center gap-2 text-center"
                 >
                   <ShieldCheck size={15} className="text-amber-400" />
-                  <span>Dossier OPCO Entreprise (3 200 €)</span>
-                </button>
+                  <span>Demander un devis entreprise →</span>
+                </Link>
               </div>
             </div>
 
@@ -1074,27 +1092,29 @@ export default function HomePageClient() {
                 </p>
               </div>
               <div className="flex gap-2 shrink-0">
-                <button
-                  type="button"
-                  onClick={() => handleOpenCheckout('Coaching Expert (Forfait 5h)', 550, '5h d’accompagnement individuel personnalisé avec un expert')}
+                <a
+                  href="https://calendly.com/otop-formation"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="px-3.5 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-semibold"
                 >
                   Forfait 5h (550 €)
-                </button>
-                <button
-                  type="button"
-                  onClick={() => handleOpenCheckout('Coaching Expert (Forfait 10h)', 1000, '10h d’accompagnement individuel personnalisé avec un expert')}
+                </a>
+                <a
+                  href="https://calendly.com/otop-formation"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="px-3.5 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-semibold"
                 >
                   Forfait 10h (1 000 €)
-                </button>
+                </a>
               </div>
             </div>
 
           </div>
 
           <p className="mt-8 text-center text-xs text-slate-400">
-            * Note légale : Prise en charge étudiée selon votre statut par le biais de notre organisme partenaire porteur certifié Qualiopi.
+            * Financement possible par votre OPCO, votre FAF ou France Travail, selon leurs critères et sous réserve de leur accord. Conventions établies par Eloq-One, organisme certifié Qualiopi.
           </p>
 
         </div>
@@ -1113,7 +1133,7 @@ export default function HomePageClient() {
               Comment se déroule votre financement ?
             </h2>
             <div className="mt-4 p-4 rounded-xl bg-blue-950/40 border border-blue-500/30 max-w-2xl mx-auto text-xs sm:text-sm text-blue-200 leading-relaxed text-center">
-              Ô&apos;TOP Formation intervient avec son partenaire Eloq-One, organisme certifié Qualiopi, qui porte les actions de formation et accompagne les démarches de financement. Les possibilités de prise en charge sont étudiées selon votre statut et restent soumises à l&apos;accord de l&apos;organisme financeur.
+              Pour les formations financées par un OPCO, un FAF ou France Travail, notre partenaire Eloq-One, organisme certifié Qualiopi, établit la convention et assure la facturation. La prise en charge reste soumise à l’accord du financeur.
             </div>
           </div>
 
@@ -1125,7 +1145,7 @@ export default function HomePageClient() {
               </div>
               <h3 className="font-bold text-white text-base mb-2">Diagnostic Offert (15 min)</h3>
               <p className="text-xs sm:text-sm text-slate-400 leading-relaxed">
-                Échange individuel avec Mélissa ou Renaud pour cadrer votre projet, identifier votre OPCO/FAF et calculer vos droits disponibles.
+                Échange de 15 min avec Mélissa ou Renaud pour cadrer votre projet, identifier votre financeur et étudier les possibilités de prise en charge.
               </p>
             </div>
 
@@ -1133,9 +1153,9 @@ export default function HomePageClient() {
               <div className="w-8 h-8 rounded-full bg-indigo-600 text-white font-black text-sm flex items-center justify-center mb-4">
                 2
               </div>
-              <h3 className="font-bold text-white text-base mb-2">Montage avec Eloq-One</h3>
+              <h3 className="font-bold text-white text-base mb-2">Convention avec Eloq-One</h3>
               <p className="text-xs sm:text-sm text-slate-400 leading-relaxed">
-                Notre partenaire porteur prépare la convention normée, le programme et le devis pour soumission à votre financeur.
+                Notre partenaire Eloq-One prépare la convention, le programme et le devis à soumettre à votre financeur.
               </p>
             </div>
 
@@ -1145,7 +1165,7 @@ export default function HomePageClient() {
               </div>
               <h3 className="font-bold text-white text-base mb-2">Démarrage &amp; accompagnement</h3>
               <p className="text-xs sm:text-sm text-slate-400 leading-relaxed">
-                Dès l&apos;accord de prise en charge, accès immédiat à la plateforme et planification de vos 2 h d&apos;accompagnement avec un expert.
+                Dès l’accord du financeur, accès à la plateforme sous 24 h et planification de vos 2 h d’accompagnement avec un expert.
               </p>
             </div>
           </div>
@@ -1164,8 +1184,8 @@ export default function HomePageClient() {
       </section>
 
 
-      {/* ─── 7. PREUVE SOCIALE & ÉTUDES DE CAS ─────────────────────── */}
-      <ClientFeedback limit={3} />
+      {/* ─── 7. PREUVE SOCIALE & ÉTUDES DE CAS (Masqué en attendant de vrais avis certifiés) ─────── */}
+      {/* <ClientFeedback limit={3} /> */}
 
       {/* ─── 8. ÉQUIPE & EXPERTS RÉFÉRENTS ──────────────────────────────── */}
       <section id="equipe" className="py-20 px-4 bg-slate-900/30 border-t border-slate-800">
@@ -1188,7 +1208,7 @@ export default function HomePageClient() {
             {/* 1. Mélissa */}
             <TeamMemberCard
               position="left"
-              roleTitle="Fondatrice & Formatrice Certifiée TOP®"
+              roleTitle="Présidente & formatrice certifiée TOP® — référente pédagogique et handicap"
               firstName="Mélissa"
               lastName="JENNADI"
               imageUrl="/team-melyssa.png"
@@ -1207,15 +1227,15 @@ export default function HomePageClient() {
               onCtaClick={() => window.open('https://wa.me/33674797509?text=Bonjour%20Renaud%2C%20je%20souhaite%20%C3%A9changer%20avec%20vous.', '_blank')}
             />
 
-            {/* 3. Med Aly (Daly) Garma */}
+            {/* 3. MG (Cybersécurité) */}
             <TeamMemberCard
               position="left"
               roleTitle="Expert Cybersécurité & Résilience IA"
-              firstName="Med Aly"
-              lastName="GARMA"
-              imageUrl="/team-med-aly.jpg"
-              description="Expertise pointue en cybersécurité, résilience des infrastructures critiques et sécurisation avancée des environnements d'intelligence artificielle."
-              onCtaClick={() => window.open('https://wa.me/33767246825?text=Bonjour%20Med%20Aly%2C%20je%20souhaite%20%C3%A9changer%20avec%20vous%20sur%20la%20cybers%C3%A9curit%C3%A9.', '_blank')}
+              firstName="MG"
+              lastName=""
+              imageUrl="/team-mg.jpg"
+              description="Expertise en cybersécurité, résilience des systèmes et sécurisation avancée de l'intelligence artificielle."
+              onCtaClick={() => window.open('https://wa.me/33767246825?text=Bonjour%20MG%2C%20je%20souhaite%20%C3%A9changer%20avec%20vous%20sur%20la%20cybers%C3%A9curit%C3%A9.', '_blank')}
             />
 
             {/* 4. Régis */}
@@ -1257,15 +1277,15 @@ export default function HomePageClient() {
                 onCtaClick={() => window.open('https://wa.me/33767246825?text=Bonjour%20Hugo%2C%20je%20souhaite%20%C3%A9changer%20avec%20vous%20sur%20le%20site%20web.', '_blank')}
               />
 
-              {/* 6. Henri - Community Manager */}
+              {/* 6. Julien - Community Manager */}
               <TeamMemberCard
                 position="right"
                 roleTitle="Community Manager & Social Media"
-                firstName="Henri"
+                firstName="Julien"
                 lastName=""
                 imageUrl="/team-hamouda.jpg"
                 description="Stratège de la communication et des réseaux sociaux. En charge de l'engagement des apprenants, de l'animation de nos communautés d'alumni et du rayonnement digital de la marque Ô'TOP."
-                onCtaClick={() => window.open('https://wa.me/33767246825?text=Bonjour%20Henri%2C%20je%20souhaite%20%C3%A9changer%20avec%20vous%20sur%20la%20communication.', '_blank')}
+                onCtaClick={() => window.open('https://wa.me/33767246825?text=Bonjour%20Julien%2C%20je%20souhaite%20%C3%A9changer%20avec%20vous%20sur%20la%20communication.', '_blank')}
               />
             </div>
           </div>
@@ -1281,18 +1301,26 @@ export default function HomePageClient() {
               ⚡ Action Immédiate
             </div>
             <h3 className="text-xl sm:text-2xl font-black text-white">
-              Prêt(e) à évaluer vos droits OPCO / FAF et vos gains de productivité ?
+              ⚡ Prêt(e) à passer à l’action ?
             </h3>
             <p className="text-xs sm:text-sm text-slate-300 max-w-xl">
-              15 minutes au téléphone avec Mélissa pour vérifier vos prises en charge et cibler vos automatisations prioritaires.
+              Inscrivez-vous en 2 minutes, ou prenez 15 minutes avec Mélissa ou Renaud pour choisir la bonne formation et étudier votre financement.
             </p>
           </div>
           <div className="flex flex-col sm:flex-row items-center gap-3 shrink-0 w-full md:w-auto">
-            <a
-              href="#contact"
-              className="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-bold text-sm text-center transition-all shadow-xl shadow-blue-600/30 whitespace-nowrap"
+            <Link
+              href="/commander?offre=rs6776"
+              className="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white font-extrabold text-sm text-center transition-all shadow-xl shadow-red-600/30 whitespace-nowrap"
             >
-              Réserver mon diagnostic <span className="whitespace-nowrap">15 min ⚡</span>
+              Commencer mon inscription →
+            </Link>
+            <a
+              href="https://calendly.com/otop-formation"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-700 text-white font-bold text-sm text-center transition-all whitespace-nowrap"
+            >
+              Prendre RDV (15 min)
             </a>
             <a
               href="https://wa.me/33767246825?text=Bonjour%20M%C3%A9lissa%2C%20je%20souhaite%20un%20diagnostic%20rapide%20sur%20mes%20droits%20de%20formation."
@@ -1300,41 +1328,44 @@ export default function HomePageClient() {
               rel="noopener noreferrer"
               className="w-full sm:w-auto px-5 py-3.5 rounded-xl bg-emerald-600/20 hover:bg-emerald-600/30 border border-emerald-500/40 text-emerald-300 font-bold text-sm text-center flex items-center justify-center gap-2 transition-all whitespace-nowrap"
             >
-              <span>WhatsApp Direct 💬</span>
+              <span>WhatsApp 💬</span>
             </a>
           </div>
         </div>
       </section>
 
 
-      {/* ─── 9. BLOC C2 & C3 : POURQUOI LA MÉTHODE TOP® DANS UN PROJET IA ? & OFFRE IA & HUMAIN ──────── */}
+      {/* ─── 9. BLOC C2 & C3 : L'IA RÉUSSIT QUAND VOS ÉQUIPES L'ADOPTENT & OFFRE IA & HUMAIN ──────── */}
       <section className="py-16 px-4 bg-gradient-to-r from-blue-950/60 via-slate-900 to-amber-950/40 border-b border-slate-800">
         <div className="container mx-auto max-w-6xl space-y-8">
           
-          {/* Bloc C2 : Pourquoi la Méthode TOP dans un projet IA ? */}
+          {/* Bloc C2 : L’IA réussit quand vos équipes l’adoptent */}
           <div className="p-8 sm:p-10 rounded-3xl bg-slate-900/90 border border-blue-500/30 shadow-2xl relative overflow-hidden">
             <div className="max-w-3xl">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/30 text-blue-300 text-xs font-bold uppercase tracking-wider mb-4">
                 <span>⚡</span> La Dimension Humaine de la Transition IA
               </div>
               <h2 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
-                Pourquoi la Méthode TOP® dans un projet IA ?
+                L’IA réussit quand vos équipes l’adoptent
               </h2>
               <p className="mt-4 text-slate-300 text-sm sm:text-base leading-relaxed">
                 L&apos;intégration de l&apos;Intelligence Artificielle en entreprise n&apos;est pas seulement un défi technique, c&apos;est avant tout une <strong>conduite du changement humain</strong>. L&apos;irruption de nouveaux outils bouscule les repères, suscite des craintes de déclassement et engendre une charge cognitive accrue.
               </p>
+              <p className="mt-3 text-xs sm:text-sm text-cyan-300/90 italic border-l-2 border-cyan-400 pl-3">
+                « Selon le Boston Consulting Group, la réussite d’une transformation par l’IA tient pour 10 % aux algorithmes, 20 % à la technologie et aux données, et 70 % aux personnes et aux processus. »
+              </p>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-6">
                 <div className="p-4 rounded-xl bg-slate-950/60 border border-slate-800">
-                  <div className="font-bold text-amber-300 text-sm mb-1">Réguler le stress du changement</div>
-                  <div className="text-xs text-slate-400">Désamorcer les résistances et peurs liées à l&apos;automatisation.</div>
+                  <div className="font-bold text-amber-300 text-sm mb-1">Lever les résistances au changement</div>
+                  <div className="text-xs text-slate-400">Désamorcer les craintes liées à l’automatisation.</div>
                 </div>
                 <div className="p-4 rounded-xl bg-slate-950/60 border border-slate-800">
-                  <div className="font-bold text-cyan-300 text-sm mb-1">Préserver la lucidité décisionnelle</div>
-                  <div className="text-xs text-slate-400">Techniques flash de récupération mentale sous surcharge informationnelle.</div>
+                  <div className="font-bold text-cyan-300 text-sm mb-1">Garder la lucidité décisionnelle</div>
+                  <div className="text-xs text-slate-400">Des techniques courtes pour rester concentré face à l’afflux d’informations.</div>
                 </div>
                 <div className="p-4 rounded-xl bg-slate-950/60 border border-slate-800">
                   <div className="font-bold text-emerald-300 text-sm mb-1">Engagement &amp; adhésion durable</div>
-                  <div className="text-xs text-slate-400">Concilier performance technologique et bien-être des collaborateurs.</div>
+                  <div className="text-xs text-slate-400">Concilier performance technologique et engagement des collaborateurs.</div>
                 </div>
               </div>
             </div>
@@ -1350,7 +1381,7 @@ export default function HomePageClient() {
                 Offre « IA &amp; Humain » — Sur Devis
               </h3>
               <p className="mt-3 text-slate-300 text-sm sm:text-base leading-relaxed">
-                Le parcours hybride sur mesure associant la formation pratique aux outils IA (gains de productivité, sécurisation des flux) et les ateliers Méthode TOP® (prévention des RPS, régulation de la charge mentale et adhésion des équipes).
+                Le parcours hybride sur mesure associant la formation pratique aux outils IA (gains de productivité, sécurisation des flux) et les ateliers Méthode TOP® (gestion du changement, concentration et adhésion des équipes).
               </p>
             </div>
             <div className="flex flex-col sm:flex-row gap-3 w-full lg:w-auto shrink-0">
@@ -1373,7 +1404,7 @@ export default function HomePageClient() {
       </section>
 
 
-      {/* ─── 10. FAQ COURTE & ESSENTIELLE ─────────────────────────────────── */}
+      {/* ─── 10. FAQ ESSENTIELLE & COMPLÈTE ─────────────────────────────────── */}
       <section className="py-20 px-4 bg-slate-950 border-b border-slate-800">
         <div className="container mx-auto max-w-5xl">
           
@@ -1405,14 +1436,49 @@ export default function HomePageClient() {
             <div className="p-6 rounded-2xl bg-slate-900 border border-slate-800">
               <h3 className="font-bold text-white text-base mb-2">Comment fonctionne le financement avec notre partenaire Eloq-One ?</h3>
               <p className="text-sm text-slate-400 leading-relaxed">
-                Ô&apos;TOP Formations est un organisme de formation déclaré. Lorsque votre formation est financée par un OPCO ou un FAF, la convention et la facturation sont portées par notre partenaire Eloq-One, organisme certifié Qualiopi. La prise en charge reste soumise à l&apos;accord du financeur.
+                Ô’TOP Formations est un organisme de formation enregistré sous le numéro [NDA] (cet enregistrement ne vaut pas agrément de l’État). Lorsque votre formation est financée par un OPCO, un FAF ou France Travail, la convention et la facturation sont assurées par notre partenaire Eloq-One, organisme certifié Qualiopi. La prise en charge reste soumise à l’accord du financeur.
               </p>
             </div>
 
             <div className="p-6 rounded-2xl bg-slate-900 border border-slate-800">
               <h3 className="font-bold text-white text-base mb-2">À quelles certifications préparent nos formations ?</h3>
               <p className="text-sm text-slate-400 leading-relaxed">
-                Nos formations préparent aux certifications RS6776, RS7344 et RS7351, enregistrées au Répertoire spécifique de France Compétences. Le passage de la certification se fait sur demande, devant un jury. Une fois obtenue, elle atteste de vos compétences auprès de vos clients et partenaires.
+                Nos formations préparent aux certifications RS6776, RS7344 et RS7351, enregistrées au Répertoire spécifique de France Compétences. Le passage de la certification est optionnel, non inclus dans le prix et organisé par notre partenaire Eloq-One ; modalités et tarif sur demande. Une fois obtenue, elle atteste de vos compétences auprès de vos clients et partenaires.
+              </p>
+            </div>
+
+            <div className="p-6 rounded-2xl bg-slate-900 border border-slate-800">
+              <h3 className="font-bold text-white text-base mb-2">Combien de temps pour démarrer ?</h3>
+              <p className="text-sm text-slate-400 leading-relaxed">
+                Vos accès sont envoyés sous 24 h après votre inscription et la validation de votre questionnaire. L’accès aux contenus est illimité dans le temps.
+              </p>
+            </div>
+
+            <div className="p-6 rounded-2xl bg-slate-900 border border-slate-800">
+              <h3 className="font-bold text-white text-base mb-2">Puis-je payer en plusieurs fois ?</h3>
+              <p className="text-sm text-slate-400 leading-relaxed">
+                Oui : par carte bancaire en 1 fois ou en 3 fois sans frais.
+              </p>
+            </div>
+
+            <div className="p-6 rounded-2xl bg-slate-900 border border-slate-800">
+              <h3 className="font-bold text-white text-base mb-2">Puis-je me rétracter ?</h3>
+              <p className="text-sm text-slate-400 leading-relaxed">
+                Si vous vous inscrivez à titre personnel, vous disposez de 14 jours pour vous rétracter. Vous pouvez aussi demander l’accès immédiat à votre formation : vous renoncez alors à ce droit pour les contenus déjà ouverts. Les conditions sont détaillées dans nos CGV.
+              </p>
+            </div>
+
+            <div className="p-6 rounded-2xl bg-slate-900 border border-slate-800">
+              <h3 className="font-bold text-white text-base mb-2">Qui contacter en cas de difficulté ?</h3>
+              <p className="text-sm text-slate-400 leading-relaxed">
+                Mélissa, votre référente pédagogique : contact@otopformations.com ou 07 67 24 68 25. Réponse sous 24 h ouvrées.
+              </p>
+            </div>
+
+            <div className="p-6 rounded-2xl bg-slate-900 border border-slate-800 md:col-span-2">
+              <h3 className="font-bold text-white text-base mb-2">Et si je suis en situation de handicap ?</h3>
+              <p className="text-sm text-slate-400 leading-relaxed">
+                Mélissa, notre référente handicap, étudie avec vous les adaptations possibles : contact@otopformations.com ou 07 67 24 68 25.
               </p>
             </div>
 
@@ -1422,39 +1488,12 @@ export default function HomePageClient() {
       </section>
 
 
-      {/* ─── 11. CTA FINAL : BROCHURE PDF & FORMULAIRE OFFICIEL ───────────── */}
+      {/* ─── 11. FORMULAIRE OFFICIEL DE CONTACT (Brochure masquée jusqu'à nouvelle version) ───────────── */}
       <section id="contact" className="py-16 px-4 bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950">
-        <div className="container mx-auto max-w-4xl mb-12">
-          
-          {/* Lead Magnet Brochure Card */}
-          <div className="p-8 sm:p-10 rounded-3xl bg-slate-900 border border-blue-500/30 flex flex-col sm:flex-row items-center justify-between gap-6 shadow-2xl">
-            <div className="space-y-2 text-center sm:text-left">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/20 text-blue-300 text-xs font-bold uppercase">
-                📄 Brochure Officielle
-              </div>
-              <h3 className="text-xl sm:text-2xl font-bold text-white">
-                Télécharger le programme détaillé des formations (PDF)
-              </h3>
-              <p className="text-xs sm:text-sm text-slate-300 max-w-md">
-                Consultez le syllabus complet, les compétences visées, les modalités d&apos;évaluation et les grilles de prise en charge.
-              </p>
-            </div>
-            <a
-              href="/programme-top.pdf"
-              download
-              className="px-6 py-3.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-bold text-sm border border-slate-700 hover:border-slate-500 transition-all flex items-center gap-2 whitespace-nowrap shadow-lg shrink-0"
-            >
-              <Download size={16} className="text-blue-400" />
-              <span>Télécharger la Brochure PDF</span>
-            </a>
-          </div>
-
+        <div className="container mx-auto max-w-4xl">
+          <GetInTouch />
         </div>
-
-        {/* Contact Form Component (fully compliant with RGPD consent, status selector and optional WhatsApp) */}
-        <GetInTouch />
       </section>
-
 
       {/* ─── 12. FOOTER CONFORME ─────────────────────────────────────────── */}
       <Footer />

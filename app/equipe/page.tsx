@@ -35,9 +35,9 @@ export default function EquipePage() {
             {/* 1. Mélissa */}
             <TeamMemberCard
               position="left"
-              roleTitle="Fondatrice & Formatrice Certifiée TOP®"
+              roleTitle="Présidente & formatrice certifiée TOP® — référente pédagogique et handicap"
               firstName="Mélissa"
-              lastName="JENNADI"
+              lastName="Jennadi"
               imageUrl="/team-melyssa.png"
               description="Rigueur scientifique, sens aigu de la transmission et dévouement absolu pour faire grandir vos équipes et pérenniser votre activité."
               onCtaClick={() => window.open('https://wa.me/33767246825?text=Bonjour%20M%C3%A9lissa%2C%20je%20souhaite%20%C3%A9changer%20avec%20vous.', '_blank')}
@@ -65,15 +65,15 @@ export default function EquipePage() {
               onCtaClick={() => window.open('https://wa.me/33767246825?text=Bonjour%20R%C3%A9gis%2C%20je%20souhaite%20%C3%A9changer%20avec%20vous.', '_blank')}
             />
 
-            {/* 4. Med Aly Garma */}
+            {/* 4. MG */}
             <TeamMemberCard
               position="right"
               roleTitle="Expert Cybersécurité & Résilience IA"
-              firstName="Med Aly"
-              lastName="GARMA"
-              imageUrl="/team-med-aly.jpg"
-              description="Expertise pointue en cybersécurité, résilience des infrastructures critiques et sécurisation avancée des environnements d'intelligence artificielle."
-              onCtaClick={() => window.open('https://wa.me/33767246825?text=Bonjour%20Med%20Aly%2C%20je%20souhaite%20%C3%A9changer%20avec%20vous%20sur%20la%20cybers%C3%A9curit%C3%A9.', '_blank')}
+              firstName="MG"
+              lastName=""
+              imageUrl="/team-mg.jpg"
+              description="Expertise pointue en cybersécurité, résilience des infrastructures critiques et sécurisation avancée des flux d’intelligence artificielle en entreprise."
+              onCtaClick={() => window.open('https://wa.me/33767246825?text=Bonjour%20MG%2C%20je%20souhaite%20%C3%A9changer%20avec%20vous%20sur%20la%20cybers%C3%A9curit%C3%A9.', '_blank')}
             />
           </div>
         </div>
@@ -107,15 +107,15 @@ export default function EquipePage() {
               onCtaClick={() => window.open('https://wa.me/33767246825?text=Bonjour%20Hugo%2C%20je%20souhaite%20%C3%A9changer%20avec%20vous%20sur%20le%20site%20web.', '_blank')}
             />
 
-            {/* 6. Henri - Community Manager */}
+            {/* 6. Julien - Community Manager */}
             <TeamMemberCard
               position="right"
               roleTitle="Community Manager & Social Media"
-              firstName="Henri"
+              firstName="Julien"
               lastName=""
               imageUrl="/team-hamouda.jpg"
               description="Stratège de la communication et des réseaux sociaux. En charge de l'engagement des apprenants, de l'animation de nos communautés et du rayonnement digital de la marque Ô'TOP."
-              onCtaClick={() => window.open('https://wa.me/33767246825?text=Bonjour%20Henri%2C%20je%20souhaite%20%C3%A9changer%20avec%20vous%20sur%20la%20communication.', '_blank')}
+              onCtaClick={() => window.open('https://wa.me/33767246825?text=Bonjour%20Julien%2C%20je%20souhaite%20%C3%A9changer%20avec%20vous%20sur%20la%20communication.', '_blank')}
             />
           </div>
         </div>

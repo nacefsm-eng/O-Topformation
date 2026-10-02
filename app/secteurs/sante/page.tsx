@@ -4,7 +4,7 @@ import Footer from '@/components/Footer';
 
 export const metadata: Metadata = {
   title: "Formation TOP® Santé & Médico-social | Ô'TOP Formations",
-  description: "Formations certifiantes aux Techniques d'Optimisation du Potentiel pour les professionnels de santé, EHPAD et CHU. Prévention du épuisement professionnel et gestion du stress.",
+  description: "Formations professionnelles aux Techniques d'Optimisation du Potentiel pour les professionnels de santé, EHPAD et CHU. Gestion de la pression et récupération active.",
 };
 
 export default function SantePage() {

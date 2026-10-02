@@ -35,7 +35,7 @@ const PREDEFINED_QUESTIONS: PredefinedQA[] = [
     answer:
       "Les Techniques d'Optimisation du Potentiel (TOP®) sont une méthode pédagogique issue du Service de santé des armées et du sport de haut niveau, aujourd'hui largement déployée en entreprise. Elle vous donne des outils concrets de respiration, relaxation et imagerie mentale pour réguler le stress et préserver votre énergie.",
     whatsappMessage:
-      "Bonjour Mélissa, je souhaite découvrir la méthode TOP® (formation FI TOP 21h ou FB-TOP 7h). Pouvez-vous m'en dire plus ?",
+      "Bonjour Mélissa, je souhaite découvrir la méthode TOP® (formation 21h conduite du changement). Pouvez-vous m'en dire plus ?",
   },
   {
     id: 'rdv',
@@ -218,7 +218,7 @@ export default function WhatsAppButton() {
             className="hidden sm:flex items-center gap-2 px-3.5 py-2 rounded-full bg-slate-900 text-white text-xs font-semibold shadow-xl border border-slate-700 hover:border-emerald-500/50 transition cursor-pointer"
           >
             <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-            <span>Discuter avec Mélissa</span>
+            <span>Une question ? Écrivez à Mélissa sur WhatsApp</span>
           </button>
         )}
 

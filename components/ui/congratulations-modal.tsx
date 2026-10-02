@@ -23,7 +23,7 @@ export default function CongratulationsModal({
 }: CongratulationsModalProps) {
   if (!isOpen) return null;
 
-  const displayTitle = courseTitle || trainingTitle || 'Formation Certifiante';
+  const displayTitle = courseTitle || trainingTitle || 'Formation Ô’TOP';
 
   return (
     <AnimatePresence>

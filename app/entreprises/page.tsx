@@ -3,8 +3,11 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: "Solutions Entreprises & Digitalisation — Ô'TOP Formations",
-  description: "Formations IA, réseaux sociaux et Méthode TOP® pour vos équipes, création de sites web et SEO/GEO, digitalisation de vos process.",
+  title: "Solutions Entreprises & Prestations Digitales — Ô’TOP Formations",
+  description: "Formations IA, réseaux sociaux et conduite du changement pour vos équipes. Prestations digitales : création de sites web, automatisation et SEO/GEO.",
+  alternates: {
+    canonical: "https://otopformations.com/entreprises",
+  },
 };
 
 export default function Entreprises() {
@@ -18,20 +21,35 @@ export default function Entreprises() {
             <span>Solutions Entreprises</span>
           </div>
           <span className="badge" style={{ background: 'rgba(205, 175, 93, 0.2)', color: 'var(--gold-light)', border: '1px solid var(--gold)', marginBottom: '1rem' }}>
-            ⏱ Accompagnement B2B &amp; formation professionnelle · Formations financées portées par Eloq-One, certifié Qualiopi
+            ⏱ Accompagnement B2B &amp; formation professionnelle · Partenaire Eloq-One certifié Qualiopi
           </span>
-          <h1 style={{ color: 'white', fontSize: 'clamp(2.3rem, 4.5vw, 3.6rem)', marginBottom: '1.5rem' }}>
+          <h1 style={{ color: 'white', fontSize: 'clamp(2.3rem, 4.5vw, 3.6rem)', marginBottom: '1.5rem', lineHeight: 1.2 }}>
             Accompagnement, formation et solutions digitales pour vos équipes
           </h1>
           <p style={{ color: 'var(--blue-100)', fontSize: '1.2rem', maxWidth: '850px', lineHeight: 1.7, marginBottom: '2.5rem' }}>
             Développez les compétences de vos collaborateurs, automatisez vos processus métiers et préservez l’équilibre de vos équipes avec des solutions concrètes adaptées aux réalités de votre entreprise.
           </p>
-          <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
-            <Link href="/contact?subject=Entreprise_B2B" className="btn btn-primary" style={{ background: 'var(--red-600)', color: 'white', padding: '1rem 2rem', fontWeight: 800 }}>
-              Réserver mon diagnostic gratuit <span style={{ whiteSpace: 'nowrap' }}>15 min ⚡</span>
+          <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', alignItems: 'center' }}>
+            <Link href="/commander?offre=entreprise" className="btn btn-primary" style={{ background: 'var(--red-600)', color: 'white', padding: '1rem 2rem', fontWeight: 800 }}>
+              Demander un devis entreprise →
             </Link>
-            <a href="https://wa.me/33767246825?text=Bonjour%2C%20je%20souhaite%20un%20%C3%A9change%20concernant%20les%20solutions%20entreprises." target="_blank" rel="noopener noreferrer" className="btn btn-ghost" style={{ color: '#25D366', borderColor: '#25D366', background: 'rgba(37,211,102,0.1)' }}>
-              💬 Être rappelé(e) sur WhatsApp
+            <a 
+              href="https://calendly.com/otop-formation" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="btn btn-ghost" 
+              style={{ color: 'white', borderColor: 'rgba(255, 255, 255, 0.4)' }}
+            >
+              Prendre RDV (15 min) ⚡
+            </a>
+            <a 
+              href="https://wa.me/33767246825?text=Bonjour%2C%20je%20souhaite%20un%20%C3%A9change%20concernant%20les%20solutions%20entreprises." 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="btn" 
+              style={{ background: '#25D366', color: 'white', fontWeight: 700 }}
+            >
+              💬 WhatsApp
             </a>
           </div>
         </div>
@@ -41,42 +59,42 @@ export default function Entreprises() {
       <section className="section" style={{ background: 'var(--white)' }}>
         <div className="container">
           <div className="section-header" style={{ textAlign: 'center', maxWidth: '800px', margin: '0 auto 3.5rem' }}>
-            <span className="label">Nos 4 Piliers d'Intervention</span>
-            <h2 style={{ fontSize: '2.4rem', color: 'var(--blue-900)' }}>Un partenaire unique pour votre croissance</h2>
-            <p style={{ color: 'var(--gray-700)', fontSize: '1.05rem', marginTop: '0.5rem' }}>De l&apos;acculturation de vos collaborateurs à l&apos;automatisation technique de vos processus.</p>
+            <span className="label">Nos 4 Piliers d’Intervention</span>
+            <h2 style={{ fontSize: '2.4rem', color: 'var(--blue-900)' }}>Un accompagnement complet pour vos équipes</h2>
+            <p style={{ color: 'var(--gray-700)', fontSize: '1.05rem', marginTop: '0.5rem' }}>De l’acculturation de vos collaborateurs aux prestations digitales sur mesure.</p>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(360px, 1fr))', gap: '2rem', maxWidth: '1100px', margin: '0 auto' }}>
-            {/* Pilier 1 : Digitalisation & Automatisation IA */}
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))', gap: '2rem', maxWidth: '1200px', margin: '0 auto' }}>
+            {/* Pilier 1 : Formation IA & Acculturation Métier */}
             <div className="card" style={{ padding: '2.5rem', borderTop: '5px solid var(--blue-900)', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', height: '100%' }}>
               <div>
                 <div style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>🤖</div>
-                <h3 style={{ color: 'var(--blue-900)', fontSize: '1.35rem', marginBottom: '1rem' }}>1. Digitalisation &amp; Automatisation IA</h3>
+                <h3 style={{ color: 'var(--blue-900)', fontSize: '1.35rem', marginBottom: '1rem' }}>1. Formation IA &amp; Intégration Opérationnelle</h3>
                 <p style={{ color: 'var(--gray-700)', fontSize: '0.95rem', lineHeight: 1.6, marginBottom: '1.5rem' }}>
-                  Fondamentaux de l&apos;IA, prompt engineering avancé et automatisation de vos flux de travail. Nous connectons vos outils, supprimons les tâches chronophages et formons vos équipes à l&apos;utilisation productive et sécurisée de l&apos;IA.
+                  Fondamentaux de l’IA, prompt engineering avancé et intégration dans vos processus métiers. Nous formons vos équipes à l’utilisation productive, responsable et sécurisée de l’IA générative.
                 </p>
               </div>
               <ul style={{ listStyle: 'none', padding: 0, fontSize: '0.9rem', display: 'flex', flexDirection: 'column', gap: '0.6rem', color: 'var(--gray-800)', borderTop: '1px solid var(--gray-200)', paddingTop: '1.25rem', marginTop: 'auto' }}>
-                <li>✓ Fondamentaux de l&apos;IA &amp; cas pratiques immédiats</li>
-                <li>✓ Connexion CRM, facturation &amp; webhooks automatisés (n8n, Make)</li>
-                <li>✓ Création de GPTs et assistants métiers personnalisés</li>
-                <li>✓ Conformité AI Act européen &amp; sécurité des données</li>
+                <li>✓ Fondamentaux de l’IA &amp; cas pratiques immédiats</li>
+                <li>✓ Création de prompts métiers et assistants personnalisés</li>
+                <li>✓ Préparation aux certifications RS6776 ou RS7344 (passage en option)</li>
+                <li>✓ Financement OPCO possible sous réserve d’accord</li>
               </ul>
             </div>
 
-            {/* Pilier 2 : Conduite du Changement & Méthode TOP (Passé en 2e position) */}
+            {/* Pilier 2 : Conduite du Changement & Méthode TOP® */}
             <div className="card" style={{ padding: '2.5rem', borderTop: '5px solid var(--red-600)', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', height: '100%' }}>
               <div>
-                <div style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>🧘</div>
+                <div style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>🧭</div>
                 <h3 style={{ color: 'var(--blue-900)', fontSize: '1.35rem', marginBottom: '1rem' }}>2. Conduite du Changement &amp; Méthode TOP®</h3>
                 <p style={{ color: 'var(--gray-700)', fontSize: '0.95rem', lineHeight: 1.6, marginBottom: '1.5rem' }}>
-                  L&apos;intégration de l&apos;IA bouscule les repères et suscite des craintes de déclassement. Nous associons l&apos;apprentissage des outils aux ateliers Méthode TOP® pour réguler le stress, préserver la lucidité et sécuriser l&apos;adhésion des équipes.
+                  L’intégration de l’IA bouscule les repères et suscite des craintes. Nous associons la montée en compétences techniques aux ateliers Méthode TOP® pour réguler la charge mentale, sécuriser l’adhésion et préserver la lucidité décisionnelle.
                 </p>
               </div>
               <ul style={{ listStyle: 'none', padding: 0, fontSize: '0.9rem', display: 'flex', flexDirection: 'column', gap: '0.6rem', color: 'var(--gray-800)', borderTop: '1px solid var(--gray-200)', paddingTop: '1.25rem', marginTop: 'auto' }}>
                 <li>✓ Accompagnement managérial à la conduite du changement</li>
-                <li>✓ Régulation du stress professionnel &amp; récupération flash</li>
-                <li>✓ Prévention des RPS &amp; lucidité décisionnelle sous pression</li>
+                <li>✓ Gestion de la pression, concentration et adaptabilité</li>
+                <li>✓ Récupération active et maintien de la performance</li>
                 <li>✓ <strong>Offre hybride « IA &amp; Humain » sur devis</strong></li>
               </ul>
             </div>
@@ -85,33 +103,35 @@ export default function Entreprises() {
             <div className="card" style={{ padding: '2.5rem', borderTop: '5px solid #25D366', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', height: '100%' }}>
               <div>
                 <div style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>📱</div>
-                <h3 style={{ color: 'var(--blue-900)', fontSize: '1.35rem', marginBottom: '1rem' }}>3. Communication &amp; Acquisition Social Media</h3>
+                <h3 style={{ color: 'var(--blue-900)', fontSize: '1.35rem', marginBottom: '1rem' }}>3. Communication &amp; Réseaux Sociaux</h3>
                 <p style={{ color: 'var(--gray-700)', fontSize: '0.95rem', lineHeight: 1.6, marginBottom: '1.5rem' }}>
-                  Développez la visibilité de votre entreprise et générez des prospects qualifiés sur LinkedIn, Meta et Google grâce à notre méthodologie de communication digitale et notre cursus préparant à la certification RS7351.
+                  Développez la visibilité de votre entreprise et formez vos équipes à créer du contenu régulier sur LinkedIn, Instagram et Meta.
                 </p>
               </div>
               <ul style={{ listStyle: 'none', padding: 0, fontSize: '0.9rem', display: 'flex', flexDirection: 'column', gap: '0.6rem', color: 'var(--gray-800)', borderTop: '1px solid var(--gray-200)', paddingTop: '1.25rem', marginTop: 'auto' }}>
-                <li>✓ Stratégie éditoriale B2B et calendrier de diffusion</li>
+                <li>✓ Stratégie éditoriale et calendrier de diffusion</li>
                 <li>✓ Création de contenus visuels et vidéo (Canva, CapCut)</li>
-                <li>✓ Prospection LinkedIn ciblée et campagnes Meta Ads maîtrisées</li>
-                <li>✓ Préparation à la certification France Compétences RS7351</li>
+                <li>✓ Prospection LinkedIn ciblée et premières campagnes Meta Ads</li>
+                <li>✓ Préparation à la certification RS7351 (passage en option)</li>
               </ul>
             </div>
 
-            {/* Pilier 4 : Création de Sites & Applications */}
+            {/* Pilier 4 : Prestations digitales (hors formation) */}
             <div className="card" style={{ padding: '2.5rem', borderTop: '5px solid var(--gold-dark)', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', height: '100%' }}>
               <div>
                 <div style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>🚀</div>
-                <h3 style={{ color: 'var(--blue-900)', fontSize: '1.35rem', marginBottom: '1rem' }}>4. Création de Sites &amp; Applications</h3>
+                <h3 style={{ color: 'var(--blue-900)', fontSize: '1.35rem', marginBottom: '1rem' }}>
+                  4. Prestations digitales (hors formation)
+                </h3>
                 <p style={{ color: 'var(--gray-700)', fontSize: '0.95rem', lineHeight: 1.6, marginBottom: '1.5rem' }}>
-                  Conception de plateformes web modernes, sites vitrines premium et applications métier sur mesure conçues pour convertir vos visiteurs en clients.
+                  Sites web, applications sur mesure, SEO/GEO et automatisation de processus — prestations digitales réalisées par nos experts (non finançables par un OPCO).
                 </p>
               </div>
               <ul style={{ listStyle: 'none', padding: 0, fontSize: '0.9rem', display: 'flex', flexDirection: 'column', gap: '0.6rem', color: 'var(--gray-800)', borderTop: '1px solid var(--gray-200)', paddingTop: '1.25rem', marginTop: 'auto' }}>
                 <li>✓ Sites vitrines &amp; tunnels de vente haute conversion</li>
                 <li>✓ Applications web &amp; interfaces métier réactives</li>
-                <li>✓ Référencement naturel (SEO) et visibilité dans les moteurs de réponse IA (GEO)</li>
-                <li>✓ Prestation sur devis (hors financement formation)</li>
+                <li>✓ Connexion CRM, facturation &amp; webhooks automatisés (n8n, Make)</li>
+                <li>✓ Référencement SEO &amp; visibilité dans les moteurs IA (GEO)</li>
               </ul>
             </div>
           </div>
@@ -129,20 +149,20 @@ export default function Entreprises() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2rem' }}>
             <div className="card" style={{ padding: '2rem', textAlign: 'center' }}>
               <div style={{ width: '50px', height: '50px', borderRadius: '50%', background: 'var(--blue-900)', color: 'white', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 1.5rem', fontWeight: 900, fontSize: '1.25rem' }}>1</div>
-              <h4 style={{ color: 'var(--blue-900)', marginBottom: '0.75rem' }}>Audit & Diagnostic Gratuit</h4>
-              <p style={{ fontSize: '0.95rem' }}>Échange de 15 min pour cartographier vos blocages (stress, pertes de temps, manque de visibilité).</p>
+              <h4 style={{ color: 'var(--blue-900)', marginBottom: '0.75rem' }}>Diagnostic de 15 minutes</h4>
+              <p style={{ fontSize: '0.95rem' }}>Échange avec Mélissa ou Renaud pour cartographier vos besoins d’équipe ou de digitalisation.</p>
             </div>
 
             <div className="card" style={{ padding: '2rem', textAlign: 'center' }}>
               <div style={{ width: '50px', height: '50px', borderRadius: '50%', background: 'var(--gold-dark)', color: 'white', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 1.5rem', fontWeight: 900, fontSize: '1.25rem' }}>2</div>
-              <h4 style={{ color: 'var(--blue-900)', marginBottom: '0.75rem' }}>Proposition & Financement</h4>
-              <p style={{ fontSize: '0.95rem' }}>Plan d'action chiffré avec montage de dossier de prise en charge financière (OPCO / FAF / Plan de formation).</p>
+              <h4 style={{ color: 'var(--blue-900)', marginBottom: '0.75rem' }}>Proposition &amp; Convention</h4>
+              <p style={{ fontSize: '0.95rem' }}>Programme sur-mesure et convention établie par notre partenaire Eloq-One, certifié Qualiopi, pour transmission à votre OPCO.</p>
             </div>
 
             <div className="card" style={{ padding: '2rem', textAlign: 'center' }}>
               <div style={{ width: '50px', height: '50px', borderRadius: '50%', background: 'var(--red-600)', color: 'white', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 1.5rem', fontWeight: 900, fontSize: '1.25rem' }}>3</div>
-              <h4 style={{ color: 'var(--blue-900)', marginBottom: '0.75rem' }}>Déploiement & Mesure du ROI</h4>
-              <p style={{ fontSize: '0.95rem' }}>Formation de vos collaborateurs ou livraison clé-en-main de vos outils avec suivi des résultats.</p>
+              <h4 style={{ color: 'var(--blue-900)', marginBottom: '0.75rem' }}>Déploiement &amp; Accompagnement</h4>
+              <p style={{ fontSize: '0.95rem' }}>Formation de vos collaborateurs avec suivi individuel par un expert ou livraison de vos solutions techniques.</p>
             </div>
           </div>
         </div>
@@ -156,20 +176,32 @@ export default function Entreprises() {
             Prenez contact directement avec nos formateurs pour un diagnostic personnalisé de 15 minutes sans engagement.
           </p>
           <div style={{ display: 'flex', justifyContent: 'center', gap: '1rem', flexWrap: 'wrap', marginBottom: '2.5rem' }}>
-            <Link href="/contact" className="btn btn-primary" style={{ background: 'var(--red-600)', color: 'white', padding: '1rem 2.5rem', fontWeight: 800 }}>
-              Réserver mon diagnostic gratuit <span style={{ whiteSpace: 'nowrap' }}>15 min ⚡</span>
+            <Link href="/commander?offre=entreprise" className="btn btn-primary" style={{ background: 'var(--red-600)', color: 'white', padding: '1rem 2.5rem', fontWeight: 800 }}>
+              Demander un devis entreprise →
             </Link>
-            <a href="tel:+33767246825" className="btn btn-ghost" style={{ color: 'white', borderColor: 'rgba(255,255,255,0.4)' }}>
-              📞 Mélissa : 07 67 24 68 25
+            <a 
+              href="https://calendly.com/otop-formation" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="btn btn-ghost" 
+              style={{ color: 'white', borderColor: 'rgba(255,255,255,0.4)' }}
+            >
+              Prendre RDV (15 min) ⚡
             </a>
-            <a href="tel:+33674797509" className="btn btn-ghost" style={{ color: 'white', borderColor: 'rgba(255,255,255,0.4)' }}>
-              📞 Renaud : 06 74 79 75 09
+            <a 
+              href="https://wa.me/33767246825?text=Bonjour%2C%20je%20souhaite%20un%20%C3%A9change%20concernant%20les%20solutions%20entreprises." 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="btn" 
+              style={{ background: '#25D366', color: 'white', fontWeight: 700 }}
+            >
+              💬 WhatsApp
             </a>
           </div>
 
           <div style={{ background: 'rgba(255, 255, 255, 0.08)', borderRadius: '12px', padding: '1rem 1.5rem', textAlign: 'center' }}>
             <p style={{ margin: 0, fontSize: '0.85rem', color: 'rgba(255, 255, 255, 0.75)', lineHeight: 1.5 }}>
-              Ô'TOP Formations intervient avec son partenaire Eloq-One, organisme certifié Qualiopi, qui porte les actions de formation et accompagne les démarches de financement. Les possibilités de prise en charge sont étudiées selon votre statut et restent soumises à l’accord de l’organisme financeur.
+              Pour les formations financées par un OPCO, un FAF ou France Travail, notre partenaire Eloq-One, organisme certifié Qualiopi, établit la convention et assure la facturation. La prise en charge reste soumise à l’accord du financeur.
             </p>
           </div>
         </div>

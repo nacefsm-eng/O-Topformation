@@ -277,7 +277,7 @@ export default function FiTopPage() {
         format="Présentiel à Ollioules ou distanciel synchrone (visioconférence interactive avec Mélissa Jennadi)"
         location="Espace Gamma 1, 139 Chemin des 2 Frères, 83190 Ollioules (Var) ou en ligne"
         certification="Attestation de fin de formation officielle FI TOP® permettant l'accès direct au cursus Praticien TOP"
-        funding="Financement possible OPCO / FAF / FIF-PL porté par notre partenaire certifié Qualiopi Eloq-One"
+        funding="Financement possible OPCO / FAF / FIF-PL. Notre partenaire Eloq-One (certifié Qualiopi) établit la convention et assure la facturation. Formation non éligible au CPF."
         prerequisites="Aucun prérequis médical ou sportif. Formation accessible à tout collaborateur, manager et indépendant."
       />
 

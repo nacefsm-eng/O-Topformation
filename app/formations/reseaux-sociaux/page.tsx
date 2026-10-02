@@ -4,8 +4,11 @@ import Footer from '@/components/Footer';
 import PracticalInfoBlock from '@/components/PracticalInfoBlock';
 
 export const metadata: Metadata = {
-  title: "Formation Préparant à la Certification Réseaux Sociaux (RS7351) — O'TOP Formations",
-  description: "Formation préparant à la certification enregistrée au Répertoire Spécifique France Compétences RS7351 : Structurer et piloter sa communication sur les réseaux sociaux. Canva, CapCut, Meta Business Suite, Waalaxy.",
+  title: "Formation réseaux sociaux préparant à la certification RS7351 | Ô’TOP Formations",
+  description: "Formation réseaux sociaux 100 % en ligne : 21 h dont 2 h d’accompagnement individuel avec un expert. Préparation à la certification RS7351. Financement OPCO / FAF possible.",
+  alternates: {
+    canonical: "https://otopformations.com/formations/reseaux-sociaux",
+  },
 };
 
 export default function FormationReseauxSociauxPage() {
@@ -16,7 +19,7 @@ export default function FormationReseauxSociauxPage() {
         <div className="container">
           <div style={{ maxWidth: '850px' }}>
             <span className="badge" style={{ background: 'rgba(255, 59, 59, 0.2)', color: '#ff8585', border: '1px solid var(--red-600)', marginBottom: '1.25rem' }}>
-              ⏱ Formation préparant à la certification RS7351 (France Compétences)
+              ⏱ Prépare à la certification RS7351 (France Compétences)
             </span>
             <h1 style={{ color: 'white', marginBottom: '0.75rem', fontSize: 'clamp(2.2rem, 4.5vw, 3.5rem)' }}>
               Structurez votre visibilité, attirez des clients et gagnez du temps sur vos réseaux.
@@ -25,29 +28,35 @@ export default function FormationReseauxSociauxPage() {
               Gérer la communication digitale d&apos;une entreprise via les réseaux sociaux (RS7351)
             </p>
             <p style={{ color: 'var(--blue-100)', fontSize: '1.15rem', lineHeight: '1.8', marginBottom: '1.5rem' }}>
-              Une formation pratique pour bâtir une stratégie régulière, produire vos contenus efficacement (visuels, vidéos, textes) et transformer votre audience en opportunités concrètes. 2 h d&apos;accompagnement avec un expert incluses.
+              5 modules • 21 h dont 2 h d’accompagnement • Ateliers concrets sur vos comptes • Prépare à la certification RS7351 • Financement OPCO / FAF possible
             </p>
             <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap', marginBottom: '1.5rem', fontSize: '0.9rem', color: '#cbd5e1' }}>
-              <span>✓ Parcours adapté à votre activité</span>
+              <span>✓ 21 h en ligne, dont 2 h avec un expert</span>
               <span>•</span>
-              <span>✓ Cas pratiques sur vos propres comptes</span>
+              <span>✓ Ateliers concrets sur vos propres comptes</span>
               <span>•</span>
-              <span>✓ Financement étudié avec Eloq-One</span>
+              <span>✓ Financement OPCO / FAF possible</span>
             </div>
             <div style={{ padding: '0.85rem 1.25rem', borderRadius: '12px', background: 'rgba(255, 255, 255, 0.08)', border: '1px solid rgba(255, 255, 255, 0.15)', fontSize: '0.82rem', color: '#93c5fd', marginBottom: '2rem', lineHeight: 1.5 }}>
-              ℹ️ Ô'TOP Formations intervient avec son partenaire Eloq-One, organisme certifié Qualiopi, qui porte les actions de formation et accompagne les démarches de financement. Les possibilités de prise en charge sont étudiées selon votre statut et restent soumises à l’accord de l’organisme financeur.
+              ℹ️ Pour les formations financées par un OPCO, un FAF ou France Travail, notre partenaire Eloq-One, organisme certifié Qualiopi, établit la convention et assure la facturation. La prise en charge reste soumise à l’accord du financeur.
             </div>
             <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', alignItems: 'center' }}>
-              <a 
-                href="https://buy.stripe.com/6oUaEZb2A0WY5qd6w1b7y04" 
+              <Link 
+                href="/commander?offre=rs7351" 
                 className="btn btn-primary" 
-                style={{ background: 'linear-gradient(135deg, #ec4899, #8b5cf6)', color: 'white', fontWeight: 800, padding: '1rem 2rem' }}
+                style={{ background: 'var(--red-600)', color: 'white', fontWeight: 800, padding: '1rem 2rem' }}
               >
-                S&apos;inscrire / Régler en ligne (1 490 €) 💳
-              </a>
-              <Link href="/contact?subject=Reseaux_Sociaux_Diagnostic" className="btn btn-ghost" style={{ color: 'white', borderColor: 'rgba(255, 255, 255, 0.4)' }}>
-                Réserver mon diagnostic gratuit <span style={{ whiteSpace: 'nowrap' }}>15 min ⚡</span>
+                Commencer mon inscription — 1 490 € →
               </Link>
+              <a 
+                href="https://calendly.com/otop-formation" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="btn btn-ghost" 
+                style={{ color: 'white', borderColor: 'rgba(255, 255, 255, 0.4)' }}
+              >
+                Prendre RDV (15 min) ⚡
+              </a>
             </div>
           </div>
         </div>
@@ -65,17 +74,17 @@ export default function FormationReseauxSociauxPage() {
             <div className="card" style={{ padding: '1.5rem' }}>
               <div style={{ fontSize: '2.2rem', fontWeight: 900, color: 'var(--gold-dark)' }}>RS7351</div>
               <p style={{ fontWeight: 600, color: 'var(--gray-700)', margin: '0.25rem 0' }}>France Compétences</p>
-              <span style={{ fontSize: '0.85rem', color: 'var(--gray-500)' }}>Financement OPCO / FAF possible</span>
+              <span style={{ fontSize: '0.85rem', color: 'var(--gray-500)' }}>Préparation à la certification</span>
             </div>
             <div className="card" style={{ padding: '1.5rem' }}>
-              <div style={{ fontSize: '2.2rem', fontWeight: 900, color: 'var(--red-600)' }}>1 h</div>
-              <p style={{ fontWeight: 600, color: 'var(--gray-700)', margin: '0.25rem 0' }}>Mise en Situation</p>
-              <span style={{ fontSize: '0.85rem', color: 'var(--gray-500)' }}>Devant un jury de 2 professionnels</span>
+              <div style={{ fontSize: '2.2rem', fontWeight: 900, color: 'var(--red-600)' }}>100 % en ligne</div>
+              <p style={{ fontWeight: 600, color: 'var(--gray-700)', margin: '0.25rem 0' }}>Accès 24/7</p>
+              <span style={{ fontSize: '0.85rem', color: 'var(--gray-500)' }}>Accès sous 24 h, à vie</span>
             </div>
             <div className="card" style={{ padding: '1.5rem' }}>
-              <div style={{ fontSize: '2.2rem', fontWeight: 900, color: '#25D366' }}>14 / 20</div>
-              <p style={{ fontWeight: 600, color: 'var(--gray-700)', margin: '0.25rem 0' }}>Exigence & Qualité</p>
-              <span style={{ fontSize: '0.85rem', color: 'var(--gray-500)' }}>Note minimale certification</span>
+              <div style={{ fontSize: '2.2rem', fontWeight: 900, color: '#25D366' }}>3x sans frais</div>
+              <p style={{ fontWeight: 600, color: 'var(--gray-700)', margin: '0.25rem 0' }}>3 × 496,67 €</p>
+              <span style={{ fontSize: '0.85rem', color: 'var(--gray-500)' }}>Ou financement OPCO / FAF</span>
             </div>
           </div>
         </div>
@@ -153,13 +162,13 @@ export default function FormationReseauxSociauxPage() {
 
             {/* Certification */}
             <div className="card" style={{ padding: '2rem', border: '2px solid var(--gold)', background: 'linear-gradient(180deg, #ffffff 0%, var(--gray-50) 100%)' }}>
-              <div style={{ color: 'var(--gold-dark)', fontWeight: 800, fontSize: '0.85rem', textTransform: 'uppercase', marginBottom: '0.5rem' }}>Certification Finale</div>
-              <h3 style={{ fontSize: '1.3rem', marginBottom: '1rem', color: 'var(--blue-900)' }}>Certification sur demande (1 h)</h3>
+              <div style={{ color: 'var(--gold-dark)', fontWeight: 800, fontSize: '0.85rem', textTransform: 'uppercase', marginBottom: '0.5rem' }}>Certification en Option</div>
+              <h3 style={{ fontSize: '1.3rem', marginBottom: '1rem', color: 'var(--blue-900)' }}>Certification RS7351 (en option)</h3>
               <p style={{ fontSize: '0.95rem', marginBottom: '1.25rem' }}>
-                Mise en situation professionnelle orale devant un jury de 2 professionnels. Note minimale : 14/20. Certification délivrée par le certificateur Labkom.
+                Certification RS7351 (en option) : présentation de votre dossier de communication devant 2 professionnels du digital. Passage non inclus dans le prix, organisé par notre partenaire Eloq-One ; la certification est délivrée par le certificateur en cas de réussite.
               </p>
               <div style={{ background: 'var(--blue-900)', color: 'white', padding: '0.75rem', borderRadius: 'var(--radius-sm)', fontSize: '0.85rem', textAlign: 'center', fontWeight: 700 }}>
-                🎓 Préparation Certification RS7351 (évaluation facultative sur demande)
+                🎓 Préparation à la Certification RS7351 (passage en option)
               </div>
             </div>
           </div>
@@ -190,9 +199,9 @@ export default function FormationReseauxSociauxPage() {
             </ul>
 
             <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', marginTop: '2.5rem' }}>
-              <Link href="/contact?subject=Partenariat_RS7351" className="btn btn-primary" style={{ background: 'var(--blue-900)' }}>
+              <a href="https://calendly.com/otop-formation" target="_blank" rel="noopener noreferrer" className="btn btn-primary" style={{ background: 'var(--blue-900)' }}>
                 Échanger avec Mélissa et Renaud ⚡
-              </Link>
+              </a>
               <a href="tel:+33767246825" className="btn" style={{ border: '1.5px solid var(--gray-300)', color: 'var(--gray-700)' }}>
                 📞 07 67 24 68 25
               </a>
@@ -203,12 +212,8 @@ export default function FormationReseauxSociauxPage() {
 
       {/* Bloc C5 — Informations Pratiques */}
       <PracticalInfoBlock 
-        duration="21 heures de formation certifiante (dont 2 h d'accompagnement individuel avec un expert)"
-        format="E-learning tutoré, vidéos méthodologiques, ateliers d'application sur vos comptes et suivi personnalisé"
-        location="100% en ligne sur notre plateforme e-learning sécurisée"
-        certification="Gérer la communication digitale d'une entreprise via les réseaux sociaux (RS7351) — Évaluation facultative sur demande : dossier de mise en situation + 2 jurys professionnels"
-        funding="Financement possible OPCO / FAF / FIF-PL porté par notre partenaire certifié Qualiopi Eloq-One"
-        prerequisites="Accessible à tous les porteurs de projet, dirigeants et indépendants souhaitant professionnaliser leur communication."
+        certificationTitle="Gérer la communication digitale d'une entreprise via les réseaux sociaux"
+        certificationCode="RS7351"
       />
 
       {/* CTA Final */}
@@ -216,14 +221,14 @@ export default function FormationReseauxSociauxPage() {
         <div className="container" style={{ maxWidth: '750px' }}>
           <h2 style={{ color: 'white', marginBottom: '1.5rem' }}>Prêt(e) à faire de vos réseaux un véritable levier d&apos;acquisition ?</h2>
           <p style={{ color: 'var(--blue-100)', fontSize: '1.15rem', marginBottom: '2.5rem' }}>
-            Échangez directement avec un formateur pour auditer vos besoins et identifier les financements mobilisables.
+            Inscrivez-vous en ligne en 2 minutes ou prenez rendez-vous pour étudier vos droits de financement.
           </p>
           <div style={{ display: 'flex', justifyContent: 'center', gap: '1rem', flexWrap: 'wrap' }}>
-            <Link href="/contact?subject=Reseaux_Diagnostic" className="btn btn-primary" style={{ background: 'var(--red-600)', color: 'white', padding: '1rem 2.5rem', fontWeight: 800 }}>
-              Réserver mon diagnostic gratuit <span style={{ whiteSpace: 'nowrap' }}>15 min ⚡</span>
+            <Link href="/commander?offre=rs7351" className="btn btn-primary" style={{ background: 'var(--red-600)', color: 'white', padding: '1rem 2.5rem', fontWeight: 800 }}>
+              Commencer mon inscription — 1 490 € →
             </Link>
-            <a href="https://wa.me/33767246825?text=Bonjour%2C%20je%20souhaite%20%C3%AAtre%20rappel%C3%A9%20par%20un%20formateur%20sur%20la%20formation%20R%C3%A9seaux%20Sociaux." target="_blank" rel="noopener noreferrer" className="btn btn-ghost" style={{ color: 'white', borderColor: 'rgba(255,255,255,0.4)' }}>
-              📞 Être rappelé(e) par un formateur
+            <a href="https://calendly.com/otop-formation" target="_blank" rel="noopener noreferrer" className="btn btn-ghost" style={{ color: 'white', borderColor: 'rgba(255,255,255,0.4)' }}>
+              Prendre RDV (15 min) ⚡
             </a>
           </div>
         </div>

@@ -403,7 +403,7 @@ export default function MetroHero({
                 boxShadow: '0 10px 30px rgba(37, 99, 235, 0.4)',
               }}
             >
-              Découvrir nos 3 Formations Certifiantes ➔
+              Découvrir nos formations ➔
             </button>
           </div>
         </div>

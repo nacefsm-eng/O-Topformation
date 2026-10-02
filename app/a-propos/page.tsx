@@ -2,14 +2,14 @@ import React from 'react';
 import Link from 'next/link';
 import Footer from '@/components/Footer';
 import type { Metadata } from 'next';
-import { ShieldCheck, HeartHandshake, Zap, Target, MapPin, Users, Award, ArrowRight } from 'lucide-react';
+import { ShieldCheck, HeartHandshake, Zap } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: "À Propos d'Ô'TOP Formations | Notre Histoire, Mission & Équipe à Ollioules",
+  title: "À Propos d’Ô’TOP Formations | Notre Mission & Équipe",
   description:
-    "Découvrez l'histoire d'Ô'TOP Formations à Ollioules (Var) : la synergie unique entre l'Intelligence Artificielle et la Méthode TOP® (Techniques d'Optimisation du Potentiel) pour développer votre entreprise sans vous épuiser.",
+    "Découvrez Ô’TOP Formations : la synergie entre l’Intelligence Artificielle et la Méthode TOP® (Techniques d’Optimisation du Potentiel) pour développer votre entreprise avec méthode et sérénité.",
   alternates: {
-    canonical: 'https://o-topformation.vercel.app/a-propos',
+    canonical: 'https://otopformations.com/a-propos',
   },
 };
 
@@ -17,17 +17,36 @@ export default function AProposPage() {
   return (
     <main>
       {/* ── HERO BANNER ── */}
-      <section className="page-hero">
+      <section className="page-hero" style={{ background: 'linear-gradient(135deg, var(--blue-900) 0%, #03142e 100%)', color: 'white', padding: '8rem 0 5rem' }}>
         <div className="container">
-          <div className="breadcrumb">
-            <Link href="/">Accueil</Link>
-            <span className="breadcrumb-sep">›</span>
+          <div className="breadcrumb" style={{ color: 'var(--blue-100)', marginBottom: '1.5rem' }}>
+            <Link href="/" style={{ color: 'white' }}>Accueil</Link>
+            <span className="breadcrumb-sep" style={{ margin: '0 0.5rem' }}>›</span>
             <span>À Propos</span>
           </div>
-          <h1>L’IA et l’humain au service d’une performance durable.</h1>
-          <p>
-            Ô'TOP Formations est né d’une conviction simple : le digital doit vous faire gagner du temps, de la clarté et de l’énergie — pas ajouter de la charge mentale.
+          <span className="badge" style={{ background: 'rgba(205, 175, 93, 0.2)', color: 'var(--gold-light)', border: '1px solid var(--gold)', marginBottom: '1rem' }}>
+            Organisme de formation • Ollioules (Var) &amp; 100 % en ligne
+          </span>
+          <h1 style={{ color: 'white', fontSize: 'clamp(2.3rem, 4.5vw, 3.6rem)', marginBottom: '1.5rem', lineHeight: 1.2 }}>
+            L’IA et l’humain au service d’une performance durable.
+          </h1>
+          <p style={{ color: 'var(--blue-100)', fontSize: '1.2rem', maxWidth: '850px', lineHeight: 1.7, marginBottom: '2.5rem' }}>
+            Ô’TOP Formations est né d’une conviction simple : l’IA doit vous faire gagner du temps, de la clarté et de l’efficacité — pas ajouter de la complexité ou de la charge mentale.
           </p>
+          <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', alignItems: 'center' }}>
+            <Link href="/commander?offre=rs6776" className="btn btn-primary" style={{ background: 'var(--red-600)', color: 'white', padding: '1rem 2rem', fontWeight: 800 }}>
+              Commencer mon inscription →
+            </Link>
+            <a 
+              href="https://calendly.com/otop-formation" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="btn btn-ghost" 
+              style={{ color: 'white', borderColor: 'rgba(255, 255, 255, 0.4)' }}
+            >
+              Échanger 15 min avec Mélissa ou Renaud
+            </a>
+          </div>
         </div>
       </section>
 
@@ -40,19 +59,19 @@ export default function AProposPage() {
               Pourquoi nous existons
             </div>
             <h2 className="text-3xl sm:text-4xl font-black text-white tracking-tight">
-              Réconcilier efficacité digitale et sérénité opérationnelle
+              Réconcilier efficacité technologique et adhésion humaine
             </h2>
             <p className="text-slate-200" style={{ color: '#e2e8f0' }}>
-              Dans un quotidien pro saturé, intégrer les bons outils est devenu indispensable, mais cela ne doit pas se faire au détriment de l’équilibre des équipes.
+              Dans un quotidien professionnel saturé, intégrer les bons outils est devenu indispensable, mais cela ne doit pas se faire au détriment de l’équilibre des équipes.
             </p>
             <p className="text-slate-200" style={{ color: '#e2e8f0' }}>
-              Intégrer l&apos;IA change les habitudes et les process. Pour que vos équipes adoptent durablement ces nouvelles pratiques, nous associons nos formations IA à la Méthode TOP® : gestion du stress, concentration et conduite du changement.
+              Intégrer l’IA bouscule les habitudes et les processus. Pour que vos équipes adoptent durablement ces nouvelles pratiques, nous associons nos formations IA à la Méthode TOP® : gestion de la pression, concentration, adaptabilité et conduite du changement.
             </p>
             <p className="text-slate-200" style={{ color: '#e2e8f0' }}>
-              <strong className="text-white" style={{ color: '#ffffff' }}>Notre rôle :</strong> vous donner les clés pour automatiser ce qui doit l’être, structurer vos processus et préserver votre concentration et votre énergie au fil des semaines.
+              <strong className="text-white" style={{ color: '#ffffff' }}>Notre rôle :</strong> vous donner les clés concrètes pour automatiser ce qui doit l’être, structurer vos processus et préserver votre concentration au fil des semaines.
             </p>
-            <div className="p-4 rounded-xl bg-blue-950/40 border border-blue-500/30 text-xs text-blue-200">
-              ℹ️ Ô'TOP Formations intervient avec son partenaire Eloq-One, organisme certifié Qualiopi, qui porte les actions de formation et accompagne les démarches de financement. Les possibilités de prise en charge sont étudiées selon votre statut et restent soumises à l’accord de l’organisme financeur.
+            <div className="p-4 rounded-xl bg-blue-950/40 border border-blue-500/30 text-xs text-blue-200 leading-relaxed">
+              ℹ️ Ô’TOP Formations prépare aux certifications RS6776, RS7344 et RS7351, enregistrées au Répertoire spécifique de France Compétences. Pour les formations financées, conventions et facturation sont assurées par notre partenaire Eloq-One, organisme certifié Qualiopi au titre de la catégorie Actions de formation. Ô’TOP Formations est en cours de certification Qualiopi. Enregistré sous le numéro [NDA] auprès du préfet de région PACA (cet enregistrement ne vaut pas agrément de l’État).
             </div>
           </div>
 
@@ -65,8 +84,8 @@ export default function AProposPage() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent" />
               <div className="absolute bottom-4 left-4 right-4 p-4 rounded-2xl bg-slate-950/85 backdrop-blur-md border border-slate-700 text-xs text-slate-300">
-                <span className="font-bold text-white block mb-0.5">Centre Pédagogique d&apos;Ollioules (Var)</span>
-                Espace Gamma 1, 139 Chemin des 2 Frères • Formations en présentiel &amp; accompagnement à distance partout en France.
+                <span className="font-bold text-white block mb-0.5">Siège social d’Ollioules (Var)</span>
+                Espace Gamma 1, 139 Chemin des 2 Frères, 83190 Ollioules • Formations 100 % en ligne et accompagnement individuel par un expert.
               </div>
             </div>
           </div>
@@ -95,7 +114,7 @@ export default function AProposPage() {
               </div>
               <h3 className="text-xl font-bold text-white">1. Clarté &amp; Pragmatisme</h3>
               <p className="text-slate-300 text-sm leading-relaxed">
-                Pas de jargon inutile. Des cas concrets, des outils configurés directement pour votre métier et du temps libéré dès les premières semaines.
+                Pas de théorie abstraite. Des cas concrets, des outils configurés directement pour votre métier et du temps libéré sur vos tâches récurrentes.
               </p>
             </div>
 
@@ -103,9 +122,9 @@ export default function AProposPage() {
               <div className="w-12 h-12 rounded-2xl bg-amber-500/10 border border-amber-500/20 text-amber-400 flex items-center justify-center">
                 <HeartHandshake size={24} />
               </div>
-              <h3 className="text-xl font-bold text-white">2. Équilibre &amp; Efficacité</h3>
+              <h3 className="text-xl font-bold text-white">2. Adoption &amp; Efficacité</h3>
               <p className="text-slate-300 text-sm leading-relaxed">
-                Des méthodes reconnues (dont la méthode TOP®) pour mieux gérer la pression, maintenir un bon niveau d’énergie et travailler sereinement.
+                La Méthode TOP® pour accompagner le changement et garder la performance et la lucidité des équipes face à l’accélération technologique.
               </p>
             </div>
 
@@ -115,7 +134,7 @@ export default function AProposPage() {
               </div>
               <h3 className="text-xl font-bold text-white">3. Accompagnement Rigoureux</h3>
               <p className="text-slate-300 text-sm leading-relaxed">
-                Un suivi individuel avec nos formateurs et un accompagnement complet dans vos démarches de prise en charge, en partenariat avec Eloq-One, organisme certifié Qualiopi, pour les formations financées.
+                2 h d’accompagnement individuel avec un expert incluses dans chaque parcours, et une aide attentive à l’étude de votre financement.
               </p>
             </div>
 
@@ -124,21 +143,22 @@ export default function AProposPage() {
         </div>
       </section>
 
-      {/* ── SECTION LES FONDATEURS & DIRECTEURS ── */}
+      {/* ── SECTION L’ÉQUIPE ── */}
       <section className="py-20 px-4 bg-slate-900/60 border-b border-slate-800">
         <div className="max-w-5xl mx-auto">
           
           <div className="text-center max-w-3xl mx-auto mb-14">
             <h2 className="text-3xl sm:text-4xl font-black text-white">
-              Une Équipe Passionnée &amp; Joignable
+              Une Équipe d’Experts Joignables
             </h2>
             <p className="mt-2 text-slate-400 text-sm sm:text-base">
-              Pas de centre anonyme : vous échangez directement avec les fondateurs et formateurs référents.
+              Pas de centre anonyme : vous échangez directement avec les formateurs et experts référents.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             
+            {/* Mélissa */}
             <div className="p-8 rounded-3xl bg-slate-950 border border-slate-800 flex flex-col sm:flex-row gap-6 items-center sm:items-start shadow-xl">
               <img
                 src="/team-melyssa.png"
@@ -147,15 +167,16 @@ export default function AProposPage() {
               />
               <div className="space-y-2 text-center sm:text-left">
                 <span className="text-xs font-bold text-amber-400 bg-amber-500/10 px-2.5 py-0.5 rounded-full border border-amber-500/20">
-                  Fondatrice &amp; Formatrice Certifiée TOP®
+                  Présidente &amp; Formatrice Certifiée TOP®
                 </span>
-                <h3 className="text-xl font-bold text-white">Mélissa JENNADI</h3>
+                <h3 className="text-xl font-bold text-white">Mélissa Jennadi</h3>
                 <p className="text-xs text-slate-300 leading-relaxed">
-                  Formatrice certifiée Méthode TOP®, spécialisée dans la gestion du stress et la performance durable des équipes. Référente des dossiers de financement de formation.
+                  Présidente et formatrice certifiée Méthode TOP®, référente pédagogique et référente handicap d’Ô’TOP Formations.
                 </p>
               </div>
             </div>
 
+            {/* Renaud */}
             <div className="p-8 rounded-3xl bg-slate-950 border border-slate-800 flex flex-col sm:flex-row gap-6 items-center sm:items-start shadow-xl">
               <img
                 src="/team-renaud.jpg"
@@ -164,32 +185,34 @@ export default function AProposPage() {
               />
               <div className="space-y-2 text-center sm:text-left">
                 <span className="text-xs font-bold text-blue-400 bg-blue-500/10 px-2.5 py-0.5 rounded-full border border-blue-500/20">
-                  Consultant Expert IA &amp; Systèmes d&apos;Information
+                  Consultant Expert IA &amp; Systèmes d’Information
                 </span>
                 <h3 className="text-xl font-bold text-white">Renaud</h3>
                 <p className="text-xs text-slate-300 leading-relaxed">
-                  Consultant expert en ingénierie et IA générative. Il pilote la conduite du changement, l&apos;acculturation des collaborateurs aux bénéfices concrets de l&apos;IA et l&apos;optimisation des processus opérationnels.
+                  Consultant expert en ingénierie et IA générative. Il pilote la conduite du changement, l’acculturation des équipes et l’optimisation des flux opérationnels.
                 </p>
               </div>
             </div>
 
+            {/* MG */}
             <div className="p-8 rounded-3xl bg-slate-950 border border-slate-800 flex flex-col sm:flex-row gap-6 items-center sm:items-start shadow-xl">
               <img
-                src="/team-med-aly.jpg"
-                alt="Med Aly Garma"
+                src="/team-mg.jpg"
+                alt="MG"
                 className="w-28 h-28 rounded-2xl object-cover border-2 border-cyan-400/40 shrink-0"
               />
               <div className="space-y-2 text-center sm:text-left">
                 <span className="text-xs font-bold text-cyan-400 bg-cyan-500/10 px-2.5 py-0.5 rounded-full border border-cyan-500/20">
                   Expert Cybersécurité &amp; Résilience IA
                 </span>
-                <h3 className="text-xl font-bold text-white">Med Aly GARMA</h3>
+                <h3 className="text-xl font-bold text-white">MG</h3>
                 <p className="text-xs text-slate-300 leading-relaxed">
-                  Expertise pointue en cybersécurité, résilience des infrastructures critiques et sécurisation avancée des flux d&apos;intelligence artificielle en entreprise.
+                  Expert cybersécurité et résilience IA, spécialisé dans la sécurisation des flux de données et la conformité AI Act des entreprises.
                 </p>
               </div>
             </div>
 
+            {/* Régis */}
             <div className="p-8 rounded-3xl bg-slate-950 border border-slate-800 flex flex-col sm:flex-row gap-6 items-center sm:items-start shadow-xl">
               <img
                 src="/team-regis.png"
@@ -198,11 +221,11 @@ export default function AProposPage() {
               />
               <div className="space-y-2 text-center sm:text-left">
                 <span className="text-xs font-bold text-emerald-400 bg-emerald-500/10 px-2.5 py-0.5 rounded-full border border-emerald-500/20">
-                  Formateur certifié Méthode TOP® &amp; Stratégie Opérationnelle
+                  Formateur Certifié Méthode TOP®
                 </span>
                 <h3 className="text-xl font-bold text-white">Régis Domergue</h3>
                 <p className="text-xs text-slate-300 leading-relaxed">
-                  Excellence opérationnelle forgée sur le terrain, sang-froid et vision stratégique pour sécuriser chaque étape de la transition et la gestion quotidienne.
+                  Expert TOP® avec 15 ans de pratique, ancien cadre militaire et spécialiste de la performance mentale sous contrainte.
                 </p>
               </div>
             </div>
@@ -212,24 +235,26 @@ export default function AProposPage() {
           {/* Bannière CTA */}
           <div className="mt-14 p-8 rounded-3xl bg-gradient-to-r from-blue-900/60 via-indigo-900/40 to-slate-900 border border-blue-500/30 text-center space-y-4">
             <h3 className="text-2xl font-black text-white">
-              Prêt à démultiplier vos résultats sans vous épuiser ?
+              Prêt(e) à monter en compétences avec méthode ?
             </h3>
             <p className="text-slate-300 text-sm max-w-xl mx-auto">
-              Réservez votre échange gratuit de 15 minutes avec Mélissa pour concevoir votre parcours et vérifier vos droits de financement.
+              Inscrivez-vous en ligne ou prenez 15 minutes avec Mélissa ou Renaud pour concevoir votre parcours et étudier votre financement.
             </p>
             <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-3">
               <Link
-                href="/contact"
-                className="px-7 py-3.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-sm shadow-xl shadow-blue-600/30 transition-all"
+                href="/commander?offre=rs6776"
+                className="px-7 py-3.5 rounded-xl bg-red-600 hover:bg-red-500 text-white font-bold text-sm shadow-xl shadow-red-600/30 transition-all"
               >
-                Réserver mon diagnostic offert (15 min) →
+                Commencer mon inscription →
               </Link>
-              <Link
-                href="/brochure"
+              <a
+                href="https://calendly.com/otop-formation"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="px-6 py-3.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 font-bold text-sm transition-all"
               >
-                Télécharger la Brochure PDF 📄
-              </Link>
+                Prendre RDV (15 min) ⚡
+              </a>
             </div>
           </div>
 

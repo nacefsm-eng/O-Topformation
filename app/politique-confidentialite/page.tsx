@@ -3,7 +3,11 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: "Politique de Confidentialité",
+  title: "Politique de Confidentialité | Ô’TOP Formations",
+  description: "Politique de protection des données personnelles de la société O’TOP Formation.",
+  alternates: {
+    canonical: 'https://otopformations.com/politique-confidentialite',
+  },
 };
 
 export default function PolitiqueConfidentialite() {
@@ -27,7 +31,7 @@ export default function PolitiqueConfidentialite() {
 
             <div>
               <h2 style={{ fontSize: '1.4rem', marginBottom: '1rem' }}>1. Responsable du traitement</h2>
-              <p>SAS O&apos;TOP FORMATION — Présidente : Mélissa Jennadi — Email : contact@otopformations.fr — Téléphone : 07 67 24 68 25</p>
+              <p>O’TOP Formation, SAS au capital de 1 000 € — Présidente : Melissa-Lola Jennadi — Email : contact@otopformations.com — Téléphone : 07 67 24 68 25</p>
             </div>
 
             <div>
@@ -79,7 +83,7 @@ export default function PolitiqueConfidentialite() {
                 <li>Droit d&apos;opposition</li>
                 <li>Droit de retirer votre consentement à tout moment</li>
               </ul>
-              <p style={{ marginTop: '1rem' }}>Pour exercer ces droits : <a href="mailto:contact@otopformations.fr" style={{ color: 'var(--blue-700)' }}>contact@otopformations.fr</a></p>
+              <p style={{ marginTop: '1rem' }}>Pour exercer ces droits : <a href="mailto:contact@otopformations.com" style={{ color: 'var(--blue-700)' }}>contact@otopformations.com</a></p>
               <p style={{ marginTop: '0.75rem' }}>En cas de réclamation non résolue, vous pouvez saisir la CNIL : <a href="https://www.cnil.fr" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--blue-700)' }}>www.cnil.fr</a></p>
             </div>
 
@@ -89,18 +93,18 @@ export default function PolitiqueConfidentialite() {
               <ul className="check-list">
                 <li><strong>Stripe Inc.</strong> (paiement en ligne sécurisé) — Données bancaires chiffrées, hébergées aux États-Unis sous clauses contractuelles standard (RGPD)</li>
                 <li><strong>Vercel Inc.</strong> (hébergement du site) — San Francisco, CA — Aucune donnée personnelle stockée hors formulaires de contact</li>
-                <li><strong>Eloq-One</strong> (partenaire portage Qualiopi) — Données d&apos;inscription transmises dans le cadre de l&apos;organisation des formations et des dossiers de financement OPCO/FAF</li>
+                <li><strong>Eloq-One</strong> (partenaire certifié Qualiopi) — Données d&apos;inscription transmises dans le cadre de l&apos;établissement des conventions et de la facturation des dossiers de financement OPCO/FAF</li>
                 <li><strong>Google Analytics / Meta Pixel</strong> (mesure d&apos;audience anonymisée) — Données agrégées, sans identification personnelle</li>
               </ul>
             </div>
 
             <div>
               <h2 style={{ fontSize: '1.4rem', marginBottom: '1rem' }}>9. Cookies</h2>
-              <p>Ce site utilise des cookies techniques (nécessaires au fonctionnement), des cookies analytiques (Google Analytics, anonymisés) et des cookies marketing (Meta Pixel, désactivables). Vous pouvez gérer vos préférences via les paramètres de votre navigateur ou en nous contactant.</p>
+              <p>Ce site utilise des cookies techniques (nécessaires au fonctionnement), des cookies analytiques et des cookies marketing. Vous pouvez gérer vos préférences via le gestionnaire de cookies ou en nous contactant.</p>
             </div>
 
             <div style={{ background: 'var(--gray-50)', padding: '1.5rem', borderRadius: 'var(--radius)', border: '1px solid var(--gray-200)' }}>
-              <p style={{ fontSize: '0.85rem', color: 'var(--gray-400)' }}>Dernière mise à jour : Octobre 2026 — SAS O&apos;TOP FORMATION (SIRET 990 443 186 00012)</p>
+              <p style={{ fontSize: '0.85rem', color: 'var(--gray-400)' }}>Dernière mise à jour : 1er octobre 2026 — O’TOP Formation, SAS au capital de 1 000 € (SIRET 990 443 186 00012)</p>
             </div>
           </div>
         </div>

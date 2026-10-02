@@ -25,15 +25,15 @@ const FAQ_ITEMS: FaqItem[] = [
   },
   {
     id: 3,
-    question: "La formation est-elle certifiante ?",
+    question: "Les formations préparent-elles à des certifications officielles ?",
     answer:
-      "À l'issue de la Formation Initiale TOP® (FI TOP®), les stagiaires ayant validé l'évaluation finale (QCM avec un seuil de réussite à 70 %) reçoivent une Attestation de Compétences. Ce document officiel atteste de l'acquisition des compétences liées aux Techniques d'Optimisation du Potentiel. Il est distinct d'une certification inscrite au Répertoire National des Certifications Professionnelles (RNCP) ou au Répertoire Spécifique (RS), mais constitue une preuve reconnue de formation dans le domaine de la préparation mentale et de la gestion du stress.",
+      "Nos parcours en intelligence artificielle et réseaux sociaux préparent aux certifications enregistrées au Répertoire spécifique de France Compétences (RS6776, RS7344, RS7351). Le passage de la certification est optionnel, non inclus dans le prix de la formation et organisé par notre partenaire Eloq-One ; modalités et tarif communiqués sur demande. Pour la Méthode TOP®, une attestation de fin de formation officielle est délivrée.",
   },
   {
     id: 4,
-    question: "Peut-on financer la formation via un OPCO ou le  ?",
+    question: "Comment financer ma formation (OPCO, FAF, France Travail) ?",
     answer:
-      "Oui, plusieurs dispositifs de financement sont mobilisables selon votre situation professionnelle. Les collaborateurs d'entreprise peuvent solliciter leur OPCO (Opérateur de Compétences) dans le cadre du plan de développement des compétences de leur entreprise. Le financement via le  (Compte Personnel de Formation) sera possible dès lors que notre formation sera référencée sur la plateforme OPCO / FAF, ce qui sera engagé après l'obtention de notre NDA et la certification Qualiopi. Les demandeurs d'emploi peuvent se rapprocher de leur conseiller France Travail. Pour toute question sur le financement, contactez-nous directement, nous vous accompagnons dans vos démarches.",
+      "Lorsque votre formation est financée par un OPCO, un FAF ou France Travail, la convention et la facturation sont assurées par notre partenaire Eloq-One, organisme certifié Qualiopi. La prise en charge reste soumise à l’accord du financeur. Nos formations ne sont pas éligibles au CPF. Nous vous accompagnons pas à pas pour constituer votre dossier.",
   },
   {
     id: 5,

@@ -11,26 +11,26 @@ const inter = Inter({ subsets: ['latin', 'latin-ext'], variable: '--font-inter' 
 
 export const metadata: Metadata = {
   title: {
-    template: "%s | Ô'TOP Formations",
-    default: "Ô'TOP Formations | IA Générative, Réseaux Sociaux & Méthode TOP®",
+    template: "%s | Ô’TOP Formations",
+    default: "Ô’TOP Formations | IA, Réseaux Sociaux & Conduite du changement",
   },
   description:
-    "Organisme de formation professionnelle à Ollioules (Var) spécialisé en IA Générative (RS6776), Réseaux Sociaux (RS7351) et Méthode TOP®. Formations certifiantes avec financement possible (OPCO, FAF) et 5h de coaching inclus.",
+    "Formations 100 % en ligne pour indépendants et dirigeants : 21 h dont 2 h d’accompagnement avec un expert. Préparation à 3 certifications RS. Financement OPCO / FAF possible.",
   keywords: [
     'formation TOP', 'Techniques Optimisation Potentiel', 'formation IA', 'ChatGPT',
     'Claude', 'n8n', 'automatisation', 'réseaux sociaux', 'RS6776', 'RS7351', 'RS7344',
-    'gestion du stress', 'préparation mentale', 'financement OPCO', 'FAFCEA', 'FIFPL',
+    'conduite du changement', 'financement OPCO', 'FAFCEA', 'FIFPL',
     'Ollioules', 'Toulon', 'Var', 'PACA'
   ],
-  metadataBase: new URL('https://o-topformation.vercel.app'),
+  metadataBase: new URL('https://otopformations.com'),
   alternates: {
-    canonical: '/',
+    canonical: 'https://otopformations.com',
   },
   openGraph: {
-    title: "Ô'TOP Formations — Formations Certifiantes IA, Digital & Méthode TOP®",
-    description: "Développez votre entreprise avec l'IA et préservez votre énergie grâce aux TOP®. Financement OPCO/FAF étudié selon votre profil avec 5h de coaching inclus.",
-    url: 'https://o-topformation.vercel.app',
-    siteName: "Ô'TOP Formations",
+    title: "Ô’TOP Formations — Formations IA, réseaux sociaux et conduite du changement",
+    description: "Formations IA et réseaux sociaux 100 % en ligne, 2 h d’accompagnement avec un expert incluses. Financement possible avec notre partenaire Eloq-One, certifié Qualiopi.",
+    url: 'https://otopformations.com',
+    siteName: "Ô’TOP Formations",
     locale: 'fr_FR',
     type: 'website',
   },
@@ -41,10 +41,10 @@ const organizationSchema = {
   '@type': 'EducationalOrganization',
   name: "Ô'TOP Formations",
   alternateName: "Ô'TOP Formations",
-  url: 'https://o-topformation.vercel.app',
-  logo: 'https://o-topformation.vercel.app/logo.png',
+  url: 'https://otopformations.com',
+  logo: 'https://otopformations.com/logo.png',
   description:
-    "Organisme de formation certifiante en IA Générative, Réseaux Sociaux et Techniques d'Optimisation du Potentiel (TOP®) à Ollioules (Var, PACA). Financements OPCO, FAF, FIF-PL et .",
+    "Organisme de formation professionnelle en IA, Réseaux Sociaux et Conduite du changement (Méthode TOP®) à Ollioules (Var, PACA). Financement OPCO, FAF, France Travail.",
   address: {
     '@type': 'PostalAddress',
     streetAddress: 'Espace Gamma 1, 139 Chemin des 2 Frères',
@@ -57,7 +57,7 @@ const organizationSchema = {
     {
       '@type': 'ContactPoint',
       telephone: '+33767246825',
-      email: 'formation.rmcf@gmail.com',
+      email: 'contact@otopformations.com',
       contactType: 'customer service',
       areaServed: 'FR',
       availableLanguage: 'French',
@@ -65,6 +65,7 @@ const organizationSchema = {
     {
       '@type': 'ContactPoint',
       telephone: '+33674797509',
+      email: 'contact@otopformations.com',
       contactType: 'technical support',
       areaServed: 'FR',
       availableLanguage: 'French',
@@ -84,23 +85,23 @@ const coursesSchema = {
     {
       '@type': 'Course',
       position: 1,
-      name: 'Formation IA Générative & Automatisation (RS6776)',
-      description: 'Formation certifiante de 21h en intelligence artificielle générative et prompt engineering avec accompagnement expert 1-to-1.',
+      name: 'Formation IA Générative (RS6776)',
+      description: 'Formation de 21 h préparant à la certification RS6776 en intelligence artificielle générative avec 2 h d’accompagnement individuel par un expert.',
       provider: {
         '@type': 'EducationalOrganization',
         name: "Ô'TOP Formations",
-        sameAs: 'https://o-topformation.vercel.app',
+        sameAs: 'https://otopformations.com',
       },
       offers: {
         '@type': 'Offer',
-        price: '1490.00',
+        price: '600.00',
         priceCurrency: 'EUR',
         category: 'Formation professionnelle continue',
         availability: 'https://schema.org/InStock',
       },
       hasCourseInstance: {
         '@type': 'CourseInstance',
-        courseMode: ['Online', 'Blended'],
+        courseMode: ['Online'],
         duration: 'PT21H',
         inLanguage: 'fr',
       },
@@ -108,12 +109,12 @@ const coursesSchema = {
     {
       '@type': 'Course',
       position: 2,
-      name: 'Développer son Activité grâce à l’IA & aux Workflows (RS7344)',
-      description: '21h de formation certifiante pour dirigeants et collaborateurs pour automatiser les flux d’entreprise avec n8n/Make et sécuriser les données.',
+      name: 'Développer son Activité avec l’IA (RS7344)',
+      description: '21 h de formation préparant à la certification RS7344 pour structurer et piloter l’intégration de l’IA en entreprise avec 2 h d’accompagnement.',
       provider: {
         '@type': 'EducationalOrganization',
         name: "Ô'TOP Formations",
-        sameAs: 'https://o-topformation.vercel.app',
+        sameAs: 'https://otopformations.com',
       },
       offers: {
         '@type': 'Offer',
@@ -132,12 +133,12 @@ const coursesSchema = {
     {
       '@type': 'Course',
       position: 3,
-      name: 'Formation Initiale FI-TOP® — Techniques d’Optimisation du Potentiel',
-      description: '21h de formation certifiante aux Techniques d’Optimisation du Potentiel pour réguler le stress, dynamiser son énergie et préserver sa lucidité.',
+      name: 'Conduite du changement — Méthode TOP®',
+      description: '21 h de formation aux Techniques d’Optimisation du Potentiel pour réguler la pression, dynamiser son énergie et préserver sa lucidité décisionnelle.',
       provider: {
         '@type': 'EducationalOrganization',
         name: "Ô'TOP Formations",
-        sameAs: 'https://o-topformation.vercel.app',
+        sameAs: 'https://otopformations.com',
       },
       offers: {
         '@type': 'Offer',

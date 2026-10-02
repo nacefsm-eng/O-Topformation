@@ -2,106 +2,106 @@ import Link from 'next/link';
 
 export default function Footer() {
   return (
-    <footer className="footer">
-      <div className="container">
-        <div className="footer-grid">
+    <footer className="footer bg-[#021435] text-slate-300 pt-16 pb-20 border-t border-slate-800">
+      <div className="container mx-auto px-4 max-w-7xl">
+        <div className="footer-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+          
           {/* Column 1: Brand */}
-          <div className="footer-brand">
-            <img src="/logo.png" alt="Ô'TOP Formations" style={{ height: '52px', width: 'auto', marginBottom: '1rem', objectFit: 'contain' }} />
-            <p>Ô&apos;TOP Formation intervient avec l&apos;organisme partenaire Eloq-One, certifié Qualiopi, qui porte les actions de formation et les démarches de financement. Formations préparant aux certifications enregistrées au Répertoire Spécifique de France Compétences.</p>
-            <p className="footer-brand-tagline">&quot;Former pour transformer : optimiser le potentiel humain &amp; décupler la performance digitale.&quot;</p>
+          <div className="footer-brand space-y-4">
+            <img 
+              src="/logo.png" 
+              alt="Ô'TOP Formations" 
+              style={{ height: '48px', width: 'auto', objectFit: 'contain' }} 
+            />
+            <p className="text-xs text-slate-300 leading-relaxed">
+              Ô’TOP Formations prépare aux certifications RS6776, RS7344 et RS7351, enregistrées au Répertoire spécifique de France Compétences. Formations financées : conventions et facturation assurées par notre partenaire Eloq-One, organisme certifié Qualiopi au titre de la catégorie Actions de formation. Ô’TOP Formations est en cours de certification Qualiopi.
+            </p>
+            <p className="text-xs text-[#38bdf8] font-bold italic">
+              « 2 voix, 1 mission : Former pour transformer. »
+            </p>
             
-            <ul className="footer-contact" style={{ marginTop: '1.5rem', listStyle: 'none', padding: 0 }}>
-              <li style={{ marginBottom: '0.4rem' }}><span>📞</span> <strong>Mélissa (Inscriptions &amp; Diagnostic) :</strong> <a href="tel:+33767246825">07 67 24 68 25</a></li>
-              <li style={{ marginBottom: '0.4rem' }}><span>📞</span> <strong>Renaud (Consultant Expert IA) :</strong> <a href="tel:+33674797509">06 74 79 75 09</a></li>
-              <li style={{ marginBottom: '0.4rem' }}><span>📧</span> <a href="mailto:formation.rmcf@gmail.com">Formation.rmcf@gmail.com</a></li>
-              <li><span>📍</span> Espace Gamma 1, 139 Chemin des 2 Frères, 83190 Ollioules (Var)</li>
+            <ul className="footer-contact space-y-1.5 text-xs text-slate-300 list-none pt-2">
+              <li>📞 <strong>07 67 24 68 25</strong> (Mélissa Jennadi)</li>
+              <li>📧 <a href="mailto:contact@otopformations.com" className="hover:text-white transition">contact@otopformations.com</a></li>
+              <li>📍 Espace Gamma 1, 139 Chemin des 2 Frères, 83190 Ollioules (Var)</li>
             </ul>
 
-            <div style={{ display: 'flex', gap: '0.75rem', marginTop: '1.25rem' }}>
-              <a href="https://www.linkedin.com/in/m%C3%A9lissa-formatrice-top%C2%AE-aa5714380/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" style={{ width: '36px', height: '36px', borderRadius: '8px', background: 'rgba(255,255,255,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'white', fontSize: '0.9rem', transition: 'background 0.2s' }}>in</a>
-              <a href="https://www.instagram.com/otop.formations/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" style={{ width: '36px', height: '36px', borderRadius: '8px', background: 'rgba(255,255,255,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'white', fontSize: '0.75rem', transition: 'background 0.2s' }}>IG</a>
-              <a href="https://www.facebook.com/835767209621029" target="_blank" rel="noopener noreferrer" aria-label="Facebook" style={{ width: '36px', height: '36px', borderRadius: '8px', background: 'rgba(255,255,255,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'white', fontSize: '0.9rem', transition: 'background 0.2s' }}>f</a>
+            <div className="flex gap-2.5 pt-2">
+              <a href="https://www.linkedin.com/in/m%C3%A9lissa-formatrice-top%C2%AE-aa5714380/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="w-8 h-8 rounded-lg bg-white/10 hover:bg-blue-600 flex items-center justify-center text-white text-xs transition">in</a>
+              <a href="https://www.instagram.com/otop.formations/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="w-8 h-8 rounded-lg bg-white/10 hover:bg-pink-600 flex items-center justify-center text-white text-xs transition">IG</a>
+              <a href="https://www.facebook.com/835767209621029" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="w-8 h-8 rounded-lg bg-white/10 hover:bg-blue-700 flex items-center justify-center text-white text-xs transition">f</a>
             </div>
           </div>
 
           {/* Column 2: Formations */}
-          <div className="footer-col">
-            <h4>Formations Certifiantes</h4>
-            <ul className="footer-links">
-              <li><Link href="/formations/fi-top">🧘 FI-TOP® — Gestion du Stress &amp; Prévention des RPS (21h)</Link></li>
-              <li><Link href="/brochure" style={{ color: '#38bdf8', fontWeight: 600 }}>📄 Télécharger la Brochure Officielle</Link></li>
-              <li><Link href="/catalogue" style={{ color: 'var(--gold-light)', fontWeight: 600 }}>✨ Catalogue : Toutes Nos Formations</Link></li>
-              <li><Link href="/formations/ia">🤖 IA pour Dirigeants — RS7344 (21h)</Link></li>
-              <li><Link href="/formations/ia">⚡ IA Générative pour Indépendants — RS6776 (21h)</Link></li>
-              <li><Link href="/formations/reseaux-sociaux">📱 Communication Digitale via Réseaux Sociaux — RS7351 (21h)</Link></li>
-              <li><Link href="/methode">La Méthode TOP® &amp; 9 Piliers</Link></li>
+          <div className="footer-col space-y-3">
+            <h4 className="font-bold text-white text-sm uppercase tracking-wider">Nos formations</h4>
+            <ul className="footer-links space-y-2 text-xs list-none">
+              <li><Link href="/formations/ia#rs6776" className="hover:text-white transition">⚡ IA générative (RS6776) — 600 €</Link></li>
+              <li><Link href="/formations/ia#rs7344" className="hover:text-white transition">🤖 Développer son activité avec l’IA (RS7344)</Link></li>
+              <li><Link href="/formations/reseaux-sociaux" className="hover:text-white transition">📱 Réseaux sociaux (RS7351)</Link></li>
+              <li><Link href="/methode" className="hover:text-white transition">🧭 Méthode TOP® — conduite du changement (21 h)</Link></li>
+              <li><Link href="/catalogue" className="hover:text-white transition font-semibold text-cyan-300">✨ Catalogue et packs dégressifs</Link></li>
+              <li><Link href="/commander" className="hover:text-white transition font-bold text-red-400">💳 Inscription &amp; Paiement en ligne</Link></li>
             </ul>
           </div>
 
           {/* Column 3: Solutions Entreprises */}
-          <div className="footer-col">
-            <h4>Solutions Digitales &amp; B2B</h4>
-            <ul className="footer-links">
-              <li><Link href="/entreprises">Création de Sites Web &amp; Apps</Link></li>
-              <li><Link href="/entreprises">Digitalisation &amp; Automatisation de Process</Link></li>
-              <li><Link href="/entreprises">Formations Intra-Entreprise</Link></li>
-              <li><Link href="/entreprises">Sécurisation des Données &amp; Conformité IA</Link></li>
-              <li><Link href="/contact">Demande de Diagnostic Gratuit</Link></li>
+          <div className="footer-col space-y-3">
+            <h4 className="font-bold text-white text-sm uppercase tracking-wider">Entreprises &amp; prestations</h4>
+            <ul className="footer-links space-y-2 text-xs list-none">
+              <li><Link href="/entreprises" className="hover:text-white transition">Création de Sites &amp; Applications</Link></li>
+              <li><Link href="/entreprises" className="hover:text-white transition">Prestations digitales (hors formation)</Link></li>
+              <li><Link href="/entreprises" className="hover:text-white transition">Formations Intra-Entreprise</Link></li>
+              <li><Link href="/entreprises" className="hover:text-white transition">Sécurisation des Données &amp; Conformité IA</Link></li>
+              <li><Link href="/contact" className="hover:text-white transition">Demander un devis sur mesure</Link></li>
             </ul>
           </div>
 
-          {/* Column 4: Légal & Qualité */}
-          <div className="footer-col">
-            <h4>L&apos;Organisme &amp; Qualité</h4>
-            <ul className="footer-links">
-              <li><Link href="/a-propos">À Propos d&apos;Ô&apos;TOP</Link></li>
-              <li><Link href="/ressources/blog">Blog &amp; Guides Stratégiques</Link></li>
-              <li><Link href="/financement">Financement (OPCO, FAF)</Link></li>
-              <li><Link href="/financement">Démarche Qualité &amp; Handicap</Link></li>
-              <li><Link href="/mentions-legales">Mentions légales</Link></li>
-              <li><Link href="/cgv">CGV</Link></li>
-              <li><Link href="/politique-confidentialite">Politique de confidentialité</Link></li>
-              <li><Link href="/contact">Contact Direct</Link></li>
+          {/* Column 4: Légal, Qualité & Règlements */}
+          <div className="footer-col space-y-3">
+            <h4 className="font-bold text-white text-sm uppercase tracking-wider">Légal &amp; Conformité</h4>
+            <ul className="footer-links space-y-2 text-xs list-none">
+              <li><Link href="/financement" className="hover:text-white transition">Financement (OPCO, FAF, France Travail)</Link></li>
+              <li><Link href="/accessibilite" className="hover:text-white transition">Accessibilité &amp; handicap</Link></li>
+              <li><Link href="/reglement-interieur" className="hover:text-white transition text-cyan-300 font-semibold">Règlement intérieur</Link></li>
+              <li><Link href="/reclamations" className="hover:text-white transition">Réclamations (SLA 2/5 jours)</Link></li>
+              <li><Link href="/mentions-legales" className="hover:text-white transition">Mentions légales</Link></li>
+              <li><Link href="/cgv" className="hover:text-white transition">CGV</Link></li>
+              <li><Link href="/politique-confidentialite" className="hover:text-white transition">Politique de confidentialité</Link></li>
+              <li><Link href="/a-propos" className="hover:text-white transition">À Propos d’Ô’TOP</Link></li>
             </ul>
           </div>
+
         </div>
 
-        {/* Accreditation & Eloq-One Qualiopi Partner Strip */}
-        <div style={{ margin: '2.5rem 0 1.5rem', padding: '1.25rem 1.5rem', borderRadius: '16px', background: 'rgba(255, 255, 255, 0.04)', border: '1px solid rgba(255, 255, 255, 0.1)', display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between', gap: '1.25rem' }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', flex: '1 1 320px' }}>
-            <div style={{ padding: '0.5rem 0.75rem', background: 'white', borderRadius: '8px', color: '#0f172a', fontWeight: 900, fontSize: '0.85rem', letterSpacing: '-0.02em', border: '1.5px solid #2563eb', flexShrink: 0 }}>
-              <span style={{ color: '#0284c7' }}>Eloq-One</span>
-              <span style={{ fontSize: '0.62rem', display: 'block', color: '#475569', fontWeight: 600 }}>CERTIFIÉ QUALIOPI</span>
+        {/* Bloc Partenaire Unique Conforme Qualiopi (Section 5.4) */}
+        <div className="mt-12 p-5 rounded-2xl bg-white/[0.03] border border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div className="flex items-center gap-4">
+            <div className="px-3 py-2 bg-white rounded-lg text-slate-900 font-black text-xs border border-blue-600 shrink-0">
+              <span className="text-[#0284c7]">Eloq-One</span>
+              <span className="block text-[9px] text-slate-600 font-bold uppercase">Certifié Qualiopi</span>
             </div>
             <div>
-              <div style={{ fontWeight: 800, color: 'white', fontSize: '0.9rem' }}>
-                Portage Qualiopi par <a href="https://eloq-one.fr" target="_blank" rel="noopener noreferrer" style={{ color: '#38bdf8', textDecoration: 'underline' }}>Eloq-One</a> • Démarche Financement Accompagnée
+              <div className="font-bold text-white text-xs sm:text-sm">
+                Partenaire financements : Eloq-One (organisme certifié Qualiopi au titre des Actions de formation)
               </div>
-              <div style={{ fontSize: '0.78rem', color: '#94a3b8', lineHeight: 1.4, marginTop: '2px' }}>
-                Financement possible selon votre statut et sous réserve d&apos;acceptation par votre financeur. Dossier accompagné avec notre partenaire certifié Qualiopi Eloq-One.
+              <div className="text-[11px] text-slate-400 mt-0.5">
+                Pour les formations financées (OPCO, FAF, France Travail), Eloq-One établit la convention normée et assure la facturation.
               </div>
             </div>
           </div>
 
-          <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', flexWrap: 'wrap' }}>
-            <span style={{ padding: '0.4rem 0.85rem', borderRadius: '8px', background: 'rgba(56, 189, 248, 0.15)', border: '1px solid rgba(56, 189, 248, 0.3)', color: '#7dd3fc', fontSize: '0.75rem', fontWeight: 700 }}>
-              🇫🇷 France Compétences RS6776
-            </span>
-            <span style={{ padding: '0.4rem 0.85rem', borderRadius: '8px', background: 'rgba(168, 85, 247, 0.15)', border: '1px solid rgba(168, 85, 247, 0.3)', color: '#d8b4fe', fontSize: '0.75rem', fontWeight: 700 }}>
-              🇫🇷 France Compétences RS7351
-            </span>
-            <span style={{ padding: '0.4rem 0.85rem', borderRadius: '8px', background: 'rgba(234, 179, 8, 0.15)', border: '1px solid rgba(234, 179, 8, 0.3)', color: '#fde047', fontSize: '0.75rem', fontWeight: 700 }}>
-              🇫🇷 France Compétences RS7344
-            </span>
+          <div className="shrink-0 text-xs text-slate-400 font-medium">
+            Ô’TOP Formations : en cours de certification Qualiopi
           </div>
         </div>
 
-        <div className="footer-bottom">
-          <p>© 2026 Ô&apos;TOP Formations — SAS O&apos;TOP FORMATION • SIRET 990 443 186 00012 • NAF 8559A • RCS Toulon. Tous droits réservés.</p>
-          <span className="footer-nda" style={{ color: 'var(--gold-light)' }}>
-            Ô&apos;TOP Formation intervient avec son partenaire Eloq-One, organisme certifié Qualiopi, qui porte les actions de formation et accompagne les démarches de financement. Les possibilités de prise en charge sont étudiées selon votre statut et restent soumises à l&apos;accord de l&apos;organisme financeur.
-          </span>
+        {/* Copyright conforme Section 5.4 */}
+        <div className="mt-8 pt-6 border-t border-slate-800/80 text-center text-xs text-slate-400 space-y-2">
+          <p>
+            © 2026 Ô’TOP Formations — O’TOP Formation, SAS au capital de 1 000 € • SIRET 990 443 186 00012 • NAF 8559A • RCS Toulon 990 443 186 • Enregistré sous le numéro [NDA] auprès du préfet de la région Provence-Alpes-Côte d’Azur. Cet enregistrement ne vaut pas agrément de l’État.
+          </p>
         </div>
       </div>
     </footer>

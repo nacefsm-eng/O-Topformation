@@ -1,33 +1,31 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: "Catalogue Formations Certifiantes 2026 : IA, Réseaux Sociaux & Méthode TOP® | Ô'TOP Formations",
+  title: "Catalogue des formations : IA, réseaux sociaux et conduite du changement | Ô’TOP Formations",
   description:
-    "Découvrez notre catalogue officiel 2026 : formations certifiantes en IA Générative (RS6776, 21h), Communication Digitale via Réseaux Sociaux (RS7351, 21h), IA pour Dirigeants (RS7344, 21h) et FI-TOP® Gestion du Stress (21h). Financements OPCO & FAF étudiés selon votre statut.",
+    "Découvrez notre catalogue : formations en IA générative (RS6776), Développer son activité avec l’IA (RS7344), Réseaux sociaux (RS7351) et Conduite du changement (Méthode TOP®). 21 h dont 2 h d’accompagnement avec un expert. Financement OPCO / FAF possible.",
   keywords: [
-    'formation certifiante',
+    'formation IA',
     'formation IA générative',
     'formation RS6776',
     'formation RS7351',
     'formation RS7344',
-    'formation FI-TOP',
-    'gestion du stress',
+    'Méthode TOP',
+    'conduite du changement',
     'financement OPCO',
     'financement FAF',
-    'FIF-PL',
     'Ollioules',
     'Var',
     'PACA',
-    'France Compétences',
   ],
   alternates: {
-    canonical: 'https://o-topformation.vercel.app/catalogue',
+    canonical: 'https://otopformations.com/catalogue',
   },
   openGraph: {
-    title: "Catalogue Formations Certifiantes 2026 | Ô'TOP Formations",
+    title: "Catalogue des formations 2026 | Ô’TOP Formations",
     description:
-      "Formations certifiantes en IA, Réseaux Sociaux, Gestion du Stress (Méthode TOP®) avec 2h d'accompagnement expert incluses. Financements OPCO & FAF étudiés selon votre statut.",
-    url: 'https://o-topformation.vercel.app/catalogue',
+      "Formations en IA, réseaux sociaux et conduite du changement avec 2 h d’accompagnement individuel par un expert. Financement OPCO & FAF possible.",
+    url: 'https://otopformations.com/catalogue',
     type: 'website',
   },
 };
@@ -35,17 +33,17 @@ export const metadata: Metadata = {
 const courseSchema = {
   '@context': 'https://schema.org',
   '@type': 'ItemList',
-  name: "Catalogue Ô'TOP Formations 2026",
+  name: "Catalogue Ô’TOP Formations 2026",
   itemListElement: [
     {
       '@type': 'Course',
       position: 1,
-      name: "Formation FI-TOP® — Gestion du Stress & Prévention des RPS (21h)",
-      description: "Formation de 21h pour maîtriser les 9 leviers de régulation du stress et de prévention des risques psychosociaux avec la Méthode TOP®. Inclut 2h d'accompagnement avec un expert.",
+      name: "Méthode TOP® — Conduite du changement (21 h)",
+      description: "Formation de 21 h pour maîtriser la gestion de la pression, la concentration et la lucidité décisionnelle avec la Méthode TOP®. Inclut 2 h d’accompagnement avec un expert.",
       provider: {
         '@type': 'Organization',
         name: "Ô'TOP Formations",
-        sameAs: 'https://o-topformation.vercel.app',
+        sameAs: 'https://otopformations.com',
       },
       offers: {
         '@type': 'Offer',
@@ -56,28 +54,28 @@ const courseSchema = {
     {
       '@type': 'Course',
       position: 2,
-      name: "RS6776 — Exploiter une IA Générative pour son Activité (21h)",
-      description: "21h de formation certifiante en IA générative : prompt engineering, ChatGPT, Claude, automatisation (n8n, Make). Inclut 2h d'accompagnement avec un expert. Offre promo : 600 €.",
+      name: "RS6776 — IA générative (21 h)",
+      description: "21 h de formation préparant à la certification RS6776 en IA générative : création de contenus, assistants IA, éthique et AI Act. Inclut 2 h d’accompagnement avec un expert. Prix de lancement : 600 €.",
       provider: {
         '@type': 'Organization',
         name: "Ô'TOP Formations",
-        sameAs: 'https://o-topformation.vercel.app',
+        sameAs: 'https://otopformations.com',
       },
       offers: {
         '@type': 'Offer',
-        price: '1490',
+        price: '600',
         priceCurrency: 'EUR',
       },
     },
     {
       '@type': 'Course',
       position: 3,
-      name: "RS7351 — Gérer la Communication Digitale via les Réseaux Sociaux (21h)",
-      description: "21h pour concevoir sa ligne éditoriale, créer du contenu vidéo et prospecter sur LinkedIn. Inclut 2h d'accompagnement avec un expert.",
+      name: "RS7351 — Réseaux sociaux (21 h)",
+      description: "21 h pour concevoir sa ligne éditoriale, créer du contenu visuel et prospecter sur LinkedIn. Préparation à la certification RS7351. Inclut 2 h d’accompagnement avec un expert.",
       provider: {
         '@type': 'Organization',
         name: "Ô'TOP Formations",
-        sameAs: 'https://o-topformation.vercel.app',
+        sameAs: 'https://otopformations.com',
       },
       offers: {
         '@type': 'Offer',
@@ -88,12 +86,12 @@ const courseSchema = {
     {
       '@type': 'Course',
       position: 4,
-      name: "RS7344 — Piloter un Projet de Création de Site Internet (21h)",
-      description: "21h pour lancer un site professionnel responsive, optimisé SEO et sécurisé. Inclut 2h d'accompagnement avec un expert.",
+      name: "RS7344 — Développer son activité avec l’IA (21 h)",
+      description: "21 h pour structurer et piloter l’intégration de l’IA en entreprise. Préparation à la certification RS7344. Inclut 2 h d’accompagnement avec un expert.",
       provider: {
         '@type': 'Organization',
         name: "Ô'TOP Formations",
-        sameAs: 'https://o-topformation.vercel.app',
+        sameAs: 'https://otopformations.com',
       },
       offers: {
         '@type': 'Offer',

@@ -1,7 +1,8 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Mail, Phone, MapPin, Send, MessageCircle, Calendar, ShieldCheck, CheckCircle2 } from 'lucide-react';
+import Link from 'next/link';
+import { Mail, Phone, MapPin, Send, MessageCircle, Calendar, CheckCircle2 } from 'lucide-react';
 import CongratulationsModal from '@/components/ui/congratulations-modal';
 
 export default function GetInTouch() {
@@ -14,6 +15,7 @@ export default function GetInTouch() {
   const [parcours, setParcours] = useState('rs6776');
   const [message, setMessage] = useState('');
   const [rgpdConsent, setRgpdConsent] = useState(false);
+  const [newsletterConsent, setNewsletterConsent] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSent, setIsSent] = useState(false);
   const [showCongrats, setShowCongrats] = useState(false);
@@ -37,7 +39,8 @@ export default function GetInTouch() {
         priorityGoal,
         parcours,
         message,
-        source: 'Formulaire de qualification diagnostic OTOP',
+        newsletterConsent,
+        source: 'Formulaire de diagnostic OTOP',
         submittedAt: new Date().toISOString(),
       };
 
@@ -70,28 +73,28 @@ export default function GetInTouch() {
             {/* Left info column */}
             <div className="lg:col-span-5 space-y-6">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-400/20 text-blue-400 text-xs font-semibold uppercase tracking-wider">
-                ⚡ Diagnostic Individuel Offert (15 min)
+                ⚡ Échange Direct Offert (15 min)
               </div>
 
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white leading-tight">
-                Réservez votre diagnostic de 15 min
+                Échangez 15 min avec Mélissa ou Renaud
               </h2>
 
               <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
-                Un échange direct avec Mélissa ou Renaud pour analyser vos processus et vos besoins. Ô&apos;TOP Formation intervient avec l&apos;organisme partenaire Eloq-One, certifié Qualiopi, qui porte les actions de formation et les démarches de financement.
+                Un échange direct de 15 minutes avec Mélissa ou Renaud pour choisir la bonne formation et étudier votre financement.
               </p>
 
               <div className="space-y-3 pt-2">
                 <a
-                  href="mailto:formation.rmcf@gmail.com"
+                  href="mailto:contact@otopformations.com"
                   className="flex items-center gap-3.5 p-3.5 rounded-2xl bg-slate-800/60 border border-slate-700/60 hover:border-blue-500/50 hover:bg-slate-800 transition-all group"
                 >
                   <div className="w-10 h-10 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400 group-hover:scale-105 transition-transform">
                     <Mail size={18} />
                   </div>
                   <div>
-                    <div className="text-xs text-slate-400 font-medium">Email professionnel direct</div>
-                    <div className="text-sm font-semibold text-white">Formation.rmcf@gmail.com</div>
+                    <div className="text-xs text-slate-400 font-medium">E-mail</div>
+                    <div className="text-sm font-semibold text-white">contact@otopformations.com</div>
                   </div>
                 </a>
 
@@ -100,7 +103,7 @@ export default function GetInTouch() {
                     <Phone size={18} />
                   </div>
                   <div>
-                    <div className="text-xs text-slate-400 font-medium">Lignes directes formateurs</div>
+                    <div className="text-xs text-slate-400 font-medium">Lignes directes</div>
                     <div className="text-sm font-semibold text-white">
                       Mélissa : 07 67 24 68 25 • Renaud : 06 74 79 75 09
                     </div>
@@ -112,22 +115,31 @@ export default function GetInTouch() {
                     <MapPin size={18} />
                   </div>
                   <div>
-                    <div className="text-xs text-slate-400 font-medium">Centre pédagogique &amp; Siège</div>
+                    <div className="text-xs text-slate-400 font-medium">Siège social</div>
                     <div className="text-xs font-medium text-slate-300">Espace Gamma 1, 139 ch. des 2 Frères, 83190 Ollioules (Var)</div>
                   </div>
                 </div>
               </div>
 
-              {/* Optionnel WhatsApp */}
-              <div className="pt-2">
+              {/* Calendly Button & WhatsApp */}
+              <div className="pt-2 flex flex-col sm:flex-row gap-3">
+                <a
+                  href="https://calendly.com/otop-formation"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs transition shadow-lg"
+                >
+                  <Calendar size={15} />
+                  <span>Choisir un créneau (Calendly)</span>
+                </a>
                 <a
                   href="https://wa.me/33767246825?text=Bonjour%20M%C3%A9lissa,%20je%20souhaite%20des%20informations%20sur%20vos%20formations."
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-xs font-semibold text-emerald-400 hover:text-emerald-300 transition-colors"
+                  className="inline-flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-emerald-400 border border-emerald-500/30 text-xs font-bold transition"
                 >
-                  <MessageCircle size={16} />
-                  <span>Vous préférez échanger par WhatsApp ? Cliquez ici</span>
+                  <MessageCircle size={15} />
+                  <span>WhatsApp direct</span>
                 </a>
               </div>
             </div>
@@ -142,11 +154,11 @@ export default function GetInTouch() {
                   </div>
                   <h3 className="text-2xl font-bold text-white">Demande enregistrée avec succès !</h3>
                   <p className="text-sm text-slate-300 max-w-md mx-auto">
-                    Merci {name}. Votre dossier a été transmis à l’équipe pédagogique. Vous recevrez une réponse et votre étude de financement sous 24h ouvrées par email à <strong>{email}</strong>.
+                    Merci {name}. Votre demande a été transmise à Mélissa et Renaud. Nous revenons vers vous sous 24 h ouvrées à l’adresse <strong>{email}</strong>.
                   </p>
                   <button
                     onClick={() => { setIsSent(false); setName(''); setEmail(''); setPhone(''); setMessage(''); }}
-                    className="mt-4 px-6 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-xs font-semibold text-slate-300"
+                    className="mt-4 px-6 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-xs font-semibold text-slate-300 cursor-pointer"
                   >
                     Envoyer une autre demande
                   </button>
@@ -164,21 +176,21 @@ export default function GetInTouch() {
                         required
                         value={name}
                         onChange={(e) => setName(e.target.value)}
-                        placeholder="ex. Sophie Martin"
+                        placeholder="Ex: Jean Dupont"
                         className="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-700/80 text-white placeholder-slate-500 focus:outline-none focus:border-blue-500 text-sm"
                       />
                     </div>
 
                     <div>
                       <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5">
-                        Email professionnel *
+                        Adresse E-mail *
                       </label>
                       <input
                         type="email"
                         required
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
-                        placeholder="sophie.martin@entreprise.fr"
+                        placeholder="contact@votre-entreprise.fr"
                         className="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-700/80 text-white placeholder-slate-500 focus:outline-none focus:border-blue-500 text-sm"
                       />
                     </div>
@@ -187,13 +199,13 @@ export default function GetInTouch() {
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
                       <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5">
-                        Téléphone <span className="text-slate-500">(recommandé pour le diagnostic)</span>
+                        Téléphone <span className="text-slate-500">(facultatif)</span>
                       </label>
                       <input
                         type="tel"
                         value={phone}
                         onChange={(e) => setPhone(e.target.value)}
-                        placeholder="06 XX XX XX XX"
+                        placeholder="06 00 00 00 00"
                         className="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-700/80 text-white placeholder-slate-500 focus:outline-none focus:border-blue-500 text-sm"
                       />
                     </div>
@@ -207,16 +219,15 @@ export default function GetInTouch() {
                         onChange={(e) => setStatut(e.target.value)}
                         className="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-700/80 text-white focus:outline-none focus:border-blue-500 text-sm"
                       >
-                        <option value="independant">Indépendant / Freelance / Libéral</option>
-                        <option value="dirigeant">Dirigeant de TPE / PME</option>
-                        <option value="salarie">Collaborateur d’entreprise</option>
+                        <option value="independant">Indépendant / Freelance / Dirigeant TPE (avec SIRET)</option>
+                        <option value="salarie">Collaborateur / Salarié d’entreprise</option>
+                        <option value="particulier">Particulier (autofinancement)</option>
                         <option value="demandeur">Demandeur d’emploi</option>
                         <option value="autre">Autre statut</option>
                       </select>
                     </div>
                   </div>
 
-                  {/* Nouveaux champs qualification B2B demandés par l'audit */}
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
                       <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5">
@@ -261,12 +272,11 @@ export default function GetInTouch() {
                       onChange={(e) => setParcours(e.target.value)}
                       className="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-700/80 text-white focus:outline-none focus:border-blue-500 text-sm"
                     >
-                      <option value="rs6776">⚡ IA générative : contenus rédactionnels et visuels (RS6776 – 21 h)</option>
-                      <option value="rs7344">⏱ Développer son activité avec l&apos;IA (RS7344 – 21 h)</option>
-                      <option value="rs7351">⏱ Communication digitale &amp; réseaux sociaux (RS7351 – 21 h)</option>
-                      <option value="fi-top">🧘 FI-TOP® (21 h / 3 jours)</option>
-                      <option value="fb-top">⏱ FB-TOP (7 h)</option>
-                      <option value="ia-top">🏢 Offre IA &amp; Méthode TOP® pour vos équipes (sur devis)</option>
+                      <option value="rs6776">⚡ IA générative (RS6776) — 21 h dont 2 h d&apos;accompagnement</option>
+                      <option value="rs7344">🤖 Développer son activité avec l&apos;IA (RS7344) — 21 h</option>
+                      <option value="rs7351">📱 Réseaux sociaux (RS7351) — 21 h</option>
+                      <option value="top">🧭 Méthode TOP® — conduite du changement (21 h)</option>
+                      <option value="ia-top">🏢 Offre IA &amp; Humain pour vos équipes (sur devis)</option>
                       <option value="autre">✨ Autre besoin d’accompagnement sur mesure</option>
                     </select>
                   </div>
@@ -279,23 +289,39 @@ export default function GetInTouch() {
                       rows={2}
                       value={message}
                       onChange={(e) => setMessage(e.target.value)}
-                      placeholder="Votre secteur, vos outils actuels, vos disponibilités pour le créneau de 15 min..."
+                      placeholder="Votre secteur, vos outils actuels, vos disponibilités..."
                       className="w-full px-4 py-2.5 rounded-xl bg-slate-900 border border-slate-700/80 text-white placeholder-slate-500 focus:outline-none focus:border-blue-500 text-sm resize-none"
                     />
                   </div>
 
-                  {/* Case à cocher RGPD Obligatoire */}
-                  <div className="flex items-start gap-3 pt-1">
-                    <input
-                      type="checkbox"
-                      id="rgpd-check"
-                      required
-                      checked={rgpdConsent}
-                      onChange={(e) => setRgpdConsent(e.target.checked)}
-                      className="mt-1 h-4 w-4 rounded border-slate-700 bg-slate-900 text-blue-600 focus:ring-blue-500"
-                    />
-                    <label htmlFor="rgpd-check" className="text-xs text-slate-400 leading-normal cursor-pointer">
-                      J’accepte que les informations saisies soient traitées par SAS Ô’TOP Formation pour me transmettre le diagnostic et l’étude de financement. Conformément au RGPD, vos données restent strictement confidentielles.
+                  {/* Cases à cocher RGPD & Newsletter conformes Section 5.3 */}
+                  <div className="space-y-2 pt-1">
+                    <label className="flex items-start gap-2.5 text-xs text-slate-400 cursor-pointer">
+                      <input
+                        type="checkbox"
+                        required
+                        checked={rgpdConsent}
+                        onChange={(e) => setRgpdConsent(e.target.checked)}
+                        className="mt-0.5 accent-blue-500"
+                      />
+                      <span>
+                        J’accepte que O’TOP Formation traite mes données pour répondre à ma demande (diagnostic, étude de financement). En savoir plus :{' '}
+                        <Link href="/politique-confidentialite" target="_blank" className="text-blue-400 hover:underline">
+                          politique de confidentialité
+                        </Link>.
+                      </span>
+                    </label>
+
+                    <label className="flex items-start gap-2.5 text-xs text-slate-400 cursor-pointer">
+                      <input
+                        type="checkbox"
+                        checked={newsletterConsent}
+                        onChange={(e) => setNewsletterConsent(e.target.checked)}
+                        className="mt-0.5 accent-blue-500"
+                      />
+                      <span>
+                        Je souhaite recevoir les actualités et conseils d’Ô’TOP Formations.
+                      </span>
                     </label>
                   </div>
 
@@ -305,11 +331,11 @@ export default function GetInTouch() {
                     className="w-full py-4 px-6 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-sm flex items-center justify-center gap-2 transition-all shadow-xl shadow-blue-600/30 cursor-pointer disabled:opacity-50"
                   >
                     <Send size={16} />
-                    <span>{isSubmitting ? 'Transmission en cours...' : 'Réserver mon diagnostic gratuit (15 min) →'}</span>
+                    <span>{isSubmitting ? 'Transmission en cours...' : 'Envoyer ma demande →'}</span>
                   </button>
 
                   <p className="text-center text-[11px] text-slate-400">
-                    Financement possible selon votre statut et sous réserve d’acceptation par votre financeur. Dossier accompagné avec notre partenaire certifié Qualiopi Eloq-One.
+                    Financement possible selon votre statut, sous réserve d’accord de votre financeur. Conventions établies par notre partenaire Eloq-One, certifié Qualiopi.
                   </p>
                 </form>
               )}
@@ -320,14 +346,13 @@ export default function GetInTouch() {
         </div>
       </div>
 
-      {/* Pop-up de Félicitations */}
       <CongratulationsModal
         isOpen={showCongrats}
         onClose={() => setShowCongrats(false)}
         candidateName={name}
-        courseTitle="votre diagnostic de formation"
+        courseTitle="votre demande de diagnostic"
         onWhatsAppClick={() => {
-          const formattedMessage = `Bonjour Mélissa (Ô'TOP Formations), je viens de transmettre ma demande de diagnostic (${name}, ${email}). Je souhaite faire le point sur mon projet.`;
+          const formattedMessage = `Bonjour Mélissa (Ô'TOP Formations), je viens de transmettre ma demande (${name}, ${email}). Je souhaite faire le point sur mon projet.`;
           window.open(`https://wa.me/33767246825?text=${encodeURIComponent(formattedMessage)}`, '_blank');
         }}
       />

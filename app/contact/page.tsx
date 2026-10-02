@@ -12,7 +12,7 @@ function ContactContent() {
     email: '',
     telephone: '',
     statut: 'independant',
-    besoin: 'Formation IA Certifiante (RS6776)',
+    besoin: 'IA générative : création de contenus rédactionnels et visuels responsables (RS6776 – 21 h)',
     message: '',
     rgpdConsent: false,
   });
@@ -66,7 +66,7 @@ function ContactContent() {
         setErrorMessage(data.error || 'Une erreur est survenue lors de l\'envoi.');
       }
     } catch {
-      setErrorMessage('Impossible d\'envoyer le message. Vous pouvez nous écrire directement à Formation.rmcf@gmail.com.');
+      setErrorMessage('Impossible d\'envoyer le message. Vous pouvez nous écrire directement à contact@otopformations.com.');
     } finally {
       setIsSubmitting(false);
     }
@@ -105,7 +105,7 @@ function ContactContent() {
               <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
                 {/* Carte Email Officiel */}
                 <a
-                  href="mailto:formation.rmcf@gmail.com"
+                  href="mailto:contact@otopformations.com"
                   className="card"
                   style={{ padding: '1.5rem', display: 'flex', alignItems: 'center', gap: '1.25rem', border: '1.5px solid var(--gray-200)', background: 'white' }}
                 >
@@ -113,7 +113,7 @@ function ContactContent() {
                     ✉️
                   </div>
                   <div>
-                    <div style={{ fontWeight: 800, color: 'var(--blue-900)', fontSize: '1.05rem' }}>Formation.rmcf@gmail.com</div>
+                    <div style={{ fontWeight: 800, color: 'var(--blue-900)', fontSize: '1.05rem' }}>contact@otopformations.com</div>
                     <div style={{ fontSize: '0.85rem', color: 'var(--gray-600)' }}>Email officiel d&apos;accueil & inscriptions</div>
                   </div>
                 </a>
@@ -199,7 +199,7 @@ function ContactContent() {
                           email: '',
                           telephone: '',
                           statut: 'independant',
-                          besoin: 'Formation IA Certifiante (RS6776)',
+                          besoin: 'IA générative : création de contenus rédactionnels et visuels responsables (RS6776 – 21 h)',
                           message: '',
                           rgpdConsent: false,
                         });
@@ -288,9 +288,8 @@ function ContactContent() {
                         <option value="IA générative : création de contenus rédactionnels et visuels responsables (RS6776 – 21 h)">⚡ IA générative : contenus rédactionnels et visuels (RS6776 – 21 h)</option>
                         <option value="Développer son activité avec l'IA (RS7344 – 21 h)">🤖 Développer son activité avec l&apos;IA (RS7344 – 21 h)</option>
                         <option value="Communication digitale & réseaux sociaux (RS7351 – 21 h)">📱 Communication digitale &amp; réseaux sociaux (RS7351 – 21 h)</option>
-                        <option value="FI-TOP® (21 h — gestion du stress & changement)">🧘 FI-TOP® (21 h — gestion du stress &amp; changement)</option>
-                        <option value="FB-TOP (7 h)">⏱️ FB-TOP (7 h)</option>
-                        <option value="Offre IA & Méthode TOP® pour vos équipes (sur devis)">✨ Offre IA &amp; Méthode TOP® pour vos équipes (sur devis)</option>
+                        <option value="Méthode TOP® — conduite du changement (21 h)">🧭 Méthode TOP® — conduite du changement (21 h)</option>
+                        <option value="Offre IA & Humain pour vos équipes (sur devis)">🏢 Offre IA &amp; Humain pour vos équipes (sur devis)</option>
                       </select>
                     </div>
 

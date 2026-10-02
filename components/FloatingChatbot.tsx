@@ -5,11 +5,11 @@ import Link from 'next/link';
 import { MessageCircle, X, Sparkles, Send, CheckCircle2 } from 'lucide-react';
 
 const OTOP_QUESTIONS = [
-  { q: "Quelles sont les formations certifiées ?", a: "Nous proposons 3 formations certifiantes officielles France Compétences : 1. IA Générative pour indépendants (RS6776), 2. Développer son activité avec l'IA (RS7344), 3. Réseaux Sociaux & Social Selling (RS7351), ainsi que la méthode TOP® pour la gestion du stress." },
-  { q: "Quelles sont les modalités de financement ?", a: "Financement possible selon votre statut et sous réserve d'acceptation par votre financeur. Dossier accompagné avec notre partenaire certifié Qualiopi Eloq-One (OPCO, FAF). Mélissa monte votre dossier de prise en charge." },
-  { q: "Y a-t-il un accompagnement humain ?", a: "Oui, absolument ! Nos formations incluent 5h de coaching (individuel ou en petit groupe selon le parcours) avec nos formateurs pour appliquer directement les outils sur votre propre entreprise." },
-  { q: "Je n'ai pas de compétences techniques, est-ce un problème ?", a: "Non, aucun prérequis technique n'est nécessaire. Les parcours sont construits pour les dirigeants, indépendants et collaborateurs, avec des templates prêts à l'emploi et des cas concrets." },
-  { q: "Je veux réserver un diagnostic offert (15 min)", a: "Avec grand plaisir ! Cliquez ci-dessous pour joindre directement Mélissa sur WhatsApp ou réserver votre appel de cadrage." }
+  { q: "Quelles sont vos formations ?", a: "Nous proposons 3 formations préparant aux certifications RS de France Compétences : 1. IA générative (RS6776), 2. Développer son activité avec l'IA (RS7344), 3. Réseaux sociaux (RS7351), ainsi que la formation Conduite du changement — Méthode TOP® (21 h)." },
+  { q: "Quelles sont les modalités de financement ?", a: "Pour les formations financées par un OPCO, un FAF ou France Travail, notre partenaire Eloq-One, certifié Qualiopi, établit la convention et assure la facturation. Prise en charge soumise à l'accord du financeur. Nos formations ne sont pas éligibles au CPF." },
+  { q: "Y a-t-il un accompagnement humain ?", a: "Oui, absolument ! Chaque parcours intègre 2 h d’accompagnement individuel en visioconférence avec un expert pour appliquer les méthodes directement sur vos propres cas d'entreprise." },
+  { q: "Je n'ai pas de compétences techniques, est-ce un problème ?", a: "Non, aucun prérequis technique n'est nécessaire. Les parcours sont construits pour les dirigeants, indépendants et collaborateurs, avec des modèles prêts à l'emploi et des cas concrets." },
+  { q: "Je veux échanger 15 min avec un formateur", a: "Avec grand plaisir ! Cliquez ci-dessous pour joindre directement Mélissa sur WhatsApp ou prendre rendez-vous." }
 ];
 
 export default function FloatingChatbot() {
