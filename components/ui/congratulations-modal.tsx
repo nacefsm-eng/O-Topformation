@@ -70,16 +70,16 @@ export default function CongratulationsModal({
           </div>
 
           {/* Title */}
-          <h2 className="text-2xl sm:text-3xl font-black text-white tracking-tight leading-tight mb-2">
+          <h2 className="text-2xl sm:text-3xl font-black tracking-tight leading-tight mb-2" style={{ color: '#0f172a' }}>
             FÉLICITATIONS !
           </h2>
-          <p className="text-base sm:text-lg font-bold bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent mb-4">
+          <p className="text-base sm:text-lg font-bold bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent mb-4">
             TA CANDIDATURE A BIEN ÉTÉ PRISE EN COMPTE
           </p>
 
-          <p className="text-slate-300 text-sm leading-relaxed mb-6 max-w-md mx-auto">
+          <p className="text-sm leading-relaxed mb-6 max-w-md mx-auto" style={{ color: '#475569' }}>
             {candidateName ? `Merci ${candidateName} ! ` : ''}
-            Votre demande pour <strong>{displayTitle}</strong> est enregistrée. Mélissa et Renaud préparent l&apos;étude de vos financements (OPCO, FIF-PL) sous 24h ouvrées.
+            Votre demande pour <strong style={{ color: '#003492' }}>{displayTitle.toLowerCase().includes('diagnostic') ? 'votre diagnostic personnalisé (15 min)' : displayTitle}</strong> est bien enregistrée. Mélissa et Renaud préparent l&apos;étude de vos financements (OPCO, FIF-PL) sous 24h ouvrées.
           </p>
 
           {/* Action Cards */}
@@ -97,15 +97,17 @@ export default function CongratulationsModal({
 
             <button
               onClick={onClose}
-              className="w-full py-3 px-6 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-700 text-slate-300 font-semibold text-xs sm:text-sm transition-all cursor-pointer"
+              className="w-full py-3 px-6 rounded-xl bg-slate-100 hover:bg-slate-200 border border-slate-300 text-slate-700 font-semibold text-xs sm:text-sm transition-all cursor-pointer"
             >
               Continuer ma visite sur le site
             </button>
           </div>
 
-          <div className="mt-6 pt-4 border-t border-slate-800 text-xs text-slate-400 flex items-center justify-center gap-2">
+          <div className="mt-6 pt-4 border-t border-slate-200 text-xs text-slate-500 flex items-center justify-center gap-2">
             <span>📞 Ligne directe :</span>
-            <strong className="text-white">07 67 24 68 25</strong>
+            <a href="tel:+33767246825" style={{ color: '#003492', fontWeight: 800 }}>
+              07 67 24 68 25
+            </a>
             <span>(Mélissa)</span>
           </div>
         </motion.div>

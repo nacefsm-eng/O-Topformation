@@ -56,7 +56,35 @@ export async function POST(req: NextRequest) {
     db.contacts = [newContact, ...(db.contacts || [])];
     await writeDb(db);
 
-    // Forward vers n8n
+    // 1. Envoi automatique par email direct à Mélissa (formation.rmcf@gmail.com)
+    try {
+      await fetch('https://formsubmit.co/ajax/formation.rmcf@gmail.com', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+        },
+        body: JSON.stringify({
+          _subject: `🎯 Nouvelle demande de diagnostic / contact : ${body.name || body.nom || 'Prospect'}`,
+          _template: 'table',
+          _replyto: body.email || 'formation.rmcf@gmail.com',
+          Nom: body.name || body.nom || 'Non renseigné',
+          Email: body.email || 'Non renseigné',
+          Telephone: body.phone || body.telephone || 'Non renseigné',
+          Statut: body.statut || 'Non renseigné',
+          Parcours: body.track || body.parcours || body.besoin || 'Non renseigné',
+          Objectif: body.priorityGoal || 'Non renseigné',
+          Entreprise: body.companySize || 'Non renseigné',
+          Message: body.message || 'Aucun message spécifique',
+          Source: body.source || 'Formulaire Ô’TOP Formations',
+          Date_Heure: new Date().toLocaleString('fr-FR', { timeZone: 'Europe/Paris' }),
+        }),
+      });
+    } catch (err) {
+      console.warn('Erreur envoi notification email direct:', err);
+    }
+
+    // 2. Forward vers n8n si configuré
     const n8nWebhookUrl = process.env.N8N_WEBHOOK_URL;
     if (n8nWebhookUrl) {
       try {

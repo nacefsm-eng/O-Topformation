@@ -350,9 +350,9 @@ export default function GetInTouch() {
         isOpen={showCongrats}
         onClose={() => setShowCongrats(false)}
         candidateName={name}
-        courseTitle="votre demande de diagnostic"
+        courseTitle="votre diagnostic personnalisé (15 min)"
         onWhatsAppClick={() => {
-          const formattedMessage = `Bonjour Mélissa (Ô'TOP Formations), je viens de transmettre ma demande (${name}, ${email}). Je souhaite faire le point sur mon projet.`;
+          const formattedMessage = `Bonjour Mélissa (Ô'TOP Formations), je viens de soumettre ma demande sur le site :\n\n👤 Nom : ${name}\n📧 Email : ${email}${phone ? `\n📞 Téléphone : ${phone}` : ''}\n🎯 Parcours : ${parcours}\n💼 Statut : ${statut}${message ? `\n💬 Précision : ${message}` : ''}\n\nJe souhaite faire le point sur mon projet et mes financements.`;
           window.open(`https://wa.me/33767246825?text=${encodeURIComponent(formattedMessage)}`, '_blank');
         }}
       />
