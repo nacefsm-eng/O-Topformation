@@ -34,9 +34,15 @@ export default function AdminDashboard() {
   const [authError, setAuthError] = useState('');
   const [authLoading, setAuthLoading] = useState(false);
 
-  const [activeTab, setActiveTab] = useState<'reservations' | 'contacts' | 'documents'>('reservations');
+  const [activeTab, setActiveTab] = useState<'reservations' | 'contacts' | 'documents' | 'students'>('reservations');
   const [contacts, setContacts] = useState<Contact[]>([]);
   const [reservations, setReservations] = useState<Reservation[]>([]);
+  const [students, setStudents] = useState<any[]>([]);
+  const [newStudentEmail, setNewStudentEmail] = useState('');
+  const [newStudentNom, setNewStudentNom] = useState('');
+  const [newStudentPrenom, setNewStudentPrenom] = useState('');
+  const [newStudentCourse, setNewStudentCourse] = useState('rs6776');
+  const [studentActionMsg, setStudentActionMsg] = useState('');
   const [loading, setLoading] = useState(true);
 
   // Vérifier l'authentification au chargement
@@ -60,14 +66,17 @@ export default function AdminDashboard() {
     const fetchData = async () => {
       setLoading(true);
       try {
-        const [cRes, rRes] = await Promise.all([
+        const [cRes, rRes, sRes] = await Promise.all([
           fetch('/api/contact'),
           fetch('/api/reservation'),
+          fetch('/api/admin/students'),
         ]);
         const cData = await cRes.json();
         const rData = await rRes.json();
+        const sData = await sRes.json();
         setContacts((cData.contacts || []).reverse());
         setReservations((rData.reservations || []).reverse());
+        setStudents(sData.students || []);
       } catch {}
       setLoading(false);
     };
@@ -194,6 +203,67 @@ export default function AdminDashboard() {
     );
   };
 
+  const handleAddStudent = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!newStudentEmail) return;
+    try {
+      const res = await fetch('/api/admin/students', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          action: 'create_manual',
+          email: newStudentEmail,
+          nom: newStudentNom,
+          prenom: newStudentPrenom,
+          courseId: newStudentCourse,
+        }),
+      });
+      const data = await res.json();
+      if (data.success) {
+        setStudentActionMsg('✅ Stagiaire ajouté avec succès !');
+        setNewStudentEmail('');
+        setNewStudentNom('');
+        setNewStudentPrenom('');
+        // Recharger stagiaires
+        const sRes = await fetch('/api/admin/students');
+        const sData = await sRes.json();
+        setStudents(sData.students || []);
+      } else {
+        setStudentActionMsg(`⚠️ ${data.error}`);
+      }
+    } catch {
+      setStudentActionMsg('⚠️ Erreur lors de l’ajout du stagiaire.');
+    }
+  };
+
+  const handleAddCourse = async (studentId: string, courseId: string) => {
+    try {
+      const res = await fetch('/api/admin/students', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ action: 'add_course', studentId, courseId }),
+      });
+      const data = await res.json();
+      if (data.success) {
+        setStudentActionMsg('✅ Formation attribuée avec succès !');
+        const sRes = await fetch('/api/admin/students');
+        const sData = await sRes.json();
+        setStudents(sData.students || []);
+      }
+    } catch {
+      setStudentActionMsg('⚠️ Erreur lors de l’attribution de la formation.');
+    }
+  };
+
+  const handleDeleteStudent = async (studentId: string) => {
+    if (!confirm('Supprimer définitivement ce compte stagiaire ?')) return;
+    try {
+      await fetch(`/api/admin/students?id=${studentId}`, { method: 'DELETE' });
+      setStudents(students.filter((s) => s.id !== studentId));
+      setStudentActionMsg('Stagiaire supprimé.');
+    } catch {}
+  };
+
   return (
     <div style={{ minHeight: '100vh', background: '#f1f5f9', fontFamily: 'Inter, system-ui, sans-serif' }}>
       {/* Header */}
@@ -207,6 +277,7 @@ export default function AdminDashboard() {
         </div>
         <div style={{ display: 'flex', gap: '0.75rem' }}>
           <a href="/admin/studio" style={{ background: 'var(--gold)', color: 'var(--blue-900)', padding: '0.5rem 1rem', borderRadius: '8px', textDecoration: 'none', fontSize: '0.85rem', fontWeight: 700 }}>🤖 Content Studio</a>
+          <a href="/mon-espace" target="_blank" style={{ background: '#2563eb', color: 'white', padding: '0.5rem 1rem', borderRadius: '8px', textDecoration: 'none', fontSize: '0.85rem', fontWeight: 700 }}>🎓 Espace Stagiaire</a>
           <a href="/contact" style={{ background: 'rgba(255,255,255,0.12)', color: 'white', padding: '0.5rem 1rem', borderRadius: '8px', textDecoration: 'none', fontSize: '0.85rem', fontWeight: 600 }}>Site public</a>
           <button onClick={handleLogout} style={{ background: 'rgba(239,68,68,0.2)', color: '#fca5a5', padding: '0.5rem 1rem', borderRadius: '8px', border: '1px solid rgba(239,68,68,0.3)', fontSize: '0.85rem', fontWeight: 600, cursor: 'pointer' }}>🚪 Déconnexion</button>
         </div>
@@ -215,7 +286,11 @@ export default function AdminDashboard() {
       {/* Stats */}
       <div style={{ padding: '2rem', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1rem', maxWidth: '1200px', margin: '0 auto' }}>
         <div style={{ background: 'white', padding: '1.5rem', borderRadius: '12px', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', borderLeft: '4px solid #1a3c8f' }}>
-          <div style={{ fontSize: '2.5rem', fontWeight: 800, color: '#1a3c8f' }}>{reservations.length}</div>
+          <div style={{ fontSize: '2.5rem', fontWeight: 800, color: '#1a3c8f' }}>{students.length}</div>
+          <div style={{ fontSize: '0.9rem', color: '#64748b', marginTop: '0.25rem' }}>Stagiaires inscrits</div>
+        </div>
+        <div style={{ background: 'white', padding: '1.5rem', borderRadius: '12px', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', borderLeft: '4px solid #10b981' }}>
+          <div style={{ fontSize: '2.5rem', fontWeight: 800, color: '#10b981' }}>{reservations.length}</div>
           <div style={{ fontSize: '0.9rem', color: '#64748b', marginTop: '0.25rem' }}>Réservations totales</div>
         </div>
         <div style={{ background: 'white', padding: '1.5rem', borderRadius: '12px', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', borderLeft: '4px solid #f59e0b' }}>
@@ -231,6 +306,9 @@ export default function AdminDashboard() {
       {/* Tabs */}
       <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 2rem' }}>
         <div style={{ display: 'flex', gap: '0', background: 'white', borderRadius: '10px', overflow: 'hidden', marginBottom: '1.5rem', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', width: 'fit-content' }}>
+          <button onClick={() => setActiveTab('students')} style={{ padding: '0.8rem 1.75rem', border: 'none', cursor: 'pointer', fontWeight: 700, fontSize: '0.9rem', background: activeTab === 'students' ? '#1a3c8f' : 'white', color: activeTab === 'students' ? 'white' : '#64748b', transition: 'all 0.2s' }}>
+            🎓 Stagiaires &amp; Accès ({students.length})
+          </button>
           <button onClick={() => setActiveTab('reservations')} style={{ padding: '0.8rem 1.75rem', border: 'none', cursor: 'pointer', fontWeight: 700, fontSize: '0.9rem', background: activeTab === 'reservations' ? '#1a3c8f' : 'white', color: activeTab === 'reservations' ? 'white' : '#64748b', transition: 'all 0.2s' }}>
             📅 Réservations ({reservations.length})
           </button>
@@ -243,6 +321,160 @@ export default function AdminDashboard() {
         </div>
 
         {loading && <p style={{ color: '#64748b', textAlign: 'center', padding: '3rem' }}>Chargement...</p>}
+
+        {/* STUDENTS TAB */}
+        {!loading && activeTab === 'students' && (
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+            
+            {studentActionMsg && (
+              <div style={{ padding: '0.85rem 1.25rem', borderRadius: '10px', background: '#ecfdf5', border: '1px solid #a7f3d0', color: '#065f46', fontSize: '0.9rem', fontWeight: 600 }}>
+                {studentActionMsg}
+              </div>
+            )}
+
+            {/* Inscription manuelle */}
+            <div style={{ background: 'white', padding: '1.5rem', borderRadius: '12px', boxShadow: '0 1px 3px rgba(0,0,0,0.06)' }}>
+              <h3 style={{ fontSize: '1.1rem', fontWeight: 800, color: '#1e293b', marginBottom: '0.5rem' }}>
+                ➕ Inscrire un Stagiaire Manuellement
+              </h3>
+              <p style={{ color: '#64748b', fontSize: '0.85rem', marginBottom: '1.25rem' }}>
+                Créez un compte pour un stagiaire financé (OPCO, FAF, France Travail) ou un client ayant réglé par virement.
+              </p>
+
+              <form onSubmit={handleAddStudent} style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '0.75rem', alignItems: 'flex-end' }}>
+                <div>
+                  <label style={{ display: 'block', fontSize: '0.78rem', fontWeight: 700, color: '#475569', marginBottom: '0.35rem' }}>Prénom</label>
+                  <input
+                    type="text"
+                    required
+                    value={newStudentPrenom}
+                    onChange={(e) => setNewStudentPrenom(e.target.value)}
+                    placeholder="Jean"
+                    style={{ width: '100%', padding: '0.65rem 0.85rem', borderRadius: '8px', border: '1px solid #cbd5e1', fontSize: '0.85rem', boxSizing: 'border-box' }}
+                  />
+                </div>
+                <div>
+                  <label style={{ display: 'block', fontSize: '0.78rem', fontWeight: 700, color: '#475569', marginBottom: '0.35rem' }}>Nom</label>
+                  <input
+                    type="text"
+                    required
+                    value={newStudentNom}
+                    onChange={(e) => setNewStudentNom(e.target.value)}
+                    placeholder="Dupont"
+                    style={{ width: '100%', padding: '0.65rem 0.85rem', borderRadius: '8px', border: '1px solid #cbd5e1', fontSize: '0.85rem', boxSizing: 'border-box' }}
+                  />
+                </div>
+                <div>
+                  <label style={{ display: 'block', fontSize: '0.78rem', fontWeight: 700, color: '#475569', marginBottom: '0.35rem' }}>Email</label>
+                  <input
+                    type="email"
+                    required
+                    value={newStudentEmail}
+                    onChange={(e) => setNewStudentEmail(e.target.value)}
+                    placeholder="jean.dupont@entreprise.fr"
+                    style={{ width: '100%', padding: '0.65rem 0.85rem', borderRadius: '8px', border: '1px solid #cbd5e1', fontSize: '0.85rem', boxSizing: 'border-box' }}
+                  />
+                </div>
+                <div>
+                  <label style={{ display: 'block', fontSize: '0.78rem', fontWeight: 700, color: '#475569', marginBottom: '0.35rem' }}>Formation initiale</label>
+                  <select
+                    value={newStudentCourse}
+                    onChange={(e) => setNewStudentCourse(e.target.value)}
+                    style={{ width: '100%', padding: '0.65rem 0.85rem', borderRadius: '8px', border: '1px solid #cbd5e1', fontSize: '0.85rem', boxSizing: 'border-box', background: 'white' }}
+                  >
+                    <option value="rs6776">IA Générative (RS6776)</option>
+                    <option value="rs7344">Développer son activité IA (RS7344)</option>
+                    <option value="rs7351">Réseaux Sociaux (RS7351)</option>
+                    <option value="top">Méthode TOP® (21h)</option>
+                  </select>
+                </div>
+                <button
+                  type="submit"
+                  style={{ padding: '0.7rem 1.25rem', borderRadius: '8px', background: '#1a3c8f', color: 'white', fontWeight: 700, fontSize: '0.85rem', border: 'none', cursor: 'pointer', height: '38px' }}
+                >
+                  Ajouter le stagiaire →
+                </button>
+              </form>
+            </div>
+
+            {/* Liste des stagiaires */}
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+              {students.length === 0 ? (
+                <div style={{ background: 'white', padding: '3rem', borderRadius: '12px', textAlign: 'center', color: '#94a3b8' }}>
+                  <div style={{ fontSize: '3rem', marginBottom: '1rem' }}>🎓</div>
+                  <p style={{ margin: 0 }}>Aucun stagiaire inscrit pour le moment.</p>
+                </div>
+              ) : (
+                students.map((s) => (
+                  <div key={s.id} style={{ background: 'white', padding: '1.5rem', borderRadius: '12px', boxShadow: '0 1px 3px rgba(0,0,0,0.06)', display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', gap: '1.5rem', flexWrap: 'wrap' }}>
+                    <div style={{ display: 'flex', alignItems: 'flex-start', gap: '1.25rem' }}>
+                      <div style={{ width: '52px', height: '52px', background: '#e0e7ff', color: '#3730a3', borderRadius: '14px', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.2rem', fontWeight: 800, flexShrink: 0 }}>
+                        {s.prenom?.[0] || 'S'}{s.nom?.[0] || 'T'}
+                      </div>
+                      <div>
+                        <div style={{ fontWeight: 800, fontSize: '1.05rem', color: '#1e293b' }}>
+                          {s.prenom} {s.nom}
+                        </div>
+                        <div style={{ fontSize: '0.85rem', color: '#64748b', marginTop: '0.15rem' }}>
+                          {s.email} • Créé le {formatDate(s.createdAt)}
+                        </div>
+
+                        {/* Formations assignées */}
+                        <div style={{ marginTop: '0.75rem', display: 'flex', flexWrap: 'wrap', gap: '0.5rem', alignItems: 'center' }}>
+                          <span style={{ fontSize: '0.78rem', fontWeight: 700, color: '#475569' }}>Formations actives :</span>
+                          {(s.courses || []).map((c: any) => (
+                            <span key={c.id} style={{ background: '#ecfdf5', color: '#065f46', border: '1px solid #a7f3d0', fontSize: '0.75rem', fontWeight: 700, padding: '0.2rem 0.6rem', borderRadius: '50px' }}>
+                              ✓ {c.title} ({c.progress || 0}%)
+                            </span>
+                          ))}
+                        </div>
+
+                        {/* Attribuer une nouvelle formation */}
+                        <div style={{ marginTop: '0.6rem', display: 'flex', flexWrap: 'wrap', gap: '0.4rem' }}>
+                          <button onClick={() => handleAddCourse(s.id, 'rs6776')} style={{ background: '#f1f5f9', border: '1px solid #cbd5e1', padding: '0.25rem 0.5rem', borderRadius: '6px', fontSize: '0.72rem', cursor: 'pointer', fontWeight: 600 }}>
+                            + IA RS6776
+                          </button>
+                          <button onClick={() => handleAddCourse(s.id, 'rs7344')} style={{ background: '#f1f5f9', border: '1px solid #cbd5e1', padding: '0.25rem 0.5rem', borderRadius: '6px', fontSize: '0.72rem', cursor: 'pointer', fontWeight: 600 }}>
+                            + IA RS7344
+                          </button>
+                          <button onClick={() => handleAddCourse(s.id, 'rs7351')} style={{ background: '#f1f5f9', border: '1px solid #cbd5e1', padding: '0.25rem 0.5rem', borderRadius: '6px', fontSize: '0.72rem', cursor: 'pointer', fontWeight: 600 }}>
+                            + RS7351 Réseaux
+                          </button>
+                          <button onClick={() => handleAddCourse(s.id, 'top')} style={{ background: '#f1f5f9', border: '1px solid #cbd5e1', padding: '0.25rem 0.5rem', borderRadius: '6px', fontSize: '0.72rem', cursor: 'pointer', fontWeight: 600 }}>
+                            + FI-TOP®
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: '0.75rem', flexShrink: 0 }}>
+                      <div style={{ display: 'flex', gap: '0.5rem' }}>
+                        <a
+                          href={`https://wa.me/33767246825?text=Bonjour%20${encodeURIComponent(s.prenom)}%2C%20bienvenue%20sur%20votre%20espace%20de%20formation%20%C3%94'TOP.`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          style={{ background: '#25D366', color: 'white', padding: '0.4rem 0.9rem', borderRadius: '8px', textDecoration: 'none', fontSize: '0.8rem', fontWeight: 700 }}
+                        >
+                          💬 WhatsApp
+                        </a>
+                        <button
+                          onClick={() => handleDeleteStudent(s.id)}
+                          style={{ background: '#fee2e2', color: '#991b1b', border: '1px solid #fecaca', padding: '0.4rem 0.8rem', borderRadius: '8px', fontSize: '0.8rem', fontWeight: 600, cursor: 'pointer' }}
+                        >
+                          🗑️ Révoquer
+                        </button>
+                      </div>
+                      <div style={{ fontSize: '0.75rem', color: '#94a3b8' }}>
+                        Méthode : {s.authProvider || 'password'}
+                      </div>
+                    </div>
+                  </div>
+                ))
+              )}
+            </div>
+
+          </div>
+        )}
 
         {/* Reservations */}
         {!loading && activeTab === 'reservations' && (

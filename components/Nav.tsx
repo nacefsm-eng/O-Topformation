@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import ThemeToggle from '@/components/ThemeToggle';
-import { Phone, Mail, Calendar, ArrowRight } from 'lucide-react';
+import { Phone, Mail, Calendar, ArrowRight, Lock } from 'lucide-react';
 
 const formationsLinks = [
   { 
@@ -179,8 +179,16 @@ export default function Nav() {
             </li>
           </ul>
 
-          {/* Desktop Actions : Calendly RDV + Bouton Rouge Inscription + Theme Toggle */}
+          {/* Desktop Actions : Calendly RDV + Bouton Rouge Inscription + Espace Stagiaire + Theme Toggle */}
           <div className="nav-actions" style={{ display: 'flex', alignItems: 'center', gap: '0.65rem' }}>
+            <Link
+              href="/connexion"
+              className="hidden lg:inline-flex items-center gap-1.5 px-3 py-2 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-300 hover:text-white text-xs font-semibold border border-slate-700/80 transition"
+            >
+              <Lock size={12} className="text-cyan-400" />
+              <span>Espace Stagiaire</span>
+            </Link>
+
             <a
               href="https://calendly.com/otop-formation"
               target="_blank"
@@ -258,6 +266,13 @@ export default function Nav() {
           <li><Link href="/contact" onClick={() => setMobileOpen(false)} style={{ color: 'white', fontSize: '1rem' }}>Contact</Link></li>
 
           <li style={{ marginTop: '0.75rem', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+            <Link 
+              href="/connexion" 
+              onClick={() => setMobileOpen(false)} 
+              className="w-full block py-3 text-center rounded-xl bg-slate-900 text-cyan-300 font-bold text-xs border border-cyan-500/30"
+            >
+              🔐 Espace Stagiaire (Connexion)
+            </Link>
             <Link 
               href="/commander" 
               onClick={() => setMobileOpen(false)} 
