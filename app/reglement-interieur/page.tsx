@@ -150,15 +150,15 @@ export default function ReglementInterieurPage() {
             <ul className="space-y-2 mt-2">
               <li>
                 <strong>Référente handicap, référente pédagogique et relations stagiaires :</strong> Mélissa Jennadi —{' '}
-                <a href="mailto:melissa@otopformations.com" className="text-blue-400 hover:underline">melissa@otopformations.com</a> — 07 67 24 68 25.
+                <a href="mailto:formation.rmcf@gmail.com" className="text-blue-400 hover:underline">formation.rmcf@gmail.com</a> — 07 67 24 68 25.
               </li>
               <li>
                 <strong>Assistance technique et pédagogique :</strong>{' '}
-                <a href="mailto:contact@otopformations.com" className="text-blue-400 hover:underline">contact@otopformations.com</a>, réponse sous 24 heures ouvrées.
+                <a href="mailto:formation.rmcf@gmail.com" className="text-blue-400 hover:underline">formation.rmcf@gmail.com</a>, réponse sous 24 heures ouvrées.
               </li>
               <li>
                 <strong>Réclamations :</strong> toute réclamation peut être adressée à{' '}
-                <a href="mailto:contact@otopformations.com" className="text-blue-400 hover:underline">contact@otopformations.com</a>. Un accusé de réception est envoyé sous 2 jours ouvrés et une réponse écrite sous 5 jours ouvrés.
+                <a href="mailto:formation.rmcf@gmail.com" className="text-blue-400 hover:underline">formation.rmcf@gmail.com</a>. Un accusé de réception est envoyé sous 2 jours ouvrés et une réponse écrite sous 5 jours ouvrés.
               </li>
             </ul>
           </div>

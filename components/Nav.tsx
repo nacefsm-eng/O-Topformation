@@ -83,9 +83,9 @@ export default function Nav() {
                 <Phone size={13} className="text-[#38bdf8]" />
                 <span>07 67 24 68 25</span>
               </a>
-              <a href="mailto:contact@otopformations.com" className="flex items-center gap-1.5 hover:text-white transition">
+              <a href="mailto:formation.rmcf@gmail.com" className="flex items-center gap-1.5 hover:text-white transition">
                 <Mail size={13} className="text-[#38bdf8]" />
-                <span>contact@otopformations.com</span>
+                <span>formation.rmcf@gmail.com</span>
               </a>
             </div>
 

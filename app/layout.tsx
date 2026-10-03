@@ -57,7 +57,7 @@ const organizationSchema = {
     {
       '@type': 'ContactPoint',
       telephone: '+33767246825',
-      email: 'contact@otopformations.com',
+      email: 'formation.rmcf@gmail.com',
       contactType: 'customer service',
       areaServed: 'FR',
       availableLanguage: 'French',
@@ -65,7 +65,7 @@ const organizationSchema = {
     {
       '@type': 'ContactPoint',
       telephone: '+33674797509',
-      email: 'contact@otopformations.com',
+      email: 'formation.rmcf@gmail.com',
       contactType: 'technical support',
       areaServed: 'FR',
       availableLanguage: 'French',

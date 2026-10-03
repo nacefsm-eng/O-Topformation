@@ -82,7 +82,7 @@ export default function PracticalInfoBlock({
               <span>Assistance technique &amp; pédagogique</span>
             </div>
             <p className="text-slate-300 leading-relaxed text-xs">
-              Réponse sous 24 h ouvrées à <a href="mailto:contact@otopformations.com" className="text-cyan-300 underline">contact@otopformations.com</a>.
+              Réponse sous 24 h ouvrées à <a href="mailto:formation.rmcf@gmail.com" className="text-cyan-300 underline">formation.rmcf@gmail.com</a>.
             </p>
           </div>
 
@@ -104,7 +104,7 @@ export default function PracticalInfoBlock({
               <span>Formateurs &amp; Contact stagiaires</span>
             </div>
             <p className="text-slate-300 leading-relaxed text-xs">
-              Mélissa Jennadi, référente pédagogique (<a href="mailto:contact@otopformations.com" className="text-cyan-300 underline">contact@otopformations.com</a> · 07 67 24 68 25) et formateurs certifiés.
+              Mélissa Jennadi, référente pédagogique (<a href="mailto:formation.rmcf@gmail.com" className="text-cyan-300 underline">formation.rmcf@gmail.com</a> · 07 67 24 68 25) et formateurs certifiés.
             </p>
           </div>
 
@@ -115,7 +115,7 @@ export default function PracticalInfoBlock({
               <span>Accessibilité &amp; Handicap</span>
             </div>
             <p className="text-slate-300 leading-relaxed text-xs">
-              Référente handicap : Mélissa Jennadi (<a href="mailto:contact@otopformations.com" className="text-cyan-300 underline">contact@otopformations.com</a>). Adaptations étudiées au cas par cas. <Link href="/accessibilite" className="text-cyan-300 underline">Voir notre politique d&apos;accueil</Link>.
+              Référente handicap : Mélissa Jennadi (<a href="mailto:formation.rmcf@gmail.com" className="text-cyan-300 underline">formation.rmcf@gmail.com</a>). Adaptations étudiées au cas par cas. <Link href="/accessibilite" className="text-cyan-300 underline">Voir notre politique d&apos;accueil</Link>.
             </p>
           </div>
 

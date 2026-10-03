@@ -71,7 +71,7 @@ export default function AccessibilitePage() {
               <div className="text-slate-400">Présidente &amp; Référente Handicap Ô’TOP Formations</div>
               <div className="flex items-center gap-2 pt-2">
                 <Mail size={14} className="text-blue-400" />
-                <a href="mailto:melissa@otopformations.com" className="text-blue-400 hover:underline">melissa@otopformations.com</a>
+                <a href="mailto:formation.rmcf@gmail.com" className="text-blue-400 hover:underline">formation.rmcf@gmail.com</a>
               </div>
               <div className="flex items-center gap-2">
                 <Phone size={14} className="text-emerald-400" />

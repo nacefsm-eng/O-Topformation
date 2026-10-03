@@ -264,7 +264,7 @@ export default function FinancementPage() {
                 Toutes nos formations sont accessibles aux personnes en situation de handicap. Notre référente handicap étudie chaque situation pour adapter les rythmes, les modalités d’évaluation et les supports pédagogiques.
               </p>
               <div className="text-xs text-slate-400 pt-2 border-t border-slate-800">
-                Référente handicap : Mélissa Jennadi — <a href="mailto:melissa@otopformations.com" className="text-blue-400 underline">melissa@otopformations.com</a> — 07 67 24 68 25
+                Référente handicap : Mélissa Jennadi — <a href="mailto:formation.rmcf@gmail.com" className="text-blue-400 underline">formation.rmcf@gmail.com</a> — 07 67 24 68 25
               </div>
             </div>
 
@@ -278,7 +278,7 @@ export default function FinancementPage() {
                 Conformément à nos engagements, toute réclamation fait l’objet d’un accusé de réception sous 2 jours ouvrés et d’une réponse écrite sous 5 jours ouvrés.
               </p>
               <div className="text-xs text-slate-400 pt-2 border-t border-slate-800">
-                Service réclamations : <a href="mailto:contact@otopformations.com" className="text-blue-400 underline">contact@otopformations.com</a>
+                Service réclamations : <a href="mailto:formation.rmcf@gmail.com" className="text-blue-400 underline">formation.rmcf@gmail.com</a>
               </div>
             </div>
 
@@ -311,10 +311,10 @@ export default function FinancementPage() {
               Prendre RDV (15 min) ⚡
             </a>
             <a
-              href="mailto:contact@otopformations.com"
+              href="mailto:formation.rmcf@gmail.com"
               className="px-6 py-4 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-200 border border-slate-700 text-sm font-semibold transition-all"
             >
-              ✉️ contact@otopformations.com
+              ✉️ formation.rmcf@gmail.com
             </a>
           </div>
         </div>

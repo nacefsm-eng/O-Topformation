@@ -37,7 +37,7 @@ export default function CGV() {
                 RCS Toulon 990 443 186 — SIRET : 990 443 186 00012 — Code NAF : 8559A.<br />
                 Déclaration d’activité enregistrée sous le numéro [NDA] auprès du préfet de région Provence-Alpes-Côte d’Azur (cet enregistrement ne vaut pas agrément de l’État).<br />
                 Présidente : Melissa-Lola Jennadi.<br />
-                Email : <a href="mailto:contact@otopformations.com" style={{ color: 'var(--blue-700)' }}>contact@otopformations.com</a> — Téléphone : 07 67 24 68 25.
+                Email : <a href="mailto:formation.rmcf@gmail.com" style={{ color: 'var(--blue-700)' }}>formation.rmcf@gmail.com</a> — Téléphone : 07 67 24 68 25.
               </p>
               <p style={{ marginTop: '0.75rem', fontSize: '0.9rem', color: 'var(--gray-600)' }}>
                 Pour les formations financées par un OPCO, un FAF ou France Travail, la convention de formation et la facturation sont assurées par notre partenaire <strong>Eloq-One</strong> (SAS Eloq-One, SIREN 944 063 635, déclaration d’activité n° 76300595630), organisme certifié Qualiopi au titre de la catégorie Actions de formation.
@@ -47,7 +47,7 @@ export default function CGV() {
             <div>
               <h2 style={{ fontSize: '1.4rem', marginBottom: '1rem', color: 'var(--blue-900)' }}>Article 2 — Droit de rétractation (clients consommateurs)</h2>
               <p>
-                Le client consommateur dispose d’un délai de 14 jours à compter de la conclusion du contrat pour exercer son droit de rétractation (art. L221-18 du Code de la consommation), par e-mail à <a href="mailto:contact@otopformations.com" style={{ color: 'var(--blue-700)' }}>contact@otopformations.com</a>.
+                Le client consommateur dispose d’un délai de 14 jours à compter de la conclusion du contrat pour exercer son droit de rétractation (art. L221-18 du Code de la consommation), par e-mail à <a href="mailto:formation.rmcf@gmail.com" style={{ color: 'var(--blue-700)' }}>formation.rmcf@gmail.com</a>.
               </p>
               <p style={{ marginTop: '0.75rem' }}>
                 Le client qui demande l’accès immédiat aux contenus numériques de la formation et reconnaît expressément renoncer à son droit de rétractation ne peut plus l’exercer une fois l’accès ouvert (art. L221-28 13° du Code de la consommation).
@@ -123,7 +123,7 @@ export default function CGV() {
             <div>
               <h2 style={{ fontSize: '1.4rem', marginBottom: '1rem', color: 'var(--blue-900)' }}>Article 9 — Réclamations et médiation de la consommation</h2>
               <p>
-                Toute réclamation doit être adressée par e-mail à : <a href="mailto:contact@otopformations.com" style={{ color: 'var(--blue-700)' }}>contact@otopformations.com</a>. Un accusé de réception est adressé sous 2 jours ouvrés et une réponse écrite sous 5 jours ouvrés.
+                Toute réclamation doit être adressée par e-mail à : <a href="mailto:formation.rmcf@gmail.com" style={{ color: 'var(--blue-700)' }}>formation.rmcf@gmail.com</a>. Un accusé de réception est adressé sous 2 jours ouvrés et une réponse écrite sous 5 jours ouvrés.
               </p>
               <p style={{ marginTop: '0.75rem' }}>
                 En cas de litige de consommation non résolu à l’amiable, le client consommateur peut saisir gratuitement le médiateur de la consommation :<br />

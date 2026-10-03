@@ -70,7 +70,7 @@ export default function ReclamationsPage() {
               <h3 className="font-bold text-white text-sm">Contact Direct</h3>
               <p className="flex items-center gap-2">
                 <Mail size={14} className="text-blue-400" />
-                <a href="mailto:contact@otopformations.com" className="text-blue-400 hover:underline">contact@otopformations.com</a>
+                <a href="mailto:formation.rmcf@gmail.com" className="text-blue-400 hover:underline">formation.rmcf@gmail.com</a>
               </p>
               <p className="flex items-center gap-2">
                 <Phone size={14} className="text-emerald-400" />

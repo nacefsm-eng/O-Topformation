@@ -22,7 +22,7 @@ export default function Footer() {
             
             <ul className="footer-contact space-y-2 text-xs text-slate-200 list-none pt-2">
               <li>📞 <strong className="text-white font-bold">07 67 24 68 25</strong> <span className="text-slate-300">(Mélissa Jennadi)</span></li>
-              <li>📧 <a href="mailto:contact@otopformations.com" className="text-[#38bdf8] hover:text-white font-semibold transition">contact@otopformations.com</a></li>
+              <li>📧 <a href="mailto:formation.rmcf@gmail.com" className="text-[#38bdf8] hover:text-white font-semibold transition">formation.rmcf@gmail.com</a></li>
               <li>📍 <span className="text-slate-300">Espace Gamma 1, 139 Chemin des 2 Frères, 83190 Ollioules (Var)</span></li>
             </ul>
 

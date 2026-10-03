@@ -1472,14 +1472,14 @@ export default function HomePageClient() {
             <div className="p-6 rounded-2xl bg-slate-900 border border-slate-800">
               <h3 className="font-bold text-white text-base mb-2">Qui contacter en cas de difficulté ?</h3>
               <p className="text-sm text-slate-400 leading-relaxed">
-                Mélissa, votre référente pédagogique : contact@otopformations.com ou 07 67 24 68 25. Réponse sous 24 h ouvrées.
+                Mélissa, votre référente pédagogique : formation.rmcf@gmail.com ou 07 67 24 68 25. Réponse sous 24 h ouvrées.
               </p>
             </div>
 
             <div className="p-6 rounded-2xl bg-slate-900 border border-slate-800 md:col-span-2">
               <h3 className="font-bold text-white text-base mb-2">Et si je suis en situation de handicap ?</h3>
               <p className="text-sm text-slate-400 leading-relaxed">
-                Mélissa, notre référente handicap, étudie avec vous les adaptations possibles : contact@otopformations.com ou 07 67 24 68 25.
+                Mélissa, notre référente handicap, étudie avec vous les adaptations possibles : formation.rmcf@gmail.com ou 07 67 24 68 25.
               </p>
             </div>
 

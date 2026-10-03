@@ -31,7 +31,7 @@ export default function PolitiqueConfidentialite() {
 
             <div>
               <h2 style={{ fontSize: '1.4rem', marginBottom: '1rem' }}>1. Responsable du traitement</h2>
-              <p>O’TOP Formation, SAS au capital de 1 000 € — Présidente : Melissa-Lola Jennadi — Email : contact@otopformations.com — Téléphone : 07 67 24 68 25</p>
+              <p>O’TOP Formation, SAS au capital de 1 000 € — Présidente : Melissa-Lola Jennadi — Email : formation.rmcf@gmail.com — Téléphone : 07 67 24 68 25</p>
             </div>
 
             <div>
@@ -83,7 +83,7 @@ export default function PolitiqueConfidentialite() {
                 <li>Droit d&apos;opposition</li>
                 <li>Droit de retirer votre consentement à tout moment</li>
               </ul>
-              <p style={{ marginTop: '1rem' }}>Pour exercer ces droits : <a href="mailto:contact@otopformations.com" style={{ color: 'var(--blue-700)' }}>contact@otopformations.com</a></p>
+              <p style={{ marginTop: '1rem' }}>Pour exercer ces droits : <a href="mailto:formation.rmcf@gmail.com" style={{ color: 'var(--blue-700)' }}>formation.rmcf@gmail.com</a></p>
               <p style={{ marginTop: '0.75rem' }}>En cas de réclamation non résolue, vous pouvez saisir la CNIL : <a href="https://www.cnil.fr" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--blue-700)' }}>www.cnil.fr</a></p>
             </div>
 

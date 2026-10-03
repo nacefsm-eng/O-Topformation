@@ -40,7 +40,7 @@ export default function MentionsLegales() {
                   <tr><th>Déclaration d’activité</th><td>Enregistré sous le numéro [NDA] auprès du préfet de la région Provence-Alpes-Côte d’Azur. Cet enregistrement ne vaut pas agrément de l’État.</td></tr>
                   <tr><th>TVA intracommunautaire</th><td>TVA non applicable, art. 261-4-4° a du CGI (exonération des prestations de formation professionnelle continue).</td></tr>
                   <tr><th>Direction de publication</th><td>Melissa-Lola JENNADI (Présidente)</td></tr>
-                  <tr><th>Email officiel</th><td><a href="mailto:contact@otopformations.com" style={{ color: 'var(--blue-700)' }}>contact@otopformations.com</a></td></tr>
+                  <tr><th>Email officiel</th><td><a href="mailto:formation.rmcf@gmail.com" style={{ color: 'var(--blue-700)' }}>formation.rmcf@gmail.com</a></td></tr>
                   <tr><th>Téléphone</th><td><a href="tel:+33767246825" style={{ color: 'var(--blue-700)' }}>07 67 24 68 25</a></td></tr>
                   <tr>
                     <th>Partenaire financier &amp; Qualiopi</th>
@@ -66,13 +66,13 @@ export default function MentionsLegales() {
             <div>
               <h2 style={{ fontSize: '1.5rem', marginBottom: '1.5rem', color: 'var(--blue-900)' }}>4. Données personnelles &amp; RGPD</h2>
               <p>Conformément au Règlement Général sur la Protection des Données (RGPD) et à la loi Informatique et Libertés, vous disposez d’un droit d’accès, de rectification, de portabilité et d’effacement de vos données personnelles.</p>
-              <p style={{ marginTop: '0.75rem' }}>Pour toute demande, contactez notre délégué à la protection des données : <a href="mailto:contact@otopformations.com" style={{ color: 'var(--blue-700)' }}>contact@otopformations.com</a></p>
+              <p style={{ marginTop: '0.75rem' }}>Pour toute demande, contactez notre délégué à la protection des données : <a href="mailto:formation.rmcf@gmail.com" style={{ color: 'var(--blue-700)' }}>formation.rmcf@gmail.com</a></p>
               <p style={{ marginTop: '1rem' }}><Link href="/politique-confidentialite" style={{ color: 'var(--blue-700)', fontWeight: 600 }}>Consulter notre Politique de Confidentialité complète →</Link></p>
             </div>
 
             <div>
               <h2 style={{ fontSize: '1.5rem', marginBottom: '1.5rem', color: 'var(--blue-900)' }}>5. Réclamations et médiation de la consommation</h2>
-              <p>En cas de réclamation, le stagiaire ou client peut s’adresser par e-mail à <a href="mailto:contact@otopformations.com" style={{ color: 'var(--blue-700)' }}>contact@otopformations.com</a>. Un accusé de réception est adressé sous 2 jours ouvrés et une réponse écrite sous 5 jours ouvrés.</p>
+              <p>En cas de réclamation, le stagiaire ou client peut s’adresser par e-mail à <a href="mailto:formation.rmcf@gmail.com" style={{ color: 'var(--blue-700)' }}>formation.rmcf@gmail.com</a>. Un accusé de réception est adressé sous 2 jours ouvrés et une réponse écrite sous 5 jours ouvrés.</p>
               <p style={{ marginTop: '1rem' }}>
                 Conformément aux articles L.616-1 et R.616-1 du Code de la consommation, en cas de litige de consommation non résolu à l’amiable, le client consommateur peut recourir gratuitement au médiateur de la consommation compétent :
               </p>

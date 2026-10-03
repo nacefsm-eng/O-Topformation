@@ -68,7 +68,7 @@ export default function PlaquetteTopView() {
     const body = encodeURIComponent(
       `Nom complet: ${formState.nom} ${formState.prenom}\nEmail: ${formState.email}\nTéléphone: ${formState.telephone}\nProfil: ${formState.profil}\nNombre de personnes: ${formState.participants}\n\nMessage ou besoin spécifique:\n${formState.message}`
     );
-    window.location.href = `mailto:contact@otopformations.com?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:formation.rmcf@gmail.com?subject=${subject}&body=${body}`;
     setFormSent(true);
   };
 
@@ -1660,7 +1660,7 @@ export default function PlaquetteTopView() {
               </span>
             </div>
             <a
-              href="mailto:contact@otopformations.com?subject=Demande%20Accessibilit%C3%A9%20Handicap%20TOP"
+              href="mailto:formation.rmcf@gmail.com?subject=Demande%20Accessibilit%C3%A9%20Handicap%20TOP"
               style={{ color: '#003492', border: '1px solid #bfdbfe' }}
               className="px-4 py-2 rounded-xl bg-blue-50 font-black shrink-0 transition hover:bg-blue-100"
             >
@@ -1887,7 +1887,7 @@ export default function PlaquetteTopView() {
                 </a>
 
                 <a
-                  href="mailto:contact@otopformations.com"
+                  href="mailto:formation.rmcf@gmail.com"
                   style={{ backgroundColor: '#ffffff', border: '1px solid #cbd5e1' }}
                   className="flex items-center gap-3.5 p-3 rounded-xl hover:border-[#003492] text-slate-800 transition"
                 >
@@ -1899,10 +1899,10 @@ export default function PlaquetteTopView() {
                   </div>
                   <div>
                     <div style={{ color: '#000000' }} className="text-[10px] font-bold uppercase">
-                      Email officiel
+                       Email officiel
                     </div>
                     <div style={{ color: '#0a1128' }} className="text-sm font-black">
-                      contact@otopformations.com
+                      formation.rmcf@gmail.com
                     </div>
                   </div>
                 </a>
@@ -2135,7 +2135,7 @@ export default function PlaquetteTopView() {
               <ul className="space-y-1.5 text-[11px] text-slate-400 font-medium">
                 <li>📍 Espace Gamma 1, 139 Chemin des 2 Frères, 83190 Ollioules</li>
                 <li>📞 07 67 24 68 25 / 07 49 23 94 23</li>
-                <li>📧 contact@otopformations.com</li>
+                <li>📧 formation.rmcf@gmail.com</li>
                 <li>🏢 SIRET : 990 443 186 00012 – RCS Toulon</li>
                 <li>
                   📄{' '}
