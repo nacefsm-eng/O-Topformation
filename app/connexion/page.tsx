@@ -20,7 +20,8 @@ import {
 
 export default function ConnexionPage() {
   const router = useRouter();
-  const [tab, setTab] = useState<'login' | 'register' | 'magic'>('login');
+  const [tab, setTab] = useState<'login' | 'register'>('login');
+  const [forgotMode, setForgotMode] = useState(false);
   
   // Fields
   const [email, setEmail] = useState('');
@@ -100,8 +101,8 @@ export default function ConnexionPage() {
     }
   };
 
-  // Lien Magique (Connexion sans mot de passe)
-  const handleMagicLink = async (e: React.FormEvent) => {
+  // Récupération d'accès sécurisé par email
+  const handlePasswordReset = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
     setError(null);
@@ -116,10 +117,10 @@ export default function ConnexionPage() {
       const data = await res.json();
 
       if (!res.ok || data.error) {
-        throw new Error(data.error || 'Erreur lors de la génération du lien.');
+        throw new Error(data.error || 'Erreur lors de la demande de réinitialisation.');
       }
 
-      setSuccessMsg('Lien d’accès instantané généré ! Connexion automatique...');
+      setSuccessMsg('Lien d’accès direct sécurisé envoyé ! Redirection en cours...');
       if (data.magicUrl) {
         setTimeout(() => {
           router.push(data.magicUrl);
@@ -205,41 +206,32 @@ export default function ConnexionPage() {
         <div className="bg-slate-900/90 border border-slate-800 rounded-3xl p-6 sm:p-8 shadow-2xl backdrop-blur-sm relative overflow-hidden">
           
           {/* Tabs */}
-          <div className="flex rounded-xl bg-slate-950 p-1 mb-6 border border-slate-800 text-xs font-bold">
-            <button
-              type="button"
-              onClick={() => { setTab('login'); setError(null); }}
-              className={`flex-1 py-2 rounded-lg transition ${
-                tab === 'login'
-                  ? 'bg-blue-600 text-white shadow-sm'
-                  : 'text-slate-400 hover:text-white'
-              }`}
-            >
-              Connexion
-            </button>
-            <button
-              type="button"
-              onClick={() => { setTab('register'); setError(null); }}
-              className={`flex-1 py-2 rounded-lg transition ${
-                tab === 'register'
-                  ? 'bg-blue-600 text-white shadow-sm'
-                  : 'text-slate-400 hover:text-white'
-              }`}
-            >
-              Créer un compte
-            </button>
-            <button
-              type="button"
-              onClick={() => { setTab('magic'); setError(null); }}
-              className={`flex-1 py-2 rounded-lg transition ${
-                tab === 'magic'
-                  ? 'bg-cyan-600 text-white shadow-sm'
-                  : 'text-slate-400 hover:text-white'
-              }`}
-            >
-              Lien magique
-            </button>
-          </div>
+          {!forgotMode && (
+            <div className="flex rounded-xl bg-slate-950 p-1 mb-6 border border-slate-800 text-xs font-bold">
+              <button
+                type="button"
+                onClick={() => { setTab('login'); setError(null); }}
+                className={`flex-1 py-2 rounded-lg transition ${
+                  tab === 'login'
+                    ? 'bg-blue-600 text-white shadow-sm'
+                    : 'text-slate-400 hover:text-white'
+                }`}
+              >
+                Connexion
+              </button>
+              <button
+                type="button"
+                onClick={() => { setTab('register'); setError(null); }}
+                className={`flex-1 py-2 rounded-lg transition ${
+                  tab === 'register'
+                    ? 'bg-blue-600 text-white shadow-sm'
+                    : 'text-slate-400 hover:text-white'
+                }`}
+              >
+                Créer un compte
+              </button>
+            </div>
+          )}
 
           {/* Feedback Messages */}
           {error && (
@@ -257,7 +249,7 @@ export default function ConnexionPage() {
           )}
 
           {/* ── GOOGLE BUTTON ── */}
-          {tab !== 'magic' && (
+          {!forgotMode && (
             <div className="mb-6">
               <button
                 type="button"
@@ -298,7 +290,7 @@ export default function ConnexionPage() {
           )}
 
           {/* ── FORM TAB 1: LOGIN ── */}
-          {tab === 'login' && (
+          {!forgotMode && tab === 'login' && (
             <form onSubmit={handleLogin} className="space-y-4">
               <div>
                 <label className="block text-xs font-semibold text-slate-300 mb-1.5">
@@ -324,7 +316,7 @@ export default function ConnexionPage() {
                   </label>
                   <button
                     type="button"
-                    onClick={() => setTab('magic')}
+                    onClick={() => { setForgotMode(true); setError(null); setSuccessMsg(null); }}
                     className="text-[11px] text-cyan-400 hover:underline"
                   >
                     Mot de passe oublié ?
@@ -368,7 +360,7 @@ export default function ConnexionPage() {
           )}
 
           {/* ── FORM TAB 2: REGISTER ── */}
-          {tab === 'register' && (
+          {!forgotMode && tab === 'register' && (
             <form onSubmit={handleRegister} className="space-y-4">
               <div className="grid grid-cols-2 gap-3">
                 <div>
@@ -457,12 +449,17 @@ export default function ConnexionPage() {
             </form>
           )}
 
-          {/* ── FORM TAB 3: MAGIC LINK ── */}
-          {tab === 'magic' && (
-            <form onSubmit={handleMagicLink} className="space-y-4">
-              <p className="text-xs text-slate-400 leading-relaxed mb-3">
-                Pas besoin de retenir votre mot de passe ! Entrez votre e-mail et recevez un accès direct sécurisé vers votre tableau de bord.
-              </p>
+          {/* ── MODE RÉCUPÉRATION DE MOT DE PASSE ── */}
+          {forgotMode && (
+            <form onSubmit={handlePasswordReset} className="space-y-4">
+              <div className="mb-2">
+                <h2 className="text-base font-bold text-white mb-1">
+                  Récupération d&apos;accès sécurisé
+                </h2>
+                <p className="text-xs text-slate-400 leading-relaxed">
+                  Entrez votre adresse e-mail pour recevoir un lien direct de connexion à votre espace stagiaire.
+                </p>
+              </div>
 
               <div>
                 <label className="block text-xs font-semibold text-slate-300 mb-1.5">
@@ -484,17 +481,27 @@ export default function ConnexionPage() {
               <button
                 type="submit"
                 disabled={loading}
-                className="w-full mt-2 py-3 rounded-xl bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-500 hover:to-blue-500 text-white font-bold text-xs shadow-lg shadow-cyan-900/30 transition flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50"
+                className="w-full mt-2 py-3 rounded-xl bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-500 hover:to-cyan-500 text-white font-bold text-xs shadow-lg shadow-blue-900/30 transition flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50"
               >
                 {loading ? (
                   <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
                 ) : (
                   <>
-                    <Sparkles size={14} />
-                    <span>Me connecter sans mot de passe</span>
+                    <KeyRound size={14} />
+                    <span>Envoyer le lien de connexion sécurisé</span>
                   </>
                 )}
               </button>
+
+              <div className="text-center pt-2">
+                <button
+                  type="button"
+                  onClick={() => { setForgotMode(false); setError(null); setSuccessMsg(null); }}
+                  className="text-xs text-cyan-400 hover:underline transition"
+                >
+                  ← Revenir à la connexion
+                </button>
+              </div>
             </form>
           )}
 

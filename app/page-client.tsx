@@ -94,28 +94,28 @@ export default function HomePageClient() {
     <main className="min-h-screen bg-slate-950 text-slate-100 font-sans">
       
       {/* ─── BANNIÈRE PROMOTIONNELLE C1 : OFFRE SPÉCIALE RS6776 À 600 € ──────── */}
-      <aside aria-label="Offre promotionnelle d'urgence" className="bg-gradient-to-r from-amber-950 via-slate-900 to-blue-950 border-b-2 border-amber-400/40 text-white py-3 px-4 sticky top-0 z-50 shadow-2xl backdrop-blur-md">
+      <aside aria-label="Offre promotionnelle d'urgence" className="promo-banner bg-gradient-to-r from-[#021842] via-[#0b2b6e] to-[#021842] border-b-2 border-red-500/50 text-white py-3 px-4 relative z-20 shadow-lg">
         <div className="container mx-auto max-w-7xl flex flex-wrap items-center justify-between gap-3 text-xs sm:text-sm">
           
           <div className="flex items-center gap-3 font-medium">
-            <span className="px-2.5 py-1 rounded-full bg-gradient-to-r from-amber-400 to-amber-500 text-slate-950 font-black text-xs uppercase tracking-wider shadow flex items-center gap-1">
+            <span className="px-2.5 py-1 rounded-full bg-red-600 text-white font-black text-xs uppercase tracking-wider shadow flex items-center gap-1">
               🚀 OFFRE DE LANCEMENT
             </span>
             <div className="flex flex-wrap items-center gap-x-2 gap-y-1">
               <span className="text-white text-sm">
-                Prix de lancement : la formation IA générative à <strong className="text-emerald-400">600 €</strong> (ou 3 × 200 € sans frais) jusqu’au 31 octobre 2026.
+                Prix de lancement : la formation IA générative à <strong className="text-white font-black bg-red-600/40 px-2 py-0.5 rounded border border-red-400/40">600 €</strong> (ou 3 × 200 € sans frais) jusqu’au 31 octobre 2026.
               </span>
             </div>
           </div>
 
           <div className="flex items-center gap-3 sm:gap-4 ml-auto sm:ml-0">
-            <div className="flex items-center gap-1.5 font-mono text-amber-300 font-bold bg-slate-950/80 px-3 py-1.5 rounded-xl border border-amber-500/30 shadow-inner text-xs sm:text-sm">
-              <Clock size={15} className="text-amber-400" />
-              <span className="hidden sm:inline text-slate-300">Expire le 31 octobre 2026 :</span>
+            <div className="flex items-center gap-1.5 font-mono text-white font-bold bg-[#011438] px-3 py-1.5 rounded-xl border border-blue-400/30 shadow-inner text-xs sm:text-sm">
+              <Clock size={15} className="text-cyan-400" />
+              <span className="hidden sm:inline text-slate-200">Expire le 31 octobre 2026 :</span>
               <span className="text-white font-extrabold">{timeLeft.days}j</span>
-              <span>{String(timeLeft.hours).padStart(2, '0')}h</span>
-              <span>{String(timeLeft.minutes).padStart(2, '0')}m</span>
-              <span className="text-amber-400">{String(timeLeft.seconds).padStart(2, '0')}s</span>
+              <span className="text-slate-200">{String(timeLeft.hours).padStart(2, '0')}h</span>
+              <span className="text-slate-200">{String(timeLeft.minutes).padStart(2, '0')}m</span>
+              <span className="text-cyan-300 font-extrabold">{String(timeLeft.seconds).padStart(2, '0')}s</span>
             </div>
 
             <Link
