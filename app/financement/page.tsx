@@ -303,7 +303,7 @@ export default function FinancementPage() {
               Demander une étude de financement →
             </Link>
             <a
-              href="https://calendly.com/otop-formation"
+              href="https://calendly.com/formation-rmcf/30min"
               target="_blank"
               rel="noopener noreferrer"
               className="px-6 py-4 rounded-xl bg-blue-600 hover:bg-blue-500 text-white text-sm font-semibold transition-all"

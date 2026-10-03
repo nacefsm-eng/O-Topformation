@@ -1393,27 +1393,140 @@ html[data-theme="clair"] .top-bar-contact a {
   color: #334155 !important;
 }
 
-/* Footer in Light Mode */
-html[data-theme="clair"] footer {
-  background-color: #0f172a !important;
-  color: #f8fafc !important;
+/* Bulletproof Footer Styling in all themes (Images 1 & 3 fix) */
+footer,
+footer.footer,
+html[data-theme="clair"] footer,
+html[data-theme="sombre"] footer {
+  background-color: #021435 !important;
+  color: #cbd5e1 !important;
 }
-html[data-theme="clair"] footer * {
-  color: inherit;
-}
+footer h3,
+footer h4,
+footer .font-bold,
 html[data-theme="clair"] footer h3,
 html[data-theme="clair"] footer h4,
+html[data-theme="sombre"] footer h3,
+html[data-theme="sombre"] footer h4 {
+  color: #ffffff !important;
+}
+footer p,
+footer li,
+footer span,
+html[data-theme="clair"] footer p,
+html[data-theme="clair"] footer li,
+html[data-theme="sombre"] footer p,
+html[data-theme="sombre"] footer li {
+  color: #cbd5e1 !important;
+}
+footer a,
+html[data-theme="clair"] footer a,
+html[data-theme="sombre"] footer a {
+  color: #e2e8f0 !important;
+}
+footer a:hover,
+html[data-theme="clair"] footer a:hover,
+html[data-theme="sombre"] footer a:hover {
+  color: #38bdf8 !important;
+}
+footer .text-slate-300,
+footer .text-slate-400,
+footer .text-slate-500,
+html[data-theme="clair"] footer .text-slate-300,
+html[data-theme="clair"] footer .text-slate-400,
+html[data-theme="clair"] footer .text-slate-500 {
+  color: #cbd5e1 !important;
+}
+footer .text-white,
 html[data-theme="clair"] footer .text-white {
   color: #ffffff !important;
 }
-html[data-theme="clair"] footer .text-slate-400 {
-  color: #94a3b8 !important;
-}
-html[data-theme="clair"] footer a {
-  color: #cbd5e1 !important;
-}
-html[data-theme="clair"] footer a:hover {
+footer .footer-contact a,
+html[data-theme="clair"] footer .footer-contact a {
   color: #38bdf8 !important;
+}
+
+/* Promo Banner Countdown Contrast (Image 4 fix) */
+.promo-banner,
+html[data-theme="clair"] .promo-banner,
+html[data-theme="sombre"] .promo-banner {
+  background: linear-gradient(90deg, #021842 0%, #092864 50%, #021842 100%) !important;
+  border-bottom: 2px solid rgba(220, 38, 38, 0.8) !important;
+  color: #ffffff !important;
+}
+.promo-banner *,
+html[data-theme="clair"] .promo-banner * {
+  color: #ffffff !important;
+}
+.promo-banner strong,
+html[data-theme="clair"] .promo-banner strong {
+  color: #ffffff !important;
+}
+.promo-banner .bg-red-600,
+html[data-theme="clair"] .promo-banner .bg-red-600 {
+  background-color: #dc2626 !important;
+  color: #ffffff !important;
+}
+.promo-banner div[class*="font-mono"],
+html[data-theme="clair"] .promo-banner div[class*="font-mono"] {
+  background-color: #011335 !important;
+  border: 1px solid rgba(56, 189, 248, 0.45) !important;
+}
+.promo-banner div[class*="font-mono"] *,
+html[data-theme="clair"] .promo-banner div[class*="font-mono"] * {
+  color: #ffffff !important;
+}
+.promo-banner div[class*="font-mono"] span[class*="cyan"],
+html[data-theme="clair"] .promo-banner div[class*="font-mono"] span[class*="cyan"] {
+  color: #38bdf8 !important;
+}
+
+/* Get In Touch Component Styling (Image 1 fix) */
+html[data-theme="clair"] .get-in-touch-section {
+  background-color: #f8fafc !important;
+}
+html[data-theme="clair"] .get-in-touch-card {
+  background-color: #ffffff !important;
+  border-color: #e2e8f0 !important;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06) !important;
+}
+html[data-theme="clair"] .get-in-touch-card h2 {
+  color: #0f172a !important;
+}
+html[data-theme="clair"] .get-in-touch-card p {
+  color: #334155 !important;
+}
+html[data-theme="clair"] .get-in-touch-card .text-slate-400 {
+  color: #64748b !important;
+}
+html[data-theme="clair"] .get-in-touch-card .text-white {
+  color: #0f172a !important;
+}
+html[data-theme="clair"] .get-in-touch-card div[class*="bg-slate-800"] {
+  background-color: #f8fafc !important;
+  border-color: #e2e8f0 !important;
+}
+html[data-theme="clair"] .get-in-touch-form {
+  background-color: #f1f5f9 !important;
+  border-color: #cbd5e1 !important;
+}
+html[data-theme="clair"] .get-in-touch-form label,
+html[data-theme="clair"] .get-in-touch-form span {
+  color: #0f172a !important;
+}
+html[data-theme="clair"] .get-in-touch-form input,
+html[data-theme="clair"] .get-in-touch-form select,
+html[data-theme="clair"] .get-in-touch-form textarea {
+  background-color: #ffffff !important;
+  border-color: #cbd5e1 !important;
+  color: #0f172a !important;
+}
+html[data-theme="clair"] .get-in-touch-form button[type="submit"] {
+  background-color: #2563eb !important;
+  color: #ffffff !important;
+}
+html[data-theme="clair"] .get-in-touch-form button[type="submit"] * {
+  color: #ffffff !important;
 }
 
 /* ============= LIGHT MODE CONTRAST ENHANCEMENTS FOR NOS OFFRES & CATALOGUE ============= */

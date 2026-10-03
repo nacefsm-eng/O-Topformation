@@ -62,9 +62,9 @@ export default function GetInTouch() {
   };
 
   return (
-    <section id="contact" className="w-full py-16 px-4 bg-slate-950 text-white relative">
+    <section id="contact" className="get-in-touch-section w-full py-16 px-4 bg-slate-950 text-white relative">
       <div className="container mx-auto max-w-5xl">
-        <div className="relative rounded-3xl bg-slate-900/90 border border-slate-800 p-6 sm:p-10 lg:p-14 shadow-2xl backdrop-blur-xl overflow-hidden">
+        <div className="get-in-touch-card relative rounded-3xl bg-[#021842] border border-blue-500/30 p-6 sm:p-10 lg:p-14 shadow-2xl backdrop-blur-xl overflow-hidden">
           {/* Subtle glow circle */}
           <div className="absolute top-0 right-0 w-96 h-96 bg-blue-600/10 blur-[100px] pointer-events-none rounded-full" />
 
@@ -72,7 +72,7 @@ export default function GetInTouch() {
             
             {/* Left info column */}
             <div className="lg:col-span-5 space-y-6">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-400/20 text-blue-400 text-xs font-semibold uppercase tracking-wider">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-400/20 text-cyan-300 text-xs font-semibold uppercase tracking-wider">
                 ⚡ Échange Direct Offert (15 min)
               </div>
 
@@ -124,10 +124,10 @@ export default function GetInTouch() {
               {/* Calendly Button & WhatsApp */}
               <div className="pt-2 flex flex-col sm:flex-row gap-3">
                 <a
-                  href="https://calendly.com/otop-formation"
+                  href="https://calendly.com/formation-rmcf/30min"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs transition shadow-lg"
+                  className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs transition shadow-lg shadow-blue-600/30"
                 >
                   <Calendar size={15} />
                   <span>Choisir un créneau (Calendly)</span>
@@ -136,7 +136,7 @@ export default function GetInTouch() {
                   href="https://wa.me/33767246825?text=Bonjour%20M%C3%A9lissa,%20je%20souhaite%20des%20informations%20sur%20vos%20formations."
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-emerald-400 border border-emerald-500/30 text-xs font-bold transition"
+                  className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-[#25D366] hover:bg-[#20ba5a] text-white font-bold text-xs transition shadow-lg shadow-emerald-900/30"
                 >
                   <MessageCircle size={15} />
                   <span>WhatsApp direct</span>
@@ -145,7 +145,7 @@ export default function GetInTouch() {
             </div>
 
             {/* Right form column */}
-            <div className="lg:col-span-7 bg-slate-950/80 p-6 sm:p-8 rounded-3xl border border-slate-800 shadow-inner">
+            <div className="get-in-touch-form lg:col-span-7 bg-[#011233]/90 p-6 sm:p-8 rounded-3xl border border-blue-500/20 shadow-inner">
               
               {isSent ? (
                 <div className="py-12 text-center space-y-4">

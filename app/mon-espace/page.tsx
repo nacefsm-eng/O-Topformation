@@ -139,7 +139,7 @@ export default function MonEspacePage() {
 
             <div className="flex items-center gap-3">
               <a
-                href="https://calendly.com/otop-formation"
+                href="https://calendly.com/formation-rmcf/30min"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-4 py-2.5 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white font-extrabold text-xs shadow-lg shadow-cyan-900/30 transition flex items-center gap-2"
@@ -357,10 +357,10 @@ export default function MonEspacePage() {
               </div>
 
               <a
-                href="https://calendly.com/otop-formation"
+                href="https://calendly.com/formation-rmcf/30min"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full py-3 rounded-xl bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-slate-950 font-black text-xs flex items-center justify-center gap-2 shadow-lg shadow-amber-500/20 transition"
+                className="w-full py-3 rounded-xl bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-500 hover:to-cyan-500 text-white font-extrabold text-xs flex items-center justify-center gap-2 shadow-lg shadow-blue-900/30 transition"
               >
                 <Calendar size={14} />
                 <span>Choisir mon créneau visio →</span>

@@ -109,13 +109,13 @@ export default function HomePageClient() {
           </div>
 
           <div className="flex items-center gap-3 sm:gap-4 ml-auto sm:ml-0">
-            <div className="flex items-center gap-1.5 font-mono text-white font-bold bg-[#011438] px-3 py-1.5 rounded-xl border border-blue-400/30 shadow-inner text-xs sm:text-sm">
+            <div className="flex items-center gap-1.5 font-mono text-white font-bold bg-[#011438] px-3.5 py-1.5 rounded-xl border border-blue-400/40 shadow-inner text-xs sm:text-sm">
               <Clock size={15} className="text-cyan-400" />
-              <span className="hidden sm:inline text-slate-200">Expire le 31 octobre 2026 :</span>
-              <span className="text-white font-extrabold">{timeLeft.days}j</span>
-              <span className="text-slate-200">{String(timeLeft.hours).padStart(2, '0')}h</span>
-              <span className="text-slate-200">{String(timeLeft.minutes).padStart(2, '0')}m</span>
-              <span className="text-cyan-300 font-extrabold">{String(timeLeft.seconds).padStart(2, '0')}s</span>
+              <span className="hidden sm:inline text-white font-semibold">Expire le 31 octobre 2026 :</span>
+              <span className="text-white font-black">{timeLeft.days}j</span>
+              <span className="text-white font-semibold">{String(timeLeft.hours).padStart(2, '0')}h</span>
+              <span className="text-white font-semibold">{String(timeLeft.minutes).padStart(2, '0')}m</span>
+              <span className="text-cyan-300 font-black">{String(timeLeft.seconds).padStart(2, '0')}s</span>
             </div>
 
             <Link

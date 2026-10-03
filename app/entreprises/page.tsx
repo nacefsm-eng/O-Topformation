@@ -20,9 +20,11 @@ export default function Entreprises() {
             <span className="breadcrumb-sep" style={{ margin: '0 0.5rem' }}>›</span>
             <span>Solutions Entreprises</span>
           </div>
-          <span className="badge" style={{ background: 'rgba(205, 175, 93, 0.2)', color: 'var(--gold-light)', border: '1px solid var(--gold)', marginBottom: '1rem' }}>
-            ⏱ Accompagnement B2B &amp; formation professionnelle · Partenaire Eloq-One certifié Qualiopi
-          </span>
+          <div className="mb-4">
+            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-900/70 border border-cyan-400/40 text-cyan-300 text-xs font-bold uppercase tracking-wider shadow-sm">
+              ⏱ Accompagnement B2B &amp; formation professionnelle · Partenaire Eloq-One certifié Qualiopi
+            </span>
+          </div>
           <h1 style={{ color: 'white', fontSize: 'clamp(2.3rem, 4.5vw, 3.6rem)', marginBottom: '1.5rem', lineHeight: 1.2 }}>
             Accompagnement, formation et solutions digitales pour vos équipes
           </h1>
@@ -30,15 +32,17 @@ export default function Entreprises() {
             Développez les compétences de vos collaborateurs, automatisez vos processus métiers et préservez l’équilibre de vos équipes avec des solutions concrètes adaptées aux réalités de votre entreprise.
           </p>
           <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', alignItems: 'center' }}>
-            <Link href="/commander?offre=entreprise" className="btn btn-primary" style={{ background: 'var(--red-600)', color: 'white', padding: '1rem 2rem', fontWeight: 800 }}>
+            <Link 
+              href="/commander?offre=entreprise" 
+              className="px-6 py-3.5 rounded-xl bg-red-600 hover:bg-red-500 text-white font-black text-sm transition shadow-lg shadow-red-600/30 flex items-center gap-2"
+            >
               Demander un devis entreprise →
             </Link>
             <a 
-              href="https://calendly.com/otop-formation" 
+              href="https://calendly.com/formation-rmcf/30min" 
               target="_blank" 
               rel="noopener noreferrer" 
-              className="btn btn-ghost" 
-              style={{ color: 'white', borderColor: 'rgba(255, 255, 255, 0.4)' }}
+              className="px-6 py-3.5 rounded-xl bg-[#021842] hover:bg-[#062463] text-cyan-300 border border-cyan-400/50 font-bold text-sm transition shadow flex items-center gap-2"
             >
               Prendre RDV (15 min) ⚡
             </a>
@@ -46,8 +50,7 @@ export default function Entreprises() {
               href="https://wa.me/33767246825?text=Bonjour%2C%20je%20souhaite%20un%20%C3%A9change%20concernant%20les%20solutions%20entreprises." 
               target="_blank" 
               rel="noopener noreferrer" 
-              className="btn" 
-              style={{ background: '#25D366', color: 'white', fontWeight: 700 }}
+              className="px-6 py-3.5 rounded-xl bg-[#25D366] hover:bg-[#20ba5a] text-white font-bold text-sm transition shadow-lg shadow-emerald-900/30 flex items-center gap-2"
             >
               💬 WhatsApp
             </a>
@@ -169,22 +172,24 @@ export default function Entreprises() {
       </section>
 
       {/* CTA Section */}
-      <section className="section" style={{ background: 'var(--blue-900)', color: 'white', textAlign: 'center' }}>
-        <div className="container" style={{ maxWidth: '850px' }}>
+      <section className="section bg-gradient-to-br from-[#021842] via-[#082968] to-[#021842] py-20 border-t border-b border-blue-500/20 text-white text-center">
+        <div className="container mx-auto px-4" style={{ maxWidth: '850px' }}>
           <h2 style={{ color: 'white', marginBottom: '1.5rem', fontSize: '2.5rem' }}>Besoin de faire progresser votre entreprise ?</h2>
-          <p style={{ color: 'var(--blue-100)', fontSize: '1.15rem', marginBottom: '2.5rem' }}>
+          <p className="text-blue-100 text-lg mb-10 leading-relaxed">
             Prenez contact directement avec nos formateurs pour un diagnostic personnalisé de 15 minutes sans engagement.
           </p>
           <div style={{ display: 'flex', justifyContent: 'center', gap: '1rem', flexWrap: 'wrap', marginBottom: '2.5rem' }}>
-            <Link href="/commander?offre=entreprise" className="btn btn-primary" style={{ background: 'var(--red-600)', color: 'white', padding: '1rem 2.5rem', fontWeight: 800 }}>
+            <Link 
+              href="/commander?offre=entreprise" 
+              className="px-6 py-3.5 rounded-xl bg-red-600 hover:bg-red-500 text-white font-black text-sm transition shadow-lg shadow-red-600/40 flex items-center gap-2"
+            >
               Demander un devis entreprise →
             </Link>
             <a 
-              href="https://calendly.com/otop-formation" 
+              href="https://calendly.com/formation-rmcf/30min" 
               target="_blank" 
               rel="noopener noreferrer" 
-              className="btn btn-ghost" 
-              style={{ color: 'white', borderColor: 'rgba(255,255,255,0.4)' }}
+              className="px-6 py-3.5 rounded-xl bg-white hover:bg-slate-100 text-[#021842] font-black text-sm transition shadow-xl flex items-center gap-2"
             >
               Prendre RDV (15 min) ⚡
             </a>
@@ -192,15 +197,14 @@ export default function Entreprises() {
               href="https://wa.me/33767246825?text=Bonjour%2C%20je%20souhaite%20un%20%C3%A9change%20concernant%20les%20solutions%20entreprises." 
               target="_blank" 
               rel="noopener noreferrer" 
-              className="btn" 
-              style={{ background: '#25D366', color: 'white', fontWeight: 700 }}
+              className="px-6 py-3.5 rounded-xl bg-[#25D366] hover:bg-[#20ba5a] text-white font-bold text-sm transition shadow-lg shadow-emerald-900/30 flex items-center gap-2"
             >
               💬 WhatsApp
             </a>
           </div>
 
           <div style={{ background: 'rgba(255, 255, 255, 0.08)', borderRadius: '12px', padding: '1rem 1.5rem', textAlign: 'center' }}>
-            <p style={{ margin: 0, fontSize: '0.85rem', color: 'rgba(255, 255, 255, 0.75)', lineHeight: 1.5 }}>
+            <p style={{ margin: 0, fontSize: '0.85rem', color: 'rgba(255, 255, 255, 0.85)', lineHeight: 1.5 }}>
               Pour les formations financées par un OPCO, un FAF ou France Travail, notre partenaire Eloq-One, organisme certifié Qualiopi, établit la convention et assure la facturation. La prise en charge reste soumise à l’accord du financeur.
             </p>
           </div>

@@ -269,10 +269,10 @@ function CommanderContent() {
             <a href="tel:+33767246825" className="text-white font-bold hover:text-blue-400">07 67 24 68 25</a>
             <span className="text-slate-600">•</span>
             <a 
-              href="https://calendly.com/otop-formation" 
+              href="https://calendly.com/formation-rmcf/30min" 
               target="_blank" 
               rel="noopener noreferrer" 
-              className="px-3 py-1.5 rounded-lg bg-slate-800 text-slate-200 hover:bg-slate-700 font-semibold"
+              className="px-3 py-1.5 rounded-lg bg-blue-600 text-white hover:bg-blue-500 font-semibold shadow-sm"
             >
               Échanger 15 min
             </a>

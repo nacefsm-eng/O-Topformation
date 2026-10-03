@@ -20,10 +20,10 @@ export default function Footer() {
               « 2 voix, 1 mission : Former pour transformer. »
             </p>
             
-            <ul className="footer-contact space-y-1.5 text-xs text-slate-300 list-none pt-2">
-              <li>📞 <strong>07 67 24 68 25</strong> (Mélissa Jennadi)</li>
-              <li>📧 <a href="mailto:contact@otopformations.com" className="hover:text-white transition">contact@otopformations.com</a></li>
-              <li>📍 Espace Gamma 1, 139 Chemin des 2 Frères, 83190 Ollioules (Var)</li>
+            <ul className="footer-contact space-y-2 text-xs text-slate-200 list-none pt-2">
+              <li>📞 <strong className="text-white font-bold">07 67 24 68 25</strong> <span className="text-slate-300">(Mélissa Jennadi)</span></li>
+              <li>📧 <a href="mailto:contact@otopformations.com" className="text-[#38bdf8] hover:text-white font-semibold transition">contact@otopformations.com</a></li>
+              <li>📍 <span className="text-slate-300">Espace Gamma 1, 139 Chemin des 2 Frères, 83190 Ollioules (Var)</span></li>
             </ul>
 
             <div className="flex gap-2.5 pt-2">
@@ -37,11 +37,11 @@ export default function Footer() {
           <div className="footer-col space-y-3">
             <h4 className="font-bold text-white text-sm uppercase tracking-wider">Nos formations</h4>
             <ul className="footer-links space-y-2 text-xs list-none">
-              <li><Link href="/formations/ia#rs6776" className="hover:text-white transition">⚡ IA générative (RS6776) — 600 €</Link></li>
-              <li><Link href="/formations/ia#rs7344" className="hover:text-white transition">🤖 Développer son activité avec l’IA (RS7344)</Link></li>
-              <li><Link href="/formations/reseaux-sociaux" className="hover:text-white transition">📱 Réseaux sociaux (RS7351)</Link></li>
-              <li><Link href="/methode" className="hover:text-white transition">🧭 Méthode TOP® — conduite du changement (21 h)</Link></li>
-              <li><Link href="/catalogue" className="hover:text-white transition font-semibold text-cyan-300">✨ Catalogue et packs dégressifs</Link></li>
+              <li><Link href="/formations/ia#rs6776" className="text-slate-200 hover:text-white transition font-medium">⚡ IA générative (RS6776) — 600 €</Link></li>
+              <li><Link href="/formations/ia#rs7344" className="text-slate-200 hover:text-white transition font-medium">🤖 Développer son activité avec l’IA (RS7344)</Link></li>
+              <li><Link href="/formations/reseaux-sociaux" className="text-slate-200 hover:text-white transition font-medium">📱 Réseaux sociaux (RS7351)</Link></li>
+              <li><Link href="/methode" className="text-slate-200 hover:text-white transition font-medium">🧭 Méthode TOP® — conduite du changement (21 h)</Link></li>
+              <li><Link href="/catalogue" className="hover:text-white transition font-bold text-cyan-300">✨ Catalogue et packs dégressifs</Link></li>
               <li><Link href="/commander" className="hover:text-white transition font-bold text-red-400">💳 Inscription &amp; Paiement en ligne</Link></li>
             </ul>
           </div>
@@ -50,11 +50,11 @@ export default function Footer() {
           <div className="footer-col space-y-3">
             <h4 className="font-bold text-white text-sm uppercase tracking-wider">Entreprises &amp; prestations</h4>
             <ul className="footer-links space-y-2 text-xs list-none">
-              <li><Link href="/entreprises" className="hover:text-white transition">Création de Sites &amp; Applications</Link></li>
-              <li><Link href="/entreprises" className="hover:text-white transition">Prestations digitales (hors formation)</Link></li>
-              <li><Link href="/entreprises" className="hover:text-white transition">Formations Intra-Entreprise</Link></li>
-              <li><Link href="/entreprises" className="hover:text-white transition">Sécurisation des Données &amp; Conformité IA</Link></li>
-              <li><Link href="/contact" className="hover:text-white transition">Demander un devis sur mesure</Link></li>
+              <li><Link href="/entreprises" className="text-slate-200 hover:text-white transition">Création de Sites &amp; Applications</Link></li>
+              <li><Link href="/entreprises" className="text-slate-200 hover:text-white transition">Prestations digitales (hors formation)</Link></li>
+              <li><Link href="/entreprises" className="text-slate-200 hover:text-white transition">Formations Intra-Entreprise</Link></li>
+              <li><Link href="/entreprises" className="text-slate-200 hover:text-white transition">Sécurisation des Données &amp; Conformité IA</Link></li>
+              <li><Link href="/contact" className="text-slate-200 hover:text-white transition">Demander un devis sur mesure</Link></li>
             </ul>
           </div>
 
@@ -62,14 +62,14 @@ export default function Footer() {
           <div className="footer-col space-y-3">
             <h4 className="font-bold text-white text-sm uppercase tracking-wider">Légal &amp; Conformité</h4>
             <ul className="footer-links space-y-2 text-xs list-none">
-              <li><Link href="/financement" className="hover:text-white transition">Financement (OPCO, FAF, France Travail)</Link></li>
-              <li><Link href="/accessibilite" className="hover:text-white transition">Accessibilité &amp; handicap</Link></li>
-              <li><Link href="/reglement-interieur" className="hover:text-white transition text-cyan-300 font-semibold">Règlement intérieur</Link></li>
-              <li><Link href="/reclamations" className="hover:text-white transition">Réclamations (SLA 2/5 jours)</Link></li>
-              <li><Link href="/mentions-legales" className="hover:text-white transition">Mentions légales</Link></li>
-              <li><Link href="/cgv" className="hover:text-white transition">CGV</Link></li>
-              <li><Link href="/politique-confidentialite" className="hover:text-white transition">Politique de confidentialité</Link></li>
-              <li><Link href="/a-propos" className="hover:text-white transition">À Propos d’Ô’TOP</Link></li>
+              <li><Link href="/financement" className="text-slate-200 hover:text-white transition">Financement (OPCO, FAF, France Travail)</Link></li>
+              <li><Link href="/accessibilite" className="text-slate-200 hover:text-white transition">Accessibilité &amp; handicap</Link></li>
+              <li><Link href="/reglement-interieur" className="text-cyan-300 hover:text-white transition font-semibold">Règlement intérieur</Link></li>
+              <li><Link href="/reclamations" className="text-slate-200 hover:text-white transition">Réclamations (SLA 2/5 jours)</Link></li>
+              <li><Link href="/mentions-legales" className="text-slate-200 hover:text-white transition">Mentions légales</Link></li>
+              <li><Link href="/cgv" className="text-slate-200 hover:text-white transition">CGV</Link></li>
+              <li><Link href="/politique-confidentialite" className="text-slate-200 hover:text-white transition">Politique de confidentialité</Link></li>
+              <li><Link href="/a-propos" className="text-slate-200 hover:text-white transition">À Propos d’Ô’TOP</Link></li>
             </ul>
           </div>
 

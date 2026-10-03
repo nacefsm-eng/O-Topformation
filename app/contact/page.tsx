@@ -141,12 +141,29 @@ function ContactContent() {
                   className="card"
                   style={{ padding: '1.5rem', display: 'flex', alignItems: 'center', gap: '1.25rem', border: '1.5px solid var(--blue-100)', background: 'white' }}
                 >
-                  <div style={{ width: '50px', height: '50px', borderRadius: '50%', background: 'var(--gold-dark)', color: 'white', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.3rem', flexShrink: 0 }}>
+                  <div style={{ width: '50px', height: '50px', borderRadius: '50%', background: '#1d4ed8', color: 'white', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.3rem', flexShrink: 0 }}>
                     📞
                   </div>
                   <div>
                     <div style={{ fontWeight: 800, color: 'var(--blue-900)', fontSize: '1.05rem' }}>Renaud : 06 74 79 75 09</div>
                     <div style={{ fontSize: '0.85rem', color: 'var(--gray-600)' }}>Expert Digital, IA & Entreprises</div>
+                  </div>
+                </a>
+
+                {/* Carte Calendly RDV Visio Direct */}
+                <a
+                  href="https://calendly.com/formation-rmcf/30min"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="card hover:shadow-lg transition-all"
+                  style={{ padding: '1.5rem', display: 'flex', alignItems: 'center', gap: '1.25rem', border: '1.5px solid #0284c7', background: '#f0f9ff' }}
+                >
+                  <div style={{ width: '50px', height: '50px', borderRadius: '50%', background: '#0284c7', color: 'white', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.3rem', flexShrink: 0 }}>
+                    📅
+                  </div>
+                  <div>
+                    <div style={{ fontWeight: 800, color: '#0369a1', fontSize: '1.05rem' }}>Prendre RDV (15 min gratuit)</div>
+                    <div style={{ fontSize: '0.85rem', color: '#0369a1' }}>Réservez directement votre créneau visio sur Calendly</div>
                   </div>
                 </a>
 

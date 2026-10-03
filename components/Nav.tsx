@@ -91,7 +91,7 @@ export default function Nav() {
 
             <div className="flex items-center gap-5">
               <a
-                href="https://calendly.com/otop-formation"
+                href="https://calendly.com/formation-rmcf/30min"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-1.5 text-cyan-300 hover:text-cyan-200 transition font-semibold"

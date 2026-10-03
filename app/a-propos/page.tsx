@@ -38,11 +38,10 @@ export default function AProposPage() {
               Commencer mon inscription →
             </Link>
             <a 
-              href="https://calendly.com/otop-formation" 
+              href="https://calendly.com/formation-rmcf/30min" 
               target="_blank" 
               rel="noopener noreferrer" 
-              className="btn btn-ghost" 
-              style={{ color: 'white', borderColor: 'rgba(255, 255, 255, 0.4)' }}
+              className="px-6 py-3.5 rounded-xl bg-[#021842] hover:bg-[#062463] text-cyan-300 border border-cyan-400/50 font-bold text-sm transition shadow flex items-center gap-2"
             >
               Échanger 15 min avec Mélissa ou Renaud
             </a>
@@ -248,7 +247,7 @@ export default function AProposPage() {
                 Commencer mon inscription →
               </Link>
               <a
-                href="https://calendly.com/otop-formation"
+                href="https://calendly.com/formation-rmcf/30min"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-6 py-3.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 font-bold text-sm transition-all"
