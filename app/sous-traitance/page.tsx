@@ -135,7 +135,7 @@ export default function SousTraitance() {
 
               <div className="form-row">
                 <div className="form-group">
-                  <label className="form-label">Email professionnel *</label>
+                  <label className="form-label">Email *</label>
                   <input type="email" className="form-input" value={form.email} onChange={e => setForm(f => ({ ...f, email: e.target.value }))} required />
                 </div>
                 <div className="form-group">

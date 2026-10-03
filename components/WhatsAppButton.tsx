@@ -215,10 +215,11 @@ export default function WhatsAppButton() {
         {!isOpen && (
           <button
             onClick={() => setIsOpen(true)}
-            className="hidden sm:flex items-center gap-2 px-3.5 py-2 rounded-full bg-slate-900 text-white text-xs font-semibold shadow-xl border border-slate-700 hover:border-emerald-500/50 transition cursor-pointer"
+            style={{ backgroundColor: '#021842', color: '#ffffff', borderColor: 'rgba(56, 189, 248, 0.4)' }}
+            className="hidden sm:flex items-center gap-2 px-4 py-2 rounded-full text-xs font-bold shadow-2xl border hover:border-emerald-400 transition cursor-pointer"
           >
-            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-            <span>Une question ? Écrivez à Mélissa sur WhatsApp</span>
+            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse shrink-0" />
+            <span style={{ color: '#ffffff' }}>Une question ? Écrivez à Mélissa sur WhatsApp</span>
           </button>
         )}
 

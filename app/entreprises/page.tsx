@@ -21,8 +21,11 @@ export default function Entreprises() {
             <span>Solutions Entreprises</span>
           </div>
           <div className="mb-4">
-            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-900/70 border border-cyan-400/40 text-cyan-300 text-xs font-bold uppercase tracking-wider shadow-sm">
-              ⏱ Accompagnement B2B &amp; formation professionnelle · Partenaire Eloq-One certifié Qualiopi
+            <span 
+              style={{ backgroundColor: '#ffffff', color: '#021842', borderColor: '#cbd5e1' }}
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-black uppercase tracking-wider shadow-md border"
+            >
+              <span style={{ color: '#021842' }}>⏱ Accompagnement B2B &amp; formation professionnelle · Partenaire Eloq-One certifié Qualiopi</span>
             </span>
           </div>
           <h1 style={{ color: 'white', fontSize: 'clamp(2.3rem, 4.5vw, 3.6rem)', marginBottom: '1.5rem', lineHeight: 1.2 }}>
@@ -172,10 +175,12 @@ export default function Entreprises() {
       </section>
 
       {/* CTA Section */}
-      <section className="section bg-gradient-to-br from-[#021842] via-[#082968] to-[#021842] py-20 border-t border-b border-blue-500/20 text-white text-center">
+      <section className="section dark-lock-section bg-gradient-to-br from-[#021842] via-[#082968] to-[#021842] py-20 border-t border-b border-blue-500/20 text-white text-center">
         <div className="container mx-auto px-4" style={{ maxWidth: '850px' }}>
-          <h2 style={{ color: 'white', marginBottom: '1.5rem', fontSize: '2.5rem' }}>Besoin de faire progresser votre entreprise ?</h2>
-          <p className="text-blue-100 text-lg mb-10 leading-relaxed">
+          <h2 style={{ color: '#ffffff', marginBottom: '1.5rem', fontSize: '2.5rem' }} className="font-extrabold text-white">
+            <span style={{ color: '#ffffff' }}>Besoin de faire progresser votre entreprise ?</span>
+          </h2>
+          <p style={{ color: '#e0e7ff' }} className="text-lg mb-10 leading-relaxed font-medium">
             Prenez contact directement avec nos formateurs pour un diagnostic personnalisé de 15 minutes sans engagement.
           </p>
           <div style={{ display: 'flex', justifyContent: 'center', gap: '1rem', flexWrap: 'wrap', marginBottom: '2.5rem' }}>
@@ -197,14 +202,14 @@ export default function Entreprises() {
               href="https://wa.me/33767246825?text=Bonjour%2C%20je%20souhaite%20un%20%C3%A9change%20concernant%20les%20solutions%20entreprises." 
               target="_blank" 
               rel="noopener noreferrer" 
-              className="px-6 py-3.5 rounded-xl bg-[#25D366] hover:bg-[#20ba5a] text-white font-bold text-sm transition shadow-lg shadow-emerald-900/30 flex items-center gap-2"
+              className="px-6 py-3.5 rounded-xl bg-[#25D366] hover:bg-[#20ba59] text-white font-bold text-sm transition shadow-lg shadow-emerald-900/30 flex items-center gap-2"
             >
               💬 WhatsApp
             </a>
           </div>
 
-          <div style={{ background: 'rgba(255, 255, 255, 0.08)', borderRadius: '12px', padding: '1rem 1.5rem', textAlign: 'center' }}>
-            <p style={{ margin: 0, fontSize: '0.85rem', color: 'rgba(255, 255, 255, 0.85)', lineHeight: 1.5 }}>
+          <div style={{ background: 'rgba(255, 255, 255, 0.12)', border: '1px solid rgba(255, 255, 255, 0.2)', borderRadius: '12px', padding: '1rem 1.5rem', textAlign: 'center' }}>
+            <p style={{ margin: 0, fontSize: '0.85rem', color: '#ffffff', lineHeight: 1.6 }}>
               Pour les formations financées par un OPCO, un FAF ou France Travail, notre partenaire Eloq-One, organisme certifié Qualiopi, établit la convention et assure la facturation. La prise en charge reste soumise à l’accord du financeur.
             </p>
           </div>

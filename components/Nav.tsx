@@ -144,16 +144,16 @@ export default function Nav() {
                 </button>
                 
                 {/* Menu déroulant */}
-                <ul className="site-dropdown-menu absolute top-full left-0 hidden group-hover:block w-80 p-2 rounded-2xl bg-[#031538] border border-slate-700 shadow-2xl list-none z-50">
+                <ul className="site-dropdown-menu absolute top-full left-0 hidden group-hover:block w-96 p-2 rounded-2xl bg-[#031538] border border-slate-700 shadow-2xl list-none z-50 whitespace-normal">
                   {formationsLinks.map((item) => (
                     <li key={item.label} role="none">
                       <Link
                         href={item.href}
-                        className="site-dropdown-item block p-2.5 rounded-xl hover:bg-slate-800/80 transition"
+                        className="site-dropdown-item block p-3 rounded-xl hover:bg-slate-800/80 transition whitespace-normal"
                         role="menuitem"
                       >
-                        <div className="site-dropdown-title font-bold text-white text-xs">{item.label}</div>
-                        <div className="site-dropdown-desc text-[11px] text-slate-400 mt-0.5 leading-snug">{item.desc}</div>
+                        <div className="site-dropdown-title font-bold text-white text-xs leading-tight">{item.label}</div>
+                        <div className="site-dropdown-desc text-[11px] text-slate-300 mt-1 leading-normal">{item.desc}</div>
                       </Link>
                     </li>
                   ))}

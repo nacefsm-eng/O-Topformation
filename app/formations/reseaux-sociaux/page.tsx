@@ -18,26 +18,26 @@ export default function FormationReseauxSociauxPage() {
       <section className="hero-subpage" style={{ background: 'linear-gradient(135deg, var(--blue-900) 0%, #111d4a 100%)', color: 'white', padding: '8rem 0 5rem' }}>
         <div className="container">
           <div style={{ maxWidth: '850px' }}>
-            <span className="badge" style={{ background: 'rgba(255, 59, 59, 0.2)', color: '#ff8585', border: '1px solid var(--red-600)', marginBottom: '1.25rem' }}>
+            <span className="hero-certif-badge inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold mb-4">
               ⏱ Prépare à la certification RS7351 (France Compétences)
             </span>
-            <h1 style={{ color: 'white', marginBottom: '0.75rem', fontSize: 'clamp(2.2rem, 4.5vw, 3.5rem)' }}>
+            <h1 style={{ marginBottom: '0.75rem', fontSize: 'clamp(2.2rem, 4.5vw, 3.5rem)', lineHeight: 1.2 }}>
               Structurez votre visibilité, attirez des clients et gagnez du temps sur vos réseaux.
             </h1>
-            <p style={{ color: 'var(--gold-light)', fontSize: '1.1rem', fontWeight: 600, marginBottom: '1.25rem' }}>
+            <p className="hero-subtitle-highlight text-base sm:text-lg font-bold mb-3">
               Gérer la communication digitale d&apos;une entreprise via les réseaux sociaux (RS7351)
             </p>
-            <p style={{ color: 'var(--blue-100)', fontSize: '1.15rem', lineHeight: '1.8', marginBottom: '1.5rem' }}>
+            <p className="hero-subtitle text-sm sm:text-base leading-relaxed mb-6">
               5 modules • 21 h dont 2 h d’accompagnement • Ateliers concrets sur vos comptes • Prépare à la certification RS7351 • Financement OPCO / FAF possible
             </p>
-            <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap', marginBottom: '1.5rem', fontSize: '0.9rem', color: '#cbd5e1' }}>
+            <div className="hero-feature-pills flex gap-2 flex-wrap mb-6 text-sm font-semibold">
               <span>✓ 21 h en ligne, dont 2 h avec un expert</span>
-              <span>•</span>
+              <span className="opacity-40">•</span>
               <span>✓ Ateliers concrets sur vos propres comptes</span>
-              <span>•</span>
+              <span className="opacity-40">•</span>
               <span>✓ Financement OPCO / FAF possible</span>
             </div>
-            <div style={{ padding: '0.85rem 1.25rem', borderRadius: '12px', background: 'rgba(255, 255, 255, 0.08)', border: '1px solid rgba(255, 255, 255, 0.15)', fontSize: '0.82rem', color: '#93c5fd', marginBottom: '2rem', lineHeight: 1.5 }}>
+            <div className="hero-funding-info p-3.5 rounded-xl text-xs mb-8 leading-relaxed">
               ℹ️ Pour les formations financées par un OPCO, un FAF ou France Travail, notre partenaire Eloq-One, organisme certifié Qualiopi, établit la convention et assure la facturation. La prise en charge reste soumise à l’accord du financeur.
             </div>
             <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', alignItems: 'center' }}>

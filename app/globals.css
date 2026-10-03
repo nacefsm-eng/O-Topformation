@@ -1393,6 +1393,75 @@ html[data-theme="clair"] .top-bar-contact a {
   color: #334155 !important;
 }
 
+/* High Contrast Theme Helpers for Subpages, Dropdowns & Heros */
+.hero-certif-badge {
+  background: rgba(239, 68, 68, 0.15);
+  color: #fca5a5;
+  border: 1px solid rgba(239, 68, 68, 0.4);
+}
+html[data-theme="clair"] .hero-certif-badge {
+  background: #fee2e2 !important;
+  color: #b91c1c !important;
+  border: 1px solid #fca5a5 !important;
+}
+
+.hero-feature-pills {
+  color: #e2e8f0;
+}
+html[data-theme="clair"] .hero-feature-pills,
+html[data-theme="clair"] .hero-feature-pills span {
+  color: #0f172a !important;
+  font-weight: 600 !important;
+}
+
+.hero-funding-info {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #93c5fd;
+}
+html[data-theme="clair"] .hero-funding-info,
+html[data-theme="clair"] .hero-funding-info p {
+  background: #f0f9ff !important;
+  border: 1px solid #bae6fd !important;
+  color: #0369a1 !important;
+}
+
+.hero-subtitle-highlight {
+  color: #fef08a;
+}
+html[data-theme="clair"] .hero-subtitle-highlight {
+  color: #0369a1 !important;
+}
+
+/* Sections with dark navy backgrounds locked to white text */
+.dark-lock-section,
+.dark-lock-section h2,
+.dark-lock-section h3,
+.dark-lock-section p,
+.dark-lock-section span,
+html[data-theme="clair"] .dark-lock-section h2,
+html[data-theme="clair"] .dark-lock-section h3,
+html[data-theme="clair"] .dark-lock-section p {
+  color: #ffffff !important;
+}
+
+/* Dropdown Menu In Light & Dark Modes */
+html[data-theme="clair"] .site-dropdown-menu {
+  background-color: #ffffff !important;
+  border: 1px solid #e2e8f0 !important;
+  box-shadow: 0 20px 45px -10px rgba(0, 0, 0, 0.15) !important;
+}
+html[data-theme="clair"] .site-dropdown-title {
+  color: #0f172a !important;
+}
+html[data-theme="clair"] .site-dropdown-desc {
+  color: #475569 !important;
+}
+html[data-theme="clair"] .site-dropdown-item:hover {
+  background-color: #f1f5f9 !important;
+}
+
+
 /* Bulletproof Footer Styling in all themes (Images 1 & 3 fix) */
 footer,
 footer.footer,

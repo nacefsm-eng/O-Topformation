@@ -21,18 +21,23 @@ export default function MethodeTop() {
             <span className="breadcrumb-sep" style={{ margin: '0 0.5rem' }}>›</span>
             <span>Conduite du changement &amp; Méthode TOP®</span>
           </div>
-          <span className="badge" style={{ background: 'rgba(205, 175, 93, 0.2)', color: 'var(--gold-light)', border: '1px solid var(--gold)', marginBottom: '1rem' }}>
-            🧭 Conduite du changement • Méthode TOP® (21 h)
-          </span>
-          <h1 style={{ color: 'white', fontSize: 'clamp(2.2rem, 4.5vw, 3.5rem)', marginBottom: '1.5rem', lineHeight: 1.2 }}>
+          <div className="mb-4">
+            <span 
+              style={{ backgroundColor: '#ffffff', color: '#021842', borderColor: '#cbd5e1' }}
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-black uppercase tracking-wider shadow-md border"
+            >
+              <span style={{ color: '#021842' }}>🧭 Conduite du changement • Méthode TOP® (21 h)</span>
+            </span>
+          </div>
+          <h1 style={{ marginBottom: '1.5rem', fontSize: 'clamp(2.2rem, 4.5vw, 3.5rem)', lineHeight: 1.2 }}>
             Conduite du changement : la Méthode TOP® au service de l’adoption de l’IA
           </h1>
-          <p style={{ color: 'var(--blue-100)', fontSize: '1.2rem', maxWidth: '850px', lineHeight: 1.7, marginBottom: '2rem' }}>
+          <p className="hero-subtitle text-base sm:text-lg mb-6 leading-relaxed" style={{ maxWidth: '850px' }}>
             Gestion de la pression • Concentration • Adaptabilité • Récupération active. Des techniques concrètes pour garder la lucidité décisionnelle et réussir la transformation de vos équipes.
           </p>
 
-          <div style={{ background: 'rgba(255, 255, 255, 0.08)', borderRadius: '12px', padding: '1.25rem 1.5rem', maxWidth: '850px', marginBottom: '2.5rem', border: '1px solid rgba(255, 255, 255, 0.15)' }}>
-            <p style={{ margin: 0, fontSize: '0.95rem', color: '#93c5fd', fontStyle: 'italic', lineHeight: 1.6 }}>
+          <div className="hero-funding-info p-4 rounded-xl max-w-3xl mb-8 border">
+            <p style={{ margin: 0, fontSize: '0.95rem', fontStyle: 'italic', lineHeight: 1.6 }}>
               « Selon le Boston Consulting Group, la réussite d’une transformation par l’IA tient pour 10 % aux algorithmes, 20 % à la technologie et aux données, et 70 % aux personnes et aux processus. »
             </p>
           </div>

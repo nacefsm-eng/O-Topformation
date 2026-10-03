@@ -1993,14 +1993,14 @@ export default function PlaquetteTopView() {
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
                       <label style={{ color: '#0a1128' }} className="block font-bold mb-1">
-                        Email professionnel *
+                        Email *
                       </label>
                       <input
                         type="email"
                         required
                         value={formState.email}
                         onChange={(e) => setFormState({ ...formState, email: e.target.value })}
-                        placeholder="pierre.dupont@structure.com"
+                        placeholder="pierre.dupont@exemple.com"
                         style={{ backgroundColor: '#ffffff', border: '1px solid #cbd5e1' }}
                         className="w-full px-3.5 py-2.5 rounded-xl text-slate-900 text-xs focus:outline-none focus:border-[#003492]"
                       />

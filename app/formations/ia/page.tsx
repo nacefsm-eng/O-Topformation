@@ -18,25 +18,25 @@ export default function FormationIAPage() {
       <section className="hero-subpage" style={{ background: 'linear-gradient(135deg, var(--blue-900) 0%, #051937 100%)', color: 'white', padding: '8rem 0 5rem' }}>
         <div className="container">
           <div style={{ maxWidth: '850px' }}>
-            <span className="badge" style={{ background: 'rgba(205, 175, 93, 0.2)', color: 'var(--gold-light)', border: '1px solid var(--gold)', marginBottom: '1.25rem' }}>
+            <span className="hero-certif-badge inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold mb-4">
               ⏱ Préparation aux certifications RS6776 et RS7344 (passage en option)
             </span>
-            <h1 style={{ color: 'white', marginBottom: '1.5rem', fontSize: 'clamp(2.2rem, 4.5vw, 3.5rem)', lineHeight: 1.2 }}>
+            <h1 style={{ marginBottom: '1.5rem', fontSize: 'clamp(2.2rem, 4.5vw, 3.5rem)', lineHeight: 1.2 }}>
               Utilisez l’IA avec méthode pour gagner du temps dans votre activité
             </h1>
-            <p style={{ color: 'var(--blue-100)', fontSize: '1.15rem', lineHeight: '1.8', marginBottom: '1.5rem' }}>
+            <p className="hero-subtitle text-base sm:text-lg mb-6 leading-relaxed">
               Des formations 100 % en ligne pour identifier les bons usages, éviter les erreurs et intégrer l’IA dans votre activité, avec 2 h d’accompagnement individuel par un expert.
             </p>
-            <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap', marginBottom: '1.5rem', fontSize: '0.9rem', color: '#cbd5e1' }}>
+            <div className="hero-feature-pills flex gap-2 flex-wrap mb-6 text-sm font-semibold">
               <span>✓ 21 h en ligne, dont 2 h avec un expert</span>
-              <span>•</span>
+              <span className="opacity-40">•</span>
               <span>✓ Accès sous 24 h, à vie</span>
-              <span>•</span>
+              <span className="opacity-40">•</span>
               <span>✓ Prépare à une certification RS (en option)</span>
-              <span>•</span>
+              <span className="opacity-40">•</span>
               <span>✓ Paiement en 3 fois sans frais ou financement possible</span>
             </div>
-            <div style={{ padding: '0.85rem 1.25rem', borderRadius: '12px', background: 'rgba(255, 255, 255, 0.08)', border: '1px solid rgba(255, 255, 255, 0.15)', fontSize: '0.82rem', color: '#93c5fd', marginBottom: '2rem', lineHeight: 1.5 }}>
+            <div className="hero-funding-info p-3.5 rounded-xl text-xs mb-8 leading-relaxed">
               ℹ️ Pour les formations financées par un OPCO, un FAF ou France Travail, notre partenaire Eloq-One, organisme certifié Qualiopi, établit la convention et assure la facturation. La prise en charge reste soumise à l’accord du financeur.
             </div>
             <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', alignItems: 'center' }}>

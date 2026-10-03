@@ -24,9 +24,14 @@ export default function AProposPage() {
             <span className="breadcrumb-sep" style={{ margin: '0 0.5rem' }}>›</span>
             <span>À Propos</span>
           </div>
-          <span className="badge" style={{ background: 'rgba(205, 175, 93, 0.2)', color: 'var(--gold-light)', border: '1px solid var(--gold)', marginBottom: '1rem' }}>
-            Organisme de formation • Ollioules (Var) &amp; 100 % en ligne
-          </span>
+          <div className="mb-4">
+            <span 
+              style={{ backgroundColor: '#ffffff', color: '#021842', borderColor: '#cbd5e1' }}
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-black uppercase tracking-wider shadow-md border"
+            >
+              <span style={{ color: '#021842' }}>Organisme de formation • Ollioules (Var) &amp; 100 % en ligne</span>
+            </span>
+          </div>
           <h1 style={{ color: 'white', fontSize: 'clamp(2.3rem, 4.5vw, 3.6rem)', marginBottom: '1.5rem', lineHeight: 1.2 }}>
             L’IA et l’humain au service d’une performance durable.
           </h1>

@@ -76,9 +76,14 @@ function ContactContent() {
     <main>
       <div className="page-hero" style={{ background: 'linear-gradient(135deg, var(--blue-900) 0%, #03142e 100%)', color: 'white', padding: '6.5rem 0 4rem' }}>
         <div className="container" style={{ textAlign: 'center', maxWidth: '800px' }}>
-          <span className="badge" style={{ background: 'rgba(205, 175, 93, 0.2)', color: 'var(--gold-light)', border: '1px solid var(--gold)', marginBottom: '1rem' }}>
-            ⚡ Diagnostic Pédagogique Offert (15 min)
-          </span>
+          <div className="mb-4">
+            <span 
+              style={{ backgroundColor: '#ffffff', color: '#021842', borderColor: '#cbd5e1' }}
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-black uppercase tracking-wider shadow-md border"
+            >
+              <span style={{ color: '#021842' }}>⚡ Diagnostic Pédagogique Offert (15 min)</span>
+            </span>
+          </div>
           <h1 style={{ color: 'white', fontSize: 'clamp(2.2rem, 4.5vw, 3.2rem)', marginBottom: '1.25rem' }}>
             Contactez notre équipe pédagogique
           </h1>
@@ -265,14 +270,14 @@ function ContactContent() {
                     {/* Champ 2 : Email */}
                     <div>
                       <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 700, marginBottom: '0.4rem', color: 'var(--gray-700)' }}>
-                        2. Email professionnel *
+                        2. Email *
                       </label>
                       <input
                         type="email"
                         required
                         value={form.email}
                         onChange={e => setForm({ ...form, email: e.target.value })}
-                        placeholder="sophie@entreprise.fr"
+                        placeholder="votre.email@exemple.com"
                         style={{ width: '100%', padding: '0.85rem 1rem', borderRadius: 'var(--radius-sm)', border: '1.5px solid var(--gray-300)', fontSize: '0.95rem' }}
                       />
                     </div>

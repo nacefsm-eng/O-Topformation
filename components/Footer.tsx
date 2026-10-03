@@ -37,12 +37,42 @@ export default function Footer() {
           <div className="footer-col space-y-3">
             <h4 className="font-bold text-white text-sm uppercase tracking-wider">Nos formations</h4>
             <ul className="footer-links space-y-2 text-xs list-none">
-              <li><Link href="/formations/ia#rs6776" className="text-slate-200 hover:text-white transition font-medium">⚡ IA générative (RS6776) — 600 €</Link></li>
-              <li><Link href="/formations/ia#rs7344" className="text-slate-200 hover:text-white transition font-medium">🤖 Développer son activité avec l’IA (RS7344)</Link></li>
-              <li><Link href="/formations/reseaux-sociaux" className="text-slate-200 hover:text-white transition font-medium">📱 Réseaux sociaux (RS7351)</Link></li>
-              <li><Link href="/methode" className="text-slate-200 hover:text-white transition font-medium">🧭 Méthode TOP® — conduite du changement (21 h)</Link></li>
-              <li><Link href="/catalogue" className="hover:text-white transition font-bold text-cyan-300">✨ Catalogue et packs dégressifs</Link></li>
-              <li><Link href="/commander" className="hover:text-white transition font-bold text-red-400">💳 Inscription &amp; Paiement en ligne</Link></li>
+              <li>
+                <Link href="/formations/ia#rs6776" className="flex items-center gap-2 text-slate-200 hover:text-white transition">
+                  <span className="w-4 text-center shrink-0">⚡</span>
+                  <span>IA générative (RS6776) — 600 €</span>
+                </Link>
+              </li>
+              <li>
+                <Link href="/formations/ia#rs7344" className="flex items-center gap-2 text-slate-200 hover:text-white transition">
+                  <span className="w-4 text-center shrink-0">🤖</span>
+                  <span>Développer son activité avec l’IA (RS7344)</span>
+                </Link>
+              </li>
+              <li>
+                <Link href="/formations/reseaux-sociaux" className="flex items-center gap-2 text-slate-200 hover:text-white transition">
+                  <span className="w-4 text-center shrink-0">📱</span>
+                  <span>Réseaux sociaux (RS7351)</span>
+                </Link>
+              </li>
+              <li>
+                <Link href="/methode" className="flex items-center gap-2 text-slate-200 hover:text-white transition">
+                  <span className="w-4 text-center shrink-0">🧭</span>
+                  <span>Méthode TOP® — conduite du changement (21 h)</span>
+                </Link>
+              </li>
+              <li>
+                <Link href="/catalogue" className="flex items-center gap-2 text-slate-200 hover:text-white transition">
+                  <span className="w-4 text-center shrink-0">✨</span>
+                  <span>Catalogue et packs dégressifs</span>
+                </Link>
+              </li>
+              <li>
+                <Link href="/commander" className="flex items-center gap-2 text-slate-200 hover:text-white transition">
+                  <span className="w-4 text-center shrink-0">💳</span>
+                  <span>Inscription &amp; Paiement en ligne</span>
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -64,7 +94,7 @@ export default function Footer() {
             <ul className="footer-links space-y-2 text-xs list-none">
               <li><Link href="/financement" className="text-slate-200 hover:text-white transition">Financement (OPCO, FAF, France Travail)</Link></li>
               <li><Link href="/accessibilite" className="text-slate-200 hover:text-white transition">Accessibilité &amp; handicap</Link></li>
-              <li><Link href="/reglement-interieur" className="text-cyan-300 hover:text-white transition font-semibold">Règlement intérieur</Link></li>
+              <li><Link href="/reglement-interieur" className="text-slate-200 hover:text-white transition">Règlement intérieur</Link></li>
               <li><Link href="/reclamations" className="text-slate-200 hover:text-white transition">Réclamations (SLA 2/5 jours)</Link></li>
               <li><Link href="/mentions-legales" className="text-slate-200 hover:text-white transition">Mentions légales</Link></li>
               <li><Link href="/cgv" className="text-slate-200 hover:text-white transition">CGV</Link></li>
@@ -72,7 +102,6 @@ export default function Footer() {
               <li><Link href="/a-propos" className="text-slate-200 hover:text-white transition">À Propos d’Ô’TOP</Link></li>
             </ul>
           </div>
-
         </div>
 
         {/* Bloc Partenaire Unique Conforme Qualiopi (Section 5.4) */}
@@ -95,8 +124,11 @@ export default function Footer() {
             </div>
           </div>
 
-          <div className="shrink-0 text-xs font-bold text-[#021842] px-4 py-2 rounded-xl bg-slate-100 border border-slate-300">
-            🏛️ Ô’TOP Formations : en cours de certification Qualiopi
+          <div 
+            style={{ color: '#021842', backgroundColor: '#f1f5f9', borderColor: '#cbd5e1' }}
+            className="shrink-0 text-xs font-black px-4 py-2.5 rounded-xl border shadow-sm"
+          >
+            <span style={{ color: '#021842', fontWeight: 800 }}>🏛️ Ô’TOP Formations : en cours de certification Qualiopi</span>
           </div>
         </div>
 
