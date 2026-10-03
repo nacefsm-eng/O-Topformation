@@ -76,24 +76,27 @@ export default function Footer() {
         </div>
 
         {/* Bloc Partenaire Unique Conforme Qualiopi (Section 5.4) */}
-        <div className="mt-12 p-5 rounded-2xl bg-white/[0.03] border border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div className="flex items-center gap-4">
-            <div className="px-3 py-2 bg-white rounded-lg text-slate-900 font-black text-xs border border-blue-600 shrink-0">
-              <span className="text-[#0284c7]">Eloq-One</span>
-              <span className="block text-[9px] text-slate-600 font-bold uppercase">Certifié Qualiopi</span>
+        <div className="mt-12 p-6 rounded-2xl bg-white text-slate-900 border border-slate-200 shadow-xl flex flex-col md:flex-row items-center justify-between gap-6">
+          <div className="flex flex-col sm:flex-row items-center gap-5 text-center sm:text-left">
+            <div className="shrink-0 bg-white p-1 flex items-center justify-center">
+              <img 
+                src="/qualiopi.png" 
+                alt="Qualiopi Processus Certifié - République Française - Actions de formation" 
+                className="h-16 sm:h-20 w-auto object-contain"
+              />
             </div>
             <div>
-              <div className="font-bold text-white text-xs sm:text-sm">
+              <div className="font-extrabold text-[#021842] text-sm sm:text-base">
                 Partenaire financements : Eloq-One (organisme certifié Qualiopi au titre des Actions de formation)
               </div>
-              <div className="text-[11px] text-slate-400 mt-0.5">
-                Pour les formations financées (OPCO, FAF, France Travail), Eloq-One établit la convention normée et assure la facturation.
+              <div className="text-xs text-slate-700 mt-1 max-w-2xl leading-relaxed font-medium">
+                Pour les formations financées (OPCO, FAF, France Travail), notre partenaire Eloq-One établit la convention normée et assure la facturation.
               </div>
             </div>
           </div>
 
-          <div className="shrink-0 text-xs text-slate-400 font-medium">
-            Ô’TOP Formations : en cours de certification Qualiopi
+          <div className="shrink-0 text-xs font-bold text-[#021842] px-4 py-2 rounded-xl bg-slate-100 border border-slate-300">
+            🏛️ Ô’TOP Formations : en cours de certification Qualiopi
           </div>
         </div>
 

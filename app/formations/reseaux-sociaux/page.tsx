@@ -49,7 +49,7 @@ export default function FormationReseauxSociauxPage() {
                 Commencer mon inscription — 1 490 € →
               </Link>
               <a 
-                href="https://calendly.com/otop-formation" 
+                href="https://calendly.com/formation-rmcf/30min" 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="btn btn-ghost" 
@@ -199,7 +199,7 @@ export default function FormationReseauxSociauxPage() {
             </ul>
 
             <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', marginTop: '2.5rem' }}>
-              <a href="https://calendly.com/otop-formation" target="_blank" rel="noopener noreferrer" className="btn btn-primary" style={{ background: 'var(--blue-900)' }}>
+              <a href="https://calendly.com/formation-rmcf/30min" target="_blank" rel="noopener noreferrer" className="btn btn-primary" style={{ background: 'var(--blue-900)' }}>
                 Échanger avec Mélissa et Renaud ⚡
               </a>
               <a href="tel:+33767246825" className="btn" style={{ border: '1.5px solid var(--gray-300)', color: 'var(--gray-700)' }}>
@@ -227,7 +227,7 @@ export default function FormationReseauxSociauxPage() {
             <Link href="/commander?offre=rs7351" className="btn btn-primary" style={{ background: 'var(--red-600)', color: 'white', padding: '1rem 2.5rem', fontWeight: 800 }}>
               Commencer mon inscription — 1 490 € →
             </Link>
-            <a href="https://calendly.com/otop-formation" target="_blank" rel="noopener noreferrer" className="btn btn-ghost" style={{ color: 'white', borderColor: 'rgba(255,255,255,0.4)' }}>
+            <a href="https://calendly.com/formation-rmcf/30min" target="_blank" rel="noopener noreferrer" className="btn btn-ghost" style={{ color: 'white', borderColor: 'rgba(255,255,255,0.4)' }}>
               Prendre RDV (15 min) ⚡
             </a>
           </div>

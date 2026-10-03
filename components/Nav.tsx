@@ -99,14 +99,6 @@ export default function Nav() {
                 <Calendar size={13} />
                 <span>Prendre RDV (15 min gratuit)</span>
               </a>
-              <span className="text-slate-600">•</span>
-              <Link
-                href="/connexion"
-                className="flex items-center gap-1.5 text-cyan-300 hover:text-cyan-200 transition font-semibold"
-              >
-                <Lock size={12} />
-                <span>Espace Stagiaire</span>
-              </Link>
             </div>
           </div>
         </div>
@@ -290,15 +282,7 @@ export default function Nav() {
               <li><Link href="/financement" onClick={() => setMobileOpen(false)} className="block py-1 text-slate-300">Financement</Link></li>
               <li><Link href="/equipe" onClick={() => setMobileOpen(false)} className="block py-1 text-slate-300">Équipe</Link></li>
               <li><Link href="/contact" onClick={() => setMobileOpen(false)} className="block py-1 text-slate-300">Contact</Link></li>
-              <li>
-                <Link
-                  href="/connexion"
-                  onClick={() => setMobileOpen(false)}
-                  className="block py-2 text-cyan-400 font-bold border-t border-slate-800"
-                >
-                  🔐 Espace Stagiaire (Connexion)
-                </Link>
-              </li>
+
             </ul>
           </div>
 
@@ -311,7 +295,7 @@ export default function Nav() {
               Commencer mon inscription →
             </Link>
             <a
-              href="https://calendly.com/otop-formation"
+              href="https://calendly.com/formation-rmcf/30min"
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => setMobileOpen(false)}
@@ -332,7 +316,7 @@ export default function Nav() {
           S’inscrire →
         </Link>
         <a
-          href="https://calendly.com/otop-formation"
+          href="https://calendly.com/formation-rmcf/30min"
           target="_blank"
           rel="noopener noreferrer"
           className="flex-1 py-3 px-3 rounded-xl bg-slate-800 text-slate-200 font-bold text-xs text-center border border-slate-700"

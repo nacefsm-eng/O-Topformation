@@ -240,7 +240,7 @@ export default function HomePageClient() {
               </Link>
 
               <a
-                href="https://calendly.com/otop-formation"
+                href="https://calendly.com/formation-rmcf/30min"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full sm:w-auto px-7 py-4 rounded-2xl bg-slate-900/90 border border-slate-700 hover:border-slate-500 text-slate-200 font-bold text-base flex items-center justify-center gap-2 transition-all hover:bg-slate-800"
@@ -250,13 +250,14 @@ export default function HomePageClient() {
             </motion.div>
 
             {/* Bande de confiance Eloq-One Qualiopi */}
-            <div className="inline-flex flex-wrap items-center justify-center gap-4 px-6 py-2.5 rounded-2xl bg-slate-900/60 border border-slate-800 text-xs text-slate-300 mb-12">
-              <div className="flex items-center gap-2">
-                <img src="/logo-eloqone.png" alt="Eloq-One" className="h-6 w-auto object-contain opacity-90" />
-                <img src="/logo-qualiopi.png" alt="Qualiopi" className="h-6 w-auto object-contain opacity-90" />
+            <div className="inline-flex flex-wrap items-center justify-center gap-4 px-6 py-3 rounded-2xl bg-white border border-slate-200 text-xs text-slate-900 shadow-md mb-12">
+              <div className="flex items-center gap-3">
+                <img src="/logo-eloqone.png" alt="Eloq-One" className="h-6 w-auto object-contain" />
+                <div className="h-5 w-px bg-slate-300" />
+                <img src="/qualiopi.png" alt="Qualiopi Processus Certifié - Actions de formation" className="h-9 w-auto object-contain" />
               </div>
-              <span className="text-slate-400">
-                Notre partenaire <strong>Eloq-One</strong> est certifié Qualiopi (actions de formation).
+              <span className="text-slate-800 font-semibold">
+                Formations financées portées par notre partenaire <strong>Eloq-One</strong>, certifié Qualiopi.
               </span>
             </div>
 
@@ -1093,7 +1094,7 @@ export default function HomePageClient() {
               </div>
               <div className="flex gap-2 shrink-0">
                 <a
-                  href="https://calendly.com/otop-formation"
+                  href="https://calendly.com/formation-rmcf/30min"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="px-3.5 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-semibold"
@@ -1101,7 +1102,7 @@ export default function HomePageClient() {
                   Forfait 5h (550 €)
                 </a>
                 <a
-                  href="https://calendly.com/otop-formation"
+                  href="https://calendly.com/formation-rmcf/30min"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="px-3.5 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-semibold"
@@ -1315,7 +1316,7 @@ export default function HomePageClient() {
               Commencer mon inscription →
             </Link>
             <a
-              href="https://calendly.com/otop-formation"
+              href="https://calendly.com/formation-rmcf/30min"
               target="_blank"
               rel="noopener noreferrer"
               className="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-700 text-white font-bold text-sm text-center transition-all whitespace-nowrap"

@@ -276,8 +276,7 @@ export default function AdminDashboard() {
           </div>
         </div>
         <div style={{ display: 'flex', gap: '0.75rem' }}>
-          <a href="/admin/studio" style={{ background: 'var(--gold)', color: 'var(--blue-900)', padding: '0.5rem 1rem', borderRadius: '8px', textDecoration: 'none', fontSize: '0.85rem', fontWeight: 700 }}>🤖 Content Studio</a>
-          <a href="/mon-espace" target="_blank" style={{ background: '#2563eb', color: 'white', padding: '0.5rem 1rem', borderRadius: '8px', textDecoration: 'none', fontSize: '0.85rem', fontWeight: 700 }}>🎓 Espace Stagiaire</a>
+          <a href="/admin/studio" style={{ background: '#2563eb', color: 'white', padding: '0.5rem 1rem', borderRadius: '8px', textDecoration: 'none', fontSize: '0.85rem', fontWeight: 700 }}>🤖 Content Studio</a>
           <a href="/contact" style={{ background: 'rgba(255,255,255,0.12)', color: 'white', padding: '0.5rem 1rem', borderRadius: '8px', textDecoration: 'none', fontSize: '0.85rem', fontWeight: 600 }}>Site public</a>
           <button onClick={handleLogout} style={{ background: 'rgba(239,68,68,0.2)', color: '#fca5a5', padding: '0.5rem 1rem', borderRadius: '8px', border: '1px solid rgba(239,68,68,0.3)', fontSize: '0.85rem', fontWeight: 600, cursor: 'pointer' }}>🚪 Déconnexion</button>
         </div>

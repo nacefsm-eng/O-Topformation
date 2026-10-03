@@ -44,7 +44,7 @@ export default function FormationIAPage() {
                 Commencer mon inscription →
               </Link>
               <a 
-                href="https://calendly.com/otop-formation" 
+                href="https://calendly.com/formation-rmcf/30min" 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="btn btn-ghost" 
@@ -256,7 +256,7 @@ export default function FormationIAPage() {
               Commencer mon inscription →
             </Link>
             <a 
-              href="https://calendly.com/otop-formation" 
+              href="https://calendly.com/formation-rmcf/30min" 
               target="_blank" 
               rel="noopener noreferrer" 
               className="btn btn-ghost" 
