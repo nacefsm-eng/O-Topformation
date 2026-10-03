@@ -69,10 +69,15 @@ function ContactContent() {
           stored.unshift({
             id: Date.now(),
             nom: form.nom,
+            name: form.nom,
             email: form.email,
             tel: form.telephone,
+            phone: form.telephone,
             besoin: form.besoin,
-            message: `[Statut: ${form.statut}] ${form.message || ''}`,
+            track: form.besoin,
+            statut: form.statut,
+            message: form.message,
+            source: 'Page Contact',
             createdAt: new Date().toISOString(),
             read: false,
           });

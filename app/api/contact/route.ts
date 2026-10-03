@@ -125,3 +125,38 @@ export async function POST(req: NextRequest) {
     );
   }
 }
+
+// DELETE — supprimer un contact par son ID ou supprimer les tests
+export async function DELETE(req: NextRequest) {
+  const token = req.cookies.get('otop_admin_token')?.value;
+  if (!token) {
+    return NextResponse.json({ error: 'Accès non autorisé' }, { status: 401 });
+  }
+
+  try {
+    const { searchParams } = new URL(req.url);
+    const id = searchParams.get('id');
+    const clearTests = searchParams.get('clearTests') === 'true';
+
+    const db = await readDb();
+    let contacts = db.contacts || [];
+
+    if (clearTests) {
+      contacts = contacts.filter((c: any) => {
+        const txt = `${c.nom || ''} ${c.prenom || ''} ${c.message || ''} ${c.email || ''}`.toLowerCase();
+        return !txt.includes('test') && !txt.includes('sd') && !txt.includes('qds') && !txt.includes('qsdd');
+      });
+    } else if (id) {
+      const numId = Number(id);
+      contacts = contacts.filter((c: any) => c.id !== numId && String(c.id) !== id);
+    }
+
+    db.contacts = contacts;
+    await writeDb(db);
+
+    return NextResponse.json({ success: true, contacts });
+  } catch (err) {
+    console.error('Error deleting contact:', err);
+    return NextResponse.json({ success: false, error: 'Erreur lors de la suppression' }, { status: 500 });
+  }
+}

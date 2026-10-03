@@ -5,10 +5,18 @@ interface Contact {
   id: number;
   prenom?: string;
   nom?: string;
+  name?: string;
   email: string;
   tel?: string;
+  phone?: string;
   besoin?: string;
+  track?: string;
+  parcours?: string;
+  statut?: string;
+  priorityGoal?: string;
+  companySize?: string;
   message?: string;
+  source?: string;
   createdAt: string;
   read?: boolean;
 }
@@ -34,8 +42,10 @@ export default function AdminDashboard() {
   const [authError, setAuthError] = useState('');
   const [authLoading, setAuthLoading] = useState(false);
 
-  const [activeTab, setActiveTab] = useState<'reservations' | 'contacts' | 'documents' | 'students'>('reservations');
+  const [activeTab, setActiveTab] = useState<'reservations' | 'contacts' | 'documents' | 'students'>('contacts');
   const [contacts, setContacts] = useState<Contact[]>([]);
+  const [selectedContact, setSelectedContact] = useState<Contact | null>(null);
+  const [actionMessage, setActionMessage] = useState('');
   const [reservations, setReservations] = useState<Reservation[]>([]);
   const [students, setStudents] = useState<any[]>([]);
   const [newStudentEmail, setNewStudentEmail] = useState('');
@@ -90,7 +100,13 @@ export default function AdminDashboard() {
           }
         });
 
-        setContacts(mergedContacts.reverse());
+        mergedContacts.sort((a, b) => {
+          const tA = a.createdAt ? new Date(a.createdAt).getTime() : 0;
+          const tB = b.createdAt ? new Date(b.createdAt).getTime() : 0;
+          return tB - tA;
+        });
+
+        setContacts(mergedContacts);
         setReservations((rData.reservations || []).reverse());
         setStudents(sData.students || []);
       } catch {}
@@ -196,9 +212,101 @@ export default function AdminDashboard() {
     );
   }
 
-  const formatDate = (iso: string) => {
-    try { return new Date(iso).toLocaleDateString('fr-FR', { day: '2-digit', month: 'short', year: 'numeric', hour: '2-digit', minute: '2-digit' }); }
-    catch { return iso; }
+  const formatDate = (iso?: string) => {
+    if (!iso) return 'Récemment';
+    try {
+      const d = new Date(iso);
+      if (isNaN(d.getTime())) return 'Récemment';
+      return d.toLocaleDateString('fr-FR', {
+        day: '2-digit',
+        month: 'short',
+        year: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit',
+      });
+    } catch {
+      return 'Récemment';
+    }
+  };
+
+  const handleDeleteContact = async (id: number | string, e?: React.MouseEvent) => {
+    if (e) e.stopPropagation();
+    if (!confirm('Êtes-vous sûr de vouloir supprimer définitivement ce message ?')) return;
+
+    try {
+      await fetch(`/api/contact?id=${id}`, { method: 'DELETE' });
+      setContacts(prev => prev.filter(c => String(c.id) !== String(id)));
+
+      if (typeof window !== 'undefined') {
+        try {
+          const stored = JSON.parse(localStorage.getItem('otop_admin_leads') || '[]');
+          const filtered = stored.filter((c: any) => String(c.id) !== String(id));
+          localStorage.setItem('otop_admin_leads', JSON.stringify(filtered));
+        } catch {}
+      }
+
+      if (selectedContact && String(selectedContact.id) === String(id)) {
+        setSelectedContact(null);
+      }
+
+      setActionMessage('✅ Message supprimé avec succès.');
+      setTimeout(() => setActionMessage(''), 4000);
+    } catch (err) {
+      console.error('Erreur suppression:', err);
+    }
+  };
+
+  const handleClearTestMessages = async () => {
+    if (!confirm('Supprimer tous les messages de test (contenant test, sd, qds, etc.) ?')) return;
+
+    try {
+      await fetch('/api/contact?clearTests=true', { method: 'DELETE' });
+
+      const isTest = (c: any) => {
+        const txt = `${c.nom || ''} ${c.prenom || ''} ${c.name || ''} ${c.message || ''} ${c.email || ''}`.toLowerCase();
+        return txt.includes('test') || txt.includes('sd') || txt.includes('qds') || txt.includes('qsdd');
+      };
+
+      setContacts(prev => prev.filter(c => !isTest(c)));
+
+      if (typeof window !== 'undefined') {
+        try {
+          const stored = JSON.parse(localStorage.getItem('otop_admin_leads') || '[]');
+          const filtered = stored.filter((c: any) => !isTest(c));
+          localStorage.setItem('otop_admin_leads', JSON.stringify(filtered));
+        } catch {}
+      }
+
+      setActionMessage('✅ Messages de test nettoyés avec succès.');
+      setTimeout(() => setActionMessage(''), 4000);
+    } catch (err) {
+      console.error('Erreur nettoyage tests:', err);
+    }
+  };
+
+  const handleTestFormSubmitEmail = async () => {
+    setActionMessage('🚀 Envoi du test d\'activation en cours vers formation.rmcf@gmail.com...');
+    try {
+      const res = await fetch('https://formsubmit.co/ajax/formation.rmcf@gmail.com', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify({
+          _subject: "🚀 Activation & Test du Formulaire Ô'TOP Formations",
+          _replyto: "formation.rmcf@gmail.com",
+          Message: "Ceci est un e-mail de confirmation généré depuis l'espace administrateur Ô'TOP Formation pour valider la réception des leads sur formation.rmcf@gmail.com.",
+          Date_Heure: new Date().toLocaleString('fr-FR'),
+        }),
+      });
+      const data = await res.json();
+      if (data.success === 'true' || res.ok) {
+        setActionMessage('✅ E-mail envoyé ! Ouvrez Gmail (formation.rmcf@gmail.com) pour valider si un lien d\'activation est affiché.');
+      } else {
+        setActionMessage('✅ Requête transmise à FormSubmit. Vérifiez la boîte Gmail (et les spams).');
+      }
+    } catch {
+      setActionMessage('⚠️ Erreur lors de l’envoi. Veuillez réessayer.');
+    }
+    setTimeout(() => setActionMessage(''), 8000);
   };
 
   const Badge = ({ status }: { status: string }) => {
@@ -539,41 +647,275 @@ export default function AdminDashboard() {
 
         {/* Contacts */}
         {!loading && activeTab === 'contacts' && (
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
+            
+            {/* Feedback / Alert */}
+            {actionMessage && (
+              <div style={{
+                background: actionMessage.startsWith('⚠️') ? '#fef2f2' : '#ecfdf5',
+                color: actionMessage.startsWith('⚠️') ? '#991b1b' : '#065f46',
+                border: `1px solid ${actionMessage.startsWith('⚠️') ? '#fecaca' : '#a7f3d0'}`,
+                padding: '0.9rem 1.25rem',
+                borderRadius: '12px',
+                fontWeight: 600,
+                fontSize: '0.9rem',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+              }}>
+                <span>{actionMessage}</span>
+                <button onClick={() => setActionMessage('')} style={{ background: 'none', border: 'none', cursor: 'pointer', fontSize: '1rem', color: 'inherit' }}>✕</button>
+              </div>
+            )}
+
+            {/* Action Bar */}
+            <div style={{
+              background: 'white',
+              padding: '1.25rem 1.5rem',
+              borderRadius: '14px',
+              boxShadow: '0 1px 3px rgba(0,0,0,0.06)',
+              display: 'flex',
+              justifyContent: 'space-between',
+              alignItems: 'center',
+              flexWrap: 'wrap',
+              gap: '1rem'
+            }}>
+              <div>
+                <h2 style={{ fontSize: '1.2rem', fontWeight: 800, color: '#1e293b', margin: '0 0 0.25rem' }}>
+                  📬 Demandes de formation &amp; Diagnostics ({contacts.length})
+                </h2>
+                <p style={{ margin: 0, fontSize: '0.82rem', color: '#64748b' }}>
+                  Cliquez sur n&apos;importe quelle demande pour ouvrir tous les détails et y répondre directement.
+                </p>
+              </div>
+
+              <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
+                <button
+                  onClick={handleClearTestMessages}
+                  style={{
+                    background: '#fef2f2',
+                    color: '#dc2626',
+                    border: '1px solid #fecaca',
+                    padding: '0.55rem 1rem',
+                    borderRadius: '8px',
+                    fontSize: '0.82rem',
+                    fontWeight: 700,
+                    cursor: 'pointer',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '0.4rem',
+                    transition: 'all 0.2s',
+                  }}
+                  title="Supprimer automatiquement les faux messages de test"
+                >
+                  🧹 Nettoyer les tests
+                </button>
+
+                <button
+                  onClick={handleTestFormSubmitEmail}
+                  style={{
+                    background: '#eff6ff',
+                    color: '#1a3c8f',
+                    border: '1px solid #bfdbfe',
+                    padding: '0.55rem 1rem',
+                    borderRadius: '8px',
+                    fontSize: '0.82rem',
+                    fontWeight: 700,
+                    cursor: 'pointer',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '0.4rem',
+                    transition: 'all 0.2s',
+                  }}
+                  title="Renvoyer un e-mail test d'activation vers formation.rmcf@gmail.com"
+                >
+                  ✉️ Renvoyer l&apos;activation e-mail
+                </button>
+              </div>
+            </div>
+
             {contacts.length === 0 ? (
-              <div style={{ background: 'white', padding: '3rem', borderRadius: '12px', textAlign: 'center', color: '#94a3b8' }}>
+              <div style={{ background: 'white', padding: '3.5rem', borderRadius: '14px', textAlign: 'center', color: '#94a3b8' }}>
                 <div style={{ fontSize: '3rem', marginBottom: '1rem' }}>✉️</div>
-                <p style={{ margin: 0 }}>Aucun message pour le moment.</p>
+                <h3 style={{ fontSize: '1.1rem', fontWeight: 700, color: '#475569', marginBottom: '0.35rem' }}>Boîte de réception vide</h3>
+                <p style={{ margin: 0, fontSize: '0.85rem' }}>Aucun message ni demande de diagnostic pour le moment.</p>
               </div>
             ) : (
-              contacts.map(c => (
-                <div key={c.id} style={{ background: 'white', padding: '1.5rem', borderRadius: '12px', boxShadow: '0 1px 3px rgba(0,0,0,0.06)', display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', gap: '1rem', flexWrap: 'wrap' }}>
-                  <div style={{ display: 'flex', alignItems: 'flex-start', gap: '1.25rem' }}>
-                    <div style={{ width: '50px', height: '50px', background: '#fef2f2', borderRadius: '12px', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.5rem', flexShrink: 0 }}>✉️</div>
-                    <div>
-                      <div style={{ fontWeight: 700, fontSize: '1rem', color: '#1e293b' }}>{c.prenom || ''} {c.nom || ''}</div>
-                      <div style={{ fontSize: '0.82rem', color: '#64748b', marginTop: '0.15rem' }}>{c.email} {c.tel && `• ${c.tel}`}</div>
-                      {c.besoin && <div style={{ fontSize: '0.82rem', color: '#1a3c8f', fontWeight: 600, marginTop: '0.25rem' }}>Objet : {c.besoin}</div>}
-                      {c.message && <div style={{ fontSize: '0.9rem', color: '#334155', marginTop: '0.75rem', lineHeight: 1.6, maxWidth: '500px' }}>"{c.message}"</div>}
+              contacts.map(c => {
+                const displayName = c.name || `${c.prenom || ''} ${c.nom || ''}`.trim() || 'Prospect';
+                const displayPhone = c.phone || c.tel || '';
+                const displayTrack = c.track || c.parcours || c.besoin || '';
+                const isDiagnostic = c.source?.includes('Diagnostic') || !!c.priorityGoal;
+
+                return (
+                  <div
+                    key={c.id}
+                    onClick={() => setSelectedContact(c)}
+                    style={{
+                      background: 'white',
+                      padding: '1.5rem',
+                      borderRadius: '14px',
+                      boxShadow: '0 2px 6px rgba(0,0,0,0.04)',
+                      border: '1px solid #e2e8f0',
+                      display: 'flex',
+                      alignItems: 'flex-start',
+                      justifyContent: 'space-between',
+                      gap: '1.25rem',
+                      flexWrap: 'wrap',
+                      cursor: 'pointer',
+                      transition: 'all 0.2s',
+                    }}
+                  >
+                    <div style={{ display: 'flex', alignItems: 'flex-start', gap: '1.25rem', flex: 1, minWidth: '280px' }}>
+                      <div style={{
+                        width: '52px',
+                        height: '52px',
+                        background: isDiagnostic ? 'linear-gradient(135deg, #eff6ff, #dbeafe)' : 'linear-gradient(135deg, #fef2f2, #fee2e2)',
+                        borderRadius: '14px',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        fontSize: '1.6rem',
+                        flexShrink: 0,
+                        border: isDiagnostic ? '1px solid #bfdbfe' : '1px solid #fecaca',
+                      }}>
+                        {isDiagnostic ? '🎯' : '✉️'}
+                      </div>
+                      
+                      <div style={{ flex: 1 }}>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', flexWrap: 'wrap' }}>
+                          <span style={{ fontWeight: 800, fontSize: '1.05rem', color: '#0f172a' }}>
+                            {displayName}
+                          </span>
+                          <span style={{
+                            background: isDiagnostic ? '#dbeafe' : '#f1f5f9',
+                            color: isDiagnostic ? '#1e40af' : '#475569',
+                            fontSize: '0.72rem',
+                            fontWeight: 700,
+                            padding: '0.2rem 0.55rem',
+                            borderRadius: '50px',
+                            textTransform: 'uppercase',
+                            letterSpacing: '0.04em',
+                          }}>
+                            {isDiagnostic ? '⚡ Diagnostic 15 min' : '📩 Contact'}
+                          </span>
+                          {displayTrack && (
+                            <span style={{
+                              background: '#fef3c7',
+                              color: '#92400e',
+                              fontSize: '0.72rem',
+                              fontWeight: 700,
+                              padding: '0.2rem 0.55rem',
+                              borderRadius: '50px',
+                            }}>
+                              🎓 {displayTrack}
+                            </span>
+                          )}
+                        </div>
+
+                        <div style={{ fontSize: '0.85rem', color: '#475569', marginTop: '0.35rem', display: 'flex', alignItems: 'center', gap: '1rem', flexWrap: 'wrap' }}>
+                          <span style={{ fontWeight: 600 }}>📧 {c.email}</span>
+                          {displayPhone && <span>📞 {displayPhone}</span>}
+                        </div>
+
+                        {(c.statut || c.priorityGoal) && (
+                          <div style={{ display: 'flex', gap: '0.5rem', marginTop: '0.5rem', flexWrap: 'wrap' }}>
+                            {c.statut && (
+                              <span style={{ background: '#f8fafc', border: '1px solid #e2e8f0', color: '#475569', fontSize: '0.75rem', padding: '0.15rem 0.5rem', borderRadius: '6px' }}>
+                                👤 Statut: <strong>{c.statut}</strong>
+                              </span>
+                            )}
+                            {c.priorityGoal && (
+                              <span style={{ background: '#f8fafc', border: '1px solid #e2e8f0', color: '#475569', fontSize: '0.75rem', padding: '0.15rem 0.5rem', borderRadius: '6px' }}>
+                                🎯 Objectif: <strong>{c.priorityGoal}</strong>
+                              </span>
+                            )}
+                          </div>
+                        )}
+
+                        {c.message && (
+                          <div style={{
+                            fontSize: '0.88rem',
+                            color: '#334155',
+                            marginTop: '0.65rem',
+                            lineHeight: 1.5,
+                            background: '#f8fafc',
+                            padding: '0.6rem 0.85rem',
+                            borderRadius: '8px',
+                            borderLeft: '3px solid #3b82f6',
+                            maxWidth: '650px',
+                          }}>
+                            &quot;{c.message}&quot;
+                          </div>
+                        )}
+                      </div>
+                    </div>
+
+                    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: '0.65rem', flexShrink: 0 }}>
+                      <div style={{ display: 'flex', gap: '0.45rem', flexWrap: 'wrap' }}>
+                        <button
+                          onClick={(e) => { e.stopPropagation(); setSelectedContact(c); }}
+                          style={{
+                            background: '#1a3c8f',
+                            color: 'white',
+                            border: 'none',
+                            padding: '0.45rem 0.85rem',
+                            borderRadius: '8px',
+                            fontSize: '0.8rem',
+                            fontWeight: 700,
+                            cursor: 'pointer',
+                          }}
+                        >
+                          👁️ Voir détails
+                        </button>
+
+                        {displayPhone && (
+                          <a
+                            href={`https://wa.me/33${displayPhone.replace(/[^0-9]/g, '').substring(1)}?text=Bonjour%20${encodeURIComponent(displayName)}%2C%20je%20vous%20contacte%20suite%20%C3%A0%20votre%20demande%20sur%20%C3%94'TOP%20Formation.`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            onClick={(e) => e.stopPropagation()}
+                            style={{ background: '#25D366', color: 'white', padding: '0.45rem 0.85rem', borderRadius: '8px', textDecoration: 'none', fontSize: '0.8rem', fontWeight: 700 }}
+                          >
+                            💬 WhatsApp
+                          </a>
+                        )}
+
+                        <a
+                          href={`mailto:${c.email}?subject=Suite à votre demande sur Ô'TOP Formation&body=Bonjour ${encodeURIComponent(displayName)}%2C%0A%0AMerci pour votre démarche sur Ô'TOP Formation.%0A%0AJe me tiens à votre entière disposition pour échanger avec vous.%0A%0ABien cordialement%2C%0AMélyssa — Ô'TOP Formation%0A07 67 24 68 25`}
+                          onClick={(e) => e.stopPropagation()}
+                          style={{ background: '#f1f5f9', color: '#1a3c8f', padding: '0.45rem 0.85rem', borderRadius: '8px', textDecoration: 'none', fontSize: '0.8rem', fontWeight: 700, border: '1px solid #cbd5e1' }}
+                        >
+                          📧 Email
+                        </a>
+
+                        <button
+                          onClick={(e) => handleDeleteContact(c.id, e)}
+                          title="Supprimer définitivement ce message"
+                          style={{
+                            background: '#fee2e2',
+                            color: '#dc2626',
+                            border: '1px solid #fecaca',
+                            padding: '0.45rem 0.75rem',
+                            borderRadius: '8px',
+                            fontSize: '0.8rem',
+                            fontWeight: 700,
+                            cursor: 'pointer',
+                          }}
+                        >
+                          🗑️
+                        </button>
+                      </div>
+
+                      <div style={{ fontSize: '0.75rem', color: '#94a3b8', fontWeight: 500 }}>
+                        Reçu le {formatDate(c.createdAt)}
+                      </div>
                     </div>
                   </div>
-                  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: '0.75rem', flexShrink: 0 }}>
-                    <div style={{ display: 'flex', gap: '0.5rem' }}>
-                      <a href={`https://wa.me/33767246825?text=Bonjour%20${c.prenom}%2C%20suite%20%C3%A0%20votre%20message%20sur%20notre%20site...`}
-                        target="_blank" rel="noopener noreferrer"
-                        style={{ background: '#25D366', color: 'white', padding: '0.4rem 0.9rem', borderRadius: '8px', textDecoration: 'none', fontSize: '0.8rem', fontWeight: 700 }}>
-                        💬 WhatsApp
-                      </a>
-                      <a href={`mailto:${c.email}?subject=Suite à votre message&body=Bonjour ${c.prenom}%2C%0A%0AMerci pour votre message.%0A%0ACordialement%2C%0AMélyssa`}
-                        style={{ background: '#f1f5f9', color: '#1a3c8f', padding: '0.4rem 0.9rem', borderRadius: '8px', textDecoration: 'none', fontSize: '0.8rem', fontWeight: 700 }}>
-                        📧 Répondre
-                      </a>
-                    </div>
-                    <div style={{ fontSize: '0.75rem', color: '#94a3b8' }}>Reçu le {formatDate(c.createdAt)}</div>
-                  </div>
-                </div>
-              ))
+                );
+              })
             )}
+
           </div>
         )}
 
@@ -618,6 +960,268 @@ export default function AdminDashboard() {
             <div style={{ background: '#fefce8', border: '1px solid #fde68a', borderRadius: '12px', padding: '1.25rem 1.5rem', marginTop: '1.5rem', display: 'flex', gap: '1rem' }}>
               <span style={{ fontSize: '1.25rem' }}>💡</span>
               <p style={{ color: '#92400e', fontSize: '0.875rem', margin: 0 }}><strong>Prochainement :</strong> Upload direct de PDF depuis cette interface, sans passer par GitHub. En attendant, déposez vos fichiers dans <code>public/docs/</code> de votre projet local et faites un push.</p>
+            </div>
+          </div>
+        )}
+
+        {/* MODAL FICHE DÉTAILS DU PROSPECT */}
+        {selectedContact && (
+          <div
+            onClick={() => setSelectedContact(null)}
+            style={{
+              position: 'fixed',
+              inset: 0,
+              zIndex: 9999,
+              background: 'rgba(15, 23, 42, 0.75)',
+              backdropFilter: 'blur(8px)',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              padding: '1.25rem',
+            }}
+          >
+            <div
+              onClick={(e) => e.stopPropagation()}
+              style={{
+                background: 'white',
+                borderRadius: '20px',
+                width: '100%',
+                maxWidth: '680px',
+                maxHeight: '90vh',
+                overflowY: 'auto',
+                boxShadow: '0 25px 60px rgba(0,0,0,0.3)',
+                border: '1px solid rgba(226, 232, 240, 0.8)',
+              }}
+            >
+              {/* Modal Header */}
+              <div style={{
+                background: 'linear-gradient(135deg, #021a44, #1a3c8f)',
+                color: 'white',
+                padding: '1.5rem 1.75rem',
+                borderTopLeftRadius: '19px',
+                borderTopRightRadius: '19px',
+                display: 'flex',
+                justifyContent: 'space-between',
+                alignItems: 'center',
+              }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+                  <div style={{ width: '42px', height: '42px', borderRadius: '12px', background: 'rgba(255,255,255,0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.4rem' }}>
+                    📋
+                  </div>
+                  <div>
+                    <h3 style={{ margin: 0, fontSize: '1.25rem', fontWeight: 800 }}>Fiche Complète du Prospect</h3>
+                    <p style={{ margin: 0, fontSize: '0.8rem', opacity: 0.85 }}>Reçu le {formatDate(selectedContact.createdAt)}</p>
+                  </div>
+                </div>
+
+                <button
+                  onClick={() => setSelectedContact(null)}
+                  style={{
+                    background: 'rgba(255,255,255,0.15)',
+                    border: 'none',
+                    color: 'white',
+                    width: '36px',
+                    height: '36px',
+                    borderRadius: '50%',
+                    cursor: 'pointer',
+                    fontSize: '1.1rem',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                  }}
+                >
+                  ✕
+                </button>
+              </div>
+
+              {/* Modal Body */}
+              <div style={{ padding: '1.75rem', display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+                
+                {/* Section Contact Info */}
+                <div>
+                  <h4 style={{ fontSize: '0.85rem', textTransform: 'uppercase', letterSpacing: '0.05em', color: '#64748b', fontWeight: 800, marginBottom: '0.75rem' }}>
+                    👤 Coordonnées du prospect
+                  </h4>
+                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '0.85rem' }}>
+                    <div style={{ background: '#f8fafc', padding: '0.85rem 1rem', borderRadius: '10px', border: '1px solid #e2e8f0' }}>
+                      <div style={{ fontSize: '0.75rem', color: '#64748b', fontWeight: 600 }}>Nom complet</div>
+                      <div style={{ fontSize: '1rem', fontWeight: 800, color: '#1e293b', marginTop: '0.2rem' }}>
+                        {selectedContact.name || `${selectedContact.prenom || ''} ${selectedContact.nom || ''}`.trim() || 'Non renseigné'}
+                      </div>
+                    </div>
+
+                    <div style={{ background: '#f8fafc', padding: '0.85rem 1rem', borderRadius: '10px', border: '1px solid #e2e8f0' }}>
+                      <div style={{ fontSize: '0.75rem', color: '#64748b', fontWeight: 600 }}>Adresse e-mail</div>
+                      <a href={`mailto:${selectedContact.email}`} style={{ fontSize: '0.95rem', fontWeight: 700, color: '#1a3c8f', marginTop: '0.2rem', display: 'block', textDecoration: 'none' }}>
+                        {selectedContact.email}
+                      </a>
+                    </div>
+
+                    <div style={{ background: '#f8fafc', padding: '0.85rem 1rem', borderRadius: '10px', border: '1px solid #e2e8f0' }}>
+                      <div style={{ fontSize: '0.75rem', color: '#64748b', fontWeight: 600 }}>Numéro de téléphone</div>
+                      {selectedContact.phone || selectedContact.tel ? (
+                        <a href={`tel:${selectedContact.phone || selectedContact.tel}`} style={{ fontSize: '0.95rem', fontWeight: 700, color: '#059669', marginTop: '0.2rem', display: 'block', textDecoration: 'none' }}>
+                          📞 {selectedContact.phone || selectedContact.tel}
+                        </a>
+                      ) : (
+                        <div style={{ fontSize: '0.9rem', color: '#94a3b8', marginTop: '0.2rem' }}>Non renseigné</div>
+                      )}
+                    </div>
+
+                    <div style={{ background: '#f8fafc', padding: '0.85rem 1rem', borderRadius: '10px', border: '1px solid #e2e8f0' }}>
+                      <div style={{ fontSize: '0.75rem', color: '#64748b', fontWeight: 600 }}>Provenance</div>
+                      <div style={{ fontSize: '0.95rem', fontWeight: 700, color: '#1e293b', marginTop: '0.2rem' }}>
+                        {selectedContact.source || 'Formulaire du site'}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Section Projet & Diagnostic */}
+                <div>
+                  <h4 style={{ fontSize: '0.85rem', textTransform: 'uppercase', letterSpacing: '0.05em', color: '#64748b', fontWeight: 800, marginBottom: '0.75rem' }}>
+                    🎯 Besoins &amp; Profil de formation
+                  </h4>
+                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '0.85rem' }}>
+                    <div style={{ background: '#eff6ff', padding: '0.85rem 1rem', borderRadius: '10px', border: '1px solid #bfdbfe' }}>
+                      <div style={{ fontSize: '0.75rem', color: '#1e40af', fontWeight: 700 }}>Formation ou Parcours visé</div>
+                      <div style={{ fontSize: '1rem', fontWeight: 800, color: '#1e3a8a', marginTop: '0.2rem' }}>
+                        {selectedContact.track || selectedContact.parcours || selectedContact.besoin || 'Non spécifié'}
+                      </div>
+                    </div>
+
+                    <div style={{ background: '#f8fafc', padding: '0.85rem 1rem', borderRadius: '10px', border: '1px solid #e2e8f0' }}>
+                      <div style={{ fontSize: '0.75rem', color: '#64748b', fontWeight: 600 }}>Statut professionnel</div>
+                      <div style={{ fontSize: '0.95rem', fontWeight: 700, color: '#1e293b', marginTop: '0.2rem' }}>
+                        {selectedContact.statut || 'Non spécifié'}
+                      </div>
+                    </div>
+
+                    {selectedContact.priorityGoal && (
+                      <div style={{ background: '#fef3c7', padding: '0.85rem 1rem', borderRadius: '10px', border: '1px solid #fde68a' }}>
+                        <div style={{ fontSize: '0.75rem', color: '#92400e', fontWeight: 700 }}>Objectif prioritaire</div>
+                        <div style={{ fontSize: '0.95rem', fontWeight: 800, color: '#78350f', marginTop: '0.2rem' }}>
+                          {selectedContact.priorityGoal}
+                        </div>
+                      </div>
+                    )}
+
+                    {selectedContact.companySize && (
+                      <div style={{ background: '#f8fafc', padding: '0.85rem 1rem', borderRadius: '10px', border: '1px solid #e2e8f0' }}>
+                        <div style={{ fontSize: '0.75rem', color: '#64748b', fontWeight: 600 }}>Taille de l&apos;entreprise</div>
+                        <div style={{ fontSize: '0.95rem', fontWeight: 700, color: '#1e293b', marginTop: '0.2rem' }}>
+                          {selectedContact.companySize}
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                </div>
+
+                {/* Section Message */}
+                <div>
+                  <h4 style={{ fontSize: '0.85rem', textTransform: 'uppercase', letterSpacing: '0.05em', color: '#64748b', fontWeight: 800, marginBottom: '0.75rem' }}>
+                    💬 Message du prospect
+                  </h4>
+                  <div style={{
+                    background: '#f8fafc',
+                    padding: '1.25rem',
+                    borderRadius: '12px',
+                    border: '1px solid #e2e8f0',
+                    fontSize: '0.95rem',
+                    lineHeight: 1.6,
+                    color: '#1e293b',
+                    whiteSpace: 'pre-wrap',
+                  }}>
+                    {selectedContact.message || 'Aucun message textuel particulier laissé.'}
+                  </div>
+                </div>
+
+                {/* Section Actions */}
+                <div style={{
+                  borderTop: '1px solid #e2e8f0',
+                  paddingTop: '1.25rem',
+                  display: 'flex',
+                  justifyContent: 'space-between',
+                  alignItems: 'center',
+                  flexWrap: 'wrap',
+                  gap: '0.75rem',
+                }}>
+                  <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
+                    {(selectedContact.phone || selectedContact.tel) && (
+                      <a
+                        href={`https://wa.me/33${(selectedContact.phone || selectedContact.tel)?.replace(/[^0-9]/g, '').substring(1)}?text=Bonjour%20${encodeURIComponent(selectedContact.name || selectedContact.prenom || 'Bonjour')}%2C%20je%20vous%20contacte%20suite%20%C3%A0%20votre%20demande%20sur%20%C3%94'TOP%20Formation.`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        style={{
+                          background: '#25D366',
+                          color: 'white',
+                          padding: '0.65rem 1.25rem',
+                          borderRadius: '10px',
+                          textDecoration: 'none',
+                          fontSize: '0.9rem',
+                          fontWeight: 700,
+                          display: 'flex',
+                          alignItems: 'center',
+                          gap: '0.4rem',
+                        }}
+                      >
+                        💬 Contacter sur WhatsApp
+                      </a>
+                    )}
+
+                    <a
+                      href={`mailto:${selectedContact.email}?subject=Suite à votre demande sur Ô'TOP Formation&body=Bonjour ${encodeURIComponent(selectedContact.name || selectedContact.prenom || '')}%2C%0A%0AMerci pour votre démarche sur Ô'TOP Formation.%0A%0AJe me tiens à votre entière disposition pour échanger avec vous.%0A%0ABien cordialement%2C%0AMélyssa — Ô'TOP Formation%0A07 67 24 68 25`}
+                      style={{
+                        background: '#1a3c8f',
+                        color: 'white',
+                        padding: '0.65rem 1.25rem',
+                        borderRadius: '10px',
+                        textDecoration: 'none',
+                        fontSize: '0.9rem',
+                        fontWeight: 700,
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: '0.4rem',
+                      }}
+                    >
+                      📧 Répondre par Email
+                    </a>
+
+                    <button
+                      onClick={() => handleDeleteContact(selectedContact.id)}
+                      style={{
+                        background: '#fee2e2',
+                        color: '#dc2626',
+                        border: '1px solid #fecaca',
+                        padding: '0.65rem 1rem',
+                        borderRadius: '10px',
+                        fontSize: '0.9rem',
+                        fontWeight: 700,
+                        cursor: 'pointer',
+                      }}
+                    >
+                      🗑️ Supprimer ce message
+                    </button>
+                  </div>
+
+                  <button
+                    onClick={() => setSelectedContact(null)}
+                    style={{
+                      background: '#f1f5f9',
+                      color: '#475569',
+                      border: '1px solid #cbd5e1',
+                      padding: '0.65rem 1.25rem',
+                      borderRadius: '10px',
+                      fontSize: '0.9rem',
+                      fontWeight: 700,
+                      cursor: 'pointer',
+                    }}
+                  >
+                    Fermer
+                  </button>
+                </div>
+
+              </div>
             </div>
           </div>
         )}
