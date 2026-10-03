@@ -102,7 +102,7 @@ export default function ClientFeedback({ limit }: { limit?: number }) {
                   <div className="text-xs space-y-1.5 text-blue-50">
                     <div><strong className="text-white">Défi :</strong> Structurer l&apos;usage de l&apos;IA pour l&apos;analyse de profils sans risquer de fuite de données confidentielles.</div>
                     <div><strong className="text-white">Solution :</strong> 2h d&apos;accompagnement ciblé pour paramétrer un environnement sécurisé et des prompts d&apos;évaluation.</div>
-                    <div><strong className="text-cyan-200 font-semibold">Résultat :</strong> Temps de synthèse divisé par 3, dossier de financement FIF-PL instruit via le partenaire porteur.</div>
+                    <div><strong className="text-cyan-200 font-semibold">Résultat :</strong> Temps de synthèse divisé par 3, dossier de financement FIF-PL instruit via notre partenaire Eloq-One.</div>
                   </div>
                   <div className="flex items-center gap-3 pt-3 border-t border-blue-500/60">
                     <div className="w-10 h-10 rounded-full bg-white text-blue-900 flex items-center justify-center font-black text-sm">

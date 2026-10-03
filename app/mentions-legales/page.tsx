@@ -45,7 +45,7 @@ export default function MentionsLegales() {
                   <tr>
                     <th>Partenaire financier &amp; Qualiopi</th>
                     <td>
-                      Les formations financées par un OPCO, un FAF ou France Travail font l’objet d’une convention établie par <strong>Eloq-One</strong> (SAS EloqOne, SIREN 944 063 635, déclaration d’activité n° 76300595630 auprès du préfet de région PACA), organisme certifié Qualiopi au titre de la catégorie Actions de formation.
+                      Les formations financées par un OPCO, un FAF ou France Travail font l’objet d’une convention établie par <strong>Eloq-One</strong> (SAS Eloq-One, SIREN 944 063 635, déclaration d’activité n° 76300595630), organisme certifié Qualiopi au titre de la catégorie Actions de formation.
                     </td>
                   </tr>
                 </tbody>

@@ -40,7 +40,7 @@ export default function CGV() {
                 Email : <a href="mailto:contact@otopformations.com" style={{ color: 'var(--blue-700)' }}>contact@otopformations.com</a> — Téléphone : 07 67 24 68 25.
               </p>
               <p style={{ marginTop: '0.75rem', fontSize: '0.9rem', color: 'var(--gray-600)' }}>
-                Pour les formations financées par un OPCO, un FAF ou France Travail, la convention de formation et la facturation sont assurées par notre partenaire <strong>Eloq-One</strong> (SAS EloqOne, SIREN 944 063 635, déclaration d’activité n° 76300595630), organisme certifié Qualiopi au titre de la catégorie Actions de formation.
+                Pour les formations financées par un OPCO, un FAF ou France Travail, la convention de formation et la facturation sont assurées par notre partenaire <strong>Eloq-One</strong> (SAS Eloq-One, SIREN 944 063 635, déclaration d’activité n° 76300595630), organisme certifié Qualiopi au titre de la catégorie Actions de formation.
               </p>
             </div>
 
