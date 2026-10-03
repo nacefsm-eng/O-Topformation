@@ -14,7 +14,7 @@ function ContactContent() {
     statut: 'independant',
     besoin: 'IA générative : création de contenus rédactionnels et visuels responsables (RS6776 – 21 h)',
     message: '',
-    rgpdConsent: false,
+    rgpdConsent: true,
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -33,8 +33,12 @@ function ContactContent() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (!form.nom?.trim() || !form.email?.trim() || !form.telephone?.trim()) {
+      setErrorMessage('Veuillez renseigner votre Nom, Email et Numéro de téléphone.');
+      return;
+    }
     if (!form.rgpdConsent) {
-      setErrorMessage('Veuillez accepter la politique de confidentialité pour envoyer votre demande.');
+      setErrorMessage('Veuillez cocher la case d’accord pour être recontacté(e).');
       return;
     }
 
@@ -61,6 +65,9 @@ function ContactContent() {
       if (response.ok) {
         setLastSubmittedData({ ...form });
         setSubmitted(true);
+        if (typeof window !== 'undefined') {
+          window.scrollTo({ top: 200, behavior: 'smooth' });
+        }
       } else {
         const data = await response.json();
         setErrorMessage(data.error || 'Une erreur est survenue lors de l\'envoi.');
@@ -375,13 +382,20 @@ function ContactContent() {
                       </label>
                     </div>
 
+                    {errorMessage && (
+                      <div style={{ padding: '0.85rem 1rem', background: '#fee2e2', border: '1.5px solid #ef4444', borderRadius: '12px', color: '#b91c1c', fontSize: '0.88rem', fontWeight: 700, marginTop: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                        <span>⚠️</span>
+                        <span>{errorMessage}</span>
+                      </div>
+                    )}
+
                     <button
                       type="submit"
                       disabled={isSubmitting}
                       className="btn btn-primary"
-                      style={{ width: '100%', justifyContent: 'center', background: 'var(--blue-900)', color: 'white', padding: '1rem', fontWeight: 800, fontSize: '1rem', marginTop: '0.5rem', cursor: isSubmitting ? 'not-allowed' : 'pointer', border: 'none', borderRadius: '50px' }}
+                      style={{ width: '100%', justifyContent: 'center', background: 'var(--blue-900)', color: 'white', padding: '1.1rem', fontWeight: 800, fontSize: '1rem', marginTop: '0.5rem', cursor: isSubmitting ? 'not-allowed' : 'pointer', border: 'none', borderRadius: '50px' }}
                     >
-                      {isSubmitting ? 'Envoi en cours...' : 'Envoyer ma demande de diagnostic ✉️'}
+                      {isSubmitting ? 'Validation et envoi en cours...' : 'Envoyer ma demande de diagnostic ✉️'}
                     </button>
 
                     {/* Canal WhatsApp Optionnel */}

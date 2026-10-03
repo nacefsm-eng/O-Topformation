@@ -14,7 +14,11 @@ async function readDb() {
 }
 
 async function writeDb(data: Record<string, unknown>) {
-  await fs.writeFile(DB_PATH, JSON.stringify(data, null, 2), 'utf-8');
+  try {
+    await fs.writeFile(DB_PATH, JSON.stringify(data, null, 2), 'utf-8');
+  } catch (err) {
+    console.warn('Local DB write not possible (read-only serverless filesystem):', err);
+  }
 }
 
 // GET — retourner tous les contacts (protégé admin)
