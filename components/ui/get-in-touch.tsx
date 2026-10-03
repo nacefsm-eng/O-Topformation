@@ -44,11 +44,49 @@ export default function GetInTouch() {
         submittedAt: new Date().toISOString(),
       };
 
+      // Sauvegarde locale instantanée pour affichage direct dans /admin
+      if (typeof window !== 'undefined') {
+        try {
+          const stored = JSON.parse(localStorage.getItem('otop_admin_leads') || '[]');
+          stored.unshift({
+            id: Date.now(),
+            nom: name,
+            email,
+            tel: phone,
+            besoin: parcours,
+            message: `[Statut: ${statut} | Objectif: ${priorityGoal}] ${message || ''}`,
+            createdAt: new Date().toISOString(),
+            read: false,
+          });
+          localStorage.setItem('otop_admin_leads', JSON.stringify(stored));
+        } catch {}
+      }
+
+      // Envoi serveur API
       await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload),
       });
+
+      // Envoi client direct vers FormSubmit en double sécurité
+      try {
+        await fetch('https://formsubmit.co/ajax/formation.rmcf@gmail.com', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify({
+            _subject: `🎯 Diagnostic de formation reçu : ${name}`,
+            _template: 'table',
+            Nom: name,
+            Email: email,
+            Telephone: phone || 'Non renseigné',
+            Parcours: parcours,
+            Statut: statut,
+            Objectif: priorityGoal,
+            Message: message || 'Non spécifié',
+          }),
+        });
+      } catch {}
 
       setIsSent(true);
       setShowCongrats(true);

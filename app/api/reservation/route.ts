@@ -2,19 +2,31 @@ import { NextRequest, NextResponse } from 'next/server';
 import { promises as fs } from 'fs';
 import path from 'path';
 
-const DB_PATH = path.join(process.cwd(), 'data', 'db.json');
+import os from 'os';
+
+const TMP_DB_PATH = path.join(os.tmpdir(), 'otop_db.json');
+const STATIC_DB_PATH = path.join(process.cwd(), 'data', 'db.json');
 
 async function readDb() {
   try {
-    const raw = await fs.readFile(DB_PATH, 'utf-8');
+    const raw = await fs.readFile(TMP_DB_PATH, 'utf-8');
     return JSON.parse(raw);
   } catch {
-    return { contacts: [], reservations: [] };
+    try {
+      const raw = await fs.readFile(STATIC_DB_PATH, 'utf-8');
+      return JSON.parse(raw);
+    } catch {
+      return { contacts: [], reservations: [] };
+    }
   }
 }
 
 async function writeDb(data: Record<string, unknown>) {
-  await fs.writeFile(DB_PATH, JSON.stringify(data, null, 2), 'utf-8');
+  try {
+    await fs.writeFile(TMP_DB_PATH, JSON.stringify(data, null, 2), 'utf-8');
+  } catch (err) {
+    console.warn('Could not write reservation to tmpdir:', err);
+  }
 }
 
 // GET — retourner toutes les réservations (protégé admin)

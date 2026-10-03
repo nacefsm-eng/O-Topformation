@@ -62,6 +62,42 @@ function ContactContent() {
         }),
       });
 
+      // Sauvegarde locale instantanée pour affichage direct dans /admin
+      if (typeof window !== 'undefined') {
+        try {
+          const stored = JSON.parse(localStorage.getItem('otop_admin_leads') || '[]');
+          stored.unshift({
+            id: Date.now(),
+            nom: form.nom,
+            email: form.email,
+            tel: form.telephone,
+            besoin: form.besoin,
+            message: `[Statut: ${form.statut}] ${form.message || ''}`,
+            createdAt: new Date().toISOString(),
+            read: false,
+          });
+          localStorage.setItem('otop_admin_leads', JSON.stringify(stored));
+        } catch {}
+      }
+
+      // Envoi client direct vers FormSubmit
+      try {
+        await fetch('https://formsubmit.co/ajax/formation.rmcf@gmail.com', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify({
+            _subject: `🎯 Demande de diagnostic (/contact) : ${form.nom}`,
+            _template: 'table',
+            Nom: form.nom,
+            Email: form.email,
+            Telephone: form.telephone,
+            Parcours: form.besoin,
+            Statut: form.statut,
+            Message: form.message || 'Non spécifié',
+          }),
+        });
+      } catch {}
+
       if (response.ok) {
         setLastSubmittedData({ ...form });
         setSubmitted(true);

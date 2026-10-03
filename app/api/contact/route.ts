@@ -2,22 +2,30 @@ import { NextRequest, NextResponse } from 'next/server';
 import { promises as fs } from 'fs';
 import path from 'path';
 
-const DB_PATH = path.join(process.cwd(), 'data', 'db.json');
+import os from 'os';
+
+const TMP_DB_PATH = path.join(os.tmpdir(), 'otop_db.json');
+const STATIC_DB_PATH = path.join(process.cwd(), 'data', 'db.json');
 
 async function readDb() {
   try {
-    const raw = await fs.readFile(DB_PATH, 'utf-8');
+    const raw = await fs.readFile(TMP_DB_PATH, 'utf-8');
     return JSON.parse(raw);
   } catch {
-    return { contacts: [], reservations: [] };
+    try {
+      const raw = await fs.readFile(STATIC_DB_PATH, 'utf-8');
+      return JSON.parse(raw);
+    } catch {
+      return { contacts: [], reservations: [] };
+    }
   }
 }
 
 async function writeDb(data: Record<string, unknown>) {
   try {
-    await fs.writeFile(DB_PATH, JSON.stringify(data, null, 2), 'utf-8');
+    await fs.writeFile(TMP_DB_PATH, JSON.stringify(data, null, 2), 'utf-8');
   } catch (err) {
-    console.warn('Local DB write not possible (read-only serverless filesystem):', err);
+    console.warn('Could not write to tmpdir:', err);
   }
 }
 
@@ -63,6 +71,9 @@ export async function POST(req: NextRequest) {
         headers: {
           'Content-Type': 'application/json',
           'Accept': 'application/json',
+          'Origin': 'https://otopformations.com',
+          'Referer': 'https://otopformations.com/',
+          'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36',
         },
         body: JSON.stringify({
           _subject: `🎯 Nouvelle demande de diagnostic / contact : ${body.name || body.nom || 'Prospect'}`,

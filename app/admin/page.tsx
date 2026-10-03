@@ -74,7 +74,23 @@ export default function AdminDashboard() {
         const cData = await cRes.json();
         const rData = await rRes.json();
         const sData = await sRes.json();
-        setContacts((cData.contacts || []).reverse());
+        
+        const serverContacts = cData.contacts || [];
+        let localLeads: any[] = [];
+        if (typeof window !== 'undefined') {
+          try {
+            localLeads = JSON.parse(localStorage.getItem('otop_admin_leads') || '[]');
+          } catch {}
+        }
+        
+        const mergedContacts = [...serverContacts];
+        localLeads.forEach(lead => {
+          if (!mergedContacts.some(c => c.id === lead.id || (c.email === lead.email && c.createdAt === lead.createdAt))) {
+            mergedContacts.unshift(lead);
+          }
+        });
+
+        setContacts(mergedContacts.reverse());
         setReservations((rData.reservations || []).reverse());
         setStudents(sData.students || []);
       } catch {}
